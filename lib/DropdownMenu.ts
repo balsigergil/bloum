@@ -154,6 +154,7 @@ export class DropdownMenu extends HTMLElement {
   onInput() {
     this.openMenu();
     this.search = this.inputEl.value || "";
+    this.setActive(this.filteredOptions[0]);
     this.updateList();
     if (this.search !== "") {
       this.textEl.classList.add("filtered");
@@ -196,10 +197,6 @@ export class DropdownMenu extends HTMLElement {
         option.textContent?.toLowerCase().includes(this.search.toLowerCase())
       ) {
         option.classList.remove("filtered");
-        // if (!firstSelected) {
-        //     option.classList.add("selected");
-        //     firstSelected = true;
-        // }
       } else {
         option.classList.add("filtered");
       }
@@ -233,7 +230,19 @@ export class DropdownMenu extends HTMLElement {
   selectNext() {
     if (this.isMenuOpen) {
       if (this.activeEl !== null) {
-        const nextEl = this.activeEl.nextElementSibling;
+        let nextEl = null;
+        if (this.search !== "") {
+          let currentEl = this.activeEl;
+          while (currentEl.nextElementSibling !== null) {
+            if (this.matchSearch(currentEl.nextElementSibling)) {
+              nextEl = currentEl.nextElementSibling;
+              break;
+            }
+            currentEl = currentEl.nextElementSibling as HTMLDivElement;
+          }
+        } else {
+          nextEl = this.activeEl.nextElementSibling;
+        }
         if (nextEl !== null) {
           this.setActive(nextEl as HTMLDivElement);
         }
@@ -246,7 +255,19 @@ export class DropdownMenu extends HTMLElement {
   selectPrevious() {
     if (this.isMenuOpen) {
       if (this.activeEl !== null) {
-        const previousEl = this.activeEl.previousElementSibling;
+        let previousEl = null;
+        if (this.search !== "") {
+          let currentEl = this.activeEl;
+          while (currentEl.previousElementSibling !== null) {
+            if (this.matchSearch(currentEl.previousElementSibling)) {
+              previousEl = currentEl.previousElementSibling;
+              break;
+            }
+            currentEl = currentEl.previousElementSibling as HTMLDivElement;
+          }
+        } else {
+          previousEl = this.activeEl.previousElementSibling;
+        }
         if (previousEl !== null) {
           this.setActive(previousEl as HTMLDivElement);
         }
@@ -262,5 +283,16 @@ export class DropdownMenu extends HTMLElement {
 
   get isMenuOpen() {
     return this.classList.contains("open");
+  }
+
+  get filteredOptions() {
+    return this.options.filter((o) => this.matchSearch(o));
+  }
+
+  matchSearch(element: Element): boolean {
+    return (
+      element.textContent?.toLowerCase().includes(this.search.toLowerCase()) ||
+      false
+    );
   }
 }
