@@ -8,7 +8,7 @@ export class DropdownMenu extends HTMLElement {
   private onClick!: (e: MouseEvent) => void;
   private search: string = "";
   private selectedEl: HTMLDivElement | null = null;
-  // private hoveredEl: HTMLDivElement | null = null;
+  private activeEl: HTMLDivElement | null = null;
 
   constructor() {
     super();
@@ -37,15 +37,11 @@ export class DropdownMenu extends HTMLElement {
     this.inputEl.setAttribute("type", "search");
     this.inputEl.classList.add("dropdown-search-input");
     this.inputEl.addEventListener("input", () => this.onInput());
-    this.inputEl.addEventListener("click", () => {
-      this.openMenu();
-    });
-    this.inputEl.addEventListener("focus", () => {
-      this.openMenu();
-    });
-    this.inputEl.addEventListener("blur", (e) => {
-      this.checkEventAndCloseMenu(e);
-    });
+    this.inputEl.addEventListener("click", () => this.openMenu());
+    this.inputEl.addEventListener("focus", () => this.openMenu());
+    this.inputEl.addEventListener("blur", (e) =>
+      this.checkEventAndCloseMenu(e),
+    );
     this.inputEl.addEventListener("keydown", (e) => {
       if (e.key === "Escape") {
         this.closeMenu();
@@ -60,6 +56,9 @@ export class DropdownMenu extends HTMLElement {
       }
       if (e.key === "Enter") {
         e.preventDefault();
+        if (this.activeEl !== null) {
+          this.setSelected(this.activeEl);
+        }
         this.inputEl.blur();
         this.closeMenu();
       }
@@ -70,6 +69,9 @@ export class DropdownMenu extends HTMLElement {
     if (selectedEl !== undefined) {
       this.setSelected(selectedEl);
     }
+    if (this.options.length > 0) {
+      this.setActive(this.options[0]);
+    }
 
     this.menu = document.createElement("div");
     this.menu.classList.add("dropdown-menu-wrapper");
@@ -79,7 +81,6 @@ export class DropdownMenu extends HTMLElement {
     this.onClick = (e: MouseEvent) => {
       this.checkEventAndCloseMenu(e);
     };
-
     document.addEventListener("click", this.onClick);
 
     this.append(this.selectEl, this.inputEl, this.textEl, this.menu);
@@ -143,6 +144,10 @@ export class DropdownMenu extends HTMLElement {
       });
       this.dispatchEvent(event);
     });
+    option.addEventListener("mousemove", (e) => {
+      this.activeEl = e.target as HTMLDivElement;
+      this.updateList();
+    });
     this.menu.append(option);
   }
 
@@ -159,6 +164,7 @@ export class DropdownMenu extends HTMLElement {
 
   updateList() {
     const selectedValue = this.selectedEl?.getAttribute("data-value");
+    const activeValue = this.activeEl?.getAttribute("data-value");
     for (const option of this.options) {
       if (
         selectedValue &&
@@ -169,12 +175,21 @@ export class DropdownMenu extends HTMLElement {
         this.textEl.appendChild(clone);
         this.selectEl.value = selectedValue;
         option.classList.add("selected");
-        this.selectedEl = option;
-        this.selectedEl.scrollIntoView({
+      } else {
+        option.classList.remove("selected");
+      }
+
+      if (
+        this.activeEl &&
+        activeValue &&
+        option.getAttribute("data-value") === activeValue
+      ) {
+        option.classList.add("active");
+        this.activeEl.scrollIntoView({
           block: "nearest",
         });
       } else {
-        option.classList.remove("selected");
+        option.classList.remove("active");
       }
 
       if (
@@ -196,6 +211,11 @@ export class DropdownMenu extends HTMLElement {
     this.updateList();
   }
 
+  setActive(element: HTMLDivElement) {
+    this.activeEl = element as HTMLDivElement;
+    this.updateList();
+  }
+
   closeMenu() {
     if (this.classList.contains("open")) {
       this.classList.remove("open");
@@ -212,10 +232,10 @@ export class DropdownMenu extends HTMLElement {
 
   selectNext() {
     if (this.isMenuOpen) {
-      if (this.selectedEl !== null) {
-        const nextEl = this.selectedEl.nextElementSibling;
+      if (this.activeEl !== null) {
+        const nextEl = this.activeEl.nextElementSibling;
         if (nextEl !== null) {
-          this.setSelected(nextEl as HTMLDivElement);
+          this.setActive(nextEl as HTMLDivElement);
         }
       }
     } else {
@@ -225,10 +245,10 @@ export class DropdownMenu extends HTMLElement {
 
   selectPrevious() {
     if (this.isMenuOpen) {
-      if (this.selectedEl !== null) {
-        const previousEl = this.selectedEl.previousElementSibling;
+      if (this.activeEl !== null) {
+        const previousEl = this.activeEl.previousElementSibling;
         if (previousEl !== null) {
-          this.setSelected(previousEl as HTMLDivElement);
+          this.setActive(previousEl as HTMLDivElement);
         }
       }
     } else {

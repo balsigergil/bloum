@@ -73,7 +73,7 @@ dropdown-menu {
         display: none;
       }
 
-      &:hover {
+      &.active {
         background-color: #eee;
       }
       &.selected {
