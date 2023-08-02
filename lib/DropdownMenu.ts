@@ -8,7 +8,7 @@ export class DropdownMenu extends HTMLElement {
   private onClick!: (e: MouseEvent) => void;
   private search: string = "";
   private selectedEl: HTMLDivElement | null = null;
-  private activeEl: HTMLDivElement | null = null;
+  private focusedEl: HTMLDivElement | null = null;
 
   constructor() {
     super();
@@ -56,8 +56,8 @@ export class DropdownMenu extends HTMLElement {
       }
       if (e.key === "Enter") {
         e.preventDefault();
-        if (this.activeEl !== null) {
-          this.setSelected(this.activeEl);
+        if (this.focusedEl !== null) {
+          this.setSelected(this.focusedEl);
         }
         this.inputEl.blur();
         this.closeMenu();
@@ -70,7 +70,7 @@ export class DropdownMenu extends HTMLElement {
       this.setSelected(selectedEl);
     }
     if (this.options.length > 0) {
-      this.setActive(this.options[0]);
+      this.setFocused(this.options[0]);
     }
 
     this.menu = document.createElement("div");
@@ -133,19 +133,9 @@ export class DropdownMenu extends HTMLElement {
       this.selectEl.value = value;
       this.setSelected(option);
       this.closeMenu();
-      const event = new CustomEvent("change", {
-        bubbles: true,
-        detail: {
-          label: option.innerText,
-          value: value,
-        },
-        cancelable: false,
-        composed: true,
-      });
-      this.dispatchEvent(event);
     });
     option.addEventListener("mousemove", (e) => {
-      this.activeEl = e.target as HTMLDivElement;
+      this.focusedEl = e.target as HTMLDivElement;
       this.updateList();
     });
     this.menu.append(option);
@@ -154,7 +144,7 @@ export class DropdownMenu extends HTMLElement {
   onInput() {
     this.openMenu();
     this.search = this.inputEl.value || "";
-    this.setActive(this.filteredOptions[0]);
+    this.setFocused(this.filteredOptions[0]);
     this.updateList();
     if (this.search !== "") {
       this.textEl.classList.add("filtered");
@@ -165,7 +155,7 @@ export class DropdownMenu extends HTMLElement {
 
   updateList() {
     const selectedValue = this.selectedEl?.getAttribute("data-value");
-    const activeValue = this.activeEl?.getAttribute("data-value");
+    const activeValue = this.focusedEl?.getAttribute("data-value");
     for (const option of this.options) {
       if (
         selectedValue &&
@@ -181,12 +171,12 @@ export class DropdownMenu extends HTMLElement {
       }
 
       if (
-        this.activeEl &&
+        this.focusedEl &&
         activeValue &&
         option.getAttribute("data-value") === activeValue
       ) {
         option.classList.add("active");
-        this.activeEl.scrollIntoView({
+        this.focusedEl.scrollIntoView({
           block: "nearest",
         });
       } else {
@@ -208,8 +198,8 @@ export class DropdownMenu extends HTMLElement {
     this.updateList();
   }
 
-  setActive(element: HTMLDivElement) {
-    this.activeEl = element as HTMLDivElement;
+  setFocused(element: HTMLDivElement) {
+    this.focusedEl = element as HTMLDivElement;
     this.updateList();
   }
 
@@ -229,10 +219,10 @@ export class DropdownMenu extends HTMLElement {
 
   selectNext() {
     if (this.isMenuOpen) {
-      if (this.activeEl !== null) {
+      if (this.focusedEl !== null) {
         let nextEl = null;
         if (this.search !== "") {
-          let currentEl = this.activeEl;
+          let currentEl = this.focusedEl;
           while (currentEl.nextElementSibling !== null) {
             if (this.matchSearch(currentEl.nextElementSibling)) {
               nextEl = currentEl.nextElementSibling;
@@ -241,10 +231,10 @@ export class DropdownMenu extends HTMLElement {
             currentEl = currentEl.nextElementSibling as HTMLDivElement;
           }
         } else {
-          nextEl = this.activeEl.nextElementSibling;
+          nextEl = this.focusedEl.nextElementSibling;
         }
         if (nextEl !== null) {
-          this.setActive(nextEl as HTMLDivElement);
+          this.setFocused(nextEl as HTMLDivElement);
         }
       }
     } else {
@@ -254,10 +244,10 @@ export class DropdownMenu extends HTMLElement {
 
   selectPrevious() {
     if (this.isMenuOpen) {
-      if (this.activeEl !== null) {
+      if (this.focusedEl !== null) {
         let previousEl = null;
         if (this.search !== "") {
-          let currentEl = this.activeEl;
+          let currentEl = this.focusedEl;
           while (currentEl.previousElementSibling !== null) {
             if (this.matchSearch(currentEl.previousElementSibling)) {
               previousEl = currentEl.previousElementSibling;
@@ -266,10 +256,10 @@ export class DropdownMenu extends HTMLElement {
             currentEl = currentEl.previousElementSibling as HTMLDivElement;
           }
         } else {
-          previousEl = this.activeEl.previousElementSibling;
+          previousEl = this.focusedEl.previousElementSibling;
         }
         if (previousEl !== null) {
-          this.setActive(previousEl as HTMLDivElement);
+          this.setFocused(previousEl as HTMLDivElement);
         }
       }
     } else {
