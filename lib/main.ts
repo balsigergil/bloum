@@ -1,2 +1,2 @@
-export * from "./DropdownMenu";
 import "./style.scss";
+export * from "./DropdownSelect.ts";

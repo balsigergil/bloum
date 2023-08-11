@@ -1,0 +1,23 @@
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+}
+
+.demo {
+  font-size: 1.2rem;
+}
+
+dropdown-select .title {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+dropdown-select .description {
+  font-size: 0.875em;
+  color: #444;
+}

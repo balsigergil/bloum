@@ -1,21 +1,22 @@
-export class DropdownMenu extends HTMLElement {
+export class DropdownSelect extends HTMLElement {
   private selectEl!: HTMLSelectElement;
   private inputEl!: HTMLInputElement;
-  private options: HTMLDivElement[] = [];
+  private options: HTMLElement[] = [];
   private menu!: HTMLDivElement;
   private textEl!: HTMLDivElement;
   private placeholder = "Choose an item";
   private onClick!: (e: MouseEvent) => void;
   private search: string = "";
-  private selectedEl: HTMLDivElement | null = null;
-  private focusedEl: HTMLDivElement | null = null;
+  private selectedEl: HTMLElement | null = null;
+  private focusedEl: HTMLElement | null = null;
+  static NAME = "dropdown-select";
 
   constructor() {
     super();
   }
 
   static register() {
-    customElements.define("dropdown-menu", DropdownMenu);
+    customElements.define(this.NAME, DropdownSelect);
   }
 
   static get observedAttributes() {
@@ -23,7 +24,8 @@ export class DropdownMenu extends HTMLElement {
   }
 
   connectedCallback() {
-    this.options = [...this.children] as HTMLDivElement[];
+    this.options = [...this.children] as HTMLElement[];
+
     this.placeholder = this.getAttribute("placeholder") || "Choose an option";
 
     this.selectEl = document.createElement("select");
@@ -48,11 +50,11 @@ export class DropdownMenu extends HTMLElement {
       }
       if (e.key === "ArrowDown") {
         e.preventDefault();
-        this.selectNext();
+        this.focusNext();
       }
       if (e.key === "ArrowUp") {
         e.preventDefault();
-        this.selectPrevious();
+        this.focusPrevious();
       }
       if (e.key === "Enter") {
         e.preventDefault();
@@ -89,13 +91,12 @@ export class DropdownMenu extends HTMLElement {
   checkEventAndCloseMenu(e: Event) {
     let closest;
     if (e instanceof FocusEvent) {
-      closest = (e.relatedTarget as HTMLElement)?.closest("dropdown-menu");
+      closest = (e.relatedTarget as HTMLElement)?.closest(DropdownSelect.NAME);
     } else {
-      closest = (e.target as HTMLElement)?.closest("dropdown-menu");
+      closest = (e.target as HTMLElement)?.closest(DropdownSelect.NAME);
     }
     if (closest === null || closest !== this) {
       if (this.classList.contains("open")) {
-        this.textEl.innerText = this.placeholder;
         this.closeMenu();
       }
     }
@@ -120,7 +121,7 @@ export class DropdownMenu extends HTMLElement {
   // }
   // }
 
-  addOptionToMenu(option: HTMLDivElement) {
+  addOptionToMenu(option: HTMLElement) {
     const value = option.getAttribute("data-value") || "";
     const optionEl = document.createElement("option");
     optionEl.setAttribute("value", value);
@@ -135,7 +136,7 @@ export class DropdownMenu extends HTMLElement {
       this.closeMenu();
     });
     option.addEventListener("mousemove", (e) => {
-      this.focusedEl = e.target as HTMLDivElement;
+      this.focusedEl = (e.target as HTMLElement).closest(".menu-item");
       this.updateList();
     });
     this.menu.append(option);
@@ -154,31 +155,24 @@ export class DropdownMenu extends HTMLElement {
   }
 
   updateList() {
-    const selectedValue = this.selectedEl?.getAttribute("data-value");
-    const activeValue = this.focusedEl?.getAttribute("data-value");
     for (const option of this.options) {
-      if (
-        selectedValue &&
-        option.getAttribute("data-value") === selectedValue
-      ) {
-        const clone = option.cloneNode(true);
-        this.textEl.innerHTML = "";
-        this.textEl.appendChild(clone);
-        this.selectEl.value = selectedValue;
+      if (option === this.selectedEl) {
+        const text = option.getAttribute("data-text");
+        if (text !== null) {
+          this.textEl.innerText = text;
+        } else {
+          const clone = option.cloneNode(true);
+          this.textEl.innerHTML = "";
+          this.textEl.appendChild(clone);
+        }
+        this.selectEl.value = option.getAttribute("data-value") ?? "";
         option.classList.add("selected");
       } else {
         option.classList.remove("selected");
       }
 
-      if (
-        this.focusedEl &&
-        activeValue &&
-        option.getAttribute("data-value") === activeValue
-      ) {
+      if (option === this.focusedEl) {
         option.classList.add("active");
-        this.focusedEl.scrollIntoView({
-          block: "nearest",
-        });
       } else {
         option.classList.remove("active");
       }
@@ -193,14 +187,34 @@ export class DropdownMenu extends HTMLElement {
     }
   }
 
-  setSelected(element: HTMLDivElement) {
-    this.selectedEl = element as HTMLDivElement;
+  setSelected(element: HTMLElement) {
+    this.selectedEl = element;
+    if (this.selectedEl.getAttribute("data-text") !== null) {
+      this.style.height = "";
+    } else {
+      const height = this.selectedEl.offsetHeight;
+      this.style.height = `${height}px`;
+    }
     this.updateList();
   }
 
-  setFocused(element: HTMLDivElement) {
-    this.focusedEl = element as HTMLDivElement;
+  setFocused(element: HTMLElement, scrollTo = false) {
+    this.focusedEl = element;
+    if (scrollTo) {
+      this.focusedEl.scrollIntoView({
+        block: "nearest",
+      });
+    }
     this.updateList();
+  }
+
+  openMenu() {
+    this.classList.add("open");
+    if (this.selectedEl !== null) {
+      this.setFocused(this.selectedEl);
+    } else {
+      this.updateList();
+    }
   }
 
   closeMenu() {
@@ -209,20 +223,16 @@ export class DropdownMenu extends HTMLElement {
       this.textEl.classList.remove("filtered");
       this.inputEl.value = "";
       this.search = "";
-      this.updateList();
     }
   }
 
-  openMenu() {
-    this.classList.add("open");
-  }
-
-  selectNext() {
+  focusNext() {
     if (this.isMenuOpen) {
       if (this.focusedEl !== null) {
         let nextEl = null;
         if (this.search !== "") {
           let currentEl = this.focusedEl;
+          // We loop through all items until we found the next item matching the filter
           while (currentEl.nextElementSibling !== null) {
             if (this.matchSearch(currentEl.nextElementSibling)) {
               nextEl = currentEl.nextElementSibling;
@@ -234,7 +244,7 @@ export class DropdownMenu extends HTMLElement {
           nextEl = this.focusedEl.nextElementSibling;
         }
         if (nextEl !== null) {
-          this.setFocused(nextEl as HTMLDivElement);
+          this.setFocused(nextEl as HTMLDivElement, true);
         }
       }
     } else {
@@ -242,7 +252,7 @@ export class DropdownMenu extends HTMLElement {
     }
   }
 
-  selectPrevious() {
+  focusPrevious() {
     if (this.isMenuOpen) {
       if (this.focusedEl !== null) {
         let previousEl = null;
@@ -259,7 +269,7 @@ export class DropdownMenu extends HTMLElement {
           previousEl = this.focusedEl.previousElementSibling;
         }
         if (previousEl !== null) {
-          this.setFocused(previousEl as HTMLDivElement);
+          this.setFocused(previousEl as HTMLDivElement, true);
         }
       }
     } else {
@@ -271,18 +281,18 @@ export class DropdownMenu extends HTMLElement {
     return this.options.find((o) => o.getAttribute("data-value") === value);
   }
 
+  matchSearch(element: Element): boolean {
+    return (
+      element.textContent?.toLowerCase().includes(this.search.toLowerCase()) ||
+      false
+    );
+  }
+
   get isMenuOpen() {
     return this.classList.contains("open");
   }
 
   get filteredOptions() {
     return this.options.filter((o) => this.matchSearch(o));
-  }
-
-  matchSearch(element: Element): boolean {
-    return (
-      element.textContent?.toLowerCase().includes(this.search.toLowerCase()) ||
-      false
-    );
   }
 }
