@@ -1,6 +1,6 @@
-import "@fortawesome/fontawesome-free/css/all.min.css";
+import "./style.scss";
+import { Select } from "./select/Select.ts";
 
-import "../lib/style.scss";
-import "./style.css";
-import { DropdownSelect } from "../lib/DropdownSelect.ts";
-DropdownSelect.register();
+Select.register();
+
+export { Select };

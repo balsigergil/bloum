@@ -2,13 +2,12 @@ import { resolve } from "path";
 import { defineConfig } from "vite";
 
 export default defineConfig({
+  root: "example",
   build: {
     copyPublicDir: false,
     lib: {
-      // Could also be a dictionary or array of multiple entry points
-      entry: resolve(__dirname, "lib/main.ts"),
+      entry: resolve(__dirname, "src/main.ts"),
       name: "Bloom",
-      // the proper extensions will be added
       fileName: "bloom",
     },
   },

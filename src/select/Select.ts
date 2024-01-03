@@ -1,4 +1,5 @@
-export class DropdownSelect extends HTMLElement {
+export class Select extends HTMLElement {
+  static NAME = "bl-select";
   private selectEl!: HTMLSelectElement;
   private inputEl!: HTMLInputElement;
   private options: HTMLElement[] = [];
@@ -9,18 +10,9 @@ export class DropdownSelect extends HTMLElement {
   private search: string = "";
   private selectedEl: HTMLElement | null = null;
   private focusedEl: HTMLElement | null = null;
-  static NAME = "dropdown-select";
-
-  constructor() {
-    super();
-  }
 
   static register() {
-    customElements.define(this.NAME, DropdownSelect);
-  }
-
-  static get observedAttributes() {
-    return ["selected"];
+    customElements.define(this.NAME, Select);
   }
 
   connectedCallback() {
@@ -42,7 +34,7 @@ export class DropdownSelect extends HTMLElement {
     this.inputEl.addEventListener("click", () => this.openMenu());
     this.inputEl.addEventListener("focus", () => this.openMenu());
     this.inputEl.addEventListener("blur", (e) =>
-      this.checkEventAndCloseMenu(e),
+      this.checkEventAndCloseMenu(e)
     );
     this.inputEl.addEventListener("keydown", (e) => {
       if (e.key === "Escape") {
@@ -91,9 +83,9 @@ export class DropdownSelect extends HTMLElement {
   checkEventAndCloseMenu(e: Event) {
     let closest;
     if (e instanceof FocusEvent) {
-      closest = (e.relatedTarget as HTMLElement)?.closest(DropdownSelect.NAME);
+      closest = (e.relatedTarget as HTMLElement)?.closest(Select.NAME);
     } else {
-      closest = (e.target as HTMLElement)?.closest(DropdownSelect.NAME);
+      closest = (e.target as HTMLElement)?.closest(Select.NAME);
     }
     if (closest === null || closest !== this) {
       if (this.classList.contains("open")) {
@@ -105,21 +97,6 @@ export class DropdownSelect extends HTMLElement {
   disconnectedCallback() {
     document.removeEventListener("click", this.onClick);
   }
-
-  // attributeChangedCallback(name: string, oldValue: any, newValue: any) {
-  // if (oldValue !== newValue) {
-  //     if (this.selectEl !== undefined && name === "selected") {
-  //         this.selectEl.value = newValue;
-  //         this.textEl.innerText =
-  //             this.options.find((o) => o.value === newValue)?.innerText ||
-  //             this.placeholder;
-  //     }
-  //
-  //     if (name === "placeholder") {
-  //         this.placeholder = newValue;
-  //     }
-  // }
-  // }
 
   addOptionToMenu(option: HTMLElement) {
     const value = option.getAttribute("data-value") || "";

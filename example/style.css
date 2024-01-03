@@ -9,15 +9,18 @@ body {
 }
 
 .demo {
-  font-size: 1.2rem;
 }
 
-dropdown-select .title {
+bl-select .title {
   font-weight: bold;
   font-size: 1.2em;
 }
 
-dropdown-select .description {
+bl-select .description {
   font-size: 0.875em;
   color: #444;
+}
+
+bl-switch {
+  font-size: 3rem;
 }
