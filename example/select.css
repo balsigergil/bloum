@@ -1,0 +1,19 @@
+bl-select.mytheme {
+  @apply rounded border-2 border-gray-400;
+
+  --bl-padding: 0.5rem;
+}
+
+bl-select.mytheme .bl-select-menu-wrapper {
+  @apply rounded shadow border border-gray-300;
+  transform: translateY(calc(100% + 0.5rem));
+}
+
+bl-select.mytheme .bl-select-menu-item {
+  &.focus {
+    @apply bg-gray-200;
+  }
+  &.selected {
+    @apply bg-gray-300;
+  }
+}

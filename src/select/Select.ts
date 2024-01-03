@@ -28,6 +28,11 @@ export class Select extends HTMLElement {
     this.text.classList.add("bl-select-text");
     this.text.innerText = this.placeholder;
 
+    this.menu = document.createElement("div");
+    this.menu.classList.add("bl-select-menu-wrapper");
+    this.menu.tabIndex = -1;
+    this.options.forEach((o) => this.addOptionToMenu(o));
+
     this.input = document.createElement("input");
     this.input.setAttribute("type", "search");
     this.input.classList.add("bl-select-search-input");
@@ -66,11 +71,6 @@ export class Select extends HTMLElement {
     if (this.options.length > 0) {
       this.setFocused(this.options[0]);
     }
-
-    this.menu = document.createElement("div");
-    this.menu.classList.add("bl-select-menu-wrapper");
-    this.menu.tabIndex = -1;
-    this.options.forEach((o) => this.addOptionToMenu(o));
 
     this.onClick = (e: MouseEvent) => {
       this.checkEventAndCloseMenu(e);
@@ -137,6 +137,7 @@ export class Select extends HTMLElement {
   }
 
   updateList() {
+    let count = 0;
     for (const option of this.options) {
       if (option === this.selectedItem) {
         const clone = option.cloneNode(true);
@@ -164,8 +165,23 @@ export class Select extends HTMLElement {
         option.textContent?.toLowerCase().includes(this.search.toLowerCase())
       ) {
         option.classList.remove("filtered");
+        count++;
       } else {
         option.classList.add("filtered");
+      }
+    }
+    if (this.menu !== undefined) {
+      if (count === 0) {
+        const noResults = document.createElement("div");
+        noResults.classList.add("bl-select-menu-item");
+        noResults.classList.add("no-results");
+        noResults.textContent = "No results";
+        this.menu.append(noResults);
+      } else {
+        const noResults = this.menu.querySelector(".no-results");
+        if (noResults !== null) {
+          noResults.remove();
+        }
       }
     }
   }
