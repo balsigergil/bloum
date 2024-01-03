@@ -10,10 +10,10 @@ bl-select {
   --bl-bg-color-selected: #ddd;
 
   &.open {
-    .dropdown-search-input {
+    .bl-select-search-input {
       border-bottom: none;
     }
-    .dropdown-menu-wrapper {
+    .bl-select-menu-wrapper {
       visibility: visible;
       pointer-events: auto;
       opacity: 1;
@@ -21,8 +21,8 @@ bl-select {
   }
 
   &:hover {
-    .dropdown-search-input,
-    .dropdown-menu-wrapper {
+    .bl-select-search-input,
+    .bl-select-menu-wrapper {
       border-color: var(--bl-border-color-hover);
     }
   }
@@ -31,7 +31,7 @@ bl-select {
     display: none;
   }
 
-  .dropdown-text {
+  .bl-select-text {
     position: absolute;
     height: 100%;
     display: flex;
@@ -40,11 +40,11 @@ bl-select {
     user-select: none;
   }
 
-  .dropdown-text.filtered {
+  .bl-select-text.filtered {
     display: none;
   }
 
-  .dropdown-search-input {
+  .bl-select-search-input {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -58,11 +58,11 @@ bl-select {
     font: inherit;
   }
 
-  .dropdown-search-input:focus ~ .dropdown-text {
+  .bl-select-search-input:focus ~ .bl-select-text {
     color: var(--bl-text-color-focus);
   }
 
-  .dropdown-menu-wrapper {
+  .bl-select-menu-wrapper {
     position: absolute;
     width: 100%;
     left: 0;
@@ -80,14 +80,14 @@ bl-select {
     overflow-inline: hidden;
     backface-visibility: hidden;
 
-    .menu-item {
+    .bl-select-menu-item {
       padding: 0.5em;
       cursor: pointer;
 
       &.filtered {
         display: none;
       }
-      &.active {
+      &.focus {
         background-color: var(--bl-bg-color-active);
       }
       &.selected {
