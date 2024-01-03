@@ -1,7 +1,5 @@
 bl-select.mytheme {
   @apply rounded border-2 border-gray-400;
-
-  --bl-padding: 0.5rem;
 }
 
 bl-select.mytheme .bl-select-menu-wrapper {
