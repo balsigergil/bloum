@@ -6,6 +6,8 @@
   - [ ] Multiple selection (tags)
   - [ ] Searchable / Not searchable
   - [ ] Disabled
+  - [ ] Loading
+  - [ ] Aria compatibility
 - [ ] Modal
 - [ ] Switch
 - [ ] DatePicker / TimePicker / Calendar
@@ -14,8 +16,12 @@
 - [ ] Accordion
 - [ ] Tabs
 - [ ] Popover
-- [ ] ColorPicker
+- [ ] Color picker
 - [ ] DataTable
 - [ ] Slider
-- [ ] RadioGroup
+- [ ] Radio/Select group
 - [ ] WYSIWYG Editor
+
+# Tests
+- [ ] Unit tests
+- [ ] E2E tests

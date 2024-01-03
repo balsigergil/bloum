@@ -7,13 +7,13 @@ bl-select.mytheme {
 bl-select.mytheme .bl-select-menu-wrapper {
   @apply rounded shadow border border-gray-300;
   transform: translateY(calc(100% + 0.5rem));
+
+  transition: all 150ms ease-in-out;
 }
 
-bl-select.mytheme .bl-select-menu-item {
-  &.focus {
-    @apply bg-gray-200;
-  }
-  &.selected {
-    @apply bg-gray-300;
-  }
+bl-select.mytheme .bl-select-menu-item.focus {
+  @apply bg-gray-200;
+}
+bl-select.mytheme .bl-select-menu-item.selected {
+  @apply bg-gray-300;
 }

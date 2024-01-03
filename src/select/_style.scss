@@ -13,13 +13,6 @@ bl-select {
     }
   }
 
-  &:hover {
-    .bl-select-search-input,
-    .bl-select-menu-wrapper {
-      border-color: var(--bl-border-color-hover);
-    }
-  }
-
   select {
     display: none;
   }
@@ -68,6 +61,7 @@ bl-select {
     overflow-block: scroll;
     overflow-inline: hidden;
     backface-visibility: hidden;
+    user-select: none;
   }
 
   .bl-select-menu-item {
@@ -83,6 +77,10 @@ bl-select {
     &.selected {
       background-color: var(--bl-bg-color-selected);
     }
+
+    &.no-result {
+      cursor: default;
+    }
   }
 }
 
@@ -96,5 +94,35 @@ bl-select.bl-theme-classic {
   .bl-select-menu-wrapper {
     border-inline: 1px solid var(--bl-border-color);
     border-bottom: 1px solid var(--bl-border-color);
+  }
+
+  &:hover {
+    .bl-select-search-input,
+    .bl-select-menu-wrapper {
+      border-color: var(--bl-border-color-hover);
+    }
+  }
+}
+
+bl-select.bl-theme-modern {
+  border-radius: 0.25rem;
+  border: 1px solid #aaa;
+
+  --bl-padding: 0.5rem;
+
+  .bl-select-menu-wrapper {
+    border: 1px solid #aaa;
+    border-radius: 0.25rem;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+    transform: translateY(calc(100% + 0.5rem));
+
+    .bl-select-menu-item {
+      &.focus {
+        background-color: #eee;
+      }
+      &.selected {
+        background-color: #ddd;
+      }
+    }
   }
 }

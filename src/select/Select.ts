@@ -11,6 +11,7 @@ export class Select extends HTMLElement {
   private search: string = "";
   private selectedItemIndex: number | null = null;
   private focusedItemIndex: number | null = null;
+  private noResultText: string = "No result";
 
   static register() {
     customElements.define(this.NAME, Select);
@@ -79,6 +80,9 @@ export class Select extends HTMLElement {
     const theme = this.getAttribute("theme") ?? "unstyled";
     this.classList.add(`bl-theme-${theme}`);
 
+    this.noResultText =
+      this.getAttribute("no-result-text") || this.noResultText;
+
     this.append(this.select, this.input, this.text, this.menu);
   }
 
@@ -86,18 +90,12 @@ export class Select extends HTMLElement {
     document.removeEventListener("click", this.onClick);
   }
 
-  checkEventAndCloseMenu(e: Event) {
-    let closest;
-    if (e instanceof FocusEvent) {
-      closest = (e.relatedTarget as HTMLElement)?.closest(Select.NAME);
-    } else {
-      closest = (e.target as HTMLElement)?.closest(Select.NAME);
-    }
-    if (closest === null || closest !== this) {
-      if (this.classList.contains("open")) {
-        this.closeMenu();
-      }
-    }
+  get isMenuOpen() {
+    return this.classList.contains("open");
+  }
+
+  get filteredOptions() {
+    return this.options.filter((_, i) => this.matchSearch(i));
   }
 
   addOptionToMenu(option: HTMLElement, index: number) {
@@ -121,33 +119,14 @@ export class Select extends HTMLElement {
     option.addEventListener("mousemove", () => {
       const index = option.getAttribute("data-index");
       if (index !== null) {
-        this.setFocused(parseInt(index));
+        this.setFocused(parseInt(index), false);
       }
       this.updateList();
     });
     this.menu.append(option);
   }
 
-  onInput() {
-    this.openMenu();
-    this.search = this.input.value || "";
-    const options = this.filteredOptions;
-    if (options.length > 0) {
-      const index = this.options[0].getAttribute("data-index");
-      if (index !== null) {
-        this.setFocused(parseInt(index));
-      }
-    }
-    this.updateList();
-    if (this.search !== "") {
-      this.text.classList.add("filtered");
-    } else {
-      this.text.classList.remove("filtered");
-    }
-  }
-
   updateList() {
-    console.log("Update list");
     let count = 0;
     for (let i = 0; i < this.options.length; i++) {
       const option = this.options[i];
@@ -182,35 +161,14 @@ export class Select extends HTMLElement {
         option.classList.add("filtered");
       }
     }
-    if (this.menu !== undefined) {
-      if (count === 0) {
-        const noResults = document.createElement("div");
-        noResults.classList.add("bl-select-menu-item");
-        noResults.classList.add("no-results");
-        noResults.textContent = "No results";
-        this.menu.append(noResults);
-      } else {
-        const noResults = this.menu.querySelector(".no-results");
-        if (noResults !== null) {
-          noResults.remove();
-        }
-      }
+    this.menu.querySelectorAll(".no-result").forEach((n) => n.remove());
+    if (count === 0) {
+      const noResult = document.createElement("div");
+      noResult.classList.add("bl-select-menu-item");
+      noResult.classList.add("no-result");
+      noResult.textContent = this.noResultText;
+      this.menu.append(noResult);
     }
-  }
-
-  setSelected(index: number) {
-    this.selectedItemIndex = index;
-    this.updateList();
-  }
-
-  setFocused(index: number, scrollTo = false) {
-    this.focusedItemIndex = index;
-    if (scrollTo) {
-      this.options[index].scrollIntoView({
-        block: "nearest",
-      });
-    }
-    this.updateList();
   }
 
   openMenu() {
@@ -231,7 +189,54 @@ export class Select extends HTMLElement {
     }
   }
 
-  focusNext() {
+  private onInput() {
+    this.openMenu();
+    this.search = this.input.value || "";
+    const options = this.filteredOptions;
+    if (options.length > 0) {
+      const index = this.options[0].getAttribute("data-index");
+      if (index !== null) {
+        this.setFocused(parseInt(index));
+      }
+    }
+    this.updateList();
+    if (this.search !== "") {
+      this.text.classList.add("filtered");
+    } else {
+      this.text.classList.remove("filtered");
+    }
+  }
+
+  private checkEventAndCloseMenu(e: Event) {
+    let closest;
+    if (e instanceof FocusEvent) {
+      closest = (e.relatedTarget as HTMLElement)?.closest(Select.NAME);
+    } else {
+      closest = (e.target as HTMLElement)?.closest(Select.NAME);
+    }
+    if (closest === null || closest !== this) {
+      if (this.classList.contains("open")) {
+        this.closeMenu();
+      }
+    }
+  }
+
+  private setSelected(index: number) {
+    this.selectedItemIndex = index;
+    this.updateList();
+  }
+
+  private setFocused(index: number, scrollTo = true) {
+    this.focusedItemIndex = index;
+    if (scrollTo) {
+      this.options[index].scrollIntoView({
+        block: "nearest",
+      });
+    }
+    this.updateList();
+  }
+
+  private focusNext() {
     if (this.isMenuOpen) {
       if (this.focusedItemIndex !== null) {
         let nextIndex = null;
@@ -258,7 +263,7 @@ export class Select extends HTMLElement {
     }
   }
 
-  focusPrevious() {
+  private focusPrevious() {
     if (this.isMenuOpen) {
       if (this.focusedItemIndex !== null) {
         let previousIndex = null;
@@ -284,7 +289,7 @@ export class Select extends HTMLElement {
     }
   }
 
-  getOptionByValue(value: string): number | null {
+  private getOptionByValue(value: string): number | null {
     for (let i = 0; i < this.options.length; i++) {
       if (this.options[i].getAttribute("data-value") === value) {
         return i;
@@ -293,19 +298,11 @@ export class Select extends HTMLElement {
     return null;
   }
 
-  matchSearch(index: number): boolean {
+  private matchSearch(index: number): boolean {
     return (
       this.options[index].textContent
         ?.toLowerCase()
         .includes(this.search.toLowerCase()) || false
     );
-  }
-
-  get isMenuOpen() {
-    return this.classList.contains("open");
-  }
-
-  get filteredOptions() {
-    return this.options.filter((_, i) => this.matchSearch(i));
   }
 }
