@@ -4,15 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bloom</title>
+    <script type="module" src="/main.ts" defer></script>
   </head>
   <body>
-    <div style="display: flex; flex-direction: column; gap: 1rem">
-      <bl-select
-        placeholder="Choose a pet"
-        selected="3"
-        name="myname"
-        class="demo"
-      >
+    <div class="m-4 space-y-4">
+      <bl-select placeholder="Choose a pet" selected="3" theme="classic">
         <div data-text="Cat" data-value="0">
           <i class="fa-solid fa-cat"></i>
           <div class="title">Cat</div>
@@ -148,14 +144,13 @@
       </bl-select>
 
       <form id="myform">
-        <bl-select name="person">
-          <option>Jean</option>
-          <option>Albert</option>
-          <option>Nicolas</option>
-          <option>Esnest</option>
+        <bl-select name="person" class="mytheme">
+          <div data-value="0">Jean</div>
+          <div data-value="1">Albert</div>
+          <div data-value="2">Nicolas</div>
+          <div data-value="3">Esnest</div>
         </bl-select>
       </form>
     </div>
-    <script type="module" src="/main.ts"></script>
   </body>
 </html>

@@ -61,6 +61,7 @@ export class Select extends HTMLElement {
     const selectedEl = this.getOptionByValue(selected);
     if (selectedEl !== undefined) {
       this.setSelected(selectedEl);
+    } else {
     }
     if (this.options.length > 0) {
       this.setFocused(this.options[0]);
@@ -75,6 +76,9 @@ export class Select extends HTMLElement {
       this.checkEventAndCloseMenu(e);
     };
     document.addEventListener("click", this.onClick);
+
+    const theme = this.getAttribute("theme") ?? "unstyled";
+    this.classList.add(`bl-theme-${theme}`);
 
     this.append(this.select, this.input, this.text, this.menu);
   }
@@ -112,7 +116,9 @@ export class Select extends HTMLElement {
       this.closeMenu();
     });
     option.addEventListener("mousemove", (e) => {
-      this.focusedEl = (e.target as HTMLElement).closest(".menu-item");
+      this.focusedEl = (e.target as HTMLElement).closest(
+        ".bl-select-menu-item",
+      );
       this.updateList();
     });
     this.menu.append(option);
@@ -133,14 +139,15 @@ export class Select extends HTMLElement {
   updateList() {
     for (const option of this.options) {
       if (option === this.selectedItem) {
-        const text = option.getAttribute("data-text");
-        if (text !== null) {
-          this.text.innerText = text;
-        } else {
-          const clone = option.cloneNode(true);
-          this.text.innerHTML = "";
-          this.text.appendChild(clone);
-        }
+        const clone = option.cloneNode(true);
+        (clone as Element).classList.remove(
+          "bl-select-menu-item",
+          "focus",
+          "selected",
+          "filtered",
+        );
+        this.text.innerHTML = "";
+        this.text.appendChild(clone);
         this.select.value = option.getAttribute("data-value") ?? "";
         option.classList.add("selected");
       } else {
@@ -165,12 +172,6 @@ export class Select extends HTMLElement {
 
   setSelected(element: HTMLElement) {
     this.selectedItem = element;
-    if (this.selectedItem.getAttribute("data-text") !== null) {
-      this.style.height = "";
-    } else {
-      const height = this.selectedItem.offsetHeight;
-      this.style.height = `${height}px`;
-    }
     this.updateList();
   }
 

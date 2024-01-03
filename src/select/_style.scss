@@ -1,13 +1,6 @@
 bl-select {
   position: relative;
   display: block;
-  height: 2em;
-
-  --bl-text-color-focus: #777;
-  --bl-border-color: #aaa;
-  --bl-border-color-hover: #777;
-  --bl-bg-color-active: #eee;
-  --bl-bg-color-selected: #ddd;
 
   &.open {
     .bl-select-search-input {
@@ -32,34 +25,32 @@ bl-select {
   }
 
   .bl-select-text {
-    position: absolute;
-    height: 100%;
     display: flex;
     align-items: center;
-    margin-left: 0.5em;
     user-select: none;
+    padding: var(--bl-padding);
   }
 
   .bl-select-text.filtered {
-    display: none;
+    visibility: hidden;
   }
 
   .bl-select-search-input {
     position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
-    inset: 0;
     background-color: transparent;
     appearance: none;
     outline: none;
-    padding: 0.5em;
+    padding: var(--bl-padding);
     z-index: 5;
     border: 1px solid var(--bl-border-color);
     font: inherit;
   }
 
   .bl-select-search-input:focus ~ .bl-select-text {
-    color: var(--bl-text-color-focus);
+    opacity: 0.6;
   }
 
   .bl-select-menu-wrapper {
@@ -73,26 +64,37 @@ bl-select {
     opacity: 0;
     background-color: #fff;
     z-index: 10;
-    border-inline: 1px solid var(--bl-border-color);
-    border-bottom: 1px solid var(--bl-border-color);
     max-height: 15em;
     overflow-block: scroll;
     overflow-inline: hidden;
     backface-visibility: hidden;
+  }
 
-    .bl-select-menu-item {
-      padding: 0.5em;
-      cursor: pointer;
+  .bl-select-menu-item {
+    padding: var(--bl-padding);
+    cursor: pointer;
 
-      &.filtered {
-        display: none;
-      }
-      &.focus {
-        background-color: var(--bl-bg-color-active);
-      }
-      &.selected {
-        background-color: var(--bl-bg-color-selected);
-      }
+    &.filtered {
+      display: none;
     }
+    &.focus {
+      background-color: var(--bl-bg-color-active);
+    }
+    &.selected {
+      background-color: var(--bl-bg-color-selected);
+    }
+  }
+}
+
+bl-select.bl-theme-classic {
+  --bl-border-color: #aaa;
+  --bl-border-color-hover: #777;
+  --bl-bg-color-active: #eee;
+  --bl-bg-color-selected: #ddd;
+  --bl-padding: 0.5em;
+
+  .bl-select-menu-wrapper {
+    border-inline: 1px solid var(--bl-border-color);
+    border-bottom: 1px solid var(--bl-border-color);
   }
 }

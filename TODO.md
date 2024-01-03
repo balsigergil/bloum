@@ -1,6 +1,11 @@
 # Components
 
 - [x] Select
+  - [ ] Caret
+  - [ ] Clearable
+  - [ ] Multiple selection (tags)
+  - [ ] Searchable / Not searchable
+  - [ ] Disabled
 - [ ] Modal
 - [ ] Switch
 - [ ] DatePicker / TimePicker / Calendar
