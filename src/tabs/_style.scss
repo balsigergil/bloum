@@ -1,0 +1,28 @@
+.bl-tabs {
+  display: block;
+}
+
+.bl-tab-list {
+  display: flex;
+  gap: 1em;
+
+  .bl-tab {
+    cursor: pointer;
+  }
+
+  .bl-tab.selected {
+    text-decoration: underline;
+  }
+}
+
+.bl-tab-panels {
+  display: block;
+}
+
+.bl-tab-panel {
+  display: none;
+}
+
+.bl-tab-panel.show {
+  display: block;
+}

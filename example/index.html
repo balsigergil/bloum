@@ -169,18 +169,35 @@
         </button>
       </form>
 
-      <button
-        class="px-2 py-1 mt-2 bg-blue-600 text-white rounded focus-visible:ring focus-visible:ring-gray-800 focus-visible:ring-offset-4"
-        data-modal="#mymodal"
-      >
-        Open modal
-      </button>
-      <button
-        class="px-2 py-1 mt-2 bg-blue-600 text-white rounded focus-visible:ring focus-visible:ring-gray-800 focus-visible:ring-offset-4"
-        data-alert="#myalert"
-      >
-        Open alert dialog
-      </button>
+      <div>
+        <button
+          class="px-2 py-1 mt-2 bg-blue-600 text-white rounded focus-visible:ring focus-visible:ring-gray-800 focus-visible:ring-offset-4"
+          data-modal="#mymodal"
+        >
+          Open modal
+        </button>
+        <button
+          class="px-2 py-1 mt-2 bg-blue-600 text-white rounded focus-visible:ring focus-visible:ring-gray-800 focus-visible:ring-offset-4"
+          data-alert="#myalert"
+        >
+          Open alert dialog
+        </button>
+      </div>
+
+      <bl-tabs>
+        <bl-tab-list>
+          <bl-tab>Tab 1</bl-tab>
+          <bl-tab>Tab 2</bl-tab>
+          <bl-tab>Tab 3</bl-tab>
+          <bl-tab>Tab 4</bl-tab>
+        </bl-tab-list>
+        <bl-tab-panels>
+          <bl-tab-panel>Tab 1 content</bl-tab-panel>
+          <bl-tab-panel>Tab 2 content</bl-tab-panel>
+          <bl-tab-panel>Tab 3 content</bl-tab-panel>
+          <bl-tab-panel>Tab 4 content</bl-tab-panel>
+        </bl-tab-panels>
+      </bl-tabs>
     </div>
     <bl-modal title="Modal title" id="mymodal">
       <p>

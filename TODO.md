@@ -10,7 +10,8 @@
   - [ ] Aria compatibility
 - [x] Modal
 - [x] Alert dialog
-- [ ] Tabs
+- [x] Tabs
+  - [ ] Anchor links
 - [ ] DatePicker / TimePicker / Calendar
 - [ ] Color picker
 - [ ] Toast
