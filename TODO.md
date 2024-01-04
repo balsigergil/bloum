@@ -1,23 +1,23 @@
 # Components
 
 - [x] Select
-  - [ ] Caret
+  - [x] Caret
   - [ ] Clearable
   - [ ] Multiple selection (tags)
   - [ ] Searchable / Not searchable
   - [ ] Disabled
   - [ ] Loading
   - [ ] Aria compatibility
-- [ ] Modal
-- [ ] Switch
-- [ ] DatePicker / TimePicker / Calendar
-- [ ] Dialog
-- [ ] Toast
-- [ ] Accordion
+- [x] Modal
+- [x] Alert dialog
 - [ ] Tabs
-- [ ] Popover
+- [ ] DatePicker / TimePicker / Calendar
 - [ ] Color picker
+- [ ] Toast
+- [ ] Accordion / Disclosure
+- [ ] Popover
 - [ ] DataTable
+- [ ] Switch
 - [ ] Slider
 - [ ] Radio/Select group
 - [ ] WYSIWYG Editor

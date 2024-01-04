@@ -1,4 +1,4 @@
-bl-modal {
+.bl-modal {
   position: fixed;
   z-index: 100;
   inset: 0;
@@ -46,11 +46,11 @@ bl-modal {
   }
 }
 
-bl-modal.open {
+.bl-modal.open {
   display: flex;
 }
 
-bl-modal.show {
+.bl-modal.show {
   animation: fadeIn 150ms both ease-in-out;
 
   .bl-modal-wrapper {
@@ -58,7 +58,7 @@ bl-modal.show {
   }
 }
 
-bl-modal:not(.show) {
+.bl-modal:not(.show) {
   animation: fadeOut 150ms both ease-in-out;
 
   .bl-modal-wrapper {

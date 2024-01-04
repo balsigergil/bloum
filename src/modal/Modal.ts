@@ -9,8 +9,8 @@ export class Modal extends HTMLElement {
     document.querySelectorAll<HTMLElement>("[data-modal]").forEach((el) => {
       el.addEventListener("click", (e) => {
         e.preventDefault();
-        const modalSelector = el.getAttribute("data-modal");
-        const modal = document.querySelector<Modal>(modalSelector!);
+        const modalSelector = el.getAttribute("data-modal")!;
+        const modal = document.querySelector<Modal>(modalSelector);
         if (modal) {
           modal.open(el);
         }
@@ -19,6 +19,7 @@ export class Modal extends HTMLElement {
   }
 
   connectedCallback() {
+    this.classList.add("bl-modal");
     const modalWrapper = document.createElement("div");
     modalWrapper.classList.add("bl-modal-wrapper");
 
@@ -71,7 +72,6 @@ export class Modal extends HTMLElement {
     this.listeners.push(keyDownListener);
 
     this.append(modalWrapper);
-    this.open();
   }
 
   disconnectedCallback() {

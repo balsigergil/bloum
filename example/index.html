@@ -175,6 +175,12 @@
       >
         Open modal
       </button>
+      <button
+        class="px-2 py-1 mt-2 bg-blue-600 text-white rounded focus-visible:ring focus-visible:ring-gray-800 focus-visible:ring-offset-4"
+        data-alert="#myalert"
+      >
+        Open alert dialog
+      </button>
     </div>
     <bl-modal title="Modal title" id="mymodal">
       <p>
@@ -307,5 +313,12 @@
         voluptatibus.
       </p>
     </bl-modal>
+    <bl-alert-dialog title="Are you sure?" id="myalert" cancel=".cancel">
+      <div>Are you sure you want to do this? This is permanent!</div>
+      <div class="flex space-x-2 mt-3 justify-end">
+        <button class="bg-gray-300 py-2 px-3 rounded cancel">No</button>
+        <button class="bg-red-600 text-white py-2 px-3 rounded">Yes</button>
+      </div>
+    </bl-alert-dialog>
   </body>
 </html>
