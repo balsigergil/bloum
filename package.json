@@ -10,13 +10,13 @@
   "files": [
     "dist"
   ],
-  "main": "./dist/bloom.umd.cjs",
-  "module": "./dist/bloom.js",
+  "main": "dist/bloom.umd.cjs",
+  "module": "dist/bloom.js",
+  "types": "dist/types/main.d.ts",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview",
-    "types": "tsc "
+    "types": "tsc -p tsconfig.types.json"
   },
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^6.4.0",

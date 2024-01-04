@@ -1,4 +1,6 @@
 import "./style.scss";
+import "./modern.scss";
+
 import { Select } from "./select/Select.ts";
 import { Modal } from "./modal/Modal.ts";
 import { AlertDialog } from "./alert-dialog/AlertDialog.ts";
