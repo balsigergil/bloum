@@ -1,0 +1,98 @@
+bl-modal {
+  position: fixed;
+  z-index: 100;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: flex-start;
+
+  .bl-modal-wrapper {
+    margin-top: 5rem;
+    max-width: 1000px;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 4px;
+  }
+
+  .bl-modal-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    color: #343434;
+  }
+  .bl-modal-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+  .bl-modal-close-button {
+    cursor: pointer;
+    width: 12px;
+    aspect-ratio: 1;
+  }
+}
+
+bl-modal.open {
+  display: flex;
+}
+
+bl-modal.show {
+  animation: fadeIn 150ms both ease-in-out;
+
+  .bl-modal-wrapper {
+    animation: scaleIn 150ms both ease-in-out;
+  }
+}
+
+bl-modal:not(.show) {
+  animation: fadeOut 150ms both ease-in-out;
+
+  .bl-modal-wrapper {
+    animation: scaleOut 150ms both ease-in-out;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0);
+    backdrop-filter: blur(0);
+  }
+  to {
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(4px);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(4px);
+  }
+  to {
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0);
+    backdrop-filter: blur(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.96);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes scaleOut {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0.96);
+  }
+}
