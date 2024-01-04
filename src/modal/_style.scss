@@ -19,6 +19,7 @@ bl-modal {
   .bl-modal-header {
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
     margin-bottom: 1rem;
     color: #343434;
   }
@@ -28,8 +29,18 @@ bl-modal {
   }
   .bl-modal-close-button {
     cursor: pointer;
-    width: 12px;
-    aspect-ratio: 1;
+    svg {
+      width: 12px;
+      aspect-ratio: 1;
+    }
+
+    &:focus-visible {
+      outline: none;
+      border-radius: 2px;
+      box-shadow:
+        0 0 0 4px #fff,
+        0 0 0 6px #000;
+    }
   }
 }
 

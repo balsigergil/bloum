@@ -1,5 +1,6 @@
 export class Modal extends HTMLElement {
   static NAME = "bl-modal";
+  private listeners: Array<(e: any) => void> = [];
 
   static register() {
     customElements.define(this.NAME, Modal);
@@ -46,7 +47,34 @@ export class Modal extends HTMLElement {
       }
     });
 
+    const keyDownListener = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && this.isOpen()) {
+        this.close();
+      }
+      if (e.key === "Tab" && this.isOpen()) {
+        const focusableElements = this.querySelectorAll<HTMLElement>(
+          "a, button, input, textarea, select, details, [tabindex]:not([tabindex='-1'])",
+        );
+        const first = focusableElements[0];
+        const last = focusableElements[focusableElements.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+    };
+    addEventListener("keydown", keyDownListener);
+    this.listeners.push(keyDownListener);
+
     this.append(modalWrapper);
+    this.open();
+  }
+
+  disconnectedCallback() {
+    this.listeners.forEach((l) => removeEventListener("keydown", l));
   }
 
   open() {
