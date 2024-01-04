@@ -1,17 +1,18 @@
 export class Modal extends HTMLElement {
   static NAME = "bl-modal";
   private listeners: Array<(e: any) => void> = [];
+  private sourceElement?: HTMLElement;
 
   static register() {
     customElements.define(this.NAME, Modal);
 
-    document.querySelectorAll("[data-modal]").forEach((el) => {
+    document.querySelectorAll<HTMLElement>("[data-modal]").forEach((el) => {
       el.addEventListener("click", (e) => {
         e.preventDefault();
         const modalSelector = el.getAttribute("data-modal");
         const modal = document.querySelector<Modal>(modalSelector!);
         if (modal) {
-          modal.open();
+          modal.open(el);
         }
       });
     });
@@ -77,13 +78,23 @@ export class Modal extends HTMLElement {
     this.listeners.forEach((l) => removeEventListener("keydown", l));
   }
 
-  open() {
+  open(sourceElement?: HTMLElement) {
+    this.sourceElement = sourceElement;
     this.classList.add("open", "show");
+    const focusableElements = this.querySelectorAll<HTMLElement>(
+      "a, button, input, textarea, select, details, [tabindex]:not([tabindex='-1'])",
+    );
+    const first = focusableElements[0];
+    first.focus();
   }
 
   close() {
     this.classList.remove("show");
     setTimeout(() => this.classList.remove("open"), 300);
+    if (this.sourceElement) {
+      this.sourceElement.focus();
+      this.sourceElement = undefined;
+    }
   }
 
   isOpen() {
