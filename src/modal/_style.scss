@@ -7,10 +7,12 @@ bl-modal {
   display: none;
   justify-content: center;
   align-items: flex-start;
+  overflow-x: hidden;
+  overflow-y: auto;
 
   .bl-modal-wrapper {
-    margin-top: 5rem;
-    max-width: 1000px;
+    margin-block: 5rem;
+    max-width: min(1000px, 100% - 2rem);
     background-color: #fff;
     padding: 2rem;
     border-radius: 4px;
