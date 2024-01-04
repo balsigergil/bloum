@@ -11,7 +11,7 @@
 - [x] Modal
 - [x] Alert dialog
 - [x] Tabs
-  - [ ] Anchor links
+  - [x] Anchor links
 - [ ] DatePicker / TimePicker / Calendar
 - [ ] Color picker
 - [ ] Toast
