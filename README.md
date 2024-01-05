@@ -7,13 +7,13 @@
     <br>
     <br>
     <div align="center">
-      <img alt="size" src="https://img.shields.io/bundlephobia/minzip/bloum?style=for-the-badge">
-      <a aria-label="NPM version" href="https://www.npmjs.com/package/bloum">
-        <img alt="version" src="https://img.shields.io/npm/v/bloum.svg?style=for-the-badge">
-      </a>
-      <a aria-label="License" href="https://github.com/balsigergil/bloum/blob/main/LICENSE">
-        <img alt="license" src="https://img.shields.io/npm/l/bloum.svg?style=for-the-badge">
-      </a>
+        <img alt="size" src="https://img.shields.io/bundlephobia/minzip/bloum?style=for-the-badge">
+        <a aria-label="NPM version" href="https://www.npmjs.com/package/bloum">
+            <img alt="version" src="https://img.shields.io/npm/v/bloum.svg?style=for-the-badge">
+        </a>
+        <a aria-label="License" href="https://github.com/balsigergil/bloum/blob/main/LICENSE">
+            <img alt="license" src="https://img.shields.io/npm/l/bloum.svg?style=for-the-badge">
+        </a>
         <a aria-label="Build status" href="https://github.com/balsigergil/bloum/blob/main/LICENSE">
             <img alt="build-status" src="https://img.shields.io/github/actions/workflow/status/balsigergil/bloum/build?style=for-the-badge">
         </a>
@@ -23,10 +23,10 @@
 
 ## Table of Contents
 
-- 📋 [Documentation](#documentation)
 - 🚀 [Features](#features)
 - 📦 [Installation](#installation)
 - 💻 [Usage](#usage)
+- 📋 [Documentation](#documentation)
 - 📝 [Contributing](#contributing)
 - 💬 [Community](#community)
 - ⚖️ [License](#license)
