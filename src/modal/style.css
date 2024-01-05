@@ -25,10 +25,12 @@
     margin-bottom: 1rem;
     color: #343434;
   }
+
   .bl-modal-title {
     font-size: 1.25rem;
     font-weight: 600;
   }
+
   .bl-modal-close-button {
     cursor: pointer;
     svg {

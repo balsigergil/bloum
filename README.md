@@ -3,7 +3,7 @@
         <img src="https://github.com/balsigergil/bloum/blob/main/.github/bloum.png" height="128" alt="logo">
     </a>
     <h1>Bloum</h1>
-    <strong>An unstyled, lightweight yet powerful web components library with customization capabilities.</strong>
+    <strong>A lightweight yet powerful unstyled web components library with customization capabilities.</strong>
     <br>
     <br>
     <div align="center">
