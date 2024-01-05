@@ -37,7 +37,7 @@
 
 - [x] Select
     - [x] Caret
-    - [ ] Clearable
+    - [x] Clearable
     - [ ] Multiple selection (tags)
     - [ ] Searchable / Not searchable
     - [ ] Disabled
@@ -52,6 +52,9 @@
 - [ ] Toast
 - [ ] Accordion / Disclosure
 - [ ] Popover
+- [ ] Tooltip
+- [ ] PIN input
+- [ ] Phone input
 - [ ] DataTable
 - [ ] Switch
 - [ ] Slider
