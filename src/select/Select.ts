@@ -13,6 +13,7 @@ export class Select extends HTMLElement {
   private focusedItemIndex: number | null = null;
   private noResultText: string = "No result";
   private clearable: boolean = false;
+  private searchable: boolean = false;
 
   static register() {
     customElements.define(this.NAME, Select);
@@ -25,21 +26,25 @@ export class Select extends HTMLElement {
     this.placeholder = this.getAttribute("placeholder") || "Choose an option";
 
     this.clearable = this.hasAttribute("clearable");
+    this.searchable = this.hasAttribute("searchable");
 
     this.select = document.createElement("select");
     this.select.name = this.getAttribute("name") || "";
+
+    const container = document.createElement("div");
+    container.classList.add("bl-select-value-container");
 
     this.text = document.createElement("div");
     this.text.classList.add("bl-select-text");
     this.text.innerHTML = `<div class="bl-select-placeholder">${this.placeholder}</div>`;
 
-    this.menu = document.createElement("div");
-    this.menu.classList.add("bl-select-menu-wrapper");
-    this.menu.tabIndex = -1;
-    this.options.forEach((o, i) => this.addOptionToMenu(o, i));
-
     this.input = document.createElement("input");
     this.input.setAttribute("type", "search");
+    this.input.setAttribute("autocomplete", "off");
+    this.input.setAttribute("spellcheck", "false");
+    if (!this.searchable) {
+      this.input.readOnly = true;
+    }
     this.input.classList.add("bl-select-search-input");
     this.input.addEventListener("input", () => this.onInput());
     this.input.addEventListener("click", () => this.openMenu());
@@ -65,7 +70,17 @@ export class Select extends HTMLElement {
         this.input.blur();
         this.closeMenu();
       }
+      if (!this.searchable) {
+        // Prevent the mouse cursor from disappearing when the user presses a key and the input is readonly
+        e.preventDefault();
+      }
     });
+    container.append(this.text, this.input);
+
+    this.menu = document.createElement("div");
+    this.menu.classList.add("bl-select-menu-wrapper");
+    this.menu.tabIndex = -1;
+    this.options.forEach((o, i) => this.addOptionToMenu(o, i));
 
     const indicators = document.createElement("div");
     indicators.classList.add("bl-select-indicators");
@@ -105,7 +120,7 @@ export class Select extends HTMLElement {
     this.noResultText =
       this.getAttribute("no-result-text") || this.noResultText;
 
-    this.append(this.select, this.input, this.text, indicators, this.menu);
+    this.append(this.select, container, indicators, this.menu);
   }
 
   disconnectedCallback() {

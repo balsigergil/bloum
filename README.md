@@ -38,11 +38,11 @@
 - [x] Select
     - [x] Caret
     - [x] Clearable
+    - [x] Searchable / Not searchable
     - [ ] Multiple selection (tags)
-    - [ ] Searchable / Not searchable
     - [ ] Disabled
-    - [ ] Loading
     - [ ] Aria compatibility
+    - [ ] Fuzzy search
 - [x] Modal
 - [x] Alert dialog
 - [x] Tabs
