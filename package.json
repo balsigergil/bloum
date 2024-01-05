@@ -25,8 +25,8 @@
   "files": [
     "dist"
   ],
-  "main": "./dist/bloum.min.cjs",
-  "module": "./dist/bloum.min.js",
+  "main": "./dist/bloum.umd.min.js",
+  "module": "./dist/bloum.esm.min.js",
   "types": "./dist/types/index.d.ts",
   "scripts": {
     "dev": "cd example && vite",
@@ -36,10 +36,9 @@
     "build:types": "tsc -p tsconfig.types.json"
   },
   "devDependencies": {
-    "@fortawesome/fontawesome-free": "^6.4.0",
+    "@fortawesome/fontawesome-free": "^6.5.1",
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^11.1.5",
-    "@types/node": "^20.4.5",
     "autoprefixer": "^10.4.16",
     "concurrently": "^8.2.2",
     "cssnano": "^6.0.3",
@@ -47,13 +46,13 @@
     "postcss-cli": "^11.0.0",
     "postcss-import": "^16.0.0",
     "postcss-nesting": "^12.0.2",
-    "prettier": "^3.0.0",
+    "prettier": "^3.1.1",
     "rimraf": "^5.0.5",
     "rollup": "^4.9.3",
-    "sass": "^1.64.1",
+    "sass": "^1.69.7",
     "tailwindcss": "^3.4.0",
     "tslib": "^2.6.2",
-    "typescript": "^5.0.2",
-    "vite": "^4.4.5"
+    "typescript": "^5.3.3",
+    "vite": "^5.0.11"
   }
 }
