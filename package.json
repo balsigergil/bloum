@@ -2,7 +2,7 @@
   "name": "bloum",
   "version": "0.0.1",
   "author": "Gil Balsiger <gil.balsiger@gmail.com>",
-  "description": "A lightweight yet powerful unstyled web components library with customization capabilities.",
+  "description": "A lightweight yet powerful, unstyled web components library with customization capabilities.",
   "license": "MIT",
   "keywords": [
     "web-components",

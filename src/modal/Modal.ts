@@ -39,6 +39,9 @@ export class Modal extends HTMLElement {
     modalBody.classList.add("bl-modal-body");
     modalBody.append(...this.childNodes);
 
+    const theme = this.getAttribute("theme") ?? "unstyled";
+    this.classList.add(`bl-theme-${theme}`);
+
     modalWrapper.append(modalHeader, modalBody);
 
     this.addEventListener("click", (e) => {
@@ -78,7 +81,8 @@ export class Modal extends HTMLElement {
 
   open(sourceElement?: HTMLElement) {
     this.sourceElement = sourceElement;
-    this.classList.add("open", "show");
+    this.style.display = "flex";
+    setTimeout(() => this.classList.add("open"), 0);
     const focusableElements = this.querySelectorAll<HTMLElement>(
       "a, button, input, textarea, select, details, [tabindex]:not([tabindex='-1'])",
     );
@@ -87,8 +91,8 @@ export class Modal extends HTMLElement {
   }
 
   close() {
-    this.classList.remove("show");
-    setTimeout(() => this.classList.remove("open"), 300);
+    this.classList.remove("open");
+    setTimeout(() => (this.style.display = "none"), 150);
     if (this.sourceElement) {
       this.sourceElement.focus();
       this.sourceElement = undefined;

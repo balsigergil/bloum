@@ -4,14 +4,9 @@
 
 .bl-tab-list {
   display: flex;
-  gap: 1em;
 
   .bl-tab {
     cursor: pointer;
-  }
-
-  .bl-tab.selected {
-    text-decoration: underline;
   }
 }
 

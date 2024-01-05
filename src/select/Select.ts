@@ -18,6 +18,7 @@ export class Select extends HTMLElement {
   }
 
   connectedCallback() {
+    this.classList.add("bl-select");
     this.options = [...this.children] as HTMLElement[];
 
     this.placeholder = this.getAttribute("placeholder") || "Choose an option";

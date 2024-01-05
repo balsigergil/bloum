@@ -1,0 +1,43 @@
+.bl-modal.bl-theme-modern {
+  opacity: 0;
+  backdrop-filter: blur(var(--bl-modal-blur, 4px));
+  background-color: rgba(0, 0, 0, var(--bl-modal-background-opacity, 0.3));
+  transition: opacity 150ms linear;
+
+  --bl-modal-margin-y: 4rem;
+  --bl-modal-width: 800px;
+  --bl-modal-padding: 2rem;
+  --bl-modal-border-radius: 8px;
+
+  .bl-modal-wrapper {
+    transition: transform 300ms ease-out;
+    transform: translateY(-1rem);
+  }
+
+  .bl-modal-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+
+  .bl-modal-close-button {
+    appearance: none;
+    border: none;
+    background: none;
+
+    &:focus-visible {
+      outline: none;
+      border-radius: 2px;
+      box-shadow:
+        0 0 0 4px #fff,
+        0 0 0 6px #000;
+    }
+  }
+
+  &.open {
+    opacity: 1;
+
+    .bl-modal-wrapper {
+      transform: translateY(0);
+    }
+  }
+}

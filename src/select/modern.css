@@ -1,0 +1,23 @@
+.bl-select.bl-theme-modern {
+  border-radius: 0.25rem;
+  border: 1px solid #aaa;
+
+  --bl-padding: 0.5rem;
+
+  .bl-select-menu-wrapper {
+    border: 1px solid #aaa;
+    border-radius: 0.25rem;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+    transform: translateY(calc(100% + 0.5rem));
+
+    .bl-select-menu-item {
+      &.focus {
+        background-color: #eee;
+      }
+
+      &.selected {
+        background-color: #ddd;
+      }
+    }
+  }
+}
