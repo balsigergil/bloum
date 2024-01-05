@@ -4,10 +4,16 @@
     "module": "ESNext",
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
     "skipLibCheck": true,
+    "moduleResolution": "Bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
     "emitDeclarationOnly": true,
     "declaration": true,
-    "declarationDir": "dist/types",
-    "allowImportingTsExtensions": true
+    "outDir": "dist/types",
   },
   "include": ["src"]
 }

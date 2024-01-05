@@ -1,5 +1,5 @@
-import { Tab } from "./Tab.ts";
-import { TabPanel } from "./TabPanel.ts";
+import { Tab } from "./Tab";
+import { TabPanel } from "./TabPanel";
 
 export class Tabs extends HTMLElement {
   static NAME = "bl-tabs";

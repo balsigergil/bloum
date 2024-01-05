@@ -1,31 +1,58 @@
 {
-  "name": "bloom",
+  "name": "bloum",
   "version": "0.0.1",
-  "description": "",
-  "author": {
-    "name": "Gil Balsiger",
-    "email": "gil.balsiger@gmail.com"
+  "author": "Gil Balsiger <gil.balsiger@gmail.com>",
+  "description": "An unstyled, lightweight yet powerful webcomponents library with customization capabilities.",
+  "license": "MIT",
+  "keywords": [
+    "webcomponents",
+    "custom-elements",
+    "components",
+    "ui",
+    "design-system",
+    "library",
+    "uikit"
+  ],
+  "homepage": "https://github.com/balsigergil/bloum",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/balsigergil/bloum.git"
+  },
+  "bugs": {
+    "url": "https://github.com/balsigergil/bloum/issues"
   },
   "type": "module",
   "files": [
     "dist"
   ],
-  "main": "dist/bloom.umd.cjs",
-  "module": "dist/bloom.js",
-  "types": "dist/types/main.d.ts",
+  "main": "./dist/bloum.min.cjs",
+  "module": "./dist/bloum.min.js",
+  "types": "./dist/types/index.d.ts",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "types": "tsc -p tsconfig.types.json"
+    "dev": "cd example && vite",
+    "build": "rimraf dist && concurrently \"npm run build:js\" \"npm run build:css\" \"npm run build:types\"",
+    "build:js": "rollup -c rollup.config.js",
+    "build:css": "postcss src/*.css --dir dist --ext .min.css",
+    "build:types": "tsc -p tsconfig.types.json"
   },
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^6.4.0",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^11.1.5",
     "@types/node": "^20.4.5",
     "autoprefixer": "^10.4.16",
-    "postcss": "^8.4.32",
+    "concurrently": "^8.2.2",
+    "cssnano": "^6.0.3",
+    "postcss": "^8.4.33",
+    "postcss-cli": "^11.0.0",
+    "postcss-import": "^16.0.0",
+    "postcss-nesting": "^12.0.2",
     "prettier": "^3.0.0",
+    "rimraf": "^5.0.5",
+    "rollup": "^4.9.3",
     "sass": "^1.64.1",
     "tailwindcss": "^3.4.0",
+    "tslib": "^2.6.2",
     "typescript": "^5.0.2",
     "vite": "^4.4.5"
   }

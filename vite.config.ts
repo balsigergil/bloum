@@ -8,7 +8,7 @@ export default defineConfig({
     emptyOutDir: true,
     copyPublicDir: false,
     lib: {
-      entry: resolve(__dirname, "src/main.ts"),
+      entry: resolve(__dirname, "src/index.ts"),
       name: "Bloom",
       fileName: "bloom",
       formats: ["es", "umd"],

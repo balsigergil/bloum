@@ -1,4 +1,4 @@
-import { Modal } from "../modal/Modal.ts";
+import { Modal } from "../modal/Modal";
 
 export class AlertDialog extends Modal {
   static NAME = "bl-alert-dialog";
