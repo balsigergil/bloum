@@ -78,10 +78,10 @@ export class Tabs extends HTMLElement {
           if (focus) {
             tabs[i].focus();
           }
-          tabs[i].classList.add("selected");
+          tabs[i].classList.add("active");
         } else {
           tabs[i].tabIndex = -1;
-          tabs[i].classList.remove("selected");
+          tabs[i].classList.remove("active");
         }
       }
     } else if (index < 0) {

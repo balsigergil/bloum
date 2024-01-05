@@ -1,3 +1,7 @@
 @import "./select/modern.css";
 @import "./tabs/modern.css";
 @import "./modal/modern.css";
+
+:root {
+  --bl-color-primary: #1d4ed8;
+}

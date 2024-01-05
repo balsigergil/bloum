@@ -12,6 +12,8 @@
   .bl-modal-wrapper {
     transition: transform 300ms ease-out;
     transform: translateY(-1rem);
+    display: grid;
+    gap: 1rem;
   }
 
   .bl-modal-title {
