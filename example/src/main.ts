@@ -1,10 +1,10 @@
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
-import "../src/style.css";
+import "../../src/style.css";
 
 import "./tailwind.css";
 import "./select.css";
-import "../src/index";
+import "../../src";
 
 document.getElementById("myform")?.addEventListener("submit", (e) => {
   e.preventDefault();

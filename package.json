@@ -5,13 +5,13 @@
   "description": "A lightweight yet powerful unstyled web components library with customization capabilities.",
   "license": "MIT",
   "keywords": [
-    "webcomponents",
+    "web-components",
     "custom-elements",
     "components",
     "ui",
-    "design-system",
     "library",
-    "uikit"
+    "headless",
+    "unstyled"
   ],
   "homepage": "https://github.com/balsigergil/bloum",
   "repository": {

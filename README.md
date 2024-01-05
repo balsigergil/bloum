@@ -33,6 +33,31 @@
 
 ## Features
 
+### TODO
+
+- [x] Select
+    - [x] Caret
+    - [ ] Clearable
+    - [ ] Multiple selection (tags)
+    - [ ] Searchable / Not searchable
+    - [ ] Disabled
+    - [ ] Loading
+    - [ ] Aria compatibility
+- [x] Modal
+- [x] Alert dialog
+- [x] Tabs
+    - [x] Anchor links
+- [ ] DatePicker / TimePicker / Calendar
+- [ ] Color picker
+- [ ] Toast
+- [ ] Accordion / Disclosure
+- [ ] Popover
+- [ ] DataTable
+- [ ] Switch
+- [ ] Slider
+- [ ] Radio/Select group
+- [ ] WYSIWYG Editor
+
 ## Installation
 
 ## Usage
@@ -44,3 +69,5 @@
 ## Community
 
 ## License
+
+Bloum is [MIT licensed](./LICENSE) &copy; [Gil Balsiger](https://github.com/balsigergil)
