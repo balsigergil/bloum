@@ -25,7 +25,7 @@
     gap: 0.25rem;
   }
 
-  .bl-select-selected-item {
+  .multiple .bl-select-selected-item {
     background-color: #ddd;
     padding: 0.125em 0.3em;
     border-radius: 4px;

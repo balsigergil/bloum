@@ -84,7 +84,7 @@ export class Select extends HTMLElement {
       if (e.key === "Enter") {
         e.preventDefault();
         if (this.focusedItemIndex !== null) {
-          this.toggleSelected(this.focusedItemIndex);
+          this.setSelected(this.focusedItemIndex);
         }
         this.closeMenu();
       }
@@ -167,10 +167,9 @@ export class Select extends HTMLElement {
     option.addEventListener("click", (e) => {
       e.preventDefault();
       e.stopPropagation();
-      this.select.value = value;
       const index = option.getAttribute("data-index");
       if (index !== null) {
-        this.toggleSelected(parseInt(index));
+        this.setSelected(parseInt(index));
       }
       this.closeMenu();
     });
@@ -213,11 +212,14 @@ export class Select extends HTMLElement {
           closeButton.addEventListener("click", (e) => {
             e.preventDefault();
             e.stopPropagation();
-            this.toggleSelected(i);
+            this.setSelected(i);
           });
           selectedItem.append(closeButton);
+          this.text.append(selectedItem);
+        } else {
+          this.text.innerHTML = "";
+          this.text.append(selectedItem);
         }
-        this.text.append(selectedItem);
         option.classList.add("selected");
       } else {
         option.classList.remove("selected");
@@ -279,8 +281,7 @@ export class Select extends HTMLElement {
   }
 
   clear() {
-    this.selectedItems = [];
-    this.focusedItemIndex = null;
+    this.selectedItems = this.selectedItems.map(() => false);
     this.updateList();
   }
 
@@ -315,12 +316,13 @@ export class Select extends HTMLElement {
   }
 
   private setSelected(index: number) {
-    this.selectedItems[index] = true;
-    this.updateList();
-  }
-
-  private toggleSelected(index: number) {
-    this.selectedItems[index] = !this.selectedItems[index];
+    if (this.multiple) {
+      this.selectedItems[index] = !this.selectedItems[index];
+    } else {
+      for (let i = 0; i < this.selectedItems.length; i++) {
+        this.selectedItems[i] = index === i;
+      }
+    }
     this.updateList();
   }
 
