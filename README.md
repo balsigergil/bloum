@@ -39,7 +39,7 @@
     - [x] Caret
     - [x] Clearable
     - [x] Searchable / Not searchable
-    - [ ] Multiple selection
+    - [x] Multiple selection
     - [ ] Disabled
     - [ ] Aria compatibility
     - [ ] Create new option

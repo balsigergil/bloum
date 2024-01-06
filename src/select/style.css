@@ -76,10 +76,6 @@
     flex: 1;
   }
 
-  .bl-select-search-input:focus ~ .bl-select-text {
-    opacity: 0.6;
-  }
-
   .bl-select-menu-wrapper {
     position: absolute;
     width: 100%;
