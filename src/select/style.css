@@ -40,6 +40,10 @@
     visibility: hidden;
   }
 
+  .multiple:not(.has-value) .bl-select-text.filtered {
+    visibility: hidden;
+  }
+
   .bl-select-placeholder {
     color: #555;
   }

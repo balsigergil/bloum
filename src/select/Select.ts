@@ -33,6 +33,9 @@ export class Select extends HTMLElement {
 
     this.select = document.createElement("select");
     this.select.name = this.getAttribute("name") || "";
+    if (this.multiple) {
+      this.select.multiple = true;
+    }
 
     this.valueContainer = document.createElement("div");
     this.valueContainer.classList.add("bl-select-value-container");
@@ -75,9 +78,8 @@ export class Select extends HTMLElement {
       if (e.key === "Enter") {
         e.preventDefault();
         if (this.focusedItemIndex !== null) {
-          this.setSelected(this.focusedItemIndex);
+          this.toggleSelected(this.focusedItemIndex);
         }
-        this.input.blur();
         this.closeMenu();
       }
       if (!this.searchable && e.key !== "Tab") {
@@ -202,11 +204,11 @@ export class Select extends HTMLElement {
         );
         clone.classList.add("bl-select-selected-item");
         this.text.append(clone);
-        this.select.value = option.getAttribute("data-value") ?? "";
         option.classList.add("selected");
       } else {
         option.classList.remove("selected");
       }
+      (this.select.childNodes[i] as HTMLOptionElement).selected = isSelected;
 
       if (i === this.focusedItemIndex) {
         option.classList.add("focus");
@@ -252,6 +254,7 @@ export class Select extends HTMLElement {
     if (this.selectedItemIndex.length > 0) {
       this.setFocused(this.selectedItemIndex[0]);
     } else {
+      this.setFocused(0);
       this.updateList();
     }
   }
