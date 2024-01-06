@@ -3,7 +3,7 @@ import { Modal } from "../modal/Modal";
 export class AlertDialog extends Modal {
   static NAME = "bl-alert-dialog";
 
-  private cancelElement?: HTMLElement;
+  #cancelElement?: HTMLElement;
 
   static register() {
     customElements.define(this.NAME, AlertDialog);
@@ -28,16 +28,16 @@ export class AlertDialog extends Modal {
     if (cancelSelector) {
       const cancel = this.querySelector<HTMLElement>(cancelSelector);
       if (cancel) {
-        this.cancelElement = cancel;
-        this.cancelElement.addEventListener("click", () => this.close());
+        this.#cancelElement = cancel;
+        this.#cancelElement.addEventListener("click", () => this.close());
       }
     }
   }
 
   open(sourceElement?: HTMLElement) {
     super.open(sourceElement);
-    if (this.cancelElement) {
-      this.cancelElement.focus();
+    if (this.#cancelElement) {
+      this.#cancelElement.focus();
     }
   }
 }

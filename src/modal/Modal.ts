@@ -1,7 +1,8 @@
 export class Modal extends HTMLElement {
   static NAME = "bl-modal";
-  private listeners: Array<(e: any) => void> = [];
-  private sourceElement?: HTMLElement;
+
+  #listeners: Array<(e: any) => void> = [];
+  #sourceElement?: HTMLElement;
 
   static register() {
     customElements.define(this.NAME, Modal);
@@ -74,17 +75,17 @@ export class Modal extends HTMLElement {
       }
     };
     addEventListener("keydown", keyDownListener);
-    this.listeners.push(keyDownListener);
+    this.#listeners.push(keyDownListener);
 
     this.append(modalWrapper);
   }
 
   disconnectedCallback() {
-    this.listeners.forEach((l) => removeEventListener("keydown", l));
+    this.#listeners.forEach((l) => removeEventListener("keydown", l));
   }
 
   open(sourceElement?: HTMLElement) {
-    this.sourceElement = sourceElement;
+    this.#sourceElement = sourceElement;
     this.style.display = "flex";
     setTimeout(() => this.classList.add("open"), 0);
     const focusableElements = this.querySelectorAll<HTMLElement>(
@@ -97,9 +98,9 @@ export class Modal extends HTMLElement {
   close() {
     this.classList.remove("open");
     setTimeout(() => (this.style.display = "none"), 150);
-    if (this.sourceElement) {
-      this.sourceElement.focus();
-      this.sourceElement = undefined;
+    if (this.#sourceElement) {
+      this.#sourceElement.focus();
+      this.#sourceElement = undefined;
     }
   }
 

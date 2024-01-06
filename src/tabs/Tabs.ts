@@ -4,9 +4,9 @@ import { TabPanel } from "./TabPanel";
 export class Tabs extends HTMLElement {
   static NAME = "bl-tabs";
 
-  private selectedIndex = -1;
-  private tabCount = 0;
-  private useAnchor: boolean = false;
+  #selectedIndex = -1;
+  #tabCount = 0;
+  #useAnchor: boolean = false;
 
   static register() {
     customElements.define(this.NAME, Tabs);
@@ -15,7 +15,7 @@ export class Tabs extends HTMLElement {
   connectedCallback() {
     this.classList.add("bl-tabs");
     const tabs = this.querySelectorAll<Tab>("bl-tab");
-    this.tabCount = tabs.length;
+    this.#tabCount = tabs.length;
     tabs.forEach((t, i) =>
       t.addEventListener("click", (e) => {
         e.preventDefault();
@@ -24,7 +24,7 @@ export class Tabs extends HTMLElement {
     );
 
     const useAnchor = this.hasAttribute("use-anchor");
-    this.useAnchor = useAnchor;
+    this.#useAnchor = useAnchor;
     if (useAnchor) {
       const hash = window.location.hash;
       if (hash) {
@@ -44,10 +44,10 @@ export class Tabs extends HTMLElement {
 
     this.addEventListener("keydown", (e) => {
       if (e.key === "ArrowRight") {
-        this.selectNextTab();
+        this.#selectNextTab();
       }
       if (e.key === "ArrowLeft") {
-        this.selectPreviousTab();
+        this.#selectPreviousTab();
       }
     });
 
@@ -58,8 +58,8 @@ export class Tabs extends HTMLElement {
   }
 
   setSelected(index: number, focus: boolean = true) {
-    if (index !== this.selectedIndex && index >= 0) {
-      if (this.useAnchor) {
+    if (index !== this.#selectedIndex && index >= 0) {
+      if (this.#useAnchor) {
         const tabs = this.querySelectorAll<Tab>("bl-tab");
         const tab = tabs[index];
         const href = tab.getAttribute("href");
@@ -68,7 +68,7 @@ export class Tabs extends HTMLElement {
         }
       }
 
-      this.selectedIndex = index;
+      this.#selectedIndex = index;
       const panels = this.querySelectorAll<TabPanel>("bl-tab-panel");
       for (let i = 0; i < panels.length; i++) {
         if (i === index) {
@@ -97,11 +97,13 @@ export class Tabs extends HTMLElement {
     }
   }
 
-  private selectNextTab() {
-    this.setSelected((this.selectedIndex + 1) % this.tabCount);
+  #selectNextTab() {
+    this.setSelected((this.#selectedIndex + 1) % this.#tabCount);
   }
 
-  private selectPreviousTab() {
-    this.setSelected((this.selectedIndex - 1 + this.tabCount) % this.tabCount);
+  #selectPreviousTab() {
+    this.setSelected(
+      (this.#selectedIndex - 1 + this.#tabCount) % this.#tabCount,
+    );
   }
 }

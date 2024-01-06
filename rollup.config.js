@@ -17,5 +17,10 @@ export default defineConfig({
       name: "bloom",
     },
   ],
-  plugins: [typescript(), terser()],
+  plugins: [
+    typescript(),
+    terser({
+      keep_classnames: true,
+    }),
+  ],
 });
