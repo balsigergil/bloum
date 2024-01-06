@@ -23,16 +23,20 @@
     display: grid;
   }
 
+  .bl-select-value-container.multiple.has-value {
+    display: flex;
+  }
+
   .bl-select-text {
     grid-area: 1 / 1 / 1 / 1;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     user-select: none;
     padding: var(--bl-padding);
-    margin-right: 28px;
   }
 
-  .bl-select-text.filtered {
+  :not(.multiple) .bl-select-text.filtered {
     visibility: hidden;
   }
 
@@ -50,6 +54,12 @@
     border: 1px solid var(--bl-border-color);
     font: inherit;
     cursor: default;
+  }
+
+  .multiple .bl-select-search-input {
+    width: 100%;
+    min-width: 60px;
+    flex: 1;
   }
 
   .bl-select-search-input:focus ~ .bl-select-text {

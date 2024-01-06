@@ -12,3 +12,7 @@ body {
   max-width: min(1000px, 100% - 2rem);
   margin-inline: auto;
 }
+
+.selects > * + * {
+  margin-top: 1rem;
+}

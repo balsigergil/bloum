@@ -6,14 +6,16 @@ export class Select extends HTMLElement {
   private options: HTMLElement[] = [];
   private menu!: HTMLDivElement;
   private text!: HTMLDivElement;
+  private valueContainer!: HTMLDivElement;
   private placeholder = "Choose an item";
   private onClick!: (e: MouseEvent) => void;
   private search: string = "";
-  private selectedItemIndex: number | null = null;
+  private selectedItemIndex: number[] = [];
   private focusedItemIndex: number | null = null;
   private noResultText: string = "No result";
   private clearable: boolean = false;
   private searchable: boolean = false;
+  private multiple: boolean = false;
 
   static register() {
     customElements.define(this.NAME, Select);
@@ -27,16 +29,25 @@ export class Select extends HTMLElement {
 
     this.clearable = this.hasAttribute("clearable");
     this.searchable = this.hasAttribute("searchable");
+    this.multiple = this.hasAttribute("multiple");
 
     this.select = document.createElement("select");
     this.select.name = this.getAttribute("name") || "";
 
-    const container = document.createElement("div");
-    container.classList.add("bl-select-value-container");
+    this.valueContainer = document.createElement("div");
+    this.valueContainer.classList.add("bl-select-value-container");
+    if (this.multiple) {
+      this.valueContainer.classList.add("multiple");
+    }
 
     this.text = document.createElement("div");
     this.text.classList.add("bl-select-text");
     this.text.innerHTML = `<div class="bl-select-placeholder">${this.placeholder}</div>`;
+    this.text.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      this.openMenu();
+    });
 
     this.input = document.createElement("input");
     this.input.setAttribute("type", "search");
@@ -47,7 +58,6 @@ export class Select extends HTMLElement {
     }
     this.input.classList.add("bl-select-search-input");
     this.input.addEventListener("input", () => this.onInput());
-    this.input.addEventListener("click", () => this.openMenu());
     this.input.addEventListener("focus", () => this.openMenu());
     this.input.addEventListener("blur", (e) => this.checkEventAndCloseMenu(e));
     this.input.addEventListener("keydown", (e) => {
@@ -70,12 +80,14 @@ export class Select extends HTMLElement {
         this.input.blur();
         this.closeMenu();
       }
-      if (!this.searchable) {
+      if (!this.searchable && e.key !== "Tab") {
         // Prevent the mouse cursor from disappearing when the user presses a key and the input is readonly
         e.preventDefault();
       }
     });
-    container.append(this.text, this.input);
+    this.valueContainer.append(this.text, this.input);
+
+    this.addEventListener("click", () => this.openMenu());
 
     this.menu = document.createElement("div");
     this.menu.classList.add("bl-select-menu-wrapper");
@@ -88,15 +100,15 @@ export class Select extends HTMLElement {
     const indicator = document.createElement("div");
     indicator.classList.add("bl-select-indicator");
     indicator.innerHTML = `<svg height="20" width="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"></path></svg>`;
-    indicator.addEventListener("click", () => {
-      this.input.focus();
-      this.openMenu();
-    });
 
     const clearButton = document.createElement("div");
     clearButton.classList.add("bl-select-clear-button");
     clearButton.innerHTML = `<svg height="20" width="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M14.348 14.849c-0.469 0.469-1.229 0.469-1.697 0l-2.651-3.030-2.651 3.029c-0.469 0.469-1.229 0.469-1.697 0-0.469-0.469-0.469-1.229 0-1.697l2.758-3.15-2.759-3.152c-0.469-0.469-0.469-1.228 0-1.697s1.228-0.469 1.697 0l2.652 3.031 2.651-3.031c0.469-0.469 1.228-0.469 1.697 0s0.469 1.229 0 1.697l-2.758 3.152 2.758 3.15c0.469 0.469 0.469 1.229 0 1.698z"></path></svg>`;
-    clearButton.addEventListener("click", () => this.clear());
+    clearButton.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      this.clear();
+    });
 
     indicators.append(clearButton, indicator);
 
@@ -120,7 +132,7 @@ export class Select extends HTMLElement {
     this.noResultText =
       this.getAttribute("no-result-text") || this.noResultText;
 
-    this.append(this.select, container, indicators, this.menu);
+    this.append(this.select, this.valueContainer, indicators, this.menu);
   }
 
   disconnectedCallback() {
@@ -146,10 +158,11 @@ export class Select extends HTMLElement {
     option.setAttribute("data-index", index.toString());
     option.addEventListener("click", (e) => {
       e.preventDefault();
+      e.stopPropagation();
       this.select.value = value;
       const index = option.getAttribute("data-index");
       if (index !== null) {
-        this.setSelected(parseInt(index));
+        this.toggleSelected(parseInt(index));
       }
       this.closeMenu();
     });
@@ -165,18 +178,30 @@ export class Select extends HTMLElement {
 
   updateList() {
     let count = 0;
+
+    if (this.selectedItemIndex.length > 0) {
+      this.text.innerHTML = "";
+    }
+
     for (let i = 0; i < this.options.length; i++) {
       const option = this.options[i];
-      if (i === this.selectedItemIndex) {
-        const clone = option.cloneNode(true);
-        (clone as Element).classList.remove(
+      let isSelected = false;
+      for (let j = 0; j < this.selectedItemIndex.length; j++) {
+        if (this.selectedItemIndex[j] === i) {
+          isSelected = true;
+          break;
+        }
+      }
+      if (isSelected) {
+        const clone = option.cloneNode(true) as HTMLElement;
+        clone.classList.remove(
           "bl-select-menu-item",
           "focus",
           "selected",
           "filtered",
         );
-        this.text.innerHTML = "";
-        this.text.appendChild(clone);
+        clone.classList.add("bl-select-selected-item");
+        this.text.append(clone);
         this.select.value = option.getAttribute("data-value") ?? "";
         option.classList.add("selected");
       } else {
@@ -199,6 +224,12 @@ export class Select extends HTMLElement {
       }
     }
 
+    if (this.selectedItemIndex.length > 0) {
+      this.valueContainer.classList.add("has-value");
+    } else {
+      this.valueContainer.classList.remove("has-value");
+    }
+
     this.menu.querySelectorAll(".no-result").forEach((n) => n.remove());
     if (count === 0) {
       const noResult = document.createElement("div");
@@ -208,7 +239,7 @@ export class Select extends HTMLElement {
       this.menu.append(noResult);
     }
 
-    if (this.selectedItemIndex !== null && this.clearable) {
+    if (this.selectedItemIndex.length > 0 && this.clearable) {
       this.querySelector(".bl-select-clear-button")?.classList.add("show");
     } else {
       this.querySelector(".bl-select-clear-button")?.classList.remove("show");
@@ -217,8 +248,9 @@ export class Select extends HTMLElement {
 
   openMenu() {
     this.classList.add("open");
-    if (this.selectedItemIndex !== null) {
-      this.setFocused(this.selectedItemIndex);
+    this.input.focus();
+    if (this.selectedItemIndex.length > 0) {
+      this.setFocused(this.selectedItemIndex[0]);
     } else {
       this.updateList();
     }
@@ -234,7 +266,7 @@ export class Select extends HTMLElement {
   }
 
   clear() {
-    this.selectedItemIndex = null;
+    this.selectedItemIndex = [];
     this.focusedItemIndex = null;
     this.text.innerHTML = `<div class="bl-select-placeholder">${this.placeholder}</div>`;
     this.select.value = "";
@@ -267,16 +299,36 @@ export class Select extends HTMLElement {
     } else {
       closest = (e.target as HTMLElement)?.closest(Select.NAME);
     }
-    if (closest === null || closest !== this) {
-      if (this.classList.contains("open")) {
-        this.closeMenu();
-      }
+    if (closest === null || closest === undefined || closest !== this) {
+      this.closeMenu();
     }
   }
 
   private setSelected(index: number) {
-    this.selectedItemIndex = index;
+    if (this.multiple) {
+      this.selectedItemIndex.push(index);
+    } else {
+      this.selectedItemIndex = [index];
+    }
     this.updateList();
+  }
+
+  private toggleSelected(index: number) {
+    if (this.multiple) {
+      const i = this.selectedItemIndex.indexOf(index);
+      if (i === -1) {
+        this.selectedItemIndex.push(index);
+      } else {
+        this.selectedItemIndex.splice(i, 1);
+      }
+    } else {
+      this.selectedItemIndex = [index];
+    }
+    if (this.selectedItemIndex.length === 0) {
+      this.clear();
+    } else {
+      this.updateList();
+    }
   }
 
   private setFocused(index: number, scrollTo = true) {

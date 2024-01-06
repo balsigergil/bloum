@@ -39,9 +39,10 @@
     - [x] Caret
     - [x] Clearable
     - [x] Searchable / Not searchable
-    - [ ] Multiple selection (tags)
+    - [ ] Multiple selection
     - [ ] Disabled
     - [ ] Aria compatibility
+    - [ ] Create new option
     - [ ] Fuzzy search
 - [x] Modal
 - [x] Alert dialog

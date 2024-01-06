@@ -35,6 +35,8 @@ export class Tabs extends HTMLElement {
         } else {
           this.setSelected(0, false);
         }
+      } else {
+        this.setSelected(0, false);
       }
     } else {
       this.setSelected(0, false);
