@@ -150,7 +150,7 @@ export class Select extends HTMLElement {
   }
 
   addOptionToMenu(option: HTMLElement, index: number) {
-    const value = option.getAttribute("data-value") || "";
+    const value = option.getAttribute("data-value") || index.toString();
     const optionEl = document.createElement("option");
     optionEl.setAttribute("value", value);
     this.select.append(optionEl);
@@ -195,6 +195,8 @@ export class Select extends HTMLElement {
         }
       }
       if (isSelected) {
+        const selectedItem = document.createElement("div");
+        selectedItem.classList.add("bl-select-selected-item");
         const clone = option.cloneNode(true) as HTMLElement;
         clone.classList.remove(
           "bl-select-menu-item",
@@ -202,8 +204,19 @@ export class Select extends HTMLElement {
           "selected",
           "filtered",
         );
-        clone.classList.add("bl-select-selected-item");
-        this.text.append(clone);
+        selectedItem.append(clone);
+        if (this.multiple) {
+          const closeButton = document.createElement("div");
+          closeButton.classList.add("bl-select-selected-item-close");
+          closeButton.innerText = "×";
+          closeButton.addEventListener("click", (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            this.toggleSelected(i);
+          });
+          selectedItem.append(closeButton);
+        }
+        this.text.append(selectedItem);
         option.classList.add("selected");
       } else {
         option.classList.remove("selected");
@@ -230,6 +243,7 @@ export class Select extends HTMLElement {
       this.valueContainer.classList.add("has-value");
     } else {
       this.valueContainer.classList.remove("has-value");
+      this.text.innerHTML = `<div class="bl-select-placeholder">${this.placeholder}</div>`;
     }
 
     this.menu.querySelectorAll(".no-result").forEach((n) => n.remove());
@@ -271,9 +285,6 @@ export class Select extends HTMLElement {
   clear() {
     this.selectedItemIndex = [];
     this.focusedItemIndex = null;
-    this.text.innerHTML = `<div class="bl-select-placeholder">${this.placeholder}</div>`;
-    this.select.value = "";
-    this.options.forEach((o) => o.classList.remove("selected"));
     this.updateList();
   }
 
@@ -327,11 +338,7 @@ export class Select extends HTMLElement {
     } else {
       this.selectedItemIndex = [index];
     }
-    if (this.selectedItemIndex.length === 0) {
-      this.clear();
-    } else {
-      this.updateList();
-    }
+    this.updateList();
   }
 
   private setFocused(index: number, scrollTo = true) {

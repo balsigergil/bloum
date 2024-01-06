@@ -36,6 +36,16 @@
     padding: var(--bl-padding);
   }
 
+  .bl-select-selected-item {
+    display: flex;
+    align-items: center;
+  }
+
+  .bl-select-selected-item-close {
+    cursor: pointer;
+    padding: 0 0.125em;
+  }
+
   :not(.multiple) .bl-select-text.filtered {
     visibility: hidden;
   }
