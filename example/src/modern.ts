@@ -1,7 +1,7 @@
 import "../../src";
 import "../../src/style.css";
 import "../../src/modern.css";
-import "./unstyled.css";
+import "./modern.css";
 
 document.querySelectorAll("form").forEach((f) =>
   f.addEventListener("submit", (e) => {

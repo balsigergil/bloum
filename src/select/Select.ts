@@ -1,7 +1,7 @@
 export class Select extends HTMLElement {
   static NAME = "bl-select";
 
-  private select!: HTMLSelectElement;
+  #select!: HTMLSelectElement;
   private input!: HTMLInputElement;
   private options: HTMLElement[] = [];
   private menu!: HTMLDivElement;
@@ -31,10 +31,10 @@ export class Select extends HTMLElement {
     this.searchable = this.hasAttribute("searchable");
     this.multiple = this.hasAttribute("multiple");
 
-    this.select = document.createElement("select");
-    this.select.name = this.getAttribute("name") || "";
+    this.#select = document.createElement("select");
+    this.#select.name = this.getAttribute("name") || "";
     if (this.multiple) {
-      this.select.multiple = true;
+      this.#select.multiple = true;
     }
 
     this.valueContainer = document.createElement("div");
@@ -140,7 +140,7 @@ export class Select extends HTMLElement {
     this.noResultText =
       this.getAttribute("no-result-text") || this.noResultText;
 
-    this.append(this.select, this.valueContainer, indicators, this.menu);
+    this.append(this.#select, this.valueContainer, indicators, this.menu);
   }
 
   disconnectedCallback() {
@@ -159,7 +159,7 @@ export class Select extends HTMLElement {
     const value = option.getAttribute("data-value") || index.toString();
     const optionEl = document.createElement("option");
     optionEl.setAttribute("value", value);
-    this.select.append(optionEl);
+    this.#select.append(optionEl);
 
     option.classList.add("bl-select-menu-item");
     option.setAttribute("data-value", value);
@@ -224,7 +224,7 @@ export class Select extends HTMLElement {
       } else {
         option.classList.remove("selected");
       }
-      (this.select.childNodes[i] as HTMLOptionElement).selected = isSelected;
+      (this.#select.childNodes[i] as HTMLOptionElement).selected = isSelected;
 
       if (i === this.focusedItemIndex) {
         option.classList.add("focus");

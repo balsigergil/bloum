@@ -29,14 +29,13 @@
   "module": "./dist/bloum.esm.min.js",
   "types": "./dist/types/index.d.ts",
   "scripts": {
-    "dev": "cd example && vite",
+    "dev": "npm run dev -w example",
     "build": "rimraf dist && concurrently \"npm run build:js\" \"npm run build:css\" \"npm run build:types\"",
     "build:js": "rollup -c rollup.config.js",
     "build:css": "postcss src/*.css --dir dist --ext .min.css",
     "build:types": "tsc -p tsconfig.types.json"
   },
   "devDependencies": {
-    "@fortawesome/fontawesome-free": "^6.5.1",
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^11.1.5",
     "autoprefixer": "^10.4.16",
@@ -50,10 +49,11 @@
     "prettier": "^3.1.1",
     "rimraf": "^5.0.5",
     "rollup": "^4.9.3",
-    "sass": "^1.69.7",
-    "tailwindcss": "^3.4.0",
     "tslib": "^2.6.2",
-    "typescript": "^5.3.3",
-    "vite": "^5.0.11"
-  }
+    "typescript": "^5.3.3"
+  },
+  "workspaces": [
+    "example",
+    "."
+  ]
 }
