@@ -10,7 +10,7 @@ export class Select extends HTMLElement {
   private placeholder = "Choose an item";
   private onClick!: (e: MouseEvent) => void;
   private search: string = "";
-  private selectedItemIndex: number[] = [];
+  private selectedItems: boolean[] = [];
   private focusedItemIndex: number | null = null;
   private noResultText: string = "No result";
   private clearable: boolean = false;
@@ -77,10 +77,8 @@ export class Select extends HTMLElement {
       }
       if (e.key === "Backspace" && this.input.value === "") {
         e.preventDefault();
-        if (this.selectedItemIndex.length > 0) {
-          this.toggleSelected(
-            this.selectedItemIndex[this.selectedItemIndex.length - 1],
-          );
+        if (this.selectedItems.length > 0) {
+          this.deselectLast();
         }
       }
       if (e.key === "Enter") {
@@ -184,24 +182,19 @@ export class Select extends HTMLElement {
       this.updateList();
     });
     this.menu.append(option);
+    this.selectedItems.push(false);
   }
 
   updateList() {
     let count = 0;
 
-    if (this.selectedItemIndex.length > 0) {
+    if (this.selectedItems.length > 0) {
       this.text.innerHTML = "";
     }
 
     for (let i = 0; i < this.options.length; i++) {
       const option = this.options[i];
-      let isSelected = false;
-      for (let j = 0; j < this.selectedItemIndex.length; j++) {
-        if (this.selectedItemIndex[j] === i) {
-          isSelected = true;
-          break;
-        }
-      }
+      let isSelected = this.selectedItems[i];
       if (isSelected) {
         const selectedItem = document.createElement("div");
         selectedItem.classList.add("bl-select-selected-item");
@@ -247,7 +240,7 @@ export class Select extends HTMLElement {
       }
     }
 
-    if (this.selectedItemIndex.length > 0) {
+    if (this.selectedCount > 0) {
       this.valueContainer.classList.add("has-value");
     } else {
       this.valueContainer.classList.remove("has-value");
@@ -263,7 +256,7 @@ export class Select extends HTMLElement {
       this.menu.append(noResult);
     }
 
-    if (this.selectedItemIndex.length > 0 && this.clearable) {
+    if (this.selectedCount > 0 && this.clearable) {
       this.querySelector(".bl-select-clear-button")?.classList.add("show");
     } else {
       this.querySelector(".bl-select-clear-button")?.classList.remove("show");
@@ -273,12 +266,7 @@ export class Select extends HTMLElement {
   openMenu() {
     this.classList.add("open");
     this.input.focus();
-    if (this.selectedItemIndex.length > 0) {
-      this.setFocused(this.selectedItemIndex[0]);
-    } else {
-      this.setFocused(0);
-      this.updateList();
-    }
+    this.setFocused(this.firstSelectedIndex() || 0);
   }
 
   closeMenu() {
@@ -291,7 +279,7 @@ export class Select extends HTMLElement {
   }
 
   clear() {
-    this.selectedItemIndex = [];
+    this.selectedItems = [];
     this.focusedItemIndex = null;
     this.updateList();
   }
@@ -327,26 +315,17 @@ export class Select extends HTMLElement {
   }
 
   private setSelected(index: number) {
-    if (this.multiple) {
-      this.selectedItemIndex.push(index);
-    } else {
-      this.selectedItemIndex = [index];
-    }
+    this.selectedItems[index] = true;
     this.updateList();
   }
 
   private toggleSelected(index: number) {
-    if (this.multiple) {
-      const i = this.selectedItemIndex.indexOf(index);
-      if (i === -1) {
-        this.selectedItemIndex.push(index);
-      } else {
-        this.selectedItemIndex.splice(i, 1);
-      }
-    } else {
-      this.selectedItemIndex = [index];
-    }
+    this.selectedItems[index] = !this.selectedItems[index];
     this.updateList();
+  }
+
+  private get selectedCount(): number {
+    return this.selectedItems.filter((s) => s).length;
   }
 
   private setFocused(index: number, scrollTo = true) {
@@ -357,6 +336,25 @@ export class Select extends HTMLElement {
       });
     }
     this.updateList();
+  }
+
+  private firstSelectedIndex(): number | null {
+    for (let i = 0; i < this.selectedItems.length; i++) {
+      if (this.selectedItems[i]) {
+        return i;
+      }
+    }
+    return null;
+  }
+
+  private deselectLast() {
+    for (let i = this.selectedItems.length - 1; i >= 0; i--) {
+      if (this.selectedItems[i]) {
+        this.selectedItems[i] = false;
+        this.updateList();
+        return;
+      }
+    }
   }
 
   private focusNext() {
