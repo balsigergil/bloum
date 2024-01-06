@@ -77,7 +77,7 @@ export class Select extends HTMLElement {
         e.preventDefault();
         this.#focusPrevious();
       }
-      if (e.key === "Backspace" && this.#input.value === "") {
+      if (e.key === "Backspace" && this.#input.value === "" && this.#multiple) {
         e.preventDefault();
         if (this.#selectedItems.length > 0) {
           this.#deselectLast();

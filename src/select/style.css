@@ -27,6 +27,10 @@
     display: flex;
   }
 
+  &.open .bl-select-value-container:has(input:focus) .bl-select-text {
+    opacity: 0.6;
+  }
+
   .bl-select-text {
     grid-area: 1 / 1 / 1 / 1;
     display: flex;
@@ -70,7 +74,7 @@
     cursor: default;
   }
 
-  .multiple .bl-select-search-input {
+  .bl-select-search-input .multiple .bl-select-search-input {
     width: 100%;
     min-width: 60px;
     flex: 1;
