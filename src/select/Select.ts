@@ -75,6 +75,14 @@ export class Select extends HTMLElement {
         e.preventDefault();
         this.focusPrevious();
       }
+      if (e.key === "Backspace" && this.input.value === "") {
+        e.preventDefault();
+        if (this.selectedItemIndex.length > 0) {
+          this.toggleSelected(
+            this.selectedItemIndex[this.selectedItemIndex.length - 1],
+          );
+        }
+      }
       if (e.key === "Enter") {
         e.preventDefault();
         if (this.focusedItemIndex !== null) {
