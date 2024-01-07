@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 
 test("click open menu", async ({ page }) => {
-  await page.goto("http://localhost:5173/");
+  await page.goto("/");
   const select = page.locator("bl-select").first();
   await select.click();
   await expect(select).toHaveClass(/open/);
@@ -12,7 +12,7 @@ test("click open menu", async ({ page }) => {
 });
 
 test("select then clear", async ({ page }) => {
-  await page.goto("http://localhost:5173/");
+  await page.goto("/");
   const select = page.locator("bl-select").first();
   await expect(select).toHaveAttribute("clearable", "");
   await select.click();
