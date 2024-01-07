@@ -33,11 +33,14 @@
     "build": "rimraf dist && concurrently \"npm run build:js\" \"npm run build:css\" \"npm run build:types\"",
     "build:js": "rollup -c rollup.config.js",
     "build:css": "postcss src/*.css --dir dist --ext .min.css",
-    "build:types": "tsc -p tsconfig.types.json"
+    "build:types": "tsc -p tsconfig.types.json",
+    "test": "vitest"
   },
   "devDependencies": {
+    "@playwright/test": "^1.40.1",
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^11.1.5",
+    "@types/node": "^20.10.6",
     "autoprefixer": "^10.4.16",
     "concurrently": "^8.2.2",
     "cssnano": "^6.0.3",
