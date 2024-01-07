@@ -6,7 +6,7 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "dev": "vite"
+    "dev": "vite --host 127.0.0.1 --port 5173"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.16",
