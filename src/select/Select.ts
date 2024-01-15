@@ -63,7 +63,7 @@ export class Select extends HTMLElement {
     this.#input.addEventListener("input", () => this.#onInput());
     this.#input.addEventListener("focus", () => this.openMenu());
     this.#input.addEventListener("blur", (e) =>
-      this.#checkEventAndCloseMenu(e)
+      this.#checkEventAndCloseMenu(e),
     );
     this.#input.addEventListener("keydown", (e) => {
       if (e.key === "Escape") {
@@ -136,9 +136,6 @@ export class Select extends HTMLElement {
     };
     document.addEventListener("click", this.#onClick);
 
-    const theme = this.getAttribute("theme") ?? "unstyled";
-    this.classList.add(`bl-theme-${theme}`);
-
     this.#noResultText =
       this.getAttribute("no-result-text") || this.#noResultText;
 
@@ -204,7 +201,7 @@ export class Select extends HTMLElement {
           "bl-select-menu-item",
           "focus",
           "selected",
-          "filtered"
+          "filtered",
         );
         selectedItem.append(clone);
         if (this.#multiple) {

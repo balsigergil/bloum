@@ -1,4 +1,4 @@
-.bl-modal.bl-theme-modern {
+.bl-modal {
   opacity: 0;
   backdrop-filter: blur(var(--bl-modal-blur, 4px));
   background-color: rgba(0, 0, 0, var(--bl-modal-background-opacity, 0.3));

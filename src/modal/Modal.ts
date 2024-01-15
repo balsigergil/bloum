@@ -44,9 +44,6 @@ export class Modal extends HTMLElement {
     modalBody.classList.add("bl-modal-body");
     modalBody.append(...this.childNodes);
 
-    const theme = this.getAttribute("theme") ?? "unstyled";
-    this.classList.add(`bl-theme-${theme}`);
-
     modalWrapper.append(modalHeader, modalBody);
 
     this.addEventListener("click", (e) => {

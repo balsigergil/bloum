@@ -1,6 +1,6 @@
 .bl-select {
   position: relative;
-  display: flex;
+  display: inline-flex;
 
   &.open {
     .bl-select-search-input {
@@ -27,7 +27,9 @@
     display: flex;
   }
 
-  &.open .bl-select-value-container:has(input:focus) .bl-select-text {
+  &.open:not([multiple])
+    .bl-select-value-container:has(input:focus)
+    .bl-select-text {
     opacity: 0.6;
   }
 

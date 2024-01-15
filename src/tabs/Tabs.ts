@@ -50,11 +50,6 @@ export class Tabs extends HTMLElement {
         this.#selectPreviousTab();
       }
     });
-
-    const theme = this.getAttribute("theme");
-    if (theme) {
-      this.classList.add(`bl-theme-${theme}`);
-    }
   }
 
   setSelected(index: number, focus: boolean = true) {

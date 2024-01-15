@@ -1,6 +1,5 @@
 import "../../src";
 import "../../src/style.css";
-import "../../src/modern.css";
 import "./example.css";
 
 document.querySelectorAll("form").forEach((f) =>
