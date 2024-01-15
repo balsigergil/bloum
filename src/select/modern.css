@@ -19,6 +19,10 @@
       &.selected {
         background-color: #ddd;
       }
+
+      &.selected.focus {
+        background-color: #ccc;
+      }
     }
   }
 
