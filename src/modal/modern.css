@@ -1,7 +1,6 @@
 .bl-modal {
   opacity: 0;
-  backdrop-filter: blur(var(--bl-modal-blur, 4px));
-  background-color: rgba(0, 0, 0, var(--bl-modal-background-opacity, 0.3));
+  background-color: rgba(0, 0, 0, var(--bl-modal-background-opacity, 0.4));
   transition: opacity 150ms linear;
 
   --bl-modal-margin-y: 4rem;
@@ -42,4 +41,8 @@
       transform: translateY(0);
     }
   }
+}
+
+.bl-modal.blur {
+  backdrop-filter: blur(var(--bl-modal-blur, 4px));
 }
