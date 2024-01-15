@@ -56,6 +56,9 @@ export class Select extends HTMLElement {
     this.#input.setAttribute("type", "search");
     this.#input.setAttribute("autocomplete", "off");
     this.#input.setAttribute("spellcheck", "false");
+    this.#input.setAttribute("role", "combobox");
+    this.#input.setAttribute("aria-autocomplete", "list");
+    this.#input.setAttribute("aria-expanded", "false");
     if (!this.#searchable) {
       this.#input.readOnly = true;
     }
@@ -102,6 +105,7 @@ export class Select extends HTMLElement {
     this.#menu = document.createElement("div");
     this.#menu.classList.add("bl-select-menu-wrapper");
     this.#menu.tabIndex = -1;
+    this.#menu.setAttribute("role", "listbox");
     this.#options.forEach((o, i) => this.addOptionToMenu(o, i));
 
     const indicators = document.createElement("div");
@@ -204,6 +208,7 @@ export class Select extends HTMLElement {
           "filtered",
         );
         selectedItem.append(clone);
+        option.setAttribute("aria-selected", "true");
         if (this.#multiple) {
           const closeButton = document.createElement("div");
           closeButton.classList.add("bl-select-selected-item-close");
@@ -222,6 +227,7 @@ export class Select extends HTMLElement {
         option.classList.add("selected");
       } else {
         option.classList.remove("selected");
+        option.setAttribute("aria-selected", "false");
       }
       (this.#select.childNodes[i] as HTMLOptionElement).selected = isSelected;
 
@@ -268,6 +274,7 @@ export class Select extends HTMLElement {
   openMenu() {
     this.classList.add("open");
     this.#input.focus();
+    this.#input.setAttribute("aria-expanded", "true");
     this.#setFocused(this.#firstSelectedIndex() || 0);
   }
 
@@ -276,6 +283,7 @@ export class Select extends HTMLElement {
       this.classList.remove("open");
       this.#text.classList.remove("filtered");
       this.#input.value = "";
+      this.#input.setAttribute("aria-expanded", "false");
       this.#search = "";
     }
   }

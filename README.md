@@ -50,16 +50,13 @@
 - [ ] DatePicker / TimePicker / Calendar
 - [ ] Color picker
 - [ ] Toast
-- [ ] Accordion / Disclosure
+- [ ] Accordion
 - [ ] Popover
 - [ ] Tooltip
-- [ ] PIN input
 - [ ] Phone input
 - [ ] DataTable
 - [ ] Switch
-- [ ] Slider
 - [ ] Radio/Select group
-- [ ] WYSIWYG Editor
 
 ## Installation
 
