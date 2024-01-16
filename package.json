@@ -30,6 +30,7 @@
   "types": "./dist/types/index.d.ts",
   "scripts": {
     "dev": "npm run dev -w example",
+    "test": "playwright test",
     "build": "rimraf dist && concurrently \"npm run build:js\" \"npm run build:css\" \"npm run build:types\"",
     "build:js": "rollup -c rollup.config.js",
     "build:css": "postcss src/*.css --dir dist --ext .min.css",

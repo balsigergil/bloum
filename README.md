@@ -1,5 +1,5 @@
 <div align="center">
-    <a href="https://bloum.dev">
+    <a href="#">
         <img src="https://github.com/balsigergil/bloum/blob/main/.github/bloum.png" height="128" alt="logo">
     </a>
     <h1>Bloum</h1>
@@ -15,7 +15,7 @@
             <img alt="License" src="https://img.shields.io/npm/l/bloum?style=for-the-badge">
         </a>
         <a aria-label="Build status" href="https://github.com/balsigergil/bloum/actions/workflows/playwright.yml">
-            <img alt="Build status" src="https://img.shields.io/github/actions/workflow/status/balsigergil/bloum/playwright?style=for-the-badge">
+            <img alt="Build status" src="https://img.shields.io/github/actions/workflow/status/balsigergil/bloum/playwright.yml?style=for-the-badge">
         </a>
     </div>
 </div>
