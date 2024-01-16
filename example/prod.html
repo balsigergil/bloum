@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bloum</title>
+    <script type="module" src="src/prod.ts"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1>Select</h1>
+      <div class="selects">
+        <form class="my-forms">
+          <bl-select name="select1" clearable searchable>
+            <div data-value="jean">Jean</div>
+            <div data-value="albert">Albert</div>
+            <div data-value="nicolas">Nicolas</div>
+            <div data-value="ernest">Ernest</div>
+          </bl-select>
+          <button type="submit">Submit</button>
+        </form>
+        <form class="my-forms">
+          <bl-select name="select2" clearable searchable multiple>
+            <div data-value="jean">Jean</div>
+            <div data-value="albert">Albert</div>
+            <div data-value="nicolas">Nicolas</div>
+            <div data-value="ernest">Ernest</div>
+          </bl-select>
+          <button type="submit">Submit</button>
+        </form>
+        <h2>Custom select</h2>
+        <bl-select
+          name="select2"
+          placeholder="Choose a member..."
+          clearable
+          searchable
+        >
+          <div data-value="0" class="member">
+            <div class="member-avatar" style="background-color: lightcoral">
+              <span>FD</span>
+            </div>
+            <div class="member-info">
+              <div class="member-name">François Dupont</div>
+              <div class="member-job">Director</div>
+            </div>
+          </div>
+          <div data-value="0" class="member">
+            <div class="member-avatar" style="background-color: lightgreen">
+              <span>AL</span>
+            </div>
+            <div class="member-info">
+              <div class="member-name">Albert Levert</div>
+              <div class="member-job">Consultant</div>
+            </div>
+          </div>
+          <div data-value="0" class="member">
+            <div class="member-avatar" style="background-color: lightblue">
+              <span>AF</span>
+            </div>
+            <div class="member-info">
+              <div class="member-name">Alain Fini</div>
+              <div class="member-job">Developer</div>
+            </div>
+          </div>
+          <div data-value="0" class="member">
+            <div class="member-avatar" style="background-color: lightpink">
+              <span>JB</span>
+            </div>
+            <div class="member-info">
+              <div class="member-name">Jean Bon</div>
+              <div class="member-job">Chef</div>
+            </div>
+          </div>
+        </bl-select>
+      </div>
+
+      <h1>Modal</h1>
+
+      <div>
+        <button data-modal="#mymodal">Open modern modal</button>
+        <button data-alert="#myalert">Open alert dialog</button>
+      </div>
+
+      <h1>Tabs</h1>
+
+      <bl-tabs use-anchor>
+        <bl-tab-list>
+          <bl-tab href="tab1">Tab 1</bl-tab>
+          <bl-tab href="tab2">Second tab</bl-tab>
+          <bl-tab href="tab3">A tab with a long name here</bl-tab>
+          <bl-tab href="tab4">The last tab</bl-tab>
+        </bl-tab-list>
+        <bl-tab-panels>
+          <bl-tab-panel>Tab 1 content</bl-tab-panel>
+          <bl-tab-panel>Tab 2 content</bl-tab-panel>
+          <bl-tab-panel>Tab 3 content</bl-tab-panel>
+          <bl-tab-panel>Tab 4 content</bl-tab-panel>
+        </bl-tab-panels>
+      </bl-tabs>
+    </div>
+    <bl-modal title="This is a modern modal" id="mymodal">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci commodi
+      culpa dolore dolorem doloremque ducimus illo, itaque iure laborum maxime
+      mollitia nemo neque optio, pariatur, reiciendis tenetur veritatis
+      voluptate voluptatibus?
+    </bl-modal>
+    <bl-alert-dialog title="Are you sure?" id="myalert" cancel=".cancel">
+      <div>Are you sure you want to do this? This is permanent!</div>
+      <div class="flex space-x-2 mt-3 justify-end">
+        <button class="bg-gray-300 py-2 px-3 rounded cancel">No</button>
+        <button class="bg-red-600 text-white py-2 px-3 rounded">Yes</button>
+      </div>
+    </bl-alert-dialog>
+  </body>
+</html>

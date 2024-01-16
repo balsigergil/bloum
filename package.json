@@ -57,6 +57,7 @@
     "typescript": "^5.3.3"
   },
   "workspaces": [
+    ".",
     "example",
     "docs"
   ]
