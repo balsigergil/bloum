@@ -34,7 +34,8 @@
     "build:js": "rollup -c rollup.config.js",
     "build:css": "postcss src/*.css --dir dist --ext .min.css",
     "build:types": "tsc -p tsconfig.types.json",
-    "test": "vitest"
+    "docs": "npm run start -w docs",
+    "docs:build": "npm run build -w docs"
   },
   "devDependencies": {
     "@playwright/test": "^1.40.1",
@@ -57,6 +58,6 @@
   },
   "workspaces": [
     "example",
-    "."
+    "docs"
   ]
 }

@@ -54,7 +54,7 @@ export class Tabs extends HTMLElement {
 
   setSelected(index: number, focus: boolean = true) {
     if (index !== this.#selectedIndex && index >= 0) {
-      if (this.#useAnchor) {
+      if (this.#useAnchor && focus) {
         const tabs = this.querySelectorAll<Tab>("bl-tab");
         const tab = tabs[index];
         const href = tab.getAttribute("href");

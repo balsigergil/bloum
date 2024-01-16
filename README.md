@@ -40,8 +40,7 @@
   - [x] Searchable / Not searchable
   - [x] Multiple selection
   - [ ] Disabled
-  - [ ] Aria compatibility
-  - [ ] Create new option
+  - [x] Aria compatibility
   - [ ] Fuzzy search
 - [x] Modal
 - [x] Alert dialog
