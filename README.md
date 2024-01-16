@@ -6,7 +6,7 @@
     <strong>A lightweight yet powerful unstyled web components library with customization capabilities.</strong>
     <br>
     <br>
-    <!--<div align="center">
+    <div align="center">
         <img alt="Package size" src="https://img.shields.io/bundlephobia/minzip/bloum?style=for-the-badge">
         <a aria-label="NPM version" href="https://www.npmjs.com/package/bloum">
             <img alt="NPM version" src="https://img.shields.io/npm/v/bloum?style=for-the-badge">
@@ -17,7 +17,7 @@
         <a aria-label="Build status" href="https://github.com/balsigergil/bloum/actions/workflows/playwright.yml">
             <img alt="Build status" src="https://img.shields.io/github/actions/workflow/status/balsigergil/bloum/playwright?style=for-the-badge">
         </a>
-    </div>-->
+    </div>
 </div>
 
 ## Table of Contents
