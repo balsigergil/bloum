@@ -17,7 +17,7 @@
           <img alt="License" src="https://img.shields.io/npm/l/bloum?style=for-the-badge">
         </a>
         <a aria-label="Build status" href="https://github.com/balsigergil/bloum/actions/workflows/playwright.yml">
-          <img alt="Build status" src="https://img.shields.io/github/actions/workflow/status/balsigergil/bloum/playwright.yml?style=for-the-badge">
+          <img alt="Build status" src="https://img.shields.io/github/actions/workflow/status/balsigergil/bloum/playwright.yml?style=for-the-badge&label=tests">
         </a>
     </div>
 </div>

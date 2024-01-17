@@ -14,4 +14,7 @@ module.exports = {
     tsconfigRootDir: __dirname,
   },
   root: true,
+  rules: {
+    "@typescript-eslint/no-explicit-any": "off",
+  },
 };
