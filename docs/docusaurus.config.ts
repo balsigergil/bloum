@@ -6,7 +6,7 @@ const config: Config = {
   title: "Bloum",
   tagline:
     "A lightweight yet powerful unstyled web components library with customization capabilities.",
-  favicon: "img/bloum.png",
+  favicon: "img/bloum_favicon.png",
 
   // Set the production url of your site here
   url: "https://your-docusaurus-site.example.com",
@@ -53,14 +53,26 @@ const config: Config = {
     ],
   ],
 
+  scripts: [
+    {
+      src: "https://unpkg.com/bloum",
+      async: true,
+    },
+  ],
+  stylesheets: [
+    "https://unpkg.com/bloum/dist/style.min.css",
+    "https://unpkg.com/bloum/dist/modern.min.css",
+  ],
+
   themeConfig: {
-    // TODO replace social image
-    image: "img/docusaurus-social-card.jpg",
+    colorMode: {
+      defaultMode: "light",
+    },
     navbar: {
       title: "Bloum",
       logo: {
         alt: "Bloum Logo",
-        src: "img/bloum.png",
+        src: "img/bloum_logo.png",
       },
       items: [
         {
@@ -85,7 +97,7 @@ const config: Config = {
           items: [
             {
               label: "Components",
-              to: "/docs/intro",
+              to: "/docs/components",
             },
           ],
         },
@@ -120,7 +132,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Gil Balsiger`,
+      copyright: `© ${new Date().getFullYear()} - Made with ❤️ by Gil Balsiger`,
     },
     prism: {
       theme: prismThemes.oneLight,

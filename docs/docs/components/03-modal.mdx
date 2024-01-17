@@ -1,0 +1,94 @@
+# Modal
+
+
+## Basic usage
+
+<button className="button button--primary" onClick={(e) => document.getElementById('mymodal')?.open(e.target)}>Open modal</button>
+
+<bl-modal title="This is a modal" id="mymodal">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci commodi
+    culpa dolore dolorem doloremque ducimus illo, itaque iure laborum maxime
+    mollitia nemo neque optio, pariatur, reiciendis tenetur veritatis
+    voluptate voluptatibus?
+</bl-modal>
+
+<br />
+<br />
+
+```html
+<button data-modal="#mymodal">Open modal</button>
+
+<bl-modal title="This is a modal" id="mymodal">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci commodi
+    culpa dolore dolorem doloremque ducimus illo, itaque iure laborum maxime
+    mollitia nemo neque optio, pariatur, reiciendis tenetur veritatis
+    voluptate voluptatibus?
+</bl-modal>
+```
+
+## Modal with blurred background
+
+Simply add the `blur` class to the modal to blur the background.
+
+<button className="button button--primary" onClick={(e) => document.getElementById('mymodal-blur')?.open(e.target)}>Open modal</button>
+
+<bl-modal title="This is a modal" id="mymodal-blur" class="blur">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci commodi
+    culpa dolore dolorem doloremque ducimus illo, itaque iure laborum maxime
+    mollitia nemo neque optio, pariatur, reiciendis tenetur veritatis
+    voluptate voluptatibus?
+</bl-modal>
+
+<br />
+<br />
+
+```html
+<button data-modal="#mymodal">Open modal</button>
+
+<bl-modal title="This is a modal" id="mymodal" class="blur">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci commodi
+    culpa dolore dolorem doloremque ducimus illo, itaque iure laborum maxime
+    mollitia nemo neque optio, pariatur, reiciendis tenetur veritatis
+    voluptate voluptatibus?
+</bl-modal>
+```
+
+## Focus trapped inside modal
+
+<button className="button button--primary" onClick={(e) => document.getElementById('mymodal-focus')?.open(e.target)}>Open modal</button>
+
+<bl-modal title="This is a modal" id="mymodal-focus">
+    <div>
+        <label>First name: </label>
+        <input type="text" />
+    </div>
+    <div>
+        <label>Last name: </label>
+        <input type="text" />
+    </div>
+    <div>
+        <label>Username: </label>
+        <input type="text" />
+    </div>
+    <div>
+        <label>Password: </label>
+        <input type="password" />
+    </div>
+    <div>
+        <button>Submit</button>
+    </div>
+</bl-modal>
+
+<br />
+<br />
+
+```html
+<button data-modal="#mymodal">Open modal</button>
+
+<bl-modal title="This is a modal" id="mymodal" class="blur">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci commodi
+    culpa dolore dolorem doloremque ducimus illo, itaque iure laborum maxime
+    mollitia nemo neque optio, pariatur, reiciendis tenetur veritatis
+    voluptate voluptatibus?
+</bl-modal>
+```
