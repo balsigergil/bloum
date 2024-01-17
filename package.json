@@ -41,12 +41,14 @@
     "format:fix": "prettier --write ./src/**/*.{ts,css}",
     "docs": "npm run start -w docs",
     "docs:build": "npm run build -w docs",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "release": "release-it"
   },
   "devDependencies": {
     "@commitlint/cli": "^18.4.4",
     "@commitlint/config-conventional": "^18.4.4",
     "@playwright/test": "^1.40.1",
+    "@release-it/conventional-changelog": "^8.0.1",
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^11.1.5",
     "@types/node": "^20.10.6",
@@ -77,6 +79,27 @@
   ],
   "sideEffects": false,
   "lint-staged": {
-    "*.{js,ts}": []
+    "*.{js,ts}": [
+      "eslint",
+      "prettier --write"
+    ]
+  },
+  "release-it": {
+    "git": {
+      "commitMessage": "chore: release v${version}",
+      "tagName": "v${version}"
+    },
+    "github": {
+      "release": true
+    },
+    "npm": {
+      "publish": true
+    },
+    "plugins": {
+      "@release-it/conventional-changelog": {
+        "preset": "conventionalcommits",
+        "infile": "CHANGELOG.md"
+      }
+    }
   }
 }
