@@ -13,7 +13,7 @@
     "headless",
     "unstyled"
   ],
-  "homepage": "https://github.com/balsigergil/bloum",
+  "homepage": "https://www.bloum.dev",
   "repository": {
     "type": "git",
     "url": "https://github.com/balsigergil/bloum.git"
@@ -36,9 +36,12 @@
     "build:css": "postcss src/*.css --dir dist --ext .min.css",
     "build:types": "tsc -p tsconfig.types.json",
     "docs": "npm run start -w docs",
-    "docs:build": "npm run build -w docs"
+    "docs:build": "npm run build -w docs",
+    "prepare": "husky install"
   },
   "devDependencies": {
+    "@commitlint/cli": "^18.4.4",
+    "@commitlint/config-conventional": "^18.4.4",
     "@playwright/test": "^1.40.1",
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^11.1.5",
@@ -46,12 +49,16 @@
     "autoprefixer": "^10.4.16",
     "concurrently": "^8.2.2",
     "cssnano": "^6.0.3",
+    "eslint": "^8.56.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^15.2.0",
     "postcss": "^8.4.33",
     "postcss-cli": "^11.0.0",
     "postcss-import": "^16.0.0",
     "postcss-nesting": "^12.0.2",
     "postcss-preset-env": "^9.3.0",
-    "prettier": "^3.1.1",
+    "prettier": "^3.2.4",
+    "release-it": "^17.0.1",
     "rimraf": "^5.0.5",
     "rollup": "^4.9.3",
     "tslib": "^2.6.2",
@@ -61,5 +68,12 @@
     ".",
     "example",
     "docs"
-  ]
+  ],
+  "sideEffects": false,
+  "lint-staged": {
+    "*.{js,ts}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  }
 }
