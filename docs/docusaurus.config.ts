@@ -4,8 +4,7 @@ import type * as Preset from "@docusaurus/preset-classic";
 
 const config: Config = {
   title: "Bloum",
-  tagline:
-    "A lightweight yet powerful unstyled web components library with customization capabilities.",
+  tagline: "A lightweight yet powerful library of unstyled web components.",
   favicon: "img/favicon.png",
 
   // Set the production url of your site here
