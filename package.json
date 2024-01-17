@@ -37,8 +37,8 @@
     "build:types": "tsc -p tsconfig.json --emitDeclarationOnly --declaration --declarationDir dist/types",
     "lint": "eslint --ext .ts ./src",
     "lint:fix": "npm run lint -- --fix",
-    "format": "prettier --check ./src/**/*.{ts,css,json,md,mdx}",
-    "format:fix": "prettier --write ./src/**/*.{ts,css,json,md,mdx}",
+    "format": "prettier --check ./src/**/*.{ts,css}",
+    "format:fix": "prettier --write ./src/**/*.{ts,css}",
     "docs": "npm run start -w docs",
     "docs:build": "npm run build -w docs",
     "prepare": "husky install"
