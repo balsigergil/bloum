@@ -6,10 +6,10 @@ const config: Config = {
   title: "Bloum",
   tagline:
     "A lightweight yet powerful unstyled web components library with customization capabilities.",
-  favicon: "img/bloum_favicon.png",
+  favicon: "img/favicon.png",
 
   // Set the production url of your site here
-  url: "https://your-docusaurus-site.example.com",
+  url: "https://www.bloum.dev",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: "/",

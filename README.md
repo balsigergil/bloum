@@ -7,15 +7,17 @@
     <br>
     <br>
     <div align="center">
-        <img alt="Package size" src="https://img.shields.io/bundlephobia/minzip/bloum?style=for-the-badge">
+        <a aria-label="Bundlephobia" href="https://bundlephobia.com/package/bloum">
+          <img alt="Package size" src="https://img.shields.io/bundlephobia/minzip/bloum?style=for-the-badge">
+        </a>
         <a aria-label="NPM version" href="https://www.npmjs.com/package/bloum">
-            <img alt="NPM version" src="https://img.shields.io/npm/v/bloum?style=for-the-badge">
+          <img alt="NPM version" src="https://img.shields.io/npm/v/bloum?style=for-the-badge">
         </a>
         <a aria-label="License" href="https://github.com/balsigergil/bloum/blob/main/LICENSE">
-            <img alt="License" src="https://img.shields.io/npm/l/bloum?style=for-the-badge">
+          <img alt="License" src="https://img.shields.io/npm/l/bloum?style=for-the-badge">
         </a>
         <a aria-label="Build status" href="https://github.com/balsigergil/bloum/actions/workflows/playwright.yml">
-            <img alt="Build status" src="https://img.shields.io/github/actions/workflow/status/balsigergil/bloum/playwright.yml?style=for-the-badge">
+          <img alt="Build status" src="https://img.shields.io/github/actions/workflow/status/balsigergil/bloum/playwright.yml?style=for-the-badge">
         </a>
     </div>
 </div>
