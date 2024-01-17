@@ -90,7 +90,10 @@
       "tagName": "v${version}"
     },
     "github": {
-      "release": true
+      "release": true,
+      "releaseName": "v${version}",
+      "draft": true,
+      "web": true
     },
     "npm": {
       "publish": true
