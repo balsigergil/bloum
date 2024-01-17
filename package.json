@@ -34,7 +34,9 @@
     "build": "rimraf dist && concurrently \"npm run build:js\" \"npm run build:css\" \"npm run build:types\"",
     "build:js": "rollup -c rollup.config.js",
     "build:css": "postcss src/*.css --dir dist --ext .min.css",
-    "build:types": "tsc -p tsconfig.types.json",
+    "build:types": "tsc -p tsconfig.json --emitDeclarationOnly --declaration --declarationDir dist/types",
+    "lint": "eslint --ext .js,.ts ./src",
+    "lint:fix": "npm run lint -- --fix",
     "docs": "npm run start -w docs",
     "docs:build": "npm run build -w docs",
     "prepare": "husky install"
@@ -46,6 +48,8 @@
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^11.1.5",
     "@types/node": "^20.10.6",
+    "@typescript-eslint/eslint-plugin": "^6.19.0",
+    "@typescript-eslint/parser": "^6.19.0",
     "autoprefixer": "^10.4.16",
     "concurrently": "^8.2.2",
     "cssnano": "^6.0.3",
@@ -71,9 +75,6 @@
   ],
   "sideEffects": false,
   "lint-staged": {
-    "*.{js,ts}": [
-      "eslint --fix",
-      "prettier --write"
-    ]
+    "*.{js,ts}": []
   }
 }

@@ -196,7 +196,7 @@ export class Select extends HTMLElement {
 
     for (let i = 0; i < this.#options.length; i++) {
       const option = this.#options[i];
-      let isSelected = this.#selectedItems[i];
+      const isSelected = this.#selectedItems[i];
       if (isSelected) {
         const selectedItem = document.createElement("div");
         selectedItem.classList.add("bl-select-selected-item");
