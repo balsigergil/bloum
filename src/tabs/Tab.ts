@@ -1,9 +1,7 @@
-export class Tab extends HTMLButtonElement {
+export class Tab extends HTMLElement {
   static NAME = "bl-tab";
   static register() {
-    customElements.define(this.NAME, Tab, {
-      extends: "button",
-    });
+    customElements.define(this.NAME, Tab);
   }
   connectedCallback() {
     this.classList.add("bl-tab");
