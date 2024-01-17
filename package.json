@@ -35,8 +35,9 @@
     "build:js": "rollup -c rollup.config.js",
     "build:css": "postcss src/*.css --dir dist --ext .min.css",
     "build:types": "tsc -p tsconfig.json --emitDeclarationOnly --declaration --declarationDir dist/types",
-    "lint": "eslint --ext .js,.ts ./src",
+    "lint": "eslint --ext .ts ./src",
     "lint:fix": "npm run lint -- --fix",
+    "format": "prettier \"**/*.{ts,css,json,md,mdx}\"",
     "docs": "npm run start -w docs",
     "docs:build": "npm run build -w docs",
     "prepare": "husky install"
