@@ -1,0 +1,12 @@
+.bl-toast-container {
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  pointer-events: none;
+}
+
+.bl-toast {
+  pointer-events: auto;
+}

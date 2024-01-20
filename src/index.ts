@@ -6,6 +6,8 @@ import { TabList } from "./tabs/TabList";
 import { Tab } from "./tabs/Tab";
 import { TabPanels } from "./tabs/TabPanels";
 import { TabPanel } from "./tabs/TabPanel";
+import { ToastContainer } from "./toast/ToastContainer";
+import { Toast } from "./toast/Toast";
 
 Select.register();
 Modal.register();
@@ -17,4 +19,17 @@ Tab.register();
 TabPanels.register();
 TabPanel.register();
 
+ToastContainer.register();
+Toast.register();
+
 export { Select, Modal, AlertDialog };
+export { Tabs, TabList, Tab, TabPanels, TabPanel };
+export { ToastContainer, Toast };
+
+window.Toast = Toast;
+
+declare global {
+  interface Window {
+    Toast: typeof Toast;
+  }
+}
