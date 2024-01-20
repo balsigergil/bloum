@@ -34,9 +34,7 @@
 
 ## Features
 
-### TODO
-
-- [x] Select
+- [x] [Select](https://www.bloum.dev/docs/components/select)
   - [x] Caret
   - [x] Clearable
   - [x] Searchable / Not searchable
@@ -44,9 +42,9 @@
   - [ ] Disabled
   - [x] Aria compatibility
   - [ ] Fuzzy search
-- [x] Modal
+- [x] [Modal](https://www.bloum.dev/docs/components/modal)
 - [x] Alert dialog
-- [x] Tabs
+- [x] [Tabs](https://www.bloum.dev/docs/components/tabs)
   - [x] Anchor links
 - [ ] DatePicker / TimePicker / Calendar
 - [ ] Color picker
