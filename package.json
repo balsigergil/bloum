@@ -37,7 +37,7 @@
     "build:types": "tsc -p tsconfig.json --emitDeclarationOnly --declaration --declarationDir dist/types",
     "lint": "eslint --ext .ts ./src",
     "lint:fix": "npm run lint -- --fix",
-    "format": "prettier --check ./src/**/*.{ts,css}",
+    "format": "prettier --check \"./**/*.{js,cjs,ts,css,html,json,yml}\"",
     "format:fix": "prettier --write ./src/**/*.{ts,css}",
     "docs": "npm run start -w docs",
     "docs:build": "npm run build -w docs",
@@ -92,7 +92,6 @@
     "github": {
       "release": true,
       "releaseName": "v${version}",
-      "draft": true,
       "web": true
     },
     "npm": {
@@ -101,8 +100,12 @@
     "plugins": {
       "@release-it/conventional-changelog": {
         "preset": "conventionalcommits",
-        "infile": "CHANGELOG.md"
+        "infile": "CHANGELOG.md",
+        "header": "# Changelog"
       }
+    },
+    "hooks": {
+      "after:init": "npm run build && npm run test"
     }
   }
 }
