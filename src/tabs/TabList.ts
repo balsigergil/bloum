@@ -1,3 +1,5 @@
+import { Tabs } from "./Tabs";
+
 export class TabList extends HTMLElement {
   static NAME = "bl-tab-list";
   static register() {
@@ -5,5 +7,14 @@ export class TabList extends HTMLElement {
   }
   connectedCallback() {
     this.classList.add("bl-tab-list");
+
+    this.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowRight") {
+        this.closest<Tabs>("bl-tabs")?.selectNextTab();
+      }
+      if (e.key === "ArrowLeft") {
+        this.closest<Tabs>("bl-tabs")?.selectPreviousTab();
+      }
+    });
   }
 }

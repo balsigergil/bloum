@@ -14,14 +14,15 @@ export class Tabs extends HTMLElement {
 
   connectedCallback() {
     this.classList.add("bl-tabs");
+    this.setAttribute("role", "tablist");
     const tabs = this.querySelectorAll<Tab>("bl-tab");
     this.#tabCount = tabs.length;
-    tabs.forEach((t, i) =>
+    tabs.forEach((t, i) => {
       t.addEventListener("click", (e) => {
         e.preventDefault();
         this.setSelected(i);
-      }),
-    );
+      });
+    });
 
     const useAnchor = this.hasAttribute("use-anchor");
     this.#useAnchor = useAnchor;
@@ -41,15 +42,6 @@ export class Tabs extends HTMLElement {
     } else {
       this.setSelected(0, false);
     }
-
-    this.addEventListener("keydown", (e) => {
-      if (e.key === "ArrowRight") {
-        this.#selectNextTab();
-      }
-      if (e.key === "ArrowLeft") {
-        this.#selectPreviousTab();
-      }
-    });
   }
 
   setSelected(index: number, focus: boolean = true) {
@@ -77,13 +69,15 @@ export class Tabs extends HTMLElement {
       for (let i = 0; i < tabs.length; i++) {
         if (index === i) {
           tabs[i].tabIndex = 0;
+          tabs[i].classList.add("active");
+          tabs[i].setAttribute("aria-selected", "true");
           if (focus) {
             tabs[i].focus();
           }
-          tabs[i].classList.add("active");
         } else {
           tabs[i].tabIndex = -1;
           tabs[i].classList.remove("active");
+          tabs[i].setAttribute("aria-selected", "false");
         }
       }
     } else if (index < 0) {
@@ -92,11 +86,11 @@ export class Tabs extends HTMLElement {
     }
   }
 
-  #selectNextTab() {
+  selectNextTab() {
     this.setSelected((this.#selectedIndex + 1) % this.#tabCount);
   }
 
-  #selectPreviousTab() {
+  selectPreviousTab() {
     this.setSelected(
       (this.#selectedIndex - 1 + this.#tabCount) % this.#tabCount,
     );

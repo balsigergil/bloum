@@ -5,5 +5,6 @@ export class Tab extends HTMLElement {
   }
   connectedCallback() {
     this.classList.add("bl-tab");
+    this.setAttribute("role", "tab");
   }
 }

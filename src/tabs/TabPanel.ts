@@ -5,5 +5,7 @@ export class TabPanel extends HTMLElement {
   }
   connectedCallback() {
     this.classList.add("bl-tab-panel");
+    this.setAttribute("role", "tabpanel");
+    this.tabIndex = 0;
   }
 }

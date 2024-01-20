@@ -6,13 +6,11 @@
   padding: var(--bl-tab-padding);
   text-align: center;
   transition: color 150ms ease-in-out;
-
-  &:active {
-    color: var(--bl-color-primary);
-  }
+  color: #444;
+  user-select: none;
 
   &.active {
-    color: var(--bl-color-primary);
+    color: black;
     background-color: #fff;
     position: relative;
 
@@ -23,10 +21,14 @@
       left: 0;
       width: calc(100% - var(--bl-tab-padding) * 2);
       transform: translateX(var(--bl-tab-padding));
-      height: 0.25rem;
+      height: 4px;
       border-radius: 9999px;
       background-color: var(--bl-color-primary);
     }
+  }
+
+  &:hover {
+    color: var(--bl-color-primary);
   }
 
   &:focus-visible {
