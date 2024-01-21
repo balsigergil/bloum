@@ -1,4 +1,5 @@
-@import "select/style.css";
-@import "modal/style.css";
-@import "tabs/style.css";
-@import "toast/style.css";
+@import "./select/style.css";
+@import "./modal/style.css";
+@import "./tabs/style.css";
+@import "./toast/style.css";
+@import "./close/style.css";

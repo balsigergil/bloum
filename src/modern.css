@@ -2,6 +2,7 @@
 @import "./tabs/modern.css";
 @import "./modal/modern.css";
 @import "./toast/modern.css";
+@import "./close/modern.css";
 
 :root {
   --bl-color-primary: #1d4ed8;

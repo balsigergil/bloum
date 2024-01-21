@@ -134,6 +134,16 @@
         <button onclick="Toast.error('Ouch, something went wrong!')">
           Show error toast
         </button>
+        <button
+          onclick="Toast.info('This is an info toast', {isClosable: true})"
+        >
+          Show closable toast
+        </button>
+        <button
+          onclick="Toast.success('Account created', {description: 'Your account has been successfully created.', isClosable: true})"
+        >
+          Show toast with description
+        </button>
       </div>
 
       <p>

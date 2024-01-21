@@ -1,0 +1,13 @@
+.bl-toast .bl-close-button {
+  fill: #fff;
+  transition: background-color 100ms ease-in-out;
+  border-radius: 4px;
+}
+
+.bl-close-button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.bl-close-button:active {
+  background-color: rgba(0, 0, 0, 0.2);
+}
