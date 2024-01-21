@@ -47,7 +47,7 @@
   - [x] Anchor links
 - [x] Toast
   - [x] Autohide
-  - [ ] Dismissable
+  - [x] Dismissable
   - [ ] Position
   - [ ] Promise based
 - [ ] DatePicker / TimePicker / Calendar

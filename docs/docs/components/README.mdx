@@ -1,0 +1,65 @@
+---
+sidebar_position: 0
+---
+
+# Installation
+
+## CDN
+
+You can use the following lines in your `head` tag to load the latest version of Bloum from a CDN:
+
+```html
+<script src="https://unpkg.com/bloum" defer></script>
+
+<!-- include the default unstyled stylesheet -->
+<link href="https://unpkg.com/bloum/dist/style.min.css" rel="stylesheet">
+<!-- include the modern theme -->
+<link href="https://unpkg.com/bloum/dist/modern.min.css" rel="stylesheet">
+```
+
+## Package manager
+
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+  <TabItem value="npm" label="NPM" default>
+    ```bash
+    npm install bloum
+    ```
+  </TabItem>
+  <TabItem value="yarn" label="Yarn">
+    ```bash
+    yarn add bloum
+    ```
+  </TabItem>
+  <TabItem value="pnpm" label="PNPM">
+    ```bash
+    pnpm add bloum
+    ```
+  </TabItem>
+  <TabItem value="bun" label="Bun">
+    ```bash
+    bun add bloum
+    ```
+  </TabItem>
+</Tabs>
+
+Once installed, you can import the library in your JavaScript project:
+
+```js
+import "bloum"
+import "bloum/dist/style.min.css"
+import "bloum/dist/modern.min.css"
+```
+
+Then, you can use the components in your HTML:
+
+```html
+<bl-select name="my-select">
+  <div data-value="1">Option 1</div>
+  <div data-value="2">Option 2</div>
+  <div data-value="3">Option 3</div>
+</bl-select>
+```
