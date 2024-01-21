@@ -35,21 +35,24 @@
 ## Features
 
 - [x] [Select](https://www.bloum.dev/docs/components/select)
-  - [x] Caret
   - [x] Clearable
-  - [x] Searchable / Not searchable
+  - [x] Searchable
   - [x] Multiple selection
-  - [ ] Disabled
   - [x] Aria compatibility
+  - [ ] Disabled
   - [ ] Fuzzy search
 - [x] [Modal](https://www.bloum.dev/docs/components/modal)
 - [x] Alert dialog
 - [x] [Tabs](https://www.bloum.dev/docs/components/tabs)
   - [x] Anchor links
+- [x] Toast
+  - [x] Autohide
+  - [ ] Dismissable
+  - [ ] Position
+  - [ ] Promise based
 - [ ] DatePicker / TimePicker / Calendar
 - [ ] Color picker
-- [ ] Toast
-- [ ] Accordion
+- [ ] Accordion / Collapse
 - [ ] Popover
 - [ ] Tooltip
 - [ ] Phone input

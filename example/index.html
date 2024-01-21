@@ -120,10 +120,20 @@
 
       <h1>Toast</h1>
       <div>
-        <button onclick="Toast.show('Hello', 'info')">Show toast</button>
-        <button onclick="Toast.show('Hello', 'warning')">Show toast</button>
-        <button onclick="Toast.show('Hello', 'success')">Show toast</button>
-        <button onclick="Toast.show('Hello', 'error')">Show toast</button>
+        <button onclick="Toast.info('This is an info toast')">
+          Show info toast
+        </button>
+        <button onclick="Toast.success('This is a successful toast :)')">
+          Show success toast
+        </button>
+        <button
+          onclick="Toast.warning('Be careful with that, it\'s a warning')"
+        >
+          Show warning toast
+        </button>
+        <button onclick="Toast.error('Ouch, something went wrong!')">
+          Show error toast
+        </button>
       </div>
 
       <p>
