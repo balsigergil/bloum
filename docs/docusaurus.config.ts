@@ -52,16 +52,8 @@ const config: Config = {
     ],
   ],
 
-  scripts: [
-    {
-      src: "https://unpkg.com/bloum",
-      async: true,
-    },
-  ],
-  stylesheets: [
-    "https://unpkg.com/bloum/dist/style.min.css",
-    "https://unpkg.com/bloum/dist/modern.min.css",
-  ],
+  scripts: ["/dist/bloum.umd.min.js"],
+  stylesheets: ["/dist/style.min.css", "/dist/modern.min.css"],
 
   themeConfig: {
     colorMode: {

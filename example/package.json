@@ -2,7 +2,7 @@
   "name": "bloum-example",
   "private": true,
   "author": "Gil Balsiger <gil.balsiger@gmail.com>",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "license": "MIT",
   "type": "module",
   "scripts": {

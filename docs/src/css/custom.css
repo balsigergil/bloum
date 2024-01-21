@@ -37,3 +37,28 @@
 .header img {
   max-width: 250px;
 }
+
+.member {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.member-avatar {
+  width: 40px;
+  aspect-ratio: 1 / 1;
+  border-radius: 9999px;
+  background-color: lightcoral;
+  display: grid;
+  place-items: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.member-name {
+  font-weight: 700;
+}
+
+.member-job {
+  color: #555;
+}

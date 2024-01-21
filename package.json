@@ -31,7 +31,7 @@
   "scripts": {
     "dev": "npm run dev -w example",
     "test": "playwright test",
-    "build": "rimraf dist && concurrently \"npm run build:js\" \"npm run build:css\" \"npm run build:types\"",
+    "build": "rimraf dist && concurrently \"npm run build:js\" \"npm run build:css\" \"npm run build:types\" && node scripts/copy.js",
     "build:js": "rollup -c rollup.config.js",
     "build:css": "postcss src/*.css --dir dist --ext .min.css",
     "build:types": "tsc -p tsconfig.json --emitDeclarationOnly --declaration --declarationDir dist/types",
@@ -58,6 +58,7 @@
     "concurrently": "^8.2.2",
     "cssnano": "^6.0.3",
     "eslint": "^8.56.0",
+    "fs-extra": "^11.2.0",
     "husky": "^8.0.0",
     "lint-staged": "^15.2.0",
     "postcss": "^8.4.33",
