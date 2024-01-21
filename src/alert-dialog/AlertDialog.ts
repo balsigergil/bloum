@@ -20,6 +20,10 @@ export class AlertDialog extends Modal {
     });
   }
 
+  constructor() {
+    super();
+  }
+
   connectedCallback() {
     this.setAttribute("no-close-button", "1");
     super.connectedCallback();

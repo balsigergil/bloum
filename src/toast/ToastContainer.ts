@@ -5,6 +5,10 @@ export class ToastContainer extends HTMLElement {
     customElements.define(this.NAME, ToastContainer);
   }
 
+  constructor() {
+    super();
+  }
+
   connectedCallback() {
     this.classList.add("bl-toast-container");
   }

@@ -3,6 +3,7 @@
   appearance: auto;
   border: none;
   cursor: pointer;
+  display: block;
 }
 
 .bl-close-button svg {

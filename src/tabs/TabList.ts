@@ -5,6 +5,11 @@ export class TabList extends HTMLElement {
   static register() {
     customElements.define(this.NAME, TabList);
   }
+
+  constructor() {
+    super();
+  }
+
   connectedCallback() {
     this.classList.add("bl-tab-list");
 

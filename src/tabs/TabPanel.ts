@@ -3,6 +3,11 @@ export class TabPanel extends HTMLElement {
   static register() {
     customElements.define(this.NAME, TabPanel);
   }
+
+  constructor() {
+    super();
+  }
+
   connectedCallback() {
     this.classList.add("bl-tab-panel");
     this.setAttribute("role", "tabpanel");

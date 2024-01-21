@@ -25,6 +25,11 @@ export class Toast extends HTMLElement {
   static register() {
     customElements.define(this.NAME, Toast);
   }
+
+  constructor() {
+    super();
+  }
+
   connectedCallback() {
     this.classList.add("bl-toast");
   }

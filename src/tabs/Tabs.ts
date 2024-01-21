@@ -12,6 +12,10 @@ export class Tabs extends HTMLElement {
     customElements.define(this.NAME, Tabs);
   }
 
+  constructor() {
+    super();
+  }
+
   connectedCallback() {
     this.classList.add("bl-tabs");
     this.setAttribute("role", "tablist");

@@ -21,6 +21,10 @@ export class Modal extends HTMLElement {
     });
   }
 
+  constructor() {
+    super();
+  }
+
   connectedCallback() {
     this.classList.add("bl-modal");
     this.role = "dialog";

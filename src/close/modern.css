@@ -3,7 +3,9 @@
   width: 25px;
   transition: background-color 100ms ease-in-out;
   border-radius: var(--bl-border-radius);
-  padding: 0.375em;
+  padding: 0.3125em;
+  display: grid;
+  place-items: center;
 }
 
 .bl-close-button:hover {

@@ -23,6 +23,10 @@ export class Select extends HTMLElement {
     customElements.define(this.NAME, Select);
   }
 
+  constructor() {
+    super();
+  }
+
   connectedCallback() {
     this.classList.add("bl-select");
     this.#options = [...this.children] as HTMLElement[];
