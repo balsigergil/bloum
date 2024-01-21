@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.1](https://github.com/balsigergil/bloum/compare/v0.1.0...v0.1.1) (2024-01-21)
+
+
+### Bug Fixes
+
+* **modal:** handle empty focusableElements array ([cbd3c84](https://github.com/balsigergil/bloum/commit/cbd3c84c3aa41e5e5f0474f1131f3cff13afe86f))
+
 ## [0.1.0](https://github.com/balsigergil/bloum/compare/v0.0.6...v0.1.0) (2024-01-21)
 
 
