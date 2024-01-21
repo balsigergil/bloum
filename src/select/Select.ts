@@ -48,11 +48,6 @@ export class Select extends HTMLElement {
     this.#text = document.createElement("div");
     this.#text.classList.add("bl-select-text");
     this.#text.innerHTML = `<div class="bl-select-placeholder">${this.#placeholder}</div>`;
-    this.#text.addEventListener("click", (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      this.openMenu();
-    });
 
     this.#input = document.createElement("input");
     this.#input.setAttribute("type", "search");
@@ -102,8 +97,6 @@ export class Select extends HTMLElement {
     });
     this.#valueContainer.append(this.#text, this.#input);
 
-    this.addEventListener("click", () => this.openMenu());
-
     this.#menu = document.createElement("div");
     this.#menu.classList.add("bl-select-menu-wrapper");
     this.#menu.tabIndex = -1;
@@ -116,6 +109,9 @@ export class Select extends HTMLElement {
     const indicator = document.createElement("div");
     indicator.classList.add("bl-select-indicator");
     indicator.innerHTML = `<svg height="20" width="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"></path></svg>`;
+    indicator.addEventListener("click", () => {
+      this.openMenu();
+    });
 
     const clearButton = new CloseButton();
     clearButton.classList.add("bl-select-clear-button");
