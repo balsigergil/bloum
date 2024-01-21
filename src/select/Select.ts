@@ -66,6 +66,7 @@ export class Select extends HTMLElement {
     this.#input.classList.add("bl-select-search-input");
     this.#input.addEventListener("input", () => this.#onInput());
     this.#input.addEventListener("focus", () => this.openMenu());
+    this.#input.addEventListener("click", () => this.openMenu());
     this.#input.addEventListener("blur", (e) => {
       this.#checkEventAndCloseMenu(e);
     });
