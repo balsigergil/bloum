@@ -41,6 +41,12 @@
       transform: translateY(0);
     }
   }
+
+  .bl-close-button {
+    width: 32px;
+    height: 32px;
+    fill: var(--bl-clr-gray-700);
+  }
 }
 
 .bl-modal.blur {

@@ -67,9 +67,9 @@ export class Select extends HTMLElement {
     this.#input.classList.add("bl-select-search-input");
     this.#input.addEventListener("input", () => this.#onInput());
     this.#input.addEventListener("focus", () => this.openMenu());
-    this.#input.addEventListener("blur", (e) =>
-      this.#checkEventAndCloseMenu(e),
-    );
+    this.#input.addEventListener("blur", (e) => {
+      this.#checkEventAndCloseMenu(e);
+    });
     this.#input.addEventListener("keydown", (e) => {
       if (e.key === "Escape") {
         this.closeMenu();
@@ -314,6 +314,10 @@ export class Select extends HTMLElement {
     let closest;
     if (e instanceof FocusEvent) {
       closest = (e.relatedTarget as HTMLElement)?.closest(Select.NAME);
+      if (e.relatedTarget instanceof CloseButton) {
+        this.closeMenu();
+        return;
+      }
     } else {
       closest = (e.target as HTMLElement)?.closest(Select.NAME);
     }

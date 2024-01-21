@@ -23,12 +23,4 @@
     justify-content: space-between;
     align-items: flex-start;
   }
-
-  .bl-modal-close-button {
-    cursor: pointer;
-    svg {
-      width: 12px;
-      aspect-ratio: 1;
-    }
-  }
 }
