@@ -25,6 +25,7 @@ TabPanel.register();
 ToastContainer.register();
 Toast.register();
 
+export { CloseButton };
 export { Select, Modal, AlertDialog };
 export { Tabs, TabList, Tab, TabPanels, TabPanel };
 export { ToastContainer, Toast };

@@ -1,0 +1,140 @@
+# Toast
+
+## Basic usage
+
+<div>
+  <button className="button button--primary" onClick={() => {Toast.info('This is an info toast')}}>Show info toast</button>
+</div>
+
+<br />
+
+First, you need to add the `bl-toast-container` component to your page. This component will be used to display the toasts.
+
+```html
+<bl-toast-container></bl-toast-container>
+```
+
+Then, you can use the `Toast` class to display toasts.
+
+```javascript
+import { Toast } from 'bloum';
+Toast.info('This is an info toast');
+```
+
+You can also use the `Toast` class directly in your HTML because it is exposed in the global scope.
+
+```html
+<button onclick="Toast.info('This is an info toast')">
+  Show info toast
+</button>
+<bl-toast-container></bl-toast-container>
+```
+
+## Status
+
+<div style={{ display: 'flex', gap: '1rem' }}>
+  <button className="button button--primary" onClick={() => {Toast.success('This is a success toast')}}>Show success toast</button>
+  <button className="button button--primary" onClick={() => {Toast.warning('This is a warning toast')}}>Show warning toast</button>
+  <button className="button button--primary" onClick={() => {Toast.error('This is an error toast')}}>Show error toast</button>
+  <button className="button button--primary" onClick={() => {Toast.info('This is an info toast')}}>Show info toast</button>
+</div>
+
+<br />
+
+```javascript
+import { Toast } from 'bloum';
+Toast.success('This is a success toast');
+Toast.warning('This is a warning toast');
+Toast.error('This is an error toast');
+Toast.info('This is an info toast');
+```
+
+## Description
+
+<div>
+  <button className="button button--primary" onClick={() => {Toast.info('This is an info toast', { description: 'This is a description' })}}>Show info toast</button>
+</div>
+
+<br />
+
+```javascript
+import { Toast } from 'bloum';
+Toast.info('This is an info toast', { description: 'This is a description' });
+```
+
+## Dismissable
+
+<div>
+  <button className="button button--primary" onClick={() => {Toast.info('This is an info toast', { isClosable: true })}}>Show info toast</button>
+</div>
+
+<br />
+
+```javascript
+import { Toast } from 'bloum';
+Toast.info('This is an info toast', { isClosable: true });
+```
+
+
+
+## API
+
+### `ToastOptions`
+
+Use the `ToastOptions` interface to customize the toasts:
+
+| Name          | Type       | Default     | Description                                                              |
+|---------------|------------|-------------|--------------------------------------------------------------------------|
+| `title`       | `string`   | `undefined` | The title of the toast.                                                  |
+| `description` | `string`   | `undefined` | An optional description of the toast.                                    |
+| `isClosable`  | `boolean`  | `false`     | Whether the toast can be dismissed by the user or not.                   |
+| `duration`    | `number`   | `8000`      | The duration of the toast in milliseconds.                               |
+| `status`      | `string`   | `info`      | The status of the toast. Can be `info`, `success`, `warning` or `error`. |
+| `onClose`     | `function` | `undefined` | A callback function that will be called when the toast is dismissed.     |
+
+### `Toast.info(title, options)`
+
+Display an info toast.
+
+| Name      | Type           | Default     | Description               |
+|-----------|----------------|-------------|---------------------------|
+| `title`   | `string`       | `undefined` | The message of the toast. |
+| `options` | `ToastOptions` | `undefined` | The options of the toast. |
+
+### `Toast.success(title, options)`
+
+Display a success toast.
+
+| Name      | Type           | Default     | Description               |
+|-----------|----------------|-------------|---------------------------|
+| `title`   | `string`       | `undefined` | The message of the toast. |
+| `options` | `ToastOptions` | `undefined` | The options of the toast. |
+
+### `Toast.warning(title, options)`
+
+Display a warning toast.
+
+| Name      | Type           | Default     | Description               |
+|-----------|----------------|-------------|---------------------------|
+| `title`   | `string`       | `undefined` | The message of the toast. |
+| `options` | `ToastOptions` | `undefined` | The options of the toast. |
+
+### `Toast.error(title, options)`
+
+Display an error toast.
+
+| Name      | Type           | Default     | Description               |
+|-----------|----------------|-------------|---------------------------|
+| `title`   | `string`       | `undefined` | The message of the toast. |
+| `options` | `ToastOptions` | `undefined` | The options of the toast. |
+
+### `Toast.show(options)`
+
+Display a toast.
+
+| Name      | Type           | Default     | Description               |
+|-----------|----------------|-------------|---------------------------|
+| `options` | `ToastOptions` | `undefined` | The options of the toast. |
+
+
+<bl-toast-container></bl-toast-container>
