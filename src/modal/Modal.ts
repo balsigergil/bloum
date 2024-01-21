@@ -100,6 +100,9 @@ export class Modal extends HTMLElement {
     const focusableElements = this.querySelectorAll<HTMLElement>(
       "a, button, input, textarea, select, details, [tabindex]:not([tabindex='-1'])",
     );
+    if (focusableElements.length === 0) {
+      return;
+    }
     const first = focusableElements[0];
     first.focus();
   }
