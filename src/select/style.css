@@ -67,7 +67,7 @@
     cursor: default;
   }
 
-  .bl-select-search-input .multiple .bl-select-search-input {
+  .bl-select-value-container.multiple .bl-select-search-input {
     width: 100%;
     min-width: 60px;
     flex: 1;
