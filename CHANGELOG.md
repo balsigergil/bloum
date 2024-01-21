@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.1.2](https://github.com/balsigergil/bloum/compare/v0.1.1...v0.1.2) (2024-01-21)
+
+
+### Bug Fixes
+
+* **closeButton:** fire click event when Enter or space is pressed ([0a0f091](https://github.com/balsigergil/bloum/commit/0a0f0918535f1c1dde50a93d2522e17cee23e7a2))
+* **modal:** no focusable element on open ([55b5b0e](https://github.com/balsigergil/bloum/commit/55b5b0ed2f0777e45c240dc225569d8333019c8d))
+* **select:** click on input should open the menu ([ea2e4a0](https://github.com/balsigergil/bloum/commit/ea2e4a06929d93f9211c977e2d7f79a180b0a572))
+
 ## [0.1.1](https://github.com/balsigergil/bloum/compare/v0.1.0...v0.1.1) (2024-01-21)
 
 
