@@ -24,6 +24,7 @@ export class AlertDialog extends Modal {
     this.setAttribute("no-close-button", "1");
     super.connectedCallback();
     this.classList.add("bl-alert-dialog");
+    this.role = "alertdialog";
     const cancelSelector = this.getAttribute("cancel");
     if (cancelSelector) {
       const cancel = this.querySelector<HTMLElement>(cancelSelector);

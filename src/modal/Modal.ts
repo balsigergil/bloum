@@ -23,6 +23,8 @@ export class Modal extends HTMLElement {
 
   connectedCallback() {
     this.classList.add("bl-modal");
+    this.role = "dialog";
+    this.ariaModal = "false";
     const modalWrapper = document.createElement("div");
     modalWrapper.classList.add("bl-modal-wrapper");
 
@@ -30,7 +32,9 @@ export class Modal extends HTMLElement {
     modalHeader.classList.add("bl-modal-header");
     const title = document.createElement("div");
     title.classList.add("bl-modal-title");
-    title.innerText = this.getAttribute("title") || "";
+    const titleText = this.getAttribute("title") || "";
+    title.innerText = titleText;
+    this.ariaLabel = titleText;
     this.removeAttribute("title");
     modalHeader.append(title);
 
@@ -84,6 +88,7 @@ export class Modal extends HTMLElement {
   open(sourceElement?: HTMLElement) {
     this.#sourceElement = sourceElement;
     this.style.display = "flex";
+    this.ariaModal = "true";
     setTimeout(() => this.classList.add("open"), 0);
     const focusableElements = this.querySelectorAll<HTMLElement>(
       "a, button, input, textarea, select, details, [tabindex]:not([tabindex='-1'])",
@@ -94,6 +99,7 @@ export class Modal extends HTMLElement {
 
   close() {
     this.classList.remove("open");
+    this.ariaModal = "false";
     setTimeout(() => (this.style.display = "none"), 150);
     if (this.#sourceElement) {
       this.#sourceElement.focus();
