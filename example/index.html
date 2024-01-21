@@ -144,6 +144,16 @@
         >
           Show toast with description
         </button>
+        <button
+          onclick="Toast.info('Callback test', {description: 'An alert will pop out when this closes.', isClosable: true, onClose: () => alert('Toast closed')})"
+        >
+          Show toast with onClose callback
+        </button>
+        <button
+          onclick="Toast.info('Won\'t close', {description: 'This toast won\'t close automatically.', isClosable: true, duration: 0})"
+        >
+          Show toast that doesn't close automatically
+        </button>
       </div>
 
       <p>

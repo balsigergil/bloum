@@ -1,29 +1,38 @@
 .bl-select {
   display: flex;
-  border-radius: 0.25rem;
-  border: 1px solid #aaa;
+  border-radius: var(--bl-border-radius);
+  border: 1px solid var(--bl-clr-gray-400);
 
-  --bl-padding: 0.5rem;
+  --bl-select-padding: 0.5rem;
 
   .bl-select-menu-wrapper {
-    border: 1px solid #aaa;
-    border-radius: 0.25rem;
-    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--bl-clr-gray-300);
+    border-radius: var(--bl-border-radius);
+    box-shadow: var(--bl-shadow-lg);
     transform: translateY(calc(100% + 0.5rem));
 
     .bl-select-menu-item {
       &.focus {
-        background-color: #eee;
+        background-color: var(--bl-clr-gray-100);
       }
 
       &.selected {
-        background-color: #ddd;
+        background-color: var(--bl-clr-gray-300);
       }
 
       &.selected.focus {
-        background-color: #ccc;
+        /* gray-400 is too dark so we mix */
+        background-color: color-mix(
+          in srgb,
+          var(--bl-clr-gray-300) 70%,
+          var(--bl-clr-gray-400)
+        );
       }
     }
+  }
+
+  .bl-select-placeholder {
+    color: var(--bl-clr-gray-600);
   }
 
   .multiple .bl-select-text {
@@ -31,9 +40,9 @@
   }
 
   .multiple .bl-select-selected-item {
-    background-color: #ddd;
+    background-color: var(--bl-clr-gray-200);
     padding: 0.125em 0.3em;
-    border-radius: 4px;
+    border-radius: var(--bl-border-radius);
     gap: 0.25em;
   }
 }

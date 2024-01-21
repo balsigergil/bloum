@@ -6,13 +6,11 @@
   padding: var(--bl-tab-padding);
   text-align: center;
   transition: color 150ms ease-in-out;
-  color: #444;
   user-select: none;
 
   &.active {
-    color: black;
-    background-color: #fff;
     position: relative;
+    color: var(--bl-clr-primary);
 
     &::after {
       content: "";
@@ -23,12 +21,12 @@
       transform: translateX(var(--bl-tab-padding));
       height: 4px;
       border-radius: 9999px;
-      background-color: var(--bl-color-primary);
+      background-color: var(--bl-clr-primary);
     }
   }
 
   &:hover {
-    color: var(--bl-color-primary);
+    color: var(--bl-clr-primary);
   }
 
   &:focus-visible {
@@ -37,5 +35,5 @@
 }
 
 .bl-tab-panel {
-  padding: 1rem;
+  padding: var(--bl-tab-padding);
 }

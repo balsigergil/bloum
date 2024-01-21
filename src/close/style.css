@@ -1,12 +1,7 @@
 .bl-close-button {
-  height: 25px;
-  width: 25px;
   background: none;
   appearance: auto;
   border: none;
-  padding: 0.375em;
-  display: inline-flex;
-  justify-content: center;
   cursor: pointer;
 }
 

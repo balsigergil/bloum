@@ -10,6 +10,8 @@ import { ToastContainer } from "./toast/ToastContainer";
 import { Toast } from "./toast/Toast";
 import { CloseButton } from "./close/CloseButton";
 
+CloseButton.register();
+
 Select.register();
 Modal.register();
 AlertDialog.register();
@@ -22,8 +24,6 @@ TabPanel.register();
 
 ToastContainer.register();
 Toast.register();
-
-CloseButton.register();
 
 export { Select, Modal, AlertDialog };
 export { Tabs, TabList, Tab, TabPanels, TabPanel };

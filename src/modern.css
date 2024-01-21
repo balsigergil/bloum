@@ -5,5 +5,29 @@
 @import "./close/modern.css";
 
 :root {
-  --bl-color-primary: #1d4ed8;
+  --bl-clr-primary: #0284c7;
+  --bl-clr-success: #15803d;
+  --bl-clr-warning: #ca8a04;
+  --bl-clr-error: #b91c1c;
+
+  --bl-clr-gray-50: #f9fafb;
+  --bl-clr-gray-100: #f3f4f6;
+  --bl-clr-gray-200: #e5e7eb;
+  --bl-clr-gray-300: #d1d5db;
+  --bl-clr-gray-400: #9ca3af;
+  --bl-clr-gray-500: #6b7280;
+  --bl-clr-gray-600: #4b5563;
+  --bl-clr-gray-700: #374151;
+  --bl-clr-gray-800: #1f2937;
+  --bl-clr-gray-900: #111827;
+  --bl-clr-gray-950: #030712;
+
+  --bl-border-radius: 4px;
+  --bl-border-radius-lg: 8px;
+
+  --bl-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --bl-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+    0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --bl-shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+    0 8px 10px -6px rgb(0 0 0 / 0.1);
 }

@@ -7,29 +7,28 @@
 
 .bl-toast {
   padding: 0.75em 1em;
-  box-shadow:
-    0 4px 6px -1px rgb(0 0 0 / 0.1),
-    0 2px 4px -2px rgb(0 0 0 / 0.1);
-  border-radius: 4px;
+  box-shadow: var(--bl-shadow);
+  border-radius: var(--bl-border-radius);
   color: #fff;
-  background-color: #0284c7;
+  background-color: var(--bl-clr-primary);
   opacity: 0;
   animation: fadeIn 0.3s ease-in-out forwards;
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  fill: #fff;
 
   &.error {
     color: #fff;
-    background-color: #b91c1c;
+    background-color: var(--bl-clr-error);
   }
   &.warning {
     color: #fff;
-    background-color: #ca8a04;
+    background-color: var(--bl-clr-warning);
   }
   &.success {
     color: #fff;
-    background-color: #15803d;
+    background-color: var(--bl-clr-success);
   }
 }
 

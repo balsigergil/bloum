@@ -39,17 +39,12 @@
     flex-wrap: wrap;
     align-items: center;
     user-select: none;
-    padding: var(--bl-padding);
+    padding: var(--bl-select-padding);
   }
 
   .bl-select-selected-item {
     display: flex;
     align-items: center;
-  }
-
-  .bl-select-selected-item-close {
-    cursor: pointer;
-    padding: 0 0.125em;
   }
 
   :not(.multiple) .bl-select-text.filtered {
@@ -60,18 +55,14 @@
     visibility: hidden;
   }
 
-  .bl-select-placeholder {
-    color: #555;
-  }
-
   .bl-select-search-input {
     grid-area: 1 / 1 / 1 / 1;
     height: 100%;
     background-color: transparent;
     appearance: none;
     outline: none;
-    padding: var(--bl-padding);
-    border: 1px solid var(--bl-border-color);
+    border: none;
+    padding: var(--bl-select-padding);
     font: inherit;
     cursor: default;
   }
@@ -93,7 +84,7 @@
     opacity: 0;
     background-color: #fff;
     z-index: 10;
-    max-height: 15em;
+    max-height: 300px;
     overflow-block: scroll;
     overflow-inline: hidden;
     backface-visibility: hidden;
@@ -101,19 +92,11 @@
   }
 
   .bl-select-menu-item {
-    padding: var(--bl-padding);
+    padding: var(--bl-select-padding);
     cursor: pointer;
 
     &.filtered {
       display: none;
-    }
-
-    &.focus {
-      background-color: var(--bl-bg-color-active);
-    }
-
-    &.selected {
-      background-color: var(--bl-bg-color-selected);
     }
 
     &.no-result {
@@ -123,24 +106,18 @@
 
   .bl-select-indicators {
     display: flex;
-    padding-right: 0.2rem;
+    align-items: center;
+    padding-right: var(--bl-select-padding);
+    gap: 0.5rem;
 
     & > * {
       display: flex;
       align-items: center;
-      padding: 0.3rem;
-    }
-
-    svg {
-      aspect-ratio: 1;
-      width: 20px;
     }
   }
 
   .bl-select-clear-button {
     display: none;
-    cursor: pointer;
-    color: #555;
 
     &.show {
       display: flex;

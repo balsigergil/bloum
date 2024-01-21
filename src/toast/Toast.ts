@@ -82,7 +82,7 @@ export class Toast extends HTMLElement {
 
       toast.#onClose = options.onClose;
 
-      const duration = options.duration || 8000;
+      const duration = options.duration ?? 8000;
       if (duration <= 0) return toast;
       setTimeout(() => {
         toast.close();
