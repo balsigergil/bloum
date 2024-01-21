@@ -32,7 +32,7 @@
     "dev": "npm run dev -w example",
     "test": "playwright test",
     "build": "rimraf dist && concurrently \"npm run build:js\" \"npm run build:css\" \"npm run build:types\" && node scripts/copy.js",
-    "build:js": "rollup -c rollup.config.js",
+    "build:js": "rollup -c rollup.config.cjs --bundleConfigAsCjs",
     "build:css": "postcss src/*.css --dir dist --ext .min.css",
     "build:types": "tsc -p tsconfig.json --emitDeclarationOnly --declaration --declarationDir dist/types",
     "lint": "eslint --ext .ts ./src",

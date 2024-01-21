@@ -1,6 +1,6 @@
-import { defineConfig } from "rollup";
-import typescript from "@rollup/plugin-typescript";
-import terser from "@rollup/plugin-terser";
+const { defineConfig } = require("rollup");
+const typescript = require("@rollup/plugin-typescript");
+const terser = require("@rollup/plugin-terser");
 
 import pkg from "./package.json" with { type: "json" };
 
