@@ -29,6 +29,7 @@ export class Modal extends HTMLElement {
     this.classList.add("bl-modal");
     this.role = "dialog";
     this.ariaModal = "false";
+    this.style.display = "none";
     const modalWrapper = document.createElement("div");
     modalWrapper.classList.add("bl-modal-wrapper");
 
@@ -96,6 +97,11 @@ export class Modal extends HTMLElement {
     this.#sourceElement = sourceElement;
     this.style.display = "flex";
     this.ariaModal = "true";
+
+    // Prevent scrolling of the body
+    document.body.style.overflow = "hidden";
+
+    // Trick to make the transition work
     setTimeout(() => this.classList.add("open"), 0);
     const focusableElements = this.querySelectorAll<HTMLElement>(
       "a, button, input, textarea, select, details, [tabindex]:not([tabindex='-1'])",
@@ -110,6 +116,10 @@ export class Modal extends HTMLElement {
   close() {
     this.classList.remove("open");
     this.ariaModal = "false";
+
+    // Restore scrolling of the body
+    document.body.style.overflow = "auto";
+
     setTimeout(() => (this.style.display = "none"), 150);
     if (this.#sourceElement) {
       this.#sourceElement.focus();
