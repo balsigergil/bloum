@@ -90,7 +90,7 @@ export class Select extends HTMLElement {
       }
       if (e.key === "Enter") {
         e.preventDefault();
-        if (this.#focusedItemIndex !== null) {
+        if (this.#focusedItemIndex !== null && this.isMenuOpen) {
           this.#setSelected(this.#focusedItemIndex);
         }
         this.closeMenu();
