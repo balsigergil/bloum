@@ -1,6 +1,5 @@
 .bl-toast-container {
-  bottom: 20px;
-  width: 100%;
+  bottom: 30px;
   gap: 1rem;
   align-items: center;
 }

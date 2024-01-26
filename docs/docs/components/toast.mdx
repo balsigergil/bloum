@@ -1,3 +1,7 @@
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+</head>
+
 # Toast
 
 ## Basic usage
@@ -32,7 +36,7 @@ You can also use the `Toast` class directly in your HTML because it is exposed i
 
 ## Status
 
-<div style={{ display: 'flex', gap: '1rem' }}>
+<div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
   <button className="button button--primary" onClick={() => {Toast.success('This is a success toast')}}>Show success toast</button>
   <button className="button button--primary" onClick={() => {Toast.warning('This is a warning toast')}}>Show warning toast</button>
   <button className="button button--primary" onClick={() => {Toast.error('This is an error toast')}}>Show error toast</button>

@@ -17,5 +17,10 @@ export default defineConfig({
       name: "bloom",
     },
   ],
-  plugins: [typescript(), terser()],
+  plugins: [
+    typescript(),
+    terser({
+      ecma: 2020,
+    }),
+  ],
 });
