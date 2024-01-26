@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.1.3](https://github.com/balsigergil/bloum/compare/v0.1.2...v0.1.3) (2024-01-26)
+
+
+### Bug Fixes
+
+* **modal:** prevent body scrolling when open (fix [#2](https://github.com/balsigergil/bloum/issues/2)) ([725b847](https://github.com/balsigergil/bloum/commit/725b847efd7c5bc8e37e99bf2ef046daa220c2d2))
+* **select:** multiselect option is toggled when menu is closed (fix [#4](https://github.com/balsigergil/bloum/issues/4)) ([fca4f34](https://github.com/balsigergil/bloum/commit/fca4f347b87e493ea444a5a8eba0418a613a3a55))
+* **toast:** toast do not display correctly on mobile (fix [#5](https://github.com/balsigergil/bloum/issues/5)) ([80d2d44](https://github.com/balsigergil/bloum/commit/80d2d44a3f0bee8ade800e7094418c44de391881))
+
 ## [0.1.2](https://github.com/balsigergil/bloum/compare/v0.1.1...v0.1.2) (2024-01-21)
 
 
