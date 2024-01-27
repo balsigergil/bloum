@@ -43,22 +43,24 @@
   - [ ] Fuzzy search
 - [x] [Modal](https://www.bloum.dev/docs/components/modal)
 - [x] Alert dialog
+  - [ ] Documentation
 - [x] [Tabs](https://www.bloum.dev/docs/components/tabs)
   - [x] Anchor links
-- [x] Toast
+- [x] [Toast](https://www.bloum.dev/docs/components/toast)
   - [x] Autohide
   - [x] Dismissable
   - [ ] Position
   - [ ] Promise based
 - [ ] DatePicker / TimePicker / Calendar
-- [ ] Color picker
 - [ ] Accordion / Collapse
+- [ ] Stepper / Wizard
 - [ ] Popover
 - [ ] Tooltip
-- [ ] Phone input
 - [ ] DataTable
+- [ ] Phone input
 - [ ] Switch
 - [ ] Radio/Select group
+- [ ] Color picker
 
 ## Installation
 
