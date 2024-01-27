@@ -1,20 +1,22 @@
- # Tabs
+# Tabs
 
- ## Basic usage
+Tabs are used to organize content into different views where only one view can be visible at a time. Tabs are always paired with a tab panel component.
+
+## Basic usage
 
 <bl-tabs>
-    <bl-tab-list>
-      <bl-tab>Tab 1</bl-tab>
-      <bl-tab>Second tab</bl-tab>
-      <bl-tab>A tab with a long name here</bl-tab>
-      <bl-tab>The last tab</bl-tab>
-    </bl-tab-list>
-    <bl-tab-panels>
-      <bl-tab-panel>Tab 1 content</bl-tab-panel>
-      <bl-tab-panel>Tab 2 content</bl-tab-panel>
-      <bl-tab-panel>Tab 3 content</bl-tab-panel>
-      <bl-tab-panel>Tab 4 content</bl-tab-panel>
-    </bl-tab-panels>
+  <bl-tab-list>
+    <bl-tab>Tab 1</bl-tab>
+    <bl-tab>Second tab</bl-tab>
+    <bl-tab>A tab with a long name here</bl-tab>
+    <bl-tab>The last tab</bl-tab>
+  </bl-tab-list>
+  <bl-tab-panels>
+    <bl-tab-panel>Tab 1 content</bl-tab-panel>
+    <bl-tab-panel>Tab 2 content</bl-tab-panel>
+    <bl-tab-panel>Tab 3 content</bl-tab-panel>
+    <bl-tab-panel>Tab 4 content</bl-tab-panel>
+  </bl-tab-panels>
 </bl-tabs>
 
 <br />
@@ -37,6 +39,8 @@
 ```
 
 ## Tabs with anchor links
+
+Tabs can be used with anchor links to allow users to bookmark a specific tab. To use anchor links, add the `use-anchor` attribute to the `bl-tabs` element. The `href` attribute of each `bl-tab` element will be used as the anchor link.
 
 <bl-tabs use-anchor>
   <bl-tab-list>

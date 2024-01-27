@@ -2,9 +2,22 @@
 sidebar_position: 0
 ---
 
-# Installation
+# Introduction
 
-## CDN
+## What is Bloum?
+
+Bloum is an open-source library of unstyled web components. The goal of this library is to provide a set of components that can be used in any web project, regardless of the framework or library used.
+It implements the most common components used in web applications that required a lot of JavaScript to work, like select, tabs, modals, etc.
+
+It is unstyled by default, meaning that it doesn't provide an opinionated design. It is up to you to style the components to fit your needs. However, it comes with a theme that you can use to get started quickly.
+
+## Why Bloum?
+
+The goal for this library is not to provide an exhaustive list of components, but rather to provider components that are usually tedious to implement and require a lot of JavaScript to work.
+
+## Installation
+
+### CDN
 
 You can use the following lines in your `head` tag to load the latest version of Bloum from a CDN:
 
@@ -17,7 +30,7 @@ You can use the following lines in your `head` tag to load the latest version of
 <link href="https://unpkg.com/bloum/dist/modern.min.css" rel="stylesheet">
 ```
 
-## Package manager
+### Package manager
 
 
 import Tabs from '@theme/Tabs';
@@ -50,7 +63,19 @@ Once installed, you can import the library in your JavaScript project:
 
 ```js
 import "bloum"
+```
+
+This will register all the components globally.
+
+After that, you can include the default unstyled stylesheet in your JavaScript if you're using a bundler like Vite or Webpack:
+
+```js
 import "bloum/dist/style.min.css"
+```
+
+If you want to use an already styled theme, you can include it too:
+
+```js
 import "bloum/dist/modern.min.css"
 ```
 

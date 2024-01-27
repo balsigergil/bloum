@@ -1,5 +1,7 @@
 # Modal
 
+A modal is a dialog box/popup window that is displayed on top of the current page. It is used to display information or capture user input.
+When the modal is open, the interaction with the background is disabled and the focus is trapped inside the modal.
 
 ## Basic usage
 
@@ -55,6 +57,8 @@ Simply add the `blur` class to the modal to blur the background.
 
 ## Focus trapped inside modal
 
+When the modal is open, the focus is trapped inside the modal. This means that the user cannot interact with the background or the rest of the page.
+
 <button className="button button--primary" onClick={(e) => document.getElementById('mymodal-focus')?.open(e.target)}>Open modal</button>
 
 <bl-modal title="This is a modal" id="mymodal-focus">
@@ -75,20 +79,6 @@ Simply add the `blur` class to the modal to blur the background.
         <input type="password" />
     </div>
     <div>
-        <button>Submit</button>
+        <button className="button button--primary">Submit</button>
     </div>
 </bl-modal>
-
-<br />
-<br />
-
-```html
-<button data-modal="#mymodal">Open modal</button>
-
-<bl-modal title="This is a modal" id="mymodal" class="blur">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci commodi
-    culpa dolore dolorem doloremque ducimus illo, itaque iure laborum maxime
-    mollitia nemo neque optio, pariatur, reiciendis tenetur veritatis
-    voluptate voluptatibus?
-</bl-modal>
-```
