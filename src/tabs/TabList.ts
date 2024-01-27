@@ -3,7 +3,7 @@ import { Tabs } from "./Tabs";
 export class TabList extends HTMLElement {
   static NAME = "bl-tab-list";
   static register() {
-    customElements.define(this.NAME, TabList);
+    customElements.define(this.NAME, this);
   }
 
   constructor() {
@@ -11,14 +11,14 @@ export class TabList extends HTMLElement {
   }
 
   connectedCallback() {
-    this.classList.add("bl-tab-list");
+    this.classList.add(TabList.NAME);
 
     this.addEventListener("keydown", (e) => {
       if (e.key === "ArrowRight") {
-        this.closest<Tabs>("bl-tabs")?.selectNextTab();
+        this.closest<Tabs>(".bl-tabs")?.selectNextTab();
       }
       if (e.key === "ArrowLeft") {
-        this.closest<Tabs>("bl-tabs")?.selectPreviousTab();
+        this.closest<Tabs>(".bl-tabs")?.selectPreviousTab();
       }
     });
   }

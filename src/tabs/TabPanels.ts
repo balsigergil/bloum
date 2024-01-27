@@ -1,7 +1,7 @@
 export class TabPanels extends HTMLElement {
   static NAME = "bl-tab-panels";
   static register() {
-    customElements.define(this.NAME, TabPanels);
+    customElements.define(this.NAME, this);
   }
 
   constructor() {
@@ -9,6 +9,6 @@ export class TabPanels extends HTMLElement {
   }
 
   connectedCallback() {
-    this.classList.add("bl-tab-panels");
+    this.classList.add(TabPanels.NAME);
   }
 }

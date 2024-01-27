@@ -6,10 +6,10 @@ export class Tabs extends HTMLElement {
 
   #selectedIndex = -1;
   #tabCount = 0;
-  #useAnchor: boolean = false;
+  #useAnchor = false;
 
   static register() {
-    customElements.define(this.NAME, Tabs);
+    customElements.define(this.NAME, this);
   }
 
   constructor() {
@@ -17,9 +17,12 @@ export class Tabs extends HTMLElement {
   }
 
   connectedCallback() {
-    this.classList.add("bl-tabs");
+    this.classList.add(Tabs.NAME);
     this.setAttribute("role", "tablist");
-    const tabs = this.querySelectorAll<Tab>("bl-tab");
+  }
+
+  init() {
+    const tabs = this.querySelectorAll<Tab>(".bl-tab");
     this.#tabCount = tabs.length;
     tabs.forEach((t, i) => {
       t.addEventListener("click", (e) => {
@@ -34,7 +37,7 @@ export class Tabs extends HTMLElement {
       const hash = window.location.hash;
       if (hash) {
         const id = hash.slice(1);
-        const tab = this.querySelector<Tab>(`bl-tab[href="${id}"]`);
+        const tab = this.querySelector<Tab>(`.bl-tab[href="${id}"]`);
         if (tab) {
           this.setSelected(Array.from(tabs).indexOf(tab), false);
         } else {
@@ -51,7 +54,7 @@ export class Tabs extends HTMLElement {
   setSelected(index: number, focus: boolean = true) {
     if (index !== this.#selectedIndex && index >= 0) {
       if (this.#useAnchor && focus) {
-        const tabs = this.querySelectorAll<Tab>("bl-tab");
+        const tabs = this.querySelectorAll<Tab>(".bl-tab");
         const tab = tabs[index];
         const href = tab.getAttribute("href");
         if (href) {
@@ -60,7 +63,7 @@ export class Tabs extends HTMLElement {
       }
 
       this.#selectedIndex = index;
-      const panels = this.querySelectorAll<TabPanel>("bl-tab-panel");
+      const panels = this.querySelectorAll<TabPanel>(".bl-tab-panel");
       for (let i = 0; i < panels.length; i++) {
         if (i === index) {
           panels[i].classList.add("show");
@@ -69,7 +72,7 @@ export class Tabs extends HTMLElement {
         }
       }
 
-      const tabs = this.querySelectorAll<Tab>("bl-tab");
+      const tabs = this.querySelectorAll<Tab>(".bl-tab");
       for (let i = 0; i < tabs.length; i++) {
         if (index === i) {
           tabs[i].tabIndex = 0;
@@ -85,7 +88,7 @@ export class Tabs extends HTMLElement {
         }
       }
     } else if (index < 0) {
-      const panels = this.querySelectorAll<TabPanel>("bl-tab-panel");
+      const panels = this.querySelectorAll<TabPanel>(".bl-tab-panel");
       panels.forEach((p) => p.classList.remove("show"));
     }
   }

@@ -1,7 +1,7 @@
 export class Tab extends HTMLElement {
   static NAME = "bl-tab";
   static register() {
-    customElements.define(this.NAME, Tab);
+    customElements.define(this.NAME, this);
   }
 
   constructor() {
@@ -9,7 +9,7 @@ export class Tab extends HTMLElement {
   }
 
   connectedCallback() {
-    this.classList.add("bl-tab");
+    this.classList.add(Tab.NAME);
     this.setAttribute("role", "tab");
   }
 }

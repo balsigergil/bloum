@@ -42,7 +42,6 @@
   - [x] Disabled
 - [x] [Modal](https://www.bloum.dev/docs/components/modal)
 - [x] Alert dialog
-  - [x] Documentation
 - [x] [Tabs](https://www.bloum.dev/docs/components/tabs)
   - [x] Anchor links
 - [x] [Toast](https://www.bloum.dev/docs/components/toast)
