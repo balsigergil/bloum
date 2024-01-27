@@ -1,4 +1,5 @@
 import { CloseButton } from "../close/CloseButton";
+import { FOCUSABLE_ELEMENTS } from "../utils/constants";
 
 export class Modal extends HTMLElement {
   static NAME = "bl-modal";
@@ -66,9 +67,8 @@ export class Modal extends HTMLElement {
         this.close();
       }
       if (e.key === "Tab" && this.isOpen()) {
-        const focusableElements = this.querySelectorAll<HTMLElement>(
-          "a, button, input, textarea, select, details, [tabindex]:not([tabindex='-1'])",
-        );
+        const focusableElements =
+          this.querySelectorAll<HTMLElement>(FOCUSABLE_ELEMENTS);
         if (focusableElements.length === 0) {
           return;
         }
@@ -112,9 +112,8 @@ export class Modal extends HTMLElement {
 
     // Trick to make the transition work
     setTimeout(() => this.classList.add("open"), 0);
-    const focusableElements = this.querySelectorAll<HTMLElement>(
-      "a, button, input, textarea, select, details, [tabindex]:not([tabindex='-1'])",
-    );
+    const focusableElements =
+      this.querySelectorAll<HTMLElement>(FOCUSABLE_ELEMENTS);
     if (focusableElements.length === 0) {
       return;
     }

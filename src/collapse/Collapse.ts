@@ -1,3 +1,9 @@
+import { FOCUSABLE_ELEMENTS } from "../utils/constants";
+
+export interface CollapseEvent {
+  expanded: boolean;
+}
+
 export class Collapse extends HTMLElement {
   NAME = "collapse";
 
@@ -33,11 +39,19 @@ export class Collapse extends HTMLElement {
   show() {
     this.ariaHidden = "false";
     this.classList.add("show");
+    this.querySelectorAll(FOCUSABLE_ELEMENTS).forEach((element) => {
+      element.setAttribute("tabindex", "0");
+    });
+    this.#dispatchCustomEvent();
   }
 
   hide() {
     this.ariaHidden = "true";
     this.classList.remove("show");
+    this.querySelectorAll(FOCUSABLE_ELEMENTS).forEach((element) => {
+      element.setAttribute("tabindex", "-1");
+    });
+    this.#dispatchCustomEvent();
   }
 
   toggle() {
@@ -50,5 +64,15 @@ export class Collapse extends HTMLElement {
 
   get expanded() {
     return this.classList.contains("show");
+  }
+
+  #dispatchCustomEvent() {
+    this.dispatchEvent(
+      new CustomEvent<CollapseEvent>("bl-collapse-toggled", {
+        detail: {
+          expanded: this.expanded,
+        },
+      }),
+    );
   }
 }
