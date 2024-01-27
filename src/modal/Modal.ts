@@ -74,10 +74,19 @@ export class Modal extends HTMLElement {
         }
         const first = focusableElements[0];
         const last = focusableElements[focusableElements.length - 1];
-        if (e.shiftKey && document.activeElement === first) {
+        const activeElement = document.activeElement as HTMLElement | null;
+        if (e.shiftKey && activeElement === first) {
           e.preventDefault();
           last.focus();
-        } else if (!e.shiftKey && document.activeElement === last) {
+        } else if (!e.shiftKey && activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+        // If active element is not in the modal focusable elements, focus the first element
+        if (
+          activeElement !== null &&
+          !Array.from(focusableElements).includes(activeElement)
+        ) {
           e.preventDefault();
           first.focus();
         }
