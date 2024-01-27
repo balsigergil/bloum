@@ -16,7 +16,7 @@
         <a aria-label="License" href="https://github.com/balsigergil/bloum/blob/main/LICENSE">
           <img alt="License" src="https://img.shields.io/npm/l/bloum?style=for-the-badge">
         </a>
-        <a aria-label="Build status" href="https://github.com/balsigergil/bloum/actions/workflows/playwright.yml">
+        <a aria-label="Build status" href="https://github.com/balsigergil/bloum/actions/workflows/quality.yml">
           <img alt="Build status" src="https://img.shields.io/github/actions/workflow/status/balsigergil/bloum/quality.yml?style=for-the-badge&label=tests">
         </a>
     </div>
@@ -42,13 +42,13 @@
   - [x] Disabled
 - [x] [Modal](https://www.bloum.dev/docs/components/modal)
 - [x] Alert dialog
-  - [ ] Documentation
+  - [x] Documentation
 - [x] [Tabs](https://www.bloum.dev/docs/components/tabs)
   - [x] Anchor links
 - [x] [Toast](https://www.bloum.dev/docs/components/toast)
   - [x] Autohide
   - [x] Dismissable
-- [ ] Accordion / Collapse
+- [x] Accordion / Collapse
 - [ ] DatePicker / TimePicker / Calendar
 - [ ] Stepper / Wizard
 - [ ] Popover
