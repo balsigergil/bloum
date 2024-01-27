@@ -13,7 +13,7 @@
 
     .bl-select-menu-item {
       &.focus {
-        background-color: var(--bl-clr-gray-100);
+        background-color: var(--bl-clr-gray-200);
       }
 
       &.selected {
@@ -24,7 +24,7 @@
         /* gray-400 is too dark so we mix */
         background-color: color-mix(
           in srgb,
-          var(--bl-clr-gray-300) 70%,
+          var(--bl-clr-gray-300) 60%,
           var(--bl-clr-gray-400)
         );
       }
@@ -41,8 +41,12 @@
 
   .multiple .bl-select-selected-item {
     background-color: var(--bl-clr-gray-200);
-    padding: 0.125em 0.3em;
+    padding: 0.1875em 0.3125em;
     border-radius: var(--bl-border-radius);
     gap: 0.25em;
+    .bl-close-button {
+      --bl-close-btn-size: 20px;
+      --bl-close-btn-padding: 0.125rem;
+    }
   }
 }

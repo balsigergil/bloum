@@ -47,10 +47,7 @@
     align-items: center;
   }
 
-  :not(.multiple) .bl-select-text.filtered {
-    visibility: hidden;
-  }
-
+  :not(.multiple) .bl-select-text.filtered,
   .multiple:not(.has-value) .bl-select-text.filtered {
     visibility: hidden;
   }

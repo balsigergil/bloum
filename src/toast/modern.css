@@ -14,7 +14,7 @@
   animation: fadeIn 0.3s ease-in-out forwards;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.625rem;
   fill: #fff;
 
   &.error {
@@ -39,11 +39,14 @@
   animation: fadeOut 0.3s ease-in-out forwards;
 }
 
-.bl-toast-icon,
-.bl-toast-close {
-  fill: white;
+.bl-toast-icon {
+  color: #fff;
   width: 20px;
   height: 20px;
+}
+
+.bl-toast .bl-close-button {
+  color: #fff;
 }
 
 @keyframes fadeIn {

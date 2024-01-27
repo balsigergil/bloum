@@ -1,17 +1,21 @@
 .bl-close-button {
-  height: 25px;
-  width: 25px;
+  --bl-close-btn-size: 25px;
+  --bl-close-btn-padding: 0.25rem;
+
+  width: var(--bl-close-btn-size);
+  height: var(--bl-close-btn-size);
   transition: background-color 100ms ease-in-out;
   border-radius: var(--bl-border-radius);
-  padding: 0.3125em;
+  padding: var(--bl-close-btn-padding);
   display: grid;
   place-items: center;
+  color: var(--bl-clr-gray-700);
 }
 
 .bl-close-button:hover {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.075);
 }
 
 .bl-close-button:active {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.15);
 }
