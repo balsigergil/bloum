@@ -2,9 +2,9 @@ const { defineConfig } = require("rollup");
 const typescript = require("@rollup/plugin-typescript");
 const terser = require("@rollup/plugin-terser");
 
-import pkg from "./package.json" with { type: "json" };
+const pkg = require("./package.json");
 
-export default defineConfig({
+module.exports = defineConfig({
   input: "src/index.ts",
   output: [
     {
