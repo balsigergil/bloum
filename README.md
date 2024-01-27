@@ -30,7 +30,6 @@
 - 💻 [Usage](#usage)
 - 📋 [Documentation](#documentation)
 - 📝 [Contributing](#contributing)
-- 💬 [Community](#community)
 - ⚖️ [License](#license)
 
 ## Introduction
@@ -46,16 +45,19 @@ It is unstyled by default, meaning that it doesn't provide an opinionated design
 
 The goal for this library is not to provide an exhaustive list of components, but rather to provider components that are usually tedious to implement and require a lot of JavaScript to work.
 
+**⚠️ Warning:** It currently doesn't support virtual DOM libraries like React or Vue.
+
 ## Features
 
-- 🪶 **Lightweight:** Bloum is a library of *unstyled* web components. It comes with minimal CSS, so you can easily customize it to fit your needs.
-- 🔍 **Accessible:** Built with accessibility in mind. It's fully keyboard navigable and ARIA compliant.
-- ☯️ **Dark mode:** Supports dark mode out of the box.
+- 🪶 **Lightweight:** As an *unstyled* library, it comes with minimal CSS for you to style the components as you wish.
+- 🔍 **Accessible:** Built with accessibility in mind. It's fully keyboard navigable and [ARIA](https://www.w3.org/WAI/ARIA/apg/) compliant.
+- 🌓 **Dark mode:** Supports dark mode out of the box.
 - 📱 **Responsive:** Works on all modern browsers and devices.
 - 📦 **No dependencies:** Does not depend on any other library or framework.
-- 🧪 **Tested:** End-to-end tests with Playwright.
+- 🧪 **Tested:** End-to-end tests with [Playwright](https://playwright.dev/).
 - 🎨 **Theming:** Easy to customize and comes with a modern theme to quickly get started.
 - 🌈 **Modern:** Built with the [Web Components](https://developer.mozilla.org/en-US/docs/Web/API/Web_components) API.
+- 🤹 **Versatile:** Can be used with any non-(virtual DOM) client-side library like [Svelte](https://svelte.dev/), [Alpine.js](https://alpinejs.dev/) or [HTMX](https://htmx.org/) and can be integrated with [Tailwind CSS](https://tailwindcss.com/) or [Bootstrap](https://getbootstrap.com/).
 
 **Components:**
 
