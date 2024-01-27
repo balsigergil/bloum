@@ -48,10 +48,8 @@
 - [x] [Toast](https://www.bloum.dev/docs/components/toast)
   - [x] Autohide
   - [x] Dismissable
-  - [ ] Position
-  - [ ] Promise based
-- [ ] DatePicker / TimePicker / Calendar
 - [ ] Accordion / Collapse
+- [ ] DatePicker / TimePicker / Calendar
 - [ ] Stepper / Wizard
 - [ ] Popover
 - [ ] Tooltip

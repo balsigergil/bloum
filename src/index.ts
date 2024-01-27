@@ -9,6 +9,7 @@ import { TabPanel } from "./tabs/TabPanel";
 import { ToastContainer } from "./toast/ToastContainer";
 import { Toast } from "./toast/Toast";
 import { CloseButton } from "./close/CloseButton";
+import { Collapse } from "./collapse/Collapse";
 
 CloseButton.register();
 
@@ -25,10 +26,13 @@ TabPanel.register();
 ToastContainer.register();
 Toast.register();
 
+Collapse.register();
+
 export { CloseButton };
 export { Select, Modal, AlertDialog };
 export { Tabs, TabList, Tab, TabPanels, TabPanel };
 export { ToastContainer, Toast };
+export { Collapse };
 
 window.Toast = Toast;
 
