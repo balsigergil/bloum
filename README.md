@@ -35,19 +35,11 @@
 ## Features
 
 - [x] [Select](https://www.bloum.dev/docs/components/select)
-  - [x] Clearable
-  - [x] Searchable
-  - [x] Multiple selection
-  - [x] Aria compatibility
-  - [x] Disabled
 - [x] [Modal](https://www.bloum.dev/docs/components/modal)
-- [x] Alert dialog
+- [x] [Alert dialog](https://www.bloum.dev/docs/components/alert)
 - [x] [Tabs](https://www.bloum.dev/docs/components/tabs)
-  - [x] Anchor links
 - [x] [Toast](https://www.bloum.dev/docs/components/toast)
-  - [x] Autohide
-  - [x] Dismissable
-- [x] Accordion / Collapse
+- [x] [Accordion / Collapse](https://www.bloum.dev/docs/components/accordion)
 - [ ] DatePicker / TimePicker / Calendar
 - [ ] Stepper / Wizard
 - [ ] Popover
