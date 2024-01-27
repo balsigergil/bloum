@@ -27,7 +27,6 @@ body {
   width: 40px;
   aspect-ratio: 1 / 1;
   border-radius: 9999px;
-  background-color: lightcoral;
   display: grid;
   place-items: center;
   font-size: 1.2rem;
@@ -42,7 +41,17 @@ body {
   color: #555;
 }
 
+@media (prefers-color-scheme: dark) {
+  .member-job {
+    color: #bbb;
+  }
+}
+
 p {
   padding: 0;
   margin: 1rem 0 0;
+}
+
+:root {
+  color-scheme: dark;
 }

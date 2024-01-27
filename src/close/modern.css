@@ -9,7 +9,6 @@
   padding: var(--bl-close-btn-padding);
   display: grid;
   place-items: center;
-  color: var(--bl-clr-gray-700);
 
   &:hover {
     background-color: rgba(0, 0, 0, 0.075);
@@ -22,5 +21,17 @@
   &:focus-visible {
     box-shadow: 0 0 0 2px var(--bl-clr-primary);
     outline: none;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .bl-close-button {
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.075);
+    }
+
+    &:active {
+      background-color: rgba(255, 255, 255, 0.15);
+    }
   }
 }

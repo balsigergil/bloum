@@ -34,6 +34,17 @@
 
 ## Features
 
+- 🪶 **Lightweight:** Bloum is a library of *unstyled* web components. It comes with minimal CSS, so you can easily customize it to fit your needs.
+- 🔍 **Accessible:** Built with accessibility in mind. It's fully keyboard navigable and ARIA compliant.
+- ☯️ **Dark mode:** Supports dark mode out of the box.
+- 📱 **Responsive:** Works on all modern browsers and devices.
+- 📦 **No dependencies:** Does not depend on any other library or framework.
+- 🧪 **Tested:** End-to-end tests with Playwright.
+- 🎨 **Theming:** Easy to customize. Comes with a modern theme to quickly get started.
+- 🌈 **Modern:** Built with modern Web APIs such as Custom Elements and use the latest CSS features while maintaining compatibility with older browsers.
+
+**Components:**
+
 - [x] [Select](https://www.bloum.dev/docs/components/select)
 - [x] [Modal](https://www.bloum.dev/docs/components/modal)
 - [x] [Alert dialog](https://www.bloum.dev/docs/components/alert)
@@ -47,7 +58,6 @@
 - [ ] DataTable
 - [ ] Phone input
 - [ ] Switch
-- [ ] Radio/Select group
 - [ ] Color picker
 
 ## Installation

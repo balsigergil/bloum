@@ -79,7 +79,6 @@
     visibility: hidden;
     pointer-events: none;
     opacity: 0;
-    background-color: #fff;
     z-index: 10;
     max-height: 300px;
     overflow-block: scroll;

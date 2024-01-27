@@ -13,25 +13,12 @@
     transform: translateY(-1rem);
     display: grid;
     gap: 1rem;
+    background-color: #fff;
   }
 
   .bl-modal-title {
     font-size: 1.25rem;
     font-weight: 600;
-  }
-
-  .bl-modal-close-button {
-    appearance: none;
-    border: none;
-    background: none;
-
-    &:focus-visible {
-      outline: none;
-      border-radius: 2px;
-      box-shadow:
-        0 0 0 4px #fff,
-        0 0 0 6px #000;
-    }
   }
 
   &.open {
@@ -49,4 +36,12 @@
 
 .bl-modal.blur {
   backdrop-filter: blur(var(--bl-modal-blur, 4px));
+}
+
+@media (prefers-color-scheme: dark) {
+  .bl-modal {
+    .bl-modal-wrapper {
+      background-color: var(--bl-clr-gray-800);
+    }
+  }
 }

@@ -12,7 +12,6 @@
   .bl-modal-wrapper {
     margin-block: var(--bl-modal-margin-y, 4rem);
     max-width: min(var(--bl-modal-width, 800px), 100% - 2rem);
-    background-color: #fff;
     padding: var(--bl-modal-padding, 1rem);
     border-radius: var(--bl-modal-border-radius);
   }

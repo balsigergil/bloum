@@ -4,6 +4,10 @@
     display: grid;
   }
 
+  .bl-accordion-item:last-of-type {
+    border-bottom: 1px solid var(--bl-clr-gray-200);
+  }
+
   .bl-accordion-header > button {
     appearance: none;
     background: none;
@@ -18,7 +22,7 @@
     text-align: left;
 
     &:hover {
-      background-color: var(--bl-clr-gray-100);
+      background-color: rgba(0, 0, 0, 0.05);
       z-index: 2;
     }
 
@@ -29,11 +33,22 @@
     }
   }
 
-  .bl-accordion-item:last-of-type {
-    border-bottom: 1px solid var(--bl-clr-gray-200);
-  }
-
   .bl-accordion-body {
     --bl-collapse-padding: 0.625rem;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .bl-accordion {
+    .bl-accordion-item {
+      border-top-color: var(--bl-clr-gray-700);
+    }
+    .bl-accordion-item:last-of-type {
+      border-bottom-color: var(--bl-clr-gray-700);
+    }
+
+    .bl-accordion-header > button:hover {
+      background-color: rgba(255, 255, 255, 0.05);
+    }
   }
 }
