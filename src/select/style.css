@@ -27,7 +27,7 @@
     display: flex;
   }
 
-  &.open:not([multiple])
+  &.open:not([multiple])[searchable]
     .bl-select-value-container:has(input:focus)
     .bl-select-text {
     opacity: 0.6;
