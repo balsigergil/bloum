@@ -31,7 +31,10 @@ export class Collapse extends HTMLElement {
     this.setAttribute("aria-hidden", "true");
     const wrapper = document.createElement("div");
     wrapper.classList.add("bl-collapse-wrapper");
-    wrapper.append(...this.childNodes);
+    const paddingWrapper = document.createElement("div");
+    paddingWrapper.classList.add("bl-collapse-padding");
+    paddingWrapper.append(...this.childNodes);
+    wrapper.append(paddingWrapper);
     this.append(wrapper);
     this.hide();
   }

@@ -3,6 +3,7 @@
 @import "./modal/modern.css";
 @import "./toast/modern.css";
 @import "./close/modern.css";
+@import "./accordion/modern.css";
 
 :root {
   --bl-clr-primary: #0284c7;

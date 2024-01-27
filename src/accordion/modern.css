@@ -1,0 +1,39 @@
+.bl-accordion {
+  .bl-accordion-item {
+    border-top: 1px solid var(--bl-clr-gray-200);
+    display: grid;
+  }
+
+  .bl-accordion-header > button {
+    appearance: none;
+    background: none;
+    border: 0;
+    font-size: inherit;
+    font-family: inherit;
+    padding: 0.625rem;
+    cursor: pointer;
+    display: block;
+    transition: all 150ms ease-in-out;
+    width: 100%;
+    text-align: left;
+
+    &:hover {
+      background-color: var(--bl-clr-gray-100);
+      z-index: 2;
+    }
+
+    &:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 2px var(--bl-clr-primary);
+      z-index: 3;
+    }
+  }
+
+  .bl-accordion-item:last-of-type {
+    border-bottom: 1px solid var(--bl-clr-gray-200);
+  }
+
+  .bl-accordion-body {
+    --bl-collapse-padding: 0.625rem;
+  }
+}
