@@ -39,8 +39,7 @@
   - [x] Searchable
   - [x] Multiple selection
   - [x] Aria compatibility
-  - [ ] Disabled
-  - [ ] Fuzzy search
+  - [x] Disabled
 - [x] [Modal](https://www.bloum.dev/docs/components/modal)
 - [x] Alert dialog
   - [ ] Documentation

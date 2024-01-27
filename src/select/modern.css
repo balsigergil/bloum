@@ -49,4 +49,8 @@
       --bl-close-btn-padding: 0.125rem;
     }
   }
+
+  &[disabled] {
+    background-color: rgba(0, 0, 0, 0.06);
+  }
 }

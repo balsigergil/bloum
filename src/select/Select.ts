@@ -18,6 +18,7 @@ export class Select extends HTMLElement {
   #clearable: boolean = false;
   #searchable: boolean = false;
   #multiple: boolean = false;
+  #disabled: boolean = false;
 
   static register() {
     customElements.define(this.NAME, Select);
@@ -36,6 +37,7 @@ export class Select extends HTMLElement {
     this.#clearable = this.hasAttribute("clearable");
     this.#searchable = this.hasAttribute("searchable");
     this.#multiple = this.hasAttribute("multiple");
+    this.#disabled = this.hasAttribute("disabled");
 
     this.#select = document.createElement("select");
     this.#select.name = this.getAttribute("name") || "";
@@ -60,13 +62,17 @@ export class Select extends HTMLElement {
     this.#input.setAttribute("role", "combobox");
     this.#input.setAttribute("aria-autocomplete", "list");
     this.#input.setAttribute("aria-expanded", "false");
-    if (!this.#searchable) {
+    if (!this.#searchable || this.#disabled) {
       this.#input.readOnly = true;
     }
     this.#input.classList.add("bl-select-search-input");
     this.#input.addEventListener("input", () => this.#onInput());
-    this.#input.addEventListener("focus", () => this.openMenu());
-    this.#input.addEventListener("click", () => this.openMenu());
+    this.#input.addEventListener("focus", () => {
+      this.openMenu();
+    });
+    this.#input.addEventListener("click", () => {
+      this.openMenu();
+    });
     this.#input.addEventListener("blur", (e) => {
       this.#checkEventAndCloseMenu(e);
     });
@@ -272,6 +278,9 @@ export class Select extends HTMLElement {
   }
 
   openMenu() {
+    if (this.#disabled) {
+      return;
+    }
     this.classList.add("open");
     this.#input.focus();
     this.#input.setAttribute("aria-expanded", "true");
