@@ -1,5 +1,21 @@
 # Changelog
 
+## [0.2.0](https://github.com/balsigergil/bloum/compare/v0.1.3...v0.2.0) (2024-01-27)
+
+
+### Features
+
+* **accordion:** add accordion component ([880fbcb](https://github.com/balsigergil/bloum/commit/880fbcbf45701fe625fec8ab2a786e2c5a69f5ce))
+* **accordion:** add modern style ([9f02b28](https://github.com/balsigergil/bloum/commit/9f02b286623cd61bbb527bc2821bfa5abccbc4de))
+* **collapse:** add collapse component ([8254ece](https://github.com/balsigergil/bloum/commit/8254ece53f37adac4ac438a6cfe5976f1670de2c))
+* **select:** add disabled attribute ([21d6a42](https://github.com/balsigergil/bloum/commit/21d6a42a2b3f4905c4bf4619860e5a38689fd440))
+
+
+### Bug Fixes
+
+* **modal:** focus first element if current not in modal ([988d8c8](https://github.com/balsigergil/bloum/commit/988d8c8170d897bdc89a6d4f7b6277130cb81ca3))
+* **select:** placeholder text is dimmed only if searchable ([fc3d972](https://github.com/balsigergil/bloum/commit/fc3d9729a8c7f61faea4ced88cb289d3653bc17e))
+
 ## [0.1.3](https://github.com/balsigergil/bloum/compare/v0.1.2...v0.1.3) (2024-01-26)
 
 
