@@ -41,7 +41,7 @@ body {
   color: #555;
 }
 
-@media (prefers-color-scheme: dark) {
+.dark {
   .member-job {
     color: #bbb;
   }

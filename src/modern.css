@@ -6,7 +6,9 @@
 @import "./accordion/modern.css";
 
 :root {
-  --bl-clr-primary: #0284c7;
+  --bl-clr-primary: #006aa6;
+  --bl-clr-primary-light: #0284c7;
+
   --bl-clr-success: #15803d;
   --bl-clr-warning: #ca8a04;
   --bl-clr-error: #b91c1c;
@@ -31,4 +33,9 @@
     0 4px 6px -4px rgb(0 0 0 / 0.1);
   --bl-shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1),
     0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+.dark,
+[data-theme="dark"] {
+  --bl-clr-primary: var(--bl-clr-primary-light);
 }
