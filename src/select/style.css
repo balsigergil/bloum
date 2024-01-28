@@ -3,7 +3,6 @@
   position: relative;
 
   border: var(--bl-select-border);
-  border-color: var(--bl-select-clr-border);
   border-radius: var(--bl-border-radius);
 
   &.open {
@@ -91,7 +90,6 @@
     backface-visibility: hidden;
     user-select: none;
     border: var(--bl-select-border);
-    border-color: var(--bl-select-clr-border);
     border-radius: var(--bl-border-radius);
     box-shadow: var(--bl-shadow-lg);
     background-color: var(--bl-select-bg);

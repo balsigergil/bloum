@@ -1,4 +1,6 @@
 .bl-accordion {
+  --bl-collapse-padding: 0.625rem;
+
   .bl-accordion-item {
     border-top: 1px solid var(--bl-clr-gray-200);
     display: grid;
@@ -31,10 +33,6 @@
       box-shadow: 0 0 0 2px var(--bl-clr-primary);
       z-index: 3;
     }
-  }
-
-  .bl-accordion-body {
-    --bl-collapse-padding: 0.625rem;
   }
 }
 

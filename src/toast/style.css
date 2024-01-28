@@ -6,7 +6,7 @@
   justify-content: flex-end;
   pointer-events: none;
   overflow: hidden;
-  width: 100vw;
+  width: 100%;
   left: 0;
   right: 0;
   bottom: 0;

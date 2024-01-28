@@ -1,19 +1,14 @@
 .bl-modal {
-  opacity: 0;
-  background-color: rgba(0, 0, 0, var(--bl-modal-background-opacity, 0.4));
-  transition: opacity 150ms linear;
-
+  --bl-modal-backdrop-opacity: 0.4;
   --bl-modal-margin-y: 4rem;
-  --bl-modal-width: 800px;
+  --bl-modal-max-width: min(100% - 2rem, 600px);
   --bl-modal-padding: 2rem;
-  --bl-modal-border-radius: 8px;
+  --bl-modal-background: #fff;
+  --bl-modal-animation-duration: 200ms;
 
   .bl-modal-wrapper {
-    transition: transform 300ms ease-out;
-    transform: translateY(-1rem);
     display: grid;
     gap: 1rem;
-    background-color: #fff;
   }
 
   .bl-modal-title {
@@ -22,27 +17,75 @@
   }
 
   &.open {
-    opacity: 1;
-
+    display: flex;
+    animation: modal-backdrop var(--bl-modal-animation-duration) ease-out
+      forwards;
     .bl-modal-wrapper {
-      transform: translateY(0);
+      animation:
+        modal var(--bl-modal-animation-duration) ease-out forwards,
+        modal-backdrop var(--bl-modal-animation-duration) ease-out forwards;
+    }
+  }
+
+  &[closing] {
+    animation: modal-backdrop-close var(--bl-modal-animation-duration) ease-out
+      forwards;
+    .bl-modal-wrapper {
+      animation:
+        modal-close var(--bl-modal-animation-duration) ease-out forwards,
+        modal-backdrop-close var(--bl-modal-animation-duration) ease-out
+          forwards;
     }
   }
 
   .bl-close-button {
     --bl-close-size: 30px;
   }
-}
 
-.bl-modal.blur {
-  backdrop-filter: blur(var(--bl-modal-blur, 4px));
+  &.blur {
+    backdrop-filter: blur(var(--bl-modal-blur, 4px));
+  }
 }
 
 .dark,
 [data-theme="dark"] {
   .bl-modal {
-    .bl-modal-wrapper {
-      background-color: var(--bl-clr-gray-800);
-    }
+    --bl-modal-background: var(--bl-clr-gray-800);
+  }
+}
+
+@keyframes modal {
+  from {
+    transform: translateY(-0.5rem);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes modal-close {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-0.5rem);
+  }
+}
+
+@keyframes modal-backdrop {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modal-backdrop-close {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
   }
 }
