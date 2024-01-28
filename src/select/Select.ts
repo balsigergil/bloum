@@ -21,7 +21,7 @@ export class Select extends HTMLElement {
   #disabled: boolean = false;
 
   static register() {
-    customElements.define(this.NAME, Select);
+    customElements.define(this.NAME, this);
   }
 
   constructor() {
@@ -29,7 +29,7 @@ export class Select extends HTMLElement {
   }
 
   connectedCallback() {
-    this.classList.add("bl-select");
+    this.classList.add(Select.NAME);
     this.#options = [...this.children] as HTMLElement[];
 
     this.#placeholder = this.getAttribute("placeholder") || "Choose an option";

@@ -4,7 +4,7 @@ import { TabPanel } from "./TabPanel";
 export class Tabs extends HTMLElement {
   static NAME = "bl-tabs";
 
-  #selectedIndex = -1;
+  #selectedIndex = 0;
   #tabCount = 0;
   #useAnchor = false;
 
@@ -52,7 +52,7 @@ export class Tabs extends HTMLElement {
   }
 
   setSelected(index: number, focus: boolean = true) {
-    if (index !== this.#selectedIndex && index >= 0) {
+    if (index >= 0) {
       if (this.#useAnchor && focus) {
         const tabs = this.querySelectorAll<Tab>(".bl-tab");
         const tab = tabs[index];
@@ -63,14 +63,6 @@ export class Tabs extends HTMLElement {
       }
 
       this.#selectedIndex = index;
-      const panels = this.querySelectorAll<TabPanel>(".bl-tab-panel");
-      for (let i = 0; i < panels.length; i++) {
-        if (i === index) {
-          panels[i].classList.add("show");
-        } else {
-          panels[i].classList.remove("show");
-        }
-      }
 
       const tabs = this.querySelectorAll<Tab>(".bl-tab");
       for (let i = 0; i < tabs.length; i++) {
@@ -87,9 +79,15 @@ export class Tabs extends HTMLElement {
           tabs[i].setAttribute("aria-selected", "false");
         }
       }
-    } else if (index < 0) {
+
       const panels = this.querySelectorAll<TabPanel>(".bl-tab-panel");
-      panels.forEach((p) => p.classList.remove("show"));
+      for (let i = 0; i < panels.length; i++) {
+        if (i === index) {
+          panels[i].classList.add("show");
+        } else {
+          panels[i].classList.remove("show");
+        }
+      }
     }
   }
 
