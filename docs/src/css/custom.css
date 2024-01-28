@@ -62,3 +62,13 @@
 .member-job {
   color: #555;
 }
+
+[data-theme="dark"] {
+  .member-job {
+    color: #bbb;
+  }
+
+  .member-avatar {
+    color: #222;
+  }
+}

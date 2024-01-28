@@ -45,6 +45,10 @@ body {
   .member-job {
     color: #bbb;
   }
+
+  .member-avatar {
+    color: #222;
+  }
 }
 
 p {
