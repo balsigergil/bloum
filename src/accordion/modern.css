@@ -38,7 +38,8 @@
   }
 }
 
-@media (prefers-color-scheme: dark) {
+.dark,
+[data-theme="dark"] {
   .bl-accordion {
     .bl-accordion-item {
       border-top-color: var(--bl-clr-gray-700);

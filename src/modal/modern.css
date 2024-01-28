@@ -38,7 +38,8 @@
   backdrop-filter: blur(var(--bl-modal-blur, 4px));
 }
 
-@media (prefers-color-scheme: dark) {
+.dark,
+[data-theme="dark"] {
   .bl-modal {
     .bl-modal-wrapper {
       background-color: var(--bl-clr-gray-800);
