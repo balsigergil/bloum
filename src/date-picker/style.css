@@ -1,0 +1,7 @@
+.bl-datepicker {
+  input {
+    /*border: none;*/
+    appearance: none;
+    outline: none;
+  }
+}
