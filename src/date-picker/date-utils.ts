@@ -4,6 +4,5 @@
  * @param format
  */
 export function parseFormat(format: string): string[] | null {
-  const parts = format.match(/%./g) as string[] | null;
-  return parts;
+  return format.match(/%./g) as string[] | null;
 }
