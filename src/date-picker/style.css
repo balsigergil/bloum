@@ -9,6 +9,12 @@
     max-width: 50px;
   }
 
+  .bl-cal-header {
+    display: flex;
+    justify-content: space-between;
+    margin-block: 0.5em;
+  }
+
   .bl-cal-wrapper {
     display: grid;
     grid-template-columns: repeat(7, 1fr);

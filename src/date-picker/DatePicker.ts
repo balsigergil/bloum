@@ -7,7 +7,8 @@ export class DatePicker extends HTMLElement {
     customElements.define(DatePicker.NAME, this);
   }
 
-  #input: HTMLInputElement;
+  #input!: HTMLInputElement;
+  #viewDate!: Date;
 
   constructor() {
     super();
@@ -24,7 +25,8 @@ export class DatePicker extends HTMLElement {
     this.#input.name = this.getAttribute("name") ?? "";
 
     const today = new Date();
-    this.#input.value = today.toISOString().split("T")[0];
+    this.#input.value = this.#dateToString(today);
+    this.#viewDate = today;
 
     this.append(this.#input);
 
@@ -42,7 +44,9 @@ export class DatePicker extends HTMLElement {
     this.querySelector(".bl-calendar")?.remove();
     const calendar = document.createElement("div");
     calendar.classList.add("bl-calendar");
-    const date = this.#getDateOfInput();
+
+    const date = this.#viewDate;
+    const selectedDate = this.#getDateOfInput();
 
     const year = date.getFullYear();
     const currentMonth = date.getMonth();
@@ -52,7 +56,6 @@ export class DatePicker extends HTMLElement {
     const lastDayOfMonth = new Date(year, currentMonth + 1, 0);
     const lastDayOfPreviousMonth = new Date(year, currentMonth, 0).getDate();
     const daysInMonth = lastDayOfMonth.getDate();
-    const lastWeekday = lastDayOfMonth.getDay();
     const firstWeekday = firstDayOfMonth.getDay();
 
     const calendarHeader = document.createElement("div");
@@ -60,9 +63,7 @@ export class DatePicker extends HTMLElement {
     const prevMonth = document.createElement("button");
     prevMonth.textContent = "<";
     prevMonth.addEventListener("click", () => {
-      this.#input.value = this.#dateToString(
-        new Date(year, currentMonth - 1, 1),
-      );
+      this.#viewDate = new Date(year, currentMonth - 1, 1);
       this.#renderCalendar();
     });
     calendarHeader.append(prevMonth);
@@ -76,9 +77,7 @@ export class DatePicker extends HTMLElement {
     const nextMonth = document.createElement("button");
     nextMonth.textContent = ">";
     nextMonth.addEventListener("click", () => {
-      this.#input.value = this.#dateToString(
-        new Date(year, currentMonth + 1, 1),
-      );
+      this.#viewDate = new Date(year, currentMonth + 1, 1);
       this.#renderCalendar();
     });
     calendarHeader.append(nextMonth);
@@ -97,33 +96,42 @@ export class DatePicker extends HTMLElement {
       container.append(weekdayEl);
     });
 
+    const FIRST_WEEKDAY = 1;
+
     // Days
     let dayCounter = 1;
-    for (let i = 1; i <= 42; i++) {
+    for (let i = FIRST_WEEKDAY; i <= 42; i++) {
       const dayEl = document.createElement("div");
       dayEl.classList.add("bl-day");
       if (i < firstWeekday) {
-        dayEl.textContent = (
-          lastDayOfPreviousMonth -
-          firstWeekday +
-          i +
-          1
-        ).toString();
+        const day = lastDayOfPreviousMonth - firstWeekday + i + 1;
+        dayEl.textContent = day.toString();
         dayEl.classList.add("bl-prev-month");
-        dayEl.setAttribute("data-month", (currentMonth - 1).toString());
+        if (
+          day === selectedDate.getDate() &&
+          currentMonth - 1 === selectedDate.getMonth() &&
+          year === selectedDate.getFullYear()
+        ) {
+          dayEl.classList.add("bl-selected");
+        }
       } else if (i >= daysInMonth + firstWeekday) {
-        dayEl.textContent = (dayCounter % daysInMonth).toString();
+        const day = dayCounter % daysInMonth;
+        dayEl.textContent = day.toString();
         dayCounter++;
         dayEl.classList.add("bl-next-month");
-        dayEl.setAttribute("data-month", (currentMonth + 1).toString());
-        if (dayCounter % daysInMonth > lastWeekday) {
+
+        if (i % 7 === FIRST_WEEKDAY) {
           break;
         }
       } else {
-        dayEl.textContent = dayCounter.toString();
-        if (dayCounter === date.getDate()) {
+        if (
+          dayCounter === selectedDate.getDate() &&
+          currentMonth === selectedDate.getMonth() &&
+          year === selectedDate.getFullYear()
+        ) {
           dayEl.classList.add("bl-selected");
         }
+        dayEl.textContent = dayCounter.toString();
         dayCounter++;
       }
 
@@ -136,9 +144,8 @@ export class DatePicker extends HTMLElement {
         } else if (el.classList.contains("bl-next-month")) {
           month += 1;
         }
-        const newDate = new Date(year, month, day + 1);
-        this.#input.value = newDate.toISOString().split("T")[0];
-        this.#renderCalendar();
+        const newDate = new Date(year, month, day);
+        this.#setDate(newDate);
       });
 
       container.append(dayEl);
@@ -148,9 +155,64 @@ export class DatePicker extends HTMLElement {
     this.append(calendar);
   }
 
+  #setDate(date: Date) {
+    this.#input.value = this.#dateToString(date);
+    this.#viewDate = date;
+    this.#renderCalendar();
+
+    for (const input of this.querySelectorAll<HTMLInputElement>(
+      ".bl-date-input",
+    )) {
+      const type = input.getAttribute("data-type");
+      switch (type) {
+        case "%d":
+          input.value = date.getDate().toString().padStart(2, "0");
+          break;
+        case "%m":
+          input.value = (date.getMonth() + 1).toString().padStart(2, "0");
+          break;
+        case "%Y":
+          input.value = date.getFullYear().toString().padStart(4, "0");
+          break;
+      }
+    }
+  }
+
   #getDateOfInput(): Date {
     const value = this.#input.value;
     return new Date(value);
+  }
+
+  #setDateFromInput() {
+    let day = -1;
+    let month = -1;
+    let year = -1;
+    for (const input of this.querySelectorAll<HTMLInputElement>(
+      ".bl-date-input",
+    )) {
+      const type = input.getAttribute("data-type");
+      const value = parseInt(input.value);
+      if (isNaN(value)) {
+        break;
+      }
+      switch (type) {
+        case "%d":
+          day = value;
+          break;
+        case "%m":
+          month = value - 1;
+          break;
+        case "%Y":
+          year = value;
+          break;
+      }
+    }
+
+    if (day === -1 || month === -1 || year === -1) {
+      return;
+    }
+    const date = new Date(year, month, day);
+    this.#setDate(date);
   }
 
   #dateToString(date: Date): string {
@@ -159,6 +221,9 @@ export class DatePicker extends HTMLElement {
 
   #initializeInputOfType(type: string, index: number) {
     const input = document.createElement("input");
+    input.classList.add("bl-date-input");
+    input.setAttribute("data-type", type);
+
     const onFocus = (e: FocusEvent) => {
       e.preventDefault();
       const el = e.target as HTMLInputElement;
@@ -171,6 +236,7 @@ export class DatePicker extends HTMLElement {
       if (el.value === "" || isNaN(value)) {
         el.value = el.getAttribute("placeholder") ?? "";
       }
+      this.#setDateFromInput();
     };
 
     const incrementValue = (el: HTMLInputElement) => {
@@ -293,6 +359,9 @@ export class DatePicker extends HTMLElement {
       }
       if (e.key === "Tab") {
         return;
+      }
+      if (e.key === "Enter") {
+        this.#setDateFromInput();
       }
 
       // Allow only numbers
