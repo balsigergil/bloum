@@ -14,6 +14,7 @@ import { Accordion } from "./accordion/Accordion";
 import { AccordionItem } from "./accordion/AccordionItem";
 import { AccordionHeader } from "./accordion/AccordionHeader";
 import { AccordionBody } from "./accordion/AccordionBody";
+import { DatePicker } from "./date-picker/DatePicker";
 
 CloseButton.register();
 
@@ -36,11 +37,14 @@ AccordionItem.register();
 AccordionHeader.register();
 AccordionBody.register();
 
+DatePicker.register();
+
 export { CloseButton };
 export { Select, Modal, AlertDialog };
 export { Tabs, TabList, Tab, TabPanels, TabPanel };
 export { ToastContainer, Toast };
 export { Collapse, Accordion, AccordionItem, AccordionHeader, AccordionBody };
+export { DatePicker };
 
 window.Toast = Toast;
 

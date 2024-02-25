@@ -1,0 +1,54 @@
+.bl-datepicker {
+  display: inline-block;
+  border: 1px solid #ccc;
+
+  input {
+    /*border: none;*/
+    appearance: none;
+    outline: none;
+    max-width: 50px;
+  }
+
+  .bl-cal-header {
+    display: flex;
+    justify-content: space-between;
+    margin-block: 0.5em;
+  }
+
+  .bl-cal-wrapper {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    padding: 0.5rem;
+
+    .bl-weekday {
+      font-weight: bold;
+      display: grid;
+      place-items: center;
+      aspect-ratio: 1;
+      padding: 0.325em;
+    }
+
+    .bl-day {
+      cursor: pointer;
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      padding: 0.325em;
+
+      &:hover {
+        background-color: #ccc;
+      }
+    }
+    .bl-next-month,
+    .bl-prev-month {
+      opacity: 0.5;
+    }
+
+    .bl-selected {
+      background-color: #ddd;
+    }
+  }
+}
