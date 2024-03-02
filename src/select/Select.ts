@@ -1,5 +1,15 @@
 import { CloseButton } from "../close/CloseButton";
 
+export interface SelectProps {
+  placeholder?: string;
+  clearable?: boolean;
+  searchable?: boolean;
+  multiple?: boolean;
+  disabled?: boolean;
+  noResultsText?: string;
+  selected?: string;
+}
+
 export class Select extends HTMLElement {
   static NAME = "bl-select";
 
@@ -14,7 +24,7 @@ export class Select extends HTMLElement {
   #search: string = "";
   #selectedItems: boolean[] = [];
   #focusedItemIndex: number | null = null;
-  #noResultText: string = "No result";
+  #noResultsText: string = "No result";
   #clearable: boolean = false;
   #searchable: boolean = false;
   #multiple: boolean = false;
@@ -148,8 +158,8 @@ export class Select extends HTMLElement {
     };
     document.addEventListener("click", this.#onClick);
 
-    this.#noResultText =
-      this.getAttribute("no-result-text") || this.#noResultText;
+    this.#noResultsText =
+      this.getAttribute("no-results-text") || this.#noResultsText;
 
     this.append(this.#select, this.#valueContainer, indicators, this.#menu);
   }
@@ -266,7 +276,7 @@ export class Select extends HTMLElement {
       const noResult = document.createElement("div");
       noResult.classList.add("bl-select-menu-item");
       noResult.classList.add("no-result");
-      noResult.textContent = this.#noResultText;
+      noResult.textContent = this.#noResultsText;
       this.#menu.append(noResult);
     }
 
