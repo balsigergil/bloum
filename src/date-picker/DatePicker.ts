@@ -7,7 +7,7 @@ export class DatePicker extends HTMLElement {
     customElements.define(DatePicker.NAME, this);
   }
 
-  #input!: HTMLInputElement;
+  #inputDate!: HTMLInputElement;
   #viewDate!: Date;
 
   constructor() {
@@ -20,15 +20,15 @@ export class DatePicker extends HTMLElement {
     const format = this.getAttribute("format") ?? "%d.%m.%Y";
     const parts = parseFormat(format);
 
-    this.#input = document.createElement("input");
-    this.#input.type = "hidden";
-    this.#input.name = this.getAttribute("name") ?? "";
+    this.#inputDate = document.createElement("input");
+    this.#inputDate.type = "hidden";
+    this.#inputDate.name = this.getAttribute("name") ?? "";
 
     const today = new Date();
-    this.#input.value = this.#dateToString(today);
+    this.#inputDate.value = this.#dateToString(today);
     this.#viewDate = today;
 
-    this.append(this.#input);
+    this.append(this.#inputDate);
 
     if (!parts) {
       return;
@@ -103,6 +103,7 @@ export class DatePicker extends HTMLElement {
     for (let i = FIRST_WEEKDAY; i <= 42; i++) {
       const dayEl = document.createElement("div");
       dayEl.classList.add("bl-day");
+
       if (i < firstWeekday) {
         const day = lastDayOfPreviousMonth - firstWeekday + i + 1;
         dayEl.textContent = day.toString();
@@ -113,6 +114,7 @@ export class DatePicker extends HTMLElement {
           year === selectedDate.getFullYear()
         ) {
           dayEl.classList.add("bl-selected");
+          dayEl.tabIndex = 1;
         }
       } else if (i >= daysInMonth + firstWeekday) {
         const day = dayCounter % daysInMonth;
@@ -120,6 +122,14 @@ export class DatePicker extends HTMLElement {
         dayCounter++;
         dayEl.classList.add("bl-next-month");
 
+        if (
+          day === selectedDate.getDate() &&
+          currentMonth + 1 === selectedDate.getMonth() &&
+          year === selectedDate.getFullYear()
+        ) {
+          dayEl.classList.add("bl-selected");
+          dayEl.tabIndex = 1;
+        }
         if (i % 7 === FIRST_WEEKDAY) {
           break;
         }
@@ -130,6 +140,7 @@ export class DatePicker extends HTMLElement {
           year === selectedDate.getFullYear()
         ) {
           dayEl.classList.add("bl-selected");
+          dayEl.tabIndex = 1;
         }
         dayEl.textContent = dayCounter.toString();
         dayCounter++;
@@ -156,7 +167,7 @@ export class DatePicker extends HTMLElement {
   }
 
   #setDate(date: Date) {
-    this.#input.value = this.#dateToString(date);
+    this.#inputDate.value = this.#dateToString(date);
     this.#viewDate = date;
     this.#renderCalendar();
 
@@ -179,7 +190,7 @@ export class DatePicker extends HTMLElement {
   }
 
   #getDateOfInput(): Date {
-    const value = this.#input.value;
+    const value = this.#inputDate.value;
     return new Date(value);
   }
 
