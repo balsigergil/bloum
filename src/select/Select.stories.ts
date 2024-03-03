@@ -17,10 +17,10 @@ const meta = {
   argTypes: {},
   args: {
     placeholder: "Select an option",
-    disabled: false,
     searchable: false,
     clearable: false,
     multiple: false,
+    disabled: false,
     noResultsText: "No results found",
   },
 } satisfies Meta<SelectProps>;

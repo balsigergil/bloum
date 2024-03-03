@@ -2,12 +2,12 @@ import { CloseButton } from "../close/CloseButton";
 
 export interface SelectProps {
   placeholder?: string;
+  selected?: string;
   clearable?: boolean;
   searchable?: boolean;
   multiple?: boolean;
   disabled?: boolean;
   noResultsText?: string;
-  selected?: string;
 }
 
 export class Select extends HTMLElement {
@@ -22,7 +22,7 @@ export class Select extends HTMLElement {
   #placeholder = "Choose an item";
   #onClick!: (e: MouseEvent) => void;
   #search: string = "";
-  #selectedItems: boolean[] = [];
+  #optionFlags: boolean[] = [];
   #focusedItemIndex: number | null = null;
   #noResultsText: string = "No result";
   #clearable: boolean = false;
@@ -100,7 +100,7 @@ export class Select extends HTMLElement {
       }
       if (e.key === "Backspace" && this.#input.value === "" && this.#multiple) {
         e.preventDefault();
-        if (this.#selectedItems.length > 0) {
+        if (this.#optionFlags.length > 0) {
           this.#deselectLast();
         }
       }
@@ -202,19 +202,19 @@ export class Select extends HTMLElement {
       this.updateList();
     });
     this.#menu.append(option);
-    this.#selectedItems.push(false);
+    this.#optionFlags.push(false);
   }
 
   updateList() {
     let count = 0;
 
-    if (this.#selectedItems.length > 0) {
+    if (this.#optionFlags.length > 0) {
       this.#text.innerHTML = "";
     }
 
     for (let i = 0; i < this.#options.length; i++) {
       const option = this.#options[i];
-      const isSelected = this.#selectedItems[i];
+      const isSelected = this.#optionFlags[i];
       if (isSelected) {
         const selectedItem = document.createElement("div");
         selectedItem.classList.add("bl-select-selected-item");
@@ -308,7 +308,7 @@ export class Select extends HTMLElement {
   }
 
   clear() {
-    this.#selectedItems = this.#selectedItems.map(() => false);
+    this.#optionFlags = this.#optionFlags.map(() => false);
     this.updateList();
   }
 
@@ -348,17 +348,17 @@ export class Select extends HTMLElement {
 
   #setSelected(index: number) {
     if (this.#multiple) {
-      this.#selectedItems[index] = !this.#selectedItems[index];
+      this.#optionFlags[index] = !this.#optionFlags[index];
     } else {
-      for (let i = 0; i < this.#selectedItems.length; i++) {
-        this.#selectedItems[i] = index === i;
+      for (let i = 0; i < this.#optionFlags.length; i++) {
+        this.#optionFlags[i] = index === i;
       }
     }
     this.updateList();
   }
 
   get #selectedCount(): number {
-    return this.#selectedItems.filter((s) => s).length;
+    return this.#optionFlags.filter((s) => s).length;
   }
 
   #setFocused(index: number, scrollTo = true) {
@@ -372,8 +372,8 @@ export class Select extends HTMLElement {
   }
 
   #firstSelectedIndex(): number | null {
-    for (let i = 0; i < this.#selectedItems.length; i++) {
-      if (this.#selectedItems[i]) {
+    for (let i = 0; i < this.#optionFlags.length; i++) {
+      if (this.#optionFlags[i]) {
         return i;
       }
     }
@@ -381,9 +381,9 @@ export class Select extends HTMLElement {
   }
 
   #deselectLast() {
-    for (let i = this.#selectedItems.length - 1; i >= 0; i--) {
-      if (this.#selectedItems[i]) {
-        this.#selectedItems[i] = false;
+    for (let i = this.#optionFlags.length - 1; i >= 0; i--) {
+      if (this.#optionFlags[i]) {
+        this.#optionFlags[i] = false;
         this.updateList();
         return;
       }
