@@ -19,9 +19,8 @@ export class Select extends HTMLElement {
   #menu!: HTMLDivElement;
   #optionWrapper!: HTMLDivElement;
   #text!: HTMLDivElement;
-  #valueContainer!: HTMLDivElement;
   #placeholder = "Choose an item";
-  #onClick!: (e: MouseEvent) => void;
+  #onClickEvent!: (e: MouseEvent) => void;
   #search: string = "";
   #optionFlags: boolean[] = [];
   #focusedItemIndex: number | null = null;
@@ -45,12 +44,13 @@ export class Select extends HTMLElement {
     this.tabIndex = 0;
     this.addEventListener("click", (e) => {
       e.preventDefault();
-      e.stopPropagation();
-      if (this.isMenuOpen) {
-        this.closeMenu();
-      } else {
-        this.openMenu();
-      }
+      setTimeout(() => {
+        if (this.isMenuOpen) {
+          this.closeMenu();
+        } else {
+          this.openMenu();
+        }
+      }, 0);
     });
 
     this.addEventListener("keydown", (e) => {
@@ -75,15 +75,8 @@ export class Select extends HTMLElement {
       this.#select.multiple = true;
     }
 
-    this.#valueContainer = document.createElement("div");
-    this.#valueContainer.classList.add("bl-select-value-container");
-    if (this.#multiple) {
-      this.#valueContainer.classList.add("multiple");
-    }
-
     this.#text = document.createElement("div");
     this.#text.classList.add("bl-select-text");
-    this.#text.innerHTML = `<div class="bl-select-placeholder">${this.#placeholder}</div>`;
 
     this.#input = document.createElement("input");
     this.#input.setAttribute("type", "search");
@@ -136,7 +129,6 @@ export class Select extends HTMLElement {
         this.closeMenu();
       }
     });
-    this.#valueContainer.append(this.#text);
 
     this.#menu = document.createElement("div");
     this.#menu.classList.add("bl-select-menu");
@@ -174,19 +166,19 @@ export class Select extends HTMLElement {
       this.#setFocused(0);
     }
 
-    this.#onClick = (e: MouseEvent) => {
-      this.#checkEventAndCloseMenu(e, false);
+    this.append(this.#select, this.#text, indicators, this.#menu);
+
+    this.#onClickEvent = (e: MouseEvent) => {
+      this.#checkEventAndCloseMenu(e);
     };
-    document.addEventListener("click", this.#onClick);
+    document.addEventListener("click", this.#onClickEvent);
 
     this.#noResultsText =
       this.getAttribute("no-results-text") || this.#noResultsText;
-
-    this.append(this.#select, this.#valueContainer, indicators, this.#menu);
   }
 
   disconnectedCallback() {
-    document.removeEventListener("click", this.#onClick);
+    document.removeEventListener("click", this.#onClickEvent);
   }
 
   get isMenuOpen() {
@@ -285,10 +277,10 @@ export class Select extends HTMLElement {
     }
 
     if (this.#selectedCount > 0) {
-      this.#valueContainer.classList.add("has-value");
+      this.classList.add("has-value");
     } else {
       this.#select.selectedIndex = -1;
-      this.#valueContainer.classList.remove("has-value");
+      this.classList.remove("has-value");
       this.#text.innerHTML = `<div class="bl-select-placeholder">${this.#placeholder}</div>`;
     }
 
