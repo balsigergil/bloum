@@ -17,6 +17,7 @@ export class Select extends HTMLElement {
   #input!: HTMLInputElement;
   #options: HTMLElement[] = [];
   #menu!: HTMLDivElement;
+  #optionWrapper!: HTMLDivElement;
   #text!: HTMLDivElement;
   #valueContainer!: HTMLDivElement;
   #placeholder = "Choose an item";
@@ -40,6 +41,25 @@ export class Select extends HTMLElement {
 
   connectedCallback() {
     this.classList.add(Select.NAME);
+
+    this.tabIndex = 0;
+    this.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      if (this.isMenuOpen) {
+        this.closeMenu();
+      } else {
+        this.openMenu();
+      }
+    });
+
+    this.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowDown" || e.key === "ArrowUp" || e.key === "Enter") {
+        this.openMenu();
+        e.preventDefault();
+      }
+    });
+
     this.#options = [...this.children] as HTMLElement[];
 
     this.#placeholder = this.getAttribute("placeholder") || "Choose an option";
@@ -76,53 +96,57 @@ export class Select extends HTMLElement {
       this.#input.readOnly = true;
     }
     this.#input.classList.add("bl-select-search-input");
+    this.#input.addEventListener("click", (e) => {
+      e.stopPropagation();
+    });
     this.#input.addEventListener("input", () => this.#onInput());
-    this.#input.addEventListener("focus", () => {
-      this.openMenu();
-    });
-    this.#input.addEventListener("click", () => {
-      this.openMenu();
-    });
-    this.#input.addEventListener("blur", (e) => {
-      this.#checkEventAndCloseMenu(e);
-    });
     this.#input.addEventListener("keydown", (e) => {
       if (e.key === "Escape") {
         this.closeMenu();
+        e.preventDefault();
+        e.stopPropagation();
       }
       if (e.key === "ArrowDown") {
+        e.stopPropagation();
         e.preventDefault();
         this.#focusNext();
       }
       if (e.key === "ArrowUp") {
         e.preventDefault();
+        e.stopPropagation();
         this.#focusPrevious();
       }
       if (e.key === "Backspace" && this.#input.value === "" && this.#multiple) {
         e.preventDefault();
+        e.stopPropagation();
         if (this.#optionFlags.length > 0) {
           this.#deselectLast();
         }
       }
+      if (e.key === "Tab") {
+        e.preventDefault();
+        e.stopPropagation();
+      }
       if (e.key === "Enter") {
         e.preventDefault();
+        e.stopPropagation();
         if (this.#focusedItemIndex !== null && this.isMenuOpen) {
           this.#setSelected(this.#focusedItemIndex);
         }
         this.closeMenu();
       }
-      if (!this.#searchable && e.key !== "Tab") {
-        // Prevent the mouse cursor from disappearing when the user presses a key and the input is readonly
-        e.preventDefault();
-      }
     });
-    this.#valueContainer.append(this.#text, this.#input);
+    this.#valueContainer.append(this.#text);
 
     this.#menu = document.createElement("div");
-    this.#menu.classList.add("bl-select-menu-wrapper");
-    this.#menu.tabIndex = -1;
-    this.#menu.setAttribute("role", "listbox");
-    this.#options.forEach((o, i) => this.addOptionToMenu(o, i));
+    this.#menu.classList.add("bl-select-menu");
+
+    this.#menu.append(this.#input);
+    this.#optionWrapper = document.createElement("div");
+    this.#optionWrapper.classList.add("bl-select-options");
+    this.#optionWrapper.setAttribute("role", "listbox");
+    this.#menu.append(this.#optionWrapper);
+    this.#options.forEach((o, i) => this.#addOptionToMenu(o, i));
 
     const indicators = document.createElement("div");
     indicators.classList.add("bl-select-indicators");
@@ -130,9 +154,6 @@ export class Select extends HTMLElement {
     const indicator = document.createElement("div");
     indicator.classList.add("bl-select-indicator");
     indicator.innerHTML = `<svg height="20" width="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"></path></svg>`;
-    indicator.addEventListener("click", () => {
-      this.openMenu();
-    });
 
     const clearButton = new CloseButton();
     clearButton.classList.add("bl-select-clear-button");
@@ -176,7 +197,7 @@ export class Select extends HTMLElement {
     return this.#options.filter((_, i) => this.#matchSearch(i));
   }
 
-  addOptionToMenu(option: HTMLElement, index: number) {
+  #addOptionToMenu(option: HTMLElement, index: number) {
     const value = option.getAttribute("data-value") || index.toString();
     const optionEl = document.createElement("option");
     optionEl.setAttribute("value", value);
@@ -199,13 +220,13 @@ export class Select extends HTMLElement {
       if (index !== null) {
         this.#setFocused(parseInt(index), false);
       }
-      this.updateList();
+      this.#updateList();
     });
     this.#menu.append(option);
     this.#optionFlags.push(false);
   }
 
-  updateList() {
+  #updateList() {
     let count = 0;
 
     if (this.#optionFlags.length > 0) {
@@ -304,12 +325,13 @@ export class Select extends HTMLElement {
       this.#input.value = "";
       this.#input.setAttribute("aria-expanded", "false");
       this.#search = "";
+      this.focus();
     }
   }
 
   clear() {
     this.#optionFlags = this.#optionFlags.map(() => false);
-    this.updateList();
+    this.#updateList();
   }
 
   #onInput() {
@@ -322,7 +344,7 @@ export class Select extends HTMLElement {
         this.#setFocused(parseInt(index));
       }
     }
-    this.updateList();
+    this.#updateList();
     if (this.#search !== "") {
       this.#text.classList.add("filtered");
     } else {
@@ -331,17 +353,13 @@ export class Select extends HTMLElement {
   }
 
   #checkEventAndCloseMenu(e: Event) {
-    let closest;
+    let target;
     if (e instanceof FocusEvent) {
-      closest = (e.relatedTarget as HTMLElement)?.closest(Select.NAME);
-      if (e.relatedTarget instanceof CloseButton) {
-        this.closeMenu();
-        return;
-      }
+      target = e.relatedTarget as Node;
     } else {
-      closest = (e.target as HTMLElement)?.closest(Select.NAME);
+      target = e.target as Node;
     }
-    if (closest === null || closest === undefined || closest !== this) {
+    if (!this.contains(target)) {
       this.closeMenu();
     }
   }
@@ -354,7 +372,7 @@ export class Select extends HTMLElement {
         this.#optionFlags[i] = index === i;
       }
     }
-    this.updateList();
+    this.#updateList();
   }
 
   get #selectedCount(): number {
@@ -368,7 +386,7 @@ export class Select extends HTMLElement {
         block: "nearest",
       });
     }
-    this.updateList();
+    this.#updateList();
   }
 
   #firstSelectedIndex(): number | null {
@@ -384,7 +402,7 @@ export class Select extends HTMLElement {
     for (let i = this.#optionFlags.length - 1; i >= 0; i--) {
       if (this.#optionFlags[i]) {
         this.#optionFlags[i] = false;
-        this.updateList();
+        this.#updateList();
         return;
       }
     }

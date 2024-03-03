@@ -8,7 +8,7 @@
   --bl-select-clr-placeholder: var(--bl-clr-gray-500);
   --bl-select-clr-indicators: var(--bl-clr-gray-700);
 
-  .bl-select-menu-wrapper {
+  .bl-select-menu {
     transform: translateY(calc(100% + 0.5em));
   }
 
