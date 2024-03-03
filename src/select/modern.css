@@ -11,6 +11,10 @@
   .bl-select-menu {
     transform: translateY(calc(100% + 0.5em));
   }
+  .bl-select-options {
+    border-top: 1px solid var(--bl-clr-gray-300);
+    padding-top: 0.5em;
+  }
 
   &[multiple] {
     .bl-select-text {

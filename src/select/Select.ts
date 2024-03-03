@@ -95,7 +95,7 @@ export class Select extends HTMLElement {
     if (!this.#searchable || this.#disabled) {
       this.#input.readOnly = true;
     }
-    this.#input.classList.add("bl-select-search-input");
+    this.#input.classList.add("bl-select-search");
     this.#input.addEventListener("click", (e) => {
       e.stopPropagation();
     });
@@ -175,7 +175,7 @@ export class Select extends HTMLElement {
     }
 
     this.#onClick = (e: MouseEvent) => {
-      this.#checkEventAndCloseMenu(e);
+      this.#checkEventAndCloseMenu(e, false);
     };
     document.addEventListener("click", this.#onClick);
 
@@ -222,7 +222,7 @@ export class Select extends HTMLElement {
       }
       this.#updateList();
     });
-    this.#menu.append(option);
+    this.#optionWrapper.append(option);
     this.#optionFlags.push(false);
   }
 
@@ -318,14 +318,16 @@ export class Select extends HTMLElement {
     this.#setFocused(this.#firstSelectedIndex() || 0);
   }
 
-  closeMenu() {
+  closeMenu(focus = true) {
     if (this.classList.contains("open")) {
       this.classList.remove("open");
       this.#text.classList.remove("filtered");
       this.#input.value = "";
       this.#input.setAttribute("aria-expanded", "false");
       this.#search = "";
-      this.focus();
+      if (focus) {
+        this.focus();
+      }
     }
   }
 
@@ -352,7 +354,7 @@ export class Select extends HTMLElement {
     }
   }
 
-  #checkEventAndCloseMenu(e: Event) {
+  #checkEventAndCloseMenu(e: Event, focus = true) {
     let target;
     if (e instanceof FocusEvent) {
       target = e.relatedTarget as Node;
@@ -360,7 +362,7 @@ export class Select extends HTMLElement {
       target = e.target as Node;
     }
     if (!this.contains(target)) {
-      this.closeMenu();
+      this.closeMenu(focus);
     }
   }
 
