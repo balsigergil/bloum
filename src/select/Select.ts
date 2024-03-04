@@ -41,7 +41,6 @@ export class Select extends HTMLElement {
 
   connectedCallback() {
     this.classList.add(Select.NAME);
-    this.tabIndex = 0;
 
     this.addEventListener("click", (e) => {
       e.preventDefault();
@@ -110,6 +109,11 @@ export class Select extends HTMLElement {
     this.#searchable = this.hasAttribute("searchable");
     this.#multiple = this.hasAttribute("multiple");
     this.#disabled = this.hasAttribute("disabled");
+    if (this.#disabled) {
+      this.tabIndex = -1;
+    } else {
+      this.tabIndex = 0;
+    }
 
     this.#select = document.createElement("select");
     this.#select.name = this.getAttribute("name") || "";
@@ -193,7 +197,7 @@ export class Select extends HTMLElement {
     this.append(this.#select, this.#text, indicators, this.#menu);
 
     this.#onClickEvent = (e: MouseEvent) => {
-      this.#checkEventAndCloseMenu(e);
+      this.#checkEventAndCloseMenu(e, false);
     };
     document.addEventListener("click", this.#onClickEvent);
 
@@ -341,14 +345,20 @@ export class Select extends HTMLElement {
     }
     this.classList.add("open");
     if (this.#input) {
-      this.#input.focus();
+      this.#menu.addEventListener(
+        "transitionend",
+        () => {
+          this.#input?.focus();
+        },
+        { once: true },
+      );
       this.#input.setAttribute("aria-expanded", "true");
     }
     this.#setFocused(this.#firstSelectedIndex() || 0);
   }
 
   closeMenu(focus = true) {
-    if (this.classList.contains("open")) {
+    if (this.isMenuOpen) {
       this.classList.remove("open");
       this.#text.classList.remove("filtered");
       if (this.#input) {
