@@ -1,4 +1,5 @@
 import { CloseButton } from "../close/CloseButton";
+import { CHEVRON_DOWN_ICON, SEARCH_ICON } from "../utils/icons";
 
 export interface SelectProps {
   placeholder?: string;
@@ -18,7 +19,8 @@ export class Select extends HTMLElement {
   #menu!: HTMLDivElement;
   #optionWrapper!: HTMLDivElement;
   #text!: HTMLDivElement;
-  #placeholder = "Choose an item";
+  #placeholder = "Select an option...";
+  #searchPlaceholder: string = "Search options...";
   #onClickEvent!: (e: MouseEvent) => void;
   #search: string = "";
   #optionFlags: boolean[] = [];
@@ -97,7 +99,12 @@ export class Select extends HTMLElement {
       }
     });
 
-    this.#placeholder = this.getAttribute("placeholder") || "Choose an option";
+    if (this.hasAttribute("placeholder")) {
+      this.#placeholder = this.getAttribute("placeholder")!;
+    }
+    if (this.hasAttribute("search-placeholder")) {
+      this.#searchPlaceholder = this.getAttribute("search-placeholder")!;
+    }
 
     this.#clearable = this.hasAttribute("clearable");
     this.#searchable = this.hasAttribute("searchable");
@@ -117,6 +124,17 @@ export class Select extends HTMLElement {
     this.#menu.classList.add("bl-select-menu");
 
     if (this.#searchable && !this.#disabled) {
+      const searchWrapper = document.createElement("div");
+      searchWrapper.classList.add("bl-select-search-wrapper");
+      searchWrapper.addEventListener("click", (e) => {
+        // Prevent the click to close the menu
+        e.stopPropagation();
+      });
+
+      const searchIcon = document.createElement("div");
+      searchIcon.classList.add("bl-select-search-icon");
+      searchIcon.innerHTML = SEARCH_ICON;
+
       this.#input = document.createElement("input");
       this.#input.setAttribute("type", "search");
       this.#input.setAttribute("autocomplete", "off");
@@ -124,13 +142,13 @@ export class Select extends HTMLElement {
       this.#input.setAttribute("role", "combobox");
       this.#input.setAttribute("aria-autocomplete", "list");
       this.#input.setAttribute("aria-expanded", "false");
+      this.#input.setAttribute("placeholder", this.#searchPlaceholder);
       this.#input.classList.add("bl-select-search");
-      this.#input.addEventListener("click", (e) => {
-        // Prevent the click to close the menu
-        e.stopPropagation();
-      });
       this.#input.addEventListener("input", () => this.#onInput());
-      this.#menu.append(this.#input);
+
+      searchWrapper.append(searchIcon, this.#input);
+
+      this.#menu.append(searchWrapper);
     }
 
     this.#optionWrapper = document.createElement("div");
@@ -148,7 +166,7 @@ export class Select extends HTMLElement {
 
     const indicator = document.createElement("div");
     indicator.classList.add("bl-select-indicator");
-    indicator.innerHTML = `<svg height="20" width="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"></path></svg>`;
+    indicator.innerHTML = CHEVRON_DOWN_ICON;
 
     if (this.#clearable) {
       const clearButton = new CloseButton();

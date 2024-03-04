@@ -6,36 +6,4 @@
 @import "./accordion/modern.css";
 
 :root {
-  --bl-clr-primary: #006aa6;
-  --bl-clr-primary-light: #0284c7;
-
-  --bl-clr-success: #15803d;
-  --bl-clr-warning: #ca8a04;
-  --bl-clr-error: #b91c1c;
-
-  --bl-clr-gray-50: #fafafa;
-  --bl-clr-gray-100: #f5f5f5;
-  --bl-clr-gray-200: #e5e5e5;
-  --bl-clr-gray-300: #d4d4d4;
-  --bl-clr-gray-400: #a3a3a3;
-  --bl-clr-gray-500: #737373;
-  --bl-clr-gray-600: #525252;
-  --bl-clr-gray-700: #404040;
-  --bl-clr-gray-800: #262626;
-  --bl-clr-gray-900: #171717;
-  --bl-clr-gray-950: #0a0a0a;
-
-  --bl-border-radius: 4px;
-  --bl-border-radius-lg: 8px;
-
-  --bl-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --bl-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1),
-    0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --bl-shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1),
-    0 8px 10px -6px rgb(0 0 0 / 0.1);
-}
-
-.dark,
-[data-theme="dark"] {
-  --bl-clr-primary: var(--bl-clr-primary-light);
 }
