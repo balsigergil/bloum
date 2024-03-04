@@ -3,7 +3,7 @@
   --bl-sel-icon-size: 16px;
   --bl-sel-tag-p: 0.25em;
   --bl-sel-tag-icon-size: 16px;
-  --bl-sel-tag-icon-p: 0;
+  --bl-sel-tag-icon-p: 2px;
   --bl-sel-tag-br: var(--bl-border-radius-sm);
   --bl-sel-max-h: 300px;
   --bl-sel-indicators-gap: 0.375em;
@@ -60,6 +60,10 @@
 
   .bl-select-placeholder {
     color: var(--bl-sel-clr-placeholder);
+  }
+
+  &[multiple] .bl-select-placeholder {
+    margin: var(--bl-sel-tag-p) 0;
   }
 
   .bl-select-search-wrapper {

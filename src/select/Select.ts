@@ -321,8 +321,12 @@ export class Select extends HTMLElement {
       .forEach((n) => n.remove());
     if (count === 0) {
       const noResult = document.createElement("div");
-      noResult.classList.add("bl-option");
-      noResult.classList.add("no-result");
+      noResult.classList.add("bl-option", "no-result");
+      noResult.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+      });
+
       noResult.textContent = this.#noResultsText;
       this.#optionWrapper.append(noResult);
     }

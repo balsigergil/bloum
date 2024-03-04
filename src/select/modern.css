@@ -16,11 +16,20 @@
   --bl-sel-tag-bg: var(--bl-clr-gray-100);
 
   .bl-select-menu {
+    transform: translateY(calc(100% - 0.275em));
+    transition: all 100ms ease-in-out;
+  }
+
+  &.open .bl-select-menu {
     transform: translateY(calc(100% + 0.375em));
   }
 
   &[searchable] .bl-select-options {
     border-top: var(--bl-sel-border);
+  }
+
+  &[disabled] .bl-select-text {
+    color: var(--bl-clr-gray-600);
   }
 }
 
@@ -41,6 +50,10 @@
 
     &[multiple] .bl-select-selected-item {
       background-color: var(--bl-clr-gray-700);
+    }
+
+    &[disabled] .bl-select-text {
+      color: var(--bl-clr-gray-400);
     }
   }
 }
