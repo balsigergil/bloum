@@ -19,6 +19,7 @@ import { DatePicker } from "./date-picker/DatePicker";
 CloseButton.register();
 
 Select.register();
+
 Modal.register();
 AlertDialog.register();
 

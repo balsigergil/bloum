@@ -15,7 +15,6 @@ export class Select extends HTMLElement {
 
   #select!: HTMLSelectElement;
   #input!: HTMLInputElement;
-  #options: HTMLElement[] = [];
   #menu!: HTMLDivElement;
   #optionWrapper!: HTMLDivElement;
   #text!: HTMLDivElement;
@@ -59,8 +58,6 @@ export class Select extends HTMLElement {
         e.preventDefault();
       }
     });
-
-    this.#options = [...this.children] as HTMLElement[];
 
     this.#placeholder = this.getAttribute("placeholder") || "Choose an option";
 
@@ -137,8 +134,12 @@ export class Select extends HTMLElement {
     this.#optionWrapper = document.createElement("div");
     this.#optionWrapper.classList.add("bl-select-options");
     this.#optionWrapper.setAttribute("role", "listbox");
+
+    [...this.children].forEach((opt) =>
+      this.addOptionToMenu(opt as HTMLElement),
+    );
+
     this.#menu.append(this.#optionWrapper);
-    this.#options.forEach((o, i) => this.#addOptionToMenu(o, i));
 
     const indicators = document.createElement("div");
     indicators.classList.add("bl-select-indicators");
@@ -189,15 +190,14 @@ export class Select extends HTMLElement {
     return this.#options.filter((_, i) => this.#matchSearch(i));
   }
 
-  #addOptionToMenu(option: HTMLElement, index: number) {
-    const value = option.getAttribute("data-value") || index.toString();
+  addOptionToMenu(option: HTMLElement) {
+    const value = option.dataset.value ?? "";
     const optionEl = document.createElement("option");
     optionEl.setAttribute("value", value);
     this.#select.append(optionEl);
 
-    option.classList.add("bl-select-menu-item");
-    option.setAttribute("data-value", value);
-    option.setAttribute("data-index", index.toString());
+    option.classList.add("bl-option");
+    option.setAttribute("data-index", this.#optionFlags.length.toString());
     option.addEventListener("click", (e) => {
       e.preventDefault();
       e.stopPropagation();
@@ -218,6 +218,12 @@ export class Select extends HTMLElement {
     this.#optionFlags.push(false);
   }
 
+  get #options(): HTMLElement[] {
+    return Array.from(
+      this.#optionWrapper.children as HTMLCollectionOf<HTMLElement>,
+    );
+  }
+
   #updateList() {
     let count = 0;
 
@@ -225,21 +231,19 @@ export class Select extends HTMLElement {
       this.#text.innerHTML = "";
     }
 
-    for (let i = 0; i < this.#options.length; i++) {
-      const option = this.#options[i];
+    const options = this.#options;
+
+    this.#text.innerHTML = "";
+    for (let i = 0; i < options.length; i++) {
+      const option = options[i];
       const isSelected = this.#optionFlags[i];
       if (isSelected) {
-        const selectedItem = document.createElement("div");
-        selectedItem.classList.add("bl-select-selected-item");
         const clone = option.cloneNode(true) as HTMLElement;
-        clone.classList.remove(
-          "bl-select-menu-item",
-          "focus",
-          "selected",
-          "filtered",
-        );
-        selectedItem.append(clone);
+        clone.classList.remove("bl-option", "focus", "selected", "filtered");
         option.setAttribute("aria-selected", "true");
+        const textWrapper = document.createElement("div");
+        textWrapper.classList.add("bl-select-text-wrapper");
+        textWrapper.append(clone);
         if (this.#multiple) {
           const closeButton = new CloseButton();
           closeButton.addEventListener("click", (e) => {
@@ -247,12 +251,9 @@ export class Select extends HTMLElement {
             e.stopPropagation();
             this.#setSelected(i);
           });
-          selectedItem.append(closeButton);
-          this.#text.append(selectedItem);
-        } else {
-          this.#text.innerHTML = "";
-          this.#text.append(selectedItem);
+          textWrapper.append(closeButton);
         }
+        this.#text.append(textWrapper);
         option.classList.add("selected");
       } else {
         option.classList.remove("selected");

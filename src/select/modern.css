@@ -16,9 +16,23 @@
     padding-top: 0.5em;
   }
 
+  .bl-select-text-wrapper {
+    gap: 0.125rem;
+
+    .bl-close-button {
+      --bl-close-size: 16px;
+      --bl-close-padding: 0.125em;
+    }
+  }
+
   &[multiple] {
     .bl-select-text {
       gap: 0.25em;
+    }
+    .bl-select-text-wrapper {
+      background-color: #eee;
+      padding: 4px;
+      border-radius: 4px;
     }
 
     .bl-select-selected-item {
