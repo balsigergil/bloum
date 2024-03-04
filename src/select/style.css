@@ -35,11 +35,6 @@
     color: var(--bl-select-clr-placeholder);
   }
 
-  .bl-select-selected-item {
-    display: flex;
-    align-items: center;
-  }
-
   .bl-select-search {
     height: 100%;
     width: 100%;
@@ -50,12 +45,11 @@
     font: inherit;
     cursor: default;
     padding: var(--bl-select-padding);
+    display: none;
   }
 
-  &[multiple] {
-    .bl-select-value-container.has-value {
-      display: flex;
-    }
+  &[searchable] .bl-select-search {
+    display: block;
   }
 
   .bl-select-menu {
@@ -124,8 +118,12 @@
     }
   }
 
-  .bl-select-clear-button:not(.show) {
+  .bl-select-clear-btn {
     display: none;
+  }
+
+  &.has-value .bl-select-clear-btn {
+    display: block;
   }
 
   &[disabled] {
