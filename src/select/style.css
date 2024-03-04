@@ -38,7 +38,7 @@
     gap: var(--bl-sel-tag-p);
   }
 
-  .bl-select-text-wrapper {
+  .bl-select-tag {
     display: flex;
     align-items: center;
     gap: var(--bl-sel-tag-p);
@@ -52,8 +52,8 @@
   }
 
   &[multiple] {
-    .bl-select-text-wrapper {
-      padding: var(--bl-sel-tag-p);
+    .bl-select-tag {
+      padding: var(--bl-sel-tag-p) calc(var(--bl-sel-tag-p) * 2);
       background-color: var(--bl-sel-tag-bg);
     }
   }

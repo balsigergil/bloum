@@ -25,7 +25,7 @@ export class Select extends HTMLElement {
   #search: string = "";
   #optionFlags: boolean[] = [];
   #focusedItemIndex: number | null = null;
-  #noResultsText: string = "No result";
+  #noResultsText: string = "No results found";
   #clearable: boolean = false;
   #searchable: boolean = false;
   #multiple: boolean = false;
@@ -101,20 +101,15 @@ export class Select extends HTMLElement {
       }
     });
 
-    if (this.hasAttribute("placeholder")) {
-      this.#placeholder = this.getAttribute("placeholder")!;
-    }
-    if (this.hasAttribute("search-placeholder")) {
-      this.#searchPlaceholder = this.getAttribute("search-placeholder")!;
-    }
+    this.#placeholder = this.getAttribute("placeholder") || this.#placeholder;
+    this.#searchPlaceholder =
+      this.getAttribute("search-placeholder") || this.#searchPlaceholder;
 
     this.#clearable = this.hasAttribute("clearable");
     this.#searchable = this.hasAttribute("searchable");
     this.#multiple = this.hasAttribute("multiple");
     this.#disabled = this.hasAttribute("disabled");
-    if (this.#disabled) {
-      this.tabIndex = -1;
-    } else {
+    if (!this.#disabled) {
       this.tabIndex = 0;
     }
 
@@ -275,7 +270,7 @@ export class Select extends HTMLElement {
 
         if (this.#multiple) {
           const tag = document.createElement("div");
-          tag.classList.add("bl-select-text-wrapper");
+          tag.classList.add("bl-select-tag");
           tag.append(clone);
 
           const closeButton = new CloseButton();
