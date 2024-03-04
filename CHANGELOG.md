@@ -1,5 +1,25 @@
 # Changelog
 
+## [0.3.0](https://github.com/balsigergil/bloum/compare/v0.2.0...v0.3.0) (2024-03-04)
+
+
+### Features
+
+* **date-picker:** basic calendar view ([3693cc4](https://github.com/balsigergil/bloum/commit/3693cc42f540779a073eddf4a1078551e9aaaaca))
+* **date-picker:** connect inputs to calendar view ([79ee9ee](https://github.com/balsigergil/bloum/commit/79ee9ee102a41e239755913eb191b113f1b7fee1))
+* **date-picker:** input behaviours ([65b08b0](https://github.com/balsigergil/bloum/commit/65b08b00bdf1837f854230330ab7229847b749fc))
+* supports dark color scheme (fix [#1](https://github.com/balsigergil/bloum/issues/1)) ([84c303f](https://github.com/balsigergil/bloum/commit/84c303f9af5f73b47cbcd7f6c10a30f380782300))
+
+
+### Bug Fixes
+
+* dark mode with class instead of media ([21d99fb](https://github.com/balsigergil/bloum/commit/21d99fb14f465cf223c97576293889ffb5e2ef1e))
+* **select:** click event propagation ([f314d98](https://github.com/balsigergil/bloum/commit/f314d98583759ef835ced593c989b03cca09a99c))
+* **select:** focus first option after search ([cff0f61](https://github.com/balsigergil/bloum/commit/cff0f6154b3a243b3280d78acade00ea30972f18))
+* **select:** focus input after transition ([e34ede6](https://github.com/balsigergil/bloum/commit/e34ede6f00d2b01b294cd46a30bcb1c1d230d4b6))
+* **select:** scrolling when clicking outside ([6891292](https://github.com/balsigergil/bloum/commit/6891292915de03fc91949681b04bb02deb86e898))
+* **tabs:** init tabs only after all children are connected (fix [#6](https://github.com/balsigergil/bloum/issues/6)) ([bbd79fc](https://github.com/balsigergil/bloum/commit/bbd79fcf44298052dfa8da410e3447cd44d8bdbe))
+
 ## [0.2.0](https://github.com/balsigergil/bloum/compare/v0.1.3...v0.2.0) (2024-01-27)
 
 
