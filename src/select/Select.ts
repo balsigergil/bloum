@@ -269,20 +269,25 @@ export class Select extends HTMLElement {
         const clone = option.cloneNode(true) as HTMLElement;
         clone.classList.remove("bl-option", "focus", "selected", "filtered");
         option.setAttribute("aria-selected", "true");
-        const textWrapper = document.createElement("div");
-        textWrapper.classList.add("bl-select-text-wrapper");
-        textWrapper.append(clone);
 
         if (this.#multiple) {
+          const tag = document.createElement("div");
+          tag.classList.add("bl-select-text-wrapper");
+          tag.append(clone);
+
           const closeButton = new CloseButton();
           closeButton.addEventListener("click", (e) => {
             e.preventDefault();
             e.stopPropagation();
             this.#setSelected(i);
           });
-          textWrapper.append(closeButton);
+
+          tag.append(clone);
+          tag.append(closeButton);
+          this.#text.append(tag);
+        } else {
+          this.#text.append(clone);
         }
-        this.#text.append(textWrapper);
         option.classList.add("selected");
       } else {
         option.classList.remove("selected");
@@ -385,7 +390,7 @@ export class Select extends HTMLElement {
     this.#search = this.#input.value || "";
     const options = this.filteredOptions;
     if (options.length > 0) {
-      const index = this.#options[0].getAttribute("data-index");
+      const index = options[0].getAttribute("data-index");
       if (index !== null) {
         this.#setFocused(parseInt(index));
       }
@@ -458,9 +463,9 @@ export class Select extends HTMLElement {
     if (this.isMenuOpen) {
       if (this.#focusedItemIndex !== null) {
         let nextIndex = null;
+        const optionsLength = this.#options.length;
         if (this.#search !== "") {
           let currentIndex = this.#focusedItemIndex;
-          const optionsLength = this.#options.length;
           // We loop through all items until we found the next item matching the filter
           while (currentIndex + 1 < optionsLength) {
             if (this.#matchSearch(currentIndex + 1)) {
@@ -469,7 +474,7 @@ export class Select extends HTMLElement {
             }
             currentIndex++;
           }
-        } else if (this.#focusedItemIndex + 1 < this.#options.length) {
+        } else if (this.#focusedItemIndex + 1 < optionsLength) {
           nextIndex = this.#focusedItemIndex + 1;
         }
         if (nextIndex !== null) {
