@@ -24,18 +24,19 @@ test("select then clear", async ({ page }) => {
   const item = select.getByText("Tiger").first();
   await item.click();
   await expect(select.locator(".bl-select-text")).toHaveText("Tiger");
-  await expect(select.locator("select")).toHaveValue("tiger");
-  await select.locator(".bl-select-clear-button").first().click();
-  await expect(select.locator("select")).toHaveValue("");
+  const selectEl = select.locator("select");
+  await expect(selectEl).toHaveValue("tiger");
+  await select.locator("bl-close-button").first().click();
+  await expect(selectEl).toHaveValue("");
   await expect(select.locator(".bl-select-text")).toHaveText(
-    "Choose an option",
+    "Select an option...",
   );
 });
 
 test("navigate with arrow keys", async ({ page }) => {
   await page.goto("/");
   const select = page.locator("bl-select").first();
-  await select.locator("input").focus();
+  await select.click();
   await expect(select).toHaveClass(/open/);
   await select.press("ArrowDown");
   await select.press("ArrowDown");
@@ -43,7 +44,7 @@ test("navigate with arrow keys", async ({ page }) => {
   await expect(select).not.toHaveClass(/open/);
   await expect(select.locator(".bl-select-text")).toHaveText("Elephant");
   await expect(select.locator("select")).toHaveValue("elephant");
-  await expect(select.locator("input")).toBeFocused();
+  await expect(select).toBeFocused();
 
   // Should reopen the menu
   await select.press("ArrowDown");
@@ -66,17 +67,19 @@ test("escape should close the menu", async ({ page }) => {
 test("search filters the options", async ({ page }) => {
   await page.goto("/");
   const select = page.locator("bl-select").first();
-  const submenu = select.locator(".bl-select-menu-wrapper").first();
+  const submenu = select.locator(".bl-select-menu").first();
   await select.click();
-  await select.locator("input").fill("er");
-  await expect(
-    select.locator(".bl-select-menu-item:not(.filtered)"),
-  ).toHaveText(["Tiger", "Rhinoceros"]);
-  await select.locator("input").press("Backspace");
-  await select.locator("input").press("Backspace");
-  await select.locator("input").press("Backspace");
-  await expect(submenu.locator(".bl-select-menu-item.filtered")).toHaveCount(0);
-  for (const item of await submenu.locator(".bl-select-menu-item").all()) {
+  const input = select.locator("input");
+  await input.fill("er");
+  await expect(select.locator(".bl-option:not(.filtered)")).toHaveText([
+    "Tiger",
+    "Rhinoceros",
+  ]);
+  await input.press("Backspace");
+  await input.press("Backspace");
+  await input.press("Backspace");
+  await expect(submenu.locator(".bl-option.filtered")).toHaveCount(0);
+  for (const item of await submenu.locator(".bl-option").all()) {
     await expect(item).toBeVisible();
   }
 });
