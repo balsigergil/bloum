@@ -88,7 +88,10 @@ export class Select extends HTMLElement {
         e.preventDefault();
         e.stopPropagation();
         if (this.isMenuOpen) {
-          if (this.#focusedItemIndex !== null) {
+          if (
+            this.#focusedItemIndex !== null &&
+            this.filteredOptions.length > 0
+          ) {
             this.#setSelected(this.#focusedItemIndex);
           }
           this.closeMenu();

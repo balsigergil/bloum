@@ -72,6 +72,7 @@ The goal for this library is not to provide an exhaustive list of components, bu
 - [ ] Popover
 - [ ] Tooltip
 - [ ] DataTable
+- [ ] Command menu (like [⌘K](https://github.com/pacocoursey/cmdk/))
 - [ ] Phone input
 - [ ] Switch
 - [ ] Color picker

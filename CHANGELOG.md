@@ -5,9 +5,6 @@
 
 ### Features
 
-* **date-picker:** basic calendar view ([3693cc4](https://github.com/balsigergil/bloum/commit/3693cc42f540779a073eddf4a1078551e9aaaaca))
-* **date-picker:** connect inputs to calendar view ([79ee9ee](https://github.com/balsigergil/bloum/commit/79ee9ee102a41e239755913eb191b113f1b7fee1))
-* **date-picker:** input behaviours ([65b08b0](https://github.com/balsigergil/bloum/commit/65b08b00bdf1837f854230330ab7229847b749fc))
 * supports dark color scheme (fix [#1](https://github.com/balsigergil/bloum/issues/1)) ([84c303f](https://github.com/balsigergil/bloum/commit/84c303f9af5f73b47cbcd7f6c10a30f380782300))
 
 
