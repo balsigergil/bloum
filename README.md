@@ -3,13 +3,10 @@
         <img src="https://raw.githubusercontent.com/balsigergil/bloum/main/docs/static/img/bloum_logo.png" height="128" alt="logo">
     </a>
     <h1>Bloum</h1>
-    <strong>A lightweight yet powerful library of unstyled web components.</strong>
+    <strong>A lightweight yet powerful library of web components</strong>
     <br>
     <br>
     <div align="center">
-        <a aria-label="Bundlephobia" href="https://bundlephobia.com/package/bloum">
-          <img alt="Package size" src="https://img.shields.io/bundlephobia/minzip/bloum?style=for-the-badge">
-        </a>
         <a aria-label="NPM version" href="https://www.npmjs.com/package/bloum">
           <img alt="NPM version" src="https://img.shields.io/npm/v/bloum?style=for-the-badge">
         </a>
@@ -24,58 +21,66 @@
 
 ## Table of Contents
 
-- 📖 [Introduction](#introduction)
+- 📖 [Introduction](#what-is-bloum)
 - 🚀 [Features](#features)
 - 📦 [Installation](#installation)
 - 💻 [Usage](#usage)
 - 📋 [Documentation](#documentation)
-- 📝 [Contributing](#contributing)
 - ⚖️ [License](#license)
 
-## Introduction
 
-### What is Bloum?
+## What is Bloum?
 
-Bloum is an open-source library of unstyled web components. The goal of this library is to provide a set of components that can be used in any web project, regardless of the framework or library used.
-It implements the most common components used in web applications that required a lot of JavaScript to work, like select, tabs, modals, etc.
+Bloum is an open-source library of web components. The goal of this library is to provide a set of JavaScript components that can be used in any web project, regardless of the framework or library used.
+The main use-case for Bloum is to provide easy-to-use components for project using MPA (Multi-Page Application) like Laravel, Django or Rails. It pairs well with server-side rendering and progressive enhancement tools like [HTMX](https://htmx.org/) and [Alpine.js](https://alpinejs.dev/).
 
-It is unstyled by default, meaning that it doesn't provide an opinionated design. It is up to you to style the components to fit your needs. However, it comes with a theme that you can use to get started quickly.
-
-### Why Bloum?
-
-The goal for this library is not to provide an exhaustive list of components, but rather to provider components that are usually tedious to implement and require a lot of JavaScript to work.
-
-**⚠️ Warning:** It currently doesn't support virtual DOM libraries like React or Vue.
+It uses [Lit](https://lit.dev/) under the hood to provide a modern and efficient way to create web components but doesn't require any dependencies.
 
 ## Features
 
-- 🪶 **Lightweight:** As an *unstyled* library, it comes with minimal CSS for you to style the components as you wish.
+<!-- - 🪶 **Lightweight:** Bloum is a small library. It's less than 10KB minified and gzipped. -->
+- 🚀 **Easy to use:** Bloum is designed to be easy to use and integrate in any project.
 - 🔍 **Accessible:** Built with accessibility in mind. It's fully keyboard navigable and [ARIA](https://www.w3.org/WAI/ARIA/apg/) compliant.
 - 🌓 **Dark mode:** Supports dark mode out of the box.
 - 📱 **Responsive:** Works on all modern browsers and devices.
 - 📦 **No dependencies:** Does not depend on any other library or framework.
-- 🧪 **Tested:** End-to-end tests with [Playwright](https://playwright.dev/).
-- 🎨 **Theming:** Easy to customize and comes with a modern theme to quickly get started.
-- 🌈 **Modern:** Built with the [Web Components](https://developer.mozilla.org/en-US/docs/Web/API/Web_components) API.
-- 🤹 **Versatile:** Can be used with any non-(virtual DOM) client-side library like [Svelte](https://svelte.dev/), [Alpine.js](https://alpinejs.dev/) or [HTMX](https://htmx.org/) and can be integrated with [Tailwind CSS](https://tailwindcss.com/) or [Bootstrap](https://getbootstrap.com/).
+- 🧪 **Tested:** End-to-end tests with [Playwright](https://playwright.dev/) and unit tests with [Vitest](https://vitejs.dev/guide/features.html#testing).
+- 🎨 **Theming:** Easy to customize with CSS variables.
+- 🌈 **Modern:** Built with the [Web Components](https://developer.mozilla.org/en-US/docs/Web/API/Web_components) API using [Lit](https://lit.dev/).
 
-**Components:**
+## Components
 
-- [x] [Select](https://www.bloum.dev/docs/components/select)
+### Web components
+
 - [x] [Modal](https://www.bloum.dev/docs/components/modal)
 - [x] [Alert dialog](https://www.bloum.dev/docs/components/alert)
 - [x] [Tabs](https://www.bloum.dev/docs/components/tabs)
 - [x] [Toast](https://www.bloum.dev/docs/components/toast)
 - [x] [Accordion / Collapse](https://www.bloum.dev/docs/components/accordion)
+- [ ] Data table
+- [ ] Sidebar
+- [ ] Dropdown menu
+- [ ] Phone input
+- [ ] Pin input
 - [ ] DatePicker / TimePicker / Calendar
-- [ ] Stepper / Wizard
+
+### JavaScript components
 - [ ] Popover
 - [ ] Tooltip
-- [ ] DataTable
-- [ ] Command menu (like [⌘K](https://github.com/pacocoursey/cmdk/))
-- [ ] Phone input
+- [ ] Select
+
+### CSS only components
+
+- [ ] Button
+- [ ] Alert
+- [ ] Badge / Tag / Chip / Pill
+- [ ] Card
+- [ ] Form elements
+- [ ] Command menu
+- [ ] Progress bar
+- [ ] Spinner
 - [ ] Switch
-- [ ] Color picker
+- [ ] Radio / Checkbox group
 
 ## Installation
 
@@ -145,10 +150,6 @@ Then, you can use the components in your HTML:
 ## Documentation
 
 The documentation is available at [https://www.bloum.dev](https://www.bloum.dev).
-
-## Contributing
-
-*TODO*
 
 ## License
 
