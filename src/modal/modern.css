@@ -1,23 +1,18 @@
 .bl-modal {
   --bl-modal-backdrop-opacity: 0.4;
   --bl-modal-margin-y: 4rem;
-  --bl-modal-max-width: min(100% - 2rem, 600px);
-  --bl-modal-padding: 2rem;
+  --bl-modal-padding: 1.5rem;
   --bl-modal-background: #fff;
   --bl-modal-animation-duration: 200ms;
-
-  .bl-modal-wrapper {
-    display: grid;
-    gap: 1rem;
-  }
-
-  .bl-modal-title {
-    font-size: 1.25rem;
-    font-weight: 600;
-  }
+  --bl-modal-title-fs: 1.125rem;
+  --bl-modal-title-fw: 600;
+  --bl-modal-body-fs: 1rem;
+  --bl-modal-spacing: 1rem;
+  --bl-modal-close-size: 24px;
+  --bl-modal-blur: 4px;
+  --bl-modal-br: var(--bl-border-radius-lg);
 
   &.open {
-    display: flex;
     animation: modal-backdrop var(--bl-modal-animation-duration) ease-out
       forwards;
     .bl-modal-wrapper {
@@ -38,12 +33,8 @@
     }
   }
 
-  .bl-close-button {
-    --bl-close-size: 30px;
-  }
-
   &.blur {
-    backdrop-filter: blur(var(--bl-modal-blur, 4px));
+    backdrop-filter: blur(var(--bl-modal-blur));
   }
 }
 
