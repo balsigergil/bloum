@@ -7,13 +7,23 @@
 @import "./accordion/style.css";
 @import "./date-picker/style.css";
 
+@import "button/button.css";
+
 :root {
+  --bl-clr-primary-darker: hsl(from var(--bl-clr-primary) h s calc(l - 10));
+  --bl-clr-primary-dark: hsl(from var(--bl-clr-primary) h s calc(l - 5));
   --bl-clr-primary: #006aa6;
-  --bl-clr-primary-light: #0284c7;
+  --bl-clr-primary-light: hsl(from var(--bl-clr-primary) h s calc(l + 5));
+  --bl-clr-primary-lighter: hsl(from var(--bl-clr-primary) h s calc(l + 10));
+
+  --bl-clr-text: var(--bl-clr-gray-900);
 
   --bl-clr-success: #15803d;
   --bl-clr-warning: #ca8a04;
+
+  --bl-clr-error-dark: hsl(from var(--bl-clr-error) h s calc(l - 5));
   --bl-clr-error: #b91c1c;
+  --bl-clr-error-light: hsl(from var(--bl-clr-error) h s calc(l + 5));
 
   --bl-clr-gray-50: #fafafa;
   --bl-clr-gray-100: #f5f5f5;
@@ -27,18 +37,24 @@
   --bl-clr-gray-900: #171717;
   --bl-clr-gray-950: #0a0a0a;
 
-  --bl-border-radius-sm: 4px;
-  --bl-border-radius: 6px;
-  --bl-border-radius-lg: 8px;
+  --bl-border-radius-sm: 0.125rem;
+  --bl-border-radius: 0.25rem;
+  --bl-border-radius-md: 0.375rem;
+  --bl-border-radius-lg: 0.5rem;
+  --bl-border-radius-xl: 0.75rem;
+  --bl-border-radius-2xl: 1rem;
+  --bl-border-radius-full: 9999px;
 
   --bl-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --bl-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1),
     0 4px 6px -4px rgb(0 0 0 / 0.1);
   --bl-shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1),
     0 8px 10px -6px rgb(0 0 0 / 0.1);
+
+  --bl-transition: 150ms;
 }
 
 .dark,
 [data-theme="dark"] {
-  --bl-clr-primary: var(--bl-clr-primary-light);
+  --bl-clr-text: #fff;
 }

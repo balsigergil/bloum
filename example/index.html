@@ -7,15 +7,50 @@
       content="width=device-width, initial-scale=1, minimum-scale=1"
     />
     <title>Bloum</title>
-    <script type="module" src="src/modern.ts"></script>
+    <script type="module" src="src/index.js"></script>
     <meta name="color-scheme" content="light" />
   </head>
   <body>
     <div class="wrapper">
+      <h1 class="text-center">Bloum</h1>
       <div>
         <span>Theme: </span>
         <button id="light">Light</button>
         <button id="dark">Dark</button>
+      </div>
+      <h1>Buttons</h1>
+      <div>
+        <button class="btn">Click me</button>
+        <button class="btn btn-primary">Click me</button>
+        <a class="btn btn-primary" href="#">I'm a link</a>
+        <button class="btn btn-ghost">Ghost button</button>
+        <button class="btn btn-danger">Delete me</button>
+        <button class="btn btn-primary" disabled>Disabled</button>
+        <button class="btn btn-primary btn-loading">Loading...</button>
+      </div>
+      <h1>Icon buttons</h1>
+      <div class="flex gap-2">
+        <button class="btn btn-icon">
+          <i class="fa-solid fa-sailboat"></i>
+        </button>
+        <button class="btn btn-icon btn-primary">
+          <i class="fa-solid fa-user-astronaut"></i>
+        </button>
+        <button class="btn btn-icon btn-ghost">
+          <i class="fa-solid fa-ghost"></i>
+        </button>
+        <a class="btn btn-icon btn-primary" href="#">
+          <i class="fa-solid fa-solar-panel"></i>
+        </a>
+        <button class="btn btn-icon btn-danger">
+          <i class="fa-solid fa-trash"></i>
+        </button>
+        <button class="btn btn-icon btn-primary" disabled>
+          <i class="fa-solid fa-cancel"></i>
+        </button>
+        <button class="btn btn-icon btn-primary btn-loading">
+          <i class="fa-solid fa-solar-panel"></i>
+        </button>
       </div>
       <h1>Select</h1>
       <div class="selects">
@@ -187,8 +222,6 @@
         </button>
       </div>
 
-      <bl-close-button></bl-close-button>
-
       <h1>Collapse</h1>
 
       <button data-toggle="collapse" data-target="#my-collapse">
@@ -242,20 +275,6 @@
           </bl-accordion-body>
         </bl-accordion-item>
       </bl-accordion>
-
-      <h1>Date picker</h1>
-      <div>
-        <input type="date" />
-        <bl-datepicker format="%d.%m.%Y"></bl-datepicker>
-      </div>
-
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, quis.
-      </p>
-      <p>Animi aut dolor, explicabo id magni nisi recusandae veniam vero?</p>
-      <p>
-        Atque beatae, consectetur dolorem earum ipsa nobis quis similique unde!
-      </p>
     </div>
 
     <bl-modal title="This is a modern modal" id="mymodal">

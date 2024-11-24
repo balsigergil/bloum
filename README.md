@@ -65,6 +65,7 @@ It uses [Lit](https://lit.dev/) under the hood to provide a modern and efficient
 - [ ] DatePicker / TimePicker / Calendar
 
 ### JavaScript components
+
 - [ ] Popover
 - [ ] Tooltip
 - [ ] Select

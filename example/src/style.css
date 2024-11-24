@@ -1,16 +1,14 @@
-* {
-  box-sizing: border-box;
-}
-
-html,
-body {
-  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 .wrapper {
   max-width: min(1000px, 100% - 2rem);
   margin-inline: auto;
+}
+
+.wrapper > * + * {
+  margin-top: 2rem;
 }
 
 .selects > * + * {

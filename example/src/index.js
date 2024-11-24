@@ -1,11 +1,13 @@
 import "../../src";
 import "../../src/style.css";
-import "./example.css";
+import "../../src/modern.css";
+import "./style.css";
+import "@fortawesome/fontawesome-free/css/all.css";
 
 document.querySelectorAll("form").forEach((f) =>
   f.addEventListener("submit", (e) => {
     e.preventDefault();
-    const formData = new FormData(e.target as HTMLFormElement);
+    const formData = new FormData(e.target);
     console.log(formData);
   }),
 );
