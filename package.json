@@ -40,7 +40,7 @@
     "format:check": "prettier --check \"./**/*.{js,jsx,cjs,ts,tsx,css,html,json,yml}\"",
     "docs": "npm run start -w docs",
     "docs:build": "npm run build -w docs",
-    "prepare": "husky install",
+    "prepare": "husky",
     "release": "release-it",
     "sb": "storybook dev -p 6006",
     "sb-storybook": "storybook build"
@@ -60,9 +60,7 @@
     "@storybook/html": "^8.4.5",
     "@storybook/html-vite": "^8.4.5",
     "@storybook/test": "^8.4.5",
-    "@types/node": "^22.9.3",
-    "@typescript-eslint/eslint-plugin": "^8.15.0",
-    "@typescript-eslint/parser": "^8.15.0",
+    "@types/node": "^22.10.0",
     "autoprefixer": "^10.4.20",
     "concurrently": "^9.1.0",
     "cssnano": "^7.0.6",
@@ -78,7 +76,7 @@
     "postcss-import": "^16.1.0",
     "postcss-nesting": "^13.0.1",
     "postcss-preset-env": "^10.1.1",
-    "prettier": "^3.3.3",
+    "prettier": "^3.4.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "release-it": "^17.10.0",
@@ -96,7 +94,7 @@
   ],
   "sideEffects": false,
   "lint-staged": {
-    "./src/**/*.{js,ts}": "eslint",
+    "./src/**/*.ts": "eslint",
     "*.{js,jsx,cjs,ts,tsx,html,css,json,yml}": "prettier --write"
   },
   "release-it": {
