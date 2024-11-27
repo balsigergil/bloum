@@ -1,42 +1,42 @@
 import { FOCUSABLE_ELEMENTS } from "../utils/constants";
+import { css, html, LitElement } from "lit";
+import { customElement } from "lit/decorators.js";
 
 export interface CollapseEvent {
   expanded: boolean;
 }
 
-export class Collapse extends HTMLElement {
-  NAME = "collapse";
+@customElement("bl-collapse")
+export class Collapse extends LitElement {
+  static styles = css`
+    :host {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows var(--bl-collapse-transition, 200ms)
+        ease-in-out;
+    }
 
-  static register() {
-    customElements.define("bl-collapse", this);
-    document.querySelectorAll("[data-toggle='collapse']").forEach((element) => {
-      element.addEventListener("click", () => {
-        const targetString = element.getAttribute("data-target");
-        if (targetString) {
-          const target = document.querySelector<Collapse>(targetString);
-          if (target) {
-            target.toggle();
-          }
-        }
-      });
-    });
-  }
+    .wrapper {
+      overflow: hidden;
+    }
 
-  constructor() {
-    super();
-  }
+    .padding {
+      padding: var(--bl-collapse-padding, 0);
+    }
 
-  connectedCallback() {
-    this.classList.add("bl-collapse");
-    this.setAttribute("aria-hidden", "true");
-    const wrapper = document.createElement("div");
-    wrapper.classList.add("bl-collapse-wrapper");
-    const paddingWrapper = document.createElement("div");
-    paddingWrapper.classList.add("bl-collapse-padding");
-    paddingWrapper.append(...this.childNodes);
-    wrapper.append(paddingWrapper);
-    this.append(wrapper);
-    this.hide();
+    :host(.show) {
+      grid-template-rows: 1fr;
+    }
+  `;
+
+  render() {
+    return html`
+      <div class="wrapper">
+        <div class="padding">
+          <slot></slot>
+        </div>
+      </div>
+    `;
   }
 
   show() {

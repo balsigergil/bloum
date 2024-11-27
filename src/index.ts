@@ -32,7 +32,6 @@ TabPanel.register();
 ToastContainer.register();
 Toast.register();
 
-Collapse.register();
 Accordion.register();
 AccordionItem.register();
 AccordionHeader.register();
@@ -56,3 +55,25 @@ declare global {
     Toast: typeof Toast;
   }
 }
+
+console.info("🚀 Bloom UI Components loaded!");
+document.addEventListener("click", (e) => {
+  if (e.target instanceof HTMLElement) {
+    const element = e.target.closest("[data-toggle]");
+    if (element === null) {
+      return;
+    }
+    const toggleType = element.getAttribute("data-toggle");
+    const id = element.getAttribute("data-target");
+    if (toggleType === null || id === null) {
+      return;
+    }
+    const target = document.querySelector(id);
+    if (target === null) {
+      return;
+    }
+    if (toggleType === "collapse" && target instanceof Collapse) {
+      target.toggle();
+    }
+  }
+});
