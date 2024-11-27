@@ -12,13 +12,19 @@
   </head>
   <body>
     <div class="wrapper">
-      <h1 class="text-center">Bloum</h1>
+      <h1 class="text-center text-4xl font-semibold mt-4">Bloum</h1>
       <div>
         <span>Theme: </span>
-        <button id="light">Light</button>
-        <button id="dark">Dark</button>
+        <button id="light" class="btn">
+          <i class="fa-solid fa-sun"></i>
+          Light
+        </button>
+        <button id="dark" class="btn">
+          <i class="fa-solid fa-moon"></i>
+          Dark
+        </button>
       </div>
-      <h1>Buttons</h1>
+      <h2 class="header">Buttons</h2>
       <div>
         <button class="btn">Click me</button>
         <button class="btn btn-primary">Click me</button>
@@ -28,7 +34,9 @@
         <button class="btn btn-primary" disabled>Disabled</button>
         <button class="btn btn-primary btn-loading">Loading...</button>
       </div>
-      <h1>Icon buttons</h1>
+
+      <h2 class="header">Icon buttons</h2>
+
       <div class="flex gap-2">
         <button class="btn btn-icon">
           <i class="fa-solid fa-sailboat"></i>
@@ -52,7 +60,26 @@
           <i class="fa-solid fa-solar-panel"></i>
         </button>
       </div>
-      <h1>Select</h1>
+
+      <h2 class="header">Alert</h2>
+
+      <div class="flex flex-col gap-2">
+        <bl-alert>Something went wrong. Please try again later.</bl-alert>
+        <bl-alert status="error" closable>
+          Something went wrong. Please try again later.
+        </bl-alert>
+        <bl-alert header="Invalid fields" status="warning">
+          Something went wrong. Please try again later.
+        </bl-alert>
+        <bl-alert status="info">This is an information</bl-alert>
+        <bl-alert status="success">This is success!!!!</bl-alert>
+        <bl-alert header="Processing data..." status="primary" loading>
+          Please wait while we process your data.
+        </bl-alert>
+      </div>
+
+      <h2 class="header">Select</h2>
+
       <div class="selects">
         <form class="my-forms">
           <bl-select name="select1" clearable searchable>
@@ -160,14 +187,18 @@
         </bl-select>
       </div>
 
-      <h1>Modal</h1>
+      <h2 class="header">Modal</h2>
 
       <div>
-        <button data-modal="#mymodal">Open modern modal</button>
-        <button data-alert="#myalert">Open alert dialog</button>
+        <button class="btn btn-primary" data-modal="#mymodal">
+          Open modern modal
+        </button>
+        <button class="btn btn-primary" data-alert="#myalert">
+          Open alert dialog
+        </button>
       </div>
 
-      <h1>Tabs</h1>
+      <h2 class="header">Tabs</h2>
 
       <bl-tabs use-anchor>
         <bl-tab-list>
@@ -184,59 +215,79 @@
         </bl-tab-panels>
       </bl-tabs>
 
-      <h1>Toast</h1>
-      <div>
-        <button onclick="Toast.info('This is an info toast')">
+      <h2 class="header">Toast</h2>
+      <div class="flex gap-2 flex-wrap">
+        <button
+          class="btn btn-primary"
+          onclick="Toast.info('This is an info toast')"
+        >
           Show info toast
         </button>
-        <button onclick="Toast.success('This is a successful toast :)')">
+        <button
+          class="btn btn-primary"
+          onclick="Toast.success('This is a successful toast :)')"
+        >
           Show success toast
         </button>
         <button
+          class="btn btn-primary"
           onclick="Toast.warning('Be careful with that, it\'s a warning')"
         >
           Show warning toast
         </button>
-        <button onclick="Toast.error('Ouch, something went wrong!')">
+        <button
+          class="btn btn-primary"
+          onclick="Toast.error('Ouch, something went wrong!')"
+        >
           Show error toast
         </button>
         <button
+          class="btn btn-primary"
           onclick="Toast.info('This is an info toast', {isClosable: true})"
         >
           Show closable toast
         </button>
         <button
+          class="btn btn-primary"
           onclick="Toast.success('Account created', {description: 'Your account has been successfully created.', isClosable: true})"
         >
           Show toast with description
         </button>
         <button
+          class="btn btn-primary"
           onclick="Toast.info('Callback test', {description: 'An alert will pop out when this closes.', isClosable: true, onClose: () => alert('Toast closed')})"
         >
           Show toast with onClose callback
         </button>
         <button
+          class="btn btn-primary"
           onclick="Toast.info('Won\'t close', {description: 'This toast won\'t close automatically.', isClosable: true, duration: 0})"
         >
           Show toast that doesn't close automatically
         </button>
       </div>
 
-      <h1>Collapse</h1>
+      <h2 class="header">Collapse</h2>
 
-      <button data-toggle="collapse" data-target="#my-collapse">
-        Toggle collapse
-      </button>
-      <bl-collapse id="my-collapse">
-        <h4>This is a collapse</h4>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda
-          atque consectetur consequatur debitis dolorum, eos eveniet in iste
-          magnam, nihil.
-        </p>
-      </bl-collapse>
+      <div>
+        <button
+          data-toggle="collapse"
+          data-target="#my-collapse"
+          class="btn btn-primary"
+        >
+          Toggle collapse
+        </button>
+        <bl-collapse id="my-collapse">
+          <h4>This is a collapse</h4>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda
+            atque consectetur consequatur debitis dolorum, eos eveniet in iste
+            magnam, nihil.
+          </p>
+        </bl-collapse>
+      </div>
 
-      <h1>Accordion</h1>
+      <h2 class="header">Accordion</h2>
 
       <bl-accordion>
         <bl-accordion-item>

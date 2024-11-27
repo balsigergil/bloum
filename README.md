@@ -57,6 +57,7 @@ It uses [Lit](https://lit.dev/) under the hood to provide a modern and efficient
 - [x] [Tabs](https://www.bloum.dev/docs/components/tabs)
 - [x] [Toast](https://www.bloum.dev/docs/components/toast)
 - [x] [Accordion / Collapse](https://www.bloum.dev/docs/components/accordion)
+- [ ] Alert
 - [ ] Data table
 - [ ] Sidebar
 - [ ] Dropdown menu
@@ -72,8 +73,7 @@ It uses [Lit](https://lit.dev/) under the hood to provide a modern and efficient
 
 ### CSS only components
 
-- [ ] Button
-- [ ] Alert
+- [x] Button
 - [ ] Badge / Tag / Chip / Pill
 - [ ] Card
 - [ ] Form elements
@@ -82,6 +82,9 @@ It uses [Lit](https://lit.dev/) under the hood to provide a modern and efficient
 - [ ] Spinner
 - [ ] Switch
 - [ ] Radio / Checkbox group
+- [ ] Pagination
+- [ ] Breadcrumb
+- [ ] Table
 
 ## Installation
 

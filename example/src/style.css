@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  background-color: #fff;
+  transition: background-color 150ms ease-in-out;
+}
+
 .wrapper {
   max-width: min(1000px, 100% - 2rem);
   margin-inline: auto;
@@ -9,6 +14,10 @@
 
 .wrapper > * + * {
   margin-top: 2rem;
+}
+
+.header {
+  font-size: theme("fontSize.2xl");
 }
 
 .selects > * + * {
@@ -40,6 +49,9 @@
 }
 
 .dark {
+  body {
+    background-color: theme("colors.gray.900");
+  }
   .member-job {
     color: #bbb;
   }

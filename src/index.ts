@@ -15,8 +15,8 @@ import { AccordionItem } from "./accordion/AccordionItem";
 import { AccordionHeader } from "./accordion/AccordionHeader";
 import { AccordionBody } from "./accordion/AccordionBody";
 import { DatePicker } from "./date-picker/DatePicker";
-
-CloseButton.register();
+import { Alert } from "./alert/Alert";
+import { Spinner } from "./spinner/Spinner";
 
 Select.register();
 
@@ -46,6 +46,8 @@ export { Tabs, TabList, Tab, TabPanels, TabPanel };
 export { ToastContainer, Toast };
 export { Collapse, Accordion, AccordionItem, AccordionHeader, AccordionBody };
 export { DatePicker };
+export { Alert };
+export { Spinner };
 
 window.Toast = Toast;
 

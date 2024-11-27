@@ -1,0 +1,70 @@
+:root {
+  --bl-alert-border-radius: var(--bl-border-radius);
+
+  --bl-alert-background: var(--bl-clr-gray-100);
+  --bl-alert-color: var(--bl-clr-gray-900);
+  --bl-alert-border-color: var(--bl-clr-gray-600);
+
+  --bl-alert-background__primary: color-mix(
+    in srgb,
+    var(--bl-clr-primary),
+    #fff 80%
+  );
+  --bl-alert-color__primary: color-mix(
+    in srgb,
+    var(--bl-clr-primary),
+    var(--bl-clr-gray-950) 40%
+  );
+  --bl-alert-border-color__primary: var(--bl-clr-primary);
+
+  --bl-alert-background__info: var(--bl-clr-blue-100);
+  --bl-alert-color__info: var(--bl-clr-blue-900);
+  --bl-alert-border-color__info: var(--bl-clr-blue-600);
+
+  --bl-alert-background__success: var(--bl-clr-green-100);
+  --bl-alert-color__success: var(--bl-clr-green-900);
+  --bl-alert-border-color__success: var(--bl-clr-green-600);
+
+  --bl-alert-background__warning: var(--bl-clr-orange-100);
+  --bl-alert-color__warning: var(--bl-clr-orange-900);
+  --bl-alert-border-color__warning: var(--bl-clr-orange-600);
+
+  --bl-alert-background__error: var(--bl-clr-red-100);
+  --bl-alert-color__error: var(--bl-clr-red-900);
+  --bl-alert-border-color__error: var(--bl-clr-red-600);
+}
+
+.dark,
+[data-theme="dark"] {
+  --bl-alert-background: var(--bl-clr-gray-800);
+  --bl-alert-color: var(--bl-clr-gray-100);
+  --bl-alert-border-color: var(--bl-clr-gray-400);
+
+  --bl-alert-background__primary: color-mix(
+    in srgb,
+    var(--bl-clr-primary),
+    var(--bl-clr-gray-950) 20%
+  );
+  --bl-alert-color__primary: color-mix(
+    in srgb,
+    var(--bl-clr-primary),
+    #fff 80%
+  );
+  --bl-alert-border-color__primary: var(--bl-clr-primary);
+
+  --bl-alert-background__info: var(--bl-clr-blue-800);
+  --bl-alert-color__info: var(--bl-clr-blue-100);
+  --bl-alert-border-color__info: var(--bl-clr-blue-400);
+
+  --bl-alert-background__success: var(--bl-clr-green-800);
+  --bl-alert-color__success: var(--bl-clr-green-100);
+  --bl-alert-border-color__success: var(--bl-clr-green-400);
+
+  --bl-alert-background__warning: var(--bl-clr-orange-800);
+  --bl-alert-color__warning: var(--bl-clr-orange-100);
+  --bl-alert-border-color__warning: var(--bl-clr-orange-400);
+
+  --bl-alert-background__error: var(--bl-clr-red-800);
+  --bl-alert-color__error: var(--bl-clr-red-100);
+  --bl-alert-border-color__error: var(--bl-clr-red-400);
+}

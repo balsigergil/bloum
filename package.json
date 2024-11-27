@@ -34,7 +34,7 @@
     "build:js": "rollup -c rollup.config.cjs --bundleConfigAsCjs",
     "build:css": "postcss src/*.css --dir dist --ext .min.css",
     "build:types": "tsc -p tsconfig.json --emitDeclarationOnly --declaration --declarationDir dist/types",
-    "lint": "eslint --ext .ts ./src",
+    "lint": "eslint src",
     "lint:fix": "npm run lint -- --fix",
     "format": "prettier --write \"./**/*.{js,jsx,cjs,ts,tsx,css,html,json,yml}\"",
     "format:check": "prettier --check \"./**/*.{js,jsx,cjs,ts,tsx,css,html,json,yml}\"",
@@ -48,6 +48,7 @@
   "devDependencies": {
     "@commitlint/cli": "^19.6.0",
     "@commitlint/config-conventional": "^19.6.0",
+    "@eslint/js": "^9.15.0",
     "@playwright/test": "^1.49.0",
     "@release-it/conventional-changelog": "^9.0.3",
     "@rollup/plugin-terser": "^0.4.4",
@@ -68,8 +69,10 @@
     "eslint": "^9.15.0",
     "eslint-plugin-storybook": "^0.11.1",
     "fs-extra": "^11.2.0",
+    "globals": "^15.12.0",
     "husky": "^9.1.7",
     "lint-staged": "^15.2.10",
+    "lit": "^3.2.1",
     "postcss": "^8.4.49",
     "postcss-cli": "^11.0.0",
     "postcss-import": "^16.1.0",
@@ -83,7 +86,8 @@
     "rollup": "^4.27.4",
     "storybook": "^8.4.5",
     "tslib": "^2.8.1",
-    "typescript": "^5.7.2"
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.16.0"
   },
   "workspaces": [
     ".",
