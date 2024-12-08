@@ -5,6 +5,7 @@
 @import "./toast/style.css";
 @import "./date-picker/style.css";
 @import "./alert/style.css";
+@import "./card/card.css";
 
 @import "button/button.css";
 
@@ -128,6 +129,7 @@
   --bl-font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
   --bl-font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
     "Liberation Mono", "Courier New", monospace;
+  --bl-font: var(--bl-font-sans);
 }
 
 .dark,
@@ -136,7 +138,5 @@
 }
 
 body {
-  font-family: var(--bl-font-sans);
-  color: var(--bl-clr-text);
-  background-color: var(--bl-clr-gray-50);
+  font-family: var(--bl-font);
 }

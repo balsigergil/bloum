@@ -1,14 +1,17 @@
 body {
   color-scheme: light;
   background-color: #fff;
+  color: var(--bl-clr-gray-950);
 }
 
 html.dark body,
 body.dark {
   color-scheme: dark;
   background-color: var(--bl-clr-gray-900);
+  color: var(--bl-clr-gray-50);
 }
 
 .dark .docs-story {
   background-color: var(--bl-clr-gray-900);
+  color: var(--bl-clr-gray-50);
 }

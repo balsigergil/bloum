@@ -1,0 +1,40 @@
+.card {
+  --bl-card-bg: #fff;
+  --bl-card-border-radius: var(--bl-border-radius-lg);
+  --bl-card-border: 1px solid var(--bl-clr-gray-200);
+  --bl-card-padding: 1.25rem;
+  --bl-card-title-fs: 1.125rem;
+  --bl-card-title-fw: 600;
+
+  background-color: var(--bl-card-bg);
+  border-radius: var(--bl-card-border-radius);
+  border: var(--bl-card-border);
+  padding: var(--bl-card-padding);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.card-title {
+  font-size: var(--bl-card-title-fs);
+  font-weight: var(--bl-card-title-fw);
+}
+
+.card-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.card-actions .btn-icon {
+  --bl-btn-size: 2rem;
+}
+
+.dark .card,
+[data-theme="dark"] .card {
+  --bl-card-bg: var(--bl-clr-gray-800);
+  --bl-card-border: 1px solid var(--bl-clr-gray-700);
+}
