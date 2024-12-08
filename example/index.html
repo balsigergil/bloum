@@ -10,7 +10,7 @@
     <script type="module" src="src/index.js"></script>
     <meta name="color-scheme" content="light" />
   </head>
-  <body>
+  <body class="pb-20">
     <div class="wrapper">
       <h1 class="text-center text-4xl font-semibold mt-4">Bloum</h1>
       <div>
@@ -277,7 +277,7 @@
         >
           Toggle collapse
         </button>
-        <bl-collapse id="my-collapse">
+        <bl-collapse id="my-collapse" style="--bl-collapse-padding: 1rem">
           <h4>This is a collapse</h4>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda
@@ -287,45 +287,27 @@
         </bl-collapse>
       </div>
 
+      <h2 class="header">Details</h2>
+
+      <div class="grid gap-4">
+        <bl-details summary="Hello World">Bonjour à tous</bl-details>
+        <bl-details>
+          <div slot="summary">Ceci est un slot</div>
+          <div>Bonjour à tous</div>
+        </bl-details>
+      </div>
+
       <h2 class="header">Accordion</h2>
 
-      <bl-accordion>
-        <bl-accordion-item>
-          <bl-accordion-header>Accordion item 1</bl-accordion-header>
-          <bl-accordion-body id="panel-1">
-            <div>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Assumenda atque consectetur consequatur debitis dolorum, eos
-              eveniet in iste magnam, nihil.
-              <input />
-              <input />
-            </div>
-          </bl-accordion-body>
-        </bl-accordion-item>
-        <bl-accordion-item>
-          <bl-accordion-header>Accordion item 2</bl-accordion-header>
-          <bl-accordion-body id="panel-2">
-            <div>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Assumenda atque consectetur consequatur debitis dolorum, eos
-              eveniet in iste magnam, nihil.
-              <input />
-            </div>
-          </bl-accordion-body>
-        </bl-accordion-item>
-        <bl-accordion-item>
-          <bl-accordion-header>Accordion item 3</bl-accordion-header>
-          <bl-accordion-body id="panel-3">
-            <div>
-              <input />
-              <input />
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Assumenda atque consectetur consequatur debitis dolorum, eos
-              eveniet in iste magnam, nihil.
-            </div>
-          </bl-accordion-body>
-        </bl-accordion-item>
-      </bl-accordion>
+      <div>
+        <bl-accordion>
+          <bl-details summary="Hello World">Bonjour à tous</bl-details>
+          <bl-details>
+            <div slot="summary">Ceci est un slot</div>
+            <div>Bonjour à tous</div>
+          </bl-details>
+        </bl-accordion>
+      </div>
     </div>
 
     <bl-modal title="This is a modern modal" id="mymodal">

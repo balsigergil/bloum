@@ -1,15 +1,35 @@
-export class Accordion extends HTMLElement {
-  static NAME = "bl-accordion";
+import { css, html, LitElement } from "lit";
+import { customElement } from "lit/decorators.js";
+import { CollapseEvent } from "../collapse/Collapse";
+import { Details } from "../details/Details";
 
-  static register() {
-    customElements.define(this.NAME, this);
+@customElement("bl-accordion")
+export class Accordion extends LitElement {
+  static styles = css`
+    .accordion {
+      display: grid;
+      gap: var(--bl-accorion-gap, 0.5rem);
+    }
+  `;
+
+  render() {
+    return html`
+      <div class="accordion" @toggled="${this._toggled}">
+        <slot></slot>
+      </div>
+    `;
   }
 
-  constructor() {
-    super();
-  }
-
-  connectedCallback() {
-    this.classList.add(Accordion.NAME);
+  private _toggled(e: CustomEvent<CollapseEvent>) {
+    // Close all other accordions
+    if (e.detail.collapsed) {
+      return;
+    }
+    const details = this.querySelectorAll<Details>("bl-details");
+    details.forEach((accordion) => {
+      if (accordion !== e.target) {
+        accordion.collapse();
+      }
+    });
   }
 }

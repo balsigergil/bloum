@@ -11,9 +11,6 @@ import { Toast } from "./toast/Toast";
 import { CloseButton } from "./close/CloseButton";
 import { Collapse } from "./collapse/Collapse";
 import { Accordion } from "./accordion/Accordion";
-import { AccordionItem } from "./accordion/AccordionItem";
-import { AccordionHeader } from "./accordion/AccordionHeader";
-import { AccordionBody } from "./accordion/AccordionBody";
 import { DatePicker } from "./date-picker/DatePicker";
 import { Alert } from "./alert/Alert";
 import { Spinner } from "./spinner/Spinner";
@@ -32,21 +29,17 @@ TabPanel.register();
 ToastContainer.register();
 Toast.register();
 
-Accordion.register();
-AccordionItem.register();
-AccordionHeader.register();
-AccordionBody.register();
-
 DatePicker.register();
 
 export { CloseButton };
 export { Select, Modal, AlertDialog };
 export { Tabs, TabList, Tab, TabPanels, TabPanel };
 export { ToastContainer, Toast };
-export { Collapse, Accordion, AccordionItem, AccordionHeader, AccordionBody };
+export { Collapse, Accordion };
 export { DatePicker };
 export { Alert };
 export { Spinner };
+export { Details } from "./details/Details";
 
 window.Toast = Toast;
 

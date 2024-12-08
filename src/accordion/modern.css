@@ -1,15 +1,6 @@
 .bl-accordion {
   --bl-collapse-padding: 0.625rem;
 
-  .bl-accordion-item {
-    border-top: 1px solid var(--bl-clr-gray-200);
-    display: grid;
-  }
-
-  .bl-accordion-item:last-of-type {
-    border-bottom: 1px solid var(--bl-clr-gray-200);
-  }
-
   .bl-accordion-header > button {
     appearance: none;
     background: none;

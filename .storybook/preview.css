@@ -1,5 +1,14 @@
-html,
 body {
-  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  color-scheme: light;
+  background-color: #fff;
+}
+
+html.dark body,
+body.dark {
+  color-scheme: dark;
+  background-color: var(--bl-clr-gray-900);
+}
+
+.dark .docs-story {
+  background-color: var(--bl-clr-gray-900);
 }

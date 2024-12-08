@@ -1,8 +1,8 @@
+@import "./utils/reset.css";
 @import "./select/style.css";
 @import "./modal/style.css";
 @import "./tabs/style.css";
 @import "./toast/style.css";
-@import "./accordion/style.css";
 @import "./date-picker/style.css";
 @import "./alert/style.css";
 
@@ -100,9 +100,21 @@
     0 8px 10px -6px rgb(0 0 0 / 0.1);
 
   --bl-transition: 150ms;
+
+  --bl-font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --bl-font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --bl-font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
 }
 
 .dark,
 [data-theme="dark"] {
   --bl-clr-text: #fff;
+}
+
+body {
+  font-family: var(--bl-font-sans);
+  color: var(--bl-clr-text);
+  background-color: var(--bl-clr-gray-50);
 }
