@@ -29,6 +29,21 @@ type Story = StoryObj;
 
 export const Card: Story = {};
 
+export const CardWithImage: Story = {
+  render: () => {
+    return `
+      <div class="card" style="max-width: 350px">
+        <img src="https://picsum.photos/300/200" alt="Nature" class="card-image" />
+        <div class="card-header">
+          <h3 class="card-title">List of users</h3>
+        </div>
+        <div class="card-body">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, at, commodi ducimus eveniet fugit in, iste mollitia neque nulla obcaecati provident quibusdam repellat sit tempore tenetur ut voluptatem. Provident, quisquam!
+        </div>
+      </div>
+      `;
+  },
+};
 export const CardWithTable: Story = {
   render: () => {
     return `

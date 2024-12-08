@@ -3,6 +3,7 @@
 @import "./card/card.css";
 @import "./table/table.css";
 @import "./tabs/tabs.css";
+@import "./forms/forms.css";
 
 :root {
   --bl-clr-primary-50: var(--bl-clr-teal-50);
@@ -18,6 +19,7 @@
   --bl-clr-primary-950: var(--bl-clr-teal-950);
 
   --bl-clr-text: var(--bl-clr-gray-900);
+  --bl-clr-background: #fff;
 
   --bl-clr-gray-50: #fafafa;
   --bl-clr-gray-100: #f4f4f5;

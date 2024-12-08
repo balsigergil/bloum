@@ -5,6 +5,7 @@ export default {
     "postcss-preset-env": {
       features: { "nesting-rules": false },
     },
+    tailwindcss: {},
     autoprefixer: {},
     cssnano: {},
   },

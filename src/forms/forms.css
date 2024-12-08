@@ -1,0 +1,114 @@
+:root {
+  --bl-form-border-radius: var(--bl-border-radius);
+  --bl-form-outline-color: var(--bl-clr-primary-600);
+  --bl-form-checkbox-border-color: var(--bl-clr-gray-300);
+}
+
+/* Form control */
+.form-control {
+  appearance: none;
+  border: 1px solid var(--bl-border-color);
+  border-radius: var(--bl-form-border-radius);
+  padding-inline: 0.75rem;
+  height: 2.5rem;
+  font-size: 0.875rem;
+  outline: none;
+  display: block;
+  width: 100%;
+  background-color: transparent;
+}
+
+.form-control:focus-visible {
+  outline: solid 2px var(--bl-form-outline-color);
+  outline-offset: -1px;
+}
+
+textarea.form-control {
+  padding-block: 0.5rem;
+  height: auto;
+}
+
+/* Checkbox */
+input[type="checkbox"].form-checkbox {
+  appearance: none;
+  background-color: transparent;
+  outline: none;
+  width: 1.125rem;
+  height: 1.125rem;
+  border: 1px solid var(--bl-form-checkbox-border-color);
+  border-radius: var(--bl-border-radius);
+  transition-property: background-color, border-color;
+  transition-duration: var(--bl-transition);
+  transition-timing-function: ease-in-out;
+  cursor: pointer;
+}
+
+input[type="checkbox"].form-checkbox:not(:disabled):checked {
+  border-color: var(--bl-clr-primary-600);
+  background-color: var(--bl-clr-primary-600);
+  background-image: url("./check.svg");
+}
+
+input[type="checkbox"].form-checkbox:focus-visible {
+  outline: solid 2px var(--bl-form-outline-color);
+  outline-offset: 2px;
+}
+
+/* Label */
+.form-label {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  user-select: none;
+}
+
+/* Checkbox card */
+.checkbox-card {
+  position: relative;
+  user-select: none;
+  cursor: pointer;
+  transition-property: transform;
+  transition-duration: var(--bl-transition);
+  display: block;
+
+  &:active {
+    transform: scale(0.96);
+  }
+
+  .card-image {
+    --bl-card-image-max-height: 100px;
+    transition: filter var(--bl-transition);
+    filter: grayscale(1);
+  }
+}
+
+.checkbox-card > input[type="checkbox"] {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1;
+  background-color: var(--bl-clr-background);
+}
+
+.checkbox-card:has(input[type="checkbox"]:checked) {
+  --bl-card-border: 1px solid var(--bl-form-outline-color);
+
+  .card-image {
+    filter: grayscale(0);
+  }
+}
+
+.checkbox-card:has(input[type="checkbox"]:focus-visible) {
+  outline: 2px solid var(--bl-form-outline-color);
+  outline-offset: 2px;
+}
+
+.dark,
+[data-theme="dark"] {
+  --bl-form-border-radius: var(--bl-border-radius);
+  --bl-form-outline-color: var(--bl-clr-primary-400);
+  --bl-form-checkbox-border-color: var(--bl-clr-gray-700);
+}

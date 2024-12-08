@@ -5,6 +5,7 @@
   --bl-btn-border-radius: var(--bl-border-radius);
   --bl-btn-border: solid 1px transparent;
   --bl-btn-size: 2.5rem;
+  --bl-btn-outline-color: var(--bl-clr-primary-600);
 
   appearance: none;
   white-space: nowrap;
@@ -110,6 +111,11 @@
   }
 }
 
+.btn:focus-visible {
+  outline: solid 2px var(--bl-btn-outline-color);
+  outline-offset: 2px;
+}
+
 .btn.btn-loading,
 .btn.htmx-request {
   opacity: 0.75;
@@ -150,6 +156,7 @@
     --bl-btn-bg: var(--bl-clr-gray-800);
     --bl-btn-color: #fff;
     --bl-btn-hover-bg: var(--bl-clr-gray-700);
+    --bl-btn-outline-color: var(--bl-clr-primary-400);
   }
 
   .btn-primary {
