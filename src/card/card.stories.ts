@@ -53,7 +53,7 @@ export const CardWithTable: Story = {
               <th>Name</th>
               <th>Email</th>
               <th>Role</th>
-              <th></th>
+              <th><span class="sr-only">Actions</span></th>
             </tr>
           </thead>
           <tbody>
@@ -106,11 +106,11 @@ export const CardWithTable: Story = {
               </td>
             </tr>
           </tbody>
-<!--          <tfoot>-->
-<!--            <tr>-->
-<!--              <td colspan="5">Total: 1 user</td>-->
-<!--            </tr>-->
-<!--          </tfoot>-->
+          <tfoot>
+            <tr>
+              <td colspan="5">Total: 1 user</td>
+            </tr>
+          </tfoot>
         </table>
       </div>
       `;

@@ -51,6 +51,5 @@
 
 .dark .card,
 [data-theme="dark"] .card {
-  --bl-card-bg: var(--bl-clr-gray-800);
-  --bl-border-color: var(--bl-clr-gray-700);
+  --bl-card-bg: var(--bl-clr-gray-900);
 }

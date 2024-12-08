@@ -28,7 +28,7 @@ const meta: Meta<TableArgs> = {
           <th>Name</th>
           <th>Email</th>
           <th>Role</th>
-          <th></th>
+          <th><span class="sr-only">Actions</span></th>
         </tr>
       </thead>
       <tbody>

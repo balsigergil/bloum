@@ -48,6 +48,6 @@ table.table {
 
 .dark table.table,
 [data-theme="dark"] table.table {
-  --bl-table-stripe-bg: var(--bl-clr-gray-800);
-  --bl-table-hover-bg: var(--bl-clr-gray-700);
+  --bl-table-stripe-bg: var(--bl-clr-gray-900);
+  --bl-table-hover-bg: var(--bl-clr-gray-800);
 }

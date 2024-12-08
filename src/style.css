@@ -135,12 +135,33 @@
   --bl-font: var(--bl-font-sans);
 }
 
+html,
+body {
+  font-family: var(--bl-font);
+  color: var(--bl-clr-text);
+  background-color: var(--bl-clr-background);
+}
+
 .dark,
 [data-theme="dark"] {
   --bl-clr-text: #fff;
+  --bl-clr-background: var(--bl-clr-gray-950);
   --bl-border-color: var(--bl-clr-gray-800);
+
+  html,
+  body {
+    color-scheme: dark;
+  }
 }
 
-body {
-  font-family: var(--bl-font);
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
