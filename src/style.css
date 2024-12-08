@@ -1,14 +1,8 @@
 @import "./utils/reset.css";
-@import "./select/style.css";
-@import "./modal/style.css";
-@import "./tabs/style.css";
-@import "./toast/style.css";
-@import "./date-picker/style.css";
-@import "./alert/style.css";
+@import "./button/button.css";
 @import "./card/card.css";
 @import "./table/table.css";
-
-@import "button/button.css";
+@import "./tabs/tabs.css";
 
 :root {
   --bl-clr-primary-50: var(--bl-clr-teal-50);

@@ -1,0 +1,88 @@
+bl-tabs {
+  --bl-tab-padding: 1rem;
+  --bl-tab-color: var(--bl-clr-gray-600);
+  --bl-tab-active-color: var(--bl-clr-gray-800);
+  display: block;
+}
+
+bl-tab-list {
+  display: flex;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--bl-border-color);
+    z-index: 1;
+  }
+}
+
+bl-tab {
+  cursor: pointer;
+  padding: calc(var(--bl-tab-padding) / 1.5) var(--bl-tab-padding);
+  transition: color var(--bl-transition) ease-in-out;
+  user-select: none;
+  position: relative;
+  color: var(--bl-tab-color);
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 1px;
+    background-color: transparent;
+    z-index: 2;
+  }
+
+  &.active {
+    color: var(--bl-clr-text);
+  }
+
+  &.active::after {
+    background-color: var(--bl-tab-active-color);
+    height: 2px;
+  }
+
+  &:hover {
+    color: var(--bl-tab-active-color);
+  }
+
+  &:focus-visible {
+    outline: 1px solid var(--bl-tab-active-color);
+    outline-offset: 2px;
+  }
+}
+
+bl-tab-panel {
+  display: none;
+  padding: var(--bl-tab-padding);
+
+  &:focus-visible {
+    outline: 1px solid var(--bl-tab-active-color);
+    outline-offset: 1px;
+  }
+}
+
+bl-tab-panel.show {
+  display: block;
+}
+
+.dark bl-tabs,
+[data-theme="dark"] bl-tabs {
+  --bl-tab-color: var(--bl-clr-gray-400);
+  --bl-tab-active-color: var(--bl-clr-gray-50);
+}
