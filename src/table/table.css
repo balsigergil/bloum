@@ -1,7 +1,7 @@
 table.table {
   --bl-table-cell-padding: 0.5rem;
   --bl-table-fs: 0.875rem;
-  --bl-table-border-color: var(--bl-clr-gray-200);
+  --bl-table-border-color: var(--bl-border-color);
   --bl-table-stripe-bg: var(--bl-clr-gray-100);
   --bl-table-hover-bg: var(--bl-clr-gray-200);
 
@@ -44,4 +44,10 @@ table.table {
 
 .table-responsive {
   overflow-x: auto;
+}
+
+.dark table.table,
+[data-theme="dark"] table.table {
+  --bl-table-stripe-bg: var(--bl-clr-gray-800);
+  --bl-table-hover-bg: var(--bl-clr-gray-700);
 }

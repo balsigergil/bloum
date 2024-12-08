@@ -25,17 +25,17 @@
 
   --bl-clr-text: var(--bl-clr-gray-900);
 
-  --bl-clr-gray-50: #f9fafb;
-  --bl-clr-gray-100: #f3f4f6;
-  --bl-clr-gray-200: #e5e7eb;
-  --bl-clr-gray-300: #d1d5db;
-  --bl-clr-gray-400: #9ca3af;
-  --bl-clr-gray-500: #6b7280;
-  --bl-clr-gray-600: #4b5563;
-  --bl-clr-gray-700: #374151;
-  --bl-clr-gray-800: #1f2937;
-  --bl-clr-gray-900: #111827;
-  --bl-clr-gray-950: #030712;
+  --bl-clr-gray-50: #fafafa;
+  --bl-clr-gray-100: #f4f4f5;
+  --bl-clr-gray-200: #e4e4e7;
+  --bl-clr-gray-300: #d4d4d8;
+  --bl-clr-gray-400: #a1a1aa;
+  --bl-clr-gray-500: #71717a;
+  --bl-clr-gray-600: #52525b;
+  --bl-clr-gray-700: #3f3f46;
+  --bl-clr-gray-800: #27272a;
+  --bl-clr-gray-900: #18181b;
+  --bl-clr-gray-950: #09090b;
 
   --bl-clr-blue-50: #eff6ff;
   --bl-clr-blue-100: #dbeafe;
@@ -117,6 +117,8 @@
   --bl-border-radius-2xl: 1rem;
   --bl-border-radius-full: 9999px;
 
+  --bl-border-color: var(--bl-clr-gray-200);
+
   --bl-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --bl-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1),
     0 4px 6px -4px rgb(0 0 0 / 0.1);
@@ -136,6 +138,7 @@
 .dark,
 [data-theme="dark"] {
   --bl-clr-text: #fff;
+  --bl-border-color: var(--bl-clr-gray-800);
 }
 
 body {
