@@ -3,6 +3,7 @@
   --bl-btn-color: var(--bl-clr-gray-800);
   --bl-btn-hover-background: var(--bl-clr-gray-300);
   --bl-btn-border-radius: var(--bl-border-radius);
+  --bl-btn-border: solid 1px transparent;
 
   appearance: none;
   white-space: nowrap;
@@ -20,7 +21,7 @@
   cursor: pointer;
   transition-property: color, background-color, border-color;
   transition-duration: var(--bl-transition);
-  border: none;
+  border: var(--bl-btn-border);
   position: relative;
   user-select: none;
   line-height: 1.25rem;
@@ -31,57 +32,61 @@
   }
 }
 
-.btn-ghost {
-  --bl-btn-background: transparent;
-  --bl-btn-hover-background: var(--bl-clr-gray-200);
-}
-
 .btn-icon {
   min-width: 2.5rem;
   padding: 0;
 }
 
+/* Colors */
+
 .btn-primary {
-  --bl-btn-background: var(--bl-clr-primary);
-  --bl-btn-hover-background: color-mix(
-    in srgb,
-    var(--bl-clr-primary),
-    #fff 10%
-  );
+  --bl-btn-background: var(--bl-clr-primary-600);
+  --bl-btn-hover-background: var(--bl-clr-primary-500);
   --bl-btn-color: #fff;
 }
 
 .btn-danger {
-  --bl-btn-background: var(--bl-clr-red-700);
-  --bl-btn-hover-background: var(--bl-clr-red-600);
+  --bl-btn-background: var(--bl-clr-red-600);
+  --bl-btn-hover-background: var(--bl-clr-red-500);
   --bl-btn-color: #fff;
 }
 
-.dark,
-[data-theme="dark"] {
-  .btn {
-    --bl-btn-background: var(--bl-clr-gray-800);
+/* Variants */
+
+.btn-ghost {
+  --bl-btn-background: transparent;
+  --bl-btn-color: var(--bl-clr-gray-800);
+
+  &.btn-primary {
+    --bl-btn-hover-background: var(--bl-clr-primary-600);
+  }
+
+  &.btn-danger {
+    --bl-btn-hover-background: var(--bl-clr-red-600);
+  }
+
+  &.btn-primary:hover,
+  &.btn-danger:hover {
     --bl-btn-color: #fff;
-    --bl-btn-hover-background: var(--bl-clr-gray-700);
+  }
+}
+
+.btn-outline {
+  --bl-btn-background: transparent;
+  --bl-btn-hover-background: var(--bl-clr-gray-200);
+  --bl-btn-color: var(--bl-clr-gray-800);
+  --bl-btn-border: 1px solid var(--bl-clr-gray-300);
+
+  &.btn-primary {
+    --bl-btn-color: var(--bl-clr-primary-600);
+    --bl-btn-border: 1px solid var(--bl-clr-primary-600);
+    --bl-btn-hover-background: var(--bl-clr-primary-100);
   }
 
-  .btn-ghost {
-    --bl-btn-background: transparent;
-    --bl-btn-hover-background: var(--bl-clr-gray-800);
-  }
-
-  .btn-primary {
-    --bl-btn-background: var(--bl-clr-primary);
-    --bl-btn-hover-background: color-mix(
-      in srgb,
-      var(--bl-clr-primary),
-      var(--bl-clr-gray-950) 20%
-    );
-  }
-
-  .btn-danger {
-    --bl-btn-background: var(--bl-clr-red-700);
-    --bl-btn-hover-background: var(--bl-clr-red-800);
+  &.btn-danger {
+    --bl-btn-color: var(--bl-clr-red-600);
+    --bl-btn-border: 1px solid var(--bl-clr-red-600);
+    --bl-btn-hover-background: var(--bl-clr-red-100);
   }
 }
 
@@ -124,6 +129,63 @@
   &::after {
     border-right-color: transparent;
     animation: spin 750ms linear infinite;
+  }
+}
+
+/* Dark theme */
+.dark,
+[data-theme="dark"] {
+  .btn {
+    --bl-btn-background: var(--bl-clr-gray-800);
+    --bl-btn-color: #fff;
+    --bl-btn-hover-background: var(--bl-clr-gray-700);
+  }
+
+  .btn-primary {
+    --bl-btn-background: var(--bl-clr-primary-500);
+    --bl-btn-hover-background: var(--bl-clr-primary-600);
+  }
+
+  .btn-danger {
+    --bl-btn-background: var(--bl-clr-red-700);
+    --bl-btn-hover-background: var(--bl-clr-red-800);
+  }
+
+  .btn-ghost {
+    --bl-btn-background: transparent;
+    --bl-btn-color: var(--bl-clr-gray-200);
+
+    &.btn-primary {
+      --bl-btn-hover-background: var(--bl-clr-primary-400);
+    }
+
+    &.btn-danger {
+      --bl-btn-hover-background: var(--bl-clr-red-500);
+    }
+
+    &.btn-primary:hover,
+    &.btn-danger:hover {
+      --bl-btn-color: var(--bl-clr-gray-900);
+    }
+  }
+
+  .btn-outline {
+    --bl-btn-background: transparent;
+    --bl-btn-hover-background: var(--bl-clr-gray-800);
+    --bl-btn-color: var(--bl-clr-gray-200);
+    --bl-btn-border: 1px solid var(--bl-clr-gray-700);
+
+    &.btn-primary {
+      --bl-btn-color: var(--bl-clr-primary-400);
+      --bl-btn-border: 1px solid var(--bl-clr-primary-400);
+      --bl-btn-hover-background: var(--bl-clr-primary-900);
+    }
+
+    &.btn-danger {
+      --bl-btn-color: var(--bl-clr-red-400);
+      --bl-btn-border: 1px solid var(--bl-clr-red-400);
+      --bl-btn-hover-background: var(--bl-clr-red-900);
+    }
   }
 }
 

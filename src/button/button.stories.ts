@@ -1,17 +1,22 @@
 import type { Meta, StoryObj } from "@storybook/html";
 
-type ButtonArgs = {
+export type ButtonArgs = {
   label: string;
-  type: string;
+  color: string;
+  variant: string;
   isLoading: boolean;
 };
 
 const meta: Meta<ButtonArgs> = {
   title: "Button",
   argTypes: {
-    type: {
+    color: {
       control: "select",
-      options: ["primary", "secondary", "ghost"],
+      options: ["default", "primary", "danger"],
+    },
+    variant: {
+      control: "select",
+      options: ["default", "outline", "ghost"],
     },
     isLoading: {
       control: "boolean",
@@ -22,10 +27,16 @@ const meta: Meta<ButtonArgs> = {
     btn.innerText = args.label;
     btn.classList.add("btn");
 
-    if (args.type === "primary") {
+    if (args.color === "primary") {
       btn.classList.add("btn-primary");
-    } else if (args.type === "ghost") {
+    } else if (args.color === "danger") {
+      btn.classList.add("btn-danger");
+    }
+
+    if (args.variant === "ghost") {
       btn.classList.add("btn-ghost");
+    } else if (args.variant === "outline") {
+      btn.classList.add("btn-outline");
     }
 
     if (args.isLoading) {
@@ -42,7 +53,8 @@ type Story = StoryObj<ButtonArgs>;
 export const Primary: Story = {
   args: {
     label: "Press me",
-    type: "primary",
+    color: "primary",
+    variant: "default",
     isLoading: false,
   },
 };
@@ -50,26 +62,6 @@ export const Primary: Story = {
 export const Secondary: Story = {
   args: {
     ...Primary.args,
-    type: "secondary",
-  },
-};
-
-export const WithIcon: Story = {
-  render: (args) => {
-    const btn = document.createElement("button");
-    btn.classList.add("btn");
-    const icon = document.createElement("i");
-    icon.classList.add("fas", "fa-save");
-    btn.appendChild(icon);
-    btn.appendChild(document.createTextNode(args.label));
-
-    if (args.isLoading) {
-      btn.classList.add("btn-loading");
-    }
-
-    return btn;
-  },
-  args: {
-    label: "Press me",
+    color: "default",
   },
 };

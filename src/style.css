@@ -9,7 +9,17 @@
 @import "button/button.css";
 
 :root {
-  --bl-clr-primary: #006aa6;
+  --bl-clr-primary-50: var(--bl-clr-teal-50);
+  --bl-clr-primary-100: var(--bl-clr-teal-100);
+  --bl-clr-primary-200: var(--bl-clr-teal-200);
+  --bl-clr-primary-300: var(--bl-clr-teal-300);
+  --bl-clr-primary-400: var(--bl-clr-teal-400);
+  --bl-clr-primary-500: var(--bl-clr-teal-500);
+  --bl-clr-primary-600: var(--bl-clr-teal-600);
+  --bl-clr-primary-700: var(--bl-clr-teal-700);
+  --bl-clr-primary-800: var(--bl-clr-teal-800);
+  --bl-clr-primary-900: var(--bl-clr-teal-900);
+  --bl-clr-primary-950: var(--bl-clr-teal-950);
 
   --bl-clr-text: var(--bl-clr-gray-900);
 
@@ -36,6 +46,18 @@
   --bl-clr-blue-800: #1e40af;
   --bl-clr-blue-900: #1e3a8a;
   --bl-clr-blue-950: #172554;
+
+  --bl-clr-teal-50: #f0fdfa;
+  --bl-clr-teal-100: #ccfbf1;
+  --bl-clr-teal-200: #99f6e4;
+  --bl-clr-teal-300: #5eead4;
+  --bl-clr-teal-400: #2dd4bf;
+  --bl-clr-teal-500: #14b8a6;
+  --bl-clr-teal-600: #0d9488;
+  --bl-clr-teal-700: #0f766e;
+  --bl-clr-teal-800: #115e59;
+  --bl-clr-teal-900: #134e4a;
+  --bl-clr-teal-950: #042f2e;
 
   --bl-clr-red-50: #fef2f2;
   --bl-clr-red-100: #fee2e2;

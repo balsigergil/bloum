@@ -1,16 +1,16 @@
 import type { Meta, StoryObj } from "@storybook/html";
-
-type ButtonArgs = {
-  type: string;
-  isLoading: boolean;
-};
+import { ButtonArgs } from "./button.stories";
 
 const meta: Meta<ButtonArgs> = {
   title: "Icon button",
   argTypes: {
-    type: {
+    color: {
       control: "select",
-      options: ["primary", "secondary", "ghost"],
+      options: ["default", "primary", "danger"],
+    },
+    variant: {
+      control: "select",
+      options: ["default", "outline", "ghost"],
     },
     isLoading: {
       control: "boolean",
@@ -22,10 +22,16 @@ const meta: Meta<ButtonArgs> = {
     btn.classList.add("btn", "btn-icon");
     btn.ariaLabel = "Save";
 
-    if (args.type === "primary") {
+    if (args.color === "primary") {
       btn.classList.add("btn-primary");
-    } else if (args.type === "ghost") {
+    } else if (args.color === "danger") {
+      btn.classList.add("btn-danger");
+    }
+
+    if (args.variant === "ghost") {
       btn.classList.add("btn-ghost");
+    } else if (args.variant === "outline") {
+      btn.classList.add("btn-outline");
     }
 
     if (args.isLoading) {
@@ -41,14 +47,15 @@ type Story = StoryObj<ButtonArgs>;
 
 export const Primary: Story = {
   args: {
-    type: "primary",
+    color: "primary",
+    variant: "default",
     isLoading: false,
   },
 };
 
-export const Secondary: Story = {
+export const Outline: Story = {
   args: {
     ...Primary.args,
-    type: "secondary",
+    variant: "outline",
   },
 };
