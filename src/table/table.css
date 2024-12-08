@@ -1,0 +1,47 @@
+table.table {
+  --bl-table-cell-padding: 0.5rem;
+  --bl-table-fs: 0.875rem;
+  --bl-table-border-color: var(--bl-clr-gray-200);
+  --bl-table-stripe-bg: var(--bl-clr-gray-100);
+  --bl-table-hover-bg: var(--bl-clr-gray-200);
+
+  border-color: var(--bl-table-border-color);
+  font-size: var(--bl-table-fs);
+  line-height: 1.25rem;
+  width: 100%;
+  text-align: start;
+  font-variant-numeric: lining-nums tabular-nums;
+
+  thead,
+  tbody,
+  tfoot,
+  td,
+  th,
+  tr {
+    border-color: inherit;
+    border-style: solid;
+    border-width: 0;
+  }
+
+  th {
+    font-weight: 600;
+  }
+
+  th,
+  td {
+    padding: var(--bl-table-cell-padding);
+    border-bottom-width: 1px;
+  }
+
+  &.table-striped tbody tr:nth-child(odd) {
+    background-color: var(--bl-table-stripe-bg);
+  }
+
+  &.table-hover tbody tr:hover {
+    background-color: var(--bl-table-hover-bg);
+  }
+}
+
+.table-responsive {
+  overflow-x: auto;
+}

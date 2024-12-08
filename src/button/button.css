@@ -38,6 +38,16 @@
   padding: 0;
 }
 
+.btn-sm {
+  --bl-btn-size: 2rem;
+  font-size: 0.75rem;
+}
+
+.btn-xs {
+  --bl-btn-size: 1.5rem;
+  font-size: 0.625rem;
+}
+
 /* Colors */
 
 .btn-primary {
