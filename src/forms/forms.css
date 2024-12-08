@@ -1,6 +1,6 @@
 :root {
   --bl-form-border-radius: var(--bl-border-radius);
-  --bl-form-outline-color: var(--bl-clr-primary-600);
+  --bl-form-primary-color: var(--bl-clr-primary-600);
   --bl-form-checkbox-border-color: var(--bl-clr-gray-300);
 }
 
@@ -19,7 +19,7 @@
 }
 
 .form-control:focus-visible {
-  outline: solid 2px var(--bl-form-outline-color);
+  outline: solid 2px var(--bl-form-primary-color);
   outline-offset: -1px;
 }
 
@@ -29,7 +29,9 @@ textarea.form-control {
 }
 
 /* Checkbox */
-input[type="checkbox"].form-checkbox {
+input[type="checkbox"].form-checkbox,
+input[type="radio"].form-checkbox {
+  position: relative;
   appearance: none;
   background-color: transparent;
   outline: none;
@@ -44,25 +46,60 @@ input[type="checkbox"].form-checkbox {
 }
 
 input[type="checkbox"].form-checkbox:not(:disabled):checked {
-  border-color: var(--bl-clr-primary-600);
-  background-color: var(--bl-clr-primary-600);
+  border-color: var(--bl-form-primary-color);
+  background-color: var(--bl-form-primary-color);
   background-image: url("./check.svg");
 }
 
 input[type="checkbox"].form-checkbox:focus-visible {
-  outline: solid 2px var(--bl-form-outline-color);
+  outline: solid 2px var(--bl-form-primary-color);
+  outline-offset: 2px;
+}
+
+/* Radio */
+input[type="radio"].form-checkbox {
+  border-radius: var(--bl-border-radius-full);
+}
+
+input[type="radio"].form-checkbox:not(:disabled):checked {
+  border-color: var(--bl-form-primary-color);
+  background-color: var(--bl-form-primary-color);
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 0.375rem;
+    height: 0.375rem;
+    background-color: var(--bl-clr-background);
+    border-radius: var(--bl-border-radius-full);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+input[type="radio"].form-checkbox:focus-visible {
+  outline: solid 2px var(--bl-form-primary-color);
   outline-offset: 2px;
 }
 
 /* Label */
 .form-label {
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
   font-size: 0.875rem;
   font-weight: 600;
-  margin-bottom: 0.5rem;
   user-select: none;
+  display: inline-block;
+}
+
+.form-label:has(+ .form-control) {
+  margin-bottom: 0.5rem;
+}
+
+.form-check {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 /* Checkbox card */
@@ -74,7 +111,8 @@ input[type="checkbox"].form-checkbox:focus-visible {
   transition-duration: var(--bl-transition);
   display: block;
 
-  &:active {
+  &:has(input[type="radio"].form-checkbox:active:not(:disabled)),
+  &:has(input[type="checkbox"].form-checkbox:active:not(:disabled)) {
     transform: scale(0.96);
   }
 
@@ -85,7 +123,8 @@ input[type="checkbox"].form-checkbox:focus-visible {
   }
 }
 
-.checkbox-card > input[type="checkbox"] {
+.checkbox-card > input[type="checkbox"].form-checkbox,
+.checkbox-card > input[type="radio"].form-checkbox {
   position: absolute;
   top: 1rem;
   right: 1rem;
@@ -93,22 +132,35 @@ input[type="checkbox"].form-checkbox:focus-visible {
   background-color: var(--bl-clr-background);
 }
 
-.checkbox-card:has(input[type="checkbox"]:checked) {
-  --bl-card-border: 1px solid var(--bl-form-outline-color);
+.checkbox-card:has(input[type="checkbox"].form-checkbox:checked),
+.checkbox-card:has(input[type="radio"].form-checkbox:checked) {
+  --bl-card-border: 1px solid var(--bl-form-primary-color);
 
   .card-image {
     filter: grayscale(0);
   }
 }
 
-.checkbox-card:has(input[type="checkbox"]:focus-visible) {
-  outline: 2px solid var(--bl-form-outline-color);
+.checkbox-card:has(input[type="checkbox"].form-checkbox:focus-visible),
+.checkbox-card:has(input[type="radio"].form-checkbox:focus-visible) {
+  outline: 2px solid var(--bl-form-primary-color);
   outline-offset: 2px;
+}
+
+.checkbox-card:has(input[type="checkbox"].form-checkbox:disabled),
+.checkbox-card:has(input[type="radio"].form-checkbox:disabled) {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.checkbox-card > input[type="checkbox"].form-checkbox:focus-visible,
+.checkbox-card > input[type="radio"].form-checkbox:focus-visible {
+  outline: none;
 }
 
 .dark,
 [data-theme="dark"] {
   --bl-form-border-radius: var(--bl-border-radius);
-  --bl-form-outline-color: var(--bl-clr-primary-400);
+  --bl-form-primary-color: var(--bl-clr-primary-400);
   --bl-form-checkbox-border-color: var(--bl-clr-gray-700);
 }
