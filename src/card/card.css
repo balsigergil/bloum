@@ -1,5 +1,5 @@
 .card {
-  --bl-card-bg: #fff;
+  --bl-card-bg: var(--bl-clr-surface);
   --bl-card-border-radius: var(--bl-border-radius-lg);
   --bl-card-border: 1px solid var(--bl-border-color);
   --bl-card-padding: 1rem;
@@ -58,9 +58,4 @@
 
 .card > .table > tfoot > tr:last-child > td {
   border-bottom-width: 0;
-}
-
-.dark .card,
-[data-theme="dark"] .card {
-  --bl-card-bg: var(--bl-clr-gray-900);
 }
