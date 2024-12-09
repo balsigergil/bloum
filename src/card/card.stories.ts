@@ -63,7 +63,7 @@ export const CardWithTable: Story = {
           <thead>
             <tr>
               <th>
-                <input type="checkbox" aria-label="Select user" />
+                <input type="checkbox" class="checkbox" aria-label="Select user" />
               </th>
               <th>Name</th>
               <th>Email</th>
@@ -74,7 +74,7 @@ export const CardWithTable: Story = {
           <tbody>
             <tr>
               <td>
-                <input type="checkbox" aria-label="Select user" />
+                <input type="checkbox" class="checkbox" aria-label="Select user" />
               </td>
               <td>Facteur Hyacinthe</td>
               <td>john.doe@example.com</td>
@@ -90,7 +90,7 @@ export const CardWithTable: Story = {
             </tr>
             <tr>
               <td>
-                <input type="checkbox" aria-label="Select user" />
+                <input type="checkbox" class="checkbox" aria-label="Select user" />
               </td>
               <td>Albert le Vert</td>
               <td>john.doe@example.com</td>
@@ -106,7 +106,7 @@ export const CardWithTable: Story = {
             </tr>
             <tr>
               <td>
-                <input type="checkbox" aria-label="Select user" />
+                <input type="checkbox" class="checkbox" aria-label="Select user" />
               </td>
               <td>Mademoiselle Cassis</td>
               <td>john.doe@example.com</td>

@@ -12,7 +12,17 @@ const meta: Meta<ButtonArgs> = {
       control: "select",
       options: ["default", "outline", "ghost"],
     },
+    size: {
+      control: "select",
+      options: ["default", "lg", "sm", "xs"],
+    },
+    rounded: {
+      control: "boolean",
+    },
     loading: {
+      control: "boolean",
+    },
+    disabled: {
       control: "boolean",
     },
   },
@@ -34,8 +44,24 @@ const meta: Meta<ButtonArgs> = {
       btn.classList.add("btn-outline");
     }
 
+    if (args.size === "lg") {
+      btn.classList.add("btn-lg");
+    } else if (args.size === "sm") {
+      btn.classList.add("btn-sm");
+    } else if (args.size === "xs") {
+      btn.classList.add("btn-xs");
+    }
+
     if (args.loading) {
       btn.classList.add("btn-loading");
+    }
+
+    if (args.rounded) {
+      btn.classList.add("btn-rounded");
+    }
+
+    if (args.disabled) {
+      btn.disabled = true;
     }
 
     return btn;
@@ -49,7 +75,10 @@ export const Primary: Story = {
   args: {
     color: "primary",
     variant: "default",
+    size: "default",
+    rounded: false,
     loading: false,
+    disabled: false,
   },
 };
 

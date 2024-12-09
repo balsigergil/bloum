@@ -4,6 +4,8 @@ export type ButtonArgs = {
   label: string;
   color: string;
   variant: string;
+  size: string;
+  rounded: boolean;
   loading: boolean;
   disabled: boolean;
 };
@@ -18,6 +20,10 @@ const meta: Meta<ButtonArgs> = {
     variant: {
       control: "select",
       options: ["default", "outline", "ghost"],
+    },
+    size: {
+      control: "select",
+      options: ["default", "lg", "sm", "xs"],
     },
     loading: {
       control: "boolean",
@@ -43,6 +49,14 @@ const meta: Meta<ButtonArgs> = {
       btn.classList.add("btn-outline");
     }
 
+    if (args.size === "lg") {
+      btn.classList.add("btn-lg");
+    } else if (args.size === "sm") {
+      btn.classList.add("btn-sm");
+    } else if (args.size === "xs") {
+      btn.classList.add("btn-xs");
+    }
+
     if (args.loading) {
       btn.classList.add("btn-loading");
     }
@@ -63,6 +77,7 @@ export const Primary: Story = {
     label: "Press me",
     color: "primary",
     variant: "default",
+    size: "default",
     loading: false,
     disabled: false,
   },
