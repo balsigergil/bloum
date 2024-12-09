@@ -12,35 +12,35 @@ export const FormControls: Story = {
     return `
       <form>
         <div class="mb-4">
-          <label for="name" class="form-label">Name:</label>
+          <label for="name" class="label">Name:</label>
           <input class="form-control" type="text" id="name" name="name" required>
         </div>
         <div class="mb-4">
-          <label for="email" class="form-label">Email:</label>
+          <label for="email" class="label">Email:</label>
           <input type="email" id="email" name="email" class="form-control" required>
         </div>
         <div class="mb-4">
-          <label for="password" class="form-label">Password:</label>
+          <label for="password" class="label">Password:</label>
           <input type="password" id="password" name="password" class="form-control" required>
         </div>
         <div class="mb-4">
-          <label for="message" class="form-label">Message:</label>
+          <label for="message" class="label">Message:</label>
           <textarea id="message" name="message" class="form-control" placeholder="Your message here..."></textarea>
         </div>
         <div class="mb-4 form-check">
-          <input type="checkbox" id="remember" name="remember" class="form-checkbox">
-          <label for="remember" class="form-label">Remember me</label>
+          <input type="checkbox" id="remember" name="remember" class="checkbox">
+          <label for="remember" class="label">Remember me</label>
         </div>
         <div class="mb-4">
-          <p class="form-label mb-2">Favorite pet:</p>
+          <p class="label mb-2">Favorite pet:</p>
           <div class="flex gap-4">
             <div class="form-check">
-              <input type="radio" id="cat" name="pet" value="cat" class="form-checkbox">
-              <label for="cat" class="form-label">Cat</label>
+              <input type="radio" id="cat" name="pet" value="cat" class="checkbox">
+              <label for="cat" class="label">Cat</label>
             </div>
             <div class="form-check">
-              <input type="radio" id="dog" name="pet" value="dog" class="form-checkbox">
-              <label for="dog" class="form-label">Dog</label>
+              <input type="radio" id="dog" name="pet" value="dog" class="checkbox">
+              <label for="dog" class="label">Dog</label>
             </div>
           </div>
         </div>
@@ -54,7 +54,7 @@ export const CheckboxCard: Story = {
     return `
     <div class="grid grid-flow-col gap-4 auto-cols-[250px]">
       <label for="pack1" class="card checkbox-card">
-        <input type="checkbox" id="pack1" name="pack1" class="form-checkbox">
+        <input type="checkbox" id="pack1" name="pack1" class="checkbox">
         <img src="https://picsum.photos/id/25/300/200" alt="Nature" class="card-image" />
         <div class="card-header">
           <h3 class="card-title">Basic</h3>
@@ -65,7 +65,7 @@ export const CheckboxCard: Story = {
         </div>
       </label>
       <label for="pack2" class="card checkbox-card">
-        <input type="checkbox" id="pack2" name="pack2" class="form-checkbox">
+        <input type="checkbox" id="pack2" name="pack2" class="checkbox">
         <img src="https://picsum.photos/id/27/300/200" alt="Nature" class="card-image" />
         <div class="card-header">
           <h3 class="card-title">Pro</h3>
@@ -76,7 +76,7 @@ export const CheckboxCard: Story = {
         </div>
       </label>
       <label for="pack3" class="card checkbox-card">
-        <input type="checkbox" id="pack3" name="pack3" class="form-checkbox">
+        <input type="checkbox" id="pack3" name="pack3" class="checkbox">
         <img src="https://picsum.photos/id/28/300/200" alt="Nature" class="card-image" />
         <div class="card-header">
           <h3 class="card-title">Expert</h3>
@@ -96,7 +96,7 @@ export const RadioCard: Story = {
     return `
     <div class="grid grid-flow-col gap-4 auto-cols-[250px]">
       <label for="pack4" class="card checkbox-card">
-        <input type="radio" id="pack4" name="pack" class="form-checkbox">
+        <input type="radio" id="pack4" name="pack" class="checkbox">
         <img src="https://picsum.photos/id/25/300/200" alt="Nature" class="card-image" />
         <div class="card-header">
           <h3 class="card-title">Basic</h3>
@@ -107,7 +107,7 @@ export const RadioCard: Story = {
         </div>
       </label>
       <label for="pack5" class="card checkbox-card">
-        <input type="radio" id="pack5" name="pack" class="form-checkbox">
+        <input type="radio" id="pack5" name="pack" class="checkbox">
         <img src="https://picsum.photos/id/27/300/200" alt="Nature" class="card-image" />
         <div class="card-header">
           <h3 class="card-title">Pro</h3>
@@ -118,7 +118,7 @@ export const RadioCard: Story = {
         </div>
       </label>
       <label for="pack6" class="card checkbox-card">
-        <input type="radio" id="pack6" name="pack" class="form-checkbox" disabled>
+        <input type="radio" id="pack6" name="pack" class="checkbox" disabled>
         <img src="https://picsum.photos/id/28/300/200" alt="Nature" class="card-image" />
         <div class="card-header">
           <h3 class="card-title">Expert</h3>

@@ -1,7 +1,7 @@
 .btn {
   --bl-btn-bg: var(--bl-clr-gray-200);
   --bl-btn-color: var(--bl-clr-gray-800);
-  --bl-btn-hover-bg: var(--bl-clr-gray-200);
+  --bl-btn-hover-bg: var(--bl-clr-gray-300);
   --bl-btn-border-radius: var(--bl-border-radius);
   --bl-btn-border: solid 1px transparent;
   --bl-btn-size: 2.5rem;
@@ -53,13 +53,13 @@
 
 .btn-primary {
   --bl-btn-bg: var(--bl-clr-primary-600);
-  --bl-btn-hover-bg: var(--bl-clr-primary-500);
+  --bl-btn-hover-bg: var(--bl-clr-primary-700);
   --bl-btn-color: #fff;
 }
 
 .btn-danger {
   --bl-btn-bg: var(--bl-clr-red-600);
-  --bl-btn-hover-bg: var(--bl-clr-red-500);
+  --bl-btn-hover-bg: var(--bl-clr-red-700);
   --bl-btn-color: #fff;
 }
 
@@ -160,8 +160,8 @@
   }
 
   .btn-primary {
-    --bl-btn-bg: var(--bl-clr-primary-500);
-    --bl-btn-hover-bg: var(--bl-clr-primary-600);
+    --bl-btn-bg: var(--bl-clr-primary-600);
+    --bl-btn-hover-bg: var(--bl-clr-primary-500);
   }
 
   .btn-danger {
