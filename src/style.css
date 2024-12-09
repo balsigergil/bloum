@@ -1,9 +1,12 @@
 @import "./utils/reset.css";
+
+/* Importing all the components */
 @import "./button/button.css";
 @import "./card/card.css";
 @import "./table/table.css";
 @import "./tabs/tabs.css";
 @import "./forms/forms.css";
+@import "./switch/switch.css";
 
 :root {
   --bl-clr-primary-50: var(--bl-clr-teal-50);
@@ -116,6 +119,9 @@
 
   --bl-border-color: var(--bl-clr-gray-200);
 
+  --bl-disabled-opacity: 0.6;
+
+  --bl-shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --bl-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --bl-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1),
     0 4px 6px -4px rgb(0 0 0 / 0.1);

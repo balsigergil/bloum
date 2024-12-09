@@ -38,6 +38,10 @@ table.table {
   }
 
   &.table-hover tbody tr:hover {
+    background-color: var(--bl-table-stripe-bg);
+  }
+
+  &.table-striped.table-hover tbody tr:hover {
     background-color: var(--bl-table-hover-bg);
   }
 }

@@ -150,7 +150,7 @@ input[type="radio"].checkbox:focus-visible {
 
 .checkbox-card:has(input[type="checkbox"].checkbox:disabled),
 .checkbox-card:has(input[type="radio"].checkbox:disabled) {
-  opacity: 0.6;
+  opacity: var(--bl-disabled-opacity);
   cursor: not-allowed;
 }
 

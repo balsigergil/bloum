@@ -4,7 +4,8 @@ export type ButtonArgs = {
   label: string;
   color: string;
   variant: string;
-  isLoading: boolean;
+  loading: boolean;
+  disabled: boolean;
 };
 
 const meta: Meta<ButtonArgs> = {
@@ -18,7 +19,10 @@ const meta: Meta<ButtonArgs> = {
       control: "select",
       options: ["default", "outline", "ghost"],
     },
-    isLoading: {
+    loading: {
+      control: "boolean",
+    },
+    disabled: {
       control: "boolean",
     },
   },
@@ -39,8 +43,12 @@ const meta: Meta<ButtonArgs> = {
       btn.classList.add("btn-outline");
     }
 
-    if (args.isLoading) {
+    if (args.loading) {
       btn.classList.add("btn-loading");
+    }
+
+    if (args.disabled) {
+      btn.setAttribute("disabled", "");
     }
 
     return btn;
@@ -55,7 +63,8 @@ export const Primary: Story = {
     label: "Press me",
     color: "primary",
     variant: "default",
-    isLoading: false,
+    loading: false,
+    disabled: false,
   },
 };
 

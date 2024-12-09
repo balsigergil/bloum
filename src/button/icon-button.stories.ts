@@ -12,7 +12,7 @@ const meta: Meta<ButtonArgs> = {
       control: "select",
       options: ["default", "outline", "ghost"],
     },
-    isLoading: {
+    loading: {
       control: "boolean",
     },
   },
@@ -34,7 +34,7 @@ const meta: Meta<ButtonArgs> = {
       btn.classList.add("btn-outline");
     }
 
-    if (args.isLoading) {
+    if (args.loading) {
       btn.classList.add("btn-loading");
     }
 
@@ -49,7 +49,7 @@ export const Primary: Story = {
   args: {
     color: "primary",
     variant: "default",
-    isLoading: false,
+    loading: false,
   },
 };
 
