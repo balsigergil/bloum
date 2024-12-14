@@ -1,6 +1,6 @@
 bl-tabs {
   --bl-tab-padding: 1rem;
-  --bl-tab-color: var(--bl-clr-gray-600);
+  --bl-tab-color: var(--bl-clr-gray-500);
   --bl-tab-active-color: var(--bl-clr-gray-800);
   display: block;
 }
@@ -8,6 +8,8 @@ bl-tabs {
 bl-tab-list {
   display: flex;
   position: relative;
+  overflow-x: auto;
+  scrollbar-width: none;
 
   &::after {
     content: "";
@@ -20,6 +22,10 @@ bl-tab-list {
     background-color: var(--bl-border-color);
     z-index: 1;
   }
+}
+
+bl-tab-list::-webkit-scrollbar {
+  display: none;
 }
 
 bl-tab {
@@ -85,6 +91,6 @@ bl-tab-panel.show {
 
 .dark bl-tabs,
 [data-theme="dark"] bl-tabs {
-  --bl-tab-color: var(--bl-clr-gray-400);
+  --bl-tab-color: var(--bl-clr-gray-500);
   --bl-tab-active-color: var(--bl-clr-gray-50);
 }

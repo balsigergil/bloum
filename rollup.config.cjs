@@ -3,6 +3,7 @@ const typescript = require("@rollup/plugin-typescript");
 const terser = require("@rollup/plugin-terser");
 
 const pkg = require("./package.json");
+const nodeResolve = require("@rollup/plugin-node-resolve");
 
 module.exports = defineConfig({
   input: "src/index.ts",
@@ -17,10 +18,5 @@ module.exports = defineConfig({
       name: "bloom",
     },
   ],
-  plugins: [
-    typescript(),
-    terser({
-      ecma: 2020,
-    }),
-  ],
+  plugins: [typescript(), nodeResolve(), terser()],
 });

@@ -5,7 +5,7 @@ import { TabList } from "./tabs/TabList";
 import { Tab } from "./tabs/Tab";
 import { TabPanel } from "./tabs/TabPanel";
 import { AutogrowTextarea } from "./forms/AutogrowTextarea";
-import "./modal/Modal";
+import { openModal, closeModal, initModal } from "./modal/Modal";
 
 Tabs.register();
 TabList.register();
@@ -14,6 +14,16 @@ TabPanel.register();
 
 AutogrowTextarea.register();
 
-export { Tabs, TabList, Tab, TabPanel, AutogrowTextarea };
+initModal();
+
+export {
+  Tabs,
+  TabList,
+  Tab,
+  TabPanel,
+  AutogrowTextarea,
+  openModal,
+  closeModal,
+};
 
 console.info("🚀 Bloom UI Components loaded!");

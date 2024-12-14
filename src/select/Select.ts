@@ -1,4 +1,3 @@
-import { CloseButton } from "../close/CloseButton";
 import { CHEVRON_DOWN_ICON, SEARCH_ICON } from "../utils/icons";
 
 export interface SelectProps {
@@ -171,7 +170,7 @@ export class Select extends HTMLElement {
     indicator.innerHTML = CHEVRON_DOWN_ICON;
 
     if (this.#clearable) {
-      const clearButton = new CloseButton();
+      const clearButton = new HTMLButtonElement();
       clearButton.classList.add("bl-select-clear-btn");
       clearButton.addEventListener("click", (e) => {
         e.preventDefault();
@@ -273,7 +272,7 @@ export class Select extends HTMLElement {
           tag.classList.add("bl-select-tag");
           tag.append(clone);
 
-          const closeButton = new CloseButton();
+          const closeButton = new HTMLButtonElement();
           closeButton.addEventListener("click", (e) => {
             e.preventDefault();
             e.stopPropagation();
