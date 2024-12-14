@@ -1,145 +1,75 @@
-import { CloseButton } from "../close/CloseButton";
-import { FOCUSABLE_ELEMENTS } from "../utils/constants";
+import * as focusTrap from "focus-trap";
 
-export class Modal extends HTMLElement {
-  static NAME = "bl-modal";
+let modal: HTMLElement | null = null;
+let modalFocusTrap: focusTrap.FocusTrap | null = null;
 
-  #listeners: Array<(e: any) => void> = [];
-  #sourceElement?: HTMLElement;
+addEventListener("click", (e) => {
+  const target = e.target as HTMLElement;
 
-  static register() {
-    customElements.define(this.NAME, Modal);
-
-    document.querySelectorAll<HTMLElement>("[data-modal]").forEach((el) => {
-      el.addEventListener("click", (e) => {
-        e.preventDefault();
-        const modalSelector = el.getAttribute("data-modal")!;
-        const modal = document.querySelector<Modal>(modalSelector);
-        if (modal) {
-          modal.open(el);
-        }
-      });
-    });
-  }
-
-  constructor() {
-    super();
-  }
-
-  connectedCallback() {
-    this.classList.add("bl-modal");
-    this.role = "dialog";
-    this.ariaModal = "false";
-    const modalWrapper = document.createElement("div");
-    modalWrapper.classList.add("bl-modal-wrapper");
-
-    const modalHeader = document.createElement("div");
-    modalHeader.classList.add("bl-modal-header");
-    const title = document.createElement("div");
-    title.classList.add("bl-modal-title");
-    const titleText = this.getAttribute("title") || "";
-    title.innerText = titleText;
-    this.ariaLabel = titleText;
-    this.removeAttribute("title");
-    modalHeader.append(title);
-
-    if (!this.hasAttribute("no-close-button")) {
-      const closeButton = new CloseButton();
-      closeButton.addEventListener("click", () => this.close());
-      modalHeader.append(closeButton);
-    }
-
-    const modalBody = document.createElement("div");
-    modalBody.classList.add("bl-modal-body");
-    modalBody.append(...this.childNodes);
-
-    modalWrapper.append(modalHeader, modalBody);
-
-    this.addEventListener("click", (e) => {
-      if (e.target === this) {
-        this.close();
-      }
-    });
-
-    const keyDownListener = (e: KeyboardEvent) => {
-      if (e.key === "Escape" && this.isOpen()) {
-        this.close();
-      }
-      if (e.key === "Tab" && this.isOpen()) {
-        const focusableElements =
-          this.querySelectorAll<HTMLElement>(FOCUSABLE_ELEMENTS);
-        if (focusableElements.length === 0) {
-          return;
-        }
-        const first = focusableElements[0];
-        const last = focusableElements[focusableElements.length - 1];
-        const activeElement = document.activeElement as HTMLElement | null;
-        if (e.shiftKey && activeElement === first) {
-          e.preventDefault();
-          last.focus();
-        } else if (!e.shiftKey && activeElement === last) {
-          e.preventDefault();
-          first.focus();
-        }
-        // If active element is not in the modal focusable elements, focus the first element
-        if (
-          activeElement !== null &&
-          !Array.from(focusableElements).includes(activeElement)
-        ) {
-          e.preventDefault();
-          first.focus();
-        }
-      }
-    };
-    addEventListener("keydown", keyDownListener);
-    this.#listeners.push(keyDownListener);
-
-    this.append(modalWrapper);
-  }
-
-  disconnectedCallback() {
-    this.#listeners.forEach((l) => removeEventListener("keydown", l));
-  }
-
-  open(sourceElement?: HTMLElement) {
-    this.#sourceElement = sourceElement;
-    this.ariaModal = "true";
-    this.classList.add("open");
-
-    // Prevent scrolling of the body
-    document.body.style.overflow = "hidden";
-
-    const focusableElements =
-      this.querySelectorAll<HTMLElement>(FOCUSABLE_ELEMENTS);
-    if (focusableElements.length === 0) {
-      return;
-    }
-    const first = focusableElements[0];
-    first.focus();
-  }
-
-  close() {
-    this.ariaModal = "false";
-    this.setAttribute("closing", "");
-    this.addEventListener(
-      "animationend",
-      () => {
-        this.removeAttribute("closing");
-        this.classList.remove("open");
-      },
-      { once: true },
-    );
-
-    // Restore scrolling of the body
-    document.body.style.overflow = "auto";
-
-    if (this.#sourceElement) {
-      this.#sourceElement.focus();
-      this.#sourceElement = undefined;
+  // Open modal when clicking on modal trigger
+  if (target.closest("[data-modal]")) {
+    const modalSelector = target
+      .closest("[data-modal]")
+      ?.getAttribute("data-modal") as string;
+    const element = document.querySelector<HTMLElement>(modalSelector);
+    if (element) {
+      openModal(element);
+      e.preventDefault();
+      e.stopPropagation();
     }
   }
 
-  isOpen() {
-    return this.classList.contains("open");
+  // Close modal when clicking on close button
+  if (target.closest("[data-modal-close]")) {
+    const modal = target.closest<HTMLElement>(".modal");
+    if (modal) {
+      closeModal();
+      e.preventDefault();
+      e.stopPropagation();
+    }
   }
+
+  // Close modal when clicking outside of it
+  if (target.closest(".modal.open")) {
+    if (!target.closest(".modal-content")) {
+      closeModal();
+    }
+  }
+});
+
+addEventListener("keydown", (e) => {
+  if (e.key === "Escape" || e.key === "Esc") {
+    closeModal();
+  }
+});
+
+export function openModal(element: HTMLElement) {
+  if (!element) return;
+  modal = element;
+  modal.classList.add("open");
+  modal.setAttribute("aria-hidden", "false");
+  modal.setAttribute("aria-modal", "true");
+  modalFocusTrap = focusTrap.createFocusTrap(modal);
+  modalFocusTrap.activate();
+}
+
+export function closeModal() {
+  if (!modal) return;
+  modal.setAttribute("aria-hidden", "true");
+  modal.removeAttribute("aria-modal");
+
+  modal.addEventListener(
+    "animationend",
+    () => {
+      if (modal) {
+        modal.classList.remove("open");
+        modal = null;
+      }
+      if (modalFocusTrap) {
+        modalFocusTrap.deactivate();
+        modalFocusTrap = null;
+      }
+    },
+    { once: true },
+  );
 }

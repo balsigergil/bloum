@@ -34,4 +34,8 @@ const meta: Meta<TabsArgs> = {
 export default meta;
 type Story = StoryObj<TabsArgs>;
 
-export const ClassicTabs: Story = {};
+export const ClassicTabs: Story = {
+  args: {
+    useAnchor: false,
+  },
+};

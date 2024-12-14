@@ -1,0 +1,118 @@
+.modal {
+  --bl-modal-animation-duration: 150ms;
+  --bl-modal-dialog-bg: var(--bl-clr-surface);
+  --bl-modal-padding: 1rem;
+  --bl-modal-margin: 4rem;
+  --bl-modal-backdrop-bg: rgba(0, 0, 0, 0.5);
+  --bl-modal-backdrop-filter: blur(4px);
+  --bl-modal-border-radius: var(--bl-border-radius-lg);
+  --bl-modal-zindex: 1000;
+
+  --bl-modal-size-sm: 300px;
+  --bl-modal-size-md: 500px;
+  --bl-modal-size-lg: 800px;
+  --bl-modal-size-xl: 1200px;
+  --bl-modal-size-full: calc(100% - 2rem);
+
+  position: fixed;
+  background-color: var(--bl-modal-backdrop-bg);
+  backdrop-filter: var(--bl-modal-backdrop-filter);
+  inset: 0;
+  justify-content: center;
+  align-items: flex-start;
+  z-index: var(--bl-modal-zindex);
+  display: none;
+  animation: modalFadeIn var(--bl-modal-animation-duration) both;
+}
+
+.modal.open {
+  display: flex;
+}
+
+.modal[aria-hidden="true"] {
+  animation: modalFadeOut var(--bl-modal-animation-duration) both;
+}
+
+.modal-content {
+  background-color: var(--bl-modal-dialog-bg);
+  width: 100%;
+  max-width: var(--bl-modal-size-md);
+  padding: calc(var(--bl-modal-padding) * 1.25)
+    calc(var(--bl-modal-padding) * 1.5) var(--bl-modal-padding)
+    calc(var(--bl-modal-padding) * 1.5);
+  border-radius: var(--bl-modal-border-radius);
+  margin-block: var(--bl-modal-margin);
+  animation: modalScaleIn var(--bl-modal-animation-duration) both;
+}
+
+.modal-content.modal-sm {
+  max-width: var(--bl-modal-size-sm);
+}
+
+.modal-content.modal-md {
+  max-width: var(--bl-modal-size-md);
+}
+
+.modal-content.modal-lg {
+  max-width: var(--bl-modal-size-lg);
+}
+
+.modal-content.modal-xl {
+  max-width: var(--bl-modal-size-xl);
+}
+
+.modal-content.modal-full {
+  max-width: var(--bl-modal-size-full);
+}
+
+.modal[aria-hidden="true"] .modal-content {
+  animation: modalScaleOut var(--bl-modal-animation-duration) both;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.modal-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalFadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes modalScaleIn {
+  from {
+    transform: scale(0.9) translateY(-1rem);
+  }
+  to {
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes modalScaleOut {
+  from {
+    transform: scale(1) translateY(0);
+  }
+  to {
+    transform: scale(0.9) translateY(-1rem);
+  }
+}

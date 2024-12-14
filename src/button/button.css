@@ -6,6 +6,7 @@
   --bl-btn-border: solid 1px transparent;
   --bl-btn-size: 2.5rem;
   --bl-btn-outline-color: var(--bl-clr-primary-600);
+  --bl-btn-fs: 0.875rem;
 
   appearance: none;
   white-space: nowrap;
@@ -18,7 +19,7 @@
   font-weight: 600;
   padding-inline: calc(var(--bl-btn-size) * 0.4);
   height: var(--bl-btn-size);
-  font-size: 0.875rem;
+  font-size: var(--bl-btn-fs);
   border-radius: var(--bl-btn-border-radius);
   cursor: pointer;
   transition-property: color, background-color, border-color;
@@ -35,23 +36,36 @@
 }
 
 .btn-icon {
+  --bl-btn-fs: 1.125rem;
   min-width: var(--bl-btn-size);
   padding: 0;
 }
 
 .btn-lg {
   --bl-btn-size: 3rem;
-  font-size: 1rem;
+  --bl-btn-fs: 1rem;
 }
 
 .btn-sm {
   --bl-btn-size: 2rem;
-  font-size: 0.875rem;
+  --bl-btn-fs: 0.875rem;
 }
 
 .btn-xs {
   --bl-btn-size: 1.5rem;
-  font-size: 0.75rem;
+  --bl-btn-fs: 0.75rem;
+}
+
+.btn-icon.btn-lg {
+  --bl-btn-fs: 1.25rem;
+}
+
+.btn-icon.btn-sm {
+  --bl-btn-fs: 1rem;
+}
+
+.btn-icon.btn-xs {
+  --bl-btn-fs: 0.875rem;
 }
 
 .btn-rounded {

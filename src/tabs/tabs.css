@@ -62,8 +62,9 @@ bl-tab {
   }
 
   &:focus-visible {
-    outline: 1px solid var(--bl-tab-active-color);
-    outline-offset: 2px;
+    outline: 2px solid var(--bl-clr-primary-600);
+    outline-offset: 3px;
+    border-radius: var(--bl-border-radius);
   }
 }
 
@@ -72,8 +73,9 @@ bl-tab-panel {
   padding: var(--bl-tab-padding);
 
   &:focus-visible {
-    outline: 1px solid var(--bl-tab-active-color);
+    outline: 2px solid var(--bl-clr-primary-600);
     outline-offset: 1px;
+    border-radius: var(--bl-border-radius);
   }
 }
 

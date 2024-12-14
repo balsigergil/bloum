@@ -5,6 +5,7 @@ import { TabList } from "./tabs/TabList";
 import { Tab } from "./tabs/Tab";
 import { TabPanel } from "./tabs/TabPanel";
 import { AutogrowTextarea } from "./forms/AutogrowTextarea";
+import "./modal/Modal";
 
 Tabs.register();
 TabList.register();

@@ -41,6 +41,7 @@
 
 .card-actions .btn-icon {
   --bl-btn-size: 2rem;
+  --bl-btn-fs: 1rem;
 }
 
 .card-body {
