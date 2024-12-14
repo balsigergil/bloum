@@ -1,5 +1,7 @@
 input[type="checkbox"].switch {
   --bl-switch-width: 2.5rem;
+  --bl-switch-height: calc(var(--bl-switch-width) / 2);
+  --bl-switch-circle-size: calc(var(--bl-switch-width) * 0.375);
   --bl-switch-bg: var(--bl-clr-gray-300);
   --bl-switch-bg-checked: var(--bl-clr-primary-600);
 
@@ -7,24 +9,23 @@ input[type="checkbox"].switch {
   background-color: var(--bl-switch-bg);
   width: var(--bl-switch-width);
   min-width: var(--bl-switch-width);
-  height: calc(var(--bl-switch-width) / 2);
+  height: var(--bl-switch-height);
+  min-height: var(--bl-switch-height);
   border-radius: var(--bl-border-radius-full);
   cursor: pointer;
-  position: relative;
   transition: background-color var(--bl-transition);
+  display: inline-block;
 
   &:after {
     content: "";
-    position: absolute;
-    top: 50%;
-    left: calc(var(--bl-switch-width) / 16);
-    transform: translateY(-50%);
-    width: calc(var(--bl-switch-width) * 0.375);
-    height: calc(var(--bl-switch-width) * 0.375);
+    display: block;
+    scale: 0.8;
+    width: var(--bl-switch-height);
+    height: var(--bl-switch-height);
     border-radius: var(--bl-border-radius-full);
     background-color: #fff;
     box-shadow: var(--bl-shadow-sm);
-    transition: all var(--bl-transition);
+    transition: translate var(--bl-transition);
   }
 
   &:checked {
@@ -32,8 +33,17 @@ input[type="checkbox"].switch {
   }
 
   &:checked:after {
-    transform: translateY(-50%) translateX(calc(var(--bl-switch-width) / 2));
+    translate: calc(var(--bl-switch-width) - var(--bl-switch-height));
   }
+
+  /*
+  (a * b) - (a * c) = a * (b - c)
+  a = var(--bl-switch-width)
+  b = 0.375
+  c = 0.0625
+
+
+   */
 
   &:disabled {
     cursor: not-allowed;
