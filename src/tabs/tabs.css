@@ -31,7 +31,7 @@ bl-tab-list::-webkit-scrollbar {
 bl-tab {
   cursor: pointer;
   padding: calc(var(--bl-tab-padding) / 1.5) var(--bl-tab-padding);
-  transition: color var(--bl-transition) ease-in-out;
+  transition: color var(--bl-transition-md) ease-in-out;
   user-select: none;
   position: relative;
   color: var(--bl-tab-color);

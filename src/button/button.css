@@ -24,7 +24,7 @@
   border-radius: var(--bl-btn-border-radius);
   cursor: pointer;
   transition-property: color, background-color, border-color;
-  transition-duration: var(--bl-transition);
+  transition-duration: var(--bl-transition-md);
   border: var(--bl-btn-border);
   position: relative;
   user-select: none;

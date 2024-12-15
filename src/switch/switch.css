@@ -13,7 +13,7 @@ input[type="checkbox"].switch {
   min-height: var(--bl-switch-height);
   border-radius: var(--bl-border-radius-full);
   cursor: pointer;
-  transition: background-color var(--bl-transition);
+  transition: background-color var(--bl-transition-md);
   display: inline-block;
 
   &:after {
@@ -25,7 +25,7 @@ input[type="checkbox"].switch {
     border-radius: var(--bl-border-radius-full);
     background-color: #fff;
     box-shadow: var(--bl-shadow-sm);
-    transition: translate var(--bl-transition);
+    transition: translate var(--bl-transition-md);
   }
 
   &:checked {

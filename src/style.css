@@ -131,7 +131,9 @@
   --bl-shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1),
     0 8px 10px -6px rgb(0 0 0 / 0.1);
 
-  --bl-transition: 150ms;
+  --bl-transition-sm: 100ms;
+  --bl-transition-md: 150ms;
+  --bl-transition-lg: 200ms;
   --bl-spinner-speed: 0.5s;
 
   --bl-font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",

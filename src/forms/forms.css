@@ -12,14 +12,16 @@
   padding-inline: 0.75rem;
   height: 2.5rem;
   font-size: 0.875rem;
-  outline: none;
+  outline: solid 2px transparent;
   display: block;
   width: 100%;
   background-color: transparent;
+  transition-property: outline-color;
+  transition-duration: var(--bl-transition-sm);
 }
 
 .form-control:focus-visible {
-  outline: solid 2px var(--bl-form-primary-color);
+  outline-color: var(--bl-form-primary-color);
   outline-offset: -1px;
 }
 
@@ -34,14 +36,16 @@ input[type="radio"].checkbox {
   position: relative;
   appearance: none;
   background-color: transparent;
-  outline: none;
+  outline: solid 2px transparent;
+  outline-offset: 2px;
   width: 1.125rem;
   height: 1.125rem;
   border: 1px solid var(--bl-form-border-color);
   border-radius: var(--bl-border-radius);
-  transition-property: background-color, border-color;
-  transition-duration: var(--bl-transition);
-  transition-timing-function: ease-in-out;
+  transition:
+    background-color var(--bl-transition-sm),
+    border-color var(--bl-transition-sm),
+    outline-color var(--bl-transition-sm);
   cursor: pointer;
 }
 
@@ -52,8 +56,7 @@ input[type="checkbox"].checkbox:not(:disabled):checked {
 }
 
 input[type="checkbox"].checkbox:focus-visible {
-  outline: solid 2px var(--bl-form-primary-color);
-  outline-offset: 2px;
+  outline-color: var(--bl-form-primary-color);
 }
 
 /* Radio */
@@ -109,7 +112,7 @@ input[type="radio"].checkbox:focus-visible {
   user-select: none;
   cursor: pointer;
   transition-property: transform;
-  transition-duration: var(--bl-transition);
+  transition-duration: var(--bl-transition-md);
   display: block;
 
   &:has(input[type="radio"].checkbox:active:not(:disabled)),
@@ -119,7 +122,7 @@ input[type="radio"].checkbox:focus-visible {
 
   .card-image {
     --bl-card-image-max-height: 100px;
-    transition: filter var(--bl-transition);
+    transition: filter var(--bl-transition-md);
     filter: grayscale(1);
   }
 }
