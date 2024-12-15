@@ -9,7 +9,7 @@
   border: calc(0.16 * var(--bl-spinner-size)) solid var(--bl-border-color);
   border-top-color: var(--bl-spinner-color);
   border-radius: 9999px;
-  animation: spinner 0.5s linear infinite;
+  animation: spinner var(--bl-spinner-speed) linear infinite;
 }
 
 .spinner-sm {
