@@ -11,6 +11,7 @@
 @import "./alert/alert.css";
 @import "./spinner/spinner.css";
 @import "./tooltip/tooltip.css";
+@import "./sidebar/sidebar.css";
 
 :root {
   --bl-clr-primary-50: var(--bl-clr-teal-50);

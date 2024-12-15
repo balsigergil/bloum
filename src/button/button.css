@@ -92,6 +92,7 @@
 .btn-ghost {
   --bl-btn-bg: transparent;
   --bl-btn-color: var(--bl-clr-gray-800);
+  --bl-btn-hover-bg: var(--bl-clr-gray-200);
 
   &.btn-primary {
     --bl-btn-hover-bg: var(--bl-clr-primary-600);
