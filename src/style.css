@@ -9,6 +9,7 @@
 @import "./switch/switch.css";
 @import "./modal/modal.css";
 @import "./alert/alert.css";
+@import "./spinner/spinner.css";
 
 :root {
   --bl-clr-primary-50: var(--bl-clr-teal-50);
