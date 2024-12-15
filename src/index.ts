@@ -6,6 +6,7 @@ import { Tab } from "./tabs/Tab";
 import { TabPanel } from "./tabs/TabPanel";
 import { AutogrowTextarea } from "./forms/AutogrowTextarea";
 import { openModal, closeModal, initModal } from "./modal/Modal";
+import { Tooltip } from "./tooltip/tooltip";
 
 Tabs.register();
 TabList.register();
@@ -15,6 +16,9 @@ TabPanel.register();
 AutogrowTextarea.register();
 
 initModal();
+
+// @ts-ignore
+window.Tooltip = Tooltip;
 
 export {
   Tabs,

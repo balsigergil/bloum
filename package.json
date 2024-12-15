@@ -52,6 +52,7 @@
     "@commitlint/cli": "^19.6.0",
     "@commitlint/config-conventional": "^19.6.0",
     "@eslint/js": "^9.17.0",
+    "@floating-ui/dom": "^1.6.12",
     "@playwright/test": "^1.49.1",
     "@release-it/conventional-changelog": "^9.0.3",
     "@rollup/plugin-node-resolve": "^15.3.0",
