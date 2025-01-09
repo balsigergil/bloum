@@ -30,6 +30,34 @@ textarea.form-control {
   height: auto;
 }
 
+/* Input group */
+.input-group {
+  position: relative;
+}
+
+.input-group > .icon-left {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0.75em;
+  color: var(--bl-clr-gray-400);
+}
+
+input[type="text"].form-control:has(+ .icon-left),
+input[type="password"].form-control:has(+ .icon-left),
+input[type="email"].form-control:has(+ .icon-left),
+input[type="search"].form-control:has(+ .icon-left),
+input[type="tel"].form-control:has(+ .icon-left),
+input[type="url"].form-control:has(+ .icon-left),
+input[type="number"].form-control:has(+ .icon-left),
+input[type="date"].form-control:has(+ .icon-left),
+input[type="time"].form-control:has(+ .icon-left),
+input[type="datetime-local"].form-control:has(+ .icon-left),
+input[type="month"].form-control:has(+ .icon-left),
+input[type="week"].form-control:has(+ .icon-left) {
+  padding-inline-start: 2.25rem;
+}
+
 /* Checkbox */
 input[type="checkbox"].checkbox,
 input[type="radio"].checkbox {

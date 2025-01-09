@@ -30,6 +30,7 @@
   --bl-clr-background: var(--bl-clr-gray-50);
   --bl-clr-surface: #fff;
 
+  /* Gray colors */
   --bl-clr-gray-50: #f8fafc;
   --bl-clr-gray-100: #f3f4f6;
   --bl-clr-gray-200: #e5e7eb;
@@ -40,7 +41,20 @@
   --bl-clr-gray-700: #374151;
   --bl-clr-gray-800: #1f2937;
   --bl-clr-gray-900: #111827;
-  --bl-clr-gray-950: #030712;
+  --bl-clr-gray-950: #070b16;
+
+  /* Zinc colors */
+  /*--bl-clr-gray-50: #fafafa;*/
+  /*--bl-clr-gray-100: #f4f4f5;*/
+  /*--bl-clr-gray-200: #e4e4e7;*/
+  /*--bl-clr-gray-300: #d4d4d8;*/
+  /*--bl-clr-gray-400: #a1a1aa;*/
+  /*--bl-clr-gray-500: #71717a;*/
+  /*--bl-clr-gray-600: #52525b;*/
+  /*--bl-clr-gray-700: #3f3f46;*/
+  /*--bl-clr-gray-800: #27272a;*/
+  /*--bl-clr-gray-900: #18181b;*/
+  /*--bl-clr-gray-950: #09090b;*/
 
   --bl-clr-blue-50: #eff6ff;
   --bl-clr-blue-100: #dbeafe;
@@ -144,6 +158,12 @@
   --bl-font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
     "Liberation Mono", "Courier New", monospace;
   --bl-font: var(--bl-font-sans);
+
+  --bl-breakpoint-sm: 640px;
+  --bl-breakpoint-md: 768px;
+  --bl-breakpoint-lg: 1024px;
+  --bl-breakpoint-xl: 1280px;
+  --bl-breakpoint-2xl: 1536px;
 }
 
 html,
@@ -155,7 +175,7 @@ body {
 
 .dark,
 [data-theme="dark"] {
-  --bl-clr-text: #fff;
+  --bl-clr-text: var(--bl-clr-gray-200);
   --bl-clr-background: var(--bl-clr-gray-950);
   --bl-clr-surface: var(--bl-clr-gray-900);
   --bl-border-color: var(--bl-clr-gray-800);
