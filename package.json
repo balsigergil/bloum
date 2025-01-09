@@ -127,7 +127,7 @@
       }
     },
     "hooks": {
-      "after:init": "npm run build && npm run test"
+      "after:init": "npm run build"
     }
   }
 }
