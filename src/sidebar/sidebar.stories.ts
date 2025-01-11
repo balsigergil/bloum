@@ -10,7 +10,8 @@ const meta: Meta = {
 <div class="app">
   <div class="topbar">
     <a href="#" class="topbar-brand">
-      <img src="https://placehold.co/150x50" alt="Logo" />
+<!--      <img src="https://placehold.co/150x50" alt="Logo" />-->
+      <h2>Hello World</h2>
     </a>
     <button class="btn btn-icon btn-ghost" data-sidebar="#my-sidebar">
       <i class="fa-solid fa-bars"></i>
@@ -21,7 +22,8 @@ const meta: Meta = {
       <div class="sidebar-top">
         <div class="sidebar-brand">
           <a href="#">
-            <img src="https://placehold.co/150x50" alt="Logo" />
+<!--            <img src="https://placehold.co/150x50" alt="Logo" />-->
+            <h2>Hello World</h2>
           </a>
         </div>
         <div class="mx-4 input-group">
