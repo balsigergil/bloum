@@ -1,5 +1,11 @@
 # Changelog
 
+## <small>0.4.1 (2025-01-13)</small>
+
+* fix: modal ([76ddd9c](https://github.com/balsigergil/bloum/commit/76ddd9c))
+* feat: handle text brand in sidebar ([cd4aa95](https://github.com/balsigergil/bloum/commit/cd4aa95))
+* chore: update package.json ([c9c3bdf](https://github.com/balsigergil/bloum/commit/c9c3bdf))
+
 ## 0.4.0 (2025-01-09)
 
 * feat: add alert component ([72b2334](https://github.com/balsigergil/bloum/commit/72b2334))
