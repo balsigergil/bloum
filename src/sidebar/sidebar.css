@@ -49,7 +49,7 @@ html:has(.sidebar.show) {
   position: fixed;
   inset: 0;
   width: 100%;
-  z-index: 200;
+  z-index: 100;
   background-color: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(4px);
 }

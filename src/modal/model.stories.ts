@@ -10,7 +10,7 @@ const meta: Meta = {
       <div class="modal-content">
         <div class="modal-header">
           <h3 class="modal-title" id="my-modal-title">Login modal</h3>
-          <button class="btn btn-icon btn-ghost btn-sm" data-modal-close aria-label="Close">
+          <button type="button" role="button" class="btn btn-icon btn-ghost btn-sm" data-modal-close aria-label="Close">
             <i class="fas fa-times"></i>
           </button>
         </div>

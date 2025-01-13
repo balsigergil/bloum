@@ -123,11 +123,6 @@ input[type="radio"].checkbox:focus-visible {
   display: inline-block;
 }
 
-.label:has(+ .form-control),
-.label:has(+ bl-textarea) {
-  margin-bottom: 0.5rem;
-}
-
 .form-check {
   display: flex;
   align-items: center;

@@ -133,3 +133,18 @@ export class Tooltip {
 function randomId() {
   return Math.random().toString(36).substring(2, 9);
 }
+
+export function initTooltip() {
+  const createTooltip = (element: HTMLElement) => {
+    new Tooltip(element as HTMLElement);
+  };
+  document
+    .querySelectorAll<HTMLElement>("[data-tooltip]")
+    .forEach(createTooltip);
+
+  document.addEventListener("htmx:load", () => {
+    document
+      .querySelectorAll<HTMLElement>("[data-tooltip]")
+      .forEach(createTooltip);
+  });
+}

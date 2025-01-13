@@ -29,7 +29,7 @@
   display: flex;
 }
 
-.modal[aria-hidden="true"] {
+.modal.closing {
   animation: modalFadeOut var(--bl-modal-animation-duration) both;
 }
 
@@ -65,7 +65,7 @@
   max-width: var(--bl-modal-size-full);
 }
 
-.modal[aria-hidden="true"] .modal-content {
+.modal.closing .modal-content {
   animation: modalScaleOut var(--bl-modal-animation-duration) both;
 }
 
@@ -101,7 +101,7 @@
 
 @keyframes modalScaleIn {
   from {
-    transform: scale(0.9) translateY(-1rem);
+    transform: scale(0.95) translateY(-1rem);
   }
   to {
     transform: scale(1) translateY(0);
@@ -113,6 +113,6 @@
     transform: scale(1) translateY(0);
   }
   to {
-    transform: scale(0.9) translateY(-1rem);
+    transform: scale(0.95) translateY(-1rem);
   }
 }

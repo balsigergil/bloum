@@ -57,14 +57,17 @@ export function openModal(element: HTMLElement) {
 
 export function closeModal() {
   if (!modal) return;
-  modal.setAttribute("aria-hidden", "true");
-  modal.removeAttribute("aria-modal");
+
+  modal.classList.add("closing");
 
   modal.addEventListener(
     "animationend",
     () => {
       if (modal) {
         modal.classList.remove("open");
+        modal.classList.remove("closing");
+        modal.setAttribute("aria-hidden", "true");
+        modal.removeAttribute("aria-modal");
         modal = null;
       }
       if (modalFocusTrap) {
