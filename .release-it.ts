@@ -15,10 +15,4 @@ export default {
   hooks: {
     "before:init": ["npm run build"],
   },
-  plugins: {
-    "@release-it/conventional-changelog": {
-      preset: "angular",
-      infile: "CHANGELOG.md",
-    },
-  },
 } satisfies Config;
