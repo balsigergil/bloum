@@ -102,45 +102,8 @@
     "example",
     "docs"
   ],
-  "sideEffects": false,
   "lint-staged": {
     "./src/**/*.ts": "eslint",
     "*.{js,jsx,cjs,ts,tsx,html,css,json,yml}": "prettier --write"
-  },
-  "release-it": {
-    "git": {
-      "commitMessage": "chore: release v${version}"
-    },
-    "github": {
-      "release": true,
-      "releaseName": "v${version}",
-      "draft": true
-    },
-    "npm": {
-      "publish": false
-    },
-    "plugins": {
-      "@release-it/conventional-changelog": {
-        "infile": "CHANGELOG.md",
-        "header": "# Changelog",
-        "preset": {
-          "name": "conventionalcommits",
-          "types": [
-            {
-              "type": "feat",
-              "section": "Features"
-            },
-            {
-              "type": "fix",
-              "section": "Bug Fixes"
-            },
-            {}
-          ]
-        }
-      }
-    },
-    "hooks": {
-      "after:init": "npm run build"
-    }
   }
 }
