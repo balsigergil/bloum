@@ -43,6 +43,10 @@ export function initModal() {
       closeModal();
     }
   });
+
+  addEventListener("bl-modal-close", () => {
+    closeModal();
+  });
 }
 
 export function openModal(element: HTMLElement) {
