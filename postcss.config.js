@@ -7,6 +7,6 @@ export default {
     },
     tailwindcss: {},
     autoprefixer: {},
-    cssnano: {},
+    // cssnano: {},
   },
 };

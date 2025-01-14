@@ -48,6 +48,45 @@ export const FormControls: Story = {
             </div>
           </div>
         </div>
+        <div class="mb-4">
+          <label for="message" class="label">User type:</label>
+          <select id="user-type" name="user-type" class="form-control">
+            <option value="admin">Admin</option>
+            <option value="moderator">Moderator</option>
+            <option value="user">User</option>
+            <option value="guest">Guest</option>
+          </select>
+        </div>
+        <div class="mb-4">
+          <label for="tags" class="label">Tags:</label>
+          <select id="tags" name="tags" class="form-control" multiple>
+            <option value="red">Red</option>
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+            <option value="yellow">Yellow</option>
+            <option value="purple">Purple</option>
+            <option value="orange">Orange</option>
+            <option value="pink">Pink</option>
+            <option value="black">Black</option>
+            <option value="white">White</option>
+            <option value="gray">Gray</option>
+            <option value="brown">Brown</option>
+            <option value="cyan">Cyan</option>
+          </select>
+        </div>
+        <div class="mb-4">
+          <label for="search" class="label">Search:</label>
+          <div class="input-group">
+            <span class="input-group-icon">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </span>
+            <input type="text" id="search" name="search" class="form-control">
+          </div>
+        </div>
+        <div class="mb-4">
+          <label for="avatar" class="label">Avatar:</label>
+          <input type="file" id="avatar" name="avatar" class="form-control" required>
+        </div>
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>`;
   },

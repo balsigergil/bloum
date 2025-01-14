@@ -1,10 +1,10 @@
 import type { Preview, HtmlRenderer } from "@storybook/html";
 import { withThemeByClassName } from "@storybook/addon-themes";
 
-import "./preview.css";
 import "../src/index";
 import "../src/style.css";
 import "@fortawesome/fontawesome-free/css/all.css";
+import "./preview.css";
 
 const preview: Preview = {
   parameters: {

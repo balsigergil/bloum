@@ -145,6 +145,9 @@ html:has(.sidebar.show) {
 
 .sidebar-nav {
   padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
 }
 
 .sidebar-item a {
@@ -169,6 +172,7 @@ html:has(.sidebar.show) {
 
 .sidebar-item.active a {
   color: var(--bl-sidebar-color-hover);
+  background-color: var(--bl-sidebar-bg-hover);
 }
 
 .sidebar-bottom > * {
@@ -194,5 +198,9 @@ html:has(.sidebar.show) {
     display: block;
     position: sticky;
     top: 0;
+
+    .sidebar-content {
+      width: 100%;
+    }
   }
 }

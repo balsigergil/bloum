@@ -28,7 +28,6 @@
   "module": "./dist/bloum.esm.min.js",
   "types": "./dist/types/index.d.ts",
   "scripts": {
-    "dev": "npm run dev -w example",
     "test": "playwright test",
     "build": "rimraf dist && concurrently \"npm run build:js\" \"npm run build:css\" \"npm run build:types\" && node scripts/copy.js",
     "build:js": "rollup -c rollup.config.js",
@@ -42,9 +41,9 @@
     "docs:build": "npm run build -w docs",
     "prepare": "husky",
     "release": "release-it",
-    "sb": "storybook dev -p 6006",
+    "sb": "storybook dev -p 6006 --no-open",
     "sb-storybook": "storybook build",
-    "storybook": "storybook dev -p 6006",
+    "storybook": "storybook dev -p 6006 --no-open",
     "build-storybook": "storybook build"
   },
   "devDependencies": {
@@ -98,7 +97,6 @@
     "typescript-eslint": "^8.18.0"
   },
   "workspaces": [
-    "example",
     "docs"
   ],
   "lint-staged": {

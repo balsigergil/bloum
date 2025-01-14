@@ -1,7 +1,11 @@
 :root {
+  --bl-form-input-height: 2.5rem;
+  --bl-form-input-padding: 0.75rem;
   --bl-form-border-color: var(--bl-clr-gray-300);
-  --bl-form-border-radius: var(--bl-border-radius-lg);
+  --bl-form-border-radius: var(--bl-border-radius-md);
   --bl-form-primary-color: var(--bl-clr-primary-600);
+  --bl-form-file-bg: var(--bl-clr-gray-200);
+  --bl-form-file-bg-hover: var(--bl-clr-gray-300);
 }
 
 /* Form control */
@@ -9,21 +13,49 @@
   appearance: none;
   border: 1px solid var(--bl-form-border-color);
   border-radius: var(--bl-form-border-radius);
-  padding-inline: 0.75rem;
-  height: 2.5rem;
+  padding-inline: var(--bl-form-input-padding);
+  height: var(--bl-form-input-height);
+  line-height: 1.25rem;
+  position: relative;
   font-size: 0.875rem;
-  outline: solid 2px transparent;
+  outline-style: solid;
+  outline-color: transparent;
+  outline-width: 2px;
   display: block;
   width: 100%;
+  min-width: var(--bl-form-input-height);
   background-color: transparent;
-  transition-property: outline-color;
-  transition-duration: var(--bl-transition-sm);
 }
 
 .form-control:focus-visible {
+  outline-style: solid;
   outline-color: var(--bl-form-primary-color);
+  outline-width: 2px;
   outline-offset: -1px;
 }
+
+/* File input */
+
+.form-control[type="file"] {
+  padding-inline: 0;
+  cursor: pointer;
+}
+
+.form-control::file-selector-button {
+  height: 100%;
+  border: none;
+  background-color: var(--bl-form-file-bg);
+  padding-inline: var(--bl-form-input-padding);
+  cursor: pointer;
+  margin-inline-end: var(--bl-form-input-padding);
+  transition: background-color var(--bl-transition-sm);
+}
+
+.form-control:hover::file-selector-button {
+  background-color: var(--bl-form-file-bg-hover);
+}
+
+/* Textarea */
 
 textarea.form-control {
   padding-block: 0.5rem;
@@ -35,27 +67,31 @@ textarea.form-control {
   position: relative;
 }
 
-.input-group > .icon-left {
+.input-group .input-group-icon {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  left: 0.75em;
-  color: var(--bl-clr-gray-400);
+  color: var(--bl-clr-gray-500);
+  width: var(--bl-form-input-height);
+  height: var(--bl-form-input-height);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
 }
 
-input[type="text"].form-control:has(+ .icon-left),
-input[type="password"].form-control:has(+ .icon-left),
-input[type="email"].form-control:has(+ .icon-left),
-input[type="search"].form-control:has(+ .icon-left),
-input[type="tel"].form-control:has(+ .icon-left),
-input[type="url"].form-control:has(+ .icon-left),
-input[type="number"].form-control:has(+ .icon-left),
-input[type="date"].form-control:has(+ .icon-left),
-input[type="time"].form-control:has(+ .icon-left),
-input[type="datetime-local"].form-control:has(+ .icon-left),
-input[type="month"].form-control:has(+ .icon-left),
-input[type="week"].form-control:has(+ .icon-left) {
-  padding-inline-start: 2.25rem;
+.input-group .input-group-icon:first-child {
+  left: 0;
+}
+
+.input-group .input-group-icon:last-child {
+  right: 0;
+}
+
+.input-group > .input-group-icon + .form-control {
+  padding-inline-start: var(--bl-form-input-height);
+}
+
+.input-group > .form-control:has(+ .input-group-icon) {
+  padding-inline-end: var(--bl-form-input-height);
 }
 
 /* Checkbox */
@@ -121,12 +157,38 @@ input[type="radio"].checkbox:focus-visible {
   font-weight: 600;
   user-select: none;
   display: inline-block;
+  margin-bottom: 0.25rem;
 }
 
 .form-check {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+
+  .label {
+    margin-bottom: 0;
+  }
+}
+
+/* Select */
+select.form-control {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1.5rem 1.5rem;
+  padding-inline-end: 2.5rem;
+  print-color-adjust: exact;
+}
+
+select.form-control[multiple],
+select.form-select:where([size]:not([size="1"])) {
+  height: auto;
+  background-image: initial;
+  background-position: initial;
+  background-repeat: unset;
+  background-size: initial;
+  padding-inline-end: 0.75rem;
+  print-color-adjust: unset;
 }
 
 /* Checkbox card */
@@ -189,4 +251,6 @@ input[type="radio"].checkbox:focus-visible {
 [data-theme="dark"] {
   --bl-form-border-color: var(--bl-clr-gray-700);
   --bl-form-primary-color: var(--bl-clr-primary-400);
+  --bl-form-file-bg: var(--bl-clr-gray-800);
+  --bl-form-file-bg-hover: var(--bl-clr-gray-700);
 }

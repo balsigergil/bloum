@@ -1,6 +1,6 @@
 .spinner {
   --bl-spinner-size: 1.5rem;
-  --bl-spinner-color: var(--bl-clr-primary-500);
+  --bl-spinner-color: var(--bl-clr-primary-600);
 
   display: inline-block;
   width: var(--bl-spinner-size);
@@ -26,6 +26,11 @@
 
 .spinner-xl {
   --bl-spinner-size: 3rem;
+}
+
+.dark .spinner,
+[data-theme="dark"] .spinner {
+  --bl-spinner-color: var(--bl-clr-primary-400);
 }
 
 @keyframes spinner {
