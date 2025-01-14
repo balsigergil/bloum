@@ -1,5 +1,10 @@
 # Changelog
 
+## <small>0.5.1 (2025-01-14)</small>
+
+* refactor: update forms, update sidebar, update tooltip ([7af70ff](https://github.com/balsigergil/bloum/commit/7af70ff))
+* chore: remove example, update readme ([fdf0628](https://github.com/balsigergil/bloum/commit/fdf0628))
+
 ## 0.5.0 (2025-01-13)
 
 * refactor: inline check.svg ([1622b5f](https://github.com/balsigergil/bloum/commit/1622b5f))
