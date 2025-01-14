@@ -4,17 +4,11 @@
 
 * refactor: inline check.svg ([1622b5f](https://github.com/balsigergil/bloum/commit/1622b5f))
 * feat: close modal from custom event ([f8f59ca](https://github.com/balsigergil/bloum/commit/f8f59ca))
-* chore: fix security issue in npm deps ([2fcf7f0](https://github.com/balsigergil/bloum/commit/2fcf7f0))
-* chore: update release-it config ([7e349ae](https://github.com/balsigergil/bloum/commit/7e349ae))
-* chore: update release-it config ([039e9b9](https://github.com/balsigergil/bloum/commit/039e9b9))
-* chore: update release-it config ([cf65d51](https://github.com/balsigergil/bloum/commit/cf65d51))
-* chore: update release-it config ([6e3e763](https://github.com/balsigergil/bloum/commit/6e3e763))
 
 ## <small>0.4.1 (2025-01-13)</small>
 
 * fix: modal ([76ddd9c](https://github.com/balsigergil/bloum/commit/76ddd9c))
 * feat: handle text brand in sidebar ([cd4aa95](https://github.com/balsigergil/bloum/commit/cd4aa95))
-* chore: update package.json ([c9c3bdf](https://github.com/balsigergil/bloum/commit/c9c3bdf))
 
 ## 0.4.0 (2025-01-09)
 
