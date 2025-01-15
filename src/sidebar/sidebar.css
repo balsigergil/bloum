@@ -30,10 +30,6 @@
   }
 }
 
-.app > .main {
-  padding: 1rem;
-}
-
 html:has(.sidebar.show) {
   overflow: hidden;
 }
@@ -184,10 +180,6 @@ html:has(.sidebar.show) {
     display: grid;
     grid-template-columns: minmax(var(--bl-sidebar-width), max-content) 1fr;
     align-items: flex-start;
-  }
-
-  .app > .main {
-    padding: 2rem;
   }
 
   .topbar {

@@ -113,7 +113,7 @@ const meta: Meta = {
       </div>
     </div>
   </aside>
-  <main class="main space-y-4">
+  <main class="p-4 space-y-4">
     <h1 class="font-semibold text-3xl">Content</h1>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
