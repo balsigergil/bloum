@@ -1,5 +1,9 @@
 # Changelog
 
+## <small>0.5.3 (2025-01-15)</small>
+
+* chore: update postcss ([f10e9c6](https://github.com/balsigergil/bloum/commit/f10e9c6))
+
 ## <small>0.5.1 (2025-01-14)</small>
 
 * refactor: update forms, update sidebar, update tooltip ([7af70ff](https://github.com/balsigergil/bloum/commit/7af70ff))
