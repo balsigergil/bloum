@@ -20,7 +20,7 @@ export class Tabs extends HTMLElement {
     // tab panels have been connected to the DOM.
     setTimeout(() => {
       this.init();
-    }, 10);
+    }, 1);
   }
 
   init() {
@@ -43,8 +43,7 @@ export class Tabs extends HTMLElement {
     if (useAnchor) {
       const hash = window.location.hash;
       if (hash) {
-        const id = hash.slice(1);
-        const tab = this.querySelector<Tab>(`bl-tab[href="${id}"]`);
+        const tab = this.querySelector<Tab>(`bl-tab[href="${hash}"]`);
         if (tab) {
           this.setSelected(Array.from(tabs).indexOf(tab), false);
         } else {

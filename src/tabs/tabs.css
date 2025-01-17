@@ -1,7 +1,7 @@
 bl-tabs {
   --bl-tab-padding: 1rem;
-  --bl-tab-color: var(--bl-clr-gray-500);
-  --bl-tab-active-color: var(--bl-clr-gray-800);
+  --bl-tab-color: var(--bl-clr-gray-700);
+  --bl-tab-active-color: var(--bl-clr-primary-700);
   display: block;
 }
 
@@ -55,7 +55,7 @@ bl-tab {
   }
 
   &.active {
-    color: var(--bl-clr-text);
+    color: var(--bl-tab-active-color);
   }
 
   &.active::after {
@@ -69,7 +69,7 @@ bl-tab {
 
   &:focus-visible {
     outline: 2px solid var(--bl-clr-primary-600);
-    outline-offset: 3px;
+    outline-offset: -2px;
     border-radius: var(--bl-border-radius);
   }
 }
@@ -80,7 +80,7 @@ bl-tab-panel {
 
   &:focus-visible {
     outline: 2px solid var(--bl-clr-primary-600);
-    outline-offset: 1px;
+    outline-offset: -2px;
     border-radius: var(--bl-border-radius);
   }
 }
@@ -91,6 +91,6 @@ bl-tab-panel.show {
 
 .dark bl-tabs,
 [data-theme="dark"] bl-tabs {
-  --bl-tab-color: var(--bl-clr-gray-500);
-  --bl-tab-active-color: var(--bl-clr-gray-50);
+  --bl-tab-color: var(--bl-clr-gray-300);
+  --bl-tab-active-color: var(--bl-clr-primary-300);
 }

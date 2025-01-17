@@ -49,14 +49,14 @@
   padding-top: 0.5rem;
 }
 
-.card > .table {
+.card .table {
   margin-top: calc(var(--bl-card-padding) / 2);
 }
 
-.card > .table > tbody:not(:has(+ tfoot)) > tr:last-child > td {
+.card .table > tbody:not(:has(+ tfoot)) > tr:last-child > td {
   border-bottom-width: 0;
 }
 
-.card > .table > tfoot > tr:last-child > td {
+.card .table > tfoot > tr:last-child > td {
   border-bottom-width: 0;
 }

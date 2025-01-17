@@ -1,6 +1,6 @@
 :root {
-  --bl-form-input-height: 2.5rem;
-  --bl-form-input-padding: 0.75rem;
+  --bl-form-input-height: 2.25rem;
+  --bl-form-input-padding: 0.625rem;
   --bl-form-border-color: var(--bl-clr-gray-300);
   --bl-form-border-radius: var(--bl-border-radius-md);
   --bl-form-primary-color: var(--bl-clr-primary-600);
