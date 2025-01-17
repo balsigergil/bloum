@@ -1,5 +1,9 @@
 # Changelog
 
+## <small>0.5.4 (2025-01-17)</small>
+
+* fix: tabs anchor, form height, card table border ([4516786](https://github.com/balsigergil/bloum/commit/4516786))
+
 ## <small>0.5.3 (2025-01-15)</small>
 
 * chore: update postcss ([f10e9c6](https://github.com/balsigergil/bloum/commit/f10e9c6))
