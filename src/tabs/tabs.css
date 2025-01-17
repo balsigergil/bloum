@@ -76,7 +76,7 @@ bl-tab {
 
 bl-tab-panel {
   display: none;
-  padding: var(--bl-tab-padding);
+  padding-top: var(--bl-tab-padding);
 
   &:focus-visible {
     outline: 2px solid var(--bl-clr-primary-600);
