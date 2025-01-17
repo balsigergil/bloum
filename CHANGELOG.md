@@ -1,5 +1,9 @@
 # Changelog
 
+## <small>0.5.5 (2025-01-17)</small>
+
+* fix: tab panel padding ([837f022](https://github.com/balsigergil/bloum/commit/837f022))
+
 ## <small>0.5.4 (2025-01-17)</small>
 
 * fix: tabs anchor, form height, card table border ([4516786](https://github.com/balsigergil/bloum/commit/4516786))
