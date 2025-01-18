@@ -191,6 +191,7 @@ html:has(.sidebar.show) {
     display: block;
     position: sticky;
     top: 0;
+    z-index: 200;
 
     .sidebar-content {
       width: 100%;
