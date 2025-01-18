@@ -1,5 +1,9 @@
 # Changelog
 
+## <small>0.5.6 (2025-01-18)</small>
+
+* fix: tooltip, modal, tabs ([8e43b16](https://github.com/balsigergil/bloum/commit/8e43b16))
+
 ## <small>0.5.5 (2025-01-17)</small>
 
 * fix: tab panel padding ([837f022](https://github.com/balsigergil/bloum/commit/837f022))
