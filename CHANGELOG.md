@@ -1,5 +1,9 @@
 # Changelog
 
+## <small>0.5.7 (2025-01-18)</small>
+
+* fix: sidebar z-index ([318052f](https://github.com/balsigergil/bloum/commit/318052f))
+
 ## <small>0.5.6 (2025-01-18)</small>
 
 * fix: tooltip, modal, tabs ([8e43b16](https://github.com/balsigergil/bloum/commit/8e43b16))
