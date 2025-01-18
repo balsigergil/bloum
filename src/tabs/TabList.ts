@@ -3,6 +3,9 @@ import { Tabs } from "./Tabs";
 export class TabList extends HTMLElement {
   static NAME = "bl-tab-list";
   static register() {
+    if (customElements.get(this.NAME)) {
+      return;
+    }
     customElements.define(this.NAME, this);
   }
 

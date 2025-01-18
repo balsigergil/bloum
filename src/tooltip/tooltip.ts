@@ -7,14 +7,24 @@ import {
   shift,
 } from "@floating-ui/dom";
 
+type TooltipElement = HTMLElement & { hydrated?: boolean };
+
 export class Tooltip {
   private readonly title!: string;
   private readonly trigger: HTMLElement | null = null;
+  private readonly tooltipId: string | null = null;
   private tooltip: HTMLElement | null = null;
   private arrowElement: HTMLDivElement | null = null;
   private cleanup: VoidFunction | null = null;
 
-  constructor(element: HTMLElement) {
+  constructor(element: TooltipElement) {
+    if (!element) {
+      return;
+    }
+    if (element.hydrated !== undefined) {
+      return;
+    }
+
     const title = element.getAttribute("data-tooltip");
     if (!title) {
       return;
@@ -22,6 +32,7 @@ export class Tooltip {
 
     this.title = title;
     this.trigger = element;
+    this.tooltipId = randomId();
 
     element.addEventListener(
       "mouseenter",
@@ -34,23 +45,28 @@ export class Tooltip {
       this.removeTooltipElement.bind(this),
     );
     element.addEventListener("blur", this.removeTooltipElement.bind(this));
+    element.hydrated = true;
   }
 
   createTooltipElement() {
-    if (this.tooltip || !this.trigger) {
+    if (!this.trigger || !this.tooltipId) {
       return;
     }
 
-    const tooltipId = randomId();
+    const existingTooltips = document.querySelectorAll(".tooltip");
+    existingTooltips.forEach((tooltip) => {
+      tooltip.remove();
+    });
+
     const tooltip = document.createElement("div");
 
-    tooltip.id = tooltipId;
+    tooltip.id = this.tooltipId;
     tooltip.classList.add("tooltip");
     tooltip.setAttribute("role", "tooltip");
     tooltip.textContent = this.title;
     this.tooltip = tooltip;
 
-    this.trigger.setAttribute("aria-describedby", tooltipId);
+    this.trigger.setAttribute("aria-describedby", this.tooltipId);
 
     this.arrowElement = document.createElement("div");
     this.arrowElement.classList.add("tooltip-arrow");
@@ -88,7 +104,9 @@ export class Tooltip {
         top: `${y}px`,
       });
 
-      // @ts-ignore
+      if (!middlewareData.arrow) {
+        return;
+      }
       const { x: arrowX, y: arrowY } = middlewareData.arrow;
 
       const staticSide = {
@@ -115,6 +133,7 @@ export class Tooltip {
         if (this.tooltip) {
           this.tooltip.remove();
           this.tooltip = null;
+          this.trigger?.removeAttribute("aria-describedby");
         }
 
         if (this.arrowElement) {

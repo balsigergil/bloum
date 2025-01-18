@@ -1,7 +1,10 @@
 export class AutogrowTextarea extends HTMLTextAreaElement {
   static NAME = "bl-autogrow";
   static register() {
-    customElements.define(AutogrowTextarea.NAME, AutogrowTextarea, {
+    if (customElements.get(this.NAME)) {
+      return;
+    }
+    customElements.define(this.NAME, this, {
       extends: "textarea",
     });
   }

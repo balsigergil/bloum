@@ -15,7 +15,7 @@ document.addEventListener("click", (e) => {
     return;
   }
 
-  sidebar.classList.add("show");
+  sidebar.classList.toggle("show");
 });
 
 document.addEventListener("click", (e) => {

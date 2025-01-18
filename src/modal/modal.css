@@ -29,6 +29,10 @@
   display: flex;
 }
 
+html:has(.modal.open) {
+  overflow: hidden;
+}
+
 .modal.closing {
   animation: modalFadeOut var(--bl-modal-animation-duration) both;
 }
