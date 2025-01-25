@@ -96,6 +96,11 @@
     "typescript-eslint": "^8.21.0",
     "vite": "^6.0.11"
   },
+  "peerDependencies": {
+    "@floating-ui/dom": "^1.6.13",
+    "@floating-ui/core": "^1.6.9",
+    "focus-trap": "^7.6.4"
+  },
   "lint-staged": {
     "./src/**/*.ts": "eslint",
     "*.{js,jsx,cjs,ts,tsx,html,css,json,yml}": "prettier --write"
