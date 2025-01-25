@@ -1,5 +1,9 @@
 # Changelog
 
+## <small>0.6.1 (2025-01-25)</small>
+
+* chore: update package.json ([42ab4a1](https://github.com/balsigergil/bloum/commit/42ab4a1))
+
 ## 0.6.0 (2025-01-25)
 
 * fix: tab history ([873ec74](https://github.com/balsigergil/bloum/commit/873ec74))
