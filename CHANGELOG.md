@@ -2,12 +2,6 @@
 
 ## 0.6.0 (2025-01-25)
 
-* chore: fix vite security ([1ef228f](https://github.com/balsigergil/bloum/commit/1ef228f))
-* chore: removed docs, update deps ([9bf7688](https://github.com/balsigergil/bloum/commit/9bf7688))
-* chore: update release-it config ([9fffd5b](https://github.com/balsigergil/bloum/commit/9fffd5b))
-* chore: update rollup config ([bc773c3](https://github.com/balsigergil/bloum/commit/bc773c3))
-* chore: update storybook config ([fe03cd9](https://github.com/balsigergil/bloum/commit/fe03cd9))
-* chore: update storybook, update types generation ([8ffb5c2](https://github.com/balsigergil/bloum/commit/8ffb5c2))
 * fix: tab history ([873ec74](https://github.com/balsigergil/bloum/commit/873ec74))
 
 ## <small>0.5.7 (2025-01-18)</small>
