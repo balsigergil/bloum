@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.6.4](https://github.com/balsigergil/bloum/compare/v0.6.3...v0.6.4) (2025-01-25)
+
+### Bug Fixes
+
+* **card:** remove overflow hidden ([fde056a](https://github.com/balsigergil/bloum/commit/fde056a0aee53f81d03f3c15bdef375d7cfae6a0))
+
 ## [0.6.3](https://github.com/balsigergil/bloum/compare/v0.6.2...v0.6.3) (2025-01-25)
 
 ## [0.6.2](https://github.com/balsigergil/bloum/compare/v0.6.1...v0.6.2) (2025-01-25)
