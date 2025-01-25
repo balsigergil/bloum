@@ -1,6 +1,7 @@
 import { defineConfig } from "rollup";
 import typescript from "@rollup/plugin-typescript";
 import terser from "@rollup/plugin-terser";
+import { nodeResolve } from "@rollup/plugin-node-resolve";
 
 import pkg from "./package.json" with { type: "json" };
 
@@ -25,6 +26,6 @@ export default defineConfig({
       },
     },
   ],
-  external: ["@ungap/custom-elements", "focus-trap", "@floating-ui/dom"],
-  plugins: [typescript(), terser()],
+  external: ["focus-trap", "@floating-ui/dom"],
+  plugins: [nodeResolve(), typescript(), terser()],
 });
