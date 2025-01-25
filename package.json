@@ -30,6 +30,7 @@
   "types": "./dist/types/index.d.ts",
   "exports": {
     "node": {
+      "types": "./dist/types/index.d.ts",
       "import": "./dist/bloum.esm.min.js",
       "require": "./dist/bloum.cjs.min.js"
     },
@@ -66,14 +67,11 @@
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^12.1.2",
     "@storybook/addon-a11y": "^8.5.1",
-    "@storybook/addon-docs": "^8.5.1",
     "@storybook/addon-essentials": "^8.5.1",
     "@storybook/addon-interactions": "^8.5.1",
     "@storybook/addon-links": "^8.5.1",
-    "@storybook/addon-storysource": "^8.5.1",
     "@storybook/addon-themes": "^8.5.1",
     "@storybook/blocks": "^8.5.1",
-    "@storybook/html": "^8.5.1",
     "@storybook/html-vite": "^8.5.1",
     "@storybook/test": "^8.5.1",
     "@types/node": "^22.10.6",
