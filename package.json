@@ -78,6 +78,7 @@
     "@ungap/custom-elements": "^1.3.0",
     "autoprefixer": "^10.4.20",
     "concurrently": "^9.1.2",
+    "conventional-changelog-cli": "^5.0.0",
     "cssnano": "^7.0.6",
     "eslint": "^9.19.0",
     "focus-trap": "^7.6.4",
@@ -104,5 +105,32 @@
   "lint-staged": {
     "./src/**/*.ts": "eslint",
     "*.{js,jsx,cjs,ts,tsx,html,css,json,yml}": "prettier --write"
+  },
+  "release-it": {
+    "git": {
+      "commitMessage": "chore(release): ${version}"
+    },
+    "github": {
+      "release": true,
+      "releaseName": "v${version}",
+      "draft": true
+    },
+    "npm": {
+      "publish": false
+    },
+    "hooks": {
+      "before:init": [
+        "npm run build"
+      ]
+    },
+    "plugins": {
+      "@release-it/conventional-changelog": {
+        "preset": {
+          "name": "conventionalcommits"
+        },
+        "infile": "CHANGELOG.md",
+        "ignoreRecommendedBump": true
+      }
+    }
   }
 }
