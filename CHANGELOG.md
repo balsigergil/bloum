@@ -1,5 +1,9 @@
 # Changelog
 
+## <small>0.6.2 (2025-01-25)</small>
+
+* chore: update rollup config ([46f42be](https://github.com/balsigergil/bloum/commit/46f42be))
+
 ## <small>0.6.1 (2025-01-25)</small>
 
 * chore: update package.json ([42ab4a1](https://github.com/balsigergil/bloum/commit/42ab4a1))
