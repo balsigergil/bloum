@@ -27,11 +27,6 @@ export class Tabs extends HTMLElement {
   }
 
   init() {
-    if (this.hasAttribute("hydrated")) {
-      return;
-    }
-    this.setAttribute("hydrated", "");
-
     const tabs = this.querySelectorAll<Tab>("bl-tab");
     this.#tabCount = tabs.length;
 
@@ -73,7 +68,7 @@ export class Tabs extends HTMLElement {
         const tab = tabs[index];
         const href = tab.getAttribute("href");
         if (href) {
-          window.history.replaceState(null, "", href);
+          window.location.replace(href);
         }
       }
 
