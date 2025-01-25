@@ -24,9 +24,17 @@
   "files": [
     "dist"
   ],
-  "main": "./dist/bloum.umd.min.js",
+  "main": "./dist/bloum.cjs.min.js",
   "module": "./dist/bloum.esm.min.js",
+  "browser": "./dist/bloum.umd.min.js",
   "types": "./dist/types/index.d.ts",
+  "exports": {
+    "node": {
+      "import": "./dist/bloum.esm.min.js",
+      "require": "./dist/bloum.cjs.min.js"
+    },
+    "default": "./dist/bloum.umd.min.js"
+  },
   "scripts": {
     "test": "playwright test",
     "build": "rimraf dist && concurrently \"npm run build:js\" \"npm run build:css\" \"npm run build:types\"",

@@ -1,6 +1,5 @@
 import { defineConfig } from "rollup";
 import typescript from "@rollup/plugin-typescript";
-import nodeResolve from "@rollup/plugin-node-resolve";
 import terser from "@rollup/plugin-terser";
 
 import pkg from "./package.json" with { type: "json" };
@@ -14,9 +13,18 @@ export default defineConfig({
     },
     {
       file: pkg.main,
+      format: "cjs",
+    },
+    {
+      file: pkg.browser,
       format: "umd",
       name: "bloom",
+      globals: {
+        "focus-trap": "focusTrap",
+        "@floating-ui/dom": "FloatingUIDOM",
+      },
     },
   ],
-  plugins: [nodeResolve(), typescript(), terser()],
+  external: ["@ungap/custom-elements", "focus-trap", "@floating-ui/dom"],
+  plugins: [typescript(), terser()],
 });
