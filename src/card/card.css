@@ -11,7 +11,6 @@
   border-radius: var(--bl-card-border-radius);
   border: var(--bl-card-border);
   display: block;
-  overflow: hidden;
 }
 
 .card-image {
