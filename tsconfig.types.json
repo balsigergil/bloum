@@ -2,6 +2,7 @@
   "compilerOptions": {
     "target": "ESNext",
     "module": "ESNext",
+    "skipLibCheck": true,
     "moduleResolution": "Bundler",
     "declaration": true,
     "emitDeclarationOnly": true,
