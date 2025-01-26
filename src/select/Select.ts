@@ -1,20 +1,14 @@
 export interface BloumSelectConfiguration {
   placeholder: string;
-  selected?: string;
-  clearable?: boolean;
-  searchable?: boolean;
-  multiple?: boolean;
-  disabled?: boolean;
+  selected?: string | string[];
   noResultsText?: string;
+  isSearchable?: boolean;
 }
 
 export const DEFAULT_PROPS: BloumSelectConfiguration = {
   placeholder: "Select an option...",
-  clearable: false,
-  searchable: false,
-  multiple: false,
-  disabled: false,
   noResultsText: "No results found",
+  isSearchable: false,
 };
 
 interface BloumInput extends HTMLElement {
@@ -63,48 +57,11 @@ export class BloumSelect {
     // this.#field.style.display = "none";
     this.#config = this.#parseOptions(options);
 
-    this.render();
-  }
-
-  render() {
-    this.#wrapper = document.createElement("div");
-    this.#wrapper.classList.add("bl-select");
-    this.#wrapper.tabIndex = 0;
-
-    this.#inner = document.createElement("div");
-    this.#inner.classList.add("bl-select-inner");
-
-    this.#itemsContainer = document.createElement("div");
-    this.#itemsContainer.classList.add("bl-select-items");
-    this.#itemsContainer.innerText = this.#config.placeholder;
-
-    const arrow = document.createElement("div");
-    arrow.classList.add("bl-select-arrow");
-
-    this.#inner.append(this.#itemsContainer, arrow);
-    this.#wrapper.append(this.#inner);
-
-    this.#menu = document.createElement("div");
-    this.#menu.classList.add("bl-select-menu");
-
-    if (this.#config.searchable) {
-      this.#searchInput = document.createElement("input");
-      this.#searchInput.setAttribute("type", "text");
-      this.#searchInput.classList.add("bl-select-search");
-      this.#searchInput.setAttribute("placeholder", "Search...");
-      this.#menu.append(this.#searchInput);
-    }
-
-    this.#optionsContainer = document.createElement("div");
-    this.#optionsContainer.classList.add("bl-select-options");
-    this.#optionsContainer.tabIndex = 0;
-    this.#populateOptions();
-
-    this.#menu.append(this.#optionsContainer);
-    this.#wrapper.append(this.#menu);
-
+    this.#render();
     this.#initializeEvents();
-    this.#field.insertAdjacentElement("afterend", this.#wrapper);
+
+    // Set the selected index
+    this.#setInitialSelected();
   }
 
   open() {
@@ -125,6 +82,7 @@ export class BloumSelect {
   }
 
   close(focusWrapper = true) {
+    if (!this.isOpen) return;
     this.#wrapper.classList.remove("open");
     if (focusWrapper) this.#wrapper.focus();
   }
@@ -166,6 +124,46 @@ export class BloumSelect {
     ).innerText;
 
     this.close();
+  }
+
+  #render() {
+    this.#wrapper = document.createElement("div");
+    this.#wrapper.classList.add("bl-select");
+    this.#wrapper.tabIndex = 0;
+
+    this.#inner = document.createElement("div");
+    this.#inner.classList.add("bl-select-inner");
+
+    this.#itemsContainer = document.createElement("div");
+    this.#itemsContainer.classList.add("bl-select-items");
+    this.#itemsContainer.innerText = this.#config.placeholder;
+
+    const arrow = document.createElement("div");
+    arrow.classList.add("bl-select-arrow");
+
+    this.#inner.append(this.#itemsContainer, arrow);
+    this.#wrapper.append(this.#inner);
+
+    this.#menu = document.createElement("div");
+    this.#menu.classList.add("bl-select-menu");
+
+    if (this.#config.isSearchable) {
+      this.#searchInput = document.createElement("input");
+      this.#searchInput.setAttribute("type", "text");
+      this.#searchInput.classList.add("bl-select-search");
+      this.#searchInput.setAttribute("placeholder", "Search...");
+      this.#menu.append(this.#searchInput);
+    }
+
+    this.#optionsContainer = document.createElement("div");
+    this.#optionsContainer.classList.add("bl-select-options");
+    this.#optionsContainer.tabIndex = 0;
+    this.#populateOptions();
+
+    this.#menu.append(this.#optionsContainer);
+    this.#wrapper.append(this.#menu);
+
+    this.#field.insertAdjacentElement("afterend", this.#wrapper);
   }
 
   #initializeEvents() {
@@ -241,13 +239,47 @@ export class BloumSelect {
 
   #parseOptions(props?: BloumSelectConfiguration): BloumSelectConfiguration {
     // Merge the default props with the provided props
-    const parsedProps = { ...DEFAULT_PROPS, ...props };
+    const parsedProps = { ...DEFAULT_PROPS };
 
     if (this.#field.hasAttribute("placeholder")) {
       parsedProps.placeholder = this.#field.getAttribute("placeholder") || "";
     }
 
-    return parsedProps;
+    return { ...parsedProps, ...props };
+  }
+
+  #setInitialSelected() {
+    const selected = [];
+    if (this.#config?.selected !== undefined) {
+      if (this.#field instanceof HTMLSelectElement) {
+        for (let i = 0; i < this.#field.options.length; i++) {
+          const option = this.#field.options[i];
+          if (Array.isArray(this.#config.selected)) {
+            if (this.#config.selected.includes(option.value)) {
+              selected.push(i);
+            }
+          } else {
+            if (option.value === this.#config.selected) {
+              selected.push(i);
+            }
+          }
+        }
+      }
+    } else {
+      if (this.#field instanceof HTMLSelectElement) {
+        // Look for selected options
+        for (let i = 0; i < this.#field.options.length; i++) {
+          if (this.#field.options[i].selected) {
+            selected.push(i);
+          }
+        }
+      }
+    }
+
+    // TODO: Handle multiple selected options
+    if (selected.length > 0) {
+      this.selectIndex(selected[0]);
+    }
   }
 
   #populateOptions() {

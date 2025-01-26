@@ -22,7 +22,7 @@ export const Select: Story = {
   <select name="fruits" id="select-1">
     <option value="apple">Apple</option>
     <option value="orange">Orange</option>
-    <option value="banana">Banana</option>
+    <option value="banana" selected>Banana</option>
     <option value="grape">Grape</option>
     <option value="kiwi">Kiwi</option>
     <option value="mango">Mango</option>
@@ -48,7 +48,7 @@ export const Select: Story = {
 </div>
 <script>
 new BloumSelect('#select-1');
-new BloumSelect('#select-2', { searchable: true });
+new BloumSelect('#select-2', { isSearchable: true });
 </script>
     `;
   },
