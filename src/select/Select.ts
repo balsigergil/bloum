@@ -34,6 +34,7 @@ export class BloumSelect {
   #menu!: HTMLDivElement;
   #searchInput: HTMLInputElement | null = null;
   #optionsContainer!: HTMLDivElement;
+  #options: HTMLDivElement[] = [];
 
   #selected: number[] = [];
   #searchValue = "";
@@ -54,7 +55,7 @@ export class BloumSelect {
     }
 
     if (element.bloumselect !== undefined) {
-      throw new Error("BloumSelect already initialized on this element");
+      // TODO: Destroy the previous instance
     }
 
     this.#field = element;
@@ -89,13 +90,14 @@ export class BloumSelect {
     if (this.#config.searchable) {
       this.#searchInput = document.createElement("input");
       this.#searchInput.setAttribute("type", "text");
-      this.#searchInput.classList.add("bl-select-search", "form-control");
+      this.#searchInput.classList.add("bl-select-search");
       this.#searchInput.setAttribute("placeholder", "Search...");
       this.#menu.append(this.#searchInput);
     }
 
     this.#optionsContainer = document.createElement("div");
     this.#optionsContainer.classList.add("bl-select-options");
+    this.#optionsContainer.tabIndex = 0;
     this.#populateOptions();
 
     this.#menu.append(this.#optionsContainer);
@@ -109,13 +111,22 @@ export class BloumSelect {
     this.#wrapper.classList.add("open");
 
     // Focus the search input field
-    this.#searchInput?.focus();
+    if (this.#searchInput) {
+      this.#searchInput.focus();
+    } else {
+      this.#optionsContainer.focus();
+    }
+
+    if (this.#selected.length > 0) {
+      this.#highlightIndex(this.#selected[0]);
+    }
 
     this.#updateOptionsList();
   }
 
-  close() {
+  close(focusWrapper = true) {
     this.#wrapper.classList.remove("open");
+    if (focusWrapper) this.#wrapper.focus();
   }
 
   toggle() {
@@ -159,10 +170,7 @@ export class BloumSelect {
 
   #initializeEvents() {
     this.#wrapper.addEventListener("click", (e) => {
-      if (
-        e.target instanceof HTMLElement &&
-        e.target.closest(".bl-select-inner")
-      ) {
+      if (e.target instanceof HTMLElement && this.#inner.contains(e.target)) {
         this.toggle();
       }
     });
@@ -171,11 +179,12 @@ export class BloumSelect {
       this.#searchValue = (e.target as HTMLInputElement).value
         .toLowerCase()
         .trim();
-      this.#updateOptionsList();
-    });
 
-    this.#wrapper.addEventListener("blur", () => {
-      this.close();
+      // Reset the highlighted index to the first match
+      this.#highlighted = -1;
+      this.#highlightNext();
+
+      this.#updateOptionsList();
     });
 
     this.#wrapper.addEventListener("keydown", (e) => {
@@ -188,7 +197,7 @@ export class BloumSelect {
         if (!this.isOpen) {
           this.open();
         } else {
-          this.#highlighted++;
+          this.#highlightNext();
           this.#updateOptionsList();
         }
       }
@@ -198,9 +207,13 @@ export class BloumSelect {
         if (!this.isOpen) {
           this.open();
         } else {
-          this.#highlighted--;
+          this.#highlightPrevious();
           this.#updateOptionsList();
         }
+      }
+
+      if (e.key === "Tab") {
+        this.close();
       }
 
       if (e.key === "Enter") {
@@ -212,23 +225,28 @@ export class BloumSelect {
     this.#optionsContainer.addEventListener("mousemove", (event) => {
       if (event.target instanceof HTMLElement) {
         const option = event.target;
-        this.#highlighted = parseInt(option.getAttribute("data-index") || "-1");
+        this.#highlightIndex(
+          parseInt(option.getAttribute("data-index") || "-1"),
+        );
         this.#updateOptionsList();
       }
     });
 
     document.addEventListener("click", (event) => {
       if (this.isOpen && !this.#wrapper.contains(event.target as Node)) {
-        this.close();
+        this.close(false);
       }
     });
   }
 
   #parseOptions(props?: BloumSelectConfiguration): BloumSelectConfiguration {
-    const parsedProps = props ?? DEFAULT_PROPS;
+    // Merge the default props with the provided props
+    const parsedProps = { ...DEFAULT_PROPS, ...props };
+
     if (this.#field.hasAttribute("placeholder")) {
       parsedProps.placeholder = this.#field.getAttribute("placeholder") || "";
     }
+
     return parsedProps;
   }
 
@@ -246,6 +264,7 @@ export class BloumSelect {
           this.selectIndex(i);
         });
 
+        this.#options.push(optionElement);
         this.#optionsContainer.append(optionElement);
       }
     }
@@ -255,8 +274,8 @@ export class BloumSelect {
     // Check if the highlighted index is out of bounds
     if (this.#highlighted < 0) {
       this.#highlighted = 0;
-    } else if (this.#highlighted >= this.#optionsContainer.children.length) {
-      this.#highlighted = this.#optionsContainer.children.length - 1;
+    } else if (this.#highlighted >= this.#optionCount) {
+      this.#highlighted = this.#optionCount - 1;
     }
 
     const options =
@@ -265,8 +284,7 @@ export class BloumSelect {
       );
     for (let i = 0; i < options.length; i++) {
       const option = options[i];
-      const optionText = option.innerText.toLowerCase().trim();
-      if (optionText.includes(this.#searchValue)) {
+      if (this.#matchSearch(option)) {
         option.classList.remove("bl-select-hidden");
       } else {
         option.classList.add("bl-select-hidden");
@@ -274,6 +292,7 @@ export class BloumSelect {
 
       if (i === this.#highlighted) {
         option.classList.add("bl-select-highlighted");
+        option.scrollIntoView({ block: "nearest" });
       } else {
         option.classList.remove("bl-select-highlighted");
       }
@@ -284,5 +303,45 @@ export class BloumSelect {
         option.classList.remove("bl-select-selected");
       }
     }
+  }
+
+  #highlightNext() {
+    for (let i = this.#highlighted + 1; i < this.#optionCount; i++) {
+      const option = this.#options[i];
+      if (this.#matchSearch(option)) {
+        this.#highlightIndex(i);
+        break;
+      }
+    }
+  }
+
+  #highlightPrevious() {
+    for (let i = this.#highlighted - 1; i >= 0; i--) {
+      const option = this.#options[i];
+      if (this.#matchSearch(option)) {
+        this.#highlightIndex(i);
+        break;
+      }
+    }
+  }
+
+  #highlightIndex(index: number) {
+    this.#highlighted = index;
+
+    // Check if the highlighted index is out of bounds
+    if (this.#highlighted < 0) {
+      this.#highlighted = 0;
+    } else if (this.#highlighted >= this.#optionCount) {
+      this.#highlighted = this.#optionCount - 1;
+    }
+  }
+
+  #matchSearch(option: HTMLDivElement) {
+    const optionText = option.innerText.toLowerCase().trim();
+    return optionText.includes(this.#searchValue);
+  }
+
+  get #optionCount() {
+    return this.#options.length;
   }
 }
