@@ -34,6 +34,8 @@ export class BloumSelect {
   #searchValue = "";
   #highlighted = -1;
 
+  #cleanupEvents: VoidFunction | null = null;
+
   constructor(
     element: string | BloumInput,
     options?: BloumSelectConfiguration,
@@ -49,7 +51,7 @@ export class BloumSelect {
     }
 
     if (element.bloumselect !== undefined) {
-      // TODO: Destroy the previous instance
+      element.bloumselect.destroy();
     }
 
     this.#field = element;
@@ -126,6 +128,14 @@ export class BloumSelect {
     this.close();
   }
 
+  destroy() {
+    if (this.#cleanupEvents) {
+      this.#cleanupEvents();
+    }
+    this.#wrapper.remove();
+    delete this.#field.bloumselect;
+  }
+
   #render() {
     this.#wrapper = document.createElement("div");
     this.#wrapper.classList.add("bl-select");
@@ -167,13 +177,13 @@ export class BloumSelect {
   }
 
   #initializeEvents() {
-    this.#wrapper.addEventListener("click", (e) => {
+    this.#wrapper.addEventListener("click", (e: MouseEvent) => {
       if (e.target instanceof HTMLElement && this.#inner.contains(e.target)) {
         this.toggle();
       }
     });
 
-    this.#searchInput?.addEventListener("input", (e) => {
+    this.#searchInput?.addEventListener("input", (e: Event) => {
       this.#searchValue = (e.target as HTMLInputElement).value
         .toLowerCase()
         .trim();
@@ -185,7 +195,7 @@ export class BloumSelect {
       this.#updateOptionsList();
     });
 
-    this.#wrapper.addEventListener("keydown", (e) => {
+    this.#wrapper.addEventListener("keydown", (e: KeyboardEvent) => {
       if (e.key === "Escape" || e.key === "Esc") {
         this.close();
       }
@@ -220,9 +230,9 @@ export class BloumSelect {
       }
     });
 
-    this.#optionsContainer.addEventListener("mousemove", (event) => {
-      if (event.target instanceof HTMLElement) {
-        const option = event.target;
+    this.#optionsContainer.addEventListener("mousemove", (e: MouseEvent) => {
+      if (e.target instanceof HTMLElement) {
+        const option = e.target;
         this.#highlightIndex(
           parseInt(option.getAttribute("data-index") || "-1"),
         );
@@ -230,11 +240,16 @@ export class BloumSelect {
       }
     });
 
-    document.addEventListener("click", (event) => {
-      if (this.isOpen && !this.#wrapper.contains(event.target as Node)) {
+    const handleDocumentClick = (e: MouseEvent) => {
+      if (this.isOpen && !this.#wrapper.contains(e.target as Node)) {
         this.close(false);
       }
-    });
+    };
+    document.addEventListener("click", handleDocumentClick);
+
+    this.#cleanupEvents = () => {
+      document.removeEventListener("click", handleDocumentClick);
+    };
   }
 
   #parseOptions(props?: BloumSelectConfiguration): BloumSelectConfiguration {

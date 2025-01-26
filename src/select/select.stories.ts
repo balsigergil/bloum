@@ -49,6 +49,35 @@ export const Select: Story = {
 <script>
 new BloumSelect('#select-1');
 new BloumSelect('#select-2', { isSearchable: true });
+
+// Garbage collection example
+// let instance = new BloumSelect('#select-2', { isSearchable: true });
+// const weakRef = new WeakRef(instance);
+// const registry = new FinalizationRegistry((heldValue) => {
+//   console.log('Instance with id ' + heldValue +  ' has been garbage collected');
+// });
+//
+// registry.register(instance, 'BloumSelectInstance');
+//
+// // Destroy the instance
+// instance.destroy();
+//
+// // Force garbage collection (only works in environments where this is possible)
+// if (globalThis.gc) {
+//   globalThis.gc();
+// }
+//
+// // Check if the instance has been garbage collected
+// setTimeout(() => {
+//   if (weakRef.deref() === undefined) {
+//     console.log('Instance has been garbage collected');
+//   } else {
+//     console.log('Instance is still in memory');
+//     console.log(weakRef.deref());
+//   }
+// }, 3000);
+//
+// instance = null;
 </script>
     `;
   },
