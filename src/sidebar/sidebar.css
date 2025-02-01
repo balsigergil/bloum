@@ -147,7 +147,7 @@ html:has(.sidebar.show) {
   gap: 0.125rem;
 }
 
-.sidebar-item a {
+.sidebar-item .sidebar-link {
   color: var(--bl-sidebar-color);
   padding: 0.5rem 1.5rem;
   text-decoration: none;
@@ -160,14 +160,15 @@ html:has(.sidebar.show) {
   transition-duration: var(--bl-transition-md);
   transition-property: background-color, color;
   text-wrap: nowrap;
+  width: 100%;
 }
 
-.sidebar-item a:hover {
+.sidebar-item .sidebar-link:hover {
   background-color: var(--bl-sidebar-bg-hover);
   color: var(--bl-sidebar-color-hover);
 }
 
-.sidebar-item.active a {
+.sidebar-item.active .sidebar-link {
   color: var(--bl-sidebar-color-hover);
   background-color: var(--bl-sidebar-bg-hover);
 }

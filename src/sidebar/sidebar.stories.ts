@@ -34,25 +34,25 @@ const meta: Meta = {
           <h3 class="sidebar-group-title">Dashboard</h3>
           <ul class="sidebar-nav">
             <li class="sidebar-item active">
-              <a href="#">
+              <a href="#" class="sidebar-link">
                 <i class="fa-solid fa-home fa-fw"></i>
                 Home
               </a>
             </li>
             <li class="sidebar-item">
-              <a href="#">
+              <a href="#" class="sidebar-link">
                 <i class="fa-solid fa-bars-progress fa-fw"></i>
                 Projects
               </a>
             </li>
             <li class="sidebar-item">
-              <a href="#">
+              <a href="#" class="sidebar-link">
                 <i class="fa-solid fa-list-check fa-fw"></i>
                 Tasks
               </a>
             </li>
             <li class="sidebar-item">
-              <a href="#">
+              <a href="#" class="sidebar-link">
                 <i class="fa-solid fa-users fa-fw"></i>
                 Users
               </a>
@@ -63,19 +63,19 @@ const meta: Meta = {
           <h3 class="sidebar-group-title">Administration</h3>
           <ul class="sidebar-nav">
             <li class="sidebar-item">
-              <a href="#">
+              <a href="#" class="sidebar-link">
                 <i class="fa-solid fa-dollar fa-fw"></i>
                 Finance
               </a>
             </li>
             <li class="sidebar-item">
-              <a href="#">
+              <a href="#" class="sidebar-link">
                 <i class="fa-solid fa-file fa-fw"></i>
                 Reports
               </a>
             </li>
             <li class="sidebar-item">
-              <a href="#">
+              <a href="#" class="sidebar-link">
                 <i class="fa-solid fa-wrench fa-fw"></i>
                 Parameters
               </a>
@@ -86,17 +86,25 @@ const meta: Meta = {
       <div class="sidebar-bottom">
         <ul class="sidebar-nav">
           <li class="sidebar-item">
-            <a href="#">
+            <a href="#" class="sidebar-link">
               <i class="fa-solid fa-circle-question fa-fw"></i>
               Help
             </a>
           </li>
           <li class="sidebar-item">
-            <a href="#">
+            <a href="#" class="sidebar-link">
               <i class="fa-solid fa-cog fa-fw"></i>
               Settings
             </a>
           </li>
+           <li class="sidebar-item">
+             <form action="" method="post">
+               <button class="sidebar-link" type="submit">
+                 <i class="fa-solid fa-sign-out fa-fw"></i>
+                 Logout
+               </button>
+             </form>
+           </li>
         </ul>
         <div class="p-4 flex justify-between items-center">
           <div class="flex items-center gap-2">
