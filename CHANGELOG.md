@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.7.0](https://github.com/balsigergil/bloum/compare/v0.6.4...v0.7.0) (2025-02-01)
+
+### Features
+
+* **sidebar:** ability to use form and button as sidebar item ([cc5feef](https://github.com/balsigergil/bloum/commit/cc5feefe0490e095d1c32115598b305e4dc6c52c))
+
 ## [0.6.4](https://github.com/balsigergil/bloum/compare/v0.6.3...v0.6.4) (2025-01-25)
 
 ### Bug Fixes
