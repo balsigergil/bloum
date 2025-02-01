@@ -46,9 +46,24 @@ export const Select: Story = {
     <option value="pear">Pear</option>
   </select>
 </div>
+<form action="" method="get">
+  <select name="fruits" id="select-3" required multiple>
+    <option value="apple">Apple</option>
+    <option value="orange">Orange</option>
+    <option value="banana">Banana</option>
+    <option value="grape">Grape</option>
+    <option value="kiwi">Kiwi</option>
+    <option value="mango">Mango</option>
+    <option value="strawberry">Strawberry</option>
+    <option value="watermelon">Watermelon</option>
+    <option value="pineapple">Pineapple</option>
+    <option value="pear">Pear</option>
+  </select>
+</form>
 <script>
 new BloumSelect('#select-1');
 new BloumSelect('#select-2', { isSearchable: true });
+new BloumSelect('#select-3', { isSearchable: true });
 
 // Garbage collection example
 // let instance = new BloumSelect('#select-2', { isSearchable: true });
