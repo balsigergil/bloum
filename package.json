@@ -97,9 +97,9 @@
     "vite": "^6.0.11"
   },
   "peerDependencies": {
-    "@floating-ui/dom": "^1.6.13",
-    "@floating-ui/core": "^1.6.9",
-    "focus-trap": "^7.6.4"
+    "@floating-ui/dom": "^1",
+    "@floating-ui/core": "^1",
+    "focus-trap": "^7"
   },
   "lint-staged": {
     "./src/**/*.ts": "eslint",
