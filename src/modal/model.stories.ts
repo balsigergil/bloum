@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from "@storybook/html";
 
 const meta: Meta = {
-  title: "Modal",
+  title: "Components/Modal",
   tags: ["!autodocs"],
   render: () => {
     return `

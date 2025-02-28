@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from "@storybook/html";
 
 const meta: Meta = {
-  title: "Sidebar",
+  title: "Components/Sidebar",
   parameters: {
     layout: "fullscreen",
   },

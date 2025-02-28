@@ -11,7 +11,7 @@ export type ButtonArgs = {
 };
 
 const meta: Meta<ButtonArgs> = {
-  title: "Button",
+  title: "Components/Button",
   argTypes: {
     color: {
       control: "select",

@@ -6,7 +6,7 @@ type TableArgs = {
 };
 
 const meta: Meta<TableArgs> = {
-  title: "Table",
+  title: "Components/Table",
   render: (args) => {
     const table = document.createElement("table");
     table.classList.add("table");

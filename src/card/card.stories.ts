@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/html";
 
 const meta: Meta = {
-  title: "Card",
+  title: "Components/Card",
   render: () => {
     return `
       <div class="card">

@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/html";
 import { ButtonArgs } from "./button.stories";
 
 const meta: Meta<ButtonArgs> = {
-  title: "Icon button",
+  title: "Components/Icon Button",
   argTypes: {
     color: {
       control: "select",

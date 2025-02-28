@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from "@storybook/html";
 
 const meta: Meta = {
-  title: "Forms",
+  title: "Components/Forms",
 };
 
 export default meta;
