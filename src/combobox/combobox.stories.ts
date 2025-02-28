@@ -50,11 +50,11 @@ export const Select: Story = {
   <select name="fruits" id="combobox-3" required multiple>
     <option value="apple">Apple</option>
     <option value="orange">Orange</option>
-    <option value="banana">Banana</option>
+    <option value="banana" selected>Banana</option>
     <option value="grape">Grape</option>
     <option value="kiwi">Kiwi</option>
     <option value="mango">Mango</option>
-    <option value="strawberry">Strawberry</option>
+    <option value="strawberry" selected>Strawberry</option>
     <option value="watermelon">Watermelon</option>
     <option value="pineapple">Pineapple</option>
     <option value="pear">Pear</option>

@@ -1,6 +1,7 @@
+import { parseOptions } from "./utils";
+
 export interface BlComboboxConfig {
   placeholder: string;
-  selected?: string | string[];
   noResultsText?: string;
   isSearchable?: boolean;
   isMultiple?: boolean;
@@ -13,7 +14,7 @@ export const DEFAULT_PROPS: BlComboboxConfig = {
   isMultiple: false,
 };
 
-interface BlComboboxInput extends HTMLElement {
+interface BlComboboxInput extends HTMLSelectElement {
   blcombobox?: BlCombobox;
 }
 
@@ -26,13 +27,23 @@ export class BlCombobox {
 
   #wrapper!: HTMLDivElement;
   #inner!: HTMLDivElement;
+
+  // Wrapper around the selected items in the input field
   #itemsContainer!: HTMLDivElement;
+
+  // The dropdown menu
   #menu!: HTMLDivElement;
+
   #searchInput: HTMLInputElement | null = null;
+
   #optionsContainer!: HTMLDivElement;
   #options: HTMLDivElement[] = [];
 
+  // Indices of the selected options
   #selected: number[] = [];
+
+  // Indices of the highlighted items in the selected options
+  // (only for multiple)
   #activeItems: number[] = [];
   #searchValue = "";
   #highlighted = -1;
@@ -41,7 +52,7 @@ export class BlCombobox {
 
   constructor(element: string | BlComboboxInput, options?: BlComboboxConfig) {
     if (typeof element === "string") {
-      const domElement = document.querySelector<HTMLElement>(element);
+      const domElement = document.querySelector<HTMLSelectElement>(element);
       if (domElement === null) {
         throw new Error(
           `Element ${element} not found to initialize BlCombobox`,
@@ -57,7 +68,7 @@ export class BlCombobox {
     this.#field = element;
     this.#field.blcombobox = this;
     // this.#field.style.display = "none";
-    this.#config = this.#parseOptions(options);
+    this.#config = parseOptions(this.#field, options);
 
     this.#render();
     this.#initializeEvents();
@@ -66,6 +77,9 @@ export class BlCombobox {
     this.#setInitialSelected();
   }
 
+  /**
+   * Open the dropdown and focus on the search input field
+   */
   open() {
     this.#wrapper.classList.add("open");
 
@@ -83,6 +97,10 @@ export class BlCombobox {
     this.#updateOptionsList();
   }
 
+  /**
+   * Close the dropdown
+   * @param focusWrapper Focus on the field after closing the dropdown
+   */
   close(focusWrapper = true) {
     this.#updateItemsList();
     this.#updateItemsClasses();
@@ -92,6 +110,9 @@ export class BlCombobox {
     if (focusWrapper) this.#wrapper.focus();
   }
 
+  /**
+   * Toggle the dropdown
+   */
   toggle() {
     if (this.isOpen) {
       this.close();
@@ -100,22 +121,39 @@ export class BlCombobox {
     }
   }
 
+  /**
+   * Check if the dropdown is open
+   */
   get isOpen() {
     return this.#wrapper.classList.contains("open");
   }
 
-  selectIndex(index: number) {
-    // Check if the index is out of bounds
-    if (index < 0 || index >= this.#optionsContainer.children.length) {
+  /**
+   * Select an option by its index
+   * @param index
+   */
+  selectIndex(index: number | number[]) {
+    if (!Array.isArray(index)) {
+      index = [index];
+    }
+
+    if (index.length === 0) {
       return;
     }
 
-    if (this.#config.isMultiple) {
-      if (!this.#selected.includes(index)) {
-        this.#selected.push(index);
+    for (const i of index) {
+      // Check if the index is out of bounds
+      if (i < 0 || i >= this.#optionsContainer.children.length) {
+        return;
       }
-    } else {
-      this.#selected = [index];
+
+      if (this.#config.isMultiple) {
+        if (!this.#selected.includes(i)) {
+          this.#selected.push(i);
+        }
+      } else {
+        this.#selected = [i];
+      }
     }
 
     // Clear the search input field
@@ -125,14 +163,12 @@ export class BlCombobox {
     }
 
     // Update the underlying combobox element
-    if (this.#field instanceof HTMLSelectElement) {
-      if (this.#config.isMultiple) {
-        for (let i = 0; i < this.#field.options.length; i++) {
-          this.#field.options[i].selected = this.#selected.includes(i);
-        }
-      } else {
-        this.#field.selectedIndex = index;
+    if (this.#config.isMultiple) {
+      for (let i = 0; i < this.#field.options.length; i++) {
+        this.#field.options[i].selected = this.#selected.includes(i);
       }
+    } else {
+      this.#field.selectedIndex = index[0];
     }
 
     // Update the visible item
@@ -147,6 +183,9 @@ export class BlCombobox {
     }
   }
 
+  /**
+   * Destroy the component and remove all event listeners
+   */
   destroy() {
     if (this.#cleanupEvents) {
       this.#cleanupEvents();
@@ -311,55 +350,31 @@ export class BlCombobox {
     };
   }
 
-  #parseOptions(props?: BlComboboxConfig): BlComboboxConfig {
-    // Merge the default props with the provided props
-    const parsedProps = { ...DEFAULT_PROPS };
-
-    if (this.#field.hasAttribute("placeholder")) {
-      parsedProps.placeholder = this.#field.getAttribute("placeholder") || "";
-    }
-
-    if (this.#field.hasAttribute("multiple")) {
-      parsedProps.isMultiple = true;
-    }
-
-    return { ...parsedProps, ...props };
-  }
-
+  /**
+   * Set the selected options based on the <select> element
+   * This method is called only once when the component is initialized.
+   * @private
+   */
   #setInitialSelected() {
     const selected = [];
-    if (this.#config?.selected !== undefined) {
-      if (this.#field instanceof HTMLSelectElement) {
-        for (let i = 0; i < this.#field.options.length; i++) {
-          const option = this.#field.options[i];
-          if (Array.isArray(this.#config.selected)) {
-            if (this.#config.selected.includes(option.value)) {
-              selected.push(i);
-            }
-          } else {
-            if (option.value === this.#config.selected) {
-              selected.push(i);
-            }
-          }
-        }
-      }
-    } else {
-      if (this.#field instanceof HTMLSelectElement) {
-        // Look for selected options
-        for (let i = 0; i < this.#field.options.length; i++) {
-          if (this.#field.options[i].selected) {
-            selected.push(i);
-          }
-        }
+
+    // Look for selected options
+    for (let i = 0; i < this.#field.options.length; i++) {
+      if (this.#field.options[i].hasAttribute("selected")) {
+        selected.push(i);
       }
     }
 
-    // TODO: Handle multiple selected options
     if (selected.length > 0) {
-      this.selectIndex(selected[0]);
+      this.selectIndex(selected);
     }
   }
 
+  /**
+   * Populate the option list.
+   * This method is called only once when the component is initialized.
+   * @private
+   */
   #populateOptions() {
     if (this.#field instanceof HTMLSelectElement) {
       for (let i = 0; i < this.#field.options.length; i++) {
@@ -380,11 +395,20 @@ export class BlCombobox {
     }
   }
 
+  /**
+   * Check if the raw option matches the search value
+   * @param option The raw option element
+   * @private
+   */
   #matchSearch(option: HTMLDivElement) {
     const optionText = option.innerText.toLowerCase().trim();
     return optionText.includes(this.#searchValue);
   }
 
+  /**
+   * Update the options list based on the search value
+   * @private
+   */
   #updateOptionsList() {
     // Check if the highlighted index is out of bounds
     if (this.#highlighted < 0) {
@@ -425,6 +449,10 @@ export class BlCombobox {
     }
   }
 
+  /**
+   * Highlight the next option in the dropdown list
+   * @private
+   */
   #highlightNext() {
     for (let i = this.#highlighted + 1; i < this.#optionCount; i++) {
       const option = this.#options[i];
@@ -438,6 +466,10 @@ export class BlCombobox {
     }
   }
 
+  /**
+   * Highlight the previous option in the dropdown list
+   * @private
+   */
   #highlightPrevious() {
     for (let i = this.#highlighted - 1; i >= 0; i--) {
       const option = this.#options[i];
@@ -466,6 +498,10 @@ export class BlCombobox {
     return this.#options.length;
   }
 
+  /**
+   * Update the selected items list
+   * @private
+   */
   #updateItemsList() {
     if (this.#config.isMultiple) {
       this.#itemsContainer.innerHTML = "";
@@ -493,6 +529,14 @@ export class BlCombobox {
     }
   }
 
+  /* ====== Only for multiple select ====== */
+
+  /**
+   * Create a selected item element (only for multiple select)
+   * @param text Content of the item
+   * @param index Index of the item in the list of selected options
+   * @private
+   */
   #createItem(text: string, index: number) {
     const item = document.createElement("span");
     item.classList.add("bl-combobox-item");
@@ -526,6 +570,11 @@ export class BlCombobox {
     return item;
   }
 
+  /**
+   * Remove a selected item (only for multiple select)
+   * @param index Index of the item to deselect
+   * @private
+   */
   #removeItem(index: number | number[]) {
     if (Array.isArray(index)) {
       this.#selected = this.#selected.filter((_, i) => !index.includes(i));
@@ -537,6 +586,10 @@ export class BlCombobox {
     this.#searchInput?.focus();
   }
 
+  /**
+   * Update the classes of the selected items list
+   * @private
+   */
   #updateItemsClasses() {
     for (
       let selectedIndex = 0;

@@ -61,7 +61,7 @@
 }
 
 .bl-combobox-item-active {
-  background-color: var(--bl-clr-primary-400);
+  background-color: var(--bl-clr-gray-300);
 }
 
 .bl-combobox-item-remove {
