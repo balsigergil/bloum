@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from "@storybook/html";
 
-export type SelectArgs = {
+export type ComboboxArgs = {
   multiple: boolean;
   disabled: boolean;
   readonly: boolean;
@@ -8,18 +8,18 @@ export type SelectArgs = {
   clearable: boolean;
 };
 
-const meta: Meta<SelectArgs> = {
-  title: "Select",
+const meta: Meta<ComboboxArgs> = {
+  title: "components/Combobox",
 };
 
 export default meta;
-type Story = StoryObj<SelectArgs>;
+type Story = StoryObj<ComboboxArgs>;
 
 export const Select: Story = {
   render: () => {
     return `
 <div>
-  <select name="fruits" id="select-1">
+  <select name="fruits" id="combobox-1">
     <option value="apple">Apple</option>
     <option value="orange">Orange</option>
     <option value="banana" selected>Banana</option>
@@ -33,7 +33,7 @@ export const Select: Story = {
   </select>
 </div>
 <div>
-  <select name="fruits" id="select-2">
+  <select name="fruits" id="combobox-2">
     <option value="apple">Apple</option>
     <option value="orange">Orange</option>
     <option value="banana">Banana</option>
@@ -47,7 +47,7 @@ export const Select: Story = {
   </select>
 </div>
 <form action="" method="get">
-  <select name="fruits" id="select-3" required multiple>
+  <select name="fruits" id="combobox-3" required multiple>
     <option value="apple">Apple</option>
     <option value="orange">Orange</option>
     <option value="banana">Banana</option>
@@ -61,9 +61,9 @@ export const Select: Story = {
   </select>
 </form>
 <script>
-new BloumSelect('#select-1');
-new BloumSelect('#select-2', { isSearchable: true });
-new BloumSelect('#select-3', { isSearchable: true });
+new BlCombobox('#combobox-1');
+new BlCombobox('#combobox-2', { isSearchable: true });
+new BlCombobox('#combobox-3', { isSearchable: true });
 
 // Garbage collection example
 // let instance = new BloumSelect('#select-2', { isSearchable: true });

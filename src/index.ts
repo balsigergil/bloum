@@ -8,7 +8,7 @@ import { AutogrowTextarea } from "./forms/AutogrowTextarea";
 import { openModal, closeModal, initModal } from "./modal/Modal";
 import { initTooltip, Tooltip } from "./tooltip/tooltip";
 import "./sidebar/sidebar";
-import { BloumSelect } from "./select/Select";
+import { BlCombobox } from "./combobox/Combobox";
 
 Tabs.register();
 TabList.register();
@@ -22,7 +22,7 @@ initModal();
 // @ts-ignore
 window.Tooltip = Tooltip;
 // @ts-ignore
-window.BloumSelect = BloumSelect;
+window.BlCombobox = BlCombobox;
 
 initTooltip();
 
@@ -37,5 +37,5 @@ export {
   openModal,
   closeModal,
   Tooltip,
-  BloumSelect,
+  BlCombobox,
 };

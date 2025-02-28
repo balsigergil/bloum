@@ -1,4 +1,4 @@
-.bl-select {
+.bl-combobox {
   position: relative;
   display: flex;
   border: 1px solid var(--bl-form-border-color);
@@ -14,7 +14,7 @@
   transition: outline-color var(--bl-transition-xs);
 }
 
-.bl-select:focus-within {
+.bl-combobox:focus-within {
   outline-style: solid;
   outline-color: var(--bl-form-primary-color);
   outline-width: 2px;
@@ -22,7 +22,7 @@
   border-color: transparent;
 }
 
-.bl-select-inner {
+.bl-combobox-inner {
   display: flex;
   width: 100%;
   padding: 0 var(--bl-form-input-padding);
@@ -31,11 +31,11 @@
   gap: 0.5rem;
 }
 
-.bl-select[data-multiple] .bl-select-inner {
+.bl-combobox[data-multiple] .bl-combobox-inner {
   padding: 0.25rem var(--bl-form-input-padding);
 }
 
-.bl-select-arrow {
+.bl-combobox-arrow {
   height: calc(var(--bl-form-input-height) / 2);
   width: calc(var(--bl-form-input-height) / 2);
   flex-shrink: 0;
@@ -47,24 +47,24 @@
   background-position: center;
 }
 
-.bl-select-items {
+.bl-combobox-items {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
 }
 
-.bl-select-item {
+.bl-combobox-item {
   background-color: var(--bl-clr-gray-200);
   border-radius: var(--bl-border-radius);
   display: inline-flex;
   padding-inline: 0.25rem;
 }
 
-.bl-select-item-active {
+.bl-combobox-item-active {
   background-color: var(--bl-clr-primary-400);
 }
 
-.bl-select-item-remove {
+.bl-combobox-item-remove {
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -72,7 +72,7 @@
   padding: 0 0.25rem;
 }
 
-.bl-select-menu {
+.bl-combobox-menu {
   position: absolute;
   width: 100%;
   top: calc(100% + 0.25rem);
@@ -86,7 +86,7 @@
   overflow: hidden;
 }
 
-.bl-select-search {
+.bl-combobox-search {
   outline: none;
   height: var(--bl-form-input-height);
   padding: 0 var(--bl-form-input-padding);
@@ -95,30 +95,30 @@
   border-bottom: 1px solid var(--bl-form-border-color);
 }
 
-.bl-select.open .bl-select-menu {
+.bl-combobox.open .bl-combobox-menu {
   display: block;
 }
 
-.bl-select-option.bl-select-hidden {
+.bl-combobox-option.bl-combobox-hidden {
   display: none;
 }
 
-.bl-select-options {
+.bl-combobox-options {
   max-height: 16rem;
   overflow-y: auto;
   outline: none;
 }
 
-.bl-select-option {
+.bl-combobox-option {
   padding: 0.25rem 0.5rem;
   cursor: pointer;
   user-select: none;
 }
 
-.bl-select-option.bl-select-highlighted {
+.bl-combobox-option.bl-combobox-highlighted {
   background-color: var(--bl-clr-gray-100);
 }
 
-.bl-select-option.bl-select-selected {
+.bl-combobox-option.bl-combobox-selected {
   background-color: var(--bl-clr-gray-200);
 }

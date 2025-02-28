@@ -1,4 +1,4 @@
-export interface BloumSelectConfiguration {
+export interface BlComboboxConfig {
   placeholder: string;
   selected?: string | string[];
   noResultsText?: string;
@@ -6,23 +6,23 @@ export interface BloumSelectConfiguration {
   isMultiple?: boolean;
 }
 
-export const DEFAULT_PROPS: BloumSelectConfiguration = {
+export const DEFAULT_PROPS: BlComboboxConfig = {
   placeholder: "Select an option...",
   noResultsText: "No results found",
   isSearchable: false,
   isMultiple: false,
 };
 
-interface BloumInput extends HTMLElement {
-  bloumselect?: BloumSelect;
+interface BlComboboxInput extends HTMLElement {
+  blcombobox?: BlCombobox;
 }
 
-export class BloumSelect {
-  // The underlying select element
-  readonly #field: BloumInput;
+export class BlCombobox {
+  // The underlying combobox element
+  readonly #field: BlComboboxInput;
 
   // All options to configure the component
-  readonly #config: BloumSelectConfiguration;
+  readonly #config: BlComboboxConfig;
 
   #wrapper!: HTMLDivElement;
   #inner!: HTMLDivElement;
@@ -39,26 +39,23 @@ export class BloumSelect {
 
   #cleanupEvents: VoidFunction | null = null;
 
-  constructor(
-    element: string | BloumInput,
-    options?: BloumSelectConfiguration,
-  ) {
+  constructor(element: string | BlComboboxInput, options?: BlComboboxConfig) {
     if (typeof element === "string") {
       const domElement = document.querySelector<HTMLElement>(element);
       if (domElement === null) {
         throw new Error(
-          `Element ${element} not found to initialize BloumSelect`,
+          `Element ${element} not found to initialize BlCombobox`,
         );
       }
       element = domElement;
     }
 
-    if (element.bloumselect !== undefined) {
-      element.bloumselect.destroy();
+    if (element.blcombobox !== undefined) {
+      element.blcombobox.destroy();
     }
 
     this.#field = element;
-    this.#field.bloumselect = this;
+    this.#field.blcombobox = this;
     // this.#field.style.display = "none";
     this.#config = this.#parseOptions(options);
 
@@ -127,7 +124,7 @@ export class BloumSelect {
       this.#searchInput.value = "";
     }
 
-    // Update the underlying select element
+    // Update the underlying combobox element
     if (this.#field instanceof HTMLSelectElement) {
       if (this.#config.isMultiple) {
         for (let i = 0; i < this.#field.options.length; i++) {
@@ -155,43 +152,43 @@ export class BloumSelect {
       this.#cleanupEvents();
     }
     this.#wrapper.remove();
-    delete this.#field.bloumselect;
+    delete this.#field.blcombobox;
   }
 
   #render() {
     this.#wrapper = document.createElement("div");
-    this.#wrapper.classList.add("bl-select");
+    this.#wrapper.classList.add("bl-combobox");
     this.#wrapper.tabIndex = 0;
     if (this.#config.isMultiple) {
       this.#wrapper.setAttribute("data-multiple", "");
     }
 
     this.#inner = document.createElement("div");
-    this.#inner.classList.add("bl-select-inner");
+    this.#inner.classList.add("bl-combobox-inner");
 
     this.#itemsContainer = document.createElement("div");
-    this.#itemsContainer.classList.add("bl-select-items");
+    this.#itemsContainer.classList.add("bl-combobox-items");
     this.#itemsContainer.innerText = this.#config.placeholder;
 
     const arrow = document.createElement("div");
-    arrow.classList.add("bl-select-arrow");
+    arrow.classList.add("bl-combobox-arrow");
 
     this.#inner.append(this.#itemsContainer, arrow);
     this.#wrapper.append(this.#inner);
 
     this.#menu = document.createElement("div");
-    this.#menu.classList.add("bl-select-menu");
+    this.#menu.classList.add("bl-combobox-menu");
 
     if (this.#config.isSearchable) {
       this.#searchInput = document.createElement("input");
       this.#searchInput.setAttribute("type", "text");
-      this.#searchInput.classList.add("bl-select-search");
+      this.#searchInput.classList.add("bl-combobox-search");
       this.#searchInput.setAttribute("placeholder", "Search...");
       this.#menu.append(this.#searchInput);
     }
 
     this.#optionsContainer = document.createElement("div");
-    this.#optionsContainer.classList.add("bl-select-options");
+    this.#optionsContainer.classList.add("bl-combobox-options");
     this.#optionsContainer.tabIndex = 0;
     this.#populateOptions();
 
@@ -314,7 +311,7 @@ export class BloumSelect {
     };
   }
 
-  #parseOptions(props?: BloumSelectConfiguration): BloumSelectConfiguration {
+  #parseOptions(props?: BlComboboxConfig): BlComboboxConfig {
     // Merge the default props with the provided props
     const parsedProps = { ...DEFAULT_PROPS };
 
@@ -368,7 +365,7 @@ export class BloumSelect {
       for (let i = 0; i < this.#field.options.length; i++) {
         const option = this.#field.options[i];
         const optionElement = document.createElement("div");
-        optionElement.classList.add("bl-select-option");
+        optionElement.classList.add("bl-combobox-option");
         optionElement.innerText = option.text;
         optionElement.setAttribute("data-value", option.value);
         optionElement.setAttribute("data-index", i.toString());
@@ -396,35 +393,34 @@ export class BloumSelect {
       this.#highlighted = this.#optionCount - 1;
     }
 
-    const options =
-      this.#optionsContainer.querySelectorAll<HTMLDivElement>(
-        ".bl-select-option",
-      );
+    const options = this.#optionsContainer.querySelectorAll<HTMLDivElement>(
+      ".bl-combobox-option",
+    );
     for (let i = 0; i < options.length; i++) {
       const option = options[i];
       if (this.#matchSearch(option)) {
-        option.classList.remove("bl-select-hidden");
+        option.classList.remove("bl-combobox-hidden");
       } else {
-        option.classList.add("bl-select-hidden");
+        option.classList.add("bl-combobox-hidden");
         continue;
       }
 
       if (this.#config.isMultiple && this.#selected.includes(i)) {
-        option.classList.add("bl-select-hidden");
+        option.classList.add("bl-combobox-hidden");
         continue;
       }
 
       if (i === this.#highlighted) {
-        option.classList.add("bl-select-highlighted");
+        option.classList.add("bl-combobox-highlighted");
         option.scrollIntoView({ block: "nearest" });
       } else {
-        option.classList.remove("bl-select-highlighted");
+        option.classList.remove("bl-combobox-highlighted");
       }
 
       if (this.#selected.includes(i)) {
-        option.classList.add("bl-select-selected");
+        option.classList.add("bl-combobox-selected");
       } else {
-        option.classList.remove("bl-select-selected");
+        option.classList.remove("bl-combobox-selected");
       }
     }
   }
@@ -499,12 +495,12 @@ export class BloumSelect {
 
   #createItem(text: string, index: number) {
     const item = document.createElement("span");
-    item.classList.add("bl-select-item");
+    item.classList.add("bl-combobox-item");
 
     const itemText = document.createElement("span");
     itemText.innerText = text;
     const itemRemoveButton = document.createElement("span");
-    itemRemoveButton.classList.add("bl-select-item-remove");
+    itemRemoveButton.classList.add("bl-combobox-item-remove");
     itemRemoveButton.innerText = "×";
     itemRemoveButton.addEventListener("click", (e) => {
       e.preventDefault();
@@ -550,9 +546,9 @@ export class BloumSelect {
       const item = this.#itemsContainer.children[selectedIndex] as HTMLElement;
       if (item === undefined) continue;
       if (this.#activeItems.includes(selectedIndex)) {
-        item.classList.add("bl-select-item-active");
+        item.classList.add("bl-combobox-item-active");
       } else {
-        item.classList.remove("bl-select-item-active");
+        item.classList.remove("bl-combobox-item-active");
       }
     }
   }
