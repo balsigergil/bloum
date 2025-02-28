@@ -162,14 +162,7 @@ export class BlCombobox {
       this.#searchInput.value = "";
     }
 
-    // Update the underlying combobox element
-    if (this.#config.isMultiple) {
-      for (let i = 0; i < this.#field.options.length; i++) {
-        this.#field.options[i].selected = this.#selected.includes(i);
-      }
-    } else {
-      this.#field.selectedIndex = index[0];
-    }
+    this.#updateUnderlyingSelect();
 
     // Update the visible item
     this.#updateItemsList();
@@ -192,6 +185,19 @@ export class BlCombobox {
     }
     this.#wrapper.remove();
     delete this.#field.blcombobox;
+  }
+
+  /**
+   * TODO: Synchronize the component with the underlying <select> element
+   *
+   sync() {
+   }
+   */
+
+  #updateUnderlyingSelect() {
+    for (let i = 0; i < this.#field.options.length; i++) {
+      this.#field.options[i].selected = this.#selected.includes(i);
+    }
   }
 
   #render() {
@@ -275,7 +281,11 @@ export class BlCombobox {
 
       if (e.key === "Enter") {
         e.preventDefault();
-        this.selectIndex(this.#highlighted);
+        if (this.isOpen) {
+          this.selectIndex(this.#highlighted);
+        } else {
+          this.open();
+        }
       }
 
       if (e.key === "a" && (e.ctrlKey || e.metaKey)) {
@@ -583,6 +593,7 @@ export class BlCombobox {
     }
     this.#updateItemsList();
     this.#updateOptionsList();
+    this.#updateUnderlyingSelect();
     this.#searchInput?.focus();
   }
 
