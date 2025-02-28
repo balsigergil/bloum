@@ -430,6 +430,12 @@ export class BlCombobox {
     const options = this.#optionsContainer.querySelectorAll<HTMLDivElement>(
       ".bl-combobox-option",
     );
+
+    this.#optionsContainer
+      .querySelectorAll(".bl-combobox-no-results")
+      .forEach((el) => el.remove());
+
+    let foundOptions = 0;
     for (let i = 0; i < options.length; i++) {
       const option = options[i];
       if (this.#matchSearch(option)) {
@@ -439,10 +445,13 @@ export class BlCombobox {
         continue;
       }
 
+      // Hide the selected options from the dropdown list
       if (this.#config.isMultiple && this.#selected.includes(i)) {
         option.classList.add("bl-combobox-hidden");
         continue;
       }
+
+      foundOptions++;
 
       if (i === this.#highlighted) {
         option.classList.add("bl-combobox-highlighted");
@@ -456,6 +465,13 @@ export class BlCombobox {
       } else {
         option.classList.remove("bl-combobox-selected");
       }
+    }
+
+    if (foundOptions === 0) {
+      const noResults = document.createElement("div");
+      noResults.classList.add("bl-combobox-no-results", "bl-combobox-option");
+      noResults.innerText = this.#config.noResultsText || "No results found";
+      this.#optionsContainer.append(noResults);
     }
   }
 
