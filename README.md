@@ -1,7 +1,7 @@
 <div align="center">
     <div>
       <a href="https://www.bloum.dev">
-        <img src="https://raw.githubusercontent.com/balsigergil/bloum/main/.github/bloum_logo.png" width="400" height="150" alt="Bloum Logo">
+        <img src="https://raw.githubusercontent.com/balsigergil/bloum/main/.github/bloum_logo.png" width="450" height="150" alt="Bloum Logo">
       </a>
     </div>
     <strong>A powerful library of modern web components</strong>
