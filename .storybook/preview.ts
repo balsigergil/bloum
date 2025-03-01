@@ -2,7 +2,7 @@ import type { Preview, HtmlRenderer } from "@storybook/html";
 import { withThemeByClassName } from "@storybook/addon-themes";
 
 import "../src/index";
-import "../src/style.css";
+import "../src/bloum.css";
 import "@fortawesome/fontawesome-free/css/all.css";
 import "./preview.css";
 
