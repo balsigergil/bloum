@@ -1,14 +1,14 @@
 import "@ungap/custom-elements";
 
-import { Tabs } from "./tabs/Tabs";
-import { TabList } from "./tabs/TabList";
-import { Tab } from "./tabs/Tab";
-import { TabPanel } from "./tabs/TabPanel";
-import { AutogrowTextarea } from "./forms/AutogrowTextarea";
-import { openModal, closeModal, initModal } from "./modal/Modal";
-import { initTooltip, Tooltip } from "./tooltip/tooltip";
-import "./sidebar/sidebar";
-import { BlCombobox } from "./combobox/Combobox";
+import { Tabs } from "./components/tabs/Tabs";
+import { TabList } from "./components/tabs/TabList";
+import { Tab } from "./components/tabs/Tab";
+import { TabPanel } from "./components/tabs/TabPanel";
+import { AutogrowTextarea } from "./components/forms/AutogrowTextarea";
+import { openModal, closeModal, initModal } from "./components/modal/Modal";
+import { initTooltip, Tooltip } from "./components/tooltip/tooltip";
+import "./components/sidebar/sidebar";
+import { BlCombobox } from "./components/combobox/Combobox";
 
 Tabs.register();
 TabList.register();
