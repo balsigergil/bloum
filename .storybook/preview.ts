@@ -17,6 +17,17 @@ const preview: Preview = {
         date: /Date$/i,
       },
     },
+    options: {
+      storySort: {
+        method: "alphabetical",
+        order: [
+          "Documentation",
+          ["Introduction", "Customization", "Tokens"],
+          "Components",
+          "*",
+        ],
+      },
+    },
   },
   tags: ["autodocs"],
   decorators: [
@@ -25,7 +36,7 @@ const preview: Preview = {
         light: "",
         dark: "dark",
       },
-      defaultTheme: "light",
+      defaultTheme: "dark",
     }),
   ],
 };
