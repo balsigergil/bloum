@@ -61,9 +61,9 @@ export const Select: Story = {
   </select>
 </form>
 <script>
-new BlCombobox('#combobox-1');
-new BlCombobox('#combobox-2', { isSearchable: true });
-new BlCombobox('#combobox-3', { isSearchable: true });
+new Combobox('#combobox-1');
+new Combobox('#combobox-2', { isSearchable: true });
+new Combobox('#combobox-3', { isSearchable: true });
 
 // Garbage collection example
 // let instance = new BloumSelect('#select-2', { isSearchable: true });

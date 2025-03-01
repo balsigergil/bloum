@@ -1,10 +1,12 @@
 import type { Preview, HtmlRenderer } from "@storybook/html";
 import { withThemeByClassName } from "@storybook/addon-themes";
 
-import "../src/index";
+import { initBloum } from "../src";
 import "../src/bloum.css";
 import "@fortawesome/fontawesome-free/css/all.css";
 import "./preview.css";
+
+initBloum();
 
 const preview: Preview = {
   parameters: {

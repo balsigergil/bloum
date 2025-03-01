@@ -6,6 +6,7 @@ import {
   offset,
   shift,
 } from "@floating-ui/dom";
+import { randomId } from "@/utils/random";
 
 type TooltipElement = HTMLElement & { hydrated?: boolean };
 
@@ -147,10 +148,6 @@ export class Tooltip {
       });
     }
   }
-}
-
-function randomId() {
-  return Math.random().toString(36).substring(2, 9);
 }
 
 export function initTooltip() {

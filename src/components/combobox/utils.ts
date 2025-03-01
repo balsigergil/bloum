@@ -1,6 +1,6 @@
-import type { BlComboboxConfig } from "./Combobox";
+import type { ComboboxConfig } from "./Combobox";
 
-export const DEFAULT_PROPS: BlComboboxConfig = {
+export const DEFAULT_PROPS: ComboboxConfig = {
   placeholder: "Select an option...",
   noResultsText: "No results found",
   isSearchable: false,
@@ -9,8 +9,8 @@ export const DEFAULT_PROPS: BlComboboxConfig = {
 
 export function parseOptions(
   field: HTMLSelectElement,
-  props?: BlComboboxConfig,
-): BlComboboxConfig {
+  props?: ComboboxConfig,
+): ComboboxConfig {
   // Merge the default props with the provided props
   const parsedProps = { ...DEFAULT_PROPS };
 

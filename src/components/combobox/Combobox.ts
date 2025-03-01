@@ -1,22 +1,22 @@
 import { parseOptions } from "./utils";
 
-export interface BlComboboxConfig {
+export interface ComboboxConfig {
   placeholder: string;
   noResultsText?: string;
   isSearchable?: boolean;
   isMultiple?: boolean;
 }
 
-interface BlComboboxInput extends HTMLSelectElement {
-  blcombobox?: BlCombobox;
+interface ComboboxInput extends HTMLSelectElement {
+  blcombobox?: Combobox;
 }
 
-export class BlCombobox {
+export class Combobox {
   // The underlying combobox element
-  readonly #field: BlComboboxInput;
+  readonly #field: ComboboxInput;
 
   // All options to configure the component
-  readonly #config: BlComboboxConfig;
+  readonly #config: ComboboxConfig;
 
   #wrapper!: HTMLDivElement;
   #inner!: HTMLDivElement;
@@ -43,7 +43,7 @@ export class BlCombobox {
 
   #cleanupEvents: VoidFunction | null = null;
 
-  constructor(element: string | BlComboboxInput, options?: BlComboboxConfig) {
+  constructor(element: string | ComboboxInput, options?: ComboboxConfig) {
     if (typeof element === "string") {
       const domElement = document.querySelector<HTMLSelectElement>(element);
       if (domElement === null) {
@@ -60,7 +60,7 @@ export class BlCombobox {
 
     this.#field = element;
     this.#field.blcombobox = this;
-    // this.#field.style.display = "none";
+    this.#field.style.display = "none";
     this.#config = parseOptions(this.#field, options);
 
     this.#render();

@@ -1,33 +1,17 @@
 import "@ungap/custom-elements";
 
-import { Tabs } from "./components/tabs/Tabs";
-import { TabList } from "./components/tabs/TabList";
-import { Tab } from "./components/tabs/Tab";
-import { TabPanel } from "./components/tabs/TabPanel";
-import { AutogrowTextarea } from "./components/forms/AutogrowTextarea";
-import { openModal, closeModal, initModal } from "./components/modal/Modal";
-import { initTooltip, Tooltip } from "./components/tooltip/tooltip";
-import "./components/sidebar/sidebar";
-import { BlCombobox } from "./components/combobox/Combobox";
+import { Tabs } from "@/components/tabs/Tabs";
+import { TabList } from "@/components/tabs/TabList";
+import { Tab } from "@/components/tabs/Tab";
+import { TabPanel } from "@/components/tabs/TabPanel";
+import { AutogrowTextarea } from "@/components/forms/AutogrowTextarea";
+import { Modal } from "@/components/modal/Modal";
+import { Tooltip } from "@/components/tooltip/tooltip";
+import { Combobox } from "@/components/combobox/Combobox";
+import { initBloum } from "@/utils/init";
 
-Tabs.register();
-TabList.register();
-Tab.register();
-TabPanel.register();
-
-AutogrowTextarea.register();
-
-initModal();
-
-// TODO: Remove ts-ignore
 // @ts-ignore
-window.Tooltip = Tooltip;
-// @ts-ignore
-window.BlCombobox = BlCombobox;
-
-initTooltip();
-
-console.info("🚀 Bloom UI Components loaded!");
+window.initBloum = initBloum;
 
 export {
   Tabs,
@@ -35,8 +19,8 @@ export {
   Tab,
   TabPanel,
   AutogrowTextarea,
-  openModal,
-  closeModal,
   Tooltip,
-  BlCombobox,
+  Combobox,
+  Modal,
+  initBloum,
 };

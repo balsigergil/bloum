@@ -1,9 +1,56 @@
-import * as focusTrap from "focus-trap";
+import { FocusTrap, createFocusTrap } from "focus-trap";
 
-let modal: HTMLElement | null = null;
-let modalFocusTrap: focusTrap.FocusTrap | null = null;
+export interface BloumModalElement extends HTMLElement {
+  bloumModal?: Modal;
+}
 
-export function initModal() {
+export class Modal {
+  readonly #element: BloumModalElement;
+  readonly #focusTrap: FocusTrap;
+
+  constructor(element: BloumModalElement) {
+    this.#element = element;
+    this.#element.bloumModal = this;
+    this.#focusTrap = createFocusTrap(this.#element);
+  }
+
+  open() {
+    this.#element.classList.add("open");
+    this.#element.setAttribute("aria-hidden", "false");
+    this.#element.setAttribute("aria-modal", "true");
+    try {
+      this.#focusTrap.activate();
+    } catch {
+      console.warn("No focusable elements found in modal");
+    }
+  }
+
+  close() {
+    this.#element.classList.add("closing");
+
+    this.#element.addEventListener(
+      "animationend",
+      () => {
+        if (this.#element) {
+          this.#element.classList.remove("open");
+          this.#element.classList.remove("closing");
+          this.#element.setAttribute("aria-hidden", "true");
+          this.#element.removeAttribute("aria-modal");
+        }
+        this.#focusTrap.deactivate();
+      },
+      { once: true },
+    );
+  }
+
+  destroy() {
+    this.#element.classList.remove("open");
+    this.#focusTrap.deactivate();
+    delete this.#element.bloumModal;
+  }
+}
+
+export function initModals() {
   addEventListener("click", (e) => {
     const target = e.target as HTMLElement;
 
@@ -12,73 +59,58 @@ export function initModal() {
       const modalSelector = target
         .closest("[data-modal]")
         ?.getAttribute("data-modal") as string;
-      const element = document.querySelector<HTMLElement>(modalSelector);
+      const element = document.querySelector<BloumModalElement>(modalSelector);
       if (element) {
-        openModal(element);
+        if (element.bloumModal === undefined) {
+          new Modal(element);
+        }
+        element.bloumModal?.open();
         e.preventDefault();
         e.stopPropagation();
       }
     }
 
-    // Close modal when clicking on close button
+    // Close modal when clicking on the close button
     if (target.closest("[data-modal-close]")) {
-      const modal = target.closest<HTMLElement>(".modal");
-      if (modal) {
-        closeModal();
+      const modal = target.closest<BloumModalElement>(".modal");
+      if (modal !== null && modal.bloumModal !== undefined) {
+        modal.bloumModal.close();
+
         e.preventDefault();
         e.stopPropagation();
       }
     }
 
-    // Close modal when clicking outside of it
+    // Close modal when clicking outside
     if (target.closest(".modal.open")) {
       if (!target.closest(".modal-content")) {
-        closeModal();
+        const modal = target.closest<BloumModalElement>(".modal.open");
+        if (modal !== null && modal.bloumModal !== undefined) {
+          modal.bloumModal.close();
+
+          e.preventDefault();
+          e.stopPropagation();
+        }
       }
     }
   });
 
   addEventListener("keydown", (e) => {
     if (e.key === "Escape" || e.key === "Esc") {
-      closeModal();
+      closeAllModals();
     }
   });
 
   addEventListener("bl-modal-close", () => {
-    closeModal();
+    closeAllModals();
   });
 }
 
-export function openModal(element: HTMLElement) {
-  if (!element) return;
-  modal = element;
-  modal.classList.add("open");
-  modal.setAttribute("aria-hidden", "false");
-  modal.setAttribute("aria-modal", "true");
-  modalFocusTrap = focusTrap.createFocusTrap(modal);
-  modalFocusTrap.activate();
-}
-
-export function closeModal() {
-  if (!modal) return;
-
-  modal.classList.add("closing");
-
-  modal.addEventListener(
-    "animationend",
-    () => {
-      if (modal) {
-        modal.classList.remove("open");
-        modal.classList.remove("closing");
-        modal.setAttribute("aria-hidden", "true");
-        modal.removeAttribute("aria-modal");
-        modal = null;
-      }
-      if (modalFocusTrap) {
-        modalFocusTrap.deactivate();
-        modalFocusTrap = null;
-      }
-    },
-    { once: true },
-  );
+function closeAllModals() {
+  document.querySelectorAll(".modal.open").forEach((el) => {
+    const modal = el as BloumModalElement;
+    if (modal.bloumModal !== undefined) {
+      modal.bloumModal.close();
+    }
+  });
 }
