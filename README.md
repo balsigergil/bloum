@@ -11,6 +11,9 @@
         <a aria-label="NPM version" href="https://www.npmjs.com/package/bloum">
           <img alt="NPM version" src="https://img.shields.io/npm/v/bloum?style=for-the-badge">
         </a>
+        <a aria-label="Minzipped size" href="https://bundlephobia.com/package/bloum">
+          <img alt="Minzipped size" src="https://img.shields.io/bundlephobia/minzip/bloum?style=for-the-badge">
+        </a>
         <a aria-label="License" href="https://github.com/balsigergil/bloum/blob/main/LICENSE">
           <img alt="License" src="https://img.shields.io/npm/l/bloum?style=for-the-badge">
         </a>
@@ -32,17 +35,22 @@
 
 ## What is Bloum?
 
-Bloum is an open-source library of web components. The goal of this library is to provide a set of JavaScript components that can be used in any web project, regardless of the framework or library used.
-The main use-case for Bloum is to provide easy-to-use components for project using MPA (Multi-Page Application) like Laravel, Django or Rails. It pairs well with server-side rendering and progressive enhancement tools like [HTMX](https://htmx.org/) and [Alpine.js](https://alpinejs.dev/).
+Bloum is an open-source library of web components.
+The goal of this library is to provide a set of CSS and JavaScript components
+that can be used in any web project, regardless of the framework or library used.
+The main use-case for Bloum is to provide easy-to-use components for a project
+using MPA (Multi-Page Application) like Laravel, Django or Rails.
+It pairs well with server-side rendering and progressive enhancement tools
+like [HTMX](https://htmx.org/) and [Alpine.js](https://alpinejs.dev/).
 
 ## Features
 
-<!-- - 🪶 **Lightweight:** Bloum is a small library. It's less than 10KB minified and gzipped. -->
-- 🚀 **Easy to use:** Bloum is designed to be easy to use and integrate in any project.
-- 🔍 **Accessible:** Built with accessibility in mind. It's fully keyboard navigable and [ARIA](https://www.w3.org/WAI/ARIA/apg/) compliant.
+- 🚀 **Feature-rich:** Bloum provides a wide range of components to build modern web apps or design systems.
+- 🪶 **Lightweight:** Bloum is light. It's less than 10KB minified and gzipped.
+- 🔍 **Accessible:** Built with accessibility in mind. It's fully keyboard-navigable and [WAI-ARIA](https://www.w3.org/WAI/ARIA/apg/) compliant.
 - 🌓 **Dark mode:** Supports dark mode out of the box.
 - 📱 **Responsive:** Works on all modern browsers and devices.
-- 📦 **No dependencies:** Does not depend on any other library or framework.
+- 📦 **No dependencies:** Everything is bundled in a single package.
 - 🎨 **Theming:** Easy to customize with CSS variables.
 
 
@@ -52,16 +60,17 @@ The main use-case for Bloum is to provide easy-to-use components for project usi
 
 ### CDN
 
-You can use the following lines in your `head` tag to load the latest version of Bloum from a CDN:
+Use the following lines in your `head` tag
+to load the latest version of Bloum from a CDN:
 
 ```html
 <script src="https://unpkg.com/bloum" defer></script>
 <link href="https://unpkg.com/bloum/dist/style.min.css" rel="stylesheet">
 ```
 
-### Package manager
+### Package Manager
 
-You can install Bloum using your favorite package manager:
+Install Bloum using your favorite package manager:
 
 ```bash
 # NPM
@@ -79,7 +88,7 @@ bun add bloum
 
 ## Usage
 
-Once installed, you can import the library in your JavaScript project:
+Once installed, import the library in your JavaScript project:
 
 ```js
 import "bloum"
@@ -87,17 +96,19 @@ import "bloum"
 
 This will register all the components globally.
 
-After that, you can include the stylesheet in your JavaScript if you're using a bundler like Vite or Webpack:
+After that, include the stylesheet in your JavaScript
+if you're using a bundler like Vite or Webpack:
 
 ```js
 import "bloum/dist/style.min.css"
 ```
 
-Then, you can use the components in your HTML.
+Then, use the components in your HTML.
 
 ## Documentation
 
-The documentation is available at [https://www.bloum.dev](https://www.bloum.dev) for more information on how to use the components.
+The documentation is available at [https://www.bloum.dev](https://www.bloum.dev)
+for more information on how to use the components.
 
 ## License
 
