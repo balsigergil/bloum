@@ -19,6 +19,7 @@ AutogrowTextarea.register();
 
 initModal();
 
+// TODO: Remove ts-ignore
 // @ts-ignore
 window.Tooltip = Tooltip;
 // @ts-ignore

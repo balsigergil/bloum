@@ -3,7 +3,6 @@
 @import "css/reset.css";
 @import "css/base.css";
 
-/* Importing all the components */
 @import "components/button/button.css";
 @import "components/card/card.css";
 @import "components/table/table.css";

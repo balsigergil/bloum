@@ -7,13 +7,6 @@ export interface BlComboboxConfig {
   isMultiple?: boolean;
 }
 
-export const DEFAULT_PROPS: BlComboboxConfig = {
-  placeholder: "Select an option...",
-  noResultsText: "No results found",
-  isSearchable: false,
-  isMultiple: false,
-};
-
 interface BlComboboxInput extends HTMLSelectElement {
   blcombobox?: BlCombobox;
 }

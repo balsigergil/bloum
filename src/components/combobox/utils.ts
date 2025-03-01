@@ -1,4 +1,11 @@
-import { BlComboboxConfig, DEFAULT_PROPS } from "./Combobox";
+import type { BlComboboxConfig } from "./Combobox";
+
+export const DEFAULT_PROPS: BlComboboxConfig = {
+  placeholder: "Select an option...",
+  noResultsText: "No results found",
+  isSearchable: false,
+  isMultiple: false,
+};
 
 export function parseOptions(
   field: HTMLSelectElement,

@@ -1,14 +1,10 @@
 {
+  "extends": "./tsconfig.json",
   "compilerOptions": {
-    "target": "ESNext",
-    "module": "ESNext",
-    "skipLibCheck": true,
-    "moduleResolution": "Bundler",
     "declaration": true,
     "emitDeclarationOnly": true,
-    "declarationDir": "./dist/types",
-    "strict": true
+    "declarationDir": "./dist/types"
   },
   "include": ["src"],
-  "exclude": ["src/**/*.stories.ts", "src/**/*.stories.tsx"]
+  "exclude": ["src/**/*.stories.ts", "src/**/*.stories.tsx", "node_modules"]
 }

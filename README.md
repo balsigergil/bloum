@@ -50,7 +50,7 @@ like [HTMX](https://htmx.org/) and [Alpine.js](https://alpinejs.dev/).
 - 🔍 **Accessible:** Built with accessibility in mind. It's fully keyboard-navigable and [WAI-ARIA](https://www.w3.org/WAI/ARIA/apg/) compliant.
 - 🌓 **Dark mode:** Supports dark mode out of the box.
 - 📱 **Responsive:** Works on all modern browsers and devices.
-- 📦 **No dependencies:** Everything is bundled in a single package.
+- 📦 **Single package:** Everything is bundled in a single package for an easy setup.
 - 🎨 **Theming:** Easy to customize with CSS variables.
 
 
@@ -65,7 +65,7 @@ to load the latest version of Bloum from a CDN:
 
 ```html
 <script src="https://unpkg.com/bloum" defer></script>
-<link href="https://unpkg.com/bloum/dist/style.min.css" rel="stylesheet">
+<link href="https://unpkg.com/bloum/dist/bloum.min.css" rel="stylesheet">
 ```
 
 ### Package Manager
@@ -100,7 +100,7 @@ After that, include the stylesheet in your JavaScript
 if you're using a bundler like Vite or Webpack:
 
 ```js
-import "bloum/dist/style.min.css"
+import "bloum/dist/bloum.min.css"
 ```
 
 Then, use the components in your HTML.
