@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.8.0](https://github.com/balsigergil/bloum/compare/v0.7.0...v0.8.0) (2025-03-01)
+
+### Features
+
+* **combobox:** display no results text ([d9825a3](https://github.com/balsigergil/bloum/commit/d9825a315eef1faf95ca68208297c5afdebe17fb))
+* **select:** add destroy method ([639ba82](https://github.com/balsigergil/bloum/commit/639ba8277e86bf775dbd5e26689309630df67caa))
+* **select:** basic select ([827c01d](https://github.com/balsigergil/bloum/commit/827c01d3606146321ccdf26602b88df0709a5c62))
+* **select:** define initial selected option ([c2b1419](https://github.com/balsigergil/bloum/commit/c2b141984ee86d98d1c2e40b958cafe393d12b52))
+* **select:** multiselect ([ab2089f](https://github.com/balsigergil/bloum/commit/ab2089f23b6db8654af8934e02228d937a9ed740))
+* **select:** searchable select ([c90dd7e](https://github.com/balsigergil/bloum/commit/c90dd7e4b6e358ec44745002b04a0b426453ddd3))
+
+### Bug Fixes
+
+* **combobox:** multiple select not updated after deselecting ([90e4bba](https://github.com/balsigergil/bloum/commit/90e4bba34679d2751afd436603d37d18c665a13f))
+
 ## [0.7.0](https://github.com/balsigergil/bloum/compare/v0.6.4...v0.7.0) (2025-02-01)
 
 ### Features
