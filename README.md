@@ -1,6 +1,6 @@
 <div align="center">
     <div>
-      <a href="https://www.bloum.dev">
+      <a href="https://www.bloum.dev" target="_blank">
         <img src="https://raw.githubusercontent.com/balsigergil/bloum/main/.github/bloum_logo.png" height="150" alt="Bloum Logo">
       </a>
     </div>
