@@ -8,6 +8,7 @@ import { AutogrowTextarea } from "@/components/forms/AutogrowTextarea";
 import { Modal } from "@/components/modal/Modal";
 import { Tooltip } from "@/components/tooltip/tooltip";
 import { Combobox } from "@/components/combobox/Combobox";
+import { Menu } from "@/components/menu/menu";
 import { initBloum } from "@/utils/init";
 
 // @ts-ignore
@@ -22,5 +23,6 @@ export {
   Tooltip,
   Combobox,
   Modal,
+  Menu,
   initBloum,
 };

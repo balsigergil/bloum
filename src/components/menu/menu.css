@@ -1,3 +1,7 @@
+.dropdown {
+  position: relative;
+}
+
 .menu {
   --bl-menu-bg: var(--bl-clr-surface);
   --bl-menu-item-color: var(--bl-clr-gray-700);
@@ -7,11 +11,16 @@
   border: var(--bl-border-color) 1px solid;
   border-radius: var(--bl-border-radius);
   padding: 0.25rem;
-  display: inline-block;
   background-color: var(--bl-menu-bg);
   min-width: 8rem;
   font-size: 0.875rem;
   line-height: 1.25rem;
+  position: absolute;
+  display: none;
+}
+
+.show {
+  display: inline-block;
 }
 
 .menu-item {
@@ -37,7 +46,7 @@
 
 .dark .menu,
 [data-theme="dark"] .menu {
-  --bl-menu-item-color: var(--bl-clr-gray-300);
+  --bl-menu-item-color: var(--bl-clr-gray-200);
   --bl-menu-item-hover-bg: var(--bl-clr-gray-700);
   --bl-menu-divider-color: var(--bl-clr-gray-700);
 }

@@ -9,12 +9,17 @@ type Story = StoryObj;
 
 export const Menu: Story = {
   render: () => {
-    return `<div class="menu">
-  <div class="menu-item">New File</div>
-  <a href="#" class="menu-item">Open File...</a>
-  <button type="submit" class="menu-item">Save</button>
-  <div class="menu-divider"></div>
-  <div class="menu-item">Close</div>
-</div>`;
+    return `
+<div class="dropdown">
+  <button class="btn" data-menu="#menu">Click to open the menu</button>
+  <div class="menu" id="menu">
+    <a href="#" class="menu-item">New File</a>
+    <a href="#" class="menu-item">Open File...</a>
+    <button class="menu-item">Save</button>
+    <div class="menu-divider"></div>
+    <button class="menu-item">Close</button>
+  </div>
+</div>
+`;
   },
 };

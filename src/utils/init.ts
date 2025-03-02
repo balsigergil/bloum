@@ -7,6 +7,7 @@ import { initTooltip, Tooltip } from "@/components/tooltip/tooltip";
 import { Combobox } from "@/components/combobox/Combobox";
 import { initModals, Modal } from "@/components/modal/Modal";
 import { initSidebar } from "@/components/sidebar/sidebar";
+import { initMenus } from "@/components/menu/menu";
 
 export function initBloum() {
   Tabs.register();
@@ -24,9 +25,12 @@ export function initBloum() {
   // @ts-ignore
   window.Modal = Modal;
 
-  initTooltip();
-  initSidebar();
-  initModals();
+  document.addEventListener("DOMContentLoaded", () => {
+    initTooltip();
+    initSidebar();
+    initModals();
+    initMenus();
+  });
 
   console.info("🚀 Bloom initialized!");
 }

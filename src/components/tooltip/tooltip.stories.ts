@@ -7,14 +7,7 @@ type TooltipArgs = {
 const meta: Meta<TooltipArgs> = {
   title: "Components/Tooltip",
   render: (args) => {
-    return `
-<button class="btn btn-primary" data-tooltip="${args.text}">Hover me</button>
-<script>
-  document.querySelectorAll("[data-tooltip]").forEach((element) => {
-    new Tooltip(element);
-  });
-</script>
-`;
+    return `<button class="btn btn-primary" data-tooltip="${args.text}">Hover me</button>`;
   },
 };
 
