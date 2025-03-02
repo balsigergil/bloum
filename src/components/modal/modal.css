@@ -1,5 +1,6 @@
 .modal {
-  --bl-modal-animation-duration: 150ms;
+  --bl-modal-animation-opacity: var(--bl-transition-md);
+  --bl-modal-animation-transform: var(--bl-transition-lg);
   --bl-modal-dialog-bg: var(--bl-clr-surface);
   --bl-modal-padding: 1rem;
   --bl-modal-margin: 4rem;
@@ -22,7 +23,7 @@
   align-items: flex-start;
   z-index: var(--bl-modal-zindex);
   display: none;
-  animation: modalFadeIn var(--bl-modal-animation-duration) both;
+  animation: modalFadeIn var(--bl-modal-animation-opacity) both linear;
 }
 
 .modal.open {
@@ -34,7 +35,7 @@ html:has(.modal.open) {
 }
 
 .modal.closing {
-  animation: modalFadeOut var(--bl-modal-animation-duration) both;
+  animation: modalFadeOut var(--bl-modal-animation-opacity) both linear;
 }
 
 .modal-content {
@@ -46,7 +47,11 @@ html:has(.modal.open) {
     calc(var(--bl-modal-padding) * 1.5);
   border-radius: var(--bl-modal-border-radius);
   margin-block: var(--bl-modal-margin);
-  animation: modalScaleIn var(--bl-modal-animation-duration) both;
+  animation: modalScaleIn var(--bl-modal-animation-transform) both ease-out;
+}
+
+.modal.closing .modal-content {
+  animation: modalScaleOut var(--bl-modal-animation-transform) both ease-out;
 }
 
 .modal-content.modal-sm {
@@ -67,10 +72,6 @@ html:has(.modal.open) {
 
 .modal-content.modal-full {
   max-width: var(--bl-modal-size-full);
-}
-
-.modal.closing .modal-content {
-  animation: modalScaleOut var(--bl-modal-animation-duration) both;
 }
 
 .modal-header {
@@ -105,18 +106,36 @@ html:has(.modal.open) {
 
 @keyframes modalScaleIn {
   from {
-    transform: scale(0.95) translateY(-1rem);
+    transform: translateY(-1rem);
   }
   to {
-    transform: scale(1) translateY(0);
+    transform: translateY(0);
   }
 }
 
 @keyframes modalScaleOut {
   from {
-    transform: scale(1) translateY(0);
+    transform: translateY(0);
   }
   to {
-    transform: scale(0.95) translateY(-1rem);
+    transform: translateY(-1rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .modal {
+    animation-duration: 0s;
+  }
+
+  .modal.closing {
+    animation-duration: 0s;
+  }
+
+  .modal-content {
+    animation-duration: 0s;
+  }
+
+  .modal.closing .modal-content {
+    animation-duration: 0s;
   }
 }

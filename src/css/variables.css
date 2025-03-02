@@ -136,6 +136,7 @@
   --bl-transition-sm: 100ms;
   --bl-transition-md: 150ms;
   --bl-transition-lg: 200ms;
+  --bl-transition-xl: 300ms;
   --bl-spinner-speed: 0.5s;
 
   --bl-font-sans:
