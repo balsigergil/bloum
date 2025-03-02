@@ -2,7 +2,7 @@
   --bl-btn-color: var(--bl-clr-gray-800);
   --bl-btn-bg: var(--bl-clr-gray-200);
   --bl-btn-hover-bg: oklch(from var(--bl-btn-bg) calc(l - 0.05) c h);
-  --bl-btn-active-bg: oklch(from var(--bl-btn-hover-bg) calc(l - 0.05) c h);
+  --bl-btn-active-bg: oklch(from var(--bl-btn-hover-bg) calc(l - 0.03) c h);
   --bl-btn-border-radius: var(--bl-border-radius);
   --bl-btn-border: solid 1px transparent;
   --bl-btn-size: 2.5rem;
@@ -233,5 +233,11 @@
 @keyframes spin {
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn {
+    transition-duration: 0s;
   }
 }
