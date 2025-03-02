@@ -1,7 +1,7 @@
 <div align="center">
     <div>
       <a href="https://www.bloum.dev">
-        <img src="https://raw.githubusercontent.com/balsigergil/bloum/main/.github/bloum_logo.png" width="450" height="150" alt="Bloum Logo">
+        <img src="https://raw.githubusercontent.com/balsigergil/bloum/main/.github/bloum_logo.png" height="150" alt="Bloum Logo">
       </a>
     </div>
     <strong>A powerful library of modern web components</strong>
@@ -46,7 +46,7 @@ like [HTMX](https://htmx.org/) and [Alpine.js](https://alpinejs.dev/).
 ## Features
 
 - 🚀 **Feature-rich:** Bloum provides a wide range of components to build modern web apps or design systems.
-- 🪶 **Lightweight:** Bloum is light. It's less than 10KB minified and gzipped.
+- 🪶 **Lightweight:** Bloum is light. It's less than 20KB minified and gzipped.
 - 🔍 **Accessible:** Built with accessibility in mind. It's fully keyboard-navigable and [WAI-ARIA](https://www.w3.org/WAI/ARIA/apg/) compliant.
 - 🌓 **Dark mode:** Supports dark mode out of the box.
 - 📱 **Responsive:** Works on all modern browsers and devices.

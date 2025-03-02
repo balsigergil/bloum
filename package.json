@@ -24,8 +24,8 @@
   "files": [
     "dist"
   ],
-  "main": "dist/bloum.cjs.min.js",
-  "module": "dist/bloum.esm.min.js",
+  "main": "dist/bloum.min.cjs",
+  "module": "dist/bloum.js",
   "browser": "dist/bloum.bundle.min.js",
   "types": "dist/types/index.d.ts",
   "scripts": {
