@@ -107,16 +107,26 @@ const meta: Meta = {
            </li>
         </ul>
         <div class="p-4 flex justify-between items-center">
-          <div class="flex items-center gap-2">
-            <img src="https://via.placeholder.com/40x40" alt="Avatar" class="rounded-full" />
+          <div class="flex items-center gap-4">
+            <div class="rounded-full bg-gray-500 text-white size-10 grid place-items-center font-semibold">GB</div>
             <div class="text-sm">
               <div class="font-semibold">John Doe</div>
               <div class="text-gray-600">Administrator</div>
             </div>
           </div>
-          <button class="btn btn-icon btn-ghost btn-sm">
-            <i class="fa-solid fa-ellipsis-vertical"></i>
-          </button>
+          <div class="dropdown">
+            <button class="btn btn-icon btn-ghost btn-sm" data-menu="#my-menu">
+              <i class="fa-solid fa-ellipsis-vertical"></i>
+            </button>
+            <div class="menu" id="my-menu">
+              <a href="#" class="menu-item"><i class="fas fa-fw fa-user"></i>Profile</a>
+              <a href="#" class="menu-item"><i class="fas fa-fw fa-cog"></i>Settings</a>
+              <div class="menu-divider"></div>
+              <form action="" method="post">
+                <button class="menu-item"><i class="fas fa-fw fa-right-from-bracket"></i>Logout</button>
+              </form>
+            </div>
+          </div>
         </div>
       </div>
     </div>
