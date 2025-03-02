@@ -41,7 +41,9 @@
   color: var(--bl-menu-item-color);
   padding-inline: 0.5rem;
   padding-block: 0.25rem;
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   width: 100%;
   text-align: left;
   border-radius: var(--bl-border-radius);
