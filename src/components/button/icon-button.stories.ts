@@ -14,7 +14,7 @@ const meta: Meta<ButtonArgs> = {
     },
     size: {
       control: "select",
-      options: ["default", "lg", "sm", "xs"],
+      options: ["xs", "sm", "default", "lg"],
     },
     rounded: {
       control: "boolean",

@@ -5,10 +5,10 @@
   --bl-btn-active-bg: oklch(from var(--bl-btn-hover-bg) calc(l - 0.03) c h);
   --bl-btn-border-radius: var(--bl-border-radius);
   --bl-btn-border: solid 1px transparent;
-  --bl-btn-size: 2.5rem;
+  --bl-btn-height: 2.25rem;
   --bl-btn-outline-color: var(--bl-clr-primary-600);
   --bl-btn-fs: 0.875rem;
-  --bl-btn-spinner-size: calc(1 / 2.5 * var(--bl-btn-size));
+  --bl-btn-spinner-size: calc(1 / 2.25 * var(--bl-btn-height));
 
   appearance: none;
   white-space: nowrap;
@@ -19,8 +19,8 @@
   background-color: var(--bl-btn-bg);
   color: var(--bl-btn-color);
   font-weight: 600;
-  padding-inline: calc(var(--bl-btn-size) * 0.4);
-  height: var(--bl-btn-size);
+  padding-inline: calc(var(--bl-btn-height) * 0.4);
+  height: var(--bl-btn-height);
   font-size: var(--bl-btn-fs);
   border-radius: var(--bl-btn-border-radius);
   cursor: pointer;
@@ -43,35 +43,35 @@
 
 .btn-icon {
   --bl-btn-fs: 1.125rem;
-  min-width: var(--bl-btn-size);
+  min-width: var(--bl-btn-height);
   padding: 0;
 }
 
-.btn-lg {
-  --bl-btn-size: 3rem;
-  --bl-btn-fs: 1rem;
-}
-
-.btn-sm {
-  --bl-btn-size: 2rem;
-  --bl-btn-fs: 0.875rem;
-}
-
 .btn-xs {
-  --bl-btn-size: 1.5rem;
+  --bl-btn-height: 1.5rem;
   --bl-btn-fs: 0.75rem;
 }
 
-.btn-icon.btn-lg {
-  --bl-btn-fs: 1.25rem;
+.btn-icon.btn-xs {
+  --bl-btn-fs: 0.875rem;
+}
+
+.btn-sm {
+  --bl-btn-height: 1.875rem;
+  --bl-btn-fs: 0.875rem;
 }
 
 .btn-icon.btn-sm {
   --bl-btn-fs: 1rem;
 }
 
-.btn-icon.btn-xs {
-  --bl-btn-fs: 0.875rem;
+.btn-lg {
+  --bl-btn-height: 3rem;
+  --bl-btn-fs: 1rem;
+}
+
+.btn-icon.btn-lg {
+  --bl-btn-fs: 1.25rem;
 }
 
 .btn-rounded {
