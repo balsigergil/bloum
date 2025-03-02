@@ -36,15 +36,6 @@ input[type="checkbox"].switch {
     translate: calc(var(--bl-switch-width) - var(--bl-switch-height));
   }
 
-  /*
-  (a * b) - (a * c) = a * (b - c)
-  a = var(--bl-switch-width)
-  b = 0.375
-  c = 0.0625
-
-
-   */
-
   &:disabled {
     cursor: not-allowed;
     opacity: var(--bl-disabled-opacity);
@@ -55,10 +46,14 @@ input[type="checkbox"].switch {
   display: inline-flex;
   align-items: center;
   gap: 1rem;
+
+  label {
+    margin: 0;
+  }
 }
 
 .form-switch:has(.switch:disabled) .label {
-  opacity: 0.6;
+  opacity: var(--bl-disabled-opacity);
 }
 
 .dark,
