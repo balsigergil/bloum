@@ -250,7 +250,7 @@ select.form-select:where([size]:not([size="1"])) {
 .dark,
 [data-theme="dark"] {
   --bl-form-border-color: var(--bl-clr-gray-700);
-  --bl-form-primary-color: var(--bl-clr-primary-400);
+  --bl-form-primary-color: var(--bl-clr-primary-500);
   --bl-form-file-bg: var(--bl-clr-gray-800);
   --bl-form-file-bg-hover: var(--bl-clr-gray-700);
 }

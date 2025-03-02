@@ -3,6 +3,7 @@
     "target": "ESNext",
     "module": "ESNext",
     "lib": ["ESNext", "DOM", "DOM.Iterable"],
+    "jsx": "react-jsx",
     "skipLibCheck": true,
     "moduleResolution": "Bundler",
     "isolatedModules": true,
@@ -12,6 +13,7 @@
     "noFallthroughCasesInSwitch": true,
     "experimentalDecorators": true,
     "useDefineForClassFields": false,
+    "allowSyntheticDefaultImports": true,
     "paths": {
       "@/*": ["./src/*"]
     }

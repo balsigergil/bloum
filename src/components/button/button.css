@@ -1,7 +1,8 @@
 .btn {
-  --bl-btn-bg: var(--bl-clr-gray-200);
   --bl-btn-color: var(--bl-clr-gray-800);
-  --bl-btn-hover-bg: var(--bl-clr-gray-300);
+  --bl-btn-bg: var(--bl-clr-gray-200);
+  --bl-btn-hover-bg: oklch(from var(--bl-btn-bg) calc(l - 0.05) c h);
+  --bl-btn-active-bg: oklch(from var(--bl-btn-hover-bg) calc(l - 0.05) c h);
   --bl-btn-border-radius: var(--bl-border-radius);
   --bl-btn-border: solid 1px transparent;
   --bl-btn-size: 2.5rem;
@@ -33,6 +34,10 @@
 
   &:hover {
     background-color: var(--bl-btn-hover-bg);
+  }
+
+  &:active {
+    background-color: var(--bl-btn-active-bg);
   }
 }
 
@@ -76,14 +81,12 @@
 /* Colors */
 
 .btn-primary {
-  --bl-btn-bg: var(--bl-clr-primary-600);
-  --bl-btn-hover-bg: var(--bl-clr-primary-700);
+  --bl-btn-bg: var(--bl-primary-bg);
   --bl-btn-color: #fff;
 }
 
 .btn-danger {
   --bl-btn-bg: var(--bl-clr-red-700);
-  --bl-btn-hover-bg: var(--bl-clr-red-800);
   --bl-btn-color: #fff;
 }
 
@@ -143,7 +146,7 @@
 
 .btn.btn-loading,
 .btn.htmx-request {
-  opacity: 0.75;
+  opacity: var(--bl-disabled-opacity);
   cursor: not-allowed;
 
   &:hover {
@@ -182,35 +185,28 @@
   .btn {
     --bl-btn-color: var(--bl-clr-text);
     --bl-btn-bg: var(--bl-clr-gray-700);
-    --bl-btn-hover-bg: var(--bl-clr-gray-600);
     --bl-btn-outline-color: var(--bl-clr-primary-400);
   }
 
   .btn-primary {
-    --bl-btn-bg: var(--bl-clr-primary-600);
-    --bl-btn-hover-bg: var(--bl-clr-primary-500);
+    --bl-btn-bg: var(--bl-primary-bg);
   }
 
   .btn-danger {
     --bl-btn-bg: var(--bl-clr-red-800);
-    --bl-btn-hover-bg: var(--bl-clr-red-700);
   }
 
   .btn-ghost {
     --bl-btn-bg: transparent;
+    --bl-btn-hover-bg: var(--bl-clr-gray-700);
     --bl-btn-color: var(--bl-clr-gray-200);
 
     &.btn-primary {
-      --bl-btn-hover-bg: var(--bl-clr-primary-400);
+      --bl-btn-hover-bg: var(--bl-primary-bg);
     }
 
     &.btn-danger {
       --bl-btn-hover-bg: var(--bl-clr-red-500);
-    }
-
-    &.btn-primary:hover,
-    &.btn-danger:hover {
-      --bl-btn-color: var(--bl-clr-gray-900);
     }
   }
 
@@ -221,8 +217,8 @@
     --bl-btn-border: 1px solid var(--bl-clr-gray-700);
 
     &.btn-primary {
-      --bl-btn-color: var(--bl-clr-primary-400);
-      --bl-btn-border: 1px solid var(--bl-clr-primary-400);
+      --bl-btn-color: var(--bl-clr-primary-500);
+      --bl-btn-border: 1px solid var(--bl-clr-primary-500);
       --bl-btn-hover-bg: var(--bl-clr-primary-950);
     }
 

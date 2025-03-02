@@ -6,14 +6,15 @@ body {
 
 .dark,
 [data-theme="dark"] {
-  --bl-clr-text: var(--bl-clr-gray-200);
+  --bl-clr-text: var(--bl-clr-gray-100);
+  --bl-clr-text-inverted: var(--bl-clr-gray-950);
   --bl-clr-background: var(--bl-clr-gray-950);
   --bl-clr-surface: var(--bl-clr-gray-900);
   --bl-border-color: var(--bl-clr-gray-800);
+  --bl-primary-bg: var(--bl-clr-primary-600);
 
   body {
     color-scheme: dark;
-    background-color: theme("colors.gray.950");
   }
 }
 
