@@ -2,7 +2,8 @@
   --bl-card-bg: var(--bl-clr-surface);
   --bl-card-border-radius: var(--bl-border-radius-lg);
   --bl-card-border: 1px solid var(--bl-border-color);
-  --bl-card-padding: 1rem;
+  --bl-card-padding-x: 1rem;
+  --bl-card-padding-y: 0.75rem;
   --bl-card-title-fs: 1.125rem;
   --bl-card-title-fw: 600;
   --bl-card-image-max-height: 150px;
@@ -22,11 +23,12 @@
 }
 
 .card-header {
-  padding-top: var(--bl-card-padding);
-  padding-inline: var(--bl-card-padding);
+  padding-block: var(--bl-card-padding-y);
+  padding-inline: var(--bl-card-padding-x);
+  border-bottom: var(--bl-border-color) solid 1px;
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .card-title {
@@ -36,21 +38,19 @@
 
 .card-actions {
   display: flex;
-  gap: 0.5rem;
-}
-
-.card-actions .btn-icon {
-  --bl-btn-height: 2rem;
-  --bl-btn-fs: 1rem;
+  gap: 0.25rem;
 }
 
 .card-body {
-  padding: var(--bl-card-padding);
-  padding-top: 0.5rem;
+  padding: var(--bl-card-padding-x);
+
+  .card-title {
+    margin-bottom: 0.5rem;
+  }
 }
 
-.card .table {
-  margin-top: calc(var(--bl-card-padding) / 2);
+.card-footer {
+  background-color: var(--bl-clr-background);
 }
 
 .card .table > tbody:not(:has(+ tfoot)) > tr:last-child > td {

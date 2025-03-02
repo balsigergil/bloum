@@ -10,10 +10,9 @@
   --bl-clr-primary-800: var(--bl-clr-teal-800);
   --bl-clr-primary-900: var(--bl-clr-teal-900);
   --bl-clr-primary-950: var(--bl-clr-teal-950);
-  --bl-primary-bg: var(--bl-clr-primary-600);
 
-  --bl-clr-text: var(--bl-clr-gray-950);
-  --bl-clr-text-inverted: var(--bl-clr-gray-50);
+  --bl-clr-text: var(--bl-clr-gray-900);
+  --bl-clr-text-inverted: var(--bl-clr-gray-100);
   --bl-clr-background: var(--bl-clr-gray-50);
   --bl-clr-surface: #fff;
 
@@ -27,8 +26,8 @@
   --bl-clr-gray-600: oklch(0.446 0.03 256.802);
   --bl-clr-gray-700: oklch(0.373 0.034 259.733);
   --bl-clr-gray-800: oklch(0.278 0.033 256.848);
-  --bl-clr-gray-900: oklch(0.21 0.026 264.665);
-  --bl-clr-gray-950: oklch(0.17 0.015 261.692);
+  --bl-clr-gray-900: oklch(0.21 0.034 264.665);
+  --bl-clr-gray-950: oklch(0.13 0.028 261.692);
 
   /* Zinc colors */
   /*--bl-clr-gray-50: oklch(0.985 0 0);*/
@@ -53,6 +52,7 @@
   /*--bl-clr-gray-600: oklch(0.444 0.011 73.639);*/
   /*--bl-clr-gray-700: oklch(0.374 0.01 67.558);*/
   /*--bl-clr-gray-800: oklch(0.268 0.007 34.298);*/
+  /*--bl-clr-gray-850: oklch(0.246 0.006 56.043);*/
   /*--bl-clr-gray-900: oklch(0.216 0.006 56.043);*/
   /*--bl-clr-gray-950: oklch(0.147 0.004 49.25);*/
 
@@ -68,39 +68,6 @@
   --bl-clr-blue-900: #1e3a8a;
   --bl-clr-blue-950: #172554;
 
-  /*--bl-clr-teal: oklch(0.704 0.14 182.503);*/
-  /*--bl-clr-teal-50: oklch(*/
-  /*  from var(--bl-clr-teal-100) calc(l + 0.03) calc(c - 0.04) h*/
-  /*);*/
-  /*--bl-clr-teal-100: oklch(*/
-  /*  from var(--bl-clr-teal-200) calc(l + 0.04) calc(c - 0.04) h*/
-  /*);*/
-  /*--bl-clr-teal-200: oklch(*/
-  /*  from var(--bl-clr-teal-300) calc(l + 0.06) calc(c - 0.04) h*/
-  /*);*/
-  /*--bl-clr-teal-300: oklch(*/
-  /*  from var(--bl-clr-teal-400) calc(l + 0.1) calc(c - 0.04) h*/
-  /*);*/
-  /*--bl-clr-teal-400: oklch(*/
-  /*  from var(--bl-clr-teal-500) calc(l + 0.05) calc(c + 0.05) h*/
-  /*);*/
-  /*--bl-clr-teal-500: oklch(from var(--bl-clr-teal) l c h);*/
-  /*--bl-clr-teal-600: oklch(*/
-  /*  from var(--bl-clr-teal-500) calc(l - 0.11) calc(c - 0.02) h*/
-  /*);*/
-  /*--bl-clr-teal-700: oklch(*/
-  /*  from var(--bl-clr-teal-600) calc(l - 0.08) calc(c - 0.02) h*/
-  /*);*/
-  /*--bl-clr-teal-800: oklch(*/
-  /*  from var(--bl-clr-teal-700) calc(l - 0.08) calc(c - 0.02) h*/
-  /*);*/
-  /*--bl-clr-teal-900: oklch(*/
-  /*  from var(--bl-clr-teal-800) calc(l - 0.05) calc(c - 0.01) h*/
-  /*);*/
-  /*--bl-clr-teal-950: oklch(*/
-  /*  from var(--bl-clr-teal-900) calc(l - 0.11) calc(c - 0.01) h*/
-  /*);*/
-
   --bl-clr-teal-50: oklch(0.984 0.014 180.72);
   --bl-clr-teal-100: oklch(0.953 0.051 180.801);
   --bl-clr-teal-200: oklch(0.91 0.096 180.426);
@@ -112,38 +79,6 @@
   --bl-clr-teal-800: oklch(0.437 0.078 188.216);
   --bl-clr-teal-900: oklch(0.386 0.063 188.416);
   --bl-clr-teal-950: oklch(0.277 0.046 192.524);
-
-  /*--bl-clr-teal2-50: oklch(*/
-  /*  from var(--bl-clr-teal2-100) calc(l + 0.06) calc(c - 0.03) h*/
-  /*);*/
-  /*--bl-clr-teal2-100: oklch(*/
-  /*  from var(--bl-clr-teal2-200) calc(l + 0.05) calc(c - 0.03) h*/
-  /*);*/
-  /*--bl-clr-teal2-200: oklch(*/
-  /*  from var(--bl-clr-teal2-300) calc(l + 0.08) calc(c - 0.03) h*/
-  /*);*/
-  /*--bl-clr-teal2-300: oklch(*/
-  /*  from var(--bl-clr-teal2-400) calc(l + 0.06) calc(c - 0.03) h*/
-  /*);*/
-  /*--bl-clr-teal2-400: oklch(*/
-  /*  from var(--bl-clr-teal2-500) calc(l + 0.06) calc(c + 0.02) h*/
-  /*);*/
-  /*--bl-clr-teal2-500: oklch(from var(--bl-clr-teal) l c h);*/
-  /*--bl-clr-teal2-600: oklch(*/
-  /*  from var(--bl-clr-teal2-500) calc(l - 0.1) calc(c) h*/
-  /*);*/
-  /*--bl-clr-teal2-700: oklch(*/
-  /*  from var(--bl-clr-teal2-600) calc(l - 0.09) calc(c) h*/
-  /*);*/
-  /*--bl-clr-teal2-800: oklch(*/
-  /*  from var(--bl-clr-teal2-700) calc(l - 0.09) calc(c - 0.02) h*/
-  /*);*/
-  /*--bl-clr-teal2-900: oklch(*/
-  /*  from var(--bl-clr-teal2-800) calc(l - 0.08) calc(c - 0.02) h*/
-  /*);*/
-  /*--bl-clr-teal2-950: oklch(*/
-  /*  from var(--bl-clr-teal2-900) calc(l - 0.08) calc(c - 0.03) h*/
-  /*);*/
 
   --bl-clr-red-50: #fef2f2;
   --bl-clr-red-100: #fee2e2;

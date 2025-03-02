@@ -6,12 +6,11 @@ body {
 
 .dark,
 [data-theme="dark"] {
-  --bl-clr-text: var(--bl-clr-gray-100);
+  --bl-clr-text: var(--bl-clr-gray-300);
   --bl-clr-text-inverted: var(--bl-clr-gray-950);
-  --bl-clr-background: var(--bl-clr-gray-950);
-  --bl-clr-surface: var(--bl-clr-gray-900);
+  --bl-clr-background: var(--bl-clr-gray-900);
+  --bl-clr-surface: oklch(from var(--bl-clr-background) calc(l + 0.03) c h);
   --bl-border-color: var(--bl-clr-gray-800);
-  --bl-primary-bg: var(--bl-clr-primary-600);
 
   body {
     color-scheme: dark;

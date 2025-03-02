@@ -4,7 +4,7 @@
 
 .menu {
   --bl-menu-bg: var(--bl-clr-surface);
-  --bl-menu-item-color: var(--bl-clr-gray-700);
+  --bl-menu-item-color: var(--bl-clr-text);
   --bl-menu-item-hover-bg: var(--bl-clr-gray-100);
   --bl-menu-divider-color: var(--bl-clr-gray-200);
 
@@ -70,7 +70,6 @@
 
 .dark .menu,
 [data-theme="dark"] .menu {
-  --bl-menu-item-color: var(--bl-clr-gray-200);
   --bl-menu-item-hover-bg: var(--bl-clr-gray-800);
   --bl-menu-divider-color: var(--bl-clr-gray-700);
 

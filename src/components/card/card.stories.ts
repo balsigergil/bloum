@@ -34,11 +34,9 @@ export const CardWithImage: Story = {
     return `
       <div class="card" style="max-width: 350px">
         <img src="https://picsum.photos/300/200" alt="Nature" class="card-image" />
-        <div class="card-header">
-          <h3 class="card-title">List of users</h3>
-        </div>
         <div class="card-body">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, at, commodi ducimus eveniet fugit in, iste mollitia neque nulla obcaecati provident quibusdam repellat sit tempore tenetur ut voluptatem. Provident, quisquam!
+          <h3 class="card-title">List of users</h3>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, at, commodi ducimus eveniet fugit in, iste mollitia neque nulla obcaecati provident quibusdam repellat sit tempore tenetur ut voluptatem. Provident, quisquam!
         </div>
       </div>
       `;
