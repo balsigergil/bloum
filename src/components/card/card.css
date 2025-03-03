@@ -6,6 +6,7 @@
   --bl-card-padding-y: 0.75rem;
   --bl-card-title-fs: 1.125rem;
   --bl-card-title-fw: 600;
+  --bl-card-title-color: var(--bl-clr-gray-800);
   --bl-card-image-max-height: 150px;
 
   background-color: var(--bl-card-bg);
@@ -32,6 +33,7 @@
 }
 
 .card-title {
+  color: var(--bl-card-title-color);
   font-size: var(--bl-card-title-fs);
   font-weight: var(--bl-card-title-fw);
 }
@@ -39,6 +41,11 @@
 .card-actions {
   display: flex;
   gap: 0.25rem;
+
+  .btn {
+    --bl-btn-height: 2rem;
+    --bl-btn-fs: 1rem;
+  }
 }
 
 .card-body {
@@ -59,4 +66,9 @@
 
 .card .table > tfoot > tr:last-child > td {
   border-bottom-width: 0;
+}
+
+.dark .card,
+[data-theme="dark"] .card {
+  --bl-card-title-color: var(--bl-clr-gray-100);
 }

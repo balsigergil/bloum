@@ -1,5 +1,11 @@
 :root {
   --bl-sidebar-width: 16rem;
+  --bl-topbar-bg: var(--bl-clr-surface);
+  --bl-sidebar-border-color: var(--bl-border-color);
+  --bl-sidebar-color: var(--bl-clr-gray-700);
+  --bl-sidebar-color-hover: var(--bl-clr-gray-700);
+  --bl-sidebar-bg-hover: var(--bl-clr-gray-200);
+  --bl-sidebar-title-color: var(--bl-clr-gray-600);
 }
 
 .topbar {
@@ -12,7 +18,7 @@
   align-items: center;
   padding: 0.5rem;
   border-bottom: 1px solid var(--bl-border-color);
-  background-color: #fff;
+  background-color: var(--bl-topbar-bg);
 
   .topbar-brand {
     font-weight: 600;
@@ -36,12 +42,6 @@ html:has(.sidebar.show) {
 }
 
 .sidebar {
-  --bl-sidebar-border-color: var(--bl-border-color);
-  --bl-sidebar-color: var(--bl-clr-gray-700);
-  --bl-sidebar-color-hover: var(--bl-clr-primary-600);
-  --bl-sidebar-bg-hover: var(--bl-clr-gray-100);
-  --bl-sidebar-title-color: var(--bl-clr-gray-600);
-
   display: none;
   position: fixed;
   inset: 0;
@@ -53,9 +53,9 @@ html:has(.sidebar.show) {
 
 .dark .sidebar,
 [data-theme="dark"] .sidebar {
-  --bl-sidebar-color: var(--bl-clr-gray-300);
-  --bl-sidebar-color-hover: var(--bl-clr-primary-400);
-  --bl-sidebar-bg-hover: var(--bl-clr-gray-800);
+  --bl-sidebar-color: var(--bl-clr-gray-200);
+  --bl-sidebar-color-hover: var(--bl-clr-gray-200);
+  --bl-sidebar-bg-hover: var(--bl-clr-gray-900);
   --bl-sidebar-title-color: var(--bl-clr-gray-400);
 }
 

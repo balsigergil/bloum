@@ -133,7 +133,7 @@ const meta: Meta = {
   </aside>
   <main class="p-4 space-y-4">
     <h1 class="font-semibold text-3xl">Content</h1>
-      <div class="grid grid-cols-2 gap-4">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
         <div class="card">
           <div class="card-header">
             <h3 class="card-title">List of users</h3>
