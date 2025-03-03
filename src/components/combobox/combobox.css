@@ -1,4 +1,10 @@
 .bl-combobox {
+  --bl-combobox-menu-bg: var(--bl-clr-surface);
+  --bl-combobox-item-bg: var(--bl-clr-gray-200);
+  --bl-combobox-item-active-bg: var(--bl-clr-gray-300);
+  --bl-combobox-option-highlighted-bg: var(--bl-clr-gray-100);
+  --bl-combobox-option-selected-bg: var(--bl-clr-gray-200);
+
   position: relative;
   display: flex;
   border: 1px solid var(--bl-form-border-color);
@@ -41,7 +47,7 @@
   flex-shrink: 0;
   display: flex;
   align-items: center;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-image: url("../../icons/chevron.svg");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -54,14 +60,14 @@
 }
 
 .bl-combobox-item {
-  background-color: var(--bl-clr-gray-200);
+  background-color: var(--bl-combobox-item-bg);
   border-radius: var(--bl-border-radius);
   display: inline-flex;
-  padding-inline: 0.25rem;
+  padding-inline: 0.5rem;
 }
 
 .bl-combobox-item-active {
-  background-color: var(--bl-clr-gray-300);
+  background-color: var(--bl-combobox-item-active-bg);
 }
 
 .bl-combobox-item-remove {
@@ -78,11 +84,11 @@
   top: calc(100% + 0.25rem);
   left: 0;
   z-index: 50;
-  background: #fff;
+  background: var(--bl-combobox-menu-bg);
   display: none;
   border: 1px solid var(--bl-form-border-color);
-  border-radius: var(--bl-border-radius-md);
-  box-shadow: var(--bl-shadow);
+  border-radius: var(--bl-form-border-radius);
+  box-shadow: var(--bl-shadow-sm);
   overflow: hidden;
 }
 
@@ -93,6 +99,7 @@
   display: block;
   width: 100%;
   border-bottom: 1px solid var(--bl-form-border-color);
+  background-color: var(--bl-clr-surface);
 }
 
 .bl-combobox.open .bl-combobox-menu {
@@ -116,9 +123,17 @@
 }
 
 .bl-combobox-option.bl-combobox-highlighted {
-  background-color: var(--bl-clr-gray-100);
+  background-color: var(--bl-combobox-option-highlighted-bg);
 }
 
 .bl-combobox-option.bl-combobox-selected {
-  background-color: var(--bl-clr-gray-200);
+  background-color: var(--bl-combobox-option-selected-bg);
+}
+
+.dark .bl-combobox,
+[data-theme="dark"] .bl-combobox {
+  --bl-combobox-item-bg: var(--bl-clr-gray-800);
+  --bl-combobox-item-active-bg: var(--bl-clr-gray-700);
+  --bl-combobox-option-highlighted-bg: var(--bl-clr-gray-600);
+  --bl-combobox-option-selected-bg: var(--bl-clr-gray-700);
 }

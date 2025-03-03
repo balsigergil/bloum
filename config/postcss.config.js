@@ -5,7 +5,11 @@ export default {
       url: "inline",
       encodeType: "base64",
     },
-    "postcss-preset-env": {},
+    "postcss-preset-env": {
+      features: {
+        "oklab-function": false,
+      },
+    },
     cssnano: {},
   },
 };
