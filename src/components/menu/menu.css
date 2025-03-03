@@ -6,7 +6,8 @@
   --bl-menu-bg: var(--bl-clr-surface);
   --bl-menu-item-hover-bg: var(--bl-clr-gray-100);
   --bl-menu-item-color: var(--bl-clr-gray-800);
-  --bl-menu-divider-color: var(--bl-clr-gray-200);
+  --bl-menu-divider-color: var(--bl-border-color);
+  --bl-menu-item-padding: 0.75rem;
 
   border: var(--bl-border-color) 1px solid;
   border-radius: var(--bl-border-radius);
@@ -39,8 +40,8 @@
 
 .menu-item {
   color: var(--bl-menu-item-color);
-  padding-inline: 0.5rem;
-  padding-block: 0.25rem;
+  padding-inline: var(--bl-menu-item-padding);
+  padding-block: calc(var(--bl-menu-item-padding) * 0.5);
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -70,8 +71,8 @@
 
 .dark .menu,
 [data-theme="dark"] .menu {
-  --bl-menu-item-hover-bg: var(--bl-clr-gray-800);
-  --bl-menu-divider-color: var(--bl-clr-gray-700);
+  --bl-menu-item-hover-bg: var(--bl-clr-gray-700);
+  --bl-menu-item-color: var(--bl-clr-gray-200);
 
   .menu-item-danger {
     --bl-menu-item-color: var(--bl-clr-red-400);
