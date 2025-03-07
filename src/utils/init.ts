@@ -9,6 +9,7 @@ import { initModals, Modal } from "@/components/modal/Modal";
 import { initSidebar } from "@/components/sidebar/sidebar";
 import { initMenus } from "@/components/menu/menu";
 import { initCollapse } from "@/components/collapse/collapse";
+import { initAccordion } from "@/components/accordion/accordion";
 
 export function initBloum() {
   Tabs.register();
@@ -32,6 +33,7 @@ export function initBloum() {
     initModals();
     initMenus();
     initCollapse();
+    initAccordion();
   });
 
   console.info("🚀 Bloom initialized!");
