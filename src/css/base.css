@@ -2,6 +2,7 @@ body {
   font-family: var(--bl-font), sans-serif;
   color: var(--bl-clr-text);
   background-color: var(--bl-clr-background);
+  interpolate-size: allow-keywords;
 }
 
 .dark,

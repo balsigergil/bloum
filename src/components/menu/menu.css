@@ -27,7 +27,7 @@
   transform: translateY(-0.5rem);
 }
 
-.show {
+.menu.show {
   display: inline-block;
   opacity: 1;
   transform: translateY(0);

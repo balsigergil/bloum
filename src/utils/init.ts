@@ -8,6 +8,7 @@ import { Combobox } from "@/components/combobox/Combobox";
 import { initModals, Modal } from "@/components/modal/Modal";
 import { initSidebar } from "@/components/sidebar/sidebar";
 import { initMenus } from "@/components/menu/menu";
+import { initCollapse } from "@/components/collapse/collapse";
 
 export function initBloum() {
   Tabs.register();
@@ -30,6 +31,7 @@ export function initBloum() {
     initSidebar();
     initModals();
     initMenus();
+    initCollapse();
   });
 
   console.info("🚀 Bloom initialized!");

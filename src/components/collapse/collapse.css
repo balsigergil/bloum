@@ -1,0 +1,13 @@
+.collapse {
+  height: 0;
+  visibility: hidden;
+  overflow: hidden;
+  transition-property: height, visibility;
+  transition-duration: var(--bl-transition-md);
+  transition-timing-function: ease-out;
+}
+
+.collapse.show {
+  height: auto;
+  visibility: visible;
+}
