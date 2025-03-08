@@ -8,32 +8,27 @@ import {
 } from "@floating-ui/dom";
 import { randomId } from "@/utils/random";
 
-type TooltipElement = HTMLElement & { hydrated?: boolean };
+type TooltipElement = HTMLElement & { bltooltip?: Tooltip };
 
 export class Tooltip {
-  private readonly title!: string;
-  private readonly trigger: HTMLElement | null = null;
-  private readonly tooltipId: string | null = null;
-  private tooltip: HTMLElement | null = null;
+  private readonly trigger: HTMLElement;
+
+  private readonly tooltipId: string;
+  private tooltip: HTMLDivElement | null = null;
+  private readonly title: string | null = null;
   private arrowElement: HTMLDivElement | null = null;
   private cleanup: VoidFunction | null = null;
 
   constructor(element: TooltipElement) {
-    if (!element) {
-      return;
-    }
-    if (element.hydrated !== undefined) {
-      return;
-    }
-
     const title = element.getAttribute("data-tooltip");
-    if (!title) {
-      return;
-    }
-
+    this.tooltipId = `bl-toolip-${randomId()}`;
     this.title = title;
     this.trigger = element;
-    this.tooltipId = randomId();
+
+    if (element.bltooltip !== undefined) {
+      return;
+    }
+    element.bltooltip = this;
 
     element.addEventListener(
       "mouseenter",
@@ -46,38 +41,58 @@ export class Tooltip {
       this.removeTooltipElement.bind(this),
     );
     element.addEventListener("blur", this.removeTooltipElement.bind(this));
-    element.hydrated = true;
   }
 
   createTooltipElement() {
-    if (!this.trigger || !this.tooltipId) {
-      return;
+    const existingTooltip = document.getElementById(this.tooltipId);
+    if (existingTooltip) {
+      if (existingTooltip !== this.tooltip) {
+        existingTooltip.remove();
+      } else {
+        existingTooltip.classList.add("show");
+        return;
+      }
     }
 
-    const existingTooltips = document.querySelectorAll(".tooltip");
-    existingTooltips.forEach((tooltip) => {
-      tooltip.remove();
-    });
+    this.tooltip = document.createElement("div");
 
-    const tooltip = document.createElement("div");
-
-    tooltip.id = this.tooltipId;
-    tooltip.classList.add("tooltip");
-    tooltip.setAttribute("role", "tooltip");
-    tooltip.textContent = this.title;
-    this.tooltip = tooltip;
+    this.tooltip.id = this.tooltipId;
+    this.tooltip.classList.add("tooltip", "show");
+    this.tooltip.setAttribute("role", "tooltip");
+    this.tooltip.textContent = this.title;
 
     this.trigger.setAttribute("aria-describedby", this.tooltipId);
 
     this.arrowElement = document.createElement("div");
     this.arrowElement.classList.add("tooltip-arrow");
-    tooltip.append(this.arrowElement);
-    document.body.append(tooltip);
+    this.tooltip.append(this.arrowElement);
+    document.body.append(this.tooltip);
 
     this.cleanup = autoUpdate(
       this.trigger,
       this.tooltip,
       this.updatePosition.bind(this),
+    );
+  }
+
+  removeTooltipElement() {
+    const tooltip = document.getElementById(this.tooltipId);
+    if (!tooltip) {
+      return;
+    }
+
+    if (this.cleanup) {
+      this.cleanup();
+    }
+
+    tooltip.classList.remove("show");
+    tooltip.addEventListener(
+      "transitionend",
+      () => {
+        tooltip.remove();
+        this.trigger?.removeAttribute("aria-describedby");
+      },
+      { once: true },
     );
   }
 
@@ -125,28 +140,6 @@ export class Tooltip {
         [staticSide as string]: "-4px",
       });
     });
-  }
-
-  removeTooltipElement() {
-    if (this.tooltip) {
-      this.tooltip.classList.add("tooltip-hidden");
-      this.tooltip.addEventListener("animationend", () => {
-        if (this.tooltip) {
-          this.tooltip.remove();
-          this.tooltip = null;
-          this.trigger?.removeAttribute("aria-describedby");
-        }
-
-        if (this.arrowElement) {
-          this.arrowElement.remove();
-          this.arrowElement = null;
-        }
-
-        if (this.cleanup) {
-          this.cleanup();
-        }
-      });
-    }
   }
 }
 

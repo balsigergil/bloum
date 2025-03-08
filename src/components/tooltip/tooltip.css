@@ -14,7 +14,21 @@
   padding: 0.375rem 0.5rem;
   font-size: 0.875rem;
   box-shadow: var(--bl-shadow-sm);
-  animation: tooltip-fade-in var(--bl-transition-md) both;
+
+  transition-duration: var(--bl-transition-md);
+  transition-timing-function: ease-out;
+  transition-behavior: allow-discrete;
+  transition-property: display, opacity, transform;
+  opacity: 0;
+}
+
+.tooltip.show {
+  display: block;
+  opacity: 1;
+
+  @starting-style {
+    opacity: 0;
+  }
 }
 
 .tooltip-arrow {
@@ -26,30 +40,8 @@
   transform: rotate(45deg);
 }
 
-.tooltip-hidden {
-  animation: tooltip-fade-out var(--bl-transition-md) both;
-}
-
 .dark .tooltip,
 [data-theme="dark"] .tooltip {
   --bl-tooltip-bg: var(--bl-clr-gray-300);
   --bl-tooltip-color: var(--bl-clr-gray-900);
-}
-
-@keyframes tooltip-fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes tooltip-fade-out {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
 }
