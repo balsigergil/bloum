@@ -17,6 +17,7 @@ export function initBloum() {
   TabList.register();
   Tab.register();
   TabPanel.register();
+  CopyButton.register();
 
   // TODO: Remove ts-ignore
   // @ts-ignore
@@ -34,7 +35,6 @@ export function initBloum() {
     initCollapse();
     initAccordion();
     initAutogrowTextarea();
-    CopyButton.register();
   });
 
   console.info("🚀 Bloom initialized!");
