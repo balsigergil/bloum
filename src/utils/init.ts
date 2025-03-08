@@ -10,6 +10,7 @@ import { initSidebar } from "@/components/sidebar/sidebar";
 import { initMenus } from "@/components/menu/menu";
 import { initCollapse } from "@/components/collapse/collapse";
 import { initAccordion } from "@/components/accordion/accordion";
+import { CopyButton } from "@/components/copy/copy";
 
 export function initBloum() {
   Tabs.register();
@@ -34,6 +35,7 @@ export function initBloum() {
     initMenus();
     initCollapse();
     initAccordion();
+    CopyButton.register();
   });
 
   console.info("🚀 Bloom initialized!");

@@ -7,6 +7,7 @@ import packageJson from "../package.json" with { type: "json" };
 const commonConfig = {
   entryPoints: ["src/index.ts"],
   bundle: true,
+  loader: { ".svg": "text" },
 };
 
 // Browser build (IIFE)
