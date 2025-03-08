@@ -48,7 +48,6 @@
   },
   "dependencies": {
     "@floating-ui/dom": "^1",
-    "@ungap/custom-elements": "^1.3.0",
     "focus-trap": "^7"
   },
   "devDependencies": {

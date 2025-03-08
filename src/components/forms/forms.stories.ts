@@ -29,7 +29,7 @@ export const FormControls: Story = {
         </div>
         <div class="mb-4">
           <label for="message2" class="label">Autosize textarea:</label>
-          <textarea id="message2" name="message" class="form-control" placeholder="Your message here..." is="bl-autogrow"></textarea>
+          <textarea id="message2" name="message" class="form-control" placeholder="Your message here..." data-autogrow></textarea>
         </div>
         <div class="mb-4 form-check">
           <input type="checkbox" id="remember" name="remember" class="checkbox">

@@ -1,5 +1,3 @@
-import "@ungap/custom-elements";
-
 import { Tabs } from "@/components/tabs/Tabs";
 import { TabList } from "@/components/tabs/TabList";
 import { Tab } from "@/components/tabs/Tab";

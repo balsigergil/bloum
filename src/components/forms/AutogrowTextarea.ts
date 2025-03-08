@@ -1,31 +1,15 @@
-export class AutogrowTextarea extends HTMLTextAreaElement {
-  static NAME = "bl-autogrow";
-  static register() {
-    if (customElements.get(this.NAME)) {
-      return;
-    }
-    customElements.define(this.NAME, this, {
-      extends: "textarea",
-    });
-  }
+export class AutogrowTextarea {
+  readonly #element: HTMLTextAreaElement;
 
-  constructor() {
-    super();
-  }
-
-  connectedCallback() {
-    this.addEventListener("focus", this.#onFocus.bind(this));
-    this.addEventListener("input", this.#onInput.bind(this));
-  }
-
-  disconnectedCallback() {
-    this.removeEventListener("focus", this.#onFocus);
-    this.removeEventListener("input", this.#onInput);
+  constructor(element: HTMLTextAreaElement) {
+    this.#element = element;
+    this.#element.addEventListener("focus", this.#onFocus.bind(this));
+    this.#element.addEventListener("input", this.#onInput.bind(this));
   }
 
   #onFocus() {
     this.#autogrow();
-    this.removeEventListener("focus", this.#onFocus);
+    this.#element.removeEventListener("focus", this.#onFocus);
   }
 
   #onInput() {
@@ -33,8 +17,14 @@ export class AutogrowTextarea extends HTMLTextAreaElement {
   }
 
   #autogrow() {
-    this.style.overflow = "hidden";
-    this.style.height = "auto";
-    this.style.height = this.scrollHeight + 2 + "px";
+    this.#element.style.overflow = "hidden";
+    this.#element.style.height = "auto";
+    this.#element.style.height = this.#element.scrollHeight + 2 + "px";
   }
+}
+
+export function initAutogrowTextarea() {
+  document.querySelectorAll("textarea[data-autogrow]").forEach((element) => {
+    new AutogrowTextarea(element as HTMLTextAreaElement);
+  });
 }
