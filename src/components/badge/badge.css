@@ -1,0 +1,111 @@
+.badge {
+  --bl-badge-bg: var(--bl-clr-gray-900);
+  --bl-badge-color: var(--bl-clr-gray-100);
+  --bl-badge-border-color: #fff;
+  --bl-badge-height: 1.25rem;
+  --bl-badge-dot-size: 0.75rem;
+
+  height: var(--bl-badge-height);
+  min-width: var(--bl-badge-height);
+  padding-inline: 0.25rem;
+  border-radius: var(--bl-border-radius-full);
+  background-color: var(--bl-badge-bg);
+  color: var(--bl-badge-color);
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.badge-top-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(50%, -50%);
+  box-shadow: 0 0 0 1px var(--bl-badge-border-color);
+}
+
+.badge-dot {
+  --bl-badge-height: var(--bl-badge-dot-size);
+  padding-inline: 0;
+  border-radius: var(--bl-border-radius-full);
+}
+
+.badge-ping::before {
+  content: "";
+  display: block;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--bl-border-radius-full);
+  background-color: var(--bl-badge-bg);
+  animation: badge-ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.badge-danger {
+  --bl-badge-bg: var(--bl-clr-red-600);
+}
+
+.badge-primary {
+  --bl-badge-bg: var(--bl-clr-primary-600);
+}
+
+.badge-success {
+  --bl-badge-bg: var(--bl-clr-green-600);
+}
+
+.badge-warning {
+  --bl-badge-bg: var(--bl-clr-orange-600);
+}
+
+.badge-info {
+  --bl-badge-bg: var(--bl-clr-blue-600);
+}
+
+@keyframes badge-ping {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.dark,
+[data-theme="dark"] {
+  .badge {
+    --bl-badge-bg: var(--bl-clr-gray-100);
+    --bl-badge-color: var(--bl-clr-gray-900);
+    --bl-badge-border-color: var(--bl-clr-background);
+  }
+
+  .badge-danger {
+    --bl-badge-bg: var(--bl-clr-red-500);
+    --bl-badge-color: #fff;
+  }
+
+  .badge-primary {
+    --bl-badge-bg: var(--bl-clr-primary-500);
+    --bl-badge-color: #fff;
+  }
+
+  .badge-success {
+    --bl-badge-bg: var(--bl-clr-green-500);
+    --bl-badge-color: #fff;
+  }
+
+  .badge-warning {
+    --bl-badge-bg: var(--bl-clr-orange-500);
+    --bl-badge-color: #fff;
+  }
+
+  .badge-info {
+    --bl-badge-bg: var(--bl-clr-blue-500);
+    --bl-badge-color: #fff;
+  }
+}
