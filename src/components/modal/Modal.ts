@@ -75,22 +75,18 @@ export function initModals() {
       const modal = target.closest<BloumModalElement>(".modal");
       if (modal !== null && modal.bloumModal !== undefined) {
         modal.bloumModal.close();
-
         e.preventDefault();
         e.stopPropagation();
       }
     }
 
     // Close modal when clicking outside
-    if (target.closest(".modal.open")) {
-      if (!target.closest(".modal-content")) {
-        const modal = target.closest<BloumModalElement>(".modal.open");
-        if (modal !== null && modal.bloumModal !== undefined) {
-          modal.bloumModal.close();
-
-          e.preventDefault();
-          e.stopPropagation();
-        }
+    if (target.closest(".modal.open") && !target.closest(".modal-content")) {
+      const modal = target.closest<BloumModalElement>(".modal.open");
+      if (modal !== null && modal.bloumModal !== undefined) {
+        modal.bloumModal.close();
+        e.preventDefault();
+        e.stopPropagation();
       }
     }
   });

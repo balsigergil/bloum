@@ -1,0 +1,76 @@
+import type { Meta, StoryObj } from "@storybook/html";
+
+const meta: Meta = {
+  title: "Components/Popover",
+};
+
+export default meta;
+type Story = StoryObj;
+
+export const Popover: Story = {
+  render: () => {
+    return `
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam dicta enim exercitationem in ipsum nostrum odio, pariatur recusandae sit. In iusto laudantium molestiae nam nemo perspiciatis quia reprehenderit sed?</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam dicta enim exercitationem in ipsum nostrum odio, pariatur recusandae sit. In iusto laudantium molestiae nam nemo perspiciatis quia reprehenderit sed?</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam dicta enim exercitationem in ipsum nostrum odio, pariatur recusandae sit. In iusto laudantium molestiae nam nemo perspiciatis quia reprehenderit sed?</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam dicta enim exercitationem in ipsum nostrum odio, pariatur recusandae sit. In iusto laudantium molestiae nam nemo perspiciatis quia reprehenderit sed?</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam dicta enim exercitationem in ipsum nostrum odio, pariatur recusandae sit. In iusto laudantium molestiae nam nemo perspiciatis quia reprehenderit sed?</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam dicta enim exercitationem in ipsum nostrum odio, pariatur recusandae sit. In iusto laudantium molestiae nam nemo perspiciatis quia reprehenderit sed?</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam dicta enim exercitationem in ipsum nostrum odio, pariatur recusandae sit. In iusto laudantium molestiae nam nemo perspiciatis quia reprehenderit sed?</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam dicta enim exercitationem in ipsum nostrum odio, pariatur recusandae sit. In iusto laudantium molestiae nam nemo perspiciatis quia reprehenderit sed?</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam dicta enim exercitationem in ipsum nostrum odio, pariatur recusandae sit. In iusto laudantium molestiae nam nemo perspiciatis quia reprehenderit sed?</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam dicta enim exercitationem in ipsum nostrum odio, pariatur recusandae sit. In iusto laudantium molestiae nam nemo perspiciatis quia reprehenderit sed?</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam dicta enim exercitationem in ipsum nostrum odio, pariatur recusandae sit. In iusto laudantium molestiae nam nemo perspiciatis quia reprehenderit sed?</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam dicta enim exercitationem in ipsum nostrum odio, pariatur recusandae sit. In iusto laudantium molestiae nam nemo perspiciatis quia reprehenderit sed?</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam dicta enim exercitationem in ipsum nostrum odio, pariatur recusandae sit. In iusto laudantium molestiae nam nemo perspiciatis quia reprehenderit sed?</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam dicta enim exercitationem in ipsum nostrum odio, pariatur recusandae sit. In iusto laudantium molestiae nam nemo perspiciatis quia reprehenderit sed?</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam dicta enim exercitationem in ipsum nostrum odio, pariatur recusandae sit. In iusto laudantium molestiae nam nemo perspiciatis quia reprehenderit sed?</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam dicta enim exercitationem in ipsum nostrum odio, pariatur recusandae sit. In iusto laudantium molestiae nam nemo perspiciatis quia reprehenderit sed?</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam dicta enim exercitationem in ipsum nostrum odio, pariatur recusandae sit. In iusto laudantium molestiae nam nemo perspiciatis quia reprehenderit sed?</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam dicta enim exercitationem in ipsum nostrum odio, pariatur recusandae sit. In iusto laudantium molestiae nam nemo perspiciatis quia reprehenderit sed?</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam dicta enim exercitationem in ipsum nostrum odio, pariatur recusandae sit. In iusto laudantium molestiae nam nemo perspiciatis quia reprehenderit sed?</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam dicta enim exercitationem in ipsum nostrum odio, pariatur recusandae sit. In iusto laudantium molestiae nam nemo perspiciatis quia reprehenderit sed?</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam dicta enim exercitationem in ipsum nostrum odio, pariatur recusandae sit. In iusto laudantium molestiae nam nemo perspiciatis quia reprehenderit sed?</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam dicta enim exercitationem in ipsum nostrum odio, pariatur recusandae sit. In iusto laudantium molestiae nam nemo perspiciatis quia reprehenderit sed?</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam dicta enim exercitationem in ipsum nostrum odio, pariatur recusandae sit. In iusto laudantium molestiae nam nemo perspiciatis quia reprehenderit sed?</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam dicta enim exercitationem in ipsum nostrum odio, pariatur recusandae sit. In iusto laudantium molestiae nam nemo perspiciatis quia reprehenderit sed?</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam dicta enim exercitationem in ipsum nostrum odio, pariatur recusandae sit. In iusto laudantium molestiae nam nemo perspiciatis quia reprehenderit sed?</p>
+<button class="btn" data-popover="#my-popover">Click me</button>
+<div class="popover" id="my-popover">
+  <p>Set the dimensions for the layer.</p>
+  <div class="grid grid-cols-2 gap-4">
+    <label class="label">Width</label>
+    <input class="form-control">
+    <label class="label">Max. width</label>
+    <input class="form-control">
+    <label class="label">Height</label>
+    <input class="form-control">
+  </div>
+</div>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam dicta enim exercitationem in ipsum nostrum odio, pariatur recusandae sit. In iusto laudantium molestiae nam nemo perspiciatis quia reprehenderit sed?</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam dicta enim exercitationem in ipsum nostrum odio, pariatur recusandae sit. In iusto laudantium molestiae nam nemo perspiciatis quia reprehenderit sed?</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam dicta enim exercitationem in ipsum nostrum odio, pariatur recusandae sit. In iusto laudantium molestiae nam nemo perspiciatis quia reprehenderit sed?</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam dicta enim exercitationem in ipsum nostrum odio, pariatur recusandae sit. In iusto laudantium molestiae nam nemo perspiciatis quia reprehenderit sed?</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam dicta enim exercitationem in ipsum nostrum odio, pariatur recusandae sit. In iusto laudantium molestiae nam nemo perspiciatis quia reprehenderit sed?</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam dicta enim exercitationem in ipsum nostrum odio, pariatur recusandae sit. In iusto laudantium molestiae nam nemo perspiciatis quia reprehenderit sed?</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam dicta enim exercitationem in ipsum nostrum odio, pariatur recusandae sit. In iusto laudantium molestiae nam nemo perspiciatis quia reprehenderit sed?</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam dicta enim exercitationem in ipsum nostrum odio, pariatur recusandae sit. In iusto laudantium molestiae nam nemo perspiciatis quia reprehenderit sed?</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam dicta enim exercitationem in ipsum nostrum odio, pariatur recusandae sit. In iusto laudantium molestiae nam nemo perspiciatis quia reprehenderit sed?</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam dicta enim exercitationem in ipsum nostrum odio, pariatur recusandae sit. In iusto laudantium molestiae nam nemo perspiciatis quia reprehenderit sed?</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam dicta enim exercitationem in ipsum nostrum odio, pariatur recusandae sit. In iusto laudantium molestiae nam nemo perspiciatis quia reprehenderit sed?</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam dicta enim exercitationem in ipsum nostrum odio, pariatur recusandae sit. In iusto laudantium molestiae nam nemo perspiciatis quia reprehenderit sed?</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam dicta enim exercitationem in ipsum nostrum odio, pariatur recusandae sit. In iusto laudantium molestiae nam nemo perspiciatis quia reprehenderit sed?</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam dicta enim exercitationem in ipsum nostrum odio, pariatur recusandae sit. In iusto laudantium molestiae nam nemo perspiciatis quia reprehenderit sed?</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam dicta enim exercitationem in ipsum nostrum odio, pariatur recusandae sit. In iusto laudantium molestiae nam nemo perspiciatis quia reprehenderit sed?</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam dicta enim exercitationem in ipsum nostrum odio, pariatur recusandae sit. In iusto laudantium molestiae nam nemo perspiciatis quia reprehenderit sed?</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam dicta enim exercitationem in ipsum nostrum odio, pariatur recusandae sit. In iusto laudantium molestiae nam nemo perspiciatis quia reprehenderit sed?</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam dicta enim exercitationem in ipsum nostrum odio, pariatur recusandae sit. In iusto laudantium molestiae nam nemo perspiciatis quia reprehenderit sed?</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam dicta enim exercitationem in ipsum nostrum odio, pariatur recusandae sit. In iusto laudantium molestiae nam nemo perspiciatis quia reprehenderit sed?</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam dicta enim exercitationem in ipsum nostrum odio, pariatur recusandae sit. In iusto laudantium molestiae nam nemo perspiciatis quia reprehenderit sed?</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam dicta enim exercitationem in ipsum nostrum odio, pariatur recusandae sit. In iusto laudantium molestiae nam nemo perspiciatis quia reprehenderit sed?</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam dicta enim exercitationem in ipsum nostrum odio, pariatur recusandae sit. In iusto laudantium molestiae nam nemo perspiciatis quia reprehenderit sed?</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam dicta enim exercitationem in ipsum nostrum odio, pariatur recusandae sit. In iusto laudantium molestiae nam nemo perspiciatis quia reprehenderit sed?</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam dicta enim exercitationem in ipsum nostrum odio, pariatur recusandae sit. In iusto laudantium molestiae nam nemo perspiciatis quia reprehenderit sed?</p>
+`;
+  },
+};

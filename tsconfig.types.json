@@ -6,5 +6,10 @@
     "declarationDir": "./dist/types"
   },
   "include": ["src"],
-  "exclude": ["src/**/*.stories.ts", "src/**/*.stories.tsx", "node_modules"]
+  "exclude": [
+    "src/**/*.stories.ts",
+    "src/**/*.stories.tsx",
+    "node_modules",
+    "src/docs"
+  ]
 }

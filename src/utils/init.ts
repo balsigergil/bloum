@@ -11,6 +11,7 @@ import { initCollapse } from "@/components/collapse/collapse";
 import { initAccordion } from "@/components/accordion/accordion";
 import { CopyButton } from "@/components/copy/copy";
 import { initAutogrowTextarea } from "@/components/forms/AutogrowTextarea";
+import { initPopover } from "@/components/popover/popover";
 
 export function initBloum() {
   Tabs.register();
@@ -35,6 +36,7 @@ export function initBloum() {
     initCollapse();
     initAccordion();
     initAutogrowTextarea();
+    initPopover();
   });
 
   console.info("🚀 Bloom initialized!");
