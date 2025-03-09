@@ -9,6 +9,9 @@ export class Modal {
   readonly #focusTrap: FocusTrap;
 
   constructor(element: BloumModalElement) {
+    if (element.bloumModal !== undefined) {
+      element.bloumModal.destroy();
+    }
     this.#element = element;
     this.#element.bloumModal = this;
     this.#focusTrap = createFocusTrap(this.#element);
@@ -61,9 +64,7 @@ export function initModals() {
         ?.getAttribute("data-modal") as string;
       const element = document.querySelector<BloumModalElement>(modalSelector);
       if (element) {
-        if (element.bloumModal === undefined) {
-          new Modal(element);
-        }
+        new Modal(element);
         element.bloumModal?.open();
         e.preventDefault();
         e.stopPropagation();
