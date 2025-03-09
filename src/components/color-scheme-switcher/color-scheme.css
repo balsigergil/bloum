@@ -1,0 +1,9 @@
+.color-scheme-switcher {
+  & > * {
+    display: none;
+  }
+
+  & > .active {
+    display: block;
+  }
+}
