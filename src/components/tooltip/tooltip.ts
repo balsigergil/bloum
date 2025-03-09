@@ -81,6 +81,11 @@ export class Tooltip {
       return;
     }
 
+    // Return early if the trigger is still focused
+    if (this.trigger === document.activeElement) {
+      return;
+    }
+
     if (this.cleanup) {
       this.cleanup();
     }
