@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.9.1](https://github.com/balsigergil/bloum/compare/v0.9.0...v0.9.1) (2025-03-10)
+
+### Bug Fixes
+
+* various style fixes ([880eae0](https://github.com/balsigergil/bloum/commit/880eae0453d35748150215975f703e6098ac2c37))
+
 ## [0.9.0](https://github.com/balsigergil/bloum/compare/v0.8.0...v0.9.0) (2025-03-10)
 
 ### Features
