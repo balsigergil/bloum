@@ -5,6 +5,7 @@
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 2000;
   width: max-content;
   background-color: var(--bl-popover-bg);
   border-radius: var(--bl-border-radius);
@@ -21,6 +22,7 @@
 
 .popover-arrow {
   position: absolute;
+  z-index: 2000;
   width: 12px;
   height: 12px;
   background-color: var(--bl-popover-bg);

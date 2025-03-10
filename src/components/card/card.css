@@ -24,7 +24,7 @@
 }
 
 .card-header {
-  padding-block: calc(var(--bl-card-header-padding) * 0.5);
+  padding-block: calc(var(--bl-card-header-padding) * 0.75);
   padding-inline: var(--bl-card-header-padding);
   display: flex;
   justify-content: space-between;

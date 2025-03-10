@@ -10,7 +10,7 @@
 
 .topbar {
   position: sticky;
-  z-index: 200;
+  z-index: 50;
   top: 0;
   display: flex;
   height: 3.5rem;
@@ -134,7 +134,7 @@ html:has(.sidebar.show) {
 
 .sidebar-group-title {
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   padding-inline: 1.5rem;

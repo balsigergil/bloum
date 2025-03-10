@@ -45,6 +45,8 @@ html:has(.modal.open) {
   border-radius: var(--bl-modal-border-radius);
   margin-block: var(--bl-modal-margin);
   animation: modalScaleIn var(--bl-modal-animation-transform) both ease-out;
+  padding-block: var(--bl-modal-padding);
+  padding-inline: calc(var(--bl-modal-padding) * 1.5);
 }
 
 .modal.closing .modal-content {
@@ -75,8 +77,6 @@ html:has(.modal.open) {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding-block: var(--bl-modal-padding);
-  padding-inline: calc(var(--bl-modal-padding) * 1.5);
 }
 
 .modal-title {
@@ -85,8 +85,7 @@ html:has(.modal.open) {
 }
 
 .modal-body {
-  padding-block: var(--bl-modal-padding);
-  padding-inline: calc(var(--bl-modal-padding) * 1.5);
+  margin-top: 1rem;
 }
 
 @keyframes modalFadeIn {
