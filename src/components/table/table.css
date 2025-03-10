@@ -1,5 +1,6 @@
 table.table {
-  --bl-table-cell-padding: 0.5rem;
+  --bl-table-cell-padding-block: 0.5rem;
+  --bl-table-cell-padding-inline: 1rem;
   --bl-table-fs: 0.875rem;
   --bl-table-header-fw: 500;
   --bl-table-border-color: var(--bl-border-color);
@@ -30,7 +31,8 @@ table.table {
 
   th,
   td {
-    padding: var(--bl-table-cell-padding);
+    padding-block: var(--bl-table-cell-padding-block);
+    padding-inline: var(--bl-table-cell-padding-inline);
     border-bottom-width: 1px;
   }
 
