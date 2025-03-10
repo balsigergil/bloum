@@ -5,7 +5,7 @@
   --bl-sidebar-color: var(--bl-clr-gray-700);
   --bl-sidebar-color-hover: var(--bl-clr-gray-700);
   --bl-sidebar-bg-hover: var(--bl-clr-gray-200);
-  --bl-sidebar-title-color: var(--bl-clr-gray-600);
+  --bl-sidebar-title-color: var(--bl-clr-gray-500);
 }
 
 .topbar {
@@ -133,11 +133,13 @@ html:has(.sidebar.show) {
 }
 
 .sidebar-group-title {
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
   padding-inline: 1.5rem;
-  margin-top: 1rem;
   color: var(--bl-sidebar-title-color);
+  padding-top: 0.5rem;
 }
 
 .sidebar-nav {
@@ -147,7 +149,7 @@ html:has(.sidebar.show) {
   gap: 0.125rem;
 }
 
-.sidebar-item .sidebar-link {
+.sidebar-link {
   color: var(--bl-sidebar-color);
   padding: 0.5rem 1.5rem;
   text-decoration: none;
@@ -155,7 +157,7 @@ html:has(.sidebar.show) {
   font-weight: 500;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 1rem;
   border-radius: var(--bl-border-radius);
   transition-duration: var(--bl-transition-md);
   transition-property: background-color, color;
@@ -163,7 +165,7 @@ html:has(.sidebar.show) {
   width: 100%;
 }
 
-.sidebar-item .sidebar-link:hover {
+.sidebar-link:hover {
   background-color: var(--bl-sidebar-bg-hover);
   color: var(--bl-sidebar-color-hover);
 }

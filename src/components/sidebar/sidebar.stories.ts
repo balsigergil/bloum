@@ -24,64 +24,65 @@ const meta: Meta = {
             <img src="https://placehold.co/150x50" alt="Logo" />
           </a>
         </div>
-        <div class="mx-4 input-group">
-          <span class="input-group-icon">
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </span>
-          <input type="search" class="form-control" placeholder="Search...">
+        <hr>
+        <div class="mx-4 py-4">
+          <div class="input-group">
+            <div class="input-group-icon">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <input type="search" class="form-control" placeholder="Search...">
+          </div>
         </div>
-        <div>
-          <h3 class="sidebar-group-title">Dashboard</h3>
-          <ul class="sidebar-nav">
-            <li class="sidebar-item active">
-              <a href="#" class="sidebar-link">
-                <i class="fa-solid fa-home fa-fw"></i>
-                Home
-              </a>
-            </li>
-            <li class="sidebar-item">
-              <a href="#" class="sidebar-link">
-                <i class="fa-solid fa-bars-progress fa-fw"></i>
-                Projects
-              </a>
-            </li>
-            <li class="sidebar-item">
-              <a href="#" class="sidebar-link">
-                <i class="fa-solid fa-list-check fa-fw"></i>
-                Tasks
-              </a>
-            </li>
-            <li class="sidebar-item">
-              <a href="#" class="sidebar-link">
-                <i class="fa-solid fa-users fa-fw"></i>
-                Users
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="sidebar-group-title">Administration</h3>
-          <ul class="sidebar-nav">
-            <li class="sidebar-item">
-              <a href="#" class="sidebar-link">
-                <i class="fa-solid fa-dollar fa-fw"></i>
-                Finance
-              </a>
-            </li>
-            <li class="sidebar-item">
-              <a href="#" class="sidebar-link">
-                <i class="fa-solid fa-file fa-fw"></i>
-                Reports
-              </a>
-            </li>
-            <li class="sidebar-item">
-              <a href="#" class="sidebar-link">
-                <i class="fa-solid fa-wrench fa-fw"></i>
-                Parameters
-              </a>
-            </li>
-          </ul>
-        </div>
+        <hr>
+        <h3 class="sidebar-group-title">Dashboard</h3>
+        <ul class="sidebar-nav">
+          <li class="sidebar-item active">
+            <a href="#" class="sidebar-link">
+              <i class="fa-solid fa-home fa-fw"></i>
+              Home
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="#" class="sidebar-link">
+              <i class="fa-solid fa-bars-progress fa-fw"></i>
+              Projects
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="#" class="sidebar-link">
+              <i class="fa-solid fa-list-check fa-fw"></i>
+              Tasks
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="#" class="sidebar-link">
+              <i class="fa-solid fa-users fa-fw"></i>
+              Users
+            </a>
+          </li>
+        </ul>
+        <hr>
+        <h3 class="sidebar-group-title">Administration</h3>
+        <ul class="sidebar-nav">
+          <li class="sidebar-item">
+            <a href="#" class="sidebar-link">
+              <i class="fa-solid fa-dollar fa-fw"></i>
+              Finance
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="#" class="sidebar-link">
+              <i class="fa-solid fa-file fa-fw"></i>
+              Reports
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="#" class="sidebar-link">
+              <i class="fa-solid fa-wrench fa-fw"></i>
+              Parameters
+            </a>
+          </li>
+        </ul>
       </div>
       <div class="sidebar-bottom">
         <ul class="sidebar-nav">

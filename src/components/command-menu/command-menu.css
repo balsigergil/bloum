@@ -70,7 +70,7 @@
 .command-menu-link-label {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 1rem;
 }
 
 .command-menu-link-description {

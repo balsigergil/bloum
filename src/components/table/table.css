@@ -1,6 +1,7 @@
 table.table {
   --bl-table-cell-padding: 0.5rem;
   --bl-table-fs: 0.875rem;
+  --bl-table-header-fw: 500;
   --bl-table-border-color: var(--bl-border-color);
   --bl-table-stripe-bg: var(--bl-clr-gray-100);
   --bl-table-hover-bg: var(--bl-clr-gray-200);
@@ -24,7 +25,7 @@ table.table {
   }
 
   th {
-    font-weight: 600;
+    font-weight: var(--bl-table-header-fw);
   }
 
   th,

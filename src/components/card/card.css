@@ -2,10 +2,10 @@
   --bl-card-bg: var(--bl-clr-surface);
   --bl-card-border-radius: var(--bl-border-radius-lg);
   --bl-card-border: 1px solid var(--bl-border-color);
-  --bl-card-padding-x: 1rem;
-  --bl-card-padding-y: 0.75rem;
+  --bl-card-header-padding: 0.75rem;
+  --bl-card-body-padding: 0.75rem;
   --bl-card-title-fs: 1.125rem;
-  --bl-card-title-fw: 600;
+  --bl-card-title-fw: 500;
   --bl-card-title-color: var(--bl-clr-gray-800);
   --bl-card-image-max-height: 150px;
 
@@ -24,9 +24,8 @@
 }
 
 .card-header {
-  padding-block: var(--bl-card-padding-y);
-  padding-inline: var(--bl-card-padding-x);
-  border-bottom: var(--bl-border-color) solid 1px;
+  padding-block: calc(var(--bl-card-header-padding) * 0.5);
+  padding-inline: var(--bl-card-header-padding);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -34,7 +33,6 @@
 
 .card-title {
   color: var(--bl-card-title-color);
-  font-size: var(--bl-card-title-fs);
   font-weight: var(--bl-card-title-fw);
 }
 
@@ -49,7 +47,7 @@
 }
 
 .card-body {
-  padding: var(--bl-card-padding-x);
+  padding: var(--bl-card-body-padding);
 
   .card-title {
     margin-bottom: 0.5rem;
@@ -60,11 +58,13 @@
   background-color: var(--bl-clr-background);
 }
 
-.card .table > tbody:not(:has(+ tfoot)) > tr:last-child > td {
+.card .table > tbody:not(:has(+ tfoot)) > tr:last-child > td,
+.card .table > tbody:not(:has(+ tfoot)) > tr:last-child > th {
   border-bottom-width: 0;
 }
 
-.card .table > tfoot > tr:last-child > td {
+.card .table > tfoot > tr:last-child > td,
+.card .table > tfoot > tr:last-child > th {
   border-bottom-width: 0;
 }
 
