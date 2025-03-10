@@ -1,5 +1,32 @@
 # Changelog
 
+## [0.9.0](https://github.com/balsigergil/bloum/compare/v0.8.0...v0.9.0) (2025-03-10)
+
+### Features
+
+* **accordion:** add accordion component ([9f65dea](https://github.com/balsigergil/bloum/commit/9f65dea3745fcb8d43d5ead777b44c455dc36837))
+* **badge:** add badge component ([ed08a5e](https://github.com/balsigergil/bloum/commit/ed08a5e84347129895ec271b9c813e95cc6be5bf))
+* **breadcrumb:** add breadcrumb component ([bf4ec05](https://github.com/balsigergil/bloum/commit/bf4ec05c728de17cf00f6a6965550fc87250e2b6))
+* **collapse:** add collapse component ([d46b97e](https://github.com/balsigergil/bloum/commit/d46b97e10e3d50e84d3d36e1543f883cbbd436a4))
+* **command:** add command menu component ([fa20d74](https://github.com/balsigergil/bloum/commit/fa20d743282116e320ae471406b383238f7388e1))
+* **copy:** add copy button custom element ([2cde7fd](https://github.com/balsigergil/bloum/commit/2cde7fd0b8338a2a6bc6cacf49185722cfe8941e))
+* **menu:** add danger menu item ([ae6a1eb](https://github.com/balsigergil/bloum/commit/ae6a1eb4b231339f131e21f741a8e7f4b7572ce1))
+* **menu:** add open/close behaviors ([ff8a1dd](https://github.com/balsigergil/bloum/commit/ff8a1ddd767fa2deb28ed64b7d27c3419b6bcee6))
+* **menu:** add style for menu ([3a41694](https://github.com/balsigergil/bloum/commit/3a41694ead23971621bcb6d557e97b0d4b75f6a8))
+* **menu:** add support for icons and checkboxes ([af6ff0c](https://github.com/balsigergil/bloum/commit/af6ff0ca63b5899e5955e27cdb002ba3b50a6ffa))
+* **modal:** add prefers-reduced-motion support ([9a1bcd0](https://github.com/balsigergil/bloum/commit/9a1bcd0a67448126a14132451ce1ae12d256f5bf))
+* **pagination:** add pagination component ([ebd72ff](https://github.com/balsigergil/bloum/commit/ebd72fff5df7976869424d773edc05b8365841a2))
+* **popover:** add popover component ([4d23a6e](https://github.com/balsigergil/bloum/commit/4d23a6e1a1eb7ed3e2a31f94704d5f984b924197))
+* **switcher:** add color scheme switcher ([30e3ad8](https://github.com/balsigergil/bloum/commit/30e3ad8225bc4f758ecd8cbd5a92b672197b309c))
+
+### Bug Fixes
+
+* **combobox:** dark theme ([c8cd54d](https://github.com/balsigergil/bloum/commit/c8cd54db33e91a2521049b36e16d4b95e2853584))
+* **menu:** dark mode color ([02a0d07](https://github.com/balsigergil/bloum/commit/02a0d07c3ff3443f73fd4d057434af9e54862584))
+* **switch:** label layout shift ([5f610aa](https://github.com/balsigergil/bloum/commit/5f610aae10d71a3a08724fd2a76198932e8b7684))
+* **tooltip:** flicker between hover and focus ([852483e](https://github.com/balsigergil/bloum/commit/852483e91e7bb3e2297d7fb4cd6f646353eae511))
+* **tooltip:** keep open if still focused ([f82d201](https://github.com/balsigergil/bloum/commit/f82d201428601764a5bba23ec668a82f131a381b))
+
 ## [0.8.0](https://github.com/balsigergil/bloum/compare/v0.7.0...v0.8.0) (2025-03-01)
 
 ### Features
