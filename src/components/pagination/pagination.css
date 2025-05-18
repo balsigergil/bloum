@@ -1,51 +1,53 @@
-.pagination {
-  --bl-pagination-color: var(--bl-clr-gray-700);
-  --bl-pagination-active-border-color: var(--bl-clr-gray-300);
-  --bl-pagination-item-bg-hover: var(--bl-clr-gray-200);
-  --bl-pagination-height: 2.25rem;
+@layer components {
+  .pagination {
+    --bl-pagination-color: var(--bl-clr-gray-700);
+    --bl-pagination-active-border-color: var(--bl-clr-gray-300);
+    --bl-pagination-item-bg-hover: var(--bl-clr-gray-200);
+    --bl-pagination-height: 2.25rem;
 
-  display: flex;
-  align-items: center;
-  gap: calc(0.25 / 2.25 * var(--bl-pagination-height));
-}
-
-.page-item {
-  height: var(--bl-pagination-height);
-  padding-inline: calc(0.75 / 2.25 * var(--bl-pagination-height));
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: max(0.75rem, calc(0.875 / 2.25 * var(--bl-pagination-height)));
-  font-weight: 500;
-  color: var(--bl-pagination-color);
-  border-radius: var(--bl-border-radius);
-  border: 1px solid transparent;
-  transition-property: background-color, border-color;
-  transition-timing-function: ease-in-out;
-  transition-duration: var(--bl-transition-md);
-
-  &:hover {
-    background-color: var(--bl-pagination-item-bg-hover);
+    display: flex;
+    align-items: center;
+    gap: calc(0.25 / 2.25 * var(--bl-pagination-height));
   }
 
-  &:active {
-    background-color: oklch(
-      from var(--bl-pagination-item-bg-hover) calc(l - 0.03) c h
-    );
+  .page-item {
+    height: var(--bl-pagination-height);
+    padding-inline: calc(0.75 / 2.25 * var(--bl-pagination-height));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: max(0.75rem, calc(0.875 / 2.25 * var(--bl-pagination-height)));
+    font-weight: 500;
+    color: var(--bl-pagination-color);
+    border-radius: var(--bl-border-radius);
+    border: 1px solid transparent;
+    transition-property: background-color, border-color;
+    transition-timing-function: ease-in-out;
+    transition-duration: var(--bl-transition-md);
+
+    &:hover {
+      background-color: var(--bl-pagination-item-bg-hover);
+    }
+
+    &:active {
+      background-color: oklch(
+        from var(--bl-pagination-item-bg-hover) calc(l - 0.03) c h
+      );
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--bl-clr-primary-600);
+    }
   }
 
-  &:focus-visible {
-    outline: 2px solid var(--bl-clr-primary-600);
+  .page-item.active {
+    border: 1px solid var(--bl-pagination-active-border-color);
   }
-}
 
-.page-item.active {
-  border: 1px solid var(--bl-pagination-active-border-color);
-}
-
-.dark .page-item,
-[data-theme="dark"] .page-item {
-  --bl-pagination-color: var(--bl-clr-gray-300);
-  --bl-pagination-active-border-color: var(--bl-clr-gray-400);
-  --bl-pagination-item-bg-hover: var(--bl-clr-gray-700);
+  .dark .page-item,
+  [data-theme="dark"] .page-item {
+    --bl-pagination-color: var(--bl-clr-gray-300);
+    --bl-pagination-active-border-color: var(--bl-clr-gray-400);
+    --bl-pagination-item-bg-hover: var(--bl-clr-gray-700);
+  }
 }

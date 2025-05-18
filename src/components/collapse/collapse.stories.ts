@@ -10,7 +10,7 @@ export const Collapse: StoryObj = {
   render: () => {
     return `
 <a class="btn btn-primary" data-collapse="#collapse-1">Toggle collapse</a>
-<div class="collapse mt-4" id="collapse-1">
+<div class="collapsible mt-4" id="collapse-1">
   <div class="card card-body">
     <p>Some content inside the collapse</p>
   </div>

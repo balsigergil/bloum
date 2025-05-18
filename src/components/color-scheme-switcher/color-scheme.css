@@ -1,9 +1,11 @@
-.color-scheme-switcher {
-  & > * {
-    display: none;
-  }
+@layer components {
+  .color-scheme-switcher {
+    & > * {
+      display: none;
+    }
 
-  & > .active {
-    display: block;
+    & > .active {
+      display: block;
+    }
   }
 }

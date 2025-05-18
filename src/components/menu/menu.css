@@ -1,91 +1,93 @@
-.dropdown {
-  position: relative;
-}
+@layer components {
+  .dropdown {
+    position: relative;
+  }
 
-.menu {
-  --bl-menu-bg: var(--bl-clr-surface);
-  --bl-menu-item-hover-bg: var(--bl-clr-gray-100);
-  --bl-menu-item-color: var(--bl-clr-gray-800);
-  --bl-menu-divider-color: var(--bl-border-color);
-  --bl-menu-item-padding: 0.75rem;
+  .menu {
+    --bl-menu-bg: var(--bl-clr-surface);
+    --bl-menu-item-hover-bg: var(--bl-clr-gray-100);
+    --bl-menu-item-color: var(--bl-clr-gray-800);
+    --bl-menu-divider-color: var(--bl-border-color);
+    --bl-menu-item-padding: 0.75rem;
 
-  border: var(--bl-border-color) 1px solid;
-  border-radius: var(--bl-border-radius);
-  padding: 0.25rem;
-  background-color: var(--bl-menu-bg);
-  min-width: 8rem;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  position: absolute;
-  display: none;
+    border: var(--bl-border-color) 1px solid;
+    border-radius: var(--bl-border-radius);
+    padding: 0.25rem;
+    background-color: var(--bl-menu-bg);
+    min-width: 8rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    position: absolute;
+    display: none;
 
-  transition-duration: var(--bl-transition-md);
-  transition-timing-function: ease-out;
-  transition-behavior: allow-discrete;
-  transition-property: display, opacity, transform;
-  opacity: 0;
-  transform: translateY(-0.5rem);
-}
-
-.menu.show {
-  display: inline-block;
-  opacity: 1;
-  transform: translateY(0);
-
-  @starting-style {
+    transition-duration: var(--bl-transition-md);
+    transition-timing-function: ease-out;
+    transition-behavior: allow-discrete;
+    transition-property: display, opacity, transform;
     opacity: 0;
     transform: translateY(-0.5rem);
   }
-}
 
-.menu-item {
-  color: var(--bl-menu-item-color);
-  padding-inline: var(--bl-menu-item-padding);
-  padding-block: calc(var(--bl-menu-item-padding) * 0.5);
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  width: 100%;
-  text-align: left;
-  border-radius: var(--bl-border-radius);
-  cursor: pointer;
-  user-select: none;
-  transition-duration: var(--bl-transition-xs);
-  transition-property: color, background-color;
-  transition-timing-function: ease-in-out;
-}
+  .menu.show {
+    display: inline-block;
+    opacity: 1;
+    transform: translateY(0);
 
-.menu-item:hover {
-  background-color: var(--bl-menu-item-hover-bg);
-}
-
-.menu-item-danger {
-  --bl-menu-item-color: var(--bl-clr-red-600);
-  --bl-menu-item-hover-bg: var(--bl-clr-red-50);
-}
-
-.menu-divider {
-  border-top: var(--bl-menu-divider-color) 1px solid;
-  margin-block: 0.25rem;
-}
-
-.dark .menu,
-[data-theme="dark"] .menu {
-  --bl-menu-item-hover-bg: var(--bl-clr-gray-700);
-  --bl-menu-item-color: var(--bl-clr-gray-200);
-
-  .menu-item-danger {
-    --bl-menu-item-color: var(--bl-clr-red-400);
-    --bl-menu-item-hover-bg: var(--bl-clr-red-950);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .menu {
-    transition-duration: 0s;
+    @starting-style {
+      opacity: 0;
+      transform: translateY(-0.5rem);
+    }
   }
 
   .menu-item {
-    transition-duration: 0s;
+    color: var(--bl-menu-item-color);
+    padding-inline: var(--bl-menu-item-padding);
+    padding-block: calc(var(--bl-menu-item-padding) * 0.5);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    text-align: left;
+    border-radius: var(--bl-border-radius);
+    cursor: pointer;
+    user-select: none;
+    transition-duration: var(--bl-transition-xs);
+    transition-property: color, background-color;
+    transition-timing-function: ease-in-out;
+  }
+
+  .menu-item:hover {
+    background-color: var(--bl-menu-item-hover-bg);
+  }
+
+  .menu-item-danger {
+    --bl-menu-item-color: var(--bl-clr-red-600);
+    --bl-menu-item-hover-bg: var(--bl-clr-red-50);
+  }
+
+  .menu-divider {
+    border-top: var(--bl-menu-divider-color) 1px solid;
+    margin-block: 0.25rem;
+  }
+
+  .dark .menu,
+  [data-theme="dark"] .menu {
+    --bl-menu-item-hover-bg: var(--bl-clr-gray-700);
+    --bl-menu-item-color: var(--bl-clr-gray-200);
+
+    .menu-item-danger {
+      --bl-menu-item-color: var(--bl-clr-red-400);
+      --bl-menu-item-hover-bg: var(--bl-clr-red-950);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .menu {
+      transition-duration: 0s;
+    }
+
+    .menu-item {
+      transition-duration: 0s;
+    }
   }
 }

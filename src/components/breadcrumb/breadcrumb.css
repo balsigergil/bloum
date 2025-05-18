@@ -1,41 +1,43 @@
-.breadcrumb {
-  --bl-breadbrumb-color: var(--bl-clr-gray-600);
-  --bl-breadbrumb-color-active: var(--bl-clr-gray-700);
+@layer components {
+  .breadcrumb {
+    --bl-breadbrumb-color: var(--bl-clr-gray-600);
+    --bl-breadbrumb-color-active: var(--bl-clr-gray-700);
 
-  display: flex;
-  flex-wrap: wrap;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  align-items: center;
-  gap: 0.75rem;
-}
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    align-items: center;
+    gap: 0.75rem;
+  }
 
-.breadcrumb-item {
-  color: var(--bl-breadbrumb-color);
-  font-size: 0.875rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-
-  & > a {
+  .breadcrumb-item {
+    color: var(--bl-breadbrumb-color);
+    font-size: 0.875rem;
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
+
+    & > a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
   }
-}
 
-.breadcrumb-item.active {
-  color: var(--bl-breadbrumb-color-active);
-  font-weight: 500;
-}
+  .breadcrumb-item.active {
+    color: var(--bl-breadbrumb-color-active);
+    font-weight: 500;
+  }
 
-.breadcrumb-separator {
-  font-size: 0.625rem;
-}
+  .breadcrumb-separator {
+    font-size: 0.625rem;
+  }
 
-.dark .breadcrumb,
-[data-theme="dark"] .breadcrumb {
-  --bl-breadbrumb-color: var(--bl-clr-gray-400);
-  --bl-breadbrumb-color-active: var(--bl-clr-gray-300);
+  .dark .breadcrumb,
+  [data-theme="dark"] .breadcrumb {
+    --bl-breadbrumb-color: var(--bl-clr-gray-400);
+    --bl-breadbrumb-color-active: var(--bl-clr-gray-300);
+  }
 }

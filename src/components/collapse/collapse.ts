@@ -32,7 +32,7 @@ export class Collapse {
 }
 
 export function initCollapse() {
-  document.querySelectorAll(".collapse").forEach((collapse) => {
+  document.querySelectorAll(".collapsible").forEach((collapse) => {
     new Collapse(collapse as BloumCollapseElement);
   });
 }
