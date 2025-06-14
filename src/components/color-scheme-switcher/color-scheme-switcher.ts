@@ -121,7 +121,7 @@ export class ColorSchemeSwitcher {
 }
 
 export function initColorSchemeSwitcher() {
-  initColorScheme();
+  // initColorScheme();
   document.querySelectorAll(".color-scheme-switcher").forEach((element) => {
     new ColorSchemeSwitcher(element as HTMLElement);
   });

@@ -87,19 +87,19 @@ export const Sizes: Story = {
   render: () => `
     <div class="flex flex-col gap-4">
       <div>
-        <p class="text-sm text-gray-600 mb-2">Small</p>
+        <p class="text-sm font-medium mb-2">Small</p>
         <div class="progress progress-sm">
           <div class="progress-bar" style="width: 25%"></div>
         </div>
       </div>
       <div>
-        <p class="text-sm text-gray-600 mb-2">Medium (Default)</p>
+        <p class="text-sm font-medium mb-2">Medium (Default)</p>
         <div class="progress">
           <div class="progress-bar" style="width: 50%"></div>
         </div>
       </div>
       <div>
-        <p class="text-sm text-gray-600 mb-2">Large</p>
+        <p class="text-sm font-medium mb-2">Large</p>
         <div class="progress progress-lg">
           <div class="progress-bar" style="width: 75%"></div>
         </div>
@@ -112,37 +112,37 @@ export const Variants: Story = {
   render: () => `
     <div class="flex flex-col gap-4">
       <div>
-        <p class="text-sm text-gray-600 mb-2">Default</p>
+        <p class="text-sm font-medium mb-2">Default</p>
         <div class="progress">
           <div class="progress-bar" style="width: 20%"></div>
         </div>
       </div>
       <div>
-        <p class="text-sm text-gray-600 mb-2">Primary</p>
+        <p class="text-sm font-medium mb-2">Primary</p>
         <div class="progress progress-primary">
           <div class="progress-bar" style="width: 35%"></div>
         </div>
       </div>
       <div>
-        <p class="text-sm text-gray-600 mb-2">Success</p>
+        <p class="text-sm font-medium mb-2">Success</p>
         <div class="progress progress-success">
           <div class="progress-bar" style="width: 50%"></div>
         </div>
       </div>
       <div>
-        <p class="text-sm text-gray-600 mb-2">Danger</p>
+        <p class="text-sm font-medium mb-2">Danger</p>
         <div class="progress progress-danger">
           <div class="progress-bar" style="width: 65%"></div>
         </div>
       </div>
       <div>
-        <p class="text-sm text-gray-600 mb-2">Warning</p>
+        <p class="text-sm font-medium mb-2">Warning</p>
         <div class="progress progress-warning">
           <div class="progress-bar" style="width: 80%"></div>
         </div>
       </div>
       <div>
-        <p class="text-sm text-gray-600 mb-2">Info</p>
+        <p class="text-sm font-medium mb-2">Info</p>
         <div class="progress progress-info">
           <div class="progress-bar" style="width: 95%"></div>
         </div>
@@ -155,13 +155,13 @@ export const Striped: Story = {
   render: () => `
     <div class="flex flex-col gap-4">
       <div>
-        <p class="text-sm text-gray-600 mb-2">Striped</p>
+        <p class="text-sm font-medium mb-2">Striped</p>
         <div class="progress progress-striped">
           <div class="progress-bar" style="width: 40%"></div>
         </div>
       </div>
       <div>
-        <p class="text-sm text-gray-600 mb-2">Striped Animated</p>
+        <p class="text-sm font-medium mb-2">Striped Animated</p>
         <div class="progress progress-striped progress-animated">
           <div class="progress-bar" style="width: 60%"></div>
         </div>
@@ -174,7 +174,7 @@ export const WithLabels: Story = {
   render: () => `
     <div class="flex flex-col gap-4">
       <div>
-        <p class="text-sm text-gray-600 mb-2">Progress with percentage</p>
+        <p class="text-sm font-medium mb-2">Progress with percentage</p>
         <div class="progress progress-lg progress-primary">
           <div class="progress-bar" style="width: 45%">
             <span class="progress-label">45%</span>
@@ -182,7 +182,7 @@ export const WithLabels: Story = {
         </div>
       </div>
       <div>
-        <p class="text-sm text-gray-600 mb-2">Progress with custom text</p>
+        <p class="text-sm font-medium mb-2">Progress with custom text</p>
         <div class="progress progress-lg progress-success">
           <div class="progress-bar" style="width: 75%">
             <span class="progress-label">Loading...</span>
@@ -190,7 +190,7 @@ export const WithLabels: Story = {
         </div>
       </div>
       <div>
-        <p class="text-sm text-gray-600 mb-2">Striped with label</p>
+        <p class="text-sm font-medium mb-2">Striped with label</p>
         <div class="progress progress-lg progress-warning progress-striped progress-animated">
           <div class="progress-bar" style="width: 90%">
             <span class="progress-label">90% Complete</span>
@@ -205,19 +205,19 @@ export const Indeterminate: Story = {
   render: () => `
     <div class="flex flex-col gap-4">
       <div>
-        <p class="text-sm text-gray-600 mb-2">Indeterminate Progress (Loading State)</p>
+        <p class="text-sm font-medium mb-2">Indeterminate Progress (Loading State)</p>
         <div class="progress progress-indeterminate">
           <div class="progress-bar"></div>
         </div>
       </div>
       <div>
-        <p class="text-sm text-gray-600 mb-2">Indeterminate with Color</p>
+        <p class="text-sm font-medium mb-2">Indeterminate with Color</p>
         <div class="progress progress-primary progress-indeterminate">
           <div class="progress-bar"></div>
         </div>
       </div>
       <div>
-        <p class="text-sm text-gray-600 mb-2">Large Indeterminate</p>
+        <p class="text-sm font-medium mb-2">Large Indeterminate</p>
         <div class="progress progress-lg progress-danger progress-indeterminate">
           <div class="progress-bar"></div>
         </div>
@@ -232,7 +232,7 @@ export const ComplexExample: Story = {
       <div>
         <div class="flex justify-between mb-2">
           <span class="text-sm font-medium">File Upload Progress</span>
-          <span class="text-sm text-gray-600">78%</span>
+          <span class="text-sm">78%</span>
         </div>
         <div class="progress progress-lg progress-primary progress-striped progress-animated">
           <div class="progress-bar" style="width: 78%">
