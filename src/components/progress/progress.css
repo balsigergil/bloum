@@ -5,7 +5,7 @@
     --bl-progress-color: var(--bl-clr-gray-700);
     --bl-progress-border-radius: var(--bl-border-radius-full);
     --bl-progress-animation-duration: 1.5s;
-    --bl-progress-label-color: var(--bl-clr-text-inverted);
+    --bl-progress-label-color: #fff;
 
     position: relative;
     width: 100%;
@@ -27,7 +27,6 @@
     justify-content: center;
   }
 
-  /* Progress label */
   .progress-label {
     font-size: 0.625rem;
     font-weight: 600;
@@ -40,18 +39,18 @@
   /* Size variants */
   .progress-sm {
     --bl-progress-height: 0.25rem;
-  }
 
-  .progress-sm .progress-label {
-    font-size: 0.5rem;
+    .progress-label {
+      font-size: 0.5rem;
+    }
   }
 
   .progress-lg {
     --bl-progress-height: 1.25rem;
-  }
 
-  .progress-lg .progress-label {
-    font-size: 0.875rem;
+    .progress-label {
+      font-size: 0.875rem;
+    }
   }
 
   /* Color variants */
@@ -76,31 +75,34 @@
   }
 
   /* Striped variant */
-  .progress-striped .progress-bar {
-    background-image: linear-gradient(
-      45deg,
-      rgba(255, 255, 255, 0.15) 25%,
-      transparent 25%,
-      transparent 50%,
-      rgba(255, 255, 255, 0.15) 50%,
-      rgba(255, 255, 255, 0.15) 75%,
-      transparent 75%,
-      transparent
-    );
-    background-size: var(--bl-progress-height) var(--bl-progress-height);
+  .progress-striped {
+    .progress-bar {
+      background-image: linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.15) 25%,
+        transparent 25%,
+        transparent 50%,
+        rgba(255, 255, 255, 0.15) 50%,
+        rgba(255, 255, 255, 0.15) 75%,
+        transparent 75%,
+        transparent
+      );
+      background-size: var(--bl-progress-height) var(--bl-progress-height);
+    }
+
+    &.progress-animated .progress-bar {
+      animation: progress-stripes var(--bl-progress-animation-duration) linear
+        infinite;
+    }
   }
 
-  /* Animated striped variant */
-  .progress-striped.progress-animated .progress-bar {
-    animation: progress-stripes var(--bl-progress-animation-duration) linear
-      infinite;
-  }
-
-  /* Indeterminate progress (infinite loading) */
-  .progress-indeterminate .progress-bar {
-    width: 30%;
-    animation: progress-indeterminate var(--bl-progress-animation-duration)
-      ease-in-out infinite;
+  /* Indeterminate progress */
+  .progress-indeterminate {
+    .progress-bar {
+      width: 30%;
+      animation: progress-indeterminate var(--bl-progress-animation-duration)
+        ease-in-out infinite;
+    }
   }
 
   /* Animations */
@@ -122,42 +124,37 @@
     }
   }
 
-  /* Dark theme support */
-  .dark .progress,
-  [data-theme="dark"] .progress {
-    --bl-progress-bg: var(--bl-clr-gray-700);
-    --bl-progress-color: var(--bl-clr-primary-500);
-    --bl-progress-label-color: var(--bl-clr-text-inverted);
-  }
+  /* Dark theme */
+  .dark,
+  [data-theme="dark"] {
+    .progress {
+      --bl-progress-bg: var(--bl-clr-gray-700);
+      --bl-progress-color: var(--bl-clr-primary-500);
+    }
 
-  .dark .progress-primary,
-  [data-theme="dark"] .progress-primary {
-    --bl-progress-color: var(--bl-clr-primary-500);
-  }
+    .progress-primary {
+      --bl-progress-color: var(--bl-clr-primary-500);
+    }
 
-  .dark .progress-success,
-  [data-theme="dark"] .progress-success {
-    --bl-progress-color: var(--bl-clr-green-500);
-  }
+    .progress-success {
+      --bl-progress-color: var(--bl-clr-green-500);
+    }
 
-  .dark .progress-danger,
-  [data-theme="dark"] .progress-danger {
-    --bl-progress-color: var(--bl-clr-red-500);
-  }
+    .progress-danger {
+      --bl-progress-color: var(--bl-clr-red-500);
+    }
 
-  .dark .progress-warning,
-  [data-theme="dark"] .progress-warning {
-    --bl-progress-color: var(--bl-clr-orange-500);
-  }
+    .progress-warning {
+      --bl-progress-color: var(--bl-clr-orange-500);
+    }
 
-  .dark .progress-info,
-  [data-theme="dark"] .progress-info {
-    --bl-progress-color: var(--bl-clr-blue-500);
-  }
+    .progress-info {
+      --bl-progress-color: var(--bl-clr-blue-500);
+    }
 
-  .dark .progress-label,
-  [data-theme="dark"] .progress-label {
-    text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+    .progress-label {
+      text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+    }
   }
 
   /* Accessibility */
