@@ -1,10 +1,11 @@
 @layer components {
   .progress {
-    --bl-progress-height: 0.5rem;
+    --bl-progress-height: 0.75rem;
     --bl-progress-bg: var(--bl-clr-gray-300);
-    --bl-progress-color: var(--bl-clr-primary-600);
-    --bl-progress-border-radius: var(--bl-border-radius);
+    --bl-progress-color: var(--bl-clr-gray-700);
+    --bl-progress-border-radius: var(--bl-border-radius-full);
     --bl-progress-animation-duration: 1.5s;
+    --bl-progress-label-color: var(--bl-clr-text-inverted);
 
     position: relative;
     width: 100%;
@@ -21,20 +22,19 @@
     transition: width var(--bl-transition-lg) ease-in-out;
     position: relative;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   /* Progress label */
   .progress-label {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     font-size: 0.625rem;
     font-weight: 600;
-    color: var(--bl-clr-text);
+    color: var(--bl-progress-label-color);
     white-space: nowrap;
-    text-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
     z-index: 1;
+    margin-block: 0.25rem;
   }
 
   /* Size variants */
@@ -47,11 +47,11 @@
   }
 
   .progress-lg {
-    --bl-progress-height: 1rem;
+    --bl-progress-height: 1.25rem;
   }
 
   .progress-lg .progress-label {
-    font-size: 0.75rem;
+    font-size: 0.875rem;
   }
 
   /* Color variants */
@@ -127,6 +127,7 @@
   [data-theme="dark"] .progress {
     --bl-progress-bg: var(--bl-clr-gray-700);
     --bl-progress-color: var(--bl-clr-primary-500);
+    --bl-progress-label-color: var(--bl-clr-text-inverted);
   }
 
   .dark .progress-primary,

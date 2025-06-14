@@ -43,6 +43,9 @@ This guide helps create new components for the Bloum web components library, fol
 ## CSS Structure
 
 ### Required Structure
+
+Use nested rules if needed.
+
 ```css
 @layer components {
   .component-name {
