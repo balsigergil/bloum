@@ -48,6 +48,8 @@
 
 - [ ] **Stack** - Layout component that arranges child elements in a vertical or horizontal stack.
 
+- [ ] **Tag** - Interactive label component for categorizing, filtering, and organizing content with removable functionality.
+
 - [ ] **Timeline** - Component that displays events or milestones in chronological order.
 
 ## Inputs
@@ -116,7 +118,7 @@
 
 - [x] **Modal** - Popup dialog that overlays the main content and requires user interaction.
 
-- [ ] **Slideover** - Panel that slides in from the side of the screen over existing content.
+- [ ] **Drawer** - Panel that slides in from the side of the screen over existing content.
 
 - [x] **Popover** - Small overlay that appears near a trigger element with contextual content.
 
