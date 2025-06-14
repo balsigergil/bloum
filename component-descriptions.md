@@ -150,7 +150,7 @@
 
 - [ ] **Tree** - Hierarchical data structure with expandable/collapsible nodes.
 
-- [ ] **Pick List** - Dual-panel component for moving items between available and selected lists.
+- [ ] **Pick List / Transfer List** - Dual-panel component for moving items between available and selected lists.
 
 - [ ] **Virtual Scroller** - Performance-optimized list that renders only visible items for large datasets.
 

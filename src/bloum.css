@@ -25,6 +25,7 @@
 @import "./components/accordion/accordion.css";
 @import "./components/breadcrumb/breadcrumb.css";
 @import "./components/badge/badge.css";
+@import "./components/tag/tag.css";
 @import "./components/popover/popover.css";
 @import "./components/color-scheme-switcher/color-scheme.css";
 @import "./components/command-menu/command-menu.css";
