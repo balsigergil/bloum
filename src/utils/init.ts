@@ -13,6 +13,7 @@ import { CopyButton } from "@/components/copy/copy";
 import { initAutogrowTextarea } from "@/components/forms/AutogrowTextarea";
 import { initPopover } from "@/components/popover/popover";
 import { initColorSchemeSwitcher } from "@/components/color-scheme-switcher/color-scheme-switcher";
+import { initSteps } from "@/components/steps/steps";
 
 export function initBloum() {
   Tabs.register();
@@ -39,6 +40,7 @@ export function initBloum() {
     initAutogrowTextarea();
     initPopover();
     initColorSchemeSwitcher();
+    initSteps();
   });
 
   console.info("🚀 Bloom initialized!");

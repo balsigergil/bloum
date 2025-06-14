@@ -108,7 +108,7 @@
 
 - [ ] **Scroll Top** - Button that smoothly scrolls the page back to the top.
 
-- [ ] **Steps** - Progress indicator showing the current step in a multi-step process.
+- [x] **Steps** - Progress indicator showing the current step in a multi-step process.
 
 - [x] **Tabs** - Horizontal navigation that switches between different content panels.
 

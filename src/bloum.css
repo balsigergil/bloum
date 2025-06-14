@@ -16,6 +16,7 @@
 @import "./components/modal/modal.css";
 @import "./components/alert/alert.css";
 @import "./components/spinner/spinner.css";
+@import "./components/steps/steps.css";
 @import "./components/tooltip/tooltip.css";
 @import "./components/sidebar/sidebar.css";
 @import "./components/combobox/combobox.css";
