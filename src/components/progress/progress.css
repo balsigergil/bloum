@@ -1,0 +1,173 @@
+@layer components {
+  .progress {
+    --bl-progress-height: 0.5rem;
+    --bl-progress-bg: var(--bl-clr-gray-300);
+    --bl-progress-color: var(--bl-clr-primary-600);
+    --bl-progress-border-radius: var(--bl-border-radius);
+    --bl-progress-animation-duration: 1.5s;
+
+    position: relative;
+    width: 100%;
+    height: var(--bl-progress-height);
+    background-color: var(--bl-progress-bg);
+    border-radius: var(--bl-progress-border-radius);
+    overflow: hidden;
+  }
+
+  .progress-bar {
+    height: 100%;
+    background-color: var(--bl-progress-color);
+    border-radius: var(--bl-progress-border-radius);
+    transition: width var(--bl-transition-lg) ease-in-out;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Progress label */
+  .progress-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.625rem;
+    font-weight: 600;
+    color: var(--bl-clr-text);
+    white-space: nowrap;
+    text-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
+    z-index: 1;
+  }
+
+  /* Size variants */
+  .progress-sm {
+    --bl-progress-height: 0.25rem;
+  }
+
+  .progress-sm .progress-label {
+    font-size: 0.5rem;
+  }
+
+  .progress-lg {
+    --bl-progress-height: 1rem;
+  }
+
+  .progress-lg .progress-label {
+    font-size: 0.75rem;
+  }
+
+  /* Color variants */
+  .progress-primary {
+    --bl-progress-color: var(--bl-clr-primary-600);
+  }
+
+  .progress-success {
+    --bl-progress-color: var(--bl-clr-green-600);
+  }
+
+  .progress-danger {
+    --bl-progress-color: var(--bl-clr-red-600);
+  }
+
+  .progress-warning {
+    --bl-progress-color: var(--bl-clr-orange-600);
+  }
+
+  .progress-info {
+    --bl-progress-color: var(--bl-clr-blue-600);
+  }
+
+  /* Striped variant */
+  .progress-striped .progress-bar {
+    background-image: linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.15) 25%,
+      transparent 25%,
+      transparent 50%,
+      rgba(255, 255, 255, 0.15) 50%,
+      rgba(255, 255, 255, 0.15) 75%,
+      transparent 75%,
+      transparent
+    );
+    background-size: var(--bl-progress-height) var(--bl-progress-height);
+  }
+
+  /* Animated striped variant */
+  .progress-striped.progress-animated .progress-bar {
+    animation: progress-stripes var(--bl-progress-animation-duration) linear
+      infinite;
+  }
+
+  /* Indeterminate progress (infinite loading) */
+  .progress-indeterminate .progress-bar {
+    width: 30%;
+    animation: progress-indeterminate var(--bl-progress-animation-duration)
+      ease-in-out infinite;
+  }
+
+  /* Animations */
+  @keyframes progress-stripes {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: var(--bl-progress-height) 0;
+    }
+  }
+
+  @keyframes progress-indeterminate {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(400%);
+    }
+  }
+
+  /* Dark theme support */
+  .dark .progress,
+  [data-theme="dark"] .progress {
+    --bl-progress-bg: var(--bl-clr-gray-700);
+    --bl-progress-color: var(--bl-clr-primary-500);
+  }
+
+  .dark .progress-primary,
+  [data-theme="dark"] .progress-primary {
+    --bl-progress-color: var(--bl-clr-primary-500);
+  }
+
+  .dark .progress-success,
+  [data-theme="dark"] .progress-success {
+    --bl-progress-color: var(--bl-clr-green-500);
+  }
+
+  .dark .progress-danger,
+  [data-theme="dark"] .progress-danger {
+    --bl-progress-color: var(--bl-clr-red-500);
+  }
+
+  .dark .progress-warning,
+  [data-theme="dark"] .progress-warning {
+    --bl-progress-color: var(--bl-clr-orange-500);
+  }
+
+  .dark .progress-info,
+  [data-theme="dark"] .progress-info {
+    --bl-progress-color: var(--bl-clr-blue-500);
+  }
+
+  .dark .progress-label,
+  [data-theme="dark"] .progress-label {
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Accessibility */
+  @media (prefers-reduced-motion: reduce) {
+    .progress-bar {
+      transition: none;
+    }
+
+    .progress-striped.progress-animated .progress-bar,
+    .progress-indeterminate .progress-bar {
+      animation: none;
+    }
+  }
+}

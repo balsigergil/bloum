@@ -102,7 +102,7 @@
 
 - [x] **Pagination** - Navigation controls for splitting large datasets across multiple pages.
 
-- [ ] **Progress** - Visual indicator showing completion status of tasks or processes.
+- [x] **Progress** - Visual indicator showing completion status of tasks or processes.
 
 - [ ] **Scroll Spy** - Navigation that highlights the currently visible section while scrolling.
 
