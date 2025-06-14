@@ -5,7 +5,6 @@ type TagArgs = {
   type: string;
   size: string;
   solid: boolean;
-  interactive: boolean;
   removable: boolean;
 };
 
@@ -26,9 +25,6 @@ const meta: Meta<TagArgs> = {
     solid: {
       control: "boolean",
     },
-    interactive: {
-      control: "boolean",
-    },
     removable: {
       control: "boolean",
     },
@@ -38,16 +34,14 @@ const meta: Meta<TagArgs> = {
     type: "default",
     size: "default",
     solid: false,
-    interactive: false,
     removable: false,
   },
   render: (args) => {
     const typeClass = args.type === "default" ? "" : `tag-${args.type}`;
     const sizeClass = args.size === "default" ? "" : `tag-${args.size}`;
     const solidClass = args.solid ? "tag-solid" : "";
-    const interactiveClass = args.interactive ? "tag-interactive" : "";
 
-    const classes = ["tag", typeClass, sizeClass, solidClass, interactiveClass]
+    const classes = ["tag", typeClass, sizeClass, solidClass]
       .filter(Boolean)
       .join(" ");
 
@@ -123,21 +117,6 @@ export const TagSolid: Story = {
   </div>
   <div class="tag tag-solid tag-info">
     <span class="tag-text">Info</span>
-  </div>
-</div>`,
-};
-
-export const TagInteractive: Story = {
-  render: () => `
-<div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
-  <div class="tag tag-interactive tag-primary">
-    <span class="tag-text">Click me</span>
-  </div>
-  <div class="tag tag-interactive tag-success">
-    <span class="tag-text">Hover effect</span>
-  </div>
-  <div class="tag tag-interactive tag-solid tag-info">
-    <span class="tag-text">Interactive solid</span>
   </div>
 </div>`,
 };

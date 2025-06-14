@@ -154,22 +154,6 @@
     --bl-tag-border-color: var(--bl-clr-blue-600);
   }
 
-  /* Interactive variant */
-  .tag-interactive {
-    cursor: pointer;
-    transition: all var(--bl-transition-sm) ease-in-out;
-  }
-
-  .tag-interactive:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-
-  .tag-interactive:focus-visible {
-    outline: 2px solid var(--bl-clr-primary-600);
-    outline-offset: 2px;
-  }
-
   /* Dark theme */
   .dark,
   [data-theme="dark"] {

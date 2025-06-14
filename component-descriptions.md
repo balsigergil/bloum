@@ -48,7 +48,7 @@
 
 - [ ] **Stack** - Layout component that arranges child elements in a vertical or horizontal stack.
 
-- [ ] **Tag** - Interactive label component for categorizing, filtering, and organizing content with removable functionality.
+- [x] **Tag** - Interactive label component for categorizing, filtering, and organizing content with removable functionality.
 
 - [ ] **Timeline** - Component that displays events or milestones in chronological order.
 
