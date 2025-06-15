@@ -30,8 +30,6 @@
 
 - [x] **Dropdown Menu** - Menu that appears when triggered, showing a list of selectable options.
 
-- [ ] **Context Menu** - Menu that appears when right-clicked on an element.
-
 - [x] **Spinner** - Visual marker that shows status, progress, or active states.
 
 - [ ] **Mockup** - Preview component that displays content within device frames or containers.
@@ -50,7 +48,11 @@
 
 - [x] **Tag** - Interactive label component for categorizing, filtering, and organizing content with removable functionality.
 
-- [ ] **Timeline** - Component that displays events or milestones in chronological order.
+- [x] **Progress** - Visual indicator showing completion status of tasks or processes.
+
+- [x] **Timeline** - Component that displays events or milestones in chronological order.
+
+- [x] **Color Scheme Switcher** - Button that opens a dropdown menu with selectable color schemes.
 
 ## Inputs
 
@@ -72,17 +74,17 @@
 
 - [ ] **Password Indicator** - Visual feedback component showing password strength and requirements.
 
-- [ ] **Textarea** - Multi-line text input field for longer content entry.
+- [x] **Textarea** - Multi-line text input field for longer content entry.
 
-- [ ] **Select** - Dropdown component for choosing from a list of predefined options.
+- [x] **Select** - Dropdown component for choosing from a list of predefined options.
 
 - [ ] **Swap** - Toggle component that switches between two different states or values.
 
 - [ ] **Signature Pad** - Canvas-based component for capturing handwritten signatures.
 
-- [ ] **Checkbox** - Square input control for binary choices (checked/unchecked).
+- [x] **Checkbox** - Square input control for binary choices (checked/unchecked).
 
-- [ ] **Radio** - Circular input control for selecting one option from a group.
+- [x] **Radio** - Circular input control for selecting one option from a group.
 
 - [x] **Switch** - Switch-style input for binary on/off states.
 
@@ -102,8 +104,6 @@
 
 - [x] **Pagination** - Navigation controls for splitting large datasets across multiple pages.
 
-- [x] **Progress** - Visual indicator showing completion status of tasks or processes.
-
 - [ ] **Scroll Spy** - Navigation that highlights the currently visible section while scrolling.
 
 - [ ] **Scroll Top** - Button that smoothly scrolls the page back to the top.
@@ -112,7 +112,7 @@
 
 - [x] **Tabs** - Horizontal navigation that switches between different content panels.
 
-- [ ] **Vertical Navigation** - Side-mounted navigation menu with hierarchical structure.
+- [x] **Sidebar** - Side-mounted navigation menu with hierarchical structure.
 
 ## Overlays
 
@@ -126,7 +126,7 @@
 
 - [ ] **Context Menu** - Right-click menu that provides contextual actions for specific elements.
 
-- [ ] **Toast** - Temporary notification that appears briefly to provide feedback.
+- [x] **Toast** - Temporary notification that appears briefly to provide feedback.
 
 - [ ] **Tour** - Guided walkthrough component that highlights and explains UI features.
 
@@ -138,7 +138,7 @@
 
 - [ ] **Container** - Wrapper component that provides consistent spacing and maximum width.
 
-- [ ] **Skeleton** - Loading placeholder that mimics the structure of content being loaded.
+- [x] **Skeleton** - Loading placeholder that mimics the structure of content being loaded.
 
 ## Data
 
@@ -155,9 +155,3 @@
 - [ ] **Virtual Scroller** - Performance-optimized list that renders only visible items for large datasets.
 
 - [ ] **Stats** - Display of key metrics or statistics with customizable visualizations.
-
-## UI
-
-- [x] **Sidebar** - Navigation menu that slides in from the side of the screen.
-
-- [x] **Color Scheme Switcher** - Button that opens a dropdown menu with selectable color schemes.
