@@ -1,19 +1,19 @@
 @layer components {
   .steps {
-    --bl-steps-size: 2.5rem;
+    --bl-steps-size: 2rem;
     --bl-steps-border-width: 2px;
-    --bl-steps-gap: 2.5rem;
+    --bl-steps-gap: 1.5rem;
     --bl-steps-line-thickness: 2px;
     --bl-steps-color: var(--bl-clr-gray-300);
     --bl-steps-color-active: var(--bl-clr-gray-800);
     --bl-steps-color-done: var(--bl-clr-green-600);
-    --bl-steps-text-color: var(--bl-clr-gray-500);
+    --bl-steps-text-color: var(--bl-clr-gray-900);
     --bl-steps-text-color-active: var(--bl-clr-gray-900);
-    --bl-steps-text-color-done: var(--bl-clr-gray-700);
+    --bl-steps-text-color-done: var(--bl-clr-gray-900);
     --bl-steps-bg: var(--bl-clr-surface);
-    --bl-steps-font-size: 1rem;
-    --bl-steps-description-font-size: 0.875rem;
-    --bl-steps-min-width: 150px;
+    --bl-steps-font-size: 0.875rem;
+    --bl-steps-description-font-size: 0.75rem;
+    --bl-steps-min-width: 100px;
 
     display: grid;
     grid-template-columns: repeat(
@@ -26,6 +26,14 @@
 
   /* Size variants */
   .steps.steps-sm {
+    --bl-steps-size: 1.75rem;
+    --bl-steps-gap: 1rem;
+    --bl-steps-font-size: 0.75rem;
+    --bl-steps-description-font-size: 0.625rem;
+    --bl-steps-min-width: 80px;
+  }
+
+  .steps.steps-md {
     --bl-steps-size: 2rem;
     --bl-steps-gap: 1.5rem;
     --bl-steps-font-size: 0.875rem;
@@ -34,11 +42,11 @@
   }
 
   .steps.steps-lg {
-    --bl-steps-size: 3rem;
-    --bl-steps-gap: 4rem;
-    --bl-steps-font-size: 1.125rem;
-    --bl-steps-description-font-size: 1rem;
-    --bl-steps-min-width: 200px;
+    --bl-steps-size: 2.5rem;
+    --bl-steps-gap: 2.5rem;
+    --bl-steps-font-size: 1rem;
+    --bl-steps-description-font-size: 0.875rem;
+    --bl-steps-min-width: 150px;
   }
 
   /* Color variants */
