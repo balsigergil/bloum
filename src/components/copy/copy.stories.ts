@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/html";
+import { Meta, StoryObj } from "@storybook/html-vite";
 
 const meta: Meta = {
   title: "Components/Copy Button",

@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/html";
+import { Meta, StoryObj } from "@storybook/html-vite";
 
 type TooltipArgs = {
   text: string;
