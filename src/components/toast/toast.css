@@ -1,0 +1,261 @@
+@layer components {
+  /* Toast Container Styles */
+  .toast-container {
+    --bl-toast-gap: 1rem;
+    position: fixed;
+    z-index: 1050;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--bl-toast-gap);
+    padding: 1rem;
+  }
+
+  /* Container Placements */
+  .toast-container-top-left {
+    top: 0;
+    left: 0;
+    align-items: flex-start;
+  }
+
+  .toast-container-top-center {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    align-items: center;
+  }
+
+  .toast-container-top-right {
+    top: 0;
+    right: 0;
+    align-items: flex-end;
+  }
+
+  .toast-container-bottom-left {
+    bottom: 0;
+    left: 0;
+    align-items: flex-start;
+  }
+
+  .toast-container-bottom-center {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    align-items: center;
+  }
+
+  .toast-container-bottom-right {
+    bottom: 0;
+    right: 0;
+    align-items: flex-end;
+  }
+
+  /* Base Toast Styles */
+  .toast {
+    --bl-toast-bg: var(--bl-clr-gray-100);
+    --bl-toast-color: var(--bl-clr-gray-900);
+    --bl-toast-border: var(--bl-clr-gray-200);
+    --bl-toast-shadow: var(--bl-shadow-lg);
+    --bl-toast-min-width: 20rem;
+    --bl-toast-max-width: 24rem;
+    --bl-toast-padding: 1rem;
+    --bl-toast-border-radius: var(--bl-border-radius-lg);
+    --bl-toast-close-color: var(--bl-clr-gray-500);
+    --bl-toast-close-hover-color: var(--bl-clr-gray-700);
+
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    min-width: var(--bl-toast-min-width);
+    max-width: var(--bl-toast-max-width);
+    padding: var(--bl-toast-padding);
+    background-color: var(--bl-toast-bg);
+    color: var(--bl-toast-color);
+    border: 1px solid var(--bl-toast-border);
+    border-radius: var(--bl-toast-border-radius);
+    box-shadow: var(--bl-toast-shadow);
+    pointer-events: auto;
+    opacity: 0;
+    transform: translateY(-1rem);
+    transition: all var(--bl-transition-md);
+  }
+
+  /* Show state */
+  .toast.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Toast content */
+  .toast-content {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .toast-title {
+    font-weight: 600;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .toast-description {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    color: var(--bl-toast-color);
+    opacity: 0.8;
+  }
+
+  /* Close button */
+  .toast-close {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: 0;
+    background: transparent;
+    border: none;
+    border-radius: var(--bl-border-radius);
+    color: var(--bl-toast-close-color);
+    cursor: pointer;
+    transition: all var(--bl-transition-xs);
+  }
+
+  .toast-close:hover {
+    color: var(--bl-toast-close-hover-color);
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+
+  .toast-close:focus-visible {
+    outline: 2px solid var(--bl-clr-primary-600);
+    outline-offset: 2px;
+  }
+
+  .toast-close svg {
+    width: 0.875rem;
+    height: 0.875rem;
+  }
+
+  /* Variant: Default (already defined above) */
+
+  /* Variant: Primary */
+  .toast-primary {
+    --bl-toast-bg: var(--bl-clr-primary-50);
+    --bl-toast-color: var(--bl-clr-primary-900);
+    --bl-toast-border: var(--bl-clr-primary-200);
+    --bl-toast-close-color: var(--bl-clr-primary-600);
+    --bl-toast-close-hover-color: var(--bl-clr-primary-800);
+  }
+
+  /* Variant: Success */
+  .toast-success {
+    --bl-toast-bg: var(--bl-clr-green-50);
+    --bl-toast-color: var(--bl-clr-green-900);
+    --bl-toast-border: var(--bl-clr-green-200);
+    --bl-toast-close-color: var(--bl-clr-green-600);
+    --bl-toast-close-hover-color: var(--bl-clr-green-800);
+  }
+
+  /* Variant: Error */
+  .toast-error {
+    --bl-toast-bg: var(--bl-clr-red-50);
+    --bl-toast-color: var(--bl-clr-red-900);
+    --bl-toast-border: var(--bl-clr-red-200);
+    --bl-toast-close-color: var(--bl-clr-red-600);
+    --bl-toast-close-hover-color: var(--bl-clr-red-800);
+  }
+
+  /* Variant: Warning */
+  .toast-warning {
+    --bl-toast-bg: var(--bl-clr-orange-50);
+    --bl-toast-color: var(--bl-clr-orange-900);
+    --bl-toast-border: var(--bl-clr-orange-200);
+    --bl-toast-close-color: var(--bl-clr-orange-600);
+    --bl-toast-close-hover-color: var(--bl-clr-orange-800);
+  }
+
+  /* Dark mode support */
+  .dark,
+  [data-theme="dark"] {
+    .toast {
+      --bl-toast-bg: var(--bl-clr-gray-800);
+      --bl-toast-color: var(--bl-clr-gray-100);
+      --bl-toast-border: var(--bl-clr-gray-700);
+      --bl-toast-close-color: var(--bl-clr-gray-400);
+      --bl-toast-close-hover-color: var(--bl-clr-gray-200);
+    }
+
+    .toast-close:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .toast-primary {
+      --bl-toast-bg: var(--bl-clr-primary-900);
+      --bl-toast-color: var(--bl-clr-primary-100);
+      --bl-toast-border: var(--bl-clr-primary-700);
+      --bl-toast-close-color: var(--bl-clr-primary-400);
+      --bl-toast-close-hover-color: var(--bl-clr-primary-200);
+    }
+
+    .toast-success {
+      --bl-toast-bg: var(--bl-clr-green-900);
+      --bl-toast-color: var(--bl-clr-green-100);
+      --bl-toast-border: var(--bl-clr-green-700);
+      --bl-toast-close-color: var(--bl-clr-green-400);
+      --bl-toast-close-hover-color: var(--bl-clr-green-200);
+    }
+
+    .toast-error {
+      --bl-toast-bg: var(--bl-clr-red-900);
+      --bl-toast-color: var(--bl-clr-red-100);
+      --bl-toast-border: var(--bl-clr-red-700);
+      --bl-toast-close-color: var(--bl-clr-red-400);
+      --bl-toast-close-hover-color: var(--bl-clr-red-200);
+    }
+
+    .toast-warning {
+      --bl-toast-bg: var(--bl-clr-orange-900);
+      --bl-toast-color: var(--bl-clr-orange-100);
+      --bl-toast-border: var(--bl-clr-orange-700);
+      --bl-toast-close-color: var(--bl-clr-orange-400);
+      --bl-toast-close-hover-color: var(--bl-clr-orange-200);
+    }
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 640px) {
+    .toast-container {
+      padding: 0.5rem;
+    }
+
+    .toast {
+      --bl-toast-min-width: 18rem;
+      --bl-toast-max-width: calc(100vw - 2rem);
+    }
+  }
+
+  /* Animation variants for different placements */
+  .toast-container-top-left .toast,
+  .toast-container-top-center .toast,
+  .toast-container-top-right .toast {
+    transform: translateY(-1rem);
+  }
+
+  .toast-container-bottom-left .toast,
+  .toast-container-bottom-center .toast,
+  .toast-container-bottom-right .toast {
+    transform: translateY(1rem);
+  }
+
+  .toast-container-top-left .toast.show,
+  .toast-container-top-center .toast.show,
+  .toast-container-top-right .toast.show,
+  .toast-container-bottom-left .toast.show,
+  .toast-container-bottom-center .toast.show,
+  .toast-container-bottom-right .toast.show {
+    transform: translateY(0);
+  }
+}

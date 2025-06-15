@@ -12,6 +12,7 @@ import { initAccordion } from "@/components/accordion/accordion";
 import { CopyButton } from "@/components/copy/copy";
 import { initAutogrowTextarea } from "@/components/forms/AutogrowTextarea";
 import { initPopover } from "@/components/popover/popover";
+import { initToast, Toast } from "@/components/toast/toast";
 import { initColorSchemeSwitcher } from "@/components/color-scheme-switcher/color-scheme-switcher";
 import { initSteps } from "@/components/steps/steps";
 
@@ -29,6 +30,8 @@ export function initBloum() {
   window.Combobox = Combobox;
   // @ts-ignore
   window.Modal = Modal;
+  // @ts-ignore
+  window.Toast = Toast;
 
   document.addEventListener("DOMContentLoaded", () => {
     initTooltip();
@@ -39,6 +42,7 @@ export function initBloum() {
     initAccordion();
     initAutogrowTextarea();
     initPopover();
+    initToast();
     initColorSchemeSwitcher();
     initSteps();
   });
