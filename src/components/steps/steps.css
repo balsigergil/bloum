@@ -52,18 +52,22 @@
   /* Color variants */
   .steps.steps-primary {
     --bl-steps-color-active: var(--bl-clr-primary-600);
+    --bl-steps-color-done: var(--bl-clr-primary-600);
   }
 
   .steps.steps-success {
     --bl-steps-color-active: var(--bl-clr-green-600);
+    --bl-steps-color-done: var(--bl-clr-green-600);
   }
 
   .steps.steps-danger {
     --bl-steps-color-active: var(--bl-clr-red-600);
+    --bl-steps-color-done: var(--bl-clr-red-600);
   }
 
   .steps.steps-warning {
     --bl-steps-color-active: var(--bl-clr-orange-600);
+    --bl-steps-color-done: var(--bl-clr-orange-600);
   }
 
   /* Step item */
@@ -229,18 +233,22 @@
 
     .steps.steps-primary {
       --bl-steps-color-active: var(--bl-clr-primary-500);
+      --bl-steps-color-done: var(--bl-clr-primary-500);
     }
 
     .steps.steps-success {
       --bl-steps-color-active: var(--bl-clr-green-500);
+      --bl-steps-color-done: var(--bl-clr-green-500);
     }
 
     .steps.steps-danger {
       --bl-steps-color-active: var(--bl-clr-red-500);
+      --bl-steps-color-done: var(--bl-clr-red-500);
     }
 
     .steps.steps-warning {
       --bl-steps-color-active: var(--bl-clr-orange-500);
+      --bl-steps-color-done: var(--bl-clr-orange-500);
     }
   }
 }
