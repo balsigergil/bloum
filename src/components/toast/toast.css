@@ -97,10 +97,10 @@
     font-weight: 600;
     font-size: 0.875rem;
     line-height: 1.25rem;
-    margin-bottom: 0.25rem;
   }
 
   .toast-description {
+    margin-top: 0.25rem;
     font-size: 0.875rem;
     line-height: 1.25rem;
     color: var(--bl-toast-color);
@@ -113,8 +113,8 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 1.25rem;
+    height: 1.25rem;
     padding: 0;
     background: transparent;
     border: none;
@@ -122,6 +122,11 @@
     color: var(--bl-toast-close-color);
     cursor: pointer;
     transition: all var(--bl-transition-xs);
+
+    & svg {
+      width: 0.75rem;
+      height: 0.75rem;
+    }
   }
 
   .toast-close:hover {
@@ -132,11 +137,6 @@
   .toast-close:focus-visible {
     outline: 2px solid var(--bl-clr-primary-600);
     outline-offset: 2px;
-  }
-
-  .toast-close svg {
-    width: 0.875rem;
-    height: 0.875rem;
   }
 
   /* Variant: Default (already defined above) */
