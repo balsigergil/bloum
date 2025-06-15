@@ -83,10 +83,12 @@ Use nested rules if needed.
     --bl-component-color: var(--bl-clr-orange-600);
   }
   
-  /* Dark theme support */
-  .dark .component-name,
-  [data-theme="dark"] .component-name {
-    --bl-component-color: var(--bl-clr-gray-300);
+  /* Dark theme support using nested CSS rules */
+  .dark,
+  [data-theme="dark"] {
+    .component-name {
+      --bl-component-color: var(--bl-clr-gray-300);
+    }
   }
 }
 ```
@@ -128,17 +130,21 @@ Use these predefined color variables:
 ## Dark Mode Support
 
 ### Required Dark Mode Implementation
-Every component must support dark mode using both class and attribute selectors:
+
+Every component must support dark mode using both class and attribute selectors. It should use nested CSS rules.
 
 ```css
-.dark .component,
-[data-theme="dark"] .component {
-  --bl-component-color: var(--bl-clr-gray-300);
-  --bl-component-bg: var(--bl-clr-gray-800);
+.dark,
+[data-theme="dark"] {
+    .component {
+        --bl-component-color: var(--bl-clr-gray-300);
+        --bl-component-bg: var(--bl-clr-gray-800);
+    }
 }
 ```
 
 ### Dark Mode Color Patterns
+
 - Light backgrounds (100-300) → Dark backgrounds (800-900)
 - Dark text (700-900) → Light text (100-300)
 - Bright accent colors (600-700) → Slightly muted accent colors (400-500)
