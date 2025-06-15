@@ -30,25 +30,26 @@ const meta: Meta<TimelineArgs> = {
 
     const timelineEvents = [
       {
-        date: "13th May 2021",
-        title: "Product Shipped",
+        date: "15th March 2024",
+        title: "Application Submitted",
         description:
-          "We shipped your product via FedEx and it should arrive within 3-5 business days.",
-        icon: "fa-truck",
+          "Your job application has been successfully submitted to the system.",
+        icon: "fa-paper-plane",
         state: "completed",
       },
       {
-        date: "18th May 2021",
-        title: "Order Confirmed",
-        description: "Your order has been confirmed and is being processed.",
-        icon: "fa-check-circle",
+        date: "18th March 2024",
+        title: "Under Review",
+        description:
+          "Your application is currently being reviewed by our hiring team.",
+        icon: "fa-search",
         state: "active",
       },
       {
-        date: "20th May 2021, 10:30am",
-        title: "Order Delivered",
-        description: "Your package has been delivered and signed for.",
-        icon: "fa-box",
+        date: "22nd March 2024",
+        title: "Interview Scheduled",
+        description: "We would like to invite you for an interview next week.",
+        icon: "fa-calendar-check",
         state: "",
       },
     ];
