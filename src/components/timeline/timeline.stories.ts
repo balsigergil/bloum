@@ -2,8 +2,6 @@ import type { Meta, StoryObj } from "@storybook/html-vite";
 
 type TimelineArgs = {
   size: "sm" | "md" | "lg";
-  compact: boolean;
-  showDots: boolean;
   showIcons: boolean;
 };
 
@@ -14,29 +12,18 @@ const meta: Meta<TimelineArgs> = {
       control: "select",
       options: ["sm", "md", "lg"],
     },
-
-    compact: {
-      control: "boolean",
-    },
-    showDots: {
-      control: "boolean",
-    },
     showIcons: {
       control: "boolean",
     },
   },
   args: {
     size: "md",
-    compact: false,
-    showDots: false,
     showIcons: false,
   },
   render: (args) => {
     const classes = [
       "timeline",
       args.size !== "md" ? `timeline-${args.size}` : "",
-      args.compact ? "timeline-compact" : "",
-      args.showDots ? "timeline-dot" : "",
     ]
       .filter(Boolean)
       .join(" ");
@@ -76,8 +63,8 @@ const meta: Meta<TimelineArgs> = {
               ${args.showIcons && event.icon ? `<i class="fas ${event.icon}"></i>` : ""}
             </div>
             <div class="timeline-content">
-              <div class="timeline-date">${event.date}</div>
               <div class="timeline-title">${event.title}</div>
+              <div class="timeline-date">${event.date}</div>
               <div class="timeline-description">${event.description}</div>
             </div>
           </div>
@@ -113,16 +100,16 @@ export const Sizes: Story = {
           <div class="timeline-item timeline-item-completed">
             <div class="timeline-indicator"></div>
             <div class="timeline-content">
-              <div class="timeline-date">2 hours ago</div>
               <div class="timeline-title">Task Completed</div>
+              <div class="timeline-date">2 hours ago</div>
               <div class="timeline-description">The assigned task has been completed successfully.</div>
             </div>
           </div>
           <div class="timeline-item">
             <div class="timeline-indicator"></div>
             <div class="timeline-content">
-              <div class="timeline-date">Yesterday</div>
               <div class="timeline-title">Meeting Scheduled</div>
+              <div class="timeline-date">Yesterday</div>
               <div class="timeline-description">Team meeting scheduled for project review.</div>
             </div>
           </div>
@@ -135,16 +122,16 @@ export const Sizes: Story = {
           <div class="timeline-item timeline-item-completed">
             <div class="timeline-indicator"></div>
             <div class="timeline-content">
-              <div class="timeline-date">2 hours ago</div>
               <div class="timeline-title">Task Completed</div>
+              <div class="timeline-date">2 hours ago</div>
               <div class="timeline-description">The assigned task has been completed successfully.</div>
             </div>
           </div>
           <div class="timeline-item">
             <div class="timeline-indicator"></div>
             <div class="timeline-content">
-              <div class="timeline-date">Yesterday</div>
               <div class="timeline-title">Meeting Scheduled</div>
+              <div class="timeline-date">Yesterday</div>
               <div class="timeline-description">Team meeting scheduled for project review.</div>
             </div>
           </div>
@@ -157,16 +144,16 @@ export const Sizes: Story = {
           <div class="timeline-item timeline-item-completed">
             <div class="timeline-indicator"></div>
             <div class="timeline-content">
-              <div class="timeline-date">2 hours ago</div>
               <div class="timeline-title">Task Completed</div>
+              <div class="timeline-date">2 hours ago</div>
               <div class="timeline-description">The assigned task has been completed successfully.</div>
             </div>
           </div>
           <div class="timeline-item">
             <div class="timeline-indicator"></div>
             <div class="timeline-content">
-              <div class="timeline-date">Yesterday</div>
               <div class="timeline-title">Meeting Scheduled</div>
+              <div class="timeline-date">Yesterday</div>
               <div class="timeline-description">Team meeting scheduled for project review.</div>
             </div>
           </div>
@@ -176,28 +163,16 @@ export const Sizes: Story = {
   `,
 };
 
-export const WithDots: Story = {
-  args: {
-    showDots: true,
-  },
-};
-
-export const Compact: Story = {
-  args: {
-    compact: true,
-  },
-};
-
 export const ProjectTimeline: Story = {
   render: () => `
-    <div class="timeline timeline-dot">
+    <div class="timeline">
       <div class="timeline-item timeline-item-completed">
         <div class="timeline-indicator">
           <i class="fas fa-check"></i>
         </div>
         <div class="timeline-content">
-          <div class="timeline-date">January 2024</div>
           <div class="timeline-title">Project Kickoff</div>
+          <div class="timeline-date">January 2024</div>
           <div class="timeline-description">Initial meeting with stakeholders to define project scope and requirements.</div>
         </div>
       </div>
@@ -207,8 +182,8 @@ export const ProjectTimeline: Story = {
           <i class="fas fa-code"></i>
         </div>
         <div class="timeline-content">
-          <div class="timeline-date">February 2024</div>
           <div class="timeline-title">Development Started</div>
+          <div class="timeline-date">February 2024</div>
           <div class="timeline-description">Development team began working on core features and infrastructure.</div>
         </div>
       </div>
@@ -218,8 +193,8 @@ export const ProjectTimeline: Story = {
           <i class="fas fa-flask"></i>
         </div>
         <div class="timeline-content">
-          <div class="timeline-date">March 2024</div>
           <div class="timeline-title">Testing Phase</div>
+          <div class="timeline-date">March 2024</div>
           <div class="timeline-description">Currently conducting comprehensive testing of all features.</div>
         </div>
       </div>
@@ -229,8 +204,8 @@ export const ProjectTimeline: Story = {
           <i class="fas fa-rocket"></i>
         </div>
         <div class="timeline-content">
-          <div class="timeline-date">April 2024</div>
           <div class="timeline-title">Launch</div>
+          <div class="timeline-date">April 2024</div>
           <div class="timeline-description">Planned release date for the production version.</div>
         </div>
       </div>

@@ -1,40 +1,40 @@
 @layer components {
   .timeline {
-    --bl-timeline-size: 1rem;
+    --bl-timeline-size: 1.25rem;
     --bl-timeline-border-width: 2px;
-    --bl-timeline-gap: 2rem;
     --bl-timeline-line-thickness: 2px;
     --bl-timeline-line-offset: 0.75rem;
     --bl-timeline-color: var(--bl-clr-gray-300);
     --bl-timeline-color-active: var(--bl-clr-gray-800);
     --bl-timeline-color-completed: var(--bl-clr-green-600);
-    --bl-timeline-text-color: var(--bl-clr-gray-600);
     --bl-timeline-title-color: var(--bl-clr-gray-900);
+    --bl-timeline-date-color: var(--bl-clr-gray-600);
+    --bl-timeline-text-color: var(--bl-clr-gray-900);
     --bl-timeline-bg: var(--bl-clr-surface);
-    --bl-timeline-font-size: 0.875rem;
-    --bl-timeline-title-font-size: 1rem;
+    --bl-timeline-title-font-size: 0.875rem;
+    --bl-timeline-date-font-size: 0.75rem;
+    --bl-timeline-text-font-size: 0.875rem;
     --bl-timeline-padding-left: 2.5rem;
 
     display: flex;
     flex-direction: column;
-    gap: var(--bl-timeline-gap);
     position: relative;
   }
 
   /* Size variants */
   .timeline-sm {
-    --bl-timeline-size: 0.75rem;
-    --bl-timeline-gap: 1.5rem;
-    --bl-timeline-font-size: 0.75rem;
-    --bl-timeline-title-font-size: 0.875rem;
+    --bl-timeline-size: 1rem;
+    --bl-timeline-title-font-size: 0.75rem;
+    --bl-timeline-date-font-size: 0.625rem;
+    --bl-timeline-text-font-size: 0.75rem;
     --bl-timeline-padding-left: 2rem;
   }
 
   .timeline-lg {
-    --bl-timeline-size: 1.25rem;
-    --bl-timeline-gap: 3rem;
-    --bl-timeline-font-size: 1rem;
-    --bl-timeline-title-font-size: 1.125rem;
+    --bl-timeline-size: 1.5rem;
+    --bl-timeline-title-font-size: 1rem;
+    --bl-timeline-date-font-size: 0.875rem;
+    --bl-timeline-text-font-size: 1rem;
     --bl-timeline-padding-left: 3rem;
   }
 
@@ -55,7 +55,6 @@
     background-color: var(--bl-timeline-bg);
     border: var(--bl-timeline-border-width) solid var(--bl-timeline-color);
     flex-shrink: 0;
-    margin-top: 0.25rem;
     z-index: 1;
     transition: all var(--bl-transition-md);
   }
@@ -64,45 +63,38 @@
   .timeline-item:not(:last-child)::before {
     content: "";
     position: absolute;
-    left: calc(
-      var(--bl-timeline-size) / 2 - var(--bl-timeline-line-thickness) / 2
-    );
-    top: calc(
-      var(--bl-timeline-size) + var(--bl-timeline-border-width) + 0.25rem
-    );
-    width: var(--bl-timeline-line-thickness);
-    height: calc(
-      100% - var(--bl-timeline-size) - var(--bl-timeline-border-width) -
-        0.25rem + var(--bl-timeline-gap)
-    );
-    background-color: var(--bl-timeline-color);
-    z-index: 0;
+    border-inline-start-width: var(--bl-timeline-line-thickness);
+    margin-inline-start: calc(-1 * var(--bl-timeline-line-thickness) / 2);
+    inset-inline-start: calc(var(--bl-timeline-size) / 2);
+    inset-block: 0;
+    border-color: var(--bl-timeline-color);
   }
 
   /* Timeline content */
   .timeline-content {
     flex: 1;
     min-width: 0;
-  }
-
-  .timeline-date {
-    font-size: var(--bl-timeline-font-size);
-    color: var(--bl-timeline-text-color);
-    margin-bottom: 0.25rem;
-    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-block-end: 1.5rem;
   }
 
   .timeline-title {
+    line-height: var(--bl-timeline-size);
     font-size: var(--bl-timeline-title-font-size);
     font-weight: 600;
     color: var(--bl-timeline-title-color);
-    margin-bottom: 0.5rem;
+  }
+
+  .timeline-date {
+    font-size: var(--bl-timeline-date-font-size);
+    color: var(--bl-timeline-date-color);
   }
 
   .timeline-description {
-    font-size: var(--bl-timeline-font-size);
+    font-size: var(--bl-timeline-text-font-size);
     color: var(--bl-timeline-text-color);
-    line-height: 1.5;
   }
 
   /* Active state */
@@ -123,19 +115,6 @@
 
   .timeline-item-completed::before {
     background-color: var(--bl-timeline-color-completed);
-  }
-
-  /* Dot variant - larger indicator */
-  .timeline-dot .timeline-indicator {
-    --bl-timeline-size: 1.5rem;
-  }
-
-  .timeline-dot.timeline-sm .timeline-indicator {
-    --bl-timeline-size: 1.25rem;
-  }
-
-  .timeline-dot.timeline-lg .timeline-indicator {
-    --bl-timeline-size: 2rem;
   }
 
   /* Icon support */
@@ -173,8 +152,9 @@
     --bl-timeline-color: var(--bl-clr-gray-600);
     --bl-timeline-color-active: var(--bl-clr-gray-300);
     --bl-timeline-color-completed: var(--bl-clr-green-500);
-    --bl-timeline-text-color: var(--bl-clr-gray-400);
     --bl-timeline-title-color: var(--bl-clr-gray-100);
+    --bl-timeline-text-color: var(--bl-clr-gray-300);
+    --bl-timeline-date-color: var(--bl-clr-gray-400);
     --bl-timeline-bg: var(--bl-clr-gray-800);
   }
 }
