@@ -125,8 +125,7 @@ export class Avatar {
   }
 }
 
-// Auto-initialize avatars with data attributes
-document.addEventListener("DOMContentLoaded", () => {
+export function initAvatar() {
   const avatars = document.querySelectorAll("[data-avatar]");
 
   avatars.forEach((element) => {
@@ -141,7 +140,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     new Avatar(htmlElement, options);
   });
-});
+}
 
 // Export for manual initialization
 export default Avatar;
