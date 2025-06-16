@@ -130,6 +130,17 @@ export function initAvatar() {
 
   avatars.forEach((element) => {
     const htmlElement = element as HTMLElement;
+
+    // Clean the element before initialization to prevent duplicates
+    // This is important for hot reloading and HTMX scenarios
+    htmlElement.innerHTML = "";
+
+    // Reset classes to prevent class accumulation
+    htmlElement.className = htmlElement.className
+      .split(" ")
+      .filter((cls) => !cls.startsWith("avatar"))
+      .join(" ");
+
     const options: AvatarOptions = {
       src: htmlElement.dataset.avatarSrc,
       alt: htmlElement.dataset.avatarAlt,

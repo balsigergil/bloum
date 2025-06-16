@@ -151,7 +151,7 @@ export const WithImages: Story = {
         <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="John Doe" />
       </div>
       <div class="avatar">
-        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="Jane Smith" />
+        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=256&h=256&fit=facearea&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Jean François" />
       </div>
       <div class="avatar avatar-lg">
         <img src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="Mike Johnson" />
@@ -172,28 +172,28 @@ export const WithBadge: Story = {
 export const BadgeExamples: Story = {
   render: () => `
     <div class="flex gap-6 items-center">
-      <div style="position: relative; display: inline-block;">
+      <div style="position: relative;">
         <div class="avatar avatar-solid">
           <span class="avatar-initials">AB</span>
         </div>
-        <div class="badge badge-danger badge-top-right">3</div>
+        <div class="badge badge-danger badge-top-right badge-sm">3</div>
       </div>
       
-      <div style="position: relative; display: inline-block;">
+      <div style="position: relative;">
         <div class="avatar">
-          <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="Jane Smith" />
+          <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=256&h=256&fit=facearea&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Jean François" />
         </div>
         <div class="badge badge-success badge-top-right badge-dot"></div>
       </div>
       
-      <div style="position: relative; display: inline-block;">
+      <div style="position: relative;">
         <div class="avatar avatar-outline">
           <span class="avatar-initials">CD</span>
         </div>
-        <div class="badge badge-primary badge-top-right">12</div>
+        <div class="badge badge-primary badge-top-right badge-lg">12</div>
       </div>
       
-      <div style="position: relative; display: inline-block;">
+      <div style="position: relative;">
         <div class="avatar">
           <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="John Doe" />
         </div>
@@ -245,8 +245,8 @@ export const JavaScriptAPI: Story = {
       ></div>
     </div>
     
-    <div style="margin-top: 1rem; padding: 1rem; background-color: var(--bl-clr-gray-50); border-radius: var(--bl-border-radius); font-size: 0.875rem;">
-      <strong>JavaScript API Usage:</strong><br/>
+    <div class="mt-4 p-4 bg-gray-50 rounded text-sm dark:bg-gray-800">
+      <p class="mb-2 font-bold">JavaScript API Usage</p>
       These avatars are initialized automatically using data attributes:<br/>
       <code>data-avatar</code> - Enables auto-initialization<br/>
       <code>data-avatar-src</code> - Image source URL<br/>

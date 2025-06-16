@@ -5,6 +5,7 @@
     --bl-badge-border-color: #fff;
     --bl-badge-height: 1.25rem;
     --bl-badge-dot-size: 0.75rem;
+    --bl-badge-font-size: 0.75rem;
 
     height: var(--bl-badge-height);
     min-width: var(--bl-badge-height);
@@ -12,12 +13,22 @@
     border-radius: var(--bl-border-radius-full);
     background-color: var(--bl-badge-bg);
     color: var(--bl-badge-color);
-    font-size: 0.75rem;
+    font-size: var(--bl-badge-font-size);
     font-weight: 600;
     display: inline-flex;
     justify-content: center;
     align-items: center;
     position: relative;
+  }
+
+  .badge-sm {
+    --bl-badge-height: 1rem;
+    --bl-badge-font-size: 0.625rem;
+  }
+
+  .badge-lg {
+    --bl-badge-height: 1.5rem;
+    --bl-badge-font-size: 0.875rem;
   }
 
   .badge-top-right {
@@ -64,6 +75,18 @@
 
   .badge-info {
     --bl-badge-bg: var(--bl-clr-blue-600);
+  }
+
+  .avatar + .badge.badge-top-right {
+    transform: translate(40%, -40%);
+  }
+
+  .avatar + .badge.badge-top-right.badge-sm {
+    transform: translate(30%, -30%);
+  }
+
+  .avatar + .badge.badge-top-right.badge-dot {
+    transform: translate(10%, -10%);
   }
 
   @keyframes badge-ping {
