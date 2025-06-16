@@ -187,14 +187,14 @@ export const BadgeExamples: Story = {
       </div>
       
       <div style="position: relative; display: inline-block;">
-        <div class="avatar avatar-lg avatar-outline">
+        <div class="avatar avatar-outline">
           <span class="avatar-initials">CD</span>
         </div>
         <div class="badge badge-primary badge-top-right">12</div>
       </div>
       
       <div style="position: relative; display: inline-block;">
-        <div class="avatar avatar-xl">
+        <div class="avatar">
           <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="John Doe" />
         </div>
         <div class="badge badge-warning badge-top-right badge-dot badge-ping"></div>
@@ -203,17 +203,65 @@ export const BadgeExamples: Story = {
   `,
 };
 
-export const LoadingFallback: Story = {
-  render: () => `
-    <div class="flex gap-4 items-center">
-      <div class="avatar avatar-solid">
-        <span class="avatar-initials">Loading...</span>
-        <img src="https://invalid-url-to-test-fallback.com/image.jpg" alt="Will fail to load" style="display: none;" />
+export const JavaScriptAPI: Story = {
+  render: () => {
+    // Simulate DOM loading event after a short delay to show the initialization
+    setTimeout(() => {
+      const event = new Event("DOMContentLoaded");
+      document.dispatchEvent(event);
+    }, 100);
+
+    return `
+      <div class="flex gap-4 items-center flex-wrap">
+        <!-- Auto-initialized with data attributes -->
+        <div 
+          data-avatar 
+          data-avatar-initials="JS" 
+          data-avatar-variant="solid"
+          data-avatar-size="sm"
+        ></div>
+        
+        <div 
+          data-avatar 
+          data-avatar-src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+          data-avatar-alt="John Doe"
+          data-avatar-initials="JD"
+        ></div>
+        
+        <div 
+          data-avatar 
+          data-avatar-initials="AB" 
+          data-avatar-variant="outline"
+          data-avatar-size="lg"
+        ></div>
+        
+        <div 
+          data-avatar 
+          data-avatar-initials="CD" 
+          data-avatar-variant="subtle"
+          data-avatar-size="xl"
+        ></div>
+        
+        <!-- This one will fallback to initials when image fails -->
+        <div 
+          data-avatar 
+          data-avatar-src="https://invalid-image-url.com/avatar.jpg"
+          data-avatar-alt="Failed Image"
+          data-avatar-initials="FI"
+          data-avatar-variant="solid"
+        ></div>
       </div>
-      <div class="avatar avatar-outline">
-        <span class="avatar-initials">Error</span>
-        <img src="https://another-invalid-url.com/image.jpg" alt="Will also fail" style="display: none;" />
+      
+      <div style="margin-top: 1rem; padding: 1rem; background-color: var(--bl-clr-gray-50); border-radius: var(--bl-border-radius); font-size: 0.875rem;">
+        <strong>JavaScript API Usage:</strong><br/>
+        These avatars are initialized automatically using data attributes:<br/>
+        <code>data-avatar</code> - Enables auto-initialization<br/>
+        <code>data-avatar-src</code> - Image source URL<br/>
+        <code>data-avatar-alt</code> - Image alt text<br/>
+        <code>data-avatar-initials</code> - Fallback initials<br/>
+        <code>data-avatar-size</code> - Size variant (xs, sm, md, lg, xl)<br/>
+        <code>data-avatar-variant</code> - Style variant (default, solid, outline, subtle)
       </div>
-    </div>
-  `,
+    `;
+  },
 };
