@@ -34,20 +34,18 @@ export function initBloum() {
   // @ts-ignore
   window.Toast = Toast;
 
-  document.addEventListener("DOMContentLoaded", () => {
-    initTooltip();
-    initSidebar();
-    initModals();
-    initMenus();
-    initCollapse();
-    initAccordion();
-    initAutogrowTextarea();
-    initPopover();
-    initToast();
-    initColorSchemeSwitcher();
-    initSteps();
-    initAvatar();
-  });
+  initTooltip();
+  initSidebar();
+  initModals();
+  initMenus();
+  initCollapse();
+  initAccordion();
+  initAutogrowTextarea();
+  initPopover();
+  initToast();
+  initColorSchemeSwitcher();
+  initSteps();
+  initAvatar();
 
   console.info("🚀 Bloom initialized!");
 }

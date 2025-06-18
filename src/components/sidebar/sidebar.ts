@@ -1,5 +1,18 @@
+// Store references to event listeners to allow removal
+let sidebarToggleListener: ((e: Event) => void) | null = null;
+let sidebarHideListener: ((e: Event) => void) | null = null;
+
 export function initSidebar() {
-  document.addEventListener("click", (e) => {
+  // Remove existing listeners if they exist
+  if (sidebarToggleListener) {
+    document.removeEventListener("click", sidebarToggleListener);
+  }
+  if (sidebarHideListener) {
+    document.removeEventListener("click", sidebarHideListener);
+  }
+
+  // Define the toggle listener
+  sidebarToggleListener = (e) => {
     let target = e.target as HTMLElement | null;
     if (!target) {
       return;
@@ -17,9 +30,10 @@ export function initSidebar() {
     }
 
     sidebar.classList.toggle("show");
-  });
+  };
 
-  document.addEventListener("click", (e) => {
+  // Define the hide listener
+  sidebarHideListener = (e) => {
     const target = e.target as HTMLElement | null;
     if (!target) {
       return;
@@ -36,5 +50,9 @@ export function initSidebar() {
         { once: true },
       );
     }
-  });
+  };
+
+  // Add the new listeners
+  document.addEventListener("click", sidebarToggleListener);
+  document.addEventListener("click", sidebarHideListener);
 }

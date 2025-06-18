@@ -9,7 +9,9 @@ import "@fortawesome/fontawesome-free/css/all.css";
 import "../src/bloum.css";
 import "./preview.css";
 
-initBloum();
+// Make initBloum available globally for the HTML scripts
+// @ts-ignore
+window.initBloum = initBloum;
 
 const preview: Preview = {
   parameters: {
