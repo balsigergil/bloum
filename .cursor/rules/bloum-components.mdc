@@ -25,7 +25,7 @@ This guide helps create new components for the Bloum web components library, fol
 - Base component class uses the component name: `.spinner`, `.button`, `.alert`
 - Abbreviated forms are acceptable: `.btn` for button, `.menu` for dropdown-menu
 - Size variants: `.component-sm`, `.component-md`, `.component-lg`, `.component-xl`, `.component-xs`
-- Semantic variants: `.component-primary`, `.component-success`, `.component-danger`, `.component-warning`, `.component-info`
+- Semantic variants: `.component-primary`, `.component-success`, `.component-error`, `.component-warning`, `.component-info`
 - Style variants: `.component-ghost`, `.component-outline`, `.component-solid`
 - State classes: `.component-active`, `.component-disabled`, `.component-loading`
 - Modifier classes: `.component-icon`, `.component-top-right`, `.component-dot`, `.component-ping`
@@ -75,7 +75,7 @@ Use nested rules if needed.
     --bl-component-color: var(--bl-clr-green-600);
   }
   
-  .component-name-danger {
+  .component-name-error {
     --bl-component-color: var(--bl-clr-red-600);
   }
   
@@ -105,7 +105,7 @@ Standard size variants (not all components need all sizes):
 Standard semantic variants (when applicable):
 - `primary`: Primary brand color
 - `success`: Green for success states
-- `danger`: Red for error/danger states
+- `error`: Red for error/error states
 - `warning`: Orange for warnings
 - `info`: Blue for informational content
 
@@ -172,7 +172,7 @@ const meta: Meta<ComponentArgs> = {
     },
     variant: {
       control: "select", 
-      options: ["default", "primary", "success", "danger", "warning"],
+      options: ["default", "primary", "success", "error", "warning"],
     },
     disabled: {
       control: "boolean",
@@ -217,7 +217,7 @@ export const Variants: Story = {
       <div class="component-name">Default</div>
       <div class="component-name component-name-primary">Primary</div>
       <div class="component-name component-name-success">Success</div>
-      <div class="component-name component-name-danger">Danger</div>
+      <div class="component-name component-name-error">Danger</div>
     </div>
   `,
 };

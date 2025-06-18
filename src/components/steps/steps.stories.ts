@@ -3,7 +3,7 @@ import { Meta, StoryObj } from "@storybook/html-vite";
 type StepsArgs = {
   orientation: "horizontal" | "vertical";
   size: "sm" | "default" | "lg";
-  variant: "default" | "primary" | "success" | "danger" | "warning";
+  variant: "default" | "primary" | "success" | "error" | "warning";
   currentStep: number;
   showDescriptions: boolean;
   showIcons: boolean;
@@ -22,7 +22,7 @@ const meta: Meta<StepsArgs> = {
     },
     variant: {
       control: { type: "select" },
-      options: ["default", "primary", "success", "danger", "warning"],
+      options: ["default", "primary", "success", "error", "warning"],
     },
     currentStep: {
       control: { type: "number", min: 1, max: 5 },

@@ -9,7 +9,7 @@ const meta: Meta<AlertArgs> = {
   argTypes: {
     color: {
       control: "select",
-      options: ["default", "primary", "danger", "success", "warning"],
+      options: ["default", "primary", "error", "success", "warning"],
     },
   },
   render: (args) => {

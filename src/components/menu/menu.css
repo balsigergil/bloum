@@ -60,7 +60,7 @@
     background-color: var(--bl-menu-item-hover-bg);
   }
 
-  .menu-item-danger {
+  .menu-item-error {
     --bl-menu-item-color: var(--bl-clr-red-600);
     --bl-menu-item-hover-bg: var(--bl-clr-red-50);
   }
@@ -75,7 +75,7 @@
     --bl-menu-item-hover-bg: var(--bl-clr-gray-700);
     --bl-menu-item-color: var(--bl-clr-gray-200);
 
-    .menu-item-danger {
+    .menu-item-error {
       --bl-menu-item-color: var(--bl-clr-red-400);
       --bl-menu-item-hover-bg: var(--bl-clr-red-950);
     }

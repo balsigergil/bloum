@@ -62,7 +62,7 @@
     --bl-progress-color: var(--bl-clr-green-600);
   }
 
-  .progress-danger {
+  .progress-error {
     --bl-progress-color: var(--bl-clr-red-600);
   }
 
@@ -140,7 +140,7 @@
       --bl-progress-color: var(--bl-clr-green-500);
     }
 
-    .progress-danger {
+    .progress-error {
       --bl-progress-color: var(--bl-clr-red-500);
     }
 

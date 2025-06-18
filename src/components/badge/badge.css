@@ -57,7 +57,7 @@
     animation: badge-ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
   }
 
-  .badge-danger {
+  .badge-error {
     --bl-badge-bg: var(--bl-clr-red-600);
   }
 
@@ -108,7 +108,7 @@
       --bl-badge-border-color: var(--bl-clr-background);
     }
 
-    .badge-danger {
+    .badge-error {
       --bl-badge-bg: var(--bl-clr-red-500);
       --bl-badge-color: #fff;
     }

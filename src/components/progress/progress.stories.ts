@@ -23,7 +23,7 @@ const meta: Meta<ProgressArgs> = {
     },
     variant: {
       control: "select",
-      options: ["default", "primary", "success", "danger", "warning", "info"],
+      options: ["default", "primary", "success", "error", "warning", "info"],
     },
     striped: {
       control: "boolean",
@@ -131,7 +131,7 @@ export const Variants: Story = {
       </div>
       <div>
         <p class="text-sm font-medium mb-2">Danger</p>
-        <div class="progress progress-danger">
+        <div class="progress progress-error">
           <div class="progress-bar" style="width: 65%"></div>
         </div>
       </div>
@@ -218,7 +218,7 @@ export const Indeterminate: Story = {
       </div>
       <div>
         <p class="text-sm font-medium mb-2">Large Indeterminate</p>
-        <div class="progress progress-lg progress-danger progress-indeterminate">
+        <div class="progress progress-lg progress-error progress-indeterminate">
           <div class="progress-bar"></div>
         </div>
       </div>

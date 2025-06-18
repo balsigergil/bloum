@@ -43,7 +43,7 @@
     --bl-alert-accent-color: var(--bl-clr-green-700);
   }
 
-  .alert-danger {
+  .alert-error {
     --bl-alert-bg: var(--bl-clr-red-100);
     --bl-alert-border: var(--bl-clr-red-300);
     --bl-alert-color: var(--bl-clr-red-900);
@@ -80,7 +80,7 @@
       --bl-alert-accent-color: var(--bl-clr-green-400);
     }
 
-    .alert-danger {
+    .alert-error {
       --bl-alert-bg: var(--bl-clr-red-900);
       --bl-alert-border: var(--bl-clr-red-700);
       --bl-alert-color: var(--bl-clr-red-100);

@@ -111,7 +111,7 @@ export const Variants: Story = {
         </button>
         
         <button 
-          class="btn btn-danger"
+          class="btn btn-error"
           onclick="Toast.error('Error!', 'Something went wrong')"
         >
           Error
@@ -268,7 +268,7 @@ export const MultipleToasts: Story = {
         </button>
         
         <button 
-          class="btn btn-danger"
+          class="btn btn-error"
           onclick="Toast.dismissAll()"
         >
           Dismiss All
@@ -291,7 +291,7 @@ export const RealWorldExamples: Story = {
         </button>
         
         <button 
-          class="btn btn-danger"
+          class="btn btn-error"
           onclick="Toast.error('Connection Failed', 'Unable to connect to the server. Please check your internet connection.')"
         >
           Network Error
@@ -341,7 +341,7 @@ export const WithoutDescription: Story = {
         </button>
         
         <button 
-          class="btn btn-danger"
+          class="btn btn-error"
           onclick="Toast.error('Failed!')"
         >
           Error

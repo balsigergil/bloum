@@ -6,7 +6,7 @@ const meta: Meta<ButtonArgs> = {
   argTypes: {
     color: {
       control: "select",
-      options: ["default", "primary", "danger"],
+      options: ["default", "primary", "error"],
     },
     variant: {
       control: "select",
@@ -34,8 +34,8 @@ const meta: Meta<ButtonArgs> = {
 
     if (args.color === "primary") {
       btn.classList.add("btn-primary");
-    } else if (args.color === "danger") {
-      btn.classList.add("btn-danger");
+    } else if (args.color === "error") {
+      btn.classList.add("btn-error");
     }
 
     if (args.variant === "ghost") {

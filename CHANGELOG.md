@@ -16,7 +16,7 @@
 * **collapse:** add collapse component ([d46b97e](https://github.com/balsigergil/bloum/commit/d46b97e10e3d50e84d3d36e1543f883cbbd436a4))
 * **command:** add command menu component ([fa20d74](https://github.com/balsigergil/bloum/commit/fa20d743282116e320ae471406b383238f7388e1))
 * **copy:** add copy button custom element ([2cde7fd](https://github.com/balsigergil/bloum/commit/2cde7fd0b8338a2a6bc6cacf49185722cfe8941e))
-* **menu:** add danger menu item ([ae6a1eb](https://github.com/balsigergil/bloum/commit/ae6a1eb4b231339f131e21f741a8e7f4b7572ce1))
+* **menu:** add error menu item ([ae6a1eb](https://github.com/balsigergil/bloum/commit/ae6a1eb4b231339f131e21f741a8e7f4b7572ce1))
 * **menu:** add open/close behaviors ([ff8a1dd](https://github.com/balsigergil/bloum/commit/ff8a1ddd767fa2deb28ed64b7d27c3419b6bcee6))
 * **menu:** add style for menu ([3a41694](https://github.com/balsigergil/bloum/commit/3a41694ead23971621bcb6d557e97b0d4b75f6a8))
 * **menu:** add support for icons and checkboxes ([af6ff0c](https://github.com/balsigergil/bloum/commit/af6ff0ca63b5899e5955e27cdb002ba3b50a6ffa))
