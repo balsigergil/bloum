@@ -72,15 +72,15 @@ Use nested rules if needed.
   }
   
   .component-name-success {
-    --bl-component-color: var(--bl-clr-green-600);
+    --bl-component-color: var(--bl-clr-success-600);
   }
   
   .component-name-error {
-    --bl-component-color: var(--bl-clr-red-600);
+    --bl-component-color: var(--bl-clr-error-600);
   }
   
   .component-name-warning {
-    --bl-component-color: var(--bl-clr-orange-600);
+    --bl-component-color: var(--bl-clr-warning-600);
   }
   
   /* Dark theme support using nested CSS rules */
@@ -105,7 +105,7 @@ Standard size variants (not all components need all sizes):
 Standard semantic variants (when applicable):
 - `primary`: Primary brand color
 - `success`: Green for success states
-- `error`: Red for error/error states
+- `error`: Red for danger/error states
 - `warning`: Orange for warnings
 - `info`: Blue for informational content
 
@@ -113,10 +113,10 @@ Standard semantic variants (when applicable):
 Use these predefined color variables:
 - **Gray scale**: `--bl-clr-gray-50` to `--bl-clr-gray-950`
 - **Primary**: `--bl-clr-primary-50` to `--bl-clr-primary-950`
-- **Success**: `--bl-clr-green-50` to `--bl-clr-green-950`
-- **Danger**: `--bl-clr-red-50` to `--bl-clr-red-950`
-- **Warning**: `--bl-clr-orange-50` to `--bl-clr-orange-950`
-- **Info**: `--bl-clr-blue-50` to `--bl-clr-blue-950`
+- **Success**: `--bl-clr-success-50` to `--bl-clr-success-950`
+- **Error**: `--bl-clr-error-50` to `--bl-clr-error-950`
+- **Warning**: `--bl-clr-warning-50` to `--bl-clr-warning-950`
+- **Info**: `--bl-clr-info-50` to `--bl-clr-info-950`
 - **Surface colors**: `--bl-clr-surface`, `--bl-clr-background`
 - **Text colors**: `--bl-clr-text`, `--bl-clr-text-inverted`
 - **Border**: `--bl-border-color`
