@@ -2,7 +2,7 @@ import { Tabs } from "@/components/tabs/Tabs";
 import { TabList } from "@/components/tabs/TabList";
 import { Tab } from "@/components/tabs/Tab";
 import { TabPanel } from "@/components/tabs/TabPanel";
-import { AutogrowTextarea } from "@/components/forms/AutogrowTextarea";
+import { AutogrowTextarea } from "@/components/textarea/AutogrowTextarea";
 import { Modal } from "@/components/modal/Modal";
 import { Tooltip } from "@/components/tooltip/tooltip";
 import { Combobox } from "@/components/combobox/Combobox";

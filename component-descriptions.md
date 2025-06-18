@@ -6,7 +6,7 @@
 
 - [x] **Alert** - Notification component that displays important messages with different severity levels.
 
-- [ ] **Avatar** - Circular or rounded display for user profile pictures or initials.
+- [x] **Avatar** - Circular or rounded display for user profile pictures or initials.
 
 - [x] **Badge** - Small status indicator or label that appears near other UI elements.
 

@@ -13,7 +13,11 @@
 @import "./components/card/card.css";
 @import "./components/table/table.css";
 @import "./components/tabs/tabs.css";
-@import "./components/forms/forms.css";
+@import "./components/input/input.css";
+@import "./components/checkbox/checkbox.css";
+@import "./components/textarea/textarea.css";
+@import "./components/checkbox-card/checkbox-card.css";
+@import "./components/form-field/form-field.css";
 @import "./components/switch/switch.css";
 @import "./components/modal/modal.css";
 @import "./components/alert/alert.css";

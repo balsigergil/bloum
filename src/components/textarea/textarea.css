@@ -1,0 +1,7 @@
+@layer components {
+  /* Textarea */
+  textarea.form-control {
+    padding-block: 0.5rem;
+    height: auto;
+  }
+}

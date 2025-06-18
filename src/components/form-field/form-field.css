@@ -1,0 +1,65 @@
+@layer components {
+  /* Form field wrapper */
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  /* Form field help text */
+  .form-field-help {
+    font-size: 0.875rem;
+    color: var(--bl-clr-gray-600);
+  }
+
+  /* Form field error text */
+  .form-field-error {
+    font-size: 0.875rem;
+    color: var(--bl-clr-red-600);
+  }
+
+  /* Error state for form control */
+  .form-field-error-state .form-control {
+    border-color: var(--bl-clr-red-500);
+  }
+
+  .form-field-error-state .form-control:focus-visible {
+    outline-color: var(--bl-clr-red-500);
+  }
+
+  /* Success state for form control */
+  .form-field-success-state .form-control {
+    border-color: var(--bl-clr-green-500);
+  }
+
+  .form-field-success-state .form-control:focus-visible {
+    outline-color: var(--bl-clr-green-500);
+  }
+}
+
+.dark,
+[data-theme="dark"] {
+  .form-field-help {
+    color: var(--bl-clr-gray-400);
+  }
+
+  .form-field-error {
+    color: var(--bl-clr-red-400);
+  }
+
+  .form-field-error-state .form-control {
+    border-color: var(--bl-clr-red-600);
+  }
+
+  .form-field-error-state .form-control:focus-visible {
+    outline-color: var(--bl-clr-red-600);
+  }
+
+  .form-field-success-state .form-control {
+    border-color: var(--bl-clr-green-600);
+  }
+
+  .form-field-success-state .form-control:focus-visible {
+    outline-color: var(--bl-clr-green-600);
+  }
+}

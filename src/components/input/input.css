@@ -1,0 +1,100 @@
+@layer components {
+  /* Form control */
+  .form-control {
+    appearance: none;
+    border: 1px solid var(--bl-form-border-color);
+    border-radius: var(--bl-form-border-radius);
+    padding-inline: var(--bl-form-input-padding);
+    height: var(--bl-form-input-height);
+    line-height: 1.25rem;
+    position: relative;
+    font-size: 0.875rem;
+    outline-style: solid;
+    outline-color: transparent;
+    outline-width: 2px;
+    display: block;
+    width: 100%;
+    min-width: var(--bl-form-input-height);
+    background-color: transparent;
+  }
+
+  .form-control:focus-visible {
+    outline-style: solid;
+    outline-color: var(--bl-form-primary-color);
+    outline-width: 2px;
+    outline-offset: -1px;
+  }
+
+  /* File input */
+  .form-control[type="file"] {
+    padding-inline: 0;
+    cursor: pointer;
+  }
+
+  .form-control::file-selector-button {
+    height: 100%;
+    border: none;
+    background-color: var(--bl-form-file-bg);
+    padding-inline: var(--bl-form-input-padding);
+    cursor: pointer;
+    margin-inline-end: var(--bl-form-input-padding);
+    transition: background-color var(--bl-transition-sm);
+  }
+
+  .form-control:hover::file-selector-button {
+    background-color: var(--bl-form-file-bg-hover);
+  }
+
+  /* Select */
+  select.form-control {
+    background-image: url("../../icons/chevron.svg");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 1.25rem 1.25rem;
+    padding-inline-end: 2.5rem;
+    print-color-adjust: exact;
+  }
+
+  select.form-control[multiple],
+  select.form-select:where([size]:not([size="1"])) {
+    height: auto;
+    background-image: initial;
+    background-position: initial;
+    background-repeat: unset;
+    background-size: initial;
+    padding-inline-end: 0.75rem;
+    print-color-adjust: unset;
+  }
+
+  /* Input group */
+  .input-group {
+    position: relative;
+  }
+
+  .input-group .input-group-icon {
+    position: absolute;
+    color: var(--bl-clr-gray-500);
+    width: var(--bl-form-input-height);
+    height: var(--bl-form-input-height);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+  }
+
+  .input-group .input-group-icon:first-child {
+    left: 0;
+  }
+
+  .input-group .input-group-icon:last-child {
+    right: 0;
+  }
+
+  .input-group > .input-group-icon + .form-control {
+    padding-inline-start: var(--bl-form-input-height);
+  }
+
+  .input-group > .form-control:has(+ .input-group-icon) {
+    padding-inline-end: var(--bl-form-input-height);
+  }
+}

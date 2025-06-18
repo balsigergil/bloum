@@ -10,7 +10,7 @@ import { initMenus } from "@/components/menu/menu";
 import { initCollapse } from "@/components/collapse/collapse";
 import { initAccordion } from "@/components/accordion/accordion";
 import { CopyButton } from "@/components/copy/copy";
-import { initAutogrowTextarea } from "@/components/forms/AutogrowTextarea";
+import { initAutogrowTextarea } from "@/components/textarea/AutogrowTextarea";
 import { initPopover } from "@/components/popover/popover";
 import { initToast, Toast } from "@/components/toast/toast";
 import { initColorSchemeSwitcher } from "@/components/color-scheme-switcher/color-scheme-switcher";
