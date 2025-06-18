@@ -157,7 +157,7 @@
     --bl-spinner-speed: 0.5s;
 
     --bl-font-sans:
-      "Inter Variable", ui-sans-serif, system-ui, sans-serif,
+      "Nunito Sans Variable", ui-sans-serif, system-ui, sans-serif,
       "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
       "Noto Color Emoji";
     --bl-font-serif:
@@ -165,7 +165,7 @@
     --bl-font-mono:
       ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
-    --bl-font: var(--bl-font-sans);
+    --bl-font-body: var(--bl-font-sans);
 
     --bl-breakpoint-sm: 640px;
     --bl-breakpoint-md: 768px;

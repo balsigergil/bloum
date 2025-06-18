@@ -1,5 +1,4 @@
-// Supports weights 100-900
-import "@fontsource-variable/inter";
+import "@fontsource-variable/nunito-sans";
 
 import { Tabs } from "@/components/tabs/Tabs";
 import { TabList } from "@/components/tabs/TabList";
