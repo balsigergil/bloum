@@ -12,7 +12,7 @@ export const Popover: Story = {
     return `
 <button class="btn" data-popover="#my-popover">Click me</button>
 <div class="popover" id="my-popover">
-  <p>Set the dimensions for the layer.</p>
+  <p class="font-bold mb-4">Set the dimensions for the layer.</p>
   <div class="grid grid-cols-2 gap-4">
     <label class="label">Width</label>
     <input class="form-control">

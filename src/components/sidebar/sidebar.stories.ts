@@ -428,13 +428,22 @@ export const WithCollapsible: Story = {
             </button>
             <div id="users-menu" class="collapsible sidebar-collapsible-content">
               <div class="sidebar-item">
-                <a href="#" class="sidebar-link">All Users</a>
+                <a href="#" class="sidebar-link">
+                  <i class="fa-solid fa-users-line fa-fw"></i>
+                  All Users
+                </a>
               </div>
               <div class="sidebar-item">
-                <a href="#" class="sidebar-link">User Roles</a>
+                <a href="#" class="sidebar-link">
+                  <i class="fa-solid fa-user-shield fa-fw"></i>
+                  User Roles
+                </a>
               </div>
               <div class="sidebar-item">
-                <a href="#" class="sidebar-link">Permissions</a>
+                <a href="#" class="sidebar-link">
+                  <i class="fa-solid fa-key fa-fw"></i>
+                  Permissions
+                </a>
               </div>
             </div>
           </li>
@@ -453,16 +462,28 @@ export const WithCollapsible: Story = {
             </button>
             <div id="finance-menu" class="collapsible sidebar-collapsible-content">
               <div class="sidebar-item">
-                <a href="#" class="sidebar-link">Revenue</a>
+                <a href="#" class="sidebar-link">
+                  <i class="fa-solid fa-chart-line fa-fw"></i>
+                  Revenue
+                </a>
               </div>
               <div class="sidebar-item">
-                <a href="#" class="sidebar-link">Expenses</a>
+                <a href="#" class="sidebar-link">
+                  <i class="fa-solid fa-credit-card fa-fw"></i>
+                  Expenses
+                </a>
               </div>
               <div class="sidebar-item">
-                <a href="#" class="sidebar-link">Invoices</a>
+                <a href="#" class="sidebar-link">
+                  <i class="fa-solid fa-file-invoice fa-fw"></i>
+                  Invoices
+                </a>
               </div>
               <div class="sidebar-item">
-                <a href="#" class="sidebar-link">Budgets</a>
+                <a href="#" class="sidebar-link">
+                  <i class="fa-solid fa-calculator fa-fw"></i>
+                  Budgets
+                </a>
               </div>
             </div>
           </li>

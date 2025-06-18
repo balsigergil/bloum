@@ -25,6 +25,7 @@ export class Tooltip {
     this.title = title;
     this.trigger = element;
 
+    // TODO: Can lead to memory leaks if called multiple times because of the trigger above
     if (element.bltooltip !== undefined) {
       return;
     }

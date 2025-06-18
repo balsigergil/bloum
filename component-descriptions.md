@@ -88,6 +88,8 @@
 
 - [x] **Switch** - Switch-style input for binary on/off states.
 
+- [ ] **Segmented Control** - Group of buttons that represent different states or values.
+
 - [ ] **Range** - Slider input for selecting numeric values within a specified range.
 
 - [ ] **Rating** - Star or icon-based input for collecting user ratings or reviews.

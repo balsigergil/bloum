@@ -66,7 +66,6 @@ export class Collapse {
 
 export function initCollapse() {
   document.querySelectorAll(".collapsible").forEach((collapse) => {
-    console.log("Collapse", collapse);
     new Collapse(collapse as BloumCollapseElement);
   });
 }
