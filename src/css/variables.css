@@ -157,8 +157,9 @@
     --bl-spinner-speed: 0.5s;
 
     --bl-font-sans:
-      ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
-      "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      "Inter Variable", ui-sans-serif, system-ui, sans-serif,
+      "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+      "Noto Color Emoji";
     --bl-font-serif:
       ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
     --bl-font-mono:
