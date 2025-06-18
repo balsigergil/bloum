@@ -24,7 +24,6 @@ const meta: Meta = {
             <img src="https://placehold.co/150x50" alt="Logo" />
           </a>
         </div>
-        <hr>
         <div class="mx-4 py-4">
           <div class="input-group">
             <div class="input-group-icon">
@@ -33,7 +32,6 @@ const meta: Meta = {
             <input type="search" class="form-control" placeholder="Search...">
           </div>
         </div>
-        <hr>
         <h3 class="sidebar-group-title">Dashboard</h3>
         <ul class="sidebar-nav">
           <li class="sidebar-item active">
@@ -61,7 +59,6 @@ const meta: Meta = {
             </a>
           </li>
         </ul>
-        <hr>
         <h3 class="sidebar-group-title">Administration</h3>
         <ul class="sidebar-nav">
           <li class="sidebar-item">
@@ -112,7 +109,7 @@ const meta: Meta = {
             <div class="rounded-full bg-gray-500 text-white size-10 grid place-items-center font-semibold">GB</div>
             <div class="text-sm">
               <div class="font-semibold">John Doe</div>
-              <div class="text-gray-600">Administrator</div>
+              <div class="text-gray-600 dark:text-gray-400">Administrator</div>
             </div>
           </div>
           <div class="dropdown">
@@ -133,7 +130,7 @@ const meta: Meta = {
     </div>
   </aside>
   <main class="p-4 space-y-4">
-    <h1 class="font-semibold text-3xl">Content</h1>
+    <h1 class="font-semibold text-3xl text-gray-700 dark:text-gray-300">Content</h1>
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
         <div class="card">
           <div class="card-header">

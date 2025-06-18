@@ -12,7 +12,7 @@
 [data-theme="dark"] {
   --bl-sidebar-color: var(--bl-clr-gray-200);
   --bl-sidebar-color-hover: var(--bl-clr-gray-200);
-  --bl-sidebar-bg-hover: var(--bl-clr-gray-700);
+  --bl-sidebar-bg-hover: var(--bl-clr-gray-800);
   --bl-sidebar-title-color: var(--bl-clr-gray-400);
 }
 
@@ -135,7 +135,7 @@
 
   .sidebar-group-title {
     font-size: 0.75rem;
-    font-weight: 500;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     padding-inline: 1.5rem;
@@ -155,7 +155,7 @@
     padding: 0.5rem 1.5rem;
     text-decoration: none;
     font-size: 0.875rem;
-    font-weight: 500;
+    font-weight: 600;
     display: flex;
     align-items: center;
     gap: 1rem;
