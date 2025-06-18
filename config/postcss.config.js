@@ -1,3 +1,4 @@
+// Production PostCSS config use to compile the final CSS file
 export default {
   plugins: {
     "postcss-import": {},

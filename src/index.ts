@@ -1,5 +1,3 @@
-import "@fontsource-variable/nunito-sans";
-
 import { Tabs } from "@/components/tabs/Tabs";
 import { TabList } from "@/components/tabs/TabList";
 import { Tab } from "@/components/tabs/Tab";

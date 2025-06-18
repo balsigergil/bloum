@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+:root {
+  --bl-font-sans: "Nunito Sans Variable", ui-sans-serif, system-ui, sans-serif;
+}
+
 .dark .docs-story {
   background-color: var(--bl-clr-background);
   color: var(--bl-clr-text);

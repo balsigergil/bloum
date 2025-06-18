@@ -15,7 +15,7 @@ const meta: Meta<ButtonArgs> = {
   argTypes: {
     color: {
       control: "select",
-      options: ["default", "primary", "danger"],
+      options: ["default", "primary", "error", "warning", "success", "info"],
     },
     variant: {
       control: "select",
@@ -37,17 +37,11 @@ const meta: Meta<ButtonArgs> = {
     btn.innerText = args.label;
     btn.classList.add("btn");
 
-    if (args.color === "primary") {
-      btn.classList.add("btn-primary");
-    } else if (args.color === "danger") {
-      btn.classList.add("btn-danger");
-    }
+    const colorCls = `btn-${args.color}`;
+    btn.classList.add(colorCls);
 
-    if (args.variant === "ghost") {
-      btn.classList.add("btn-ghost");
-    } else if (args.variant === "outline") {
-      btn.classList.add("btn-outline");
-    }
+    const variantCls = `btn-${args.variant}`;
+    btn.classList.add(variantCls);
 
     if (args.size === "lg") {
       btn.classList.add("btn-lg");

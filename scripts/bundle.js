@@ -19,6 +19,9 @@ await esbuild.build({
   globalName: "Bloum",
   minify: true,
   outfile: packageJson.browser,
+  loader: {
+    ".svg": "dataurl",
+  },
 });
 
 // Node build (ESM)

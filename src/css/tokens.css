@@ -1,0 +1,60 @@
+@layer base {
+  :root {
+    --bl-clr-text: var(--bl-clr-gray-950);
+    --bl-clr-text-inverted: var(--bl-clr-white);
+    --bl-clr-background: var(--bl-clr-gray-50);
+    --bl-clr-surface: var(--bl-clr-white);
+
+    --bl-border-radius-sm: 0.125rem;
+    --bl-border-radius: 0.25rem;
+    --bl-border-radius-md: 0.375rem;
+    --bl-border-radius-lg: 0.5rem;
+    --bl-border-radius-xl: 0.75rem;
+    --bl-border-radius-2xl: 1rem;
+    --bl-border-radius-full: 9999px;
+
+    --bl-border-color: var(--bl-clr-gray-200);
+
+    --bl-disabled-opacity: 0.7;
+
+    --bl-shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --bl-shadow:
+      0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --bl-shadow-lg:
+      0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --bl-shadow-xl:
+      0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+
+    --bl-transition-xs: 50ms;
+    --bl-transition-sm: 100ms;
+    --bl-transition-md: 150ms;
+    --bl-transition-lg: 200ms;
+    --bl-transition-xl: 300ms;
+    --bl-spinner-speed: 0.5s;
+
+    --bl-font-sans:
+      ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+      "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --bl-font-serif:
+      ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+    --bl-font-mono:
+      ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+      "Courier New", monospace;
+    --bl-font-body: var(--bl-font-sans);
+
+    --bl-breakpoint-sm: 640px;
+    --bl-breakpoint-md: 768px;
+    --bl-breakpoint-lg: 1024px;
+    --bl-breakpoint-xl: 1280px;
+    --bl-breakpoint-2xl: 1536px;
+  }
+
+  .dark,
+  [data-theme="dark"] {
+    --bl-clr-text: var(--bl-clr-white);
+    --bl-clr-text-inverted: var(--bl-clr-gray-950);
+    --bl-clr-background: var(--bl-clr-gray-900);
+    --bl-clr-surface: var(--bl-clr-gray-800);
+    --bl-border-color: var(--bl-clr-gray-700);
+  }
+}

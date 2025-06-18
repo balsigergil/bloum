@@ -2,8 +2,11 @@ import type { Preview, HtmlRenderer } from "@storybook/html";
 import { withThemeByClassName } from "@storybook/addon-themes";
 
 import { initBloum } from "../src";
-import "../src/bloum.css";
+
+import "@fontsource-variable/nunito-sans";
 import "@fortawesome/fontawesome-free/css/all.css";
+
+import "../src/bloum.css";
 import "./preview.css";
 
 initBloum();
