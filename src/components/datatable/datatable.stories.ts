@@ -283,7 +283,7 @@ export const WithActions: Story = {
             <td><input type="checkbox" class="checkbox" aria-label="Select user"></td>
             <td>Alice Johnson</td>
             <td>Admin</td>
-            <td><span class="badge badge-success">Active</span></td>
+            <td><span class="tag tag-success">Active</span></td>
             <td>
               <button class="btn btn-xs btn-ghost">Edit</button>
               <button class="btn btn-xs btn-error">Delete</button>
@@ -293,7 +293,7 @@ export const WithActions: Story = {
             <td><input type="checkbox" class="checkbox" aria-label="Select user"></td>
             <td>Bob Smith</td>
             <td>Editor</td>
-            <td><span class="badge badge-success">Active</span></td>
+            <td><span class="tag tag-success">Active</span></td>
             <td>
               <button class="btn btn-xs btn-ghost">Edit</button>
               <button class="btn btn-xs btn-error">Delete</button>
@@ -303,7 +303,7 @@ export const WithActions: Story = {
             <td><input type="checkbox" class="checkbox" aria-label="Select user"></td>
             <td>Charlie Brown</td>
             <td>Viewer</td>
-            <td><span class="badge badge-warning">Pending</span></td>
+            <td><span class="tag tag-warning">Pending</span></td>
             <td>
               <button class="btn btn-xs btn-ghost">Edit</button>
               <button class="btn btn-xs btn-error">Delete</button>
@@ -313,7 +313,7 @@ export const WithActions: Story = {
             <td><input type="checkbox" class="checkbox" aria-label="Select user"></td>
             <td>Diana Prince</td>
             <td>Editor</td>
-            <td><span class="badge badge-error">Inactive</span></td>
+            <td><span class="tag tag-error">Inactive</span></td>
             <td>
               <button class="btn btn-xs btn-ghost">Edit</button>
               <button class="btn btn-xs btn-error">Delete</button>
@@ -323,7 +323,7 @@ export const WithActions: Story = {
             <td><input type="checkbox" class="checkbox" aria-label="Select user"></td>
             <td>Ethan Hunt</td>
             <td>Admin</td>
-            <td><span class="badge badge-success">Active</span></td>
+            <td><span class="tag tag-success">Active</span></td>
             <td>
               <button class="btn btn-xs btn-ghost">Edit</button>
               <button class="btn btn-xs btn-error">Delete</button>
@@ -333,7 +333,7 @@ export const WithActions: Story = {
             <td><input type="checkbox" class="checkbox" aria-label="Select user"></td>
             <td>Fiona Gallagher</td>
             <td>Viewer</td>
-            <td><span class="badge badge-success">Active</span></td>
+            <td><span class="tag tag-success">Active</span></td>
             <td>
               <button class="btn btn-xs btn-ghost">Edit</button>
               <button class="btn btn-xs btn-error">Delete</button>
