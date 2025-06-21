@@ -73,13 +73,20 @@ export class DataTable {
     this.controlsWrapper = document.createElement("div");
     this.controlsWrapper.className = "datatable-controls";
 
-    // Create search input
+    // Create search input with icon
     const searchWrapper = document.createElement("div");
     searchWrapper.className = "datatable-search";
 
+    const inputGroup = document.createElement("div");
+    inputGroup.className = "input-group";
+
+    const iconSpan = document.createElement("span");
+    iconSpan.className = "input-group-icon";
+    iconSpan.innerHTML = '<i class="fa-solid fa-magnifying-glass"></i>';
+
     const searchInput = document.createElement("input");
     searchInput.type = "text";
-    searchInput.className = "input input-sm";
+    searchInput.className = "form-control";
     searchInput.placeholder = "Search...";
     searchInput.addEventListener("input", (e) => {
       this.searchTerm = (e.target as HTMLInputElement).value;
@@ -88,7 +95,9 @@ export class DataTable {
       this.render();
     });
 
-    searchWrapper.appendChild(searchInput);
+    inputGroup.appendChild(iconSpan);
+    inputGroup.appendChild(searchInput);
+    searchWrapper.appendChild(inputGroup);
 
     // Create rows per page selector
     const perPageWrapper = document.createElement("div");
@@ -98,7 +107,7 @@ export class DataTable {
     perPageLabel.textContent = "Show ";
 
     const perPageSelect = document.createElement("select");
-    perPageSelect.className = "input input-sm";
+    perPageSelect.className = "form-control";
     [10, 25, 50, 100].forEach((value) => {
       const option = document.createElement("option");
       option.value = value.toString();
@@ -242,60 +251,114 @@ export class DataTable {
     infoDiv.className = "datatable-info";
     this.paginationWrapper.appendChild(infoDiv);
 
-    // Create pagination controls
-    const paginationDiv = document.createElement("div");
-    paginationDiv.className = "pagination";
+    // Create pagination nav
+    const nav = document.createElement("nav");
+    nav.setAttribute("aria-label", "Table pagination");
+
+    // Create pagination list
+    const paginationList = document.createElement("ul");
+    paginationList.className = "pagination";
+
+    // First page button
+    const firstLi = document.createElement("li");
+    const firstBtn = document.createElement("button");
+    firstBtn.className = "page-item";
+    firstBtn.innerHTML = '<i class="fas fa-angle-double-left"></i>';
+    firstBtn.disabled = this.currentPage === 1 || totalPages === 0;
+    firstBtn.title = "First page";
+    firstBtn.setAttribute("aria-label", "First page");
+    firstBtn.addEventListener("click", () => {
+      if (this.currentPage > 1) {
+        this.currentPage = 1;
+        this.render();
+      }
+    });
+    firstLi.appendChild(firstBtn);
+    paginationList.appendChild(firstLi);
 
     // Previous button
+    const prevLi = document.createElement("li");
     const prevBtn = document.createElement("button");
-    prevBtn.className = "btn btn-sm btn-ghost";
-    prevBtn.textContent = "Previous";
-    prevBtn.disabled = this.currentPage === 1;
+    prevBtn.className = "page-item";
+    prevBtn.innerHTML = '<i class="fas fa-angle-left"></i>';
+    prevBtn.disabled = this.currentPage === 1 || totalPages === 0;
+    prevBtn.title = "Previous page";
+    prevBtn.setAttribute("aria-label", "Previous page");
     prevBtn.addEventListener("click", () => {
       if (this.currentPage > 1) {
         this.currentPage--;
         this.render();
       }
     });
-    paginationDiv.appendChild(prevBtn);
+    prevLi.appendChild(prevBtn);
+    paginationList.appendChild(prevLi);
 
     // Page numbers
     const pageNumbers = this.getPageNumbers(totalPages);
     pageNumbers.forEach((pageNum) => {
+      const li = document.createElement("li");
+
       if (pageNum === "...") {
-        const ellipsis = document.createElement("span");
-        ellipsis.className = "pagination-ellipsis";
+        const ellipsis = document.createElement("button");
+        ellipsis.className = "page-item";
         ellipsis.textContent = "...";
-        paginationDiv.appendChild(ellipsis);
+        ellipsis.disabled = true;
+        li.appendChild(ellipsis);
       } else {
         const pageBtn = document.createElement("button");
-        pageBtn.className = "btn btn-sm btn-ghost";
+        pageBtn.className = "page-item";
         if (pageNum === this.currentPage) {
-          pageBtn.classList.add("btn-primary");
+          pageBtn.classList.add("active");
+          pageBtn.setAttribute("aria-current", "page");
         }
         pageBtn.textContent = pageNum.toString();
+        pageBtn.setAttribute("aria-label", `Page ${pageNum}`);
         pageBtn.addEventListener("click", () => {
           this.currentPage = pageNum as number;
           this.render();
         });
-        paginationDiv.appendChild(pageBtn);
+        li.appendChild(pageBtn);
       }
+
+      paginationList.appendChild(li);
     });
 
     // Next button
+    const nextLi = document.createElement("li");
     const nextBtn = document.createElement("button");
-    nextBtn.className = "btn btn-sm btn-ghost";
-    nextBtn.textContent = "Next";
-    nextBtn.disabled = this.currentPage === totalPages;
+    nextBtn.className = "page-item";
+    nextBtn.innerHTML = '<i class="fas fa-angle-right"></i>';
+    nextBtn.disabled = this.currentPage === totalPages || totalPages === 0;
+    nextBtn.title = "Next page";
+    nextBtn.setAttribute("aria-label", "Next page");
     nextBtn.addEventListener("click", () => {
       if (this.currentPage < totalPages) {
         this.currentPage++;
         this.render();
       }
     });
-    paginationDiv.appendChild(nextBtn);
+    nextLi.appendChild(nextBtn);
+    paginationList.appendChild(nextLi);
 
-    this.paginationWrapper.appendChild(paginationDiv);
+    // Last page button
+    const lastLi = document.createElement("li");
+    const lastBtn = document.createElement("button");
+    lastBtn.className = "page-item";
+    lastBtn.innerHTML = '<i class="fas fa-angle-double-right"></i>';
+    lastBtn.disabled = this.currentPage === totalPages || totalPages === 0;
+    lastBtn.title = "Last page";
+    lastBtn.setAttribute("aria-label", "Last page");
+    lastBtn.addEventListener("click", () => {
+      if (this.currentPage < totalPages) {
+        this.currentPage = totalPages;
+        this.render();
+      }
+    });
+    lastLi.appendChild(lastBtn);
+    paginationList.appendChild(lastLi);
+
+    nav.appendChild(paginationList);
+    this.paginationWrapper.appendChild(nav);
   }
 
   private getPageNumbers(totalPages: number): (number | string)[] {
