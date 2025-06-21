@@ -23,7 +23,7 @@ const meta: Meta<TableArgs> = {
       <thead>
         <tr>
           <th>
-            <input type="checkbox" class="checkbox" aria-label="Select user" />
+            <input type="checkbox" class="field-check" aria-label="Select user" />
           </th>
           <th>Name</th>
           <th>Email</th>
@@ -34,7 +34,7 @@ const meta: Meta<TableArgs> = {
       <tbody>
         <tr>
           <td>
-            <input type="checkbox" class="checkbox" aria-label="Select user" />
+            <input type="checkbox" class="field-check" aria-label="Select user" />
           </td>
           <td>Facteur Hyacinthe</td>
           <td>john.doe@example.com</td>
@@ -50,7 +50,7 @@ const meta: Meta<TableArgs> = {
         </tr>
         <tr>
           <td>
-            <input type="checkbox" class="checkbox" aria-label="Select user" />
+            <input type="checkbox" class="field-check" aria-label="Select user" />
           </td>
           <td>Albert le Vert</td>
           <td>john.doe@example.com</td>
@@ -66,7 +66,7 @@ const meta: Meta<TableArgs> = {
         </tr>
         <tr>
           <td>
-            <input type="checkbox" class="checkbox" aria-label="Select user" />
+            <input type="checkbox" class="field-check" aria-label="Select user" />
           </td>
           <td>Mademoiselle Cassis</td>
           <td>john.doe@example.com</td>

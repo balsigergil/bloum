@@ -1,7 +1,7 @@
 @layer components {
   /* Checkbox and Radio */
-  input[type="checkbox"].field,
-  input[type="radio"].field {
+  .field-check,
+  .field-radio {
     position: relative;
     appearance: none;
     background-color: transparent;
@@ -23,22 +23,22 @@
     }
   }
 
-  input[type="checkbox"].field:checked {
+  input[type="checkbox"].field-check:checked {
     border-color: var(--bl-form-primary-color);
     background-color: var(--bl-form-primary-color);
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 7 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
   }
 
-  input[type="checkbox"].field:focus-visible {
+  .field-check:focus-visible {
     outline-color: var(--bl-form-primary-color);
   }
 
   /* Radio specific styles */
-  input[type="radio"].field {
+  .field-radio {
     border-radius: var(--bl-border-radius-full);
   }
 
-  input[type="radio"].field:checked {
+  input[type="radio"].field-radio:checked {
     border-color: var(--bl-form-primary-color);
     background-color: var(--bl-form-primary-color);
 
@@ -56,7 +56,7 @@
     }
   }
 
-  input[type="radio"].field:focus-visible {
+  .field-radio:focus-visible {
     outline: solid 2px var(--bl-form-primary-color);
     outline-offset: 2px;
   }
