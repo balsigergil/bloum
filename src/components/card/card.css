@@ -3,9 +3,9 @@
     --bl-card-bg: var(--bl-clr-surface);
     --bl-card-border-radius: var(--bl-border-radius-lg);
     --bl-card-border: 1px solid var(--bl-border-color);
-    --bl-card-header-padding: 0.75rem;
-    --bl-card-body-padding: 0.75rem;
-    --bl-card-title-fw: 500;
+    --bl-card-padding: 1.5rem;
+    --bl-card-title-fs: 1.125rem;
+    --bl-card-title-fw: 600;
     --bl-card-title-color: var(--bl-clr-gray-800);
     --bl-card-image-max-height: 150px;
 
@@ -24,16 +24,25 @@
   }
 
   .card-header {
-    padding-block: calc(var(--bl-card-header-padding) * 0.75);
-    padding-inline: var(--bl-card-header-padding);
+    padding-top: var(--bl-card-padding);
+    padding-inline: var(--bl-card-padding);
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
 
+  .card-footer {
+    padding-inline: var(--bl-card-padding);
+    padding-bottom: var(--bl-card-padding);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
   .card-title {
     color: var(--bl-card-title-color);
     font-weight: var(--bl-card-title-fw);
+    font-size: var(--bl-card-title-fs);
   }
 
   .card-actions {
@@ -47,15 +56,15 @@
   }
 
   .card-body {
-    padding: var(--bl-card-body-padding);
+    padding: var(--bl-card-padding);
 
     .card-title {
       margin-bottom: 0.5rem;
     }
   }
 
-  .card-footer {
-    background-color: var(--bl-clr-background);
+  .card > .table {
+    margin-top: var(--bl-card-padding);
   }
 
   .card .table > tbody:not(:has(+ tfoot)) > tr:last-child > td,

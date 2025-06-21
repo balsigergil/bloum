@@ -38,6 +38,10 @@ export const CardWithImage: Story = {
           <h3 class="card-title">List of users</h3>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, at, commodi ducimus eveniet fugit in, iste mollitia neque nulla obcaecati provident quibusdam repellat sit tempore tenetur ut voluptatem. Provident, quisquam!
         </div>
+        <div class="card-footer">
+          <button class="btn btn-ghost">Cancel</button>
+          <button class="btn btn-primary">Save</button>
+        </div>
       </div>
       `;
   },
