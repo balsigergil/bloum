@@ -10,3 +10,20 @@
   background-color: var(--bl-clr-background);
   color: var(--bl-clr-text);
 }
+
+.prismjs .tag {
+  height: auto;
+  padding-inline: 0;
+  border-radius: 0;
+  background-color: transparent;
+  color: initial;
+  border: initial;
+  font-weight: initial;
+  display: initial;
+  justify-content: initial;
+  align-items: initial;
+  gap: initial;
+  position: static;
+  max-width: initial;
+  cursor: auto;
+}

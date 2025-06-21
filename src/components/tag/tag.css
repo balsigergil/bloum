@@ -1,5 +1,5 @@
 @layer components {
-  .tag:not(.prismjs .tag) {
+  .tag {
     --bl-tag-bg: var(--bl-clr-gray-100);
     --bl-tag-color: var(--bl-clr-gray-800);
     --bl-tag-border-color: var(--bl-clr-gray-300);
