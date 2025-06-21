@@ -21,19 +21,13 @@
   /* Error state for form control */
   .form-field-error-state .form-control {
     border-color: var(--bl-clr-red-500);
-  }
-
-  .form-field-error-state .form-control:focus-visible {
-    outline-color: var(--bl-clr-red-500);
+    --bl-focus-color: var(--bl-clr-red-500);
   }
 
   /* Success state for form control */
   .form-field-success-state .form-control {
     border-color: var(--bl-clr-green-500);
-  }
-
-  .form-field-success-state .form-control:focus-visible {
-    outline-color: var(--bl-clr-green-500);
+    --bl-focus-color: var(--bl-clr-green-500);
   }
 }
 

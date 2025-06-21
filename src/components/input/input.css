@@ -16,13 +16,16 @@
     width: 100%;
     min-width: var(--bl-form-input-height);
     background-color: transparent;
+
+    transition-property: box-shadow, color;
+    transition-duration: var(--bl-transition-sm);
   }
 
   .form-control:focus-visible {
-    outline-style: solid;
-    outline-color: var(--bl-form-primary-color);
-    outline-width: 2px;
-    outline-offset: -1px;
+    border-color: var(--bl-focus-color);
+    box-shadow: 0 0 0 2px
+      color-mix(in srgb, var(--bl-focus-color) 50%, transparent);
+    outline: none;
   }
 
   /* File input */

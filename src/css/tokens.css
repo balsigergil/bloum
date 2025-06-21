@@ -5,7 +5,9 @@
     --bl-clr-background: var(--bl-clr-gray-50);
     --bl-clr-surface: var(--bl-clr-white);
 
-    --bl-border-radius-sm: 0.125rem;
+    /* Focus */
+    --bl-focus-color: var(--bl-clr-primary-600);
+
     --bl-border-radius: 0.25rem;
     --bl-border-radius-md: 0.375rem;
     --bl-border-radius-lg: 0.5rem;
@@ -66,6 +68,7 @@
     --bl-clr-background: var(--bl-clr-gray-950);
     --bl-clr-surface: var(--bl-clr-gray-900);
     --bl-border-color: var(--bl-clr-gray-800);
+    --bl-focus-color: var(--bl-clr-primary-500);
 
     /* Form tokens - dark mode */
     --bl-form-border-color: var(--bl-clr-gray-700);
