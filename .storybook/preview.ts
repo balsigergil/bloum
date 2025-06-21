@@ -14,6 +14,7 @@ import "./preview.css";
 window.initBloum = initBloum;
 
 const preview: Preview = {
+  tags: ["autodocs"],
   parameters: {
     actions: { argTypesRegex: "^on[A-Z].*" },
     controls: {

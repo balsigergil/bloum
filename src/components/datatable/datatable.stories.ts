@@ -146,6 +146,7 @@ export const LargeDataset: Story = {
 };
 
 export const VeryLargeDataset: Story = {
+  tags: ["!autodocs"],
   args: {
     rows: 10000,
   },
