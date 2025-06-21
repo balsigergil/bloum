@@ -48,7 +48,8 @@
   },
   "dependencies": {
     "@floating-ui/dom": "^1",
-    "focus-trap": "^7"
+    "focus-trap": "^7",
+    "@fortawesome/fontawesome-free": "^6.7.2"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^4.0.0",
@@ -57,7 +58,6 @@
     "@eslint/js": "^9.29.0",
     "@floating-ui/dom": "^1.6.13",
     "@fontsource-variable/nunito-sans": "^5.2.6",
-    "@fortawesome/fontawesome-free": "^6.7.2",
     "@playwright/test": "^1.53.0",
     "@release-it/conventional-changelog": "^10.0.1",
     "@storybook/addon-a11y": "^9.0.12",

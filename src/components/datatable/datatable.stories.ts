@@ -145,6 +145,12 @@ export const LargeDataset: Story = {
   },
 };
 
+export const VeryLargeDataset: Story = {
+  args: {
+    rows: 10000,
+  },
+};
+
 export const BasicTableExample: Story = {
   render: () => {
     const container = document.createElement("div");

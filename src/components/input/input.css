@@ -8,7 +8,7 @@
     height: var(--bl-form-input-height);
     line-height: 1.25rem;
     position: relative;
-    font-size: 0.875rem;
+    font-size: var(--bl-form-font-size);
     outline-style: solid;
     outline-color: transparent;
     outline-width: 2px;

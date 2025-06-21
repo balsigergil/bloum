@@ -2,7 +2,7 @@
   .datatable-wrapper {
     --bl-datatable-controls-gap: 1rem;
     --bl-datatable-controls-padding: 0.5rem;
-    --bl-datatable-sort-indicator-size: 0.5rem;
+    --bl-datatable-sort-indicator-size: 0.375rem;
     --bl-datatable-sort-color: var(--bl-clr-gray-500);
     --bl-datatable-sort-active-color: var(--bl-clr-primary-600);
 
@@ -24,17 +24,9 @@
     flex: 1;
     min-width: 200px;
     max-width: 400px;
-
-    /* Make input smaller for datatable */
-    .form-control {
-      --bl-form-input-height: 2rem;
-      --bl-form-input-padding: 0.5rem;
-      font-size: 0.875rem;
-    }
-
-    .input-group-icon {
-      font-size: 0.875rem;
-    }
+    --bl-form-input-height: 2rem;
+    --bl-form-input-padding: 0.5rem;
+    --bl-form-font-size: 0.875rem;
   }
 
   .datatable-per-page {
@@ -53,16 +45,11 @@
     .form-control {
       --bl-form-input-height: 2rem;
       --bl-form-input-padding: 0.5rem;
+      --bl-form-font-size: 0.875rem;
       width: auto;
       min-width: 80px;
       max-width: 120px;
-      font-size: 0.875rem;
     }
-  }
-
-  /* Table container */
-  .datatable-container {
-    /* Uses existing table-responsive class */
   }
 
   /* Sortable headers */

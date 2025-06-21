@@ -56,6 +56,7 @@
     --bl-form-primary-color: var(--bl-clr-primary-600);
     --bl-form-file-bg: var(--bl-clr-gray-200);
     --bl-form-file-bg-hover: var(--bl-clr-gray-300);
+    --bl-form-font-size: 0.875rem;
   }
 
   .dark,
