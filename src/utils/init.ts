@@ -16,6 +16,7 @@ import { initToast, Toast } from "@/components/toast/toast";
 import { initColorSchemeSwitcher } from "@/components/color-scheme-switcher/color-scheme-switcher";
 import { initSteps } from "@/components/steps/steps";
 import { initAvatar } from "@/components/avatar/avatar";
+import { initPasswordToggle } from "@/components/input/password-input";
 
 export function initBloum() {
   Tabs.register();
@@ -46,6 +47,7 @@ export function initBloum() {
   initColorSchemeSwitcher();
   initSteps();
   initAvatar();
+  initPasswordToggle();
 
   console.info("🚀 Bloom initialized!");
 }

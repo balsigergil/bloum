@@ -1,4 +1,5 @@
 import { Meta, StoryObj } from "@storybook/html-vite";
+import { initPasswordToggle } from "./password-input";
 
 const meta: Meta = {
   title: "Components/Input",
@@ -22,6 +23,44 @@ export const PasswordInput: Story = {
     return `
       <div class="max-w-md">
         <input type="password" class="field" placeholder="Enter password">
+      </div>
+    `;
+  },
+};
+
+export const PasswordWithToggle: Story = {
+  render: () => {
+    // Initialize password toggle after rendering
+    setTimeout(() => {
+      initPasswordToggle(document);
+    }, 0);
+
+    return `
+      <div class="max-w-md space-y-4">
+        <div class="input-icon">
+          <input type="password" class="field" placeholder="Enter password" id="password1">
+          <button type="button" class="password-toggle" aria-label="Show password">
+            <i class="fa-solid fa-eye"></i>
+          </button>
+        </div>
+        
+        <div class="input-icon">
+          <input type="password" class="field" placeholder="Confirm password" id="password2">
+          <button type="button" class="password-toggle" aria-label="Show password">
+            <i class="fa-solid fa-eye"></i>
+          </button>
+        </div>
+        
+        <div class="form-field">
+          <label class="label">With Label</label>
+          <div class="input-icon">
+            <input type="password" class="field" placeholder="Your secure password">
+            <button type="button" class="password-toggle" aria-label="Show password">
+              <i class="fa-solid fa-eye"></i>
+            </button>
+          </div>
+          <p class="form-field-help">Password must be at least 8 characters long.</p>
+        </div>
       </div>
     `;
   },

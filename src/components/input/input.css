@@ -119,4 +119,48 @@
     --bl-field-file-bg: var(--bl-clr-gray-800);
     --bl-field-file-bg-hover: var(--bl-clr-gray-700);
   }
+
+  /* Password input with toggle */
+  .password-toggle {
+    --bl-password-toggle-color: var(--bl-clr-gray-600);
+    --bl-password-toggle-hover: var(--bl-clr-gray-800);
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: var(--bl-field-height);
+    width: var(--bl-field-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--bl-password-toggle-color);
+    transition: color var(--bl-transition-sm);
+    padding: 0;
+    z-index: 2;
+  }
+
+  .password-toggle:hover {
+    color: var(--bl-password-toggle-hover);
+  }
+
+  .password-toggle:focus-visible {
+    outline: 2px solid var(--bl-focus-color);
+    outline-offset: -2px;
+    border-radius: var(--bl-border-radius-sm);
+  }
+
+  .password-toggle svg,
+  .password-toggle i {
+    width: 1.125rem;
+    height: 1.125rem;
+    font-size: 1.125rem;
+  }
+
+  .dark .password-toggle {
+    --bl-password-toggle-color: var(--bl-clr-gray-400);
+    --bl-password-toggle-hover: var(--bl-clr-gray-200);
+  }
 }
