@@ -6,7 +6,7 @@ const meta: Meta<ButtonArgs> = {
   argTypes: {
     color: {
       control: "select",
-      options: ["default", "primary", "error"],
+      options: ["default", "primary", "error", "warning", "success", "info"],
     },
     variant: {
       control: "select",
@@ -15,9 +15,6 @@ const meta: Meta<ButtonArgs> = {
     size: {
       control: "select",
       options: ["xs", "sm", "default", "lg"],
-    },
-    rounded: {
-      control: "boolean",
     },
     loading: {
       control: "boolean",
@@ -32,32 +29,17 @@ const meta: Meta<ButtonArgs> = {
     btn.classList.add("btn", "btn-icon");
     btn.ariaLabel = "Save";
 
-    if (args.color === "primary") {
-      btn.classList.add("btn-primary");
-    } else if (args.color === "error") {
-      btn.classList.add("btn-error");
-    }
+    const colorCls = `btn-${args.color}`;
+    btn.classList.add(colorCls);
 
-    if (args.variant === "ghost") {
-      btn.classList.add("btn-ghost");
-    } else if (args.variant === "outline") {
-      btn.classList.add("btn-outline");
-    }
+    const variantCls = `btn-${args.variant}`;
+    btn.classList.add(variantCls);
 
-    if (args.size === "lg") {
-      btn.classList.add("btn-lg");
-    } else if (args.size === "sm") {
-      btn.classList.add("btn-sm");
-    } else if (args.size === "xs") {
-      btn.classList.add("btn-xs");
-    }
+    const sizeCls = `btn-${args.size}`;
+    btn.classList.add(sizeCls);
 
     if (args.loading) {
       btn.classList.add("btn-loading");
-    }
-
-    if (args.rounded) {
-      btn.classList.add("btn-rounded");
     }
 
     if (args.disabled) {
@@ -76,7 +58,6 @@ export const Primary: Story = {
     color: "primary",
     variant: "default",
     size: "default",
-    rounded: false,
     loading: false,
     disabled: false,
   },

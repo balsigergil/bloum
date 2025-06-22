@@ -5,7 +5,6 @@ export type ButtonArgs = {
   color: string;
   variant: string;
   size: string;
-  rounded: boolean;
   loading: boolean;
   disabled: boolean;
 };
