@@ -1,5 +1,4 @@
 <script>
-  // Wait for DOM to be fully loaded before initializing
   document.addEventListener("DOMContentLoaded", function () {
     if (typeof initBloum === "function") {
       initBloum();
@@ -7,14 +6,4 @@
       console.warn("initBloum function not found in head script");
     }
   });
-
-  // Fallback for cases where DOM is already loaded
-  if (document.readyState !== "loading") {
-    // DOM is already loaded
-    setTimeout(() => {
-      if (typeof initBloum === "function") {
-        initBloum();
-      }
-    }, 0);
-  }
 </script>

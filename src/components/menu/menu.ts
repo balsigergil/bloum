@@ -6,16 +6,24 @@ import {
   shift,
 } from "@floating-ui/dom";
 
+export interface BlMenuElement extends HTMLElement {
+  blmenu?: Menu;
+}
+
 export class Menu {
   readonly #menu: HTMLElement;
   readonly #trigger: HTMLElement;
   #cleanup: VoidFunction | null = null;
   #cleanupEvents: VoidFunction | null = null;
 
-  constructor(element: HTMLElement, trigger: HTMLElement) {
+  constructor(element: BlMenuElement, trigger: HTMLElement) {
+    if (element.blmenu !== undefined) {
+      element.blmenu.destroy();
+    }
     this.#menu = element;
     this.#trigger = trigger;
     this.#registerEvents();
+    element.blmenu = this;
   }
 
   open() {

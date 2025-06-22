@@ -12,7 +12,7 @@
 
 - [x] **Button** - Interactive element that triggers actions when clicked or pressed.
 
-- [ ] **Split Button** - Button that opens a dropdown menu with selectable options.
+- [x] **Split Button** - Button that opens a dropdown menu with selectable options.
 
 - [ ] **Button Group** - Group of buttons that share a common purpose or action.
 
