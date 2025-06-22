@@ -145,4 +145,25 @@
   .dark .modal {
     --bl-modal-footer-bg: var(--bl-clr-surface);
   }
+
+  /* Storybook-specific fixes for modal positioning */
+  .sb-show-main .modal {
+    /* Ensure modals cover the entire Storybook iframe */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+  }
+
+  /* Fix for Storybook docs view */
+  .docs-story .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+  }
 }

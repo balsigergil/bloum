@@ -18,6 +18,7 @@ export class Modal {
   }
 
   open() {
+    console.log("open", this.#element);
     this.#element.classList.add("open");
     this.#element.setAttribute("aria-hidden", "false");
     this.#element.setAttribute("aria-modal", "true");
@@ -53,8 +54,25 @@ export class Modal {
   }
 }
 
+// Store references to event handlers for cleanup
+let modalClickHandler: ((e: Event) => void) | null = null;
+let modalKeydownHandler: ((e: KeyboardEvent) => void) | null = null;
+let modalCustomEventHandler: (() => void) | null = null;
+
 export function initModals() {
-  addEventListener("click", (e) => {
+  // Clean up existing event listeners
+  if (modalClickHandler) {
+    removeEventListener("click", modalClickHandler);
+  }
+  if (modalKeydownHandler) {
+    removeEventListener("keydown", modalKeydownHandler);
+  }
+  if (modalCustomEventHandler) {
+    removeEventListener("bl-modal-close", modalCustomEventHandler);
+  }
+
+  // Create new event handlers
+  modalClickHandler = (e: Event) => {
     const target = e.target as HTMLElement;
 
     // Open modal when clicking on modal trigger
@@ -64,7 +82,9 @@ export function initModals() {
         ?.getAttribute("data-modal") as string;
       const element = document.querySelector<BloumModalElement>(modalSelector);
       if (element) {
-        new Modal(element);
+        if (element.bloumModal === undefined) {
+          new Modal(element);
+        }
         element.bloumModal?.open();
         e.preventDefault();
         e.stopPropagation();
@@ -90,17 +110,22 @@ export function initModals() {
         e.stopPropagation();
       }
     }
-  });
+  };
 
-  addEventListener("keydown", (e) => {
+  modalKeydownHandler = (e: KeyboardEvent) => {
     if (e.key === "Escape" || e.key === "Esc") {
       closeAllModals();
     }
-  });
+  };
 
-  addEventListener("bl-modal-close", () => {
+  modalCustomEventHandler = () => {
     closeAllModals();
-  });
+  };
+
+  // Add new event listeners
+  addEventListener("click", modalClickHandler);
+  addEventListener("keydown", modalKeydownHandler);
+  addEventListener("bl-modal-close", modalCustomEventHandler);
 }
 
 function closeAllModals() {
