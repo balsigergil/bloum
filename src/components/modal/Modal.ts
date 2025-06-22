@@ -18,7 +18,6 @@ export class Modal {
   }
 
   open() {
-    console.log("open", this.#element);
     this.#element.classList.add("open");
     this.#element.setAttribute("aria-hidden", "false");
     this.#element.setAttribute("aria-modal", "true");

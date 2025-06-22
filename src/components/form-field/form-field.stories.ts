@@ -150,8 +150,8 @@ export const InputGroupField: Story = {
       <div class="max-w-md">
         <div class="form-field">
           <label for="search" class="label">Search</label>
-          <div class="input-group">
-            <span class="input-group-icon">
+          <div class="input-icon">
+            <span class="input-icon-addon">
               <i class="fa-solid fa-magnifying-glass"></i>
             </span>
             <input type="text" id="search" class="field" placeholder="Search for items...">

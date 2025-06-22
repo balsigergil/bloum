@@ -407,11 +407,10 @@ export const ModalWithForm: StoryObj = {
         </div>
         
         <div class="form-field">
-          <label class="checkbox">
-            <input type="checkbox" name="notifications" checked>
-            <span class="checkmark"></span>
-            Send welcome email
-          </label>
+          <div class="form-check">
+            <input type="checkbox" class="field-check" id="notifications" name="notifications" checked>
+            <label class="label" for="notifications">Send welcome email</label>
+          </div>
         </div>
       </form>
     </div>
@@ -590,83 +589,75 @@ export const ModalWithComplexContent: StoryObj = {
       </button>
     </div>
     <div class="modal-body">
-      <div style="display: grid; grid-template-columns: 200px 1fr; gap: 2rem;">
-        <div class="sidebar" style="border-right: 1px solid var(--bl-border-color); padding-right: 1rem;">
-          <div style="text-align: center; margin-bottom: 1rem;">
-            <div style="width: 80px; height: 80px; background: var(--bl-clr-primary-100); border-radius: 50%; margin: 0 auto 0.5rem; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: var(--bl-clr-primary-600);">JD</div>
-            <h4 style="margin: 0;">John Doe</h4>
-            <p style="margin: 0; color: var(--bl-clr-gray-600); font-size: 0.875rem;">Administrator</p>
-          </div>
-          <nav>
-            <button class="btn btn-ghost btn-sm" style="width: 100%; justify-content: flex-start; margin-bottom: 0.25rem;">Profile</button>
-            <button class="btn btn-ghost btn-sm" style="width: 100%; justify-content: flex-start; margin-bottom: 0.25rem;">Activity</button>
-            <button class="btn btn-ghost btn-sm" style="width: 100%; justify-content: flex-start; margin-bottom: 0.25rem;">Permissions</button>
-            <button class="btn btn-ghost btn-sm" style="width: 100%; justify-content: flex-start; margin-bottom: 0.25rem;">Settings</button>
-          </nav>
-        </div>
-        
         <div class="content">
-          <div class="tabs" style="margin-bottom: 1.5rem;">
-            <button class="btn btn-ghost btn-sm active" style="border-bottom: 2px solid var(--bl-clr-primary-500);">Overview</button>
-            <button class="btn btn-ghost btn-sm">Recent Activity</button>
-            <button class="btn btn-ghost btn-sm">Team Access</button>
-          </div>
-          
-          <div class="grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
-            <div class="card" style="padding: 1rem; border: 1px solid var(--bl-border-color); border-radius: var(--bl-border-radius);">
-              <h5 style="margin: 0 0 0.5rem;">Contact Information</h5>
-              <p style="margin: 0.25rem 0;"><strong>Email:</strong> john.doe@example.com</p>
-              <p style="margin: 0.25rem 0;"><strong>Phone:</strong> +1 (555) 123-4567</p>
-              <p style="margin: 0.25rem 0;"><strong>Location:</strong> San Francisco, CA</p>
-            </div>
-            
-            <div class="card" style="padding: 1rem; border: 1px solid var(--bl-border-color); border-radius: var(--bl-border-radius);">
-              <h5 style="margin: 0 0 0.5rem;">Account Status</h5>
-              <p style="margin: 0.25rem 0;"><span class="badge badge-success">Active</span></p>
-              <p style="margin: 0.25rem 0;"><strong>Joined:</strong> March 15, 2023</p>
-              <p style="margin: 0.25rem 0;"><strong>Last Login:</strong> 2 hours ago</p>
-            </div>
-          </div>
-          
-          <div class="recent-projects">
-            <h5 style="margin: 0 0 1rem;">Recent Projects</h5>
-            <table class="table" style="width: 100%;">
-              <thead>
-                <tr>
-                  <th>Project Name</th>
-                  <th>Status</th>
-                  <th>Progress</th>
-                  <th>Last Updated</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Website Redesign</td>
-                  <td><span class="badge badge-primary">In Progress</span></td>
-                  <td>75%</td>
-                  <td>2 hours ago</td>
-                </tr>
-                <tr>
-                  <td>Mobile App</td>
-                  <td><span class="badge badge-success">Completed</span></td>
-                  <td>100%</td>
-                  <td>1 day ago</td>
-                </tr>
-                <tr>
-                  <td>API Documentation</td>
-                  <td><span class="badge badge-warning">Review</span></td>
-                  <td>90%</td>
-                  <td>3 days ago</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+          <bl-tabs class="-mt-4">
+            <bl-tab-list>
+              <bl-tab href="#tab1">Overview</bl-tab>
+              <bl-tab href="#tab2">Recent Activity</bl-tab>
+              <bl-tab href="#tab3">Team Access</bl-tab>
+            </bl-tab-list>
+            <bl-tab-panel id="tab1">
+              <div class="grid grid-cols-2 gap-4">
+                <div class="card card-body">
+                  <h5 class="mb-2 card-title">Contact Information</h5>
+                  <p class="mb-1"><strong>Email:</strong> john.doe@example.com</p>
+                  <p class="mb-1"><strong>Phone:</strong> +1 (555) 123-4567</p>
+                  <p class="mb-1"><strong>Location:</strong> San Francisco, CA</p>
+                </div>
+                
+                <div class="card card-body">
+                  <h5 class="mb-2 card-title">Account Status</h5>
+                  <p class="mb-1"><span class="badge badge-success">Active</span></p>
+                  <p class="mb-1"><strong>Joined:</strong> March 15, 2023</p>
+                  <p class="mb-1"><strong>Last Login:</strong> 2 hours ago</p>
+                </div>
+              </div>
+
+              <h5 class="mt-4 mb-2">Recent Projects</h5>
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>Project Name</th>
+                    <th>Status</th>
+                    <th>Progress</th>
+                    <th>Last Updated</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Website Redesign</td>
+                    <td><span class="badge badge-primary">In Progress</span></td>
+                    <td>75%</td>
+                    <td>2 hours ago</td>
+                  </tr>
+                  <tr>
+                    <td>Mobile App</td>
+                    <td><span class="badge badge-success">Completed</span></td>
+                    <td>100%</td>
+                    <td>1 day ago</td>
+                  </tr>
+                  <tr>
+                    <td>API Documentation</td>
+                    <td><span class="badge badge-warning">Review</span></td>
+                    <td>90%</td>
+                    <td>3 days ago</td>
+                  </tr>
+                </tbody>
+              </table>
+            </bl-tab-panel>
+            <bl-tab-panel id="tab2">
+              <h2>Recent Activity</h2>
+            </bl-tab-panel>
+            <bl-tab-panel id="tab3">
+              <h2>Team Access</h2>
+            </bl-tab-panel>
+          </bl-tabs>
         </div>
       </div>
-    </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-outline" data-modal-close>Close</button>
-      <button type="button" class="btn btn-primary">Edit User</button>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline" data-modal-close>Close</button>
+        <button type="button" class="btn btn-primary">Edit User</button>
+      </div>
     </div>
   </div>
 </div>`;
