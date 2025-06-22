@@ -5,7 +5,7 @@ type TooltipArgs = {
 };
 
 const meta: Meta<TooltipArgs> = {
-  title: "Components/Tooltip",
+  title: "Components/Overlays/Tooltip",
   render: (args) => {
     return `<button class="btn btn-primary" data-tooltip="${args.text}">Hover me</button>`;
   },

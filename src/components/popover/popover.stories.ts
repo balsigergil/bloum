@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/html-vite";
 
 const meta: Meta = {
-  title: "Components/Popover",
+  title: "Components/Overlays/Popover",
 };
 
 export default meta;

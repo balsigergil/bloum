@@ -5,7 +5,7 @@ type SpinnerArgs = {
 };
 
 const meta: Meta<SpinnerArgs> = {
-  title: "Components/Spinner",
+  title: "Components/Elements/Spinner",
   argTypes: {
     size: {
       control: "select",

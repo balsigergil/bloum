@@ -11,7 +11,7 @@ type AvatarArgs = {
 };
 
 const meta: Meta<AvatarArgs> = {
-  title: "Components/Avatar",
+  title: "Components/Elements/Avatar",
   argTypes: {
     src: {
       control: "text",

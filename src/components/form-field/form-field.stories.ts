@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from "@storybook/html-vite";
 
 const meta: Meta = {
-  title: "Components/Form Field",
+  title: "Components/Inputs/Form Field",
 };
 
 export default meta;

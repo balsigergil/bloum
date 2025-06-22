@@ -5,7 +5,7 @@ type AlertArgs = {
 };
 
 const meta: Meta<AlertArgs> = {
-  title: "Components/Alert",
+  title: "Components/Elements/Alert",
   argTypes: {
     color: {
       control: "select",

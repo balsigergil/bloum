@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from "@storybook/html-vite";
 
 const meta: Meta = {
-  title: "Components/Textarea",
+  title: "Components/Inputs/Textarea",
 };
 
 export default meta;

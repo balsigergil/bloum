@@ -6,7 +6,7 @@ type SwitchArgs = {
 };
 
 const meta: Meta<SwitchArgs> = {
-  title: "Components/Switch",
+  title: "Components/Inputs/Switch",
   argTypes: {
     checked: {
       control: "boolean",

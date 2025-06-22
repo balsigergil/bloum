@@ -9,7 +9,7 @@ type TagArgs = {
 };
 
 const meta: Meta<TagArgs> = {
-  title: "Components/Tag",
+  title: "Components/Elements/Tag",
   argTypes: {
     text: {
       control: "text",

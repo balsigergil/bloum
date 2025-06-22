@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from "@storybook/html-vite";
 
 const meta: Meta = {
-  title: "Components/Checkbox Card",
+  title: "Components/Inputs/Checkbox Card",
 };
 
 export default meta;

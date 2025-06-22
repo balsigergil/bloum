@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from "@storybook/html-vite";
 
 const meta: Meta = {
-  title: "Components/Sidebar",
+  title: "Components/Navigation/Sidebar",
   parameters: {
     layout: "fullscreen",
   },

@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/html-vite";
 
 const meta: Meta = {
-  title: "Components/Menu",
+  title: "Components/Elements/Menu",
   tags: ["!autodocs"],
 };
 

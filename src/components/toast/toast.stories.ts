@@ -6,7 +6,7 @@ type ToastArgs = ToastOptions & {
 };
 
 const meta: Meta<ToastArgs> = {
-  title: "Components/Toast",
+  title: "Components/Overlays/Toast",
   argTypes: {
     title: {
       control: "text",

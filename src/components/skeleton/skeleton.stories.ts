@@ -8,7 +8,7 @@ type SkeletonArgs = {
 };
 
 const meta: Meta<SkeletonArgs> = {
-  title: "Components/Skeleton",
+  title: "Components/Layout/Skeleton",
   argTypes: {
     shape: {
       control: "select",

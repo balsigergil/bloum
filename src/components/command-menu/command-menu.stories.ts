@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/html-vite";
 
 const meta: Meta = {
-  title: "Components/Command Menu",
+  title: "Components/Navigation/Command Menu",
 };
 
 export default meta;

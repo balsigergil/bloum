@@ -6,7 +6,7 @@ type TabsArgs = {
 };
 
 const meta: Meta<TabsArgs> = {
-  title: "Components/Tabs",
+  title: "Components/Navigation/Tabs",
   argTypes: {
     useAnchor: {
       control: "boolean",

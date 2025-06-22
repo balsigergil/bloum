@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from "@storybook/html-vite";
 
 const meta: Meta = {
-  title: "Components/Accordion",
+  title: "Components/Elements/Accordion",
 };
 
 export default meta;

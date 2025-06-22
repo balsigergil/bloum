@@ -9,7 +9,7 @@ type BadgeArgs = {
 };
 
 const meta: Meta<BadgeArgs> = {
-  title: "Components/Badge",
+  title: "Components/Elements/Badge",
   argTypes: {
     text: {
       control: "text",

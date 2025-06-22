@@ -12,7 +12,7 @@ type ProgressArgs = {
 };
 
 const meta: Meta<ProgressArgs> = {
-  title: "Components/Progress",
+  title: "Components/Elements/Progress",
   argTypes: {
     value: {
       control: { type: "range", min: 0, max: 100, step: 1 },

@@ -10,7 +10,7 @@ type StepsArgs = {
 };
 
 const meta: Meta<StepsArgs> = {
-  title: "Components/Steps",
+  title: "Components/Navigation/Steps",
   argTypes: {
     orientation: {
       control: { type: "select" },

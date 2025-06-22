@@ -6,7 +6,7 @@ type TimelineArgs = {
 };
 
 const meta: Meta<TimelineArgs> = {
-  title: "Components/Timeline",
+  title: "Components/Elements/Timeline",
   argTypes: {
     size: {
       control: "select",

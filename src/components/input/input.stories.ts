@@ -2,7 +2,7 @@ import { Meta, StoryObj } from "@storybook/html-vite";
 import { initPasswordToggle } from "./password-input";
 
 const meta: Meta = {
-  title: "Components/Input",
+  title: "Components/Inputs/Input",
 };
 
 export default meta;

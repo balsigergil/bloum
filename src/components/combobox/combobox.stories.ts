@@ -9,7 +9,7 @@ export type ComboboxArgs = {
 };
 
 const meta: Meta<ComboboxArgs> = {
-  title: "Components/Combobox",
+  title: "Components/Inputs/Combobox",
 };
 
 export default meta;

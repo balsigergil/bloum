@@ -9,7 +9,7 @@ type DataTableArgs = {
 };
 
 const meta: Meta<DataTableArgs> = {
-  title: "Components/DataTable",
+  title: "Components/Data/Data Table",
   argTypes: {
     rows: {
       control: { type: "number", min: 5, max: 100 },

@@ -73,7 +73,7 @@ function setupModalPortal() {
 }
 
 const meta: Meta = {
-  title: "Components/Modal",
+  title: "Components/Overlays/Modal",
   // tags: ["!autodocs"],
   parameters: {
     docs: {
