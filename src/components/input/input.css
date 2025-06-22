@@ -163,4 +163,85 @@
     --bl-password-toggle-color: var(--bl-clr-gray-400);
     --bl-password-toggle-hover: var(--bl-clr-gray-200);
   }
+
+  /* Range input */
+  .field[type="range"] {
+    --bl-range-track-height: 0.375rem;
+    --bl-range-track-bg: var(--bl-clr-gray-300);
+    --bl-range-track-border-radius: var(--bl-border-radius-full);
+    --bl-range-thumb-size: 1.25rem;
+    --bl-range-thumb-bg: var(--bl-clr-primary-500);
+    --bl-range-thumb-border: 2px solid var(--bl-clr-white);
+    --bl-range-thumb-border-radius: var(--bl-border-radius-full);
+    --bl-range-thumb-shadow:
+      0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    --bl-range-thumb-hover-shadow:
+      0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+
+    background: none;
+    border: none;
+    padding: 0;
+    appearance: none;
+    cursor: pointer;
+  }
+
+  .field[type="range"]::-webkit-slider-runnable-track {
+    background: var(--bl-range-track-bg);
+    height: var(--bl-range-track-height);
+    border-radius: var(--bl-range-track-border-radius);
+  }
+
+  .field[type="range"]::-moz-range-track {
+    background: var(--bl-range-track-bg);
+    height: var(--bl-range-track-height);
+    border-radius: var(--bl-range-track-border-radius);
+  }
+
+  .field[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    background: var(--bl-range-thumb-bg);
+    border: var(--bl-range-thumb-border);
+    width: var(--bl-range-thumb-size);
+    height: var(--bl-range-thumb-size);
+    border-radius: var(--bl-range-thumb-border-radius);
+    margin-top: calc(
+      var(--bl-range-track-height) / 2 - var(--bl-range-thumb-size) / 2
+    );
+    transition: box-shadow var(--bl-transition-sm) ease-in-out;
+  }
+
+  .field[type="range"]::-moz-range-thumb {
+    appearance: none;
+    background: var(--bl-range-thumb-bg);
+    border: var(--bl-range-thumb-border);
+    width: var(--bl-range-thumb-size);
+    height: var(--bl-range-thumb-size);
+    border-radius: var(--bl-range-thumb-border-radius);
+    transition: box-shadow var(--bl-transition-sm) ease-in-out;
+  }
+
+  .field[type="range"]:focus::-webkit-slider-thumb {
+    box-shadow: 0 0 0 var(--bl-focus-width)
+      color-mix(in srgb, var(--bl-focus-color) 50%, transparent);
+    outline: none;
+  }
+
+  .field[type="range"]:focus::-moz-range-thumb {
+    box-shadow: 0 0 0 var(--bl-focus-width)
+      color-mix(in srgb, var(--bl-focus-color) 50%, transparent);
+    outline: none;
+  }
+
+  .field[type="range"]:focus-visible {
+    box-shadow: none;
+    border: none;
+    outline: none;
+  }
+
+  /* Dark mode */
+  .dark .field[type="range"] {
+    --bl-range-track-bg: var(--bl-clr-gray-700);
+    --bl-range-thumb-bg: var(--bl-clr-primary-600);
+    --bl-range-thumb-border: 2px solid var(--bl-clr-gray-900);
+  }
 }
