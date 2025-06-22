@@ -14,7 +14,7 @@ export const BasicModal: StoryObj = {
   <div class="modal-content">
     <div class="modal-header">
       <h3 class="modal-title" id="my-modal-title">Login modal</h3>
-      <button type="button" class="btn btn-icon btn-ghost btn-sm" aria-label="Close" data-modal-close>
+      <button type="button" class="btn btn-icon btn-ghost" aria-label="Close" data-modal-close>
         <i class="fas fa-times"></i>
       </button>
     </div>
@@ -28,10 +28,10 @@ export const BasicModal: StoryObj = {
           <label for="password" class="label">Password:</label>
           <input type="password" id="password" name="password" class="field" autocomplete="off" required>
         </div>
-        <div class="flex justify-end">
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
       </form>
+    </div>
+    <div class="modal-footer">
+      <button type="submit" class="btn btn-primary">Submit</button>
     </div>
   </div>
 </div>`;

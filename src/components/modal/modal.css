@@ -3,9 +3,10 @@
     --bl-modal-animation-opacity: var(--bl-transition-md);
     --bl-modal-animation-transform: var(--bl-transition-lg);
     --bl-modal-dialog-bg: var(--bl-clr-surface);
-    --bl-modal-padding: 1rem;
+    --bl-modal-footer-bg: var(--bl-clr-gray-50);
+    --bl-modal-padding: 1.5rem;
     --bl-modal-margin: 4rem;
-    --bl-modal-backdrop-bg: rgba(0, 0, 0, 0.5);
+    --bl-modal-backdrop-bg: rgba(from var(--bl-clr-gray-900) r g b / 0.25);
     --bl-modal-backdrop-filter: blur(4px);
     --bl-modal-border-radius: var(--bl-border-radius-lg);
     --bl-modal-zindex: 1000;
@@ -24,7 +25,7 @@
     align-items: flex-start;
     z-index: var(--bl-modal-zindex);
     display: none;
-    animation: modalFadeIn var(--bl-modal-animation-opacity) both linear;
+    animation: modalFadeIn 150ms both linear;
   }
 
   .modal.open {
@@ -45,9 +46,10 @@
     max-width: var(--bl-modal-size-md);
     border-radius: var(--bl-modal-border-radius);
     margin-block: var(--bl-modal-margin);
-    animation: modalScaleIn var(--bl-modal-animation-transform) both ease-out;
-    padding-block: var(--bl-modal-padding);
-    padding-inline: calc(var(--bl-modal-padding) * 1.5);
+    animation:
+      modalScaleIn 300ms 200ms both ease-out,
+      modalFadeIn 150ms 200ms both linear;
+    overflow: clip;
   }
 
   .modal.closing .modal-content {
@@ -77,16 +79,49 @@
   .modal-header {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
+    padding: 0 3.5rem 0 1.5rem;
+    min-height: 3.5rem;
+    flex-shrink: 0;
+    border-bottom: 1px solid var(--bl-border-color);
   }
 
   .modal-title {
     font-size: 1.125rem;
-    font-weight: 600;
+    font-weight: 700;
+    color: var(--bl-clr-gray-700);
+  }
+
+  .modal-header button[data-modal-close] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 3.5rem;
+    height: 3.5rem;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
   }
 
   .modal-body {
-    margin-top: 1rem;
+    position: relative;
+    flex: 1 1 auto;
+    padding: var(--bl-modal-padding);
+  }
+
+  .modal-footer {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-inline: calc(var(--bl-modal-padding));
+    display: flex;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.75rem;
+    border-top: 1px solid var(--bl-border-color);
+    background-color: var(--bl-modal-footer-bg);
+    border-top: 1px solid var(--bl-border-color);
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -105,5 +140,9 @@
     .modal.closing .modal-content {
       animation-duration: 0s;
     }
+  }
+
+  .dark .modal {
+    --bl-modal-footer-bg: var(--bl-clr-surface);
   }
 }
