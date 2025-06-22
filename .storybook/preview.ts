@@ -30,7 +30,14 @@ const preview: Preview = {
         method: "alphabetical",
         order: [
           "Documentation",
-          ["Introduction", "Customization", "Tokens"],
+          [
+            "Introduction",
+            "Installation",
+            "Getting Started",
+            "Tokens",
+            "Colors",
+            "Theming",
+          ],
           "Components",
           "*",
         ],

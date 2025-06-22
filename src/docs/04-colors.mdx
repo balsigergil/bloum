@@ -1,0 +1,129 @@
+import {Meta} from "@storybook/addon-docs/blocks";
+import {Palette} from './components/Palette';
+
+<Meta title="Documentation/Colors" />
+
+# Color System
+
+Bloum provides a comprehensive color palette inspired by Tailwind CSS, with semantic color mappings for consistent theming across your application.
+
+## Semantic Color Palette
+
+Bloum includes a full spectrum of colors, each with 11 shades ranging from 50 (lightest) to 950 (darkest). All colors are available as CSS custom properties.
+
+You can customize the colors by overriding the CSS variables.
+
+### Primary
+
+The primary color is used for main actions, links, and focus states.
+
+<Palette colorName="primary" />
+
+```css
+:root {
+  --bl-clr-primary-50: var(--bl-clr-blue-50);
+  --bl-clr-primary-100: var(--bl-clr-blue-100);
+  --bl-clr-primary-200: var(--bl-clr-blue-200);
+  --bl-clr-primary-300: var(--bl-clr-blue-300);
+  --bl-clr-primary-400: var(--bl-clr-blue-400);
+  --bl-clr-primary-500: var(--bl-clr-blue-500);
+  --bl-clr-primary-600: var(--bl-clr-blue-600);
+  --bl-clr-primary-700: var(--bl-clr-blue-700);
+  --bl-clr-primary-800: var(--bl-clr-blue-800);
+  --bl-clr-primary-900: var(--bl-clr-blue-900);
+  --bl-clr-primary-950: var(--bl-clr-blue-950);
+}
+```
+
+### Success
+
+The success color is used for success messages, confirmations, and positive states.
+
+<Palette colorName="success" />
+
+```css
+:root {
+  --bl-clr-success-50: var(--bl-clr-green-50);
+  --bl-clr-success-100: var(--bl-clr-green-100);
+  --bl-clr-success-200: var(--bl-clr-green-200);
+  --bl-clr-success-300: var(--bl-clr-green-300);
+  --bl-clr-success-400: var(--bl-clr-green-400);
+  --bl-clr-success-500: var(--bl-clr-green-500);
+  --bl-clr-success-600: var(--bl-clr-green-600);
+  --bl-clr-success-700: var(--bl-clr-green-700);
+  --bl-clr-success-800: var(--bl-clr-green-800);
+  --bl-clr-success-900: var(--bl-clr-green-900);
+  --bl-clr-success-950: var(--bl-clr-green-950);
+}
+```
+
+### Error
+
+The error color is used for error messages, destructive actions, and invalid states.
+
+<Palette colorName="error" />
+
+```css
+:root {
+  --bl-clr-error-50: var(--bl-clr-red-50);
+  --bl-clr-error-100: var(--bl-clr-red-100);
+  --bl-clr-error-200: var(--bl-clr-red-200);
+  --bl-clr-error-300: var(--bl-clr-red-300);
+  --bl-clr-error-400: var(--bl-clr-red-400);
+  --bl-clr-error-500: var(--bl-clr-red-500);
+  --bl-clr-error-600: var(--bl-clr-red-600);
+  --bl-clr-error-700: var(--bl-clr-red-700);
+  --bl-clr-error-800: var(--bl-clr-red-800);
+  --bl-clr-error-900: var(--bl-clr-red-900);
+  --bl-clr-error-950: var(--bl-clr-red-950);
+}
+```
+
+### Warning
+
+The warning color is used for warning messages and cautionary states.
+
+<Palette colorName="warning" />
+
+```css
+:root {
+  --bl-clr-warning-50: var(--bl-clr-orange-50);
+  --bl-clr-warning-100: var(--bl-clr-orange-100);
+  --bl-clr-warning-200: var(--bl-clr-orange-200);
+  --bl-clr-warning-300: var(--bl-clr-orange-300);
+  --bl-clr-warning-400: var(--bl-clr-orange-400);
+  --bl-clr-warning-500: var(--bl-clr-orange-500);
+  --bl-clr-warning-600: var(--bl-clr-orange-600);
+  --bl-clr-warning-700: var(--bl-clr-orange-700);
+  --bl-clr-warning-800: var(--bl-clr-orange-800);
+  --bl-clr-warning-900: var(--bl-clr-orange-900);
+  --bl-clr-warning-950: var(--bl-clr-orange-950);
+}
+```
+
+### Info
+
+The info color is used for informational messages and neutral notifications.
+
+<Palette colorName="info" />
+
+```css
+:root {
+  --bl-clr-info-50: var(--bl-clr-sky-50);
+  --bl-clr-info-100: var(--bl-clr-sky-100);
+  --bl-clr-info-200: var(--bl-clr-sky-200);
+  --bl-clr-info-300: var(--bl-clr-sky-300);
+  --bl-clr-info-400: var(--bl-clr-sky-400);
+  --bl-clr-info-500: var(--bl-clr-sky-500);
+  --bl-clr-info-600: var(--bl-clr-sky-600);
+  --bl-clr-info-700: var(--bl-clr-sky-700);
+  --bl-clr-info-800: var(--bl-clr-sky-800);
+  --bl-clr-info-900: var(--bl-clr-sky-900);
+  --bl-clr-info-950: var(--bl-clr-sky-950);
+}
+```
+
+## Next Steps
+
+- Learn about [Tokens](?path=/docs/documentation-tokens--docs) for more customization options
+- Explore [Theming](?path=/docs/documentation-theming--docs) to create custom themes
