@@ -372,14 +372,6 @@ export const WithCollapsible: Story = {
   render: () => {
     return `
 <div class="app">
-  <div class="topbar">
-    <a href="#" class="topbar-brand">
-      <img src="https://placehold.co/150x50" alt="Logo" />
-    </a>
-    <button class="btn btn-icon btn-ghost" data-sidebar="#collapsible-sidebar">
-      <i class="fa-solid fa-bars"></i>
-    </button>
-  </div>
   <aside class="sidebar" id="collapsible-sidebar">
     <div class="sidebar-content">
       <div class="sidebar-top">
@@ -389,10 +381,10 @@ export const WithCollapsible: Story = {
           </a>
         </div>
         <div class="mx-4 py-4">
-          <div class="input-group">
-            <div class="input-group-icon">
+          <div class="input-icon">
+            <span class="input-icon-addon">
               <i class="fa-solid fa-magnifying-glass"></i>
-            </div>
+            </span>
             <input type="search" class="field" placeholder="Search...">
           </div>
         </div>
@@ -549,7 +541,22 @@ export const WithCollapsible: Story = {
       </div>
     </div>
   </aside>
-  <main class="p-4 space-y-4">
+  <header class="topbar">
+    <button class="btn btn-icon btn-ghost md:hidden" data-sidebar="#collapsible-sidebar">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+    <div class="w-[1px] h-full border-l border-[var(--bl-border-color)] md:hidden"></div>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item breadcrumb-separator"><i class="fas fa-angle-right"></i></li>
+        <li class="breadcrumb-item"><a href="#">Library</a></li>
+        <li class="breadcrumb-item breadcrumb-separator"><i class="fas fa-angle-right"></i></li>
+        <li class="breadcrumb-item active" aria-current="page">Data</li>
+      </ol>
+    </nav>
+  </header>
+  <main class="main p-4 space-y-4">
     <h1 class="font-semibold text-3xl text-gray-700 dark:text-gray-300">Sidebar with Collapsible Menu Items</h1>
     <div class="card">
       <div class="card-header">
@@ -565,6 +572,217 @@ export const WithCollapsible: Story = {
         </ul>
       </div>
     </div>
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">Collapsible Sidebar Demo</h3>
+      </div>
+      <div class="card-body">
+        <p>This sidebar demonstrates collapsible menu items. Try clicking on "User Management" or "Finance" to see the submenu expand and collapse.</p>
+        <ul class="list-disc list-inside mt-4 space-y-2">
+          <li>Click the chevron icon to expand/collapse sections</li>
+          <li>Nested items are indented and styled differently</li>
+          <li>Uses your existing collapse component functionality</li>
+          <li>Maintains accessibility with proper ARIA attributes</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">Collapsible Sidebar Demo</h3>
+      </div>
+      <div class="card-body">
+        <p>This sidebar demonstrates collapsible menu items. Try clicking on "User Management" or "Finance" to see the submenu expand and collapse.</p>
+        <ul class="list-disc list-inside mt-4 space-y-2">
+          <li>Click the chevron icon to expand/collapse sections</li>
+          <li>Nested items are indented and styled differently</li>
+          <li>Uses your existing collapse component functionality</li>
+          <li>Maintains accessibility with proper ARIA attributes</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">Collapsible Sidebar Demo</h3>
+      </div>
+      <div class="card-body">
+        <p>This sidebar demonstrates collapsible menu items. Try clicking on "User Management" or "Finance" to see the submenu expand and collapse.</p>
+        <ul class="list-disc list-inside mt-4 space-y-2">
+          <li>Click the chevron icon to expand/collapse sections</li>
+          <li>Nested items are indented and styled differently</li>
+          <li>Uses your existing collapse component functionality</li>
+          <li>Maintains accessibility with proper ARIA attributes</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">Collapsible Sidebar Demo</h3>
+      </div>
+      <div class="card-body">
+        <p>This sidebar demonstrates collapsible menu items. Try clicking on "User Management" or "Finance" to see the submenu expand and collapse.</p>
+        <ul class="list-disc list-inside mt-4 space-y-2">
+          <li>Click the chevron icon to expand/collapse sections</li>
+          <li>Nested items are indented and styled differently</li>
+          <li>Uses your existing collapse component functionality</li>
+          <li>Maintains accessibility with proper ARIA attributes</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">Collapsible Sidebar Demo</h3>
+      </div>
+      <div class="card-body">
+        <p>This sidebar demonstrates collapsible menu items. Try clicking on "User Management" or "Finance" to see the submenu expand and collapse.</p>
+        <ul class="list-disc list-inside mt-4 space-y-2">
+          <li>Click the chevron icon to expand/collapse sections</li>
+          <li>Nested items are indented and styled differently</li>
+          <li>Uses your existing collapse component functionality</li>
+          <li>Maintains accessibility with proper ARIA attributes</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">Collapsible Sidebar Demo</h3>
+      </div>
+      <div class="card-body">
+        <p>This sidebar demonstrates collapsible menu items. Try clicking on "User Management" or "Finance" to see the submenu expand and collapse.</p>
+        <ul class="list-disc list-inside mt-4 space-y-2">
+          <li>Click the chevron icon to expand/collapse sections</li>
+          <li>Nested items are indented and styled differently</li>
+          <li>Uses your existing collapse component functionality</li>
+          <li>Maintains accessibility with proper ARIA attributes</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">Collapsible Sidebar Demo</h3>
+      </div>
+      <div class="card-body">
+        <p>This sidebar demonstrates collapsible menu items. Try clicking on "User Management" or "Finance" to see the submenu expand and collapse.</p>
+        <ul class="list-disc list-inside mt-4 space-y-2">
+          <li>Click the chevron icon to expand/collapse sections</li>
+          <li>Nested items are indented and styled differently</li>
+          <li>Uses your existing collapse component functionality</li>
+          <li>Maintains accessibility with proper ARIA attributes</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">Collapsible Sidebar Demo</h3>
+      </div>
+      <div class="card-body">
+        <p>This sidebar demonstrates collapsible menu items. Try clicking on "User Management" or "Finance" to see the submenu expand and collapse.</p>
+        <ul class="list-disc list-inside mt-4 space-y-2">
+          <li>Click the chevron icon to expand/collapse sections</li>
+          <li>Nested items are indented and styled differently</li>
+          <li>Uses your existing collapse component functionality</li>
+          <li>Maintains accessibility with proper ARIA attributes</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">Collapsible Sidebar Demo</h3>
+      </div>
+      <div class="card-body">
+        <p>This sidebar demonstrates collapsible menu items. Try clicking on "User Management" or "Finance" to see the submenu expand and collapse.</p>
+        <ul class="list-disc list-inside mt-4 space-y-2">
+          <li>Click the chevron icon to expand/collapse sections</li>
+          <li>Nested items are indented and styled differently</li>
+          <li>Uses your existing collapse component functionality</li>
+          <li>Maintains accessibility with proper ARIA attributes</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">Collapsible Sidebar Demo</h3>
+      </div>
+      <div class="card-body">
+        <p>This sidebar demonstrates collapsible menu items. Try clicking on "User Management" or "Finance" to see the submenu expand and collapse.</p>
+        <ul class="list-disc list-inside mt-4 space-y-2">
+          <li>Click the chevron icon to expand/collapse sections</li>
+          <li>Nested items are indented and styled differently</li>
+          <li>Uses your existing collapse component functionality</li>
+          <li>Maintains accessibility with proper ARIA attributes</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">Collapsible Sidebar Demo</h3>
+      </div>
+      <div class="card-body">
+        <p>This sidebar demonstrates collapsible menu items. Try clicking on "User Management" or "Finance" to see the submenu expand and collapse.</p>
+        <ul class="list-disc list-inside mt-4 space-y-2">
+          <li>Click the chevron icon to expand/collapse sections</li>
+          <li>Nested items are indented and styled differently</li>
+          <li>Uses your existing collapse component functionality</li>
+          <li>Maintains accessibility with proper ARIA attributes</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">Collapsible Sidebar Demo</h3>
+      </div>
+      <div class="card-body">
+        <p>This sidebar demonstrates collapsible menu items. Try clicking on "User Management" or "Finance" to see the submenu expand and collapse.</p>
+        <ul class="list-disc list-inside mt-4 space-y-2">
+          <li>Click the chevron icon to expand/collapse sections</li>
+          <li>Nested items are indented and styled differently</li>
+          <li>Uses your existing collapse component functionality</li>
+          <li>Maintains accessibility with proper ARIA attributes</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">Collapsible Sidebar Demo</h3>
+      </div>
+      <div class="card-body">
+        <p>This sidebar demonstrates collapsible menu items. Try clicking on "User Management" or "Finance" to see the submenu expand and collapse.</p>
+        <ul class="list-disc list-inside mt-4 space-y-2">
+          <li>Click the chevron icon to expand/collapse sections</li>
+          <li>Nested items are indented and styled differently</li>
+          <li>Uses your existing collapse component functionality</li>
+          <li>Maintains accessibility with proper ARIA attributes</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">Collapsible Sidebar Demo</h3>
+      </div>
+      <div class="card-body">
+        <p>This sidebar demonstrates collapsible menu items. Try clicking on "User Management" or "Finance" to see the submenu expand and collapse.</p>
+        <ul class="list-disc list-inside mt-4 space-y-2">
+          <li>Click the chevron icon to expand/collapse sections</li>
+          <li>Nested items are indented and styled differently</li>
+          <li>Uses your existing collapse component functionality</li>
+          <li>Maintains accessibility with proper ARIA attributes</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">Collapsible Sidebar Demo</h3>
+      </div>
+      <div class="card-body">
+        <p>This sidebar demonstrates collapsible menu items. Try clicking on "User Management" or "Finance" to see the submenu expand and collapse.</p>
+        <ul class="list-disc list-inside mt-4 space-y-2">
+          <li>Click the chevron icon to expand/collapse sections</li>
+          <li>Nested items are indented and styled differently</li>
+          <li>Uses your existing collapse component functionality</li>
+          <li>Maintains accessibility with proper ARIA attributes</li>
+        </ul>
+      </div>
+    </div>
+
   </main>
 </div>`;
   },
