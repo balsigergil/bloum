@@ -42,7 +42,7 @@
       color: var(--bl-clr-text);
     }
 
-    .form-control {
+    .field {
       --bl-field-height: 2rem;
       --bl-field-padding: 0.5rem;
       --bl-field-font-size: 0.875rem;

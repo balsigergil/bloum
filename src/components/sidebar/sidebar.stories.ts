@@ -29,7 +29,7 @@ const meta: Meta = {
             <div class="input-group-icon">
               <i class="fa-solid fa-magnifying-glass"></i>
             </div>
-            <input type="search" class="form-control" placeholder="Search...">
+            <input type="search" class="field" placeholder="Search...">
           </div>
         </div>
         <h3 class="sidebar-group-title">Dashboard</h3>
@@ -393,7 +393,7 @@ export const WithCollapsible: Story = {
             <div class="input-group-icon">
               <i class="fa-solid fa-magnifying-glass"></i>
             </div>
-            <input type="search" class="form-control" placeholder="Search...">
+            <input type="search" class="field" placeholder="Search...">
           </div>
         </div>
         <h3 class="sidebar-group-title">Dashboard</h3>
@@ -418,8 +418,8 @@ export const WithCollapsible: Story = {
           </li>
           <!-- Collapsible User Management Section -->
           <li class="sidebar-item">
-            <button 
-              class="sidebar-link sidebar-collapsible-trigger" 
+            <button
+              class="sidebar-link sidebar-collapsible-trigger"
               data-collapse="#users-menu"
               aria-expanded="false"
             >
@@ -452,8 +452,8 @@ export const WithCollapsible: Story = {
         <ul class="sidebar-nav">
           <!-- Collapsible Finance Section -->
           <li class="sidebar-item">
-            <button 
-              class="sidebar-collapsible-trigger sidebar-link" 
+            <button
+              class="sidebar-collapsible-trigger sidebar-link"
               data-collapse="#finance-menu"
               aria-expanded="false"
             >

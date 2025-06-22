@@ -22,11 +22,11 @@ export const BasicModal: StoryObj = {
       <form>
         <div class="mb-4">
           <label for="email" class="label">Email:</label>
-          <input type="email" id="email" name="email" class="form-control" required>
+          <input type="email" id="email" name="email" class="field" required>
         </div>
         <div class="mb-4">
           <label for="password" class="label">Password:</label>
-          <input type="password" id="password" name="password" class="form-control" autocomplete="off" required>
+          <input type="password" id="password" name="password" class="field" autocomplete="off" required>
         </div>
         <div class="flex justify-end">
           <button type="submit" class="btn btn-primary">Submit</button>

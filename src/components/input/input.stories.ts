@@ -11,7 +11,7 @@ export const TextInput: Story = {
   render: () => {
     return `
       <div class="max-w-md">
-        <input class="form-control" type="text" placeholder="Enter your name">
+        <input class="field" type="text" placeholder="Enter your name">
       </div>
     `;
   },
@@ -21,7 +21,7 @@ export const PasswordInput: Story = {
   render: () => {
     return `
       <div class="max-w-md">
-        <input type="password" class="form-control" placeholder="Enter password">
+        <input type="password" class="field" placeholder="Enter password">
       </div>
     `;
   },
@@ -31,7 +31,7 @@ export const EmailInput: Story = {
   render: () => {
     return `
       <div class="max-w-md">
-        <input type="email" class="form-control" placeholder="Enter email">
+        <input type="email" class="field" placeholder="Enter email">
       </div>
     `;
   },
@@ -41,7 +41,7 @@ export const FileInput: Story = {
   render: () => {
     return `
       <div class="max-w-md">
-        <input type="file" class="form-control">
+        <input type="file" class="field">
       </div>
     `;
   },
@@ -51,7 +51,7 @@ export const Select: Story = {
   render: () => {
     return `
       <div class="max-w-md space-y-4">
-        <select class="form-control">
+        <select class="field">
           <option value="">Select an option</option>
           <option value="option1">Option 1</option>
           <option value="option2">Option 2</option>
@@ -61,7 +61,7 @@ export const Select: Story = {
           <span class="input-icon-addon">
             <i class="fa-solid fa-user"></i>
           </span>
-          <select class="form-control">
+          <select class="field">
             <option value="">Select an option</option>
             <option value="option1">Option 1</option>
             <option value="option2">Option 2</option>
@@ -77,7 +77,7 @@ export const MultiSelect: Story = {
   render: () => {
     return `
       <div class="max-w-md">
-        <select class="form-control" multiple size="5">
+        <select class="field" multiple size="5">
           <option value="red">Red</option>
           <option value="green">Green</option>
           <option value="blue">Blue</option>
@@ -97,11 +97,11 @@ export const InputGroup: Story = {
           <span class="input-icon-addon">
             <i class="fa-solid fa-magnifying-glass"></i>
           </span>
-          <input type="text" class="form-control" placeholder="Search...">
+          <input type="text" class="field" placeholder="Search...">
         </div>
-        
+
         <div class="input-icon">
-          <input type="text" class="form-control" placeholder="Username">
+          <input type="text" class="field" placeholder="Username">
           <span class="input-icon-addon">
             <i class="fa-solid fa-user"></i>
           </span>
@@ -115,19 +115,19 @@ export const AllInputTypes: Story = {
   render: () => {
     return `
       <div class="max-w-md space-y-4">
-        <input class="form-control" type="text" placeholder="Text input">
-        <input type="password" class="form-control" placeholder="Password input">
-        <input type="email" class="form-control" placeholder="Email input">
-        <input type="number" class="form-control" placeholder="Number input">
-        <input type="tel" class="form-control" placeholder="Phone input">
-        <input type="url" class="form-control" placeholder="URL input">
-        <input type="date" class="form-control">
-        <input type="time" class="form-control">
-        <input type="datetime-local" class="form-control">
-        <input type="month" class="form-control">
-        <input type="week" class="form-control">
-        <input type="color" class="form-control">
-        <input type="range" class="form-control">
+        <input class="field" type="text" placeholder="Text input">
+        <input type="password" class="field" placeholder="Password input">
+        <input type="email" class="field" placeholder="Email input">
+        <input type="number" class="field" placeholder="Number input">
+        <input type="tel" class="field" placeholder="Phone input">
+        <input type="url" class="field" placeholder="URL input">
+        <input type="date" class="field">
+        <input type="time" class="field">
+        <input type="datetime-local" class="field">
+        <input type="month" class="field">
+        <input type="week" class="field">
+        <input type="color" class="field">
+        <input type="range" class="field">
       </div>
     `;
   },
