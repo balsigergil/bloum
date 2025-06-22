@@ -28,7 +28,7 @@
 
 - [ ] **Divider** - Visual separator line or element that divides content sections.
 
-- [x] **Dropdown Menu** - Menu that appears when triggered, showing a list of selectable options.
+- [x] **Menu** - Menu that appears when triggered, showing a list of selectable options.
 
 - [x] **Spinner** - Visual marker that shows status, progress, or active states.
 
@@ -54,13 +54,15 @@
 
 - [x] **Color Scheme Switcher** - Button that opens a dropdown menu with selectable color schemes.
 
+- [x] **Collapse** - Collapsible content component that can be expanded and collapsed.
+
 ## Inputs
 
 - [x] **Combobox** - Input field that suggests and completes text as the user types.
 
 - [ ] **Color Picker** - Interface for selecting colors using various input methods (palette, sliders, etc.).
 
-- [ ] **OTP Input** - Specialized input for one-time passwords with separate fields for each digit.
+- [ ] **Pin Input** - Specialized input for one-time passwords with separate fields for each digit.
 
 - [ ] **Date Picker** - Calendar-based interface for selecting dates and date ranges.
 
@@ -82,25 +84,27 @@
 
 - [ ] **Signature Pad** - Canvas-based component for capturing handwritten signatures.
 
-- [x] **Checkbox** - Square input control for binary choices (checked/unchecked).
+- [x] **Checkbox / Radio** - Input components for single and multiple selection with customizable styling and states.
 
-- [x] **Radio** - Circular input control for selecting one option from a group.
+- [x] **Checkbox / Radio Card** - Card-style checkbox component for selection with enhanced visual presentation.
 
 - [x] **Switch** - Switch-style input for binary on/off states.
 
 - [ ] **Segmented Control** - Group of buttons that represent different states or values.
 
-- [ ] **Range** - Slider input for selecting numeric values within a specified range.
+- [x] **Range** - Slider input for selecting numeric values within a specified range.
 
 - [ ] **Rating** - Star or icon-based input for collecting user ratings or reviews.
 
 - [x] **File Input** - Component for uploading and selecting files from the user's device.
 
+- [x] **Form Field** - Wrapper component that provides consistent styling and layout for form inputs with labels and help text.
+
 ## Navigation
 
 - [ ] **Bottom Tabs** - Tab navigation positioned at the bottom of the screen or container.
 
-- [x] **Command Palette** - Searchable command interface activated by keyboard shortcuts.
+- [x] **Command Menu** - Searchable command interface activated by keyboard shortcuts.
 
 - [ ] **Dock** - Fixed navigation bar that provides quick access to main application areas.
 
@@ -145,6 +149,8 @@
 ## Data
 
 - [x] **Table** - Structured data display with rows, columns, sorting, and filtering capabilities.
+
+- [x] **Datatable** - Advanced data table component with enhanced functionality for large datasets.
 
 - [ ] **Calendar** - Date grid component for viewing and selecting dates across months.
 
