@@ -1,5 +1,29 @@
 # Changelog
 
+## [0.10.0](https://github.com/balsigergil/bloum/compare/v0.9.1...v0.10.0) (2025-06-22)
+
+### Features
+
+* **avatar:** add avatar component ([900a405](https://github.com/balsigergil/bloum/commit/900a405f65d88282c2b49920b5e2d4b7fe72154d))
+* **button:** add split button ([287720e](https://github.com/balsigergil/bloum/commit/287720e316874c4bd9cbf5701f1d32557dcdf263))
+* **datatable:** add DataTable component ([087e971](https://github.com/balsigergil/bloum/commit/087e971921decd5c3d58d1f661cc7770f50a9733))
+* **input:** add password toggle ([46ddf3a](https://github.com/balsigergil/bloum/commit/46ddf3a3e021cdf806d388e54037a7b2f3a09346))
+* **input:** add styles for range input component ([b1c7595](https://github.com/balsigergil/bloum/commit/b1c75956300325f01c40495ad4eaabc36803e155))
+* **progress:** add progress component ([9298503](https://github.com/balsigergil/bloum/commit/9298503d31ab5d64a80751d7e6c2ebfc75166972))
+* **sidebar:** implement collapsible menu ([5e88f29](https://github.com/balsigergil/bloum/commit/5e88f29daa4016bd54e1860d1c34939941213c87))
+* **skeleton:** add skeleton component ([c875a7c](https://github.com/balsigergil/bloum/commit/c875a7c69a28ddeff34dd54f3e48c4b12f11b4ee))
+* **steps:** add steps component ([0aa4f60](https://github.com/balsigergil/bloum/commit/0aa4f60fef9c93ca494e3d0ae744b3ee51f79d81))
+* **tag:** add tag component ([5056e61](https://github.com/balsigergil/bloum/commit/5056e61aa0a565455e86dbaa24c8401b1eb1f14c))
+* **timeline:** add timeline component ([090daa5](https://github.com/balsigergil/bloum/commit/090daa52b93c4aa6e9131d654aa27226ea52a6be))
+* **toast:** add toast component ([4d739c0](https://github.com/balsigergil/bloum/commit/4d739c04b6224524ffe383dd7d554a5dc3e707be))
+
+### Bug Fixes
+
+* **button:** hide icon when loading ([af3117c](https://github.com/balsigergil/bloum/commit/af3117cf044ed784fa9dc998aa33f333cbaebab6))
+* **checkbox:** disabled checkbox and radio ([ab05223](https://github.com/balsigergil/bloum/commit/ab0522383a8ee9dbc4f4c68fce4d52f3c3a31ae9))
+* **tag:** tag clashes with prismjs in storybook ([7e1963f](https://github.com/balsigergil/bloum/commit/7e1963fe7cd8f0bee03d4b40923b36780a503436))
+* **tag:** update tag component to disable removable ([c41287d](https://github.com/balsigergil/bloum/commit/c41287dc1948637ec6c07d9381890d41da12f014))
+
 ## [0.9.1](https://github.com/balsigergil/bloum/compare/v0.9.0...v0.9.1) (2025-03-10)
 
 ### Bug Fixes
