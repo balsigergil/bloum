@@ -11,6 +11,13 @@ export default {
         "oklab-function": false,
       },
     },
-    cssnano: {},
+    cssnano: {
+      preset: [
+        "default",
+        {
+          calc: false,
+        },
+      ],
+    },
   },
 };
