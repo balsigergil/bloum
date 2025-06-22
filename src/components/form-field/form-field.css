@@ -35,8 +35,7 @@
   }
 }
 
-.dark,
-[data-theme="dark"] {
+.dark {
   .form-field-help {
     color: var(--bl-clr-gray-400);
   }

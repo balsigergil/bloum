@@ -35,8 +35,7 @@
     font-size: 0.625rem;
   }
 
-  .dark .breadcrumb,
-  [data-theme="dark"] .breadcrumb {
+  .dark .breadcrumb {
     --bl-breadbrumb-color: var(--bl-clr-gray-400);
     --bl-breadbrumb-color-active: var(--bl-clr-gray-300);
   }

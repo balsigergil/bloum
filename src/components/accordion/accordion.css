@@ -40,8 +40,7 @@
     padding-block: 0.75rem;
   }
 
-  .dark .accordion,
-  [data-theme="dark"] .accordion {
+  .dark .accordion {
     --bl-accordion-header-color: var(--bl-clr-gray-200);
   }
 }

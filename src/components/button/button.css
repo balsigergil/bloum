@@ -227,8 +227,7 @@
   }
 
   /* Dark theme */
-  .dark,
-  [data-theme="dark"] {
+  .dark {
     .btn {
       --bl-btn-color: var(--bl-clr-white);
       --bl-btn-bg: var(--bl-clr-gray-700);

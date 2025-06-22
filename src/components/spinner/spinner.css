@@ -29,8 +29,7 @@
     --bl-spinner-size: 3rem;
   }
 
-  .dark .spinner,
-  [data-theme="dark"] .spinner {
+  .dark .spinner {
     --bl-spinner-color: var(--bl-clr-gray-300);
   }
 }

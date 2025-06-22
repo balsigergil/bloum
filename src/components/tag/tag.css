@@ -155,8 +155,7 @@
   }
 
   /* Dark theme */
-  .dark,
-  [data-theme="dark"] {
+  .dark {
     .tag {
       --bl-tag-bg: var(--bl-clr-gray-800);
       --bl-tag-color: var(--bl-clr-gray-200);

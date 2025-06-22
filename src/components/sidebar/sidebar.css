@@ -8,8 +8,7 @@
   --bl-sidebar-title-color: var(--bl-clr-gray-500);
 }
 
-.dark,
-[data-theme="dark"] {
+.dark {
   --bl-sidebar-color: var(--bl-clr-gray-200);
   --bl-sidebar-color-hover: var(--bl-clr-gray-200);
   --bl-sidebar-bg-hover: var(--bl-clr-gray-800);

@@ -219,8 +219,7 @@
   }
 
   /* Dark mode */
-  .dark,
-  [data-theme="dark"] {
+  .dark {
     .steps {
       --bl-steps-color: var(--bl-clr-gray-600);
       --bl-steps-color-active: var(--bl-clr-gray-200);

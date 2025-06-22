@@ -40,8 +40,7 @@
   transform: rotate(45deg);
 }
 
-.dark .tooltip,
-[data-theme="dark"] .tooltip {
+.dark .tooltip {
   --bl-tooltip-bg: var(--bl-clr-gray-300);
   --bl-tooltip-color: var(--bl-clr-gray-900);
 }

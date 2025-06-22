@@ -90,8 +90,7 @@
     display: block;
   }
 
-  .dark bl-tabs,
-  [data-theme="dark"] bl-tabs {
+  .dark bl-tabs {
     --bl-tab-color: var(--bl-clr-gray-300);
     --bl-tab-active-color: var(--bl-clr-primary-500);
   }

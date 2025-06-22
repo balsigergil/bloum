@@ -178,8 +178,7 @@
   }
 
   /* Dark mode support */
-  .dark,
-  [data-theme="dark"] {
+  .dark {
     .toast {
       --bl-toast-bg: var(--bl-clr-gray-800);
       --bl-toast-color: var(--bl-clr-gray-100);

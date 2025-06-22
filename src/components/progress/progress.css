@@ -125,8 +125,7 @@
   }
 
   /* Dark theme */
-  .dark,
-  [data-theme="dark"] {
+  .dark {
     .progress {
       --bl-progress-bg: var(--bl-clr-gray-700);
       --bl-progress-color: var(--bl-clr-primary-500);

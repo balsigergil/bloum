@@ -57,8 +57,7 @@
     --bl-alert-accent-color: var(--bl-clr-orange-700);
   }
 
-  .dark,
-  [data-theme="dark"] {
+  .dark {
     .alert {
       --bl-alert-bg: var(--bl-clr-blue-900);
       --bl-alert-border: var(--bl-clr-blue-700);

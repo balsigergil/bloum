@@ -79,8 +79,7 @@
     color: var(--bl-cmd-item-description-color);
   }
 
-  .dark .command-menu,
-  [data-theme="dark"] .command-menu {
+  .dark .command-menu {
     --bl-cmd-item-bg-hover: var(--bl-clr-gray-900);
     --bl-cmd-item-color: var(--bl-clr-gray-300);
     --bl-cmd-search-icon-color: var(--bl-clr-gray-400);

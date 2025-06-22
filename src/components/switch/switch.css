@@ -57,8 +57,7 @@
     opacity: var(--bl-disabled-opacity);
   }
 
-  .dark,
-  [data-theme="dark"] {
+  .dark {
     input[type="checkbox"].switch {
       --bl-switch-bg: var(--bl-clr-gray-700);
       --bl-switch-bg-checked: var(--bl-clr-primary-500);

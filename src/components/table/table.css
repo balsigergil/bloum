@@ -55,8 +55,7 @@
     overflow-x: auto;
   }
 
-  .dark table.table,
-  [data-theme="dark"] table.table {
+  .dark table.table {
     --bl-table-stripe-bg: var(--bl-clr-gray-900);
     --bl-table-hover-bg: var(--bl-clr-gray-800);
   }

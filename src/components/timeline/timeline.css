@@ -147,8 +147,7 @@
   }
 
   /* Dark mode */
-  .dark .timeline,
-  [data-theme="dark"] .timeline {
+  .dark .timeline {
     --bl-timeline-color: var(--bl-clr-gray-600);
     --bl-timeline-color-active: var(--bl-clr-gray-300);
     --bl-timeline-color-completed: var(--bl-clr-green-500);

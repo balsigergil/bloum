@@ -160,8 +160,7 @@
   }
 
   /* Dark mode support */
-  .dark,
-  [data-theme="dark"] {
+  .dark {
     .datatable-sortable {
       &:hover {
         background-color: var(--bl-clr-gray-800);

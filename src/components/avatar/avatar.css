@@ -76,10 +76,9 @@
   }
 
   /* Dark theme support */
-  .dark,
-  [data-theme="dark"] {
+  .dark {
     .avatar {
-      --bl-avatar-bg: var(--bl-clr-gray-800);
+      --bl-avatar-bg: var(--bl-clr-gray-700);
       --bl-avatar-color: var(--bl-clr-gray-300);
       --bl-avatar-border-color: var(--bl-clr-gray-600);
     }
@@ -96,7 +95,7 @@
     }
 
     .avatar-subtle {
-      --bl-avatar-bg: var(--bl-clr-gray-800);
+      --bl-avatar-bg: var(--bl-clr-gray-700);
       --bl-avatar-color: var(--bl-clr-gray-300);
     }
   }

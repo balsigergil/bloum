@@ -100,8 +100,7 @@
     }
   }
 
-  .dark,
-  [data-theme="dark"] {
+  .dark {
     .badge {
       --bl-badge-bg: var(--bl-clr-gray-100);
       --bl-badge-color: var(--bl-clr-gray-900);

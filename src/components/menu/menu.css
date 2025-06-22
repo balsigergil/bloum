@@ -70,8 +70,7 @@
     margin-block: 0.25rem;
   }
 
-  .dark .menu,
-  [data-theme="dark"] .menu {
+  .dark .menu {
     --bl-menu-item-hover-bg: var(--bl-clr-gray-700);
     --bl-menu-item-color: var(--bl-clr-gray-200);
 

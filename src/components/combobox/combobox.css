@@ -128,8 +128,7 @@
     background-color: var(--bl-combobox-option-selected-bg);
   }
 
-  .dark .bl-combobox,
-  [data-theme="dark"] .bl-combobox {
+  .dark .bl-combobox {
     --bl-combobox-item-bg: var(--bl-clr-gray-800);
     --bl-combobox-item-active-bg: var(--bl-clr-gray-700);
     --bl-combobox-option-highlighted-bg: var(--bl-clr-gray-600);
