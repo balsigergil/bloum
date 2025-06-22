@@ -84,8 +84,7 @@ Use nested rules if needed.
   }
   
   /* Dark theme support using nested CSS rules */
-  .dark,
-  [data-theme="dark"] {
+  .dark {
     .component-name {
       --bl-component-color: var(--bl-clr-gray-300);
     }
@@ -134,8 +133,7 @@ Use these predefined color variables:
 Every component must support dark mode using both class and attribute selectors. It should use nested CSS rules.
 
 ```css
-.dark,
-[data-theme="dark"] {
+.dark {
     .component {
         --bl-component-color: var(--bl-clr-gray-300);
         --bl-component-bg: var(--bl-clr-gray-800);
