@@ -1,29 +1,31 @@
 @layer components {
   /* Form control */
   .form-control {
+    --bl-field-file-bg: var(--bl-clr-gray-200);
+    --bl-field-file-bg-hover: var(--bl-clr-gray-300);
+    --bl-field-font-size: 0.875rem;
+
     appearance: none;
-    border: 1px solid var(--bl-form-border-color);
-    border-radius: var(--bl-form-border-radius);
-    padding-inline: var(--bl-form-input-padding);
-    height: var(--bl-form-input-height);
+    border: 1px solid var(--bl-field-border-color);
+    border-radius: var(--bl-field-border-radius);
+    padding-inline: var(--bl-field-padding);
+    height: var(--bl-field-height);
     line-height: 1.25rem;
     position: relative;
-    font-size: var(--bl-form-font-size);
-    outline-style: solid;
-    outline-color: transparent;
-    outline-width: 2px;
+    font-size: var(--bl-field-font-size);
     display: block;
     width: 100%;
-    min-width: var(--bl-form-input-height);
-    background-color: transparent;
+    min-width: var(--bl-field-height);
+    background-color: var(--bl-field-bg);
+    background-clip: padding-box;
 
-    transition-property: box-shadow, color;
+    transition-property: box-shadow, border-color;
     transition-duration: var(--bl-transition-sm);
   }
 
   .form-control:focus-visible {
     border-color: var(--bl-focus-color);
-    box-shadow: 0 0 0 2px
+    box-shadow: 0 0 0 var(--bl-focus-width)
       color-mix(in srgb, var(--bl-focus-color) 50%, transparent);
     outline: none;
   }
@@ -37,20 +39,21 @@
   .form-control::file-selector-button {
     height: 100%;
     border: none;
-    background-color: var(--bl-form-file-bg);
-    padding-inline: var(--bl-form-input-padding);
+    background-color: var(--bl-field-file-bg);
+    padding-inline: var(--bl-field-padding);
     cursor: pointer;
-    margin-inline-end: var(--bl-form-input-padding);
+    margin-inline-end: var(--bl-field-padding);
     transition: background-color var(--bl-transition-sm);
   }
 
   .form-control:hover::file-selector-button {
-    background-color: var(--bl-form-file-bg-hover);
+    background-color: var(--bl-field-file-bg-hover);
   }
 
   /* Select */
   select.form-control {
-    background-image: url("../../icons/chevron.svg");
+    --bl-field-select-icon: url("../../icons/chevron.svg");
+    background-image: var(--bl-field-select-icon);
     background-repeat: no-repeat;
     background-position: right 0.75rem center;
     background-size: 1.25rem 1.25rem;
@@ -70,34 +73,50 @@
   }
 
   /* Input group */
-  .input-group {
+  .input-icon {
+    --bl-input-icon-padding: 2.25rem;
+    --bl-input-icon-color: var(--bl-clr-gray-400);
     position: relative;
   }
 
-  .input-group .input-group-icon {
+  .input-icon .input-icon-addon {
     position: absolute;
-    color: var(--bl-clr-gray-500);
-    width: var(--bl-form-input-height);
-    height: var(--bl-form-input-height);
+    top: 0;
+    bottom: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    top: 0;
+    color: var(--bl-input-icon-color);
+    width: var(--bl-field-height);
+    height: var(--bl-field-height);
+    pointer-events: none;
+    z-index: 1;
+
+    & > svg {
+      width: calc(var(--bl-field-height) / 1.75);
+      height: calc(var(--bl-field-height) / 1.75);
+    }
   }
 
-  .input-group .input-group-icon:first-child {
-    left: 0;
-  }
-
-  .input-group .input-group-icon:last-child {
+  .input-icon-addon:last-child {
+    left: auto;
     right: 0;
   }
 
-  .input-group > .input-group-icon + .form-control {
-    padding-inline-start: var(--bl-form-input-height);
+  .input-icon .form-control:not(:last-child) {
+    padding-right: var(--bl-input-icon-padding);
   }
 
-  .input-group > .form-control:has(+ .input-group-icon) {
-    padding-inline-end: var(--bl-form-input-height);
+  .input-icon .form-control:not(:first-child) {
+    padding-left: var(--bl-input-icon-padding);
+  }
+
+  .dark .input-icon {
+    --bl-input-icon-color: var(--bl-clr-gray-500);
+  }
+
+  .dark .form-control {
+    --bl-field-file-bg: var(--bl-clr-gray-800);
+    --bl-field-file-bg-hover: var(--bl-clr-gray-700);
   }
 }

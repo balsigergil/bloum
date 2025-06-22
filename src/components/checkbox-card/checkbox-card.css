@@ -1,10 +1,12 @@
 @layer components {
   /* Checkbox card */
   .checkbox-card {
+    --bl-checkbox-card-checked-border: var(--bl-clr-primary-600);
+
     position: relative;
     user-select: none;
     cursor: pointer;
-    transition-property: transform;
+    transition-property: transform, border-color;
     transition-duration: var(--bl-transition-md);
     display: block;
 
@@ -31,7 +33,7 @@
 
   .checkbox-card:has(.field-check:checked),
   .checkbox-card:has(.field-radio:checked) {
-    --bl-card-border: 1px solid var(--bl-form-primary-color);
+    --bl-card-border: 1px solid var(--bl-checkbox-card-checked-border);
 
     .card-image {
       filter: grayscale(0);
@@ -40,7 +42,7 @@
 
   .checkbox-card:has(.field-check:focus-visible),
   .checkbox-card:has(.field-radio:focus-visible) {
-    outline: 2px solid var(--bl-form-primary-color);
+    outline: 2px solid var(--bl-checkbox-checked-color);
     outline-offset: 2px;
   }
 

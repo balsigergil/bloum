@@ -78,11 +78,11 @@ export class DataTable {
     searchWrapper.className = "datatable-search";
 
     const inputGroup = document.createElement("div");
-    inputGroup.className = "input-group";
+    inputGroup.className = "input-icon";
 
-    const iconSpan = document.createElement("span");
-    iconSpan.className = "input-group-icon";
-    iconSpan.innerHTML = '<i class="fa-solid fa-magnifying-glass"></i>';
+    const inputIconAddon = document.createElement("span");
+    inputIconAddon.className = "input-icon-addon";
+    inputIconAddon.innerHTML = `<i class="fa-solid fa-magnifying-glass"></i>`;
 
     const searchInput = document.createElement("input");
     searchInput.type = "text";
@@ -95,7 +95,7 @@ export class DataTable {
       this.render();
     });
 
-    inputGroup.appendChild(iconSpan);
+    inputGroup.appendChild(inputIconAddon);
     inputGroup.appendChild(searchInput);
     searchWrapper.appendChild(inputGroup);
 
@@ -263,7 +263,7 @@ export class DataTable {
     const firstLi = document.createElement("li");
     const firstBtn = document.createElement("button");
     firstBtn.className = "page-item";
-    firstBtn.innerHTML = '<i class="fas fa-angle-double-left"></i>';
+    firstBtn.innerHTML = `<i class="fa-solid fa-angle-double-left"></i>`;
     firstBtn.disabled = this.currentPage === 1 || totalPages === 0;
     firstBtn.title = "First page";
     firstBtn.setAttribute("aria-label", "First page");
@@ -280,7 +280,7 @@ export class DataTable {
     const prevLi = document.createElement("li");
     const prevBtn = document.createElement("button");
     prevBtn.className = "page-item";
-    prevBtn.innerHTML = '<i class="fas fa-angle-left"></i>';
+    prevBtn.innerHTML = `<i class="fa-solid fa-angle-left"></i>`;
     prevBtn.disabled = this.currentPage === 1 || totalPages === 0;
     prevBtn.title = "Previous page";
     prevBtn.setAttribute("aria-label", "Previous page");
@@ -327,7 +327,7 @@ export class DataTable {
     const nextLi = document.createElement("li");
     const nextBtn = document.createElement("button");
     nextBtn.className = "page-item";
-    nextBtn.innerHTML = '<i class="fas fa-angle-right"></i>';
+    nextBtn.innerHTML = `<i class="fa-solid fa-angle-right"></i>`;
     nextBtn.disabled = this.currentPage === totalPages || totalPages === 0;
     nextBtn.title = "Next page";
     nextBtn.setAttribute("aria-label", "Next page");
@@ -344,7 +344,7 @@ export class DataTable {
     const lastLi = document.createElement("li");
     const lastBtn = document.createElement("button");
     lastBtn.className = "page-item";
-    lastBtn.innerHTML = '<i class="fas fa-angle-double-right"></i>';
+    lastBtn.innerHTML = `<i class="fa-solid fa-angle-double-right"></i>`;
     lastBtn.disabled = this.currentPage === totalPages || totalPages === 0;
     lastBtn.title = "Last page";
     lastBtn.setAttribute("aria-label", "Last page");

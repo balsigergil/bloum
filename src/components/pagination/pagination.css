@@ -38,6 +38,11 @@
     &:focus-visible {
       outline: 2px solid var(--bl-clr-primary-600);
     }
+
+    & > svg {
+      width: calc(var(--bl-pagination-height) / 2.5);
+      height: calc(var(--bl-pagination-height) / 2.5);
+    }
   }
 
   .page-item.active {

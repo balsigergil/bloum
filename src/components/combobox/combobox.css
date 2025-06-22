@@ -8,43 +8,40 @@
 
     position: relative;
     display: flex;
-    border: 1px solid var(--bl-form-border-color);
+    border: 1px solid var(--bl-field-border-color);
     border-radius: var(--bl-border-radius-md);
-    min-height: var(--bl-form-input-height);
+    min-height: var(--bl-field-height);
     user-select: none;
     cursor: pointer;
     font-size: 0.875rem;
-    outline-style: solid;
-    outline-color: transparent;
-    outline-width: 2px;
-    outline-offset: -1px;
-    transition: outline-color var(--bl-transition-xs);
+    background-color: var(--bl-field-bg);
+    transition-property: border-color, box-shadow;
+    transition-duration: var(--bl-transition-sm);
   }
 
   .bl-combobox:focus-within {
-    outline-style: solid;
-    outline-color: var(--bl-form-primary-color);
-    outline-width: 2px;
-    outline-offset: -1px;
-    border-color: transparent;
+    border-color: var(--bl-focus-color);
+    box-shadow: 0 0 0 var(--bl-focus-width)
+      color-mix(in srgb, var(--bl-focus-color) 50%, transparent);
+    outline: none;
   }
 
   .bl-combobox-inner {
     display: flex;
     width: 100%;
-    padding: 0 var(--bl-form-input-padding);
+    padding: 0 var(--bl-field-padding);
     align-items: center;
     justify-content: space-between;
     gap: 0.5rem;
   }
 
   .bl-combobox[data-multiple] .bl-combobox-inner {
-    padding: 0.25rem var(--bl-form-input-padding);
+    padding: 0.25rem var(--bl-field-padding);
   }
 
   .bl-combobox-arrow {
-    height: calc(var(--bl-form-input-height) / 2);
-    width: calc(var(--bl-form-input-height) / 2);
+    height: calc(var(--bl-field-height) / 2);
+    width: calc(var(--bl-field-height) / 2);
     flex-shrink: 0;
     display: flex;
     align-items: center;
@@ -87,19 +84,19 @@
     z-index: 50;
     background: var(--bl-combobox-menu-bg);
     display: none;
-    border: 1px solid var(--bl-form-border-color);
-    border-radius: var(--bl-form-border-radius);
+    border: 1px solid var(--bl-field-border-color);
+    border-radius: var(--bl-field-border-radius);
     box-shadow: var(--bl-shadow-sm);
     overflow: hidden;
   }
 
   .bl-combobox-search {
     outline: none;
-    height: var(--bl-form-input-height);
-    padding: 0 var(--bl-form-input-padding);
+    height: var(--bl-field-height);
+    padding: 0 var(--bl-field-padding);
     display: block;
     width: 100%;
-    border-bottom: 1px solid var(--bl-form-border-color);
+    border-bottom: 1px solid var(--bl-field-border-color);
     background-color: var(--bl-clr-surface);
   }
 

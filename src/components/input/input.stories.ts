@@ -50,13 +50,24 @@ export const FileInput: Story = {
 export const Select: Story = {
   render: () => {
     return `
-      <div class="max-w-md">
+      <div class="max-w-md space-y-4">
         <select class="form-control">
           <option value="">Select an option</option>
           <option value="option1">Option 1</option>
           <option value="option2">Option 2</option>
           <option value="option3">Option 3</option>
         </select>
+        <div class="input-icon">
+          <span class="input-icon-addon">
+            <i class="fa-solid fa-user"></i>
+          </span>
+          <select class="form-control">
+            <option value="">Select an option</option>
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+          </select>
+        </div>
       </div>
     `;
   },
@@ -82,16 +93,16 @@ export const InputGroup: Story = {
   render: () => {
     return `
       <div class="max-w-md space-y-4">
-        <div class="input-group">
-          <span class="input-group-icon">
+        <div class="input-icon">
+          <span class="input-icon-addon">
             <i class="fa-solid fa-magnifying-glass"></i>
           </span>
           <input type="text" class="form-control" placeholder="Search...">
         </div>
         
-        <div class="input-group">
+        <div class="input-icon">
           <input type="text" class="form-control" placeholder="Username">
-          <span class="input-group-icon">
+          <span class="input-icon-addon">
             <i class="fa-solid fa-user"></i>
           </span>
         </div>
