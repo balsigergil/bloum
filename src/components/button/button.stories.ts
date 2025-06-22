@@ -82,3 +82,23 @@ export const Secondary: Story = {
     color: "default",
   },
 };
+
+export const Split: Story = {
+  render: () => {
+    return `
+<div class="btn-group">
+  <button type="button" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Send</button>
+  <button type="button" class="btn btn-primary btn-icon btn-menu-toggle" data-menu="#menu-1">
+    <i class="fas fa-chevron-down"></i>
+    <span class="sr-only">Toggle Dropdown</span>
+  </button>
+  <ul class="menu" id="menu-1">
+    <li><a class="menu-item" href="#"><i class="fas fa-copy"></i> Copy</a></li>
+    <li><a class="menu-item" href="#"><i class="fas fa-cut"></i> Cut</a></li>
+    <li><a class="menu-item" href="#"><i class="fas fa-paste"></i> Paste</a></li>
+    <li><hr class="menu-divider"></li>
+    <li><a class="menu-item menu-item-error" href="#"><i class="fas fa-trash"></i> Delete</a></li>
+  </ul>
+</div>`;
+  },
+};

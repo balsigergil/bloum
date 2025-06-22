@@ -226,6 +226,26 @@
     }
   }
 
+  .btn-group {
+    display: flex;
+    align-items: center;
+  }
+
+  .btn-group > .btn:first-of-type {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .btn-group > .btn:last-of-type {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    margin-left: -1px;
+  }
+
+  .btn-menu-toggle {
+    --bl-btn-fs: 0.875rem;
+  }
+
   /* Dark theme */
   .dark {
     .btn {
