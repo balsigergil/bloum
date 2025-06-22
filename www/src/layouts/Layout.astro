@@ -1,17 +1,57 @@
 ---
 import "../styles/global.css";
+
+export interface Props {
+	title?: string;
+	description?: string;
+	ogImage?: string;
+}
+
+const { 
+	title = "Bloum - A modern library of web components", 
+	description = "Lightweight, accessible, framework-agnostic UI components designed for creating design systems",
+	ogImage = "/og-image.png"
+} = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Bloum - A modern library of web components</title>
+		
+		<!-- Primary Meta Tags -->
+		<title>{title}</title>
+		<meta name="title" content={title} />
+		<meta name="description" content={description} />
+		
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://bloum.dev/" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={ogImage} />
+		
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content="https://bloum.dev/" />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
+		<meta property="twitter:image" content={ogImage} />
+		
+		<!-- Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+		
+		<!-- Additional SEO -->
+		<meta name="keywords" content="web components, UI library, design system, TypeScript, accessible components, framework agnostic" />
+		<meta name="author" content="Gil Balsiger" />
+		<link rel="canonical" href="https://bloum.dev/" />
 	</head>
-	<body>
+	<body class="dark:bg-gray-950 dark:text-gray-100">
 		<slot />
 	</body>
 </html>

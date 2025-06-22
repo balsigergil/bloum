@@ -1,1 +1,150 @@
 @import "tailwindcss";
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-gray-950 text-gray-100 antialiased;
+    font-feature-settings:
+      "ss01" on,
+      "ss02" on,
+      "cv01" on,
+      "cv11" on;
+  }
+}
+
+@layer components {
+  /* Bento Box Base Styles */
+  .bento-box {
+    @apply relative overflow-hidden rounded-2xl bg-gray-900/50 backdrop-blur-sm border border-gray-800/50 transition-all duration-300;
+    background-image: radial-gradient(
+      circle at 50% 0%,
+      rgba(99, 102, 241, 0.1) 0%,
+      transparent 50%
+    );
+  }
+
+  .bento-box:hover {
+    @apply border-gray-700/50 bg-gray-900/70;
+    transform: translateY(-2px);
+    box-shadow:
+      0 20px 25px -5px rgba(0, 0, 0, 0.2),
+      0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+
+  /* Gradient Backgrounds */
+  .gradient-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  }
+
+  .gradient-secondary {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  }
+
+  .gradient-accent {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  }
+
+  .gradient-dark {
+    background: linear-gradient(135deg, #1a1c20 0%, #2d3748 100%);
+  }
+
+  /* Text Gradients */
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400;
+  }
+
+  /* Glow Effects */
+  .glow-primary {
+    box-shadow: 0 0 40px rgba(99, 102, 241, 0.3);
+  }
+
+  .glow-secondary {
+    box-shadow: 0 0 40px rgba(244, 114, 182, 0.3);
+  }
+
+  /* Code Block Styles */
+  .code-block {
+    @apply bg-gray-900 rounded-lg p-4 font-mono text-sm overflow-x-auto border border-gray-800;
+  }
+
+  /* Button Styles */
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-lg transition-all duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-950;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 px-6 py-3 bg-gray-800 hover:bg-gray-700 text-gray-100 font-medium rounded-lg transition-all duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:ring-offset-gray-950 border border-gray-700;
+  }
+
+  /* Grid Animations */
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes pulse-glow {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  /* Scrollbar Styles */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-900;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-700 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-600;
+  }
+}
+
+@layer utilities {
+  /* Custom Grid Spans */
+  .col-span-sm {
+    grid-column: span 1;
+  }
+  .col-span-md {
+    grid-column: span 2;
+  }
+  .col-span-lg {
+    grid-column: span 3;
+  }
+  .row-span-sm {
+    grid-row: span 1;
+  }
+  .row-span-md {
+    grid-row: span 2;
+  }
+  .row-span-lg {
+    grid-row: span 3;
+  }
+}
