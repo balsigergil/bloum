@@ -6,6 +6,10 @@
     gap: 0.25rem;
   }
 
+  .field > .label {
+    align-self: flex-start;
+  }
+
   /* Checkbox wrapper */
   .field:has(> .input-check) {
     display: flex;
@@ -25,7 +29,7 @@
   /* Form field help text */
   .field-help {
     font-size: 0.875rem;
-    color: var(--bl-clr-gray-600);
+    color: var(--bl-clr-gray-500);
   }
 
   /* Form field error text */
@@ -55,7 +59,7 @@
 
   .dark {
     .field-help {
-      color: var(--bl-clr-gray-400);
+      color: var(--bl-clr-gray-500);
     }
 
     .field-error {

@@ -20,13 +20,17 @@
     background-clip: padding-box;
 
     transition-property: box-shadow, border-color;
-    transition-duration: var(--bl-transition-sm);
+    transition-duration: var(--bl-focus-transition);
   }
 
   .input:focus-visible {
     border-color: var(--bl-focus-color);
     box-shadow: 0 0 0 var(--bl-focus-width)
-      color-mix(in srgb, var(--bl-focus-color) 50%, transparent);
+      color-mix(
+        in srgb,
+        var(--bl-focus-color) var(--bl-focus-fade),
+        transparent
+      );
     outline: none;
   }
 
@@ -43,7 +47,7 @@
     padding-inline: var(--bl-input-padding);
     cursor: pointer;
     margin-inline-end: var(--bl-input-padding);
-    transition: background-color var(--bl-transition-sm);
+    transition: background-color var(--bl-focus-transition);
   }
 
   .input:hover::file-selector-button {
@@ -137,7 +141,7 @@
     border: none;
     cursor: pointer;
     color: var(--bl-password-toggle-color);
-    transition: color var(--bl-transition-sm);
+    transition: color var(--bl-focus-transition);
     padding: 0;
     z-index: 2;
   }
@@ -207,7 +211,7 @@
     margin-top: calc(
       var(--bl-range-track-height) / 2 - var(--bl-range-thumb-size) / 2
     );
-    transition: box-shadow var(--bl-transition-sm) ease-in-out;
+    transition: box-shadow var(--bl-focus-transition) ease-in-out;
   }
 
   .input[type="range"]::-moz-range-thumb {
@@ -217,18 +221,26 @@
     width: var(--bl-range-thumb-size);
     height: var(--bl-range-thumb-size);
     border-radius: var(--bl-range-thumb-border-radius);
-    transition: box-shadow var(--bl-transition-sm) ease-in-out;
+    transition: box-shadow var(--bl-focus-transition) ease-in-out;
   }
 
   .input[type="range"]:focus::-webkit-slider-thumb {
     box-shadow: 0 0 0 var(--bl-focus-width)
-      color-mix(in srgb, var(--bl-focus-color) 50%, transparent);
+      color-mix(
+        in srgb,
+        var(--bl-focus-color) var(--bl-focus-fade),
+        transparent
+      );
     outline: none;
   }
 
   .input[type="range"]:focus::-moz-range-thumb {
     box-shadow: 0 0 0 var(--bl-focus-width)
-      color-mix(in srgb, var(--bl-focus-color) 50%, transparent);
+      color-mix(
+        in srgb,
+        var(--bl-focus-color) var(--bl-focus-fade),
+        transparent
+      );
     outline: none;
   }
 
