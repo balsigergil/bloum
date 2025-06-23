@@ -11,52 +11,52 @@
   }
 
   /* Form field help text */
-  .form-field-help {
+  .form-control-help {
     font-size: 0.875rem;
     color: var(--bl-clr-gray-600);
   }
 
   /* Form field error text */
-  .form-field-error {
+  .form-control-error {
     font-size: 0.875rem;
     color: var(--bl-clr-red-600);
   }
 
   /* Error state for form control */
-  .form-field-error-state .field {
+  .form-control-error-state .form-control {
     border-color: var(--bl-clr-red-500);
     --bl-focus-color: var(--bl-clr-red-500);
   }
 
   /* Success state for form control */
-  .form-field-success-state .field {
+  .form-control-success-state .form-control {
     border-color: var(--bl-clr-green-500);
     --bl-focus-color: var(--bl-clr-green-500);
   }
 }
 
 .dark {
-  .form-field-help {
+  .form-control-help {
     color: var(--bl-clr-gray-400);
   }
 
-  .form-field-error {
+  .form-control-error {
     color: var(--bl-clr-red-400);
   }
 
-  .form-field-error-state .field {
+  .form-control-error-state .form-control {
     border-color: var(--bl-clr-red-600);
   }
 
-  .form-field-error-state .field:focus-visible {
+  .form-control-error-state .field:focus-visible {
     outline-color: var(--bl-clr-red-600);
   }
 
-  .form-field-success-state .field {
+  .form-control-success-state .form-control {
     border-color: var(--bl-clr-green-600);
   }
 
-  .form-field-success-state .field:focus-visible {
+  .form-control-success-state .field:focus-visible {
     outline-color: var(--bl-clr-green-600);
   }
 }

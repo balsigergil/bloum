@@ -1,7 +1,6 @@
 @layer components {
   /* Checkbox and Radio */
-  .field-check,
-  .field-radio {
+  .form-check-input {
     --bl-checkbox-checked-color: var(--bl-clr-primary-600);
 
     position: relative;
@@ -11,7 +10,7 @@
     outline-offset: 2px;
     width: 1.125rem;
     height: 1.125rem;
-    border: 1px solid var(--bl-field-border-color);
+    border: 1px solid var(--bl-form-control-border-color);
     border-radius: var(--bl-border-radius);
     transition:
       background-color var(--bl-transition-sm),
@@ -25,22 +24,24 @@
     }
   }
 
-  input[type="checkbox"].field-check:checked {
+  .form-check-input:focus-visible {
+    outline-color: var(--bl-checkbox-checked-color);
+    outline: solid 2px var(--bl-checkbox-checked-color);
+    outline-offset: 2px;
+  }
+
+  input[type="checkbox"].form-check-input:checked {
     border-color: var(--bl-checkbox-checked-color);
     background-color: var(--bl-checkbox-checked-color);
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 7 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
   }
 
-  .field-check:focus-visible {
-    outline-color: var(--bl-checkbox-checked-color);
-  }
-
   /* Radio specific styles */
-  .field-radio {
+  input[type="radio"].form-check-input {
     border-radius: var(--bl-border-radius-full);
   }
 
-  input[type="radio"].field-radio:checked {
+  input[type="radio"].form-check-input:checked {
     border-color: var(--bl-checkbox-checked-color);
     background-color: var(--bl-checkbox-checked-color);
 
@@ -56,11 +57,6 @@
       left: 50%;
       transform: translate(-50%, -50%);
     }
-  }
-
-  .field-radio:focus-visible {
-    outline: solid 2px var(--bl-checkbox-checked-color);
-    outline-offset: 2px;
   }
 
   /* Label */

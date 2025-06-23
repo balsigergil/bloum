@@ -1,29 +1,29 @@
 @layer components {
   /* Form control */
-  .field {
-    --bl-field-file-bg: var(--bl-clr-gray-200);
-    --bl-field-file-bg-hover: var(--bl-clr-gray-300);
-    --bl-field-font-size: 0.875rem;
+  .form-control {
+    --bl-form-control-file-bg: var(--bl-clr-gray-200);
+    --bl-form-control-file-bg-hover: var(--bl-clr-gray-300);
+    --bl-form-control-font-size: 0.875rem;
 
     appearance: none;
-    border: 1px solid var(--bl-field-border-color);
-    border-radius: var(--bl-field-border-radius);
-    padding-inline: var(--bl-field-padding);
-    height: var(--bl-field-height);
+    border: 1px solid var(--bl-form-control-border-color);
+    border-radius: var(--bl-form-control-border-radius);
+    padding-inline: var(--bl-form-control-padding);
+    height: var(--bl-form-control-height);
     line-height: 1.25rem;
     position: relative;
-    font-size: var(--bl-field-font-size);
+    font-size: var(--bl-form-control-font-size);
     display: block;
     width: 100%;
-    min-width: var(--bl-field-height);
-    background-color: var(--bl-field-bg);
+    min-width: var(--bl-form-control-height);
+    background-color: var(--bl-form-control-bg);
     background-clip: padding-box;
 
     transition-property: box-shadow, border-color;
     transition-duration: var(--bl-transition-sm);
   }
 
-  .field:focus-visible {
+  .form-control:focus-visible {
     border-color: var(--bl-focus-color);
     box-shadow: 0 0 0 var(--bl-focus-width)
       color-mix(in srgb, var(--bl-focus-color) 50%, transparent);
@@ -31,29 +31,29 @@
   }
 
   /* File input */
-  .field[type="file"] {
+  .form-control[type="file"] {
     padding-inline: 0;
     cursor: pointer;
   }
 
-  .field::file-selector-button {
+  .form-control::file-selector-button {
     height: 100%;
     border: none;
-    background-color: var(--bl-field-file-bg);
-    padding-inline: var(--bl-field-padding);
+    background-color: var(--bl-form-control-file-bg);
+    padding-inline: var(--bl-form-control-padding);
     cursor: pointer;
-    margin-inline-end: var(--bl-field-padding);
+    margin-inline-end: var(--bl-form-control-padding);
     transition: background-color var(--bl-transition-sm);
   }
 
-  .field:hover::file-selector-button {
-    background-color: var(--bl-field-file-bg-hover);
+  .form-control:hover::file-selector-button {
+    background-color: var(--bl-form-control-file-bg-hover);
   }
 
   /* Select */
-  select.field {
-    --bl-field-select-icon: url("../../icons/chevron.svg");
-    background-image: var(--bl-field-select-icon);
+  select.form-control {
+    --bl-form-control-select-icon: url("../../icons/chevron.svg");
+    background-image: var(--bl-form-control-select-icon);
     background-repeat: no-repeat;
     background-position: right 0.75rem center;
     background-size: 1.25rem 1.25rem;
@@ -61,7 +61,7 @@
     print-color-adjust: exact;
   }
 
-  select.field[multiple],
+  select.form-control[multiple],
   select.form-select:where([size]:not([size="1"])) {
     height: auto;
     background-image: initial;
@@ -87,14 +87,14 @@
     justify-content: center;
     align-items: center;
     color: var(--bl-input-icon-color);
-    width: var(--bl-field-height);
-    height: var(--bl-field-height);
+    width: var(--bl-form-control-height);
+    height: var(--bl-form-control-height);
     pointer-events: none;
     z-index: 1;
 
     & > svg {
-      width: calc(var(--bl-field-height) / 1.75);
-      height: calc(var(--bl-field-height) / 1.75);
+      width: calc(var(--bl-form-control-height) / 1.75);
+      height: calc(var(--bl-form-control-height) / 1.75);
     }
   }
 
@@ -103,11 +103,11 @@
     right: 0;
   }
 
-  .input-icon .field:not(:last-child) {
+  .input-icon .form-control:not(:last-child) {
     padding-right: var(--bl-input-icon-padding);
   }
 
-  .input-icon .field:not(:first-child) {
+  .input-icon .form-control:not(:first-child) {
     padding-left: var(--bl-input-icon-padding);
   }
 
@@ -115,9 +115,9 @@
     --bl-input-icon-color: var(--bl-clr-gray-500);
   }
 
-  .dark .field {
-    --bl-field-file-bg: var(--bl-clr-gray-800);
-    --bl-field-file-bg-hover: var(--bl-clr-gray-700);
+  .dark .form-control {
+    --bl-form-control-file-bg: var(--bl-clr-gray-800);
+    --bl-form-control-file-bg-hover: var(--bl-clr-gray-700);
   }
 
   /* Password input with toggle */
@@ -128,8 +128,8 @@
     position: absolute;
     top: 0;
     right: 0;
-    height: var(--bl-field-height);
-    width: var(--bl-field-height);
+    height: var(--bl-form-control-height);
+    width: var(--bl-form-control-height);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -154,9 +154,9 @@
 
   .password-toggle svg,
   .password-toggle i {
-    width: 1.125rem;
-    height: 1.125rem;
-    font-size: 1.125rem;
+    width: 1rem;
+    height: 1rem;
+    font-size: 1rem;
   }
 
   .dark .password-toggle {
@@ -165,7 +165,7 @@
   }
 
   /* Range input */
-  .field[type="range"] {
+  .form-control[type="range"] {
     --bl-range-track-height: 0.375rem;
     --bl-range-track-bg: var(--bl-clr-gray-300);
     --bl-range-track-border-radius: var(--bl-border-radius-full);
@@ -185,19 +185,19 @@
     cursor: pointer;
   }
 
-  .field[type="range"]::-webkit-slider-runnable-track {
+  .form-control[type="range"]::-webkit-slider-runnable-track {
     background: var(--bl-range-track-bg);
     height: var(--bl-range-track-height);
     border-radius: var(--bl-range-track-border-radius);
   }
 
-  .field[type="range"]::-moz-range-track {
+  .form-control[type="range"]::-moz-range-track {
     background: var(--bl-range-track-bg);
     height: var(--bl-range-track-height);
     border-radius: var(--bl-range-track-border-radius);
   }
 
-  .field[type="range"]::-webkit-slider-thumb {
+  .form-control[type="range"]::-webkit-slider-thumb {
     appearance: none;
     background: var(--bl-range-thumb-bg);
     border: var(--bl-range-thumb-border);
@@ -210,7 +210,7 @@
     transition: box-shadow var(--bl-transition-sm) ease-in-out;
   }
 
-  .field[type="range"]::-moz-range-thumb {
+  .form-control[type="range"]::-moz-range-thumb {
     appearance: none;
     background: var(--bl-range-thumb-bg);
     border: var(--bl-range-thumb-border);
@@ -220,26 +220,26 @@
     transition: box-shadow var(--bl-transition-sm) ease-in-out;
   }
 
-  .field[type="range"]:focus::-webkit-slider-thumb {
+  .form-control[type="range"]:focus::-webkit-slider-thumb {
     box-shadow: 0 0 0 var(--bl-focus-width)
       color-mix(in srgb, var(--bl-focus-color) 50%, transparent);
     outline: none;
   }
 
-  .field[type="range"]:focus::-moz-range-thumb {
+  .form-control[type="range"]:focus::-moz-range-thumb {
     box-shadow: 0 0 0 var(--bl-focus-width)
       color-mix(in srgb, var(--bl-focus-color) 50%, transparent);
     outline: none;
   }
 
-  .field[type="range"]:focus-visible {
+  .form-control[type="range"]:focus-visible {
     box-shadow: none;
     border: none;
     outline: none;
   }
 
   /* Dark mode */
-  .dark .field[type="range"] {
+  .dark .form-control[type="range"] {
     --bl-range-track-bg: var(--bl-clr-gray-700);
     --bl-range-thumb-bg: var(--bl-clr-primary-600);
     --bl-range-thumb-border: 2px solid var(--bl-clr-gray-900);

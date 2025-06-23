@@ -8,13 +8,13 @@
 
     position: relative;
     display: flex;
-    border: 1px solid var(--bl-field-border-color);
+    border: 1px solid var(--bl-form-control-border-color);
     border-radius: var(--bl-border-radius-md);
-    min-height: var(--bl-field-height);
+    min-height: var(--bl-form-control-height);
     user-select: none;
     cursor: pointer;
     font-size: 0.875rem;
-    background-color: var(--bl-field-bg);
+    background-color: var(--bl-form-control-bg);
     transition-property: border-color, box-shadow;
     transition-duration: var(--bl-transition-sm);
   }
@@ -29,19 +29,19 @@
   .bl-combobox-inner {
     display: flex;
     width: 100%;
-    padding: 0 var(--bl-field-padding);
+    padding: 0 var(--bl-form-control-padding);
     align-items: center;
     justify-content: space-between;
     gap: 0.5rem;
   }
 
   .bl-combobox[data-multiple] .bl-combobox-inner {
-    padding: 0.25rem var(--bl-field-padding);
+    padding: 0.25rem var(--bl-form-control-padding);
   }
 
   .bl-combobox-arrow {
-    height: calc(var(--bl-field-height) / 2);
-    width: calc(var(--bl-field-height) / 2);
+    height: calc(var(--bl-form-control-height) / 2);
+    width: calc(var(--bl-form-control-height) / 2);
     flex-shrink: 0;
     display: flex;
     align-items: center;
@@ -84,19 +84,19 @@
     z-index: 50;
     background: var(--bl-combobox-menu-bg);
     display: none;
-    border: 1px solid var(--bl-field-border-color);
-    border-radius: var(--bl-field-border-radius);
+    border: 1px solid var(--bl-form-control-border-color);
+    border-radius: var(--bl-form-control-border-radius);
     box-shadow: var(--bl-shadow-sm);
     overflow: hidden;
   }
 
   .bl-combobox-search {
     outline: none;
-    height: var(--bl-field-height);
-    padding: 0 var(--bl-field-padding);
+    height: var(--bl-form-control-height);
+    padding: 0 var(--bl-form-control-padding);
     display: block;
     width: 100%;
-    border-bottom: 1px solid var(--bl-field-border-color);
+    border-bottom: 1px solid var(--bl-form-control-border-color);
     background-color: var(--bl-clr-surface);
   }
 

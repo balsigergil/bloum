@@ -271,7 +271,7 @@ export const WithActions: Story = {
         <thead>
           <tr>
             <th>
-              <input type="checkbox" class="field-check" aria-label="Select all">
+              <input type="checkbox" class="form-check-input" aria-label="Select all">
             </th>
             <th>User</th>
             <th>Role</th>
@@ -281,7 +281,7 @@ export const WithActions: Story = {
         </thead>
         <tbody>
           <tr>
-            <td><input type="checkbox" class="field-check" aria-label="Select user"></td>
+            <td><input type="checkbox" class="form-check-input" aria-label="Select user"></td>
             <td>Alice Johnson</td>
             <td>Admin</td>
             <td><span class="tag tag-success">Active</span></td>
@@ -291,7 +291,7 @@ export const WithActions: Story = {
             </td>
           </tr>
           <tr>
-            <td><input type="checkbox" class="field-check" aria-label="Select user"></td>
+            <td><input type="checkbox" class="form-check-input" aria-label="Select user"></td>
             <td>Bob Smith</td>
             <td>Editor</td>
             <td><span class="tag tag-success">Active</span></td>
@@ -301,7 +301,7 @@ export const WithActions: Story = {
             </td>
           </tr>
           <tr>
-            <td><input type="checkbox" class="field-check" aria-label="Select user"></td>
+            <td><input type="checkbox" class="form-check-input" aria-label="Select user"></td>
             <td>Charlie Brown</td>
             <td>Viewer</td>
             <td><span class="tag tag-warning">Pending</span></td>
@@ -311,7 +311,7 @@ export const WithActions: Story = {
             </td>
           </tr>
           <tr>
-            <td><input type="checkbox" class="field-check" aria-label="Select user"></td>
+            <td><input type="checkbox" class="form-check-input" aria-label="Select user"></td>
             <td>Diana Prince</td>
             <td>Editor</td>
             <td><span class="tag tag-error">Inactive</span></td>
@@ -321,7 +321,7 @@ export const WithActions: Story = {
             </td>
           </tr>
           <tr>
-            <td><input type="checkbox" class="field-check" aria-label="Select user"></td>
+            <td><input type="checkbox" class="form-check-input" aria-label="Select user"></td>
             <td>Ethan Hunt</td>
             <td>Admin</td>
             <td><span class="tag tag-success">Active</span></td>
@@ -331,7 +331,7 @@ export const WithActions: Story = {
             </td>
           </tr>
           <tr>
-            <td><input type="checkbox" class="field-check" aria-label="Select user"></td>
+            <td><input type="checkbox" class="form-check-input" aria-label="Select user"></td>
             <td>Fiona Gallagher</td>
             <td>Viewer</td>
             <td><span class="tag tag-success">Active</span></td>

@@ -12,7 +12,7 @@ export const CheckboxCard: Story = {
     return `
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         <label for="pack1" class="card checkbox-card">
-          <input type="checkbox" id="pack1" name="pack1" class="field-check">
+          <input type="checkbox" id="pack1" name="pack1" class="form-check-input">
           <img src="https://picsum.photos/id/25/300/200" alt="Nature" class="card-image" />
           <div class="card-header">
             <h3 class="card-title">Basic</h3>
@@ -24,7 +24,7 @@ export const CheckboxCard: Story = {
         </label>
         
         <label for="pack2" class="card checkbox-card">
-          <input type="checkbox" id="pack2" name="pack2" class="field-check" checked>
+          <input type="checkbox" id="pack2" name="pack2" class="form-check-input" checked>
           <img src="https://picsum.photos/id/27/300/200" alt="Nature" class="card-image" />
           <div class="card-header">
             <h3 class="card-title">Pro</h3>
@@ -36,7 +36,7 @@ export const CheckboxCard: Story = {
         </label>
         
         <label for="pack3" class="card checkbox-card">
-          <input type="checkbox" id="pack3" name="pack3" class="field-check">
+          <input type="checkbox" id="pack3" name="pack3" class="form-check-input">
           <img src="https://picsum.photos/id/28/300/200" alt="Nature" class="card-image" />
           <div class="card-header">
             <h3 class="card-title">Expert</h3>
@@ -56,7 +56,7 @@ export const RadioCard: Story = {
     return `
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         <label for="pack4" class="card checkbox-card">
-          <input type="radio" id="pack4" name="pack" value="basic" class="field-radio">
+          <input type="radio" id="pack4" name="pack" value="basic" class="form-check-input">
           <img src="https://picsum.photos/id/25/300/200" alt="Nature" class="card-image" />
           <div class="card-header">
             <h3 class="card-title">Basic</h3>
@@ -68,7 +68,7 @@ export const RadioCard: Story = {
         </label>
         
         <label for="pack5" class="card checkbox-card">
-          <input type="radio" id="pack5" name="pack" value="pro" class="field-radio" checked>
+          <input type="radio" id="pack5" name="pack" value="pro" class="form-check-input" checked>
           <img src="https://picsum.photos/id/27/300/200" alt="Nature" class="card-image" />
           <div class="card-header">
             <h3 class="card-title">Pro</h3>
@@ -80,7 +80,7 @@ export const RadioCard: Story = {
         </label>
         
         <label for="pack6" class="card checkbox-card">
-          <input type="radio" id="pack6" name="pack" value="enterprise" class="field-radio" disabled>
+          <input type="radio" id="pack6" name="pack" value="enterprise" class="form-check-input" disabled>
           <img src="https://picsum.photos/id/28/300/200" alt="Nature" class="card-image" />
           <div class="card-header">
             <h3 class="card-title">Enterprise</h3>
@@ -100,7 +100,7 @@ export const SimpleCheckboxCards: Story = {
     return `
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         <label for="feature1" class="card checkbox-card">
-          <input type="checkbox" id="feature1" class="field-check">
+          <input type="checkbox" id="feature1" class="form-check-input">
           <div class="card-body">
             <h4 class="font-semibold">Analytics</h4>
             <p class="text-sm text-gray-600 mt-1">Advanced analytics and reporting</p>
@@ -108,7 +108,7 @@ export const SimpleCheckboxCards: Story = {
         </label>
         
         <label for="feature2" class="card checkbox-card">
-          <input type="checkbox" id="feature2" class="field-check" checked>
+          <input type="checkbox" id="feature2" class="form-check-input" checked>
           <div class="card-body">
             <h4 class="font-semibold">API Access</h4>
             <p class="text-sm text-gray-600 mt-1">Full API access for integrations</p>
@@ -116,7 +116,7 @@ export const SimpleCheckboxCards: Story = {
         </label>
         
         <label for="feature3" class="card checkbox-card">
-          <input type="checkbox" id="feature3" class="field-check">
+          <input type="checkbox" id="feature3" class="form-check-input">
           <div class="card-body">
             <h4 class="font-semibold">Priority Support</h4>
             <p class="text-sm text-gray-600 mt-1">24/7 priority customer support</p>
@@ -132,7 +132,7 @@ export const SimpleRadioCards: Story = {
     return `
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl">
         <label for="billing1" class="card checkbox-card">
-          <input type="radio" id="billing1" name="billing" value="monthly" class="field-radio" checked>
+          <input type="radio" id="billing1" name="billing" value="monthly" class="form-check-input" checked>
           <div class="card-body">
             <h4 class="font-semibold">Monthly Billing</h4>
             <p class="text-sm text-gray-600 mt-1">Pay month-to-month, cancel anytime</p>
@@ -141,7 +141,7 @@ export const SimpleRadioCards: Story = {
         </label>
         
         <label for="billing2" class="card checkbox-card">
-          <input type="radio" id="billing2" name="billing" value="yearly" class="field-radio">
+          <input type="radio" id="billing2" name="billing" value="yearly" class="form-check-input">
           <div class="card-body">
             <h4 class="font-semibold">Yearly Billing</h4>
             <p class="text-sm text-gray-600 mt-1">Save 20% with annual billing</p>

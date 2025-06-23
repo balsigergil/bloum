@@ -52,11 +52,11 @@
     --bl-breakpoint-2xl: 1536px;
 
     /* Form tokens */
-    --bl-field-height: 2.25rem;
-    --bl-field-padding: 0.625rem;
-    --bl-field-border-color: var(--bl-clr-gray-300);
-    --bl-field-border-radius: var(--bl-border-radius-md);
-    --bl-field-bg: var(--bl-clr-surface);
+    --bl-form-control-height: 2.25rem;
+    --bl-form-control-padding: 0.625rem;
+    --bl-form-control-border-color: var(--bl-clr-gray-300);
+    --bl-form-control-border-radius: var(--bl-border-radius-md);
+    --bl-form-control-bg: var(--bl-clr-surface);
   }
 
   .dark,
@@ -69,7 +69,7 @@
     --bl-focus-color: var(--bl-clr-primary-500);
 
     /* Form tokens - dark mode */
-    --bl-field-border-color: var(--bl-clr-gray-700);
+    --bl-form-control-border-color: var(--bl-clr-gray-700);
     --bl-checkbox-checked-color: var(--bl-clr-primary-600);
   }
 }

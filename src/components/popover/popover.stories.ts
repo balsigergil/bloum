@@ -15,11 +15,11 @@ export const Popover: Story = {
   <p class="font-bold mb-4">Set the dimensions for the layer.</p>
   <div class="grid grid-cols-2 gap-4">
     <label class="label">Width</label>
-    <input class="field">
+    <input class="form-control">
     <label class="label">Max. width</label>
-    <input class="field">
+    <input class="form-control">
     <label class="label">Height</label>
-    <input class="field">
+    <input class="form-control">
   </div>
 </div>
 `;

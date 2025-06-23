@@ -24,9 +24,9 @@
     flex: 1;
     min-width: 200px;
     max-width: 400px;
-    --bl-field-height: 2rem;
-    --bl-field-padding: 0.5rem;
-    --bl-field-font-size: 0.875rem;
+    --bl-form-control-height: 2rem;
+    --bl-form-control-padding: 0.5rem;
+    --bl-form-control-font-size: 0.875rem;
   }
 
   .datatable-per-page {
@@ -42,10 +42,10 @@
       color: var(--bl-clr-text);
     }
 
-    .field {
-      --bl-field-height: 2rem;
-      --bl-field-padding: 0.5rem;
-      --bl-field-font-size: 0.875rem;
+    .form-control {
+      --bl-form-control-height: 2rem;
+      --bl-form-control-padding: 0.5rem;
+      --bl-form-control-font-size: 0.875rem;
       width: auto;
       min-width: 80px;
       max-width: 120px;

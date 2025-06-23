@@ -12,22 +12,22 @@ export const Checkbox: Story = {
     return `
       <div class="space-y-4">
         <div class="form-check">
-          <input type="checkbox" id="checkbox1" class="field-check">
+          <input type="checkbox" id="checkbox1" class="form-check-input">
           <label for="checkbox1" class="label">Accept terms and conditions</label>
         </div>
         
         <div class="form-check">
-          <input type="checkbox" id="checkbox2" class="field-check" checked>
+          <input type="checkbox" id="checkbox2" class="form-check-input" checked>
           <label for="checkbox2" class="label">Subscribe to newsletter</label>
         </div>
         
         <div class="form-check">
-          <input type="checkbox" id="checkbox3" class="field-check" disabled>
+          <input type="checkbox" id="checkbox3" class="form-check-input" disabled>
           <label for="checkbox3" class="label">Disabled checkbox</label>
         </div>
         
         <div class="form-check">
-          <input type="checkbox" id="checkbox4" class="field-check" checked disabled>
+          <input type="checkbox" id="checkbox4" class="form-check-input" checked disabled>
           <label for="checkbox4" class="label">Disabled checked checkbox</label>
         </div>
       </div>
@@ -42,22 +42,22 @@ export const Radio: Story = {
         <p class="label mb-2">Select your plan:</p>
         <div class="space-y-2">
           <div class="form-check">
-            <input type="radio" id="basic" name="plan" value="basic" class="field-radio">
+            <input type="radio" id="basic" name="plan" value="basic" class="form-check-input">
             <label for="basic" class="label">Basic - $10/month</label>
           </div>
           
           <div class="form-check">
-            <input type="radio" id="pro" name="plan" value="pro" class="field-radio" checked>
+            <input type="radio" id="pro" name="plan" value="pro" class="form-check-input" checked>
             <label for="pro" class="label">Pro - $20/month</label>
           </div>
           
           <div class="form-check">
-            <input type="radio" id="enterprise" name="plan" value="enterprise" class="field-radio">
+            <input type="radio" id="enterprise" name="plan" value="enterprise" class="form-check-input">
             <label for="enterprise" class="label">Enterprise - $50/month</label>
           </div>
           
           <div class="form-check">
-            <input type="radio" id="custom" name="plan" value="custom" class="field-radio" disabled>
+            <input type="radio" id="custom" name="plan" value="custom" class="form-check-input" disabled>
             <label for="custom" class="label">Custom (Contact us)</label>
           </div>
         </div>
@@ -73,19 +73,19 @@ export const CheckboxGroup: Story = {
         <p class="label mb-2">Select your interests:</p>
         <div class="space-y-2">
           <div class="form-check">
-            <input type="checkbox" id="design" class="field-check">
+            <input type="checkbox" id="design" class="form-check-input">
             <label for="design" class="label">Design</label>
           </div>
           <div class="form-check">
-            <input type="checkbox" id="development" class="field-check" checked>
+            <input type="checkbox" id="development" class="form-check-input" checked>
             <label for="development" class="label">Development</label>
           </div>
           <div class="form-check">
-            <input type="checkbox" id="marketing" class="field-check">
+            <input type="checkbox" id="marketing" class="form-check-input">
             <label for="marketing" class="label">Marketing</label>
           </div>
           <div class="form-check">
-            <input type="checkbox" id="sales" class="field-check">
+            <input type="checkbox" id="sales" class="form-check-input">
             <label for="sales" class="label">Sales</label>
           </div>
         </div>
@@ -99,15 +99,15 @@ export const InlineCheckboxes: Story = {
     return `
       <div class="flex gap-4 flex-wrap">
         <div class="form-check">
-          <input type="checkbox" id="inline1" class="field-check">
+          <input type="checkbox" id="inline1" class="form-check-input">
           <label for="inline1" class="label">Option 1</label>
         </div>
         <div class="form-check">
-          <input type="checkbox" id="inline2" class="field-check">
+          <input type="checkbox" id="inline2" class="form-check-input">
           <label for="inline2" class="label">Option 2</label>
         </div>
         <div class="form-check">
-          <input type="checkbox" id="inline3" class="field-check">
+          <input type="checkbox" id="inline3" class="form-check-input">
           <label for="inline3" class="label">Option 3</label>
         </div>
       </div>
@@ -120,15 +120,15 @@ export const InlineRadios: Story = {
     return `
       <div class="flex gap-4 flex-wrap">
         <div class="form-check">
-          <input type="radio" id="size-sm" name="size" value="sm" class="field-radio">
+          <input type="radio" id="size-sm" name="size" value="sm" class="form-check-input">
           <label for="size-sm" class="label">Small</label>
         </div>
         <div class="form-check">
-          <input type="radio" id="size-md" name="size" value="md" class="field-radio" checked>
+          <input type="radio" id="size-md" name="size" value="md" class="form-check-input" checked>
           <label for="size-md" class="label">Medium</label>
         </div>
         <div class="form-check">
-          <input type="radio" id="size-lg" name="size" value="lg" class="field-radio">
+          <input type="radio" id="size-lg" name="size" value="lg" class="form-check-input">
           <label for="size-lg" class="label">Large</label>
         </div>
       </div>

@@ -36,7 +36,7 @@ const meta: Meta = {
             <div class="input-icon-addon">
               <i class="fa-solid fa-magnifying-glass"></i>
             </div>
-            <input type="search" class="field" placeholder="Search...">
+            <input type="search" class="form-control" placeholder="Search...">
           </div>
         </div>
         <h3 class="sidebar-group-title">Dashboard</h3>
@@ -232,7 +232,7 @@ export const WithCollapsible: Story = {
             <span class="input-icon-addon">
               <i class="fa-solid fa-magnifying-glass"></i>
             </span>
-            <input type="search" class="field" placeholder="Search...">
+            <input type="search" class="form-control" placeholder="Search...">
           </div>
         </div>
         <h3 class="sidebar-group-title">Dashboard</h3>

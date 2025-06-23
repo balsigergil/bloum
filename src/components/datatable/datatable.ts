@@ -86,7 +86,7 @@ export class DataTable {
 
     const searchInput = document.createElement("input");
     searchInput.type = "text";
-    searchInput.className = "field";
+    searchInput.className = "form-control";
     searchInput.placeholder = "Search...";
     searchInput.addEventListener("input", (e) => {
       this.searchTerm = (e.target as HTMLInputElement).value;
@@ -107,7 +107,7 @@ export class DataTable {
     perPageLabel.textContent = "Show ";
 
     const perPageSelect = document.createElement("select");
-    perPageSelect.className = "field";
+    perPageSelect.className = "form-control";
     [10, 25, 50, 100].forEach((value) => {
       const option = document.createElement("option");
       option.value = value.toString();
