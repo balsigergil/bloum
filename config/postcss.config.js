@@ -7,8 +7,9 @@ export default {
       encodeType: "base64",
     },
     "postcss-preset-env": {
+      stage: 2,
       features: {
-        "oklab-function": false,
+        "cascade-layers": false,
       },
     },
     cssnano: {
