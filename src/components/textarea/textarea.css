@@ -1,6 +1,6 @@
 @layer components {
   /* Textarea */
-  textarea.form-control {
+  textarea.input {
     padding-block: 0.5rem;
     height: auto;
   }

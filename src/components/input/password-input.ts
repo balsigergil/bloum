@@ -16,7 +16,7 @@ export function initPasswordToggle(
       e.preventDefault();
 
       const passwordInput = newToggle.parentElement?.querySelector(
-        ".form-control",
+        ".input",
       ) as HTMLInputElement;
       if (!passwordInput) return;
 

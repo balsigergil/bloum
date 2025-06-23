@@ -10,8 +10,8 @@
     transition-duration: var(--bl-transition-md);
     display: block;
 
-    &:has(.form-check-input:active:not(:disabled)),
-    &:has(.form-check-input:active:not(:disabled)) {
+    &:has(.input-check:active:not(:disabled)),
+    &:has(.input-check:active:not(:disabled)) {
       transform: scale(0.96);
     }
 
@@ -22,8 +22,8 @@
     }
   }
 
-  .checkbox-card > .form-check-input,
-  .checkbox-card > .form-check-input {
+  .checkbox-card > .input-check,
+  .checkbox-card > .input-check {
     position: absolute;
     top: 1rem;
     right: 1rem;
@@ -31,8 +31,8 @@
     background-color: var(--bl-clr-background);
   }
 
-  .checkbox-card:has(.form-check-input:checked),
-  .checkbox-card:has(.form-check-input:checked) {
+  .checkbox-card:has(.input-check:checked),
+  .checkbox-card:has(.input-check:checked) {
     --bl-card-border: 1px solid var(--bl-checkbox-card-checked-border);
 
     .card-image {
@@ -40,20 +40,20 @@
     }
   }
 
-  .checkbox-card:has(.form-check-input:focus-visible),
-  .checkbox-card:has(.form-check-input:focus-visible) {
+  .checkbox-card:has(.input-check:focus-visible),
+  .checkbox-card:has(.input-check:focus-visible) {
     outline: 2px solid var(--bl-checkbox-checked-color);
     outline-offset: 2px;
   }
 
-  .checkbox-card:has(.form-check-input:disabled),
-  .checkbox-card:has(.form-check-input:disabled) {
+  .checkbox-card:has(.input-check:disabled),
+  .checkbox-card:has(.input-check:disabled) {
     opacity: var(--bl-disabled-opacity);
     cursor: not-allowed;
   }
 
-  .checkbox-card > .form-check-input:focus-visible,
-  .checkbox-card > .form-check-input:focus-visible {
+  .checkbox-card > .input-check:focus-visible,
+  .checkbox-card > .input-check:focus-visible {
     outline: none;
   }
 }

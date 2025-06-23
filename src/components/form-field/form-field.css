@@ -1,62 +1,74 @@
 @layer components {
   /* Form field wrapper */
-  .form-field {
+  .field {
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
   }
 
-  .form-field:not(:last-child) {
+  /* Checkbox wrapper */
+  .field:has(> .input-check) {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-direction: row;
+
+    .label {
+      margin-bottom: 0;
+    }
+  }
+
+  .field:not(:last-child) {
     margin-bottom: 1rem;
   }
 
   /* Form field help text */
-  .form-control-help {
+  .field-help {
     font-size: 0.875rem;
     color: var(--bl-clr-gray-600);
   }
 
   /* Form field error text */
-  .form-control-error {
+  .field-error {
     font-size: 0.875rem;
     color: var(--bl-clr-red-600);
   }
 
   /* Error state for form control */
-  .form-control-error-state .form-control {
+  .field-error-state .input {
     border-color: var(--bl-clr-red-500);
     --bl-focus-color: var(--bl-clr-red-500);
   }
 
   /* Success state for form control */
-  .form-control-success-state .form-control {
+  .field-success-state .input {
     border-color: var(--bl-clr-green-500);
     --bl-focus-color: var(--bl-clr-green-500);
   }
 }
 
 .dark {
-  .form-control-help {
+  .field-help {
     color: var(--bl-clr-gray-400);
   }
 
-  .form-control-error {
+  .field-error {
     color: var(--bl-clr-red-400);
   }
 
-  .form-control-error-state .form-control {
+  .field-error-state .input {
     border-color: var(--bl-clr-red-600);
   }
 
-  .form-control-error-state .field:focus-visible {
+  .field-error-state .field:focus-visible {
     outline-color: var(--bl-clr-red-600);
   }
 
-  .form-control-success-state .form-control {
+  .field-success-state .input {
     border-color: var(--bl-clr-green-600);
   }
 
-  .form-control-success-state .field:focus-visible {
+  .field-success-state .field:focus-visible {
     outline-color: var(--bl-clr-green-600);
   }
 }

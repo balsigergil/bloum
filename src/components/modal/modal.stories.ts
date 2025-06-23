@@ -150,13 +150,13 @@ export const BasicModal: StoryObj = {
     </div>
     <div class="modal-body">
       <form>
-        <div class="form-field">
+        <div class="field">
           <label for="email" class="label">Email</label>
-          <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" required>
+          <input type="email" id="email" name="email" class="input" placeholder="Enter your email" required>
         </div>
-        <div class="form-field">
+        <div class="field">
           <label for="password" class="label">Password</label>
-          <input type="password" id="password" name="password" class="form-control" placeholder="Enter your password" required>
+          <input type="password" id="password" name="password" class="input" placeholder="Enter your password" required>
         </div>
       </form>
     </div>
@@ -376,24 +376,24 @@ export const ModalWithForm: StoryObj = {
     <div class="modal-body">
       <form id="user-form">
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-          <div class="form-field">
+          <div class="field">
             <label for="first-name" class="label">First Name</label>
-            <input type="text" id="first-name" name="firstName" class="form-control" placeholder="John" required>
+            <input type="text" id="first-name" name="firstName" class="input" placeholder="John" required>
           </div>
-          <div class="form-field">
+          <div class="field">
             <label for="last-name" class="label">Last Name</label>
-            <input type="text" id="last-name" name="lastName" class="form-control" placeholder="Doe" required>
+            <input type="text" id="last-name" name="lastName" class="input" placeholder="Doe" required>
           </div>
         </div>
         
-        <div class="form-field">
+        <div class="field">
           <label for="user-email" class="label">Email Address</label>
-          <input type="email" id="user-email" name="email" class="form-control" placeholder="john.doe@example.com" required>
+          <input type="email" id="user-email" name="email" class="input" placeholder="john.doe@example.com" required>
         </div>
         
-        <div class="form-field">
+        <div class="field">
           <label for="user-role" class="label">Role</label>
-          <select id="user-role" name="role" class="form-control" required>
+          <select id="user-role" name="role" class="input" required>
             <option value="">Select a role</option>
             <option value="admin">Administrator</option>
             <option value="editor">Editor</option>
@@ -401,14 +401,14 @@ export const ModalWithForm: StoryObj = {
           </select>
         </div>
         
-        <div class="form-field">
+        <div class="field">
           <label for="user-bio" class="label">Bio</label>
-          <textarea id="user-bio" name="bio" class="form-control" rows="3" placeholder="Tell us about yourself..."></textarea>
+          <textarea id="user-bio" name="bio" class="input" rows="3" placeholder="Tell us about yourself..."></textarea>
         </div>
         
-        <div class="form-field">
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="notifications" name="notifications" checked>
+        <div class="field">
+          <div class="field">
+            <input type="checkbox" class="input-check" id="notifications" name="notifications" checked>
             <label class="label" for="notifications">Send welcome email</label>
           </div>
         </div>

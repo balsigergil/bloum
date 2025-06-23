@@ -52,11 +52,11 @@
     --bl-breakpoint-2xl: 1536px;
 
     /* Form tokens */
-    --bl-form-control-height: 2.25rem;
-    --bl-form-control-padding: 0.625rem;
-    --bl-form-control-border-color: var(--bl-clr-gray-300);
-    --bl-form-control-border-radius: var(--bl-border-radius-md);
-    --bl-form-control-bg: var(--bl-clr-surface);
+    --bl-input-height: 2.25rem;
+    --bl-input-padding: 0.625rem;
+    --bl-input-border-color: var(--bl-clr-gray-300);
+    --bl-input-border-radius: var(--bl-border-radius-md);
+    --bl-input-bg: var(--bl-clr-surface);
   }
 
   .dark,
@@ -69,7 +69,7 @@
     --bl-focus-color: var(--bl-clr-primary-500);
 
     /* Form tokens - dark mode */
-    --bl-form-control-border-color: var(--bl-clr-gray-700);
+    --bl-input-border-color: var(--bl-clr-gray-700);
     --bl-checkbox-checked-color: var(--bl-clr-primary-600);
   }
 }
