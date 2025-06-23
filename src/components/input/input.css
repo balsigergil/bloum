@@ -244,13 +244,4 @@
     --bl-range-thumb-bg: var(--bl-clr-primary-600);
     --bl-range-thumb-border: 2px solid var(--bl-clr-gray-900);
   }
-
-  /* Label */
-  .label {
-    font-size: 0.875rem;
-    font-weight: 600;
-    user-select: none;
-    display: inline-block;
-    margin-bottom: 0.25rem;
-  }
 }

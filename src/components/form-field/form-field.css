@@ -45,30 +45,37 @@
     border-color: var(--bl-clr-green-500);
     --bl-focus-color: var(--bl-clr-green-500);
   }
-}
 
-.dark {
-  .field-help {
-    color: var(--bl-clr-gray-400);
+  .label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    user-select: none;
+    display: inline-block;
   }
 
-  .field-error {
-    color: var(--bl-clr-red-400);
-  }
+  .dark {
+    .field-help {
+      color: var(--bl-clr-gray-400);
+    }
 
-  .field-error-state .input {
-    border-color: var(--bl-clr-red-600);
-  }
+    .field-error {
+      color: var(--bl-clr-red-400);
+    }
 
-  .field-error-state .field:focus-visible {
-    outline-color: var(--bl-clr-red-600);
-  }
+    .field-error-state .input {
+      border-color: var(--bl-clr-red-600);
+    }
 
-  .field-success-state .input {
-    border-color: var(--bl-clr-green-600);
-  }
+    .field-error-state .field:focus-visible {
+      outline-color: var(--bl-clr-red-600);
+    }
 
-  .field-success-state .field:focus-visible {
-    outline-color: var(--bl-clr-green-600);
+    .field-success-state .input {
+      border-color: var(--bl-clr-green-600);
+    }
+
+    .field-success-state .field:focus-visible {
+      outline-color: var(--bl-clr-green-600);
+    }
   }
 }
