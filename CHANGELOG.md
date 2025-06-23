@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.10.1](https://github.com/balsigergil/bloum/compare/v0.10.0...v0.10.1) (2025-06-23)
+
+### Bug Fixes
+
+* **sidebar:** main content vertical alignement ([f008b2a](https://github.com/balsigergil/bloum/commit/f008b2a8bae60d30329599c108dbf3bdb0a1a8a4))
+
 ## [0.10.0](https://github.com/balsigergil/bloum/compare/v0.9.1...v0.10.0) (2025-06-22)
 
 ### Features
