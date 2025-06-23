@@ -1,18 +1,21 @@
-:root {
-  --bl-sidebar-width: 16rem;
-  --bl-topbar-bg: var(--bl-clr-surface);
-  --bl-sidebar-border-color: var(--bl-border-color);
-  --bl-sidebar-color: var(--bl-clr-gray-700);
-  --bl-sidebar-color-hover: var(--bl-clr-gray-700);
-  --bl-sidebar-bg-hover: var(--bl-clr-gray-200);
-  --bl-sidebar-title-color: var(--bl-clr-gray-500);
-}
+@layer base {
+  :root {
+    --bl-sidebar-width: 16rem;
+    --bl-topbar-bg: var(--bl-clr-surface);
+    --bl-sidebar-border-color: var(--bl-border-color);
+    --bl-sidebar-color: var(--bl-clr-gray-700);
+    --bl-sidebar-color-hover: var(--bl-clr-gray-700);
+    --bl-sidebar-bg-hover: var(--bl-clr-gray-200);
+    --bl-sidebar-title-color: var(--bl-clr-gray-500);
+    --bl-topbar-height: 3.5rem;
+  }
 
-.dark {
-  --bl-sidebar-color: var(--bl-clr-gray-200);
-  --bl-sidebar-color-hover: var(--bl-clr-gray-200);
-  --bl-sidebar-bg-hover: var(--bl-clr-gray-800);
-  --bl-sidebar-title-color: var(--bl-clr-gray-400);
+  .dark {
+    --bl-sidebar-color: var(--bl-clr-gray-200);
+    --bl-sidebar-color-hover: var(--bl-clr-gray-200);
+    --bl-sidebar-bg-hover: var(--bl-clr-gray-800);
+    --bl-sidebar-title-color: var(--bl-clr-gray-400);
+  }
 }
 
 @layer components {
@@ -20,13 +23,14 @@
     position: sticky;
     z-index: 50;
     top: 0;
-    height: 3.5rem;
+    height: var(--bl-topbar-height);
     display: flex;
     gap: 1rem;
     align-items: center;
     padding-inline: 1rem;
     border-bottom: 1px solid var(--bl-border-color);
     background-color: var(--bl-topbar-bg);
+    justify-self: stretch;
 
     .topbar-brand {
       font-weight: 600;
@@ -208,8 +212,12 @@
         "sidebar topbar"
         "sidebar main";
       grid-template-columns: minmax(var(--bl-sidebar-width), max-content) 1fr;
-      grid-template-rows: auto;
-      align-items: flex-start;
+      grid-template-rows: var(--bl-topbar-height) 1fr;
+      align-items: start;
+      align-content: stretch;
+      place-items: start;
+      justify-content: start;
+      justify-items: start;
     }
 
     .sidebar {

@@ -8,14 +8,21 @@ const meta: Meta = {
   render: () => {
     return `
 <div class="app">
-  <div class="topbar">
-    <a href="#" class="topbar-brand">
-      <img src="https://placehold.co/150x50" alt="Logo" />
-    </a>
-    <button class="btn btn-icon btn-ghost" data-sidebar="#my-sidebar">
+  <header class="topbar">
+    <button class="btn btn-icon btn-ghost md:hidden" data-sidebar="#collapsible-sidebar">
       <i class="fa-solid fa-bars"></i>
     </button>
-  </div>
+    <div class="w-[1px] h-full border-l border-[var(--bl-border-color)] md:hidden"></div>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item breadcrumb-separator"><i class="fas fa-angle-right"></i></li>
+        <li class="breadcrumb-item"><a href="#">Library</a></li>
+        <li class="breadcrumb-item breadcrumb-separator"><i class="fas fa-angle-right"></i></li>
+        <li class="breadcrumb-item active" aria-current="page">Data</li>
+      </ol>
+    </nav>
+  </header>
   <aside class="sidebar" id="my-sidebar">
     <div class="sidebar-content">
       <div class="sidebar-top">
@@ -25,8 +32,8 @@ const meta: Meta = {
           </a>
         </div>
         <div class="mx-4 py-4">
-          <div class="input-group">
-            <div class="input-group-icon">
+          <div class="input-icon">
+            <div class="input-icon-addon">
               <i class="fa-solid fa-magnifying-glass"></i>
             </div>
             <input type="search" class="field" placeholder="Search...">
@@ -129,169 +136,9 @@ const meta: Meta = {
       </div>
     </div>
   </aside>
-  <main class="p-4 space-y-4">
+  <main class="main p-4 space-y-4">
     <h1 class="font-semibold text-3xl text-gray-700 dark:text-gray-300">Content</h1>
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
-        <div class="card">
-          <div class="card-header">
-            <h3 class="card-title">List of users</h3>
-            <div class="card-actions">
-              <button class="btn btn-icon btn-ghost" aria-label="Add user">
-                <i class="fas fa-plus"></i>
-              </button>
-              <button class="btn btn-icon btn-ghost" aria-label="Settings">
-                <i class="fas fa-cog"></i>
-              </button>
-            </div>
-          </div>
-          <div class="card-body">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. At corporis culpa cumque ea ex exercitationem neque nulla perferendis porro rerum totam, veniam voluptates voluptatibus. Dolor dolorum iusto nemo provident quis!
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-header">
-            <h3 class="card-title">List of users</h3>
-            <div class="card-actions">
-              <button class="btn btn-icon btn-ghost" aria-label="Add user">
-                <i class="fas fa-plus"></i>
-              </button>
-              <button class="btn btn-icon btn-ghost" aria-label="Settings">
-                <i class="fas fa-cog"></i>
-              </button>
-            </div>
-          </div>
-          <div class="card-body">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. At corporis culpa cumque ea ex exercitationem neque nulla perferendis porro rerum totam, veniam voluptates voluptatibus. Dolor dolorum iusto nemo provident quis!
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-header">
-            <h3 class="card-title">List of users</h3>
-            <div class="card-actions">
-              <button class="btn btn-icon btn-ghost" aria-label="Add user">
-                <i class="fas fa-plus"></i>
-              </button>
-              <button class="btn btn-icon btn-ghost" aria-label="Settings">
-                <i class="fas fa-cog"></i>
-              </button>
-            </div>
-          </div>
-          <div class="card-body">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. At corporis culpa cumque ea ex exercitationem neque nulla perferendis porro rerum totam, veniam voluptates voluptatibus. Dolor dolorum iusto nemo provident quis!
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-header">
-            <h3 class="card-title">List of users</h3>
-            <div class="card-actions">
-              <button class="btn btn-icon btn-ghost" aria-label="Add user">
-                <i class="fas fa-plus"></i>
-              </button>
-              <button class="btn btn-icon btn-ghost" aria-label="Settings">
-                <i class="fas fa-cog"></i>
-              </button>
-            </div>
-          </div>
-          <div class="card-body">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. At corporis culpa cumque ea ex exercitationem neque nulla perferendis porro rerum totam, veniam voluptates voluptatibus. Dolor dolorum iusto nemo provident quis!
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-header">
-            <h3 class="card-title">List of users</h3>
-            <div class="card-actions">
-              <button class="btn btn-icon btn-ghost" aria-label="Add user">
-                <i class="fas fa-plus"></i>
-              </button>
-              <button class="btn btn-icon btn-ghost" aria-label="Settings">
-                <i class="fas fa-cog"></i>
-              </button>
-            </div>
-          </div>
-          <div class="card-body">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. At corporis culpa cumque ea ex exercitationem neque nulla perferendis porro rerum totam, veniam voluptates voluptatibus. Dolor dolorum iusto nemo provident quis!
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-header">
-            <h3 class="card-title">List of users</h3>
-            <div class="card-actions">
-              <button class="btn btn-icon btn-ghost" aria-label="Add user">
-                <i class="fas fa-plus"></i>
-              </button>
-              <button class="btn btn-icon btn-ghost" aria-label="Settings">
-                <i class="fas fa-cog"></i>
-              </button>
-            </div>
-          </div>
-          <div class="card-body">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. At corporis culpa cumque ea ex exercitationem neque nulla perferendis porro rerum totam, veniam voluptates voluptatibus. Dolor dolorum iusto nemo provident quis!
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-header">
-            <h3 class="card-title">List of users</h3>
-            <div class="card-actions">
-              <button class="btn btn-icon btn-ghost" aria-label="Add user">
-                <i class="fas fa-plus"></i>
-              </button>
-              <button class="btn btn-icon btn-ghost" aria-label="Settings">
-                <i class="fas fa-cog"></i>
-              </button>
-            </div>
-          </div>
-          <div class="card-body">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. At corporis culpa cumque ea ex exercitationem neque nulla perferendis porro rerum totam, veniam voluptates voluptatibus. Dolor dolorum iusto nemo provident quis!
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-header">
-            <h3 class="card-title">List of users</h3>
-            <div class="card-actions">
-              <button class="btn btn-icon btn-ghost" aria-label="Add user">
-                <i class="fas fa-plus"></i>
-              </button>
-              <button class="btn btn-icon btn-ghost" aria-label="Settings">
-                <i class="fas fa-cog"></i>
-              </button>
-            </div>
-          </div>
-          <div class="card-body">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. At corporis culpa cumque ea ex exercitationem neque nulla perferendis porro rerum totam, veniam voluptates voluptatibus. Dolor dolorum iusto nemo provident quis!
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-header">
-            <h3 class="card-title">List of users</h3>
-            <div class="card-actions">
-              <button class="btn btn-icon btn-ghost" aria-label="Add user">
-                <i class="fas fa-plus"></i>
-              </button>
-              <button class="btn btn-icon btn-ghost" aria-label="Settings">
-                <i class="fas fa-cog"></i>
-              </button>
-            </div>
-          </div>
-          <div class="card-body">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. At corporis culpa cumque ea ex exercitationem neque nulla perferendis porro rerum totam, veniam voluptates voluptatibus. Dolor dolorum iusto nemo provident quis!
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-header">
-            <h3 class="card-title">List of users</h3>
-            <div class="card-actions">
-              <button class="btn btn-icon btn-ghost" aria-label="Add user">
-                <i class="fas fa-plus"></i>
-              </button>
-              <button class="btn btn-icon btn-ghost" aria-label="Settings">
-                <i class="fas fa-cog"></i>
-              </button>
-            </div>
-          </div>
-          <div class="card-body">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. At corporis culpa cumque ea ex exercitationem neque nulla perferendis porro rerum totam, veniam voluptates voluptatibus. Dolor dolorum iusto nemo provident quis!
-          </div>
-        </div>
         <div class="card">
           <div class="card-header">
             <h3 class="card-title">List of users</h3>
