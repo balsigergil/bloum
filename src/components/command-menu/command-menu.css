@@ -41,7 +41,7 @@
   }
 
   .command-menu-title {
-    font-weight: 600;
+    font-weight: var(--bl-fw-medium);
     font-size: 0.875rem;
     padding-inline: 0.75rem;
   }

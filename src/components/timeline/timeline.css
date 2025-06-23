@@ -7,7 +7,7 @@
     --bl-timeline-color: var(--bl-clr-gray-300);
     --bl-timeline-color-active: var(--bl-clr-gray-800);
     --bl-timeline-color-completed: var(--bl-clr-green-600);
-    --bl-timeline-title-color: var(--bl-clr-gray-900);
+    --bl-timeline-title-color: var(--bl-clr-gray-700);
     --bl-timeline-date-color: var(--bl-clr-gray-600);
     --bl-timeline-text-color: var(--bl-clr-gray-900);
     --bl-timeline-bg: var(--bl-clr-surface);
@@ -83,7 +83,7 @@
   .timeline-title {
     line-height: var(--bl-timeline-size);
     font-size: var(--bl-timeline-title-font-size);
-    font-weight: 600;
+    font-weight: var(--bl-fw-bold);
     color: var(--bl-timeline-title-color);
   }
 

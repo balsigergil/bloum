@@ -28,7 +28,7 @@
 
   .breadcrumb-item.active {
     color: var(--bl-breadbrumb-color-active);
-    font-weight: 500;
+    font-weight: var(--bl-fw-bold);
   }
 
   .breadcrumb-separator {

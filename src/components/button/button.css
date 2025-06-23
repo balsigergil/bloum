@@ -10,7 +10,7 @@
     --bl-btn-outline-color: var(--bl-clr-primary-600);
     --bl-btn-fs: 0.875rem;
     --bl-btn-spinner-size: calc(1 / 2.25 * var(--bl-btn-height));
-    --bl-btn-font-weight: 700;
+    --bl-btn-fw: var(--bl-fw-bold);
 
     appearance: none;
     white-space: nowrap;
@@ -20,7 +20,7 @@
     isolation: isolate;
     background-color: var(--bl-btn-bg);
     color: var(--bl-btn-color);
-    font-weight: var(--bl-btn-font-weight);
+    font-weight: var(--bl-btn-fw);
     padding-inline: calc(var(--bl-btn-height) * 0.4);
     height: var(--bl-btn-height);
     font-size: var(--bl-btn-fs);

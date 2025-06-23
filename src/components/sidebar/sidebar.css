@@ -33,7 +33,7 @@
     justify-self: stretch;
 
     .topbar-brand {
-      font-weight: 600;
+      font-weight: var(--bl-fw-bold);
       font-size: 1.25rem;
     }
 
@@ -133,12 +133,12 @@
     justify-content: center;
     padding: 1rem;
     font-size: 1.25rem;
-    font-weight: 600;
+    font-weight: var(--bl-fw-bold);
   }
 
   .sidebar-group-title {
     font-size: 0.75rem;
-    font-weight: 700;
+    font-weight: var(--bl-fw-bold);
     text-transform: uppercase;
     letter-spacing: 0.05em;
     padding-inline: 1.5rem;
@@ -159,7 +159,7 @@
     padding: 0.5rem 1.5rem;
     text-decoration: none;
     font-size: 0.875rem;
-    font-weight: 600;
+    font-weight: var(--bl-fw-medium);
     display: flex;
     align-items: center;
     gap: 1rem;

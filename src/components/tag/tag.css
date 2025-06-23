@@ -6,8 +6,8 @@
     --bl-tag-height: 1.5rem;
     --bl-tag-padding-inline: 0.5rem;
     --bl-tag-gap: 0.25rem;
-    --bl-tag-font-size: 0.75rem;
-    --bl-tag-font-weight: 500;
+    --bl-tag-fs: 0.75rem;
+    --bl-tag-fw: var(--bl-fw-bold);
     --bl-tag-border-radius: var(--bl-border-radius);
 
     height: var(--bl-tag-height);
@@ -16,8 +16,8 @@
     background-color: var(--bl-tag-bg);
     color: var(--bl-tag-color);
     border: 1px solid var(--bl-tag-border-color);
-    font-size: var(--bl-tag-font-size);
-    font-weight: var(--bl-tag-font-weight);
+    font-size: var(--bl-tag-fs);
+    font-weight: var(--bl-tag-fw);
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -52,7 +52,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: calc(var(--bl-tag-font-size) * 0.8);
+    font-size: calc(var(--bl-tag-fs) * 0.8);
     line-height: 1;
     transition: background-color var(--bl-transition-sm) ease-in-out;
     margin-inline-end: calc(var(--bl-tag-padding-inline) * -0.25);
@@ -69,20 +69,20 @@
 
   .tag-remove::before {
     content: "×";
-    font-weight: bold;
+    font-weight: var(--bl-fw-bold);
   }
 
   /* Size variants */
   .tag-sm {
     --bl-tag-height: 1.25rem;
     --bl-tag-padding-inline: 0.375rem;
-    --bl-tag-font-size: 0.6875rem;
+    --bl-tag-fs: 0.6875rem;
   }
 
   .tag-lg {
     --bl-tag-height: 1.75rem;
     --bl-tag-padding-inline: 0.75rem;
-    --bl-tag-font-size: 0.875rem;
+    --bl-tag-fs: 0.875rem;
   }
 
   /* Color variants */

@@ -29,7 +29,7 @@
 
   .progress-label {
     font-size: 0.625rem;
-    font-weight: 600;
+    font-weight: var(--bl-fw-bold);
     color: var(--bl-progress-label-color);
     white-space: nowrap;
     z-index: 1;

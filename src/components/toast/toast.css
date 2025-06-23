@@ -94,7 +94,7 @@
   }
 
   .toast-title {
-    font-weight: 600;
+    font-weight: var(--bl-fw-bold);
     font-size: 0.875rem;
     line-height: 1.25rem;
   }

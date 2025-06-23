@@ -3,7 +3,7 @@
     --bl-table-cell-padding-block: 0.5rem;
     --bl-table-cell-padding-inline: 1rem;
     --bl-table-fs: 0.875rem;
-    --bl-table-header-fw: 500;
+    --bl-table-header-fw: var(--bl-fw-bold);
     --bl-table-border-color: var(--bl-border-color);
     --bl-table-stripe-bg: var(--bl-clr-gray-100);
     --bl-table-hover-bg: var(--bl-clr-gray-200);

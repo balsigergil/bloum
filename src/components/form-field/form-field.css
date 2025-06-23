@@ -52,7 +52,7 @@
 
   .label {
     font-size: 0.875rem;
-    font-weight: 600;
+    font-weight: var(--bl-fw-bold);
     user-select: none;
     display: inline-block;
   }

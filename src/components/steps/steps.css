@@ -96,7 +96,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: 600;
+    font-weight: var(--bl-fw-bold);
     font-size: var(--bl-steps-font-size);
     color: var(--bl-steps-text-color);
     transition: all var(--bl-transition-md);
@@ -121,7 +121,7 @@
 
   .step-title {
     font-size: var(--bl-steps-font-size);
-    font-weight: 500;
+    font-weight: var(--bl-fw-bold);
     color: var(--bl-steps-text-color);
     transition: color var(--bl-transition-md);
   }
