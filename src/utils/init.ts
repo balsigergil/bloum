@@ -5,6 +5,7 @@ import { TabPanel } from "@/components/tabs/TabPanel";
 import { initTooltip, Tooltip } from "@/components/tooltip/tooltip";
 import { Combobox } from "@/components/combobox/Combobox";
 import { initModals, Modal } from "@/components/modal/Modal";
+import { initDrawers, Drawer } from "@/components/drawer/Drawer";
 import { initSidebar } from "@/components/sidebar/sidebar";
 import { initMenus } from "@/components/menu/menu";
 import { initCollapse } from "@/components/collapse/collapse";
@@ -33,11 +34,14 @@ export function initBloum() {
   // @ts-ignore
   window.Modal = Modal;
   // @ts-ignore
+  window.Drawer = Drawer;
+  // @ts-ignore
   window.Toast = Toast;
 
   initTooltip();
   initSidebar();
   initModals();
+  initDrawers();
   initMenus();
   initCollapse();
   initAccordion();

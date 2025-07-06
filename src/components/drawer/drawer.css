@@ -1,0 +1,234 @@
+@layer components {
+  .drawer {
+    --bl-drawer-animation-opacity: var(--bl-transition-md);
+    --bl-drawer-animation-transform: var(--bl-transition-lg);
+    --bl-drawer-panel-bg: var(--bl-clr-surface);
+    --bl-drawer-footer-bg: var(--bl-clr-gray-50);
+    --bl-drawer-padding: 1.5rem;
+    --bl-drawer-backdrop-bg: rgba(from var(--bl-clr-gray-900) r g b / 0.25);
+    --bl-drawer-border-radius: var(--bl-border-radius-lg);
+    --bl-drawer-zindex: 1000;
+    --bl-drawer-shadow: var(--bl-shadow-xl);
+
+    --bl-drawer-size-sm: 300px;
+    --bl-drawer-size-md: 400px;
+    --bl-drawer-size-lg: 500px;
+
+    position: fixed;
+    background-color: var(--bl-drawer-backdrop-bg);
+    inset: 0;
+    z-index: var(--bl-drawer-zindex);
+    display: none;
+    animation: drawerBackdropFadeIn 150ms both linear;
+  }
+
+  .drawer.open {
+    display: block;
+  }
+
+  html:has(.drawer.open) {
+    overflow: hidden;
+  }
+
+  .drawer.closing {
+    animation: drawerBackdropFadeOut var(--bl-drawer-animation-opacity) both
+      linear;
+  }
+
+  .drawer-content {
+    position: absolute;
+    background-color: var(--bl-drawer-panel-bg);
+    height: 100%;
+    width: var(--bl-drawer-size-md);
+    max-width: 90vw;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--bl-drawer-shadow);
+    overflow: hidden;
+  }
+
+  /* Right drawer (default) */
+  .drawer-content {
+    left: auto;
+    right: 0;
+    top: 0;
+    animation: drawerSlideInRight 300ms both ease-out;
+  }
+
+  /* Left drawer */
+  .drawer-left .drawer-content {
+    left: 0;
+    right: auto;
+    animation: drawerSlideInLeft 300ms both ease-out;
+  }
+
+  .drawer.closing .drawer-content {
+    animation: drawerSlideOutRight var(--bl-drawer-animation-transform) both
+      ease-out;
+  }
+
+  .drawer-left.closing .drawer-content {
+    animation: drawerSlideOutLeft var(--bl-drawer-animation-transform) both
+      ease-out;
+  }
+
+  /* Size variants */
+  .drawer-content.drawer-sm {
+    width: var(--bl-drawer-size-sm);
+  }
+
+  .drawer-content.drawer-md {
+    width: var(--bl-drawer-size-md);
+  }
+
+  .drawer-content.drawer-lg {
+    width: var(--bl-drawer-size-lg);
+  }
+
+  .drawer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 3.5rem 0 1.5rem;
+    min-height: 3.5rem;
+    flex-shrink: 0;
+    border-bottom: 1px solid var(--bl-border-color);
+  }
+
+  .drawer-title {
+    font-size: 1.125rem;
+    font-weight: var(--bl-fw-bold);
+    color: var(--bl-clr-gray-700);
+  }
+
+  .drawer-header button[data-drawer-close] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 3.5rem;
+    height: 3.5rem;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+  }
+
+  .drawer-body {
+    position: relative;
+    flex: 1 1 auto;
+    padding: var(--bl-drawer-padding);
+    overflow-y: auto;
+  }
+
+  .drawer-footer {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-inline: calc(var(--bl-drawer-padding));
+    display: flex;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.75rem;
+    border-top: 1px solid var(--bl-border-color);
+    background-color: var(--bl-drawer-footer-bg);
+  }
+
+  /* Animations */
+  @keyframes drawerBackdropFadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes drawerBackdropFadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+
+  @keyframes drawerSlideInLeft {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes drawerSlideInRight {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes drawerSlideOutLeft {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
+  @keyframes drawerSlideOutRight {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(100%);
+    }
+  }
+
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    .drawer {
+      animation-duration: 0s;
+    }
+
+    .drawer.closing {
+      animation-duration: 0s;
+    }
+
+    .drawer-content {
+      animation-duration: 0s;
+    }
+
+    .drawer.closing .drawer-content {
+      animation-duration: 0s;
+    }
+  }
+
+  /* Dark mode support */
+  .dark .drawer {
+    --bl-drawer-footer-bg: var(--bl-clr-surface);
+  }
+
+  /* Storybook-specific fixes for drawer positioning */
+  .sb-show-main .drawer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+  }
+
+  /* Fix for Storybook docs view */
+  .docs-story .drawer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+  }
+}

@@ -21,6 +21,7 @@
 @import "./components/form-field/form-field.css";
 @import "./components/switch/switch.css";
 @import "./components/modal/modal.css";
+@import "./components/drawer/drawer.css";
 @import "./components/alert/alert.css";
 @import "./components/spinner/spinner.css";
 @import "./components/steps/steps.css";
