@@ -5,7 +5,7 @@
     --bl-card-border: 1px solid var(--bl-border-color);
     --bl-card-padding: 1.5rem;
     --bl-card-title-fs: 1.125rem;
-    --bl-card-title-fw: 600;
+    --bl-card-title-fw: var(--bl-fw-bold);
     --bl-card-title-color: var(--bl-clr-gray-800);
     --bl-card-image-max-height: 150px;
 

@@ -214,10 +214,6 @@
       grid-template-columns: minmax(var(--bl-sidebar-width), max-content) 1fr;
       grid-template-rows: var(--bl-topbar-height) 1fr;
       align-items: start;
-      align-content: stretch;
-      place-items: start;
-      justify-content: start;
-      justify-items: start;
     }
 
     .sidebar {
