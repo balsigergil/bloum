@@ -1,5 +1,7 @@
 # Changelog
 
+## [0.11.1](https://github.com/balsigergil/bloum/compare/v0.11.0...v0.11.1) (2025-07-10)
+
 ## [0.11.0](https://github.com/balsigergil/bloum/compare/v0.10.1...v0.11.0) (2025-07-10)
 
 ### Features
