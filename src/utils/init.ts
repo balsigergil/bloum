@@ -52,6 +52,4 @@ export function initBloum() {
   initSteps();
   initAvatar();
   initPasswordToggle();
-
-  console.info("🚀 Bloom initialized!");
 }

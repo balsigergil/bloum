@@ -24,9 +24,8 @@
   "files": [
     "dist"
   ],
-  "main": "dist/bloum.min.cjs",
-  "module": "dist/bloum.esm.js",
-  "browser": "dist/bloum.bundle.min.js",
+  "main": "dist/cjs/bloum.cjs",
+  "module": "dist/esm/bloum.js",
   "types": "dist/types/index.d.ts",
   "scripts": {
     "dev": "npm run sb",
