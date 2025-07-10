@@ -3,7 +3,7 @@
     --bl-card-bg: var(--bl-clr-surface);
     --bl-card-border-radius: var(--bl-border-radius-lg);
     --bl-card-border: 1px solid var(--bl-border-color);
-    --bl-card-padding: 1.5rem;
+    --bl-card-padding: 1rem;
     --bl-card-title-fs: 1.125rem;
     --bl-card-title-fw: var(--bl-fw-bold);
     --bl-card-title-color: var(--bl-clr-gray-800);
@@ -43,6 +43,11 @@
     color: var(--bl-card-title-color);
     font-weight: var(--bl-card-title-fw);
     font-size: var(--bl-card-title-fs);
+    margin-bottom: 1rem;
+  }
+
+  .card-header .card-title {
+    margin-bottom: 0;
   }
 
   .card-actions {
@@ -57,10 +62,6 @@
 
   .card-body {
     padding: var(--bl-card-padding);
-
-    .card-title {
-      margin-bottom: 0.5rem;
-    }
   }
 
   .card > .table {
