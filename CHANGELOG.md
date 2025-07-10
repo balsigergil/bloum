@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.11.0](https://github.com/balsigergil/bloum/compare/v0.10.1...v0.11.0) (2025-07-10)
+
+### Features
+
+* **drawer:** add drawer component ([1c562b5](https://github.com/balsigergil/bloum/commit/1c562b509028fcba5bc32fafc72ef711581a9044))
+
+### Bug Fixes
+
+* **card:** font weight css variable ([9715021](https://github.com/balsigergil/bloum/commit/97150217fdf556ce31b6c28b8ce32fdd2cf5b726))
+
 ## [0.10.1](https://github.com/balsigergil/bloum/compare/v0.10.0...v0.10.1) (2025-06-23)
 
 ### Bug Fixes
