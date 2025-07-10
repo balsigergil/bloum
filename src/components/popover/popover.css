@@ -13,7 +13,7 @@
     border: 1px solid var(--bl-border-color);
     display: none;
     box-shadow: var(--bl-shadow-sm);
-    font-size: 0.875rem;
+    font-size: var(--bl-fs-base);
     padding: 0.75rem;
   }
 

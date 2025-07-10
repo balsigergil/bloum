@@ -8,7 +8,7 @@
     --bl-btn-border: solid 1px transparent;
     --bl-btn-height: 2.25rem;
     --bl-btn-outline-color: var(--bl-clr-primary-600);
-    --bl-btn-fs: 0.875rem;
+    --bl-btn-fs: var(--bl-fs-base);
     --bl-btn-spinner-size: calc(1 / 2.25 * var(--bl-btn-height));
     --bl-btn-fw: var(--bl-fw-bold);
 

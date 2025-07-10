@@ -5,7 +5,7 @@
     --bl-badge-border-color: #fff;
     --bl-badge-height: 1.25rem;
     --bl-badge-dot-size: 0.75rem;
-    --bl-badge-font-size: 0.625rem;
+    --bl-badge-fs: var(--bl-fs-sm);
     --bl-badge-fw: var(--bl-fw-bold);
 
     height: var(--bl-badge-height);
@@ -14,7 +14,7 @@
     border-radius: var(--bl-border-radius-full);
     background-color: var(--bl-badge-bg);
     color: var(--bl-badge-color);
-    font-size: var(--bl-badge-font-size);
+    font-size: var(--bl-badge-fs);
     font-weight: var(--bl-badge-fw);
     display: inline-flex;
     justify-content: center;
@@ -24,12 +24,12 @@
 
   .badge-sm {
     --bl-badge-height: 1rem;
-    --bl-badge-font-size: 0.625rem;
+    --bl-badge-fs: var(--bl-fs-xs);
   }
 
   .badge-lg {
     --bl-badge-height: 1.5rem;
-    --bl-badge-font-size: 0.875rem;
+    --bl-badge-fs: var(--bl-fs-base);
   }
 
   .badge-top-right {

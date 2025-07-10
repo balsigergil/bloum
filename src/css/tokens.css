@@ -14,6 +14,20 @@
     --bl-fw-bold: 700;
     --bl-fw-medium: 600;
 
+    --bl-fs-xs: 0.625rem; /* 10px */
+    --bl-fs-sm: 0.75rem; /* 12px */
+    --bl-fs-base: 0.875rem; /* 14px */
+    --bl-fs-lg: 1rem; /* 16px */
+    --bl-fs-xl: 1.125rem; /* 18px */
+    --bl-fs-2xl: 1.25rem; /* 20px */
+    --bl-fs-3xl: 1.5rem; /* 24px */
+    --bl-fs-4xl: 1.875rem; /* 30px */
+    --bl-fs-5xl: 2.25rem; /* 36px */
+    --bl-fs-6xl: 3rem; /* 48px */
+    --bl-fs-7xl: 3.75rem; /* 60px */
+    --bl-fs-8xl: 4.5rem; /* 72px */
+    --bl-fs-9xl: 6rem; /* 96px */
+
     --bl-border-radius: 0.25rem;
     --bl-border-radius-md: 0.375rem;
     --bl-border-radius-lg: 0.5rem;

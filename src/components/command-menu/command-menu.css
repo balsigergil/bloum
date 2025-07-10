@@ -42,7 +42,7 @@
 
   .command-menu-title {
     font-weight: var(--bl-fw-medium);
-    font-size: 0.875rem;
+    font-size: var(--bl-fs-base);
     padding-inline: 0.75rem;
   }
 
@@ -75,7 +75,7 @@
   }
 
   .command-menu-link-description {
-    font-size: 0.875rem;
+    font-size: var(--bl-fs-base);
     color: var(--bl-cmd-item-description-color);
   }
 

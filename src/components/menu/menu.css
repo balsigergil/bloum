@@ -15,7 +15,7 @@
     padding: 0.25rem;
     background-color: var(--bl-menu-bg);
     min-width: 8rem;
-    font-size: 0.875rem;
+    font-size: var(--bl-fs-base);
     line-height: 1.25rem;
     position: absolute;
     display: none;

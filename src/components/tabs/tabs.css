@@ -37,7 +37,7 @@
     position: relative;
     color: var(--bl-tab-color);
     font-weight: var(--bl-fw-bold);
-    font-size: 0.875rem;
+    font-size: var(--bl-fs-base);
     line-height: 1.25rem;
     display: flex;
     align-items: center;

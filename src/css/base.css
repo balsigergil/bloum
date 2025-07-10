@@ -1,6 +1,7 @@
 @layer base {
   body {
     font-family: var(--bl-font-body), sans-serif;
+    font-size: var(--bl-fs-base);
     color: var(--bl-clr-text);
     background-color: var(--bl-clr-background);
     interpolate-size: allow-keywords;

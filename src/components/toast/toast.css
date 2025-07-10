@@ -95,13 +95,13 @@
 
   .toast-title {
     font-weight: var(--bl-fw-bold);
-    font-size: 0.875rem;
+    font-size: var(--bl-fs-base);
     line-height: 1.25rem;
   }
 
   .toast-description {
     margin-top: 0.25rem;
-    font-size: 0.875rem;
+    font-size: var(--bl-fs-base);
     line-height: 1.25rem;
     color: var(--bl-toast-color);
     opacity: 0.8;

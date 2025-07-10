@@ -28,13 +28,13 @@
 
   /* Form field help text */
   .field-help {
-    font-size: 0.875rem;
+    font-size: var(--bl-fs-base);
     color: var(--bl-clr-gray-500);
   }
 
   /* Form field error text */
   .field-error {
-    font-size: 0.875rem;
+    font-size: var(--bl-fs-base);
     color: var(--bl-clr-red-600);
   }
 
@@ -51,7 +51,7 @@
   }
 
   .label {
-    font-size: 0.875rem;
+    font-size: var(--bl-fs-base);
     font-weight: var(--bl-fw-bold);
     user-select: none;
     display: inline-block;

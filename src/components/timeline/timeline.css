@@ -11,9 +11,9 @@
     --bl-timeline-date-color: var(--bl-clr-gray-600);
     --bl-timeline-text-color: var(--bl-clr-gray-900);
     --bl-timeline-bg: var(--bl-clr-surface);
-    --bl-timeline-title-font-size: 0.875rem;
-    --bl-timeline-date-font-size: 0.75rem;
-    --bl-timeline-text-font-size: 0.875rem;
+    --bl-timeline-title-fs: var(--bl-fs-base);
+    --bl-timeline-date-fs: 0.75rem;
+    --bl-timeline-text-fs: var(--bl-fs-base);
     --bl-timeline-padding-left: 2.5rem;
 
     display: flex;
@@ -24,17 +24,17 @@
   /* Size variants */
   .timeline-sm {
     --bl-timeline-size: 1rem;
-    --bl-timeline-title-font-size: 0.75rem;
-    --bl-timeline-date-font-size: 0.625rem;
-    --bl-timeline-text-font-size: 0.75rem;
+    --bl-timeline-title-fs: 0.75rem;
+    --bl-timeline-date-fs: 0.625rem;
+    --bl-timeline-text-fs: 0.75rem;
     --bl-timeline-padding-left: 2rem;
   }
 
   .timeline-lg {
     --bl-timeline-size: 1.5rem;
-    --bl-timeline-title-font-size: 1rem;
-    --bl-timeline-date-font-size: 0.875rem;
-    --bl-timeline-text-font-size: 1rem;
+    --bl-timeline-title-fs: var(--bl-fs-lg);
+    --bl-timeline-date-fs: var(--bl-fs-base);
+    --bl-timeline-text-fs: var(--bl-fs-lg);
     --bl-timeline-padding-left: 3rem;
   }
 
@@ -82,18 +82,18 @@
 
   .timeline-title {
     line-height: var(--bl-timeline-size);
-    font-size: var(--bl-timeline-title-font-size);
+    font-size: var(--bl-timeline-title-fs);
     font-weight: var(--bl-fw-bold);
     color: var(--bl-timeline-title-color);
   }
 
   .timeline-date {
-    font-size: var(--bl-timeline-date-font-size);
+    font-size: var(--bl-timeline-date-fs);
     color: var(--bl-timeline-date-color);
   }
 
   .timeline-description {
-    font-size: var(--bl-timeline-text-font-size);
+    font-size: var(--bl-timeline-text-fs);
     color: var(--bl-timeline-text-color);
   }
 

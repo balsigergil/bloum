@@ -13,7 +13,7 @@
     min-height: var(--bl-input-height);
     user-select: none;
     cursor: pointer;
-    font-size: 0.875rem;
+    font-size: var(--bl-fs-base);
     background-color: var(--bl-input-bg);
     transition-property: border-color, box-shadow;
     transition-duration: var(--bl-transition-sm);

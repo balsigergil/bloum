@@ -1,8 +1,8 @@
 @layer components {
   .avatar {
     --bl-avatar-size: 2.5rem;
-    --bl-avatar-font-size: 1rem;
-    --bl-avatar-bg: var(--bl-clr-gray-100);
+    --bl-avatar-fs: var(--bl-fs-lg);
+    --bl-avatar-bg: var(--bl-clr-gray-200);
     --bl-avatar-color: var(--bl-clr-gray-800);
     --bl-avatar-border-color: var(--bl-clr-gray-300);
     --bl-avatar-border-width: 0;
@@ -13,7 +13,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    font-size: var(--bl-avatar-font-size);
+    font-size: var(--bl-avatar-fs);
     font-weight: var(--bl-fw-bold);
     position: relative;
     overflow: hidden;
@@ -39,22 +39,22 @@
   /* Size variants */
   .avatar-xs {
     --bl-avatar-size: 1.5rem;
-    --bl-avatar-font-size: 0.625rem;
+    --bl-avatar-fs: var(--bl-fs-xs);
   }
 
   .avatar-sm {
     --bl-avatar-size: 2rem;
-    --bl-avatar-font-size: 0.75rem;
+    --bl-avatar-fs: var(--bl-fs-sm);
   }
 
   .avatar-lg {
     --bl-avatar-size: 3rem;
-    --bl-avatar-font-size: 1.125rem;
+    --bl-avatar-fs: var(--bl-fs-xl);
   }
 
   .avatar-xl {
     --bl-avatar-size: 4rem;
-    --bl-avatar-font-size: 1.5rem;
+    --bl-avatar-fs: var(--bl-fs-2xl);
   }
 
   /* Style variants for initials */

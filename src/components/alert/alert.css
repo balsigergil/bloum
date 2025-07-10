@@ -18,11 +18,11 @@
     gap: 1rem;
     background-color: var(--bl-alert-bg);
     color: var(--bl-alert-color);
-    font-size: 0.875rem;
+    font-size: var(--bl-fs-base);
   }
 
   .alert-icon {
-    font-size: 1.125rem;
+    font-size: var(--bl-fs-xl);
   }
 
   .alert-title {

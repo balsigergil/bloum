@@ -3,7 +3,7 @@
   .input {
     --bl-input-file-bg: var(--bl-clr-gray-200);
     --bl-input-file-bg-hover: var(--bl-clr-gray-300);
-    --bl-input-font-size: 0.875rem;
+    --bl-input-fs: var(--bl-fs-base);
 
     appearance: none;
     border: 1px solid var(--bl-input-border-color);
@@ -12,7 +12,7 @@
     height: var(--bl-input-height);
     line-height: 1.25rem;
     position: relative;
-    font-size: var(--bl-input-font-size);
+    font-size: var(--bl-input-fs);
     display: block;
     width: 100%;
     min-width: var(--bl-input-height);
@@ -160,7 +160,7 @@
   .password-toggle i {
     width: 1rem;
     height: 1rem;
-    font-size: 1rem;
+    font-size: var(--bl-fs-lg);
   }
 
   .dark .password-toggle {

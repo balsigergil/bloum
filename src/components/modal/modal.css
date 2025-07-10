@@ -87,7 +87,7 @@
   }
 
   .modal-title {
-    font-size: 1.125rem;
+    font-size: var(--bl-fs-xl);
     font-weight: var(--bl-fw-bold);
     color: var(--bl-clr-gray-700);
   }
