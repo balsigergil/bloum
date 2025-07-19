@@ -1,3 +1,10 @@
+import {
+  autoUpdate,
+  computePosition,
+  flip,
+  offset,
+  shift,
+} from "@floating-ui/dom";
 import { parseOptions } from "./utils";
 
 export interface ComboboxConfig {
@@ -42,6 +49,7 @@ export class Combobox {
   #highlighted = -1;
 
   #cleanupEvents: VoidFunction | null = null;
+  #cleanupFloating: VoidFunction | null = null;
 
   constructor(element: string | ComboboxInput, options?: ComboboxConfig) {
     if (typeof element === "string") {
@@ -76,6 +84,13 @@ export class Combobox {
   open() {
     this.#wrapper.classList.add("open");
 
+    // Set up floating-ui positioning
+    this.#cleanupFloating = autoUpdate(
+      this.#inner,
+      this.#menu,
+      this.#updatePosition.bind(this),
+    );
+
     // Focus the search input field
     if (this.#searchInput) {
       this.#searchInput.focus();
@@ -99,6 +114,13 @@ export class Combobox {
     this.#updateItemsClasses();
     if (!this.isOpen) return;
     this.#wrapper.classList.remove("open");
+
+    // Cleanup floating-ui
+    if (this.#cleanupFloating) {
+      this.#cleanupFloating();
+      this.#cleanupFloating = null;
+    }
+
     this.#activeItems = [];
     if (focusWrapper) this.#wrapper.focus();
   }
@@ -175,6 +197,9 @@ export class Combobox {
   destroy() {
     if (this.#cleanupEvents) {
       this.#cleanupEvents();
+    }
+    if (this.#cleanupFloating) {
+      this.#cleanupFloating();
     }
     this.#wrapper.remove();
     delete this.#field.blcombobox;
@@ -624,5 +649,21 @@ export class Combobox {
         item.classList.remove("bl-combobox-item-active");
       }
     }
+  }
+
+  /**
+   * Update the position of the dropdown menu using floating-ui
+   * @private
+   */
+  #updatePosition() {
+    computePosition(this.#inner, this.#menu, {
+      placement: "bottom-start",
+      middleware: [offset(6), flip(), shift({ padding: 6 })],
+    }).then(({ x, y }) => {
+      Object.assign(this.#menu.style, {
+        left: `${x}px`,
+        top: `${y}px`,
+      });
+    });
   }
 }
