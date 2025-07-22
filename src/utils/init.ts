@@ -18,6 +18,7 @@ import { initColorSchemeSwitcher } from "@/components/color-scheme-switcher/colo
 import { initSteps } from "@/components/steps/steps";
 import { initAvatar } from "@/components/avatar/avatar";
 import { initPasswordToggle } from "@/components/input/password-input";
+import { initPinInput, PinInput } from "@/components/pin-input/PinInput";
 
 export function initBloum() {
   Tabs.register();
@@ -37,6 +38,8 @@ export function initBloum() {
   window.Drawer = Drawer;
   // @ts-ignore
   window.Toast = Toast;
+  // @ts-ignore
+  window.PinInput = PinInput;
 
   initTooltip();
   initSidebar();
@@ -52,4 +55,5 @@ export function initBloum() {
   initSteps();
   initAvatar();
   initPasswordToggle();
+  initPinInput();
 }
