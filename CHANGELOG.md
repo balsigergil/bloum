@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.12.0](https://github.com/balsigergil/bloum/compare/v0.11.1...v0.12.0) (2025-07-22)
+
+### Features
+
+* **combobox:** integrate floating-ui for dynamic dropdown positioning ([bddfcd4](https://github.com/balsigergil/bloum/commit/bddfcd41723440960b2ee34c2848e5c3532819b6))
+* implement Pin Input component ([2dd6410](https://github.com/balsigergil/bloum/commit/2dd641075489d39ac63fce32acdaa9cd956fbc87))
+
 ## [0.11.1](https://github.com/balsigergil/bloum/compare/v0.11.0...v0.11.1) (2025-07-10)
 
 ## [0.11.0](https://github.com/balsigergil/bloum/compare/v0.10.1...v0.11.0) (2025-07-10)
