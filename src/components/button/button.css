@@ -84,8 +84,8 @@
     --bl-btn-color: var(--bl-clr-white);
   }
 
-  .btn-error {
-    --bl-btn-bg: var(--bl-clr-error-700);
+  .btn-danger {
+    --bl-btn-bg: var(--bl-clr-danger-700);
     --bl-btn-color: var(--bl-clr-white);
   }
 
@@ -115,8 +115,8 @@
       --bl-btn-hover-bg: var(--bl-clr-primary-600);
     }
 
-    &.btn-error {
-      --bl-btn-hover-bg: var(--bl-clr-error-700);
+    &.btn-danger {
+      --bl-btn-hover-bg: var(--bl-clr-danger-700);
     }
 
     &.btn-warning {
@@ -132,7 +132,7 @@
     }
 
     &.btn-primary:hover,
-    &.btn-error:hover,
+    &.btn-danger:hover,
     &.btn-warning:hover,
     &.btn-success:hover,
     &.btn-info:hover {
@@ -152,10 +152,10 @@
       --bl-btn-hover-bg: var(--bl-clr-primary-100);
     }
 
-    &.btn-error {
-      --bl-btn-color: var(--bl-clr-error-700);
-      --bl-btn-border: 1px solid var(--bl-clr-error-700);
-      --bl-btn-hover-bg: var(--bl-clr-error-100);
+    &.btn-danger {
+      --bl-btn-color: var(--bl-clr-danger-700);
+      --bl-btn-border: 1px solid var(--bl-clr-danger-700);
+      --bl-btn-hover-bg: var(--bl-clr-danger-100);
     }
 
     &.btn-warning {
@@ -258,8 +258,8 @@
       --bl-btn-bg: var(--bl-clr-primary-700);
     }
 
-    .btn-error {
-      --bl-btn-bg: var(--bl-clr-error-700);
+    .btn-danger {
+      --bl-btn-bg: var(--bl-clr-danger-700);
     }
 
     .btn-warning {
@@ -282,7 +282,7 @@
         --bl-btn-hover-bg: var(--bl-clr-primary-700);
       }
 
-      &.btn-error {
+      &.btn-danger {
         --bl-btn-hover-bg: var(--bl-clr-red-700);
       }
 
@@ -311,10 +311,10 @@
         --bl-btn-hover-bg: var(--bl-clr-primary-950);
       }
 
-      &.btn-error {
-        --bl-btn-color: var(--bl-clr-error-500);
-        --bl-btn-border: 1px solid var(--bl-clr-error-500);
-        --bl-btn-hover-bg: var(--bl-clr-error-950);
+      &.btn-danger {
+        --bl-btn-color: var(--bl-clr-danger-500);
+        --bl-btn-border: 1px solid var(--bl-clr-danger-500);
+        --bl-btn-hover-bg: var(--bl-clr-danger-950);
       }
 
       &.btn-warning {

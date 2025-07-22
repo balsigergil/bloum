@@ -35,7 +35,7 @@ const meta: Meta<AvatarArgs> = {
     },
     badgeType: {
       control: "select",
-      options: ["default", "primary", "success", "error", "warning", "info"],
+      options: ["default", "primary", "success", "danger", "warning", "info"],
     },
   },
   args: {
@@ -163,7 +163,7 @@ export const WithImages: Story = {
 export const WithBadge: Story = {
   args: {
     showBadge: true,
-    badgeType: "error",
+    badgeType: "danger",
     initials: "JD",
     variant: "solid",
   },
@@ -176,7 +176,7 @@ export const BadgeExamples: Story = {
         <div class="avatar avatar-solid">
           <span class="avatar-initials">AB</span>
         </div>
-        <div class="badge badge-error badge-top-right badge-sm">3</div>
+        <div class="badge badge-danger badge-top-right badge-sm">3</div>
       </div>
       
       <div style="position: relative;">

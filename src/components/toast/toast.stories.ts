@@ -16,7 +16,7 @@ const meta: Meta<ToastArgs> = {
     },
     variant: {
       control: "select",
-      options: ["default", "primary", "success", "error", "warning"],
+      options: ["default", "primary", "success", "danger", "warning"],
     },
     placement: {
       control: "select",
@@ -111,8 +111,8 @@ export const Variants: Story = {
         </button>
         
         <button 
-          class="btn btn-error"
-          onclick="Toast.error('Error!', 'Something went wrong')"
+          class="btn btn-danger"
+          onclick="Toast.danger('danger!', 'Something went wrong')"
         >
           Error
         </button>
@@ -261,14 +261,14 @@ export const MultipleToasts: Story = {
           onclick="
             Toast.success('First Toast', 'This is the first toast');
             setTimeout(() => Toast.warning('Second Toast', 'This is the second toast'), 500);
-            setTimeout(() => Toast.error('Third Toast', 'This is the third toast'), 1000);
+            setTimeout(() => Toast.danger('Third Toast', 'This is the third toast'), 1000);
           "
         >
           Show Multiple Toasts
         </button>
         
         <button 
-          class="btn btn-error"
+          class="btn btn-danger"
           onclick="Toast.dismissAll()"
         >
           Dismiss All
@@ -291,8 +291,8 @@ export const RealWorldExamples: Story = {
         </button>
         
         <button 
-          class="btn btn-error"
-          onclick="Toast.error('Connection Failed', 'Unable to connect to the server. Please check your internet connection.')"
+          class="btn btn-danger"
+          onclick="Toast.danger('Connection Failed', 'Unable to connect to the server. Please check your internet connection.')"
         >
           Network Error
         </button>
@@ -341,8 +341,8 @@ export const WithoutDescription: Story = {
         </button>
         
         <button 
-          class="btn btn-error"
-          onclick="Toast.error('Failed!')"
+          class="btn btn-danger"
+          onclick="Toast.danger('Failed!')"
         >
           Error
         </button>

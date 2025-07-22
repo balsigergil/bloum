@@ -29,7 +29,7 @@ This guide helps create new components for the Bloum web components library, fol
 - Base component class uses the component name: `.spinner`, `.button`, `.alert`
 - Abbreviated forms are acceptable: `.btn` for button, `.menu` for dropdown-menu
 - Size variants: `.component-sm`, `.component-md`, `.component-lg`, `.component-xl`, `.component-xs`
-- Semantic variants: `.component-primary`, `.component-success`, `.component-error`, `.component-warning`, `.component-info`
+- Semantic variants: `.component-primary`, `.component-success`, `.component-danger`, `.component-warning`, `.component-info`
 - Style variants: `.component-ghost`, `.component-outline`, `.component-solid`
 - State classes: `.component-active`, `.component-disabled`, `.component-loading`
 - Modifier classes: `.component-icon`, `.component-top-right`, `.component-dot`, `.component-ping`
@@ -80,8 +80,8 @@ Use nested rules if needed.
     --bl-component-color: var(--bl-clr-success-600);
   }
 
-  .component-name-error {
-    --bl-component-color: var(--bl-clr-error-600);
+  .component-name-danger {
+    --bl-component-color: var(--bl-clr-danger-600);
   }
 
   .component-name-warning {
@@ -113,7 +113,7 @@ Standard semantic variants (when applicable):
 
 - `primary`: Primary brand color
 - `success`: Green for success states
-- `error`: Red for danger/error states
+- `danger`: Red for danger/error states
 - `warning`: Orange for warnings
 - `info`: Blue for informational content
 
@@ -124,7 +124,7 @@ Use these predefined color variables:
 - **Gray scale**: `--bl-clr-gray-50` to `--bl-clr-gray-950`
 - **Primary**: `--bl-clr-primary-50` to `--bl-clr-primary-950`
 - **Success**: `--bl-clr-success-50` to `--bl-clr-success-950`
-- **Error**: `--bl-clr-error-50` to `--bl-clr-error-950`
+- **danger**: `--bl-clr-danger-50` to `--bl-clr-danger-950`
 - **Warning**: `--bl-clr-warning-50` to `--bl-clr-warning-950`
 - **Info**: `--bl-clr-info-50` to `--bl-clr-info-950`
 - **Surface colors**: `--bl-clr-surface`, `--bl-clr-background`
@@ -183,7 +183,7 @@ const meta: Meta<ComponentArgs> = {
     },
     variant: {
       control: "select",
-      options: ["default", "primary", "success", "error", "warning"],
+      options: ["default", "primary", "success", "danger", "warning"],
     },
     disabled: {
       control: "boolean",
@@ -230,7 +230,7 @@ export const Variants: Story = {
       <div class="component-name">Default</div>
       <div class="component-name component-name-primary">Primary</div>
       <div class="component-name component-name-success">Success</div>
-      <div class="component-name component-name-error">Danger</div>
+      <div class="component-name component-name-danger">Danger</div>
     </div>
   `,
 };
@@ -375,7 +375,7 @@ This guide helps create new components for the Bloum web components library, fol
 - Base component class uses the component name: `.spinner`, `.button`, `.alert`
 - Abbreviated forms are acceptable: `.btn` for button, `.menu` for dropdown-menu
 - Size variants: `.component-sm`, `.component-md`, `.component-lg`, `.component-xl`, `.component-xs`
-- Semantic variants: `.component-primary`, `.component-success`, `.component-error`, `.component-warning`, `.component-info`
+- Semantic variants: `.component-primary`, `.component-success`, `.component-danger`, `.component-warning`, `.component-info`
 - Style variants: `.component-ghost`, `.component-outline`, `.component-solid`
 - State classes: `.component-active`, `.component-disabled`, `.component-loading`
 - Modifier classes: `.component-icon`, `.component-top-right`, `.component-dot`, `.component-ping`
@@ -426,8 +426,8 @@ Use nested rules if needed.
     --bl-component-color: var(--bl-clr-success-600);
   }
 
-  .component-name-error {
-    --bl-component-color: var(--bl-clr-error-600);
+  .component-name-danger {
+    --bl-component-color: var(--bl-clr-danger-600);
   }
 
   .component-name-warning {
@@ -459,7 +459,7 @@ Standard semantic variants (when applicable):
 
 - `primary`: Primary brand color
 - `success`: Green for success states
-- `error`: Red for danger/error states
+- `danger`: Red for danger/danger states
 - `warning`: Orange for warnings
 - `info`: Blue for informational content
 
@@ -470,7 +470,7 @@ Use these predefined color variables:
 - **Gray scale**: `--bl-clr-gray-50` to `--bl-clr-gray-950`
 - **Primary**: `--bl-clr-primary-50` to `--bl-clr-primary-950`
 - **Success**: `--bl-clr-success-50` to `--bl-clr-success-950`
-- **Error**: `--bl-clr-error-50` to `--bl-clr-error-950`
+- **danger**: `--bl-clr-danger-50` to `--bl-clr-danger-950`
 - **Warning**: `--bl-clr-warning-50` to `--bl-clr-warning-950`
 - **Info**: `--bl-clr-info-50` to `--bl-clr-info-950`
 - **Surface colors**: `--bl-clr-surface`, `--bl-clr-background`
@@ -529,7 +529,7 @@ const meta: Meta<ComponentArgs> = {
     },
     variant: {
       control: "select",
-      options: ["default", "primary", "success", "error", "warning"],
+      options: ["default", "primary", "success", "danger", "warning"],
     },
     disabled: {
       control: "boolean",
@@ -576,7 +576,7 @@ export const Variants: Story = {
       <div class="component-name">Default</div>
       <div class="component-name component-name-primary">Primary</div>
       <div class="component-name component-name-success">Success</div>
-      <div class="component-name component-name-error">Danger</div>
+      <div class="component-name component-name-danger">Danger</div>
     </div>
   `,
 };

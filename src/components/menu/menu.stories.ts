@@ -52,7 +52,7 @@ export const MenuWithDanger: Story = {
     <a href="#" class="menu-item">Open File...</a>
     <button class="menu-item">Save</button>
     <div class="menu-divider"></div>
-    <button class="menu-item menu-item-error">Delete</button>
+    <button class="menu-item menu-item-danger">Delete</button>
   </div>
 </div>
 `;

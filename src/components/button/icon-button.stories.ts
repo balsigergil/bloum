@@ -6,7 +6,7 @@ const meta: Meta<ButtonArgs> = {
   argTypes: {
     color: {
       control: "select",
-      options: ["default", "primary", "error", "warning", "success", "info"],
+      options: ["default", "primary", "danger", "warning", "success", "info"],
     },
     variant: {
       control: "select",

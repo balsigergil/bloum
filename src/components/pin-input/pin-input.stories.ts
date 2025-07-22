@@ -68,7 +68,7 @@ Simply add the \`data-pin-input\` attribute to any input element:
 
 - \`.pin-input\`: Container for the pin input fields
 - \`.pin-input-field\`: Individual input field
-- \`.pin-input-error\`: Error state
+- \`.pin-input-danger\`: Error state
 - \`.pin-input-success\`: Success state
         `,
       },
@@ -174,7 +174,7 @@ export const WithStates: Story = {
         
                  <div>
            <label class="block text-sm font-medium mb-2 text-red-600">Error state:</label>
-           <div data-pin-input-container class="pin-input pin-input-error">
+           <div data-pin-input-container class="pin-input pin-input-danger">
              <input type="text" class="input pin-input-field" maxlength="1" value="1" />
              <input type="text" class="input pin-input-field" maxlength="1" value="2" />
              <input type="text" class="input pin-input-field" maxlength="1" value="3" />

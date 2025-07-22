@@ -98,7 +98,7 @@
     --bl-tag-border-color: var(--bl-clr-green-300);
   }
 
-  .tag-error {
+  .tag-danger {
     --bl-tag-bg: var(--bl-clr-red-100);
     --bl-tag-color: var(--bl-clr-red-800);
     --bl-tag-border-color: var(--bl-clr-red-300);
@@ -136,7 +136,7 @@
     --bl-tag-border-color: var(--bl-clr-green-600);
   }
 
-  .tag-solid.tag-error {
+  .tag-solid.tag-danger {
     --bl-tag-bg: var(--bl-clr-red-600);
     --bl-tag-color: var(--bl-clr-red-100);
     --bl-tag-border-color: var(--bl-clr-red-600);
@@ -175,7 +175,7 @@
       --bl-tag-border-color: var(--bl-clr-green-700);
     }
 
-    .tag-error {
+    .tag-danger {
       --bl-tag-bg: var(--bl-clr-red-900);
       --bl-tag-color: var(--bl-clr-red-200);
       --bl-tag-border-color: var(--bl-clr-red-700);
@@ -212,7 +212,7 @@
       --bl-tag-border-color: var(--bl-clr-green-500);
     }
 
-    .tag-solid.tag-error {
+    .tag-solid.tag-danger {
       --bl-tag-bg: var(--bl-clr-red-500);
       --bl-tag-color: var(--bl-clr-red-100);
       --bl-tag-border-color: var(--bl-clr-red-500);

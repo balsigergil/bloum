@@ -3,7 +3,7 @@ import { randomId } from "@/utils/random";
 export interface ToastOptions {
   title: string;
   description?: string;
-  variant?: "default" | "primary" | "success" | "error" | "warning";
+  variant?: "default" | "primary" | "success" | "danger" | "warning";
   placement?:
     | "top-left"
     | "top-center"
@@ -148,11 +148,11 @@ export class Toast {
     });
   }
 
-  static error(title: string, description?: string): Toast {
+  static danger(title: string, description?: string): Toast {
     return new Toast({
       title,
       description,
-      variant: "error",
+      variant: "danger",
     });
   }
 

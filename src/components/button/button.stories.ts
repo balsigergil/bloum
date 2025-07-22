@@ -14,7 +14,7 @@ const meta: Meta<ButtonArgs> = {
   argTypes: {
     color: {
       control: "select",
-      options: ["default", "primary", "error", "warning", "success", "info"],
+      options: ["default", "primary", "danger", "warning", "success", "info"],
     },
     variant: {
       control: "select",
@@ -97,7 +97,7 @@ export const Split: Story = {
     <li><a class="menu-item" href="#"><i class="fas fa-cut"></i> Cut</a></li>
     <li><a class="menu-item" href="#"><i class="fas fa-paste"></i> Paste</a></li>
     <li><hr class="menu-divider"></li>
-    <li><a class="menu-item menu-item-error" href="#"><i class="fas fa-trash"></i> Delete</a></li>
+    <li><a class="menu-item menu-item-danger" href="#"><i class="fas fa-trash"></i> Delete</a></li>
   </ul>
 </div>`;
   },

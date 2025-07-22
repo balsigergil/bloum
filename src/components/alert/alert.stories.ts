@@ -9,7 +9,7 @@ const meta: Meta<AlertArgs> = {
   argTypes: {
     color: {
       control: "select",
-      options: ["default", "primary", "error", "success", "warning"],
+      options: ["default", "primary", "danger", "success", "warning"],
     },
   },
   render: (args) => {
@@ -42,7 +42,7 @@ export const SimpleAlert: Story = {
   render: (args) => {
     return `
 <div class="alert${args.color !== `default` ? ` alert-${args.color}` : ``}">
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores earum fugiat laborum nisi perferendis quibusdam. Consequuntur, delectus error est illum incidunt ipsam, laudantium nesciunt optio recusandae sapiente suscipit veniam vero!
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores earum fugiat laborum nisi perferendis quibusdam. Consequuntur, delectus danger est illum incidunt ipsam, laudantium nesciunt optio recusandae sapiente suscipit veniam vero!
 </div>`;
   },
 };

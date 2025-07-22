@@ -291,7 +291,7 @@ export const ConfirmationModal: StoryObj = {
     },
   },
   render: () => {
-    return `<button class="btn btn-outline btn-error" data-modal="#my-confirmation-modal">Delete Account</button>
+    return `<button class="btn btn-outline btn-danger" data-modal="#my-confirmation-modal">Delete Account</button>
 
 <div class="modal" id="my-confirmation-modal" aria-labelledby="my-confirmation-modal-title">
   <div class="modal-content">
@@ -309,7 +309,7 @@ export const ConfirmationModal: StoryObj = {
     </div>
     <div class="modal-footer">
       <button type="button" class="btn btn-outline" data-modal-close>Cancel</button>
-      <button type="button" class="btn btn-error">Delete Account</button>
+      <button type="button" class="btn btn-danger">Delete Account</button>
     </div>
   </div>
 </div>`;

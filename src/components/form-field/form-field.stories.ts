@@ -38,10 +38,10 @@ export const WithError: Story = {
   render: () => {
     return `
       <div class="max-w-md">
-        <div class="field field-error-state">
+        <div class="field field-danger-state">
           <label for="password" class="label">Password</label>
           <input type="password" id="password" class="input" placeholder="Enter password">
-          <p class="field-error">Password must be at least 8 characters long</p>
+          <p class="field-danger">Password must be at least 8 characters long</p>
         </div>
       </div>
     `;
@@ -126,10 +126,10 @@ export const MultipleFields: Story = {
           <input type="text" id="lastname" class="input" placeholder="Doe">
         </div>
 
-        <div class="field field-error-state">
+        <div class="field field-danger-state">
           <label for="email3" class="label">Email</label>
           <input type="email" id="email3" class="input" placeholder="john@example.com">
-          <p class="field-error">Please enter a valid email address</p>
+          <p class="field-danger">Please enter a valid email address</p>
         </div>
 
         <div class="field">

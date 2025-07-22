@@ -60,7 +60,7 @@
     --bl-steps-color-done: var(--bl-clr-green-600);
   }
 
-  .steps.steps-error {
+  .steps.steps-danger {
     --bl-steps-color-active: var(--bl-clr-red-600);
     --bl-steps-color-done: var(--bl-clr-red-600);
   }
@@ -240,7 +240,7 @@
       --bl-steps-color-done: var(--bl-clr-green-500);
     }
 
-    .steps.steps-error {
+    .steps.steps-danger {
       --bl-steps-color-active: var(--bl-clr-red-500);
       --bl-steps-color-done: var(--bl-clr-red-500);
     }

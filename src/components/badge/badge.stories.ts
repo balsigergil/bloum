@@ -16,7 +16,7 @@ const meta: Meta<BadgeArgs> = {
     },
     type: {
       control: "select",
-      options: ["default", "primary", "success", "error", "warning", "info"],
+      options: ["default", "primary", "success", "danger", "warning", "info"],
     },
     topRight: {
       control: "boolean",

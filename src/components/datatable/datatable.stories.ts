@@ -287,7 +287,7 @@ export const WithActions: Story = {
             <td><span class="tag tag-success">Active</span></td>
             <td>
               <button class="btn btn-xs btn-ghost">Edit</button>
-              <button class="btn btn-xs btn-error">Delete</button>
+              <button class="btn btn-xs btn-danger">Delete</button>
             </td>
           </tr>
           <tr>
@@ -297,7 +297,7 @@ export const WithActions: Story = {
             <td><span class="tag tag-success">Active</span></td>
             <td>
               <button class="btn btn-xs btn-ghost">Edit</button>
-              <button class="btn btn-xs btn-error">Delete</button>
+              <button class="btn btn-xs btn-danger">Delete</button>
             </td>
           </tr>
           <tr>
@@ -307,17 +307,17 @@ export const WithActions: Story = {
             <td><span class="tag tag-warning">Pending</span></td>
             <td>
               <button class="btn btn-xs btn-ghost">Edit</button>
-              <button class="btn btn-xs btn-error">Delete</button>
+              <button class="btn btn-xs btn-danger">Delete</button>
             </td>
           </tr>
           <tr>
             <td><input type="checkbox" class="input-check" aria-label="Select user"></td>
             <td>Diana Prince</td>
             <td>Editor</td>
-            <td><span class="tag tag-error">Inactive</span></td>
+            <td><span class="tag tag-danger">Inactive</span></td>
             <td>
               <button class="btn btn-xs btn-ghost">Edit</button>
-              <button class="btn btn-xs btn-error">Delete</button>
+              <button class="btn btn-xs btn-danger">Delete</button>
             </td>
           </tr>
           <tr>
@@ -327,7 +327,7 @@ export const WithActions: Story = {
             <td><span class="tag tag-success">Active</span></td>
             <td>
               <button class="btn btn-xs btn-ghost">Edit</button>
-              <button class="btn btn-xs btn-error">Delete</button>
+              <button class="btn btn-xs btn-danger">Delete</button>
             </td>
           </tr>
           <tr>
@@ -337,7 +337,7 @@ export const WithActions: Story = {
             <td><span class="tag tag-success">Active</span></td>
             <td>
               <button class="btn btn-xs btn-ghost">Edit</button>
-              <button class="btn btn-xs btn-error">Delete</button>
+              <button class="btn btn-xs btn-danger">Delete</button>
             </td>
           </tr>
         </tbody>
@@ -365,7 +365,7 @@ export const ApiExample: Story = {
           <button class="btn btn-sm btn-primary" id="search-btn">Set Search Term</button>
           <button class="btn btn-sm btn-primary" id="rows-btn">Set Rows Per Page</button>
           <button class="btn btn-sm btn-primary" id="refresh-btn">Refresh Data</button>
-          <button class="btn btn-sm btn-error" id="destroy-btn">Destroy DataTable</button>
+          <button class="btn btn-sm btn-danger" id="destroy-btn">Destroy DataTable</button>
         </div>
       </div>
       

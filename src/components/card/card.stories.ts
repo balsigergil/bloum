@@ -85,7 +85,7 @@ export const CardWithTable: Story = {
                 <button class="btn btn-icon btn-xs btn-ghost" aria-label="Edit user">
                   <i class="fas fa-pen"></i>
                 </button>
-                <button class="btn btn-icon btn-xs btn-error" aria-label="Delete user">
+                <button class="btn btn-icon btn-xs btn-danger" aria-label="Delete user">
                   <i class="fas fa-trash"></i>
                 </button>
               </td>
@@ -101,7 +101,7 @@ export const CardWithTable: Story = {
                 <button class="btn btn-icon btn-xs btn-ghost" aria-label="Edit user">
                   <i class="fas fa-pen"></i>
                 </button>
-                <button class="btn btn-icon btn-xs btn-error" aria-label="Delete user">
+                <button class="btn btn-icon btn-xs btn-danger" aria-label="Delete user">
                   <i class="fas fa-trash"></i>
                 </button>
               </td>
@@ -117,7 +117,7 @@ export const CardWithTable: Story = {
                 <button class="btn btn-icon btn-xs btn-ghost" aria-label="Edit user">
                   <i class="fas fa-pen"></i>
                 </button>
-                <button class="btn btn-icon btn-xs btn-error" aria-label="Delete user">
+                <button class="btn btn-icon btn-xs btn-danger" aria-label="Delete user">
                   <i class="fas fa-trash"></i>
                 </button>
               </td>

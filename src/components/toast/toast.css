@@ -159,8 +159,8 @@
     --bl-toast-close-hover-color: var(--bl-clr-green-800);
   }
 
-  /* Variant: Error */
-  .toast-error {
+  /* Variant: danger */
+  .toast-danger {
     --bl-toast-bg: var(--bl-clr-red-50);
     --bl-toast-color: var(--bl-clr-red-900);
     --bl-toast-border: var(--bl-clr-red-200);
@@ -207,7 +207,7 @@
       --bl-toast-close-hover-color: var(--bl-clr-green-200);
     }
 
-    .toast-error {
+    .toast-danger {
       --bl-toast-bg: var(--bl-clr-red-900);
       --bl-toast-color: var(--bl-clr-red-100);
       --bl-toast-border: var(--bl-clr-red-700);

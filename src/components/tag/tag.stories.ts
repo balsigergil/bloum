@@ -16,7 +16,7 @@ const meta: Meta<TagArgs> = {
     },
     type: {
       control: "select",
-      options: ["default", "primary", "success", "error", "warning", "info"],
+      options: ["default", "primary", "success", "danger", "warning", "info"],
     },
     size: {
       control: "select",
@@ -85,7 +85,7 @@ export const TagVariants: Story = {
   <div class="tag tag-success">
     <span class="tag-text">Success</span>
   </div>
-  <div class="tag tag-error">
+  <div class="tag tag-danger">
     <span class="tag-text">Danger</span>
   </div>
   <div class="tag tag-warning">
@@ -109,7 +109,7 @@ export const TagSolid: Story = {
   <div class="tag tag-solid tag-success">
     <span class="tag-text">Success</span>
   </div>
-  <div class="tag tag-solid tag-error">
+  <div class="tag tag-solid tag-danger">
     <span class="tag-text">Danger</span>
   </div>
   <div class="tag tag-solid tag-warning">
@@ -145,7 +145,7 @@ export const TagList: Story = {
   <div class="tag">
     <span class="tag-text">HTML</span>
   </div>
-  <div class="tag tag-error">
+  <div class="tag tag-danger">
     <span class="tag-text">Legacy Code</span>
   </div>
 </div>`,

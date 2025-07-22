@@ -16,12 +16,12 @@
   }
 
   /* Error state - using CSS custom properties from the design system */
-  .pin-input.pin-input-error .pin-input-field {
-    --bl-input-border-color: var(--bl-clr-error-500);
+  .pin-input.pin-input-danger .pin-input-field {
+    --bl-input-border-color: var(--bl-clr-danger-500);
   }
 
-  .pin-input.pin-input-error .pin-input-field:focus-visible {
-    --bl-focus-color: var(--bl-clr-error-500);
+  .pin-input.pin-input-danger .pin-input-field:focus-visible {
+    --bl-focus-color: var(--bl-clr-danger-500);
   }
 
   /* Success state - using CSS custom properties from the design system */

@@ -32,14 +32,14 @@
     color: var(--bl-clr-gray-500);
   }
 
-  /* Form field error text */
-  .field-error {
+  /* Form field danger text */
+  .field-danger {
     font-size: var(--bl-fs-base);
     color: var(--bl-clr-red-600);
   }
 
-  /* Error state for form control */
-  .field-error-state .input {
+  /* danger state for form control */
+  .field-danger-state .input {
     border-color: var(--bl-clr-red-500);
     --bl-focus-color: var(--bl-clr-red-500);
   }
@@ -62,15 +62,15 @@
       color: var(--bl-clr-gray-500);
     }
 
-    .field-error {
+    .field-danger {
       color: var(--bl-clr-red-400);
     }
 
-    .field-error-state .input {
+    .field-danger-state .input {
       border-color: var(--bl-clr-red-600);
     }
 
-    .field-error-state .field:focus-visible {
+    .field-danger-state .field:focus-visible {
       outline-color: var(--bl-clr-red-600);
     }
 
