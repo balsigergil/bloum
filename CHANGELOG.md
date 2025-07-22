@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.12.1](https://github.com/balsigergil/bloum/compare/v0.12.0...v0.12.1) (2025-07-22)
+
+### Bug Fixes
+
+* **combobox:** clear exising container for HTMX ([2c7e3b5](https://github.com/balsigergil/bloum/commit/2c7e3b579798c260dc3d4af0e037404775cbfd9b))
+
 ## [0.12.0](https://github.com/balsigergil/bloum/compare/v0.11.1...v0.12.0) (2025-07-22)
 
 ### Features
