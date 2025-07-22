@@ -1,0 +1,35 @@
+@layer components {
+  /* Pin Input Component */
+  .pin-input {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .pin-input-field {
+    /* Override specific properties for pin input */
+    width: 2.5rem;
+    height: 2.5rem;
+    min-width: 2.5rem;
+    text-align: center;
+    padding-inline: 0;
+  }
+
+  /* Error state - using CSS custom properties from the design system */
+  .pin-input.pin-input-error .pin-input-field {
+    --bl-input-border-color: var(--bl-clr-error-500);
+  }
+
+  .pin-input.pin-input-error .pin-input-field:focus-visible {
+    --bl-focus-color: var(--bl-clr-error-500);
+  }
+
+  /* Success state - using CSS custom properties from the design system */
+  .pin-input.pin-input-success .pin-input-field {
+    --bl-input-border-color: var(--bl-clr-success-500);
+  }
+
+  .pin-input.pin-input-success .pin-input-field:focus-visible {
+    --bl-focus-color: var(--bl-clr-success-500);
+  }
+}

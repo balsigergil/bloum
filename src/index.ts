@@ -8,6 +8,7 @@ import { Tooltip } from "@/components/tooltip/tooltip";
 import { Combobox } from "@/components/combobox/Combobox";
 import { Menu } from "@/components/menu/menu";
 import { DataTable } from "@/components/datatable/datatable";
+import { PinInput } from "@/components/pin-input/PinInput";
 import { initBloum } from "@/utils/init";
 
 // @ts-ignore
@@ -24,5 +25,6 @@ export {
   Modal,
   Menu,
   DataTable,
+  PinInput,
   initBloum,
 };
