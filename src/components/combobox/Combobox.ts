@@ -66,6 +66,11 @@ export class Combobox {
       element.blcombobox.destroy();
     }
 
+    // Clear adjacent container if any (needed for HTMX compatibility with hx-boost)
+    while (element.nextElementSibling?.classList.contains("bl-combobox")) {
+      element.nextElementSibling.remove();
+    }
+
     this.#field = element;
     this.#field.blcombobox = this;
     this.#field.style.display = "none";
