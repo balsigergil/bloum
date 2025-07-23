@@ -1,9 +1,5 @@
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    if (typeof initBloum === "function") {
-      initBloum();
-    } else {
-      console.warn("initBloum function not found in head script");
-    }
+    Bloum.init();
   });
 </script>

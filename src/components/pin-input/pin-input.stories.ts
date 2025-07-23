@@ -88,7 +88,7 @@ type Story = StoryObj;
 export const Default: Story = {
   render: () => {
     setTimeout(() => {
-      import("./PinInput").then(({ initPinInput }) => {
+      import("./pin-input").then(({ initPinInput }) => {
         initPinInput();
       });
     }, 100);
@@ -107,7 +107,7 @@ export const Default: Story = {
 export const WithValue: Story = {
   render: () => {
     setTimeout(() => {
-      import("./PinInput").then(({ initPinInput }) => {
+      import("./pin-input").then(({ initPinInput }) => {
         initPinInput();
       });
     }, 100);
@@ -126,7 +126,7 @@ export const WithValue: Story = {
 export const InForm: Story = {
   render: () => {
     setTimeout(() => {
-      import("./PinInput").then(({ initPinInput }) => {
+      import("./pin-input").then(({ initPinInput }) => {
         initPinInput();
       });
     }, 100);
@@ -160,7 +160,7 @@ export const InForm: Story = {
 export const WithStates: Story = {
   render: () => {
     setTimeout(() => {
-      import("./PinInput").then(({ initPinInput }) => {
+      import("./pin-input").then(({ initPinInput }) => {
         initPinInput();
       });
     }, 100);

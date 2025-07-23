@@ -1,45 +1,30 @@
-import { Tabs } from "@/components/tabs/Tabs";
-import { TabList } from "@/components/tabs/TabList";
-import { Tab } from "@/components/tabs/Tab";
-import { TabPanel } from "@/components/tabs/TabPanel";
-import { initTooltip, Tooltip } from "@/components/tooltip/tooltip";
-import { Combobox } from "@/components/combobox/Combobox";
-import { initModals, Modal } from "@/components/modal/Modal";
-import { initDrawers, Drawer } from "@/components/drawer/Drawer";
-import { initSidebar } from "@/components/sidebar/sidebar";
-import { initMenus } from "@/components/menu/menu";
-import { initCollapse } from "@/components/collapse/collapse";
-import { initAccordion } from "@/components/accordion/accordion";
-import { CopyButton } from "@/components/copy/copy";
-import { initAutogrowTextarea } from "@/components/textarea/AutogrowTextarea";
-import { initPopover } from "@/components/popover/popover";
-import { initToast, Toast } from "@/components/toast/toast";
-import { initColorSchemeSwitcher } from "@/components/color-scheme-switcher/color-scheme-switcher";
-import { initSteps } from "@/components/steps/steps";
-import { initAvatar } from "@/components/avatar/avatar";
-import { initPasswordToggle } from "@/components/input/password-input";
-import { initPinInput, PinInput } from "@/components/pin-input/PinInput";
+import { initAccordion } from "../components/accordion/accordion";
+import { initAvatar } from "../components/avatar/avatar";
+import { initCollapse } from "../components/collapse/collapse";
+import { initColorSchemeSwitcher } from "../components/color-scheme-switcher/color-scheme-switcher";
+import { CopyButton } from "../components/copy/copy";
+import { initDrawers } from "../components/drawer/drawer";
+import { initPasswordToggle } from "../components/input/password-input";
+import { initMenus } from "../components/menu/menu";
+import { initModals } from "../components/modal/modal";
+import { initPinInput } from "../components/pin-input/pin-input";
+import { initPopover } from "../components/popover/popover";
+import { initSidebar } from "../components/sidebar/sidebar";
+import { initSteps } from "../components/steps/steps";
+import { Tab } from "../components/tabs/tab";
+import { TabList } from "../components/tabs/tab-list";
+import { TabPanel } from "../components/tabs/tab-panel";
+import { Tabs } from "../components/tabs/tabs";
+import { initAutogrowTextarea } from "../components/textarea/autogrow-textarea";
+import { initToast } from "../components/toast/toast";
+import { initTooltip } from "../components/tooltip/tooltip";
 
-export function initBloum() {
+export function init() {
   Tabs.register();
   TabList.register();
   Tab.register();
   TabPanel.register();
   CopyButton.register();
-
-  // TODO: Remove ts-ignore
-  // @ts-ignore
-  window.Tooltip = Tooltip;
-  // @ts-ignore
-  window.Combobox = Combobox;
-  // @ts-ignore
-  window.Modal = Modal;
-  // @ts-ignore
-  window.Drawer = Drawer;
-  // @ts-ignore
-  window.Toast = Toast;
-  // @ts-ignore
-  window.PinInput = PinInput;
 
   initTooltip();
   initSidebar();

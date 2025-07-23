@@ -1,4 +1,4 @@
-import { randomId } from "@/utils/random";
+import { randomId } from "../../utils/random";
 
 export interface ToastOptions {
   title: string;

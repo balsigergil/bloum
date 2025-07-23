@@ -1,7 +1,7 @@
 import type { Preview, HtmlRenderer } from "@storybook/html";
 import { withThemeByClassName } from "@storybook/addon-themes";
 
-import { initBloum } from "../src";
+import * as Bloum from "../src";
 
 import "@fontsource-variable/nunito-sans";
 import "@fortawesome/fontawesome-free/css/all.css";
@@ -9,9 +9,8 @@ import "@fortawesome/fontawesome-free/css/all.css";
 import "../src/bloum.css";
 import "./preview.css";
 
-// Make initBloum available globally for the HTML scripts
 // @ts-ignore
-window.initBloum = initBloum;
+window.Bloum = Bloum;
 
 const preview: Preview = {
   tags: ["autodocs"],

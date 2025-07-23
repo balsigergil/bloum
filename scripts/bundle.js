@@ -36,4 +36,5 @@ await esbuild.build({
   format: "cjs",
   packages: "external",
   outfile: packageJson.main,
+  minify: true,
 });

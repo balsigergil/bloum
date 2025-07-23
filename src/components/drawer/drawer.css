@@ -19,7 +19,7 @@
     inset: 0;
     z-index: var(--bl-drawer-zindex);
     display: none;
-    animation: drawerBackdropFadeIn 150ms both linear;
+    animation: drawerBackdropFadeIn 150ms both ease-in-out;
   }
 
   .drawer.open {
@@ -32,7 +32,7 @@
 
   .drawer.closing {
     animation: drawerBackdropFadeOut var(--bl-drawer-animation-opacity) both
-      linear;
+      ease-in-out;
   }
 
   .drawer-content {
@@ -52,24 +52,24 @@
     left: auto;
     right: 0;
     top: 0;
-    animation: drawerSlideInRight 300ms both ease-out;
+    animation: drawerSlideInRight 300ms both ease-in-out;
   }
 
   /* Left drawer */
   .drawer-left .drawer-content {
     left: 0;
     right: auto;
-    animation: drawerSlideInLeft 300ms both ease-out;
+    animation: drawerSlideInLeft 300ms both ease-in-out;
   }
 
   .drawer.closing .drawer-content {
     animation: drawerSlideOutRight var(--bl-drawer-animation-transform) both
-      ease-out;
+      ease-in-out;
   }
 
   .drawer-left.closing .drawer-content {
     animation: drawerSlideOutLeft var(--bl-drawer-animation-transform) both
-      ease-out;
+      ease-in-out;
   }
 
   /* Size variants */

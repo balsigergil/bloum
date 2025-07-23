@@ -6,7 +6,7 @@ import {
   offset,
   shift,
 } from "@floating-ui/dom";
-import { randomId } from "@/utils/random";
+import { randomId } from "../../utils/random";
 
 type TooltipElement = HTMLElement & { bltooltip?: Tooltip };
 

@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/html-vite";
-import { Tabs } from "./Tabs";
+import { Tabs } from "./tabs";
 
 type TabsArgs = {
   useAnchor: boolean;

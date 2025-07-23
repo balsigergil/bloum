@@ -1,4 +1,4 @@
-import { Tabs } from "./Tabs";
+import { Tabs } from "./tabs";
 
 export class TabList extends HTMLElement {
   static NAME = "bl-tab-list";

@@ -31,7 +31,7 @@ export const Select: Story = {
   <option value="pear">Pear</option>
 </select>
 <script>
-new Combobox('#combobox-1');
+new Bloum.Combobox('#combobox-1');
 </script>`;
   },
 };
@@ -51,7 +51,7 @@ export const SelectSearchable: Story = {
   <option value="pear">Pear</option>
 </select>
 <script>
-new Combobox('#combobox-2', { isSearchable: true });
+new Bloum.Combobox('#combobox-2', { isSearchable: true });
 </script>`;
   },
 };
@@ -72,7 +72,7 @@ export const SelectMultiple: Story = {
   <option value="pear">Pear</option>
 </select>
 <script>
-new Combobox('#combobox-3', { isSearchable: true });
+new Bloum.Combobox('#combobox-3', { isSearchable: true });
 </script>
     `;
   },

@@ -1,5 +1,5 @@
-import { Tab } from "./Tab";
-import { TabPanel } from "./TabPanel";
+import { Tab } from "./tab";
+import { TabPanel } from "./tab-panel";
 
 export class Tabs extends HTMLElement {
   static NAME = "bl-tabs";

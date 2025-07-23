@@ -1,4 +1,4 @@
-import { BloumCollapseElement } from "@/components/collapse/collapse";
+import { BloumCollapseElement } from "../collapse/collapse";
 
 export function initAccordion() {
   document

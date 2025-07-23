@@ -1,4 +1,4 @@
-import type { ComboboxConfig } from "./Combobox";
+import type { ComboboxConfig } from "./combobox";
 
 export const DEFAULT_PROPS: ComboboxConfig = {
   placeholder: "Select an option...",
