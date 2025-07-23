@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.13.2](https://github.com/balsigergil/bloum/compare/v0.13.1...v0.13.2) (2025-07-23)
+
+### Features
+
+* **combobox:** add support for data attributes ([843ec6f](https://github.com/balsigergil/bloum/commit/843ec6f6e870d7722e7aea3834b1f3f7a4becc96))
+
 ## [0.13.1](https://github.com/balsigergil/bloum/compare/v0.13.0...v0.13.1) (2025-07-23)
 
 ## [0.13.0](https://github.com/balsigergil/bloum/compare/v0.12.2...v0.13.0) (2025-07-23)
