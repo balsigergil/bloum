@@ -166,7 +166,7 @@ export class Combobox {
     // Check if there are any options to select
     if (
       this.#optionsContainer.querySelectorAll(
-        ".bl-combobox-option:not(.bl-combobox-no-results)",
+        ".bl-combobox-option:not(.bl-combobox-no-results):not(.bl-combobox-hidden)",
       ).length === 0
     ) {
       return;
