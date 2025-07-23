@@ -163,6 +163,15 @@ export class Combobox {
       return;
     }
 
+    // Check if there are any options to select
+    if (
+      this.#optionsContainer.querySelectorAll(
+        ".bl-combobox-option:not(.bl-combobox-no-results)",
+      ).length === 0
+    ) {
+      return;
+    }
+
     for (const i of index) {
       // Check if the index is out of bounds
       if (i < 0 || i >= this.#optionsContainer.children.length) {
