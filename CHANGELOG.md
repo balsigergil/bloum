@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.12.2](https://github.com/balsigergil/bloum/compare/v0.12.1...v0.12.2) (2025-07-23)
+
+### Bug Fixes
+
+* **card:** overflow ([77a86f8](https://github.com/balsigergil/bloum/commit/77a86f8ed17a2b28fbc68e176b3bafc0f717da2e))
+* **combobox:** exclude hidden options from selection ([e3e9be5](https://github.com/balsigergil/bloum/commit/e3e9be5b06f65ca4e6787893072ea25ae7115580))
+* **combobox:** no result text toggle ([ec9e324](https://github.com/balsigergil/bloum/commit/ec9e324661606b84d8f032378bd0fdaae879ae69))
+* **combobox:** placeholder styling ([aadfeb2](https://github.com/balsigergil/bloum/commit/aadfeb2e42b406ced1f0ee5e181c0b90835a937f))
+* **combobox:** prevent selection when no options are available ([cd8c22a](https://github.com/balsigergil/bloum/commit/cd8c22a0cd3a0f0dd2cd53324ae930e90626d190))
+
 ## [0.12.1](https://github.com/balsigergil/bloum/compare/v0.12.0...v0.12.1) (2025-07-22)
 
 ### Bug Fixes
