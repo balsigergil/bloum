@@ -223,6 +223,10 @@ export class Combobox {
     }
   }
 
+  /**
+   * Render the component. Should be called only once when the component is initialized.
+   * @private
+   */
   #render() {
     this.#wrapper = document.createElement("div");
     this.#wrapper.classList.add("bl-combobox");
@@ -451,7 +455,7 @@ export class Combobox {
     }
 
     const options = this.#optionsContainer.querySelectorAll<HTMLDivElement>(
-      ".bl-combobox-option",
+      ".bl-combobox-option:not(.bl-combobox-no-results)",
     );
 
     this.#optionsContainer
