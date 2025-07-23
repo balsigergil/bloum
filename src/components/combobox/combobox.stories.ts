@@ -77,3 +77,25 @@ new Bloum.Combobox('#combobox-3', { isSearchable: true });
     `;
   },
 };
+
+export const SelectWithDataAttributes: Story = {
+  render: () => {
+    return `
+<select name="fruits" id="combobox-4" multiple data-combobox-placeholder="Select a fruit" data-combobox-no-results="No fruits found" data-combobox-searchable="true">
+  <option value="apple">Apple</option>
+  <option value="orange">Orange</option>
+  <option value="banana">Banana</option>
+  <option value="grape">Grape</option>
+  <option value="kiwi">Kiwi</option>
+  <option value="mango">Mango</option>
+  <option value="strawberry">Strawberry</option>
+  <option value="watermelon">Watermelon</option>
+  <option value="pineapple">Pineapple</option>
+  <option value="pear">Pear</option>
+</select>
+<script>
+new Bloum.Combobox('#combobox-4');
+</script>
+    `;
+  },
+};

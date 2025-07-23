@@ -8,13 +8,13 @@ import {
 import { parseOptions } from "./utils";
 
 export interface ComboboxConfig {
-  placeholder: string;
+  placeholder?: string;
   noResultsText?: string;
   isSearchable?: boolean;
   isMultiple?: boolean;
 }
 
-interface ComboboxInput extends HTMLSelectElement {
+export interface ComboboxInput extends HTMLSelectElement {
   blcombobox?: Combobox;
 }
 
