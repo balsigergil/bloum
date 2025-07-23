@@ -13,7 +13,7 @@
     border-radius: var(--bl-card-border-radius);
     border: var(--bl-card-border);
     display: block;
-    overflow: hidden;
+    overflow-wrap: break-word;
   }
 
   .card-image {
@@ -21,6 +21,8 @@
     object-position: center;
     width: 100%;
     max-height: var(--bl-card-image-max-height);
+    border-top-left-radius: var(--bl-card-border-radius);
+    border-top-right-radius: var(--bl-card-border-radius);
   }
 
   .card-header {
