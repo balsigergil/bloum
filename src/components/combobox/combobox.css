@@ -57,6 +57,10 @@
     gap: 0.5rem;
   }
 
+  .bl-combobox-placeholder {
+    color: var(--bl-clr-gray-400);
+  }
+
   .bl-combobox-item {
     background-color: var(--bl-combobox-item-bg);
     border-radius: var(--bl-border-radius);

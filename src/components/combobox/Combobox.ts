@@ -27,6 +27,7 @@ export class Combobox {
 
   #wrapper!: HTMLDivElement;
   #inner!: HTMLDivElement;
+  #placeholderString!: string;
 
   // Wrapper around the selected items in the input field
   #itemsContainer!: HTMLDivElement;
@@ -75,6 +76,7 @@ export class Combobox {
     this.#field.blcombobox = this;
     this.#field.style.display = "none";
     this.#config = parseOptions(this.#field, options);
+    this.#placeholderString = `<span class="bl-combobox-placeholder">${this.#config.placeholder}</span>`;
 
     this.#render();
     this.#initializeEvents();
@@ -240,7 +242,7 @@ export class Combobox {
 
     this.#itemsContainer = document.createElement("div");
     this.#itemsContainer.classList.add("bl-combobox-items");
-    this.#itemsContainer.innerText = this.#config.placeholder;
+    this.#itemsContainer.innerHTML = this.#placeholderString;
 
     const arrow = document.createElement("div");
     arrow.classList.add("bl-combobox-arrow");
@@ -560,7 +562,7 @@ export class Combobox {
       this.#itemsContainer.innerHTML = "";
       this.#activeItems = [];
       if (this.#selected.length === 0) {
-        this.#itemsContainer.innerText = this.#config.placeholder;
+        this.#itemsContainer.innerHTML = this.#placeholderString;
       } else {
         for (let i = 0; i < this.#selected.length; i++) {
           const optionIndex = this.#selected[i];
@@ -577,7 +579,7 @@ export class Combobox {
           this.#optionsContainer.children[this.#selected[0]] as HTMLElement
         ).innerText;
       } else {
-        this.#itemsContainer.innerText = this.#config.placeholder;
+        this.#itemsContainer.innerHTML = this.#placeholderString;
       }
     }
   }
