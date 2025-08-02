@@ -1,7 +1,7 @@
 import { FocusTrap, createFocusTrap } from "focus-trap";
 
 export interface BloumModalElement extends HTMLElement {
-  bloumModal?: Modal;
+  blmodal?: Modal;
 }
 
 export class Modal {
@@ -9,11 +9,11 @@ export class Modal {
   readonly #focusTrap: FocusTrap;
 
   constructor(element: BloumModalElement) {
-    if (element.bloumModal !== undefined) {
-      element.bloumModal.destroy();
+    if (element.blmodal !== undefined) {
+      element.blmodal.destroy();
     }
     this.#element = element;
-    this.#element.bloumModal = this;
+    this.#element.blmodal = this;
     this.#focusTrap = createFocusTrap(this.#element);
   }
 
@@ -49,7 +49,7 @@ export class Modal {
   destroy() {
     this.#element.classList.remove("open");
     this.#focusTrap.deactivate();
-    delete this.#element.bloumModal;
+    delete this.#element.blmodal;
   }
 }
 
@@ -81,10 +81,10 @@ export function initModals() {
         ?.getAttribute("data-modal") as string;
       const element = document.querySelector<BloumModalElement>(modalSelector);
       if (element) {
-        if (element.bloumModal === undefined) {
+        if (element.blmodal === undefined) {
           new Modal(element);
         }
-        element.bloumModal?.open();
+        element.blmodal?.open();
         e.preventDefault();
         e.stopPropagation();
       }
@@ -93,8 +93,8 @@ export function initModals() {
     // Close modal when clicking on the close button
     if (target.closest("[data-modal-close]")) {
       const modal = target.closest<BloumModalElement>(".modal");
-      if (modal !== null && modal.bloumModal !== undefined) {
-        modal.bloumModal.close();
+      if (modal !== null && modal.blmodal !== undefined) {
+        modal.blmodal.close();
         e.preventDefault();
         e.stopPropagation();
       }
@@ -103,8 +103,8 @@ export function initModals() {
     // Close modal when clicking outside
     if (target.closest(".modal.open") && !target.closest(".modal-content")) {
       const modal = target.closest<BloumModalElement>(".modal.open");
-      if (modal !== null && modal.bloumModal !== undefined) {
-        modal.bloumModal.close();
+      if (modal !== null && modal.blmodal !== undefined) {
+        modal.blmodal.close();
         e.preventDefault();
         e.stopPropagation();
       }
@@ -130,8 +130,8 @@ export function initModals() {
 function closeAllModals() {
   document.querySelectorAll(".modal.open").forEach((el) => {
     const modal = el as BloumModalElement;
-    if (modal.bloumModal !== undefined) {
-      modal.bloumModal.close();
+    if (modal.blmodal !== undefined) {
+      modal.blmodal.close();
     }
   });
 }
