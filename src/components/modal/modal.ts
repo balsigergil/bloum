@@ -59,6 +59,12 @@ let modalKeydownHandler: ((e: KeyboardEvent) => void) | null = null;
 let modalCustomEventHandler: (() => void) | null = null;
 
 export function initModals() {
+  for (const modal of document.querySelectorAll<BloumModalElement>(".modal")) {
+    if (modal.blmodal === undefined) {
+      new Modal(modal);
+    }
+  }
+
   // Clean up existing event listeners
   if (modalClickHandler) {
     removeEventListener("click", modalClickHandler);
