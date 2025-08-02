@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.13.5](https://github.com/balsigergil/bloum/compare/v0.13.4...v0.13.5) (2025-08-02)
+
+### Bug Fixes
+
+* **modal:** remove overflow clip ([c1c98ee](https://github.com/balsigergil/bloum/commit/c1c98eecc0cc36ffa3df80859b7616d4840a9637))
+* **modal:** selection in tab panel (fix [#70](https://github.com/balsigergil/bloum/issues/70)) ([b34a0b4](https://github.com/balsigergil/bloum/commit/b34a0b4e7c2fdc8418f0333e963a59f99a59ce7c))
+
 ## [0.13.4](https://github.com/balsigergil/bloum/compare/v0.13.3...v0.13.4) (2025-08-02)
 
 ### Features
