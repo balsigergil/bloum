@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.13.4](https://github.com/balsigergil/bloum/compare/v0.13.3...v0.13.4) (2025-08-02)
+
+### Features
+
+* **modal:** add close all modals static method ([b248061](https://github.com/balsigergil/bloum/commit/b248061415c84c771b169bb1884a7eec608dc318))
+
 ## [0.13.3](https://github.com/balsigergil/bloum/compare/v0.13.2...v0.13.3) (2025-08-02)
 
 ### Bug Fixes
