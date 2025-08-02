@@ -14,7 +14,9 @@ export class Modal {
     }
     this.#element = element;
     this.#element.blmodal = this;
-    this.#focusTrap = createFocusTrap(this.#element);
+    this.#focusTrap = createFocusTrap(this.#element, {
+      escapeDeactivates: false,
+    });
   }
 
   open() {
@@ -31,15 +33,15 @@ export class Modal {
 
   close() {
     this.#element.classList.add("closing");
+    this.#element.setAttribute("aria-hidden", "true");
+    this.#element.removeAttribute("aria-modal");
+    this.#element.removeAttribute("role");
 
     this.#element.addEventListener(
       "animationend",
       () => {
         this.#element.classList.remove("open");
         this.#element.classList.remove("closing");
-        this.#element.setAttribute("aria-hidden", "true");
-        this.#element.removeAttribute("aria-modal");
-        this.#element.removeAttribute("role");
         this.#focusTrap.deactivate();
       },
       { once: true },
