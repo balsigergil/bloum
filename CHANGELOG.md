@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.13.3](https://github.com/balsigergil/bloum/compare/v0.13.2...v0.13.3) (2025-08-02)
+
+### Bug Fixes
+
+* **modal:** create instances at loading time ([45de047](https://github.com/balsigergil/bloum/commit/45de047e13e931e9e767519e1f0c6c7df2a641a8))
+
 ## [0.13.2](https://github.com/balsigergil/bloum/compare/v0.13.1...v0.13.2) (2025-07-23)
 
 ### Features
