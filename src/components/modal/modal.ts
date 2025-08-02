@@ -51,6 +51,15 @@ export class Modal {
     this.#focusTrap.deactivate();
     delete this.#element.blmodal;
   }
+
+  static closeAllModals() {
+    document.querySelectorAll(".modal.open").forEach((el) => {
+      const modal = el as BloumModalElement;
+      if (modal.blmodal !== undefined) {
+        modal.blmodal.close();
+      }
+    });
+  }
 }
 
 // Store references to event handlers for cleanup
@@ -119,25 +128,16 @@ export function initModals() {
 
   modalKeydownHandler = (e: KeyboardEvent) => {
     if (e.key === "Escape" || e.key === "Esc") {
-      closeAllModals();
+      Modal.closeAllModals();
     }
   };
 
   modalCustomEventHandler = () => {
-    closeAllModals();
+    Modal.closeAllModals();
   };
 
   // Add new event listeners
   addEventListener("click", modalClickHandler);
   addEventListener("keydown", modalKeydownHandler);
   addEventListener("bl-modal-close", modalCustomEventHandler);
-}
-
-function closeAllModals() {
-  document.querySelectorAll(".modal.open").forEach((el) => {
-    const modal = el as BloumModalElement;
-    if (modal.blmodal !== undefined) {
-      modal.blmodal.close();
-    }
-  });
 }
