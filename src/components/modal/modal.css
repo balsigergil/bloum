@@ -49,7 +49,6 @@
     animation:
       modalScaleIn 300ms 200ms both ease-out,
       modalFadeIn 150ms 200ms both linear;
-    overflow: clip;
   }
 
   .modal.closing .modal-content {
@@ -84,6 +83,8 @@
     min-height: 3.5rem;
     flex-shrink: 0;
     border-bottom: 1px solid var(--bl-border-color);
+    border-top-left-radius: var(--bl-modal-border-radius);
+    border-top-right-radius: var(--bl-modal-border-radius);
   }
 
   .modal-title {
@@ -122,6 +123,8 @@
     border-top: 1px solid var(--bl-border-color);
     background-color: var(--bl-modal-footer-bg);
     border-top: 1px solid var(--bl-border-color);
+    border-bottom-left-radius: var(--bl-modal-border-radius);
+    border-bottom-right-radius: var(--bl-modal-border-radius);
   }
 
   @media (prefers-reduced-motion: reduce) {
