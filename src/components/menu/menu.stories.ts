@@ -21,6 +21,17 @@ export const Menu: Story = {
     <button class="menu-item">Close</button>
   </div>
 </div>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aspernatur, culpa cum dolorum ducimus eum ex facere fugiat in iure natus neque nisi omnis porro praesentium quam quos. Architecto, itaque.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aspernatur, culpa cum dolorum ducimus eum ex facere fugiat in iure natus neque nisi omnis porro praesentium quam quos. Architecto, itaque.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aspernatur, culpa cum dolorum ducimus eum ex facere fugiat in iure natus neque nisi omnis porro praesentium quam quos. Architecto, itaque.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aspernatur, culpa cum dolorum ducimus eum ex facere fugiat in iure natus neque nisi omnis porro praesentium quam quos. Architecto, itaque.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aspernatur, culpa cum dolorum ducimus eum ex facere fugiat in iure natus neque nisi omnis porro praesentium quam quos. Architecto, itaque.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aspernatur, culpa cum dolorum ducimus eum ex facere fugiat in iure natus neque nisi omnis porro praesentium quam quos. Architecto, itaque.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aspernatur, culpa cum dolorum ducimus eum ex facere fugiat in iure natus neque nisi omnis porro praesentium quam quos. Architecto, itaque.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aspernatur, culpa cum dolorum ducimus eum ex facere fugiat in iure natus neque nisi omnis porro praesentium quam quos. Architecto, itaque.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aspernatur, culpa cum dolorum ducimus eum ex facere fugiat in iure natus neque nisi omnis porro praesentium quam quos. Architecto, itaque.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aspernatur, culpa cum dolorum ducimus eum ex facere fugiat in iure natus neque nisi omnis porro praesentium quam quos. Architecto, itaque.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aspernatur, culpa cum dolorum ducimus eum ex facere fugiat in iure natus neque nisi omnis porro praesentium quam quos. Architecto, itaque.</p>
 `;
   },
 };
