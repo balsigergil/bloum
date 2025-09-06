@@ -74,18 +74,10 @@ export class Menu {
     };
     document.addEventListener("keydown", documentKeydownHandler);
 
-    const closeHandler = this.close.bind(this);
-    this.#menu.querySelectorAll(".menu-item").forEach((item) => {
-      item.addEventListener("click", closeHandler);
-    });
-
     this.#cleanupEvents = () => {
       this.#trigger.removeEventListener("click", triggerHandler);
       document.removeEventListener("click", documentClickHandler);
       document.removeEventListener("keydown", documentKeydownHandler);
-      this.#menu.querySelectorAll(".menu-item").forEach((item) => {
-        item.removeEventListener("click", closeHandler);
-      });
     };
   }
 
@@ -112,17 +104,19 @@ export class Menu {
 }
 
 export function initMenus() {
-  document.querySelectorAll<HTMLElement>("[data-menu]").forEach((trigger) => {
-    const menuSelector = trigger.dataset.menu;
-    if (!menuSelector) {
+  document.querySelectorAll<HTMLElement>(".menu").forEach((menuEl) => {
+    const dropdown = menuEl.closest(".dropdown");
+    if (!dropdown) {
       return;
     }
 
-    const menu = document.querySelector<HTMLElement>(menuSelector);
-    if (!menu) {
+    const trigger = dropdown.querySelector<HTMLElement>(
+      "[data-dropdown-toggle]",
+    );
+    if (!trigger) {
       return;
     }
 
-    new Menu(menu, trigger);
+    new Menu(menuEl, trigger);
   });
 }
