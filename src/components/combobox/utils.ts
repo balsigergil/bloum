@@ -5,6 +5,7 @@ export const DEFAULT_PROPS: ComboboxConfig = {
   noResultsText: "No results found",
   isSearchable: false,
   isMultiple: false,
+  debug: false,
 };
 
 export function parseOptions(

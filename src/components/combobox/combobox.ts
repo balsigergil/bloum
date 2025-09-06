@@ -12,6 +12,7 @@ export interface ComboboxConfig {
   noResultsText?: string;
   isSearchable?: boolean;
   isMultiple?: boolean;
+  debug?: boolean;
 }
 
 export interface ComboboxInput extends HTMLSelectElement {
@@ -51,8 +52,6 @@ export class Combobox {
 
   #cleanupEvents: VoidFunction | null = null;
   #cleanupFloating: VoidFunction | null = null;
-
-  #debugMode = true;
 
   constructor(element: string | ComboboxInput, options?: ComboboxConfig) {
     if (typeof element === "string") {
@@ -107,8 +106,11 @@ export class Combobox {
       this.#optionsContainer.focus();
     }
 
-    if (this.#selected.length > 0) {
+    if (this.#selected.length > 0 && !this.#config.isMultiple) {
       this.#setHighlightIndex(this.#selected[0]);
+    } else {
+      this.#highlighted = -1;
+      this.#highlightNext();
     }
 
     this.#updateOptionsList();
@@ -431,7 +433,7 @@ export class Combobox {
         const option = this.#field.options[i];
         const optionElement = document.createElement("div");
         optionElement.classList.add("bl-combobox-option");
-        if (this.#debugMode) {
+        if (this.#config.debug) {
           optionElement.innerText = `${i}: ${option.text} (${option.value})`;
         } else {
           optionElement.innerText = option.text;
@@ -599,7 +601,7 @@ export class Combobox {
     } else if (this.#highlighted >= this.#optionCount) {
       this.#highlighted = this.#optionCount - 1;
     }
-    if (this.#debugMode) {
+    if (this.#config.debug) {
       console.log("Highlighted index:", this.#highlighted);
     }
   }
