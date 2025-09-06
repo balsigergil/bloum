@@ -74,7 +74,6 @@ function setupModalPortal() {
 
 const meta: Meta = {
   title: "Components/Overlays/Modal",
-  // tags: ["!autodocs"],
   parameters: {
     docs: {
       description: {
@@ -88,7 +87,7 @@ The Modal component provides an accessible, focus-trapped dialog overlay for dis
 - **Multiple Sizes**: Small, medium, large, extra-large, and full-width variants
 - **Backdrop Click**: Click outside to close (can be configured)
 - **Nested Support**: Multiple modals can be opened simultaneously
-- **Animation**: Smooth fade and scale animations
+- **Animation**: Smooth fade animation
 
 ## Usage
 - Use \`data-modal\` attribute on triggers to specify target modal ID
@@ -385,12 +384,12 @@ export const ModalWithForm: StoryObj = {
             <input type="text" id="last-name" name="lastName" class="input" placeholder="Doe" required>
           </div>
         </div>
-        
+
         <div class="field">
           <label for="user-email" class="label">Email Address</label>
           <input type="email" id="user-email" name="email" class="input" placeholder="john.doe@example.com" required>
         </div>
-        
+
         <div class="field">
           <label for="user-role" class="label">Role</label>
           <select id="user-role" name="role" class="input" required>
@@ -400,12 +399,12 @@ export const ModalWithForm: StoryObj = {
             <option value="viewer">Viewer</option>
           </select>
         </div>
-        
+
         <div class="field">
           <label for="user-bio" class="label">Bio</label>
           <textarea id="user-bio" name="bio" class="input" rows="3" placeholder="Tell us about yourself..."></textarea>
         </div>
-        
+
         <div class="field">
           <div class="field">
             <input type="checkbox" class="input-check" id="notifications" name="notifications" checked>
@@ -512,6 +511,7 @@ export const ModalWithScrollableContent: StoryObj = {
   },
   render: () => {
     return `<button class="btn btn-primary" data-modal="#scrollable-modal">Open Scrollable Modal</button>
+<button class="btn btn-primary" data-modal="#long-modal">Open Long Modal</button>
 
 <div class="modal" id="scrollable-modal" aria-labelledby="scrollable-modal-title">
   <div class="modal-content">
@@ -527,31 +527,31 @@ export const ModalWithScrollableContent: StoryObj = {
     <div class="modal-body" style="max-height: 400px; overflow-y: auto;">
       <h4>1. Introduction</h4>
       <p>These terms and conditions outline the rules and regulations for the use of our website and services. By accessing this website, we assume you accept these terms and conditions.</p>
-      
+
       <h4>2. User Accounts</h4>
       <p>When you create an account with us, you must provide information that is accurate, complete, and current at all times. You are responsible for safeguarding the password and for any activities that occur under your account.</p>
-      
+
       <h4>3. Privacy Policy</h4>
       <p>Your privacy is important to us. Our Privacy Policy explains how we collect, use, and protect your information when you use our service.</p>
-      
+
       <h4>4. Prohibited Uses</h4>
       <p>You may not use our service for any unlawful purpose or to solicit others to perform unlawful acts. You may not violate any international, federal, provincial, or state regulations, rules, or laws.</p>
-      
+
       <h4>5. Content</h4>
       <p>Our service allows you to post, link, store, share and otherwise make available certain information, text, graphics, videos, or other material. You are responsible for the content that you post to the service.</p>
-      
+
       <h4>6. Intellectual Property Rights</h4>
       <p>The service and its original content, features, and functionality are and will remain the exclusive property of our company and its licensors.</p>
-      
+
       <h4>7. Termination</h4>
       <p>We may terminate or suspend your account immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach the terms.</p>
-      
+
       <h4>8. Limitation of Liability</h4>
       <p>In no event shall our company, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential, or punitive damages.</p>
-      
+
       <h4>9. Governing Law</h4>
       <p>These terms shall be interpreted and defined in accordance with the laws of the jurisdiction in which our company is based.</p>
-      
+
       <h4>10. Changes to Terms</h4>
       <p>We reserve the right, at our sole discretion, to modify or replace these terms at any time. If a revision is material, we will try to provide at least 30 days notice prior to any new terms taking effect.</p>
     </div>
@@ -560,7 +560,131 @@ export const ModalWithScrollableContent: StoryObj = {
       <button type="button" class="btn btn-primary" data-modal-close>Accept Terms</button>
     </div>
   </div>
-</div>`;
+</div>
+
+
+<div class="modal" id="long-modal" aria-labelledby="long-modal-title">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3 class="modal-title" id="long-modal-title">Terms and Conditions</h3>
+      <button type="button" class="btn btn-icon btn-ghost" aria-label="Close" data-modal-close>
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="modal-body">
+      <h4>1. Introduction</h4>
+      <p>These terms and conditions outline the rules and regulations for the use of our website and services. By accessing this website, we assume you accept these terms and conditions.</p>
+
+      <h4>2. User Accounts</h4>
+      <p>When you create an account with us, you must provide information that is accurate, complete, and current at all times. You are responsible for safeguarding the password and for any activities that occur under your account.</p>
+
+      <h4>3. Privacy Policy</h4>
+      <p>Your privacy is important to us. Our Privacy Policy explains how we collect, use, and protect your information when you use our service.</p>
+
+      <h4>4. Prohibited Uses</h4>
+      <p>You may not use our service for any unlawful purpose or to solicit others to perform unlawful acts. You may not violate any international, federal, provincial, or state regulations, rules, or laws.</p>
+
+      <h4>5. Content</h4>
+      <p>Our service allows you to post, link, store, share and otherwise make available certain information, text, graphics, videos, or other material. You are responsible for the content that you post to the service.</p>
+
+      <h4>6. Intellectual Property Rights</h4>
+      <p>The service and its original content, features, and functionality are and will remain the exclusive property of our company and its licensors.</p>
+
+      <h4>7. Termination</h4>
+      <p>We may terminate or suspend your account immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach the terms.</p>
+
+      <h4>8. Limitation of Liability</h4>
+      <p>In no event shall our company, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential, or punitive damages.</p>
+
+      <h4>9. Governing Law</h4>
+      <p>These terms shall be interpreted and defined in accordance with the laws of the jurisdiction in which our company is based.</p>
+
+      <h4>10. Changes to Terms</h4>
+      <p>We reserve the right, at our sole discretion, to modify or replace these terms at any time. If a revision is material, we will try to provide at least 30 days notice prior to any new terms taking effect.</p>
+      <h4>1. Introduction</h4>
+      <p>These terms and conditions outline the rules and regulations for the use of our website and services. By accessing this website, we assume you accept these terms and conditions.</p>
+
+      <h4>2. User Accounts</h4>
+      <p>When you create an account with us, you must provide information that is accurate, complete, and current at all times. You are responsible for safeguarding the password and for any activities that occur under your account.</p>
+
+      <h4>3. Privacy Policy</h4>
+      <p>Your privacy is important to us. Our Privacy Policy explains how we collect, use, and protect your information when you use our service.</p>
+
+      <h4>4. Prohibited Uses</h4>
+      <p>You may not use our service for any unlawful purpose or to solicit others to perform unlawful acts. You may not violate any international, federal, provincial, or state regulations, rules, or laws.</p>
+
+      <h4>5. Content</h4>
+      <p>Our service allows you to post, link, store, share and otherwise make available certain information, text, graphics, videos, or other material. You are responsible for the content that you post to the service.</p>
+
+      <h4>6. Intellectual Property Rights</h4>
+      <p>The service and its original content, features, and functionality are and will remain the exclusive property of our company and its licensors.</p>
+
+      <h4>7. Termination</h4>
+      <p>We may terminate or suspend your account immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach the terms.</p>
+
+      <h4>8. Limitation of Liability</h4>
+      <p>In no event shall our company, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential, or punitive damages.</p>
+
+      <h4>9. Governing Law</h4>
+      <p>These terms shall be interpreted and defined in accordance with the laws of the jurisdiction in which our company is based.</p>
+
+      <h4>10. Changes to Terms</h4>
+      <p>We reserve the right, at our sole discretion, to modify or replace these terms at any time. If a revision is material, we will try to provide at least 30 days notice prior to any new terms taking effect.</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline" data-modal-close>Decline</button>
+      <button type="button" class="btn btn-primary" data-modal-close>Accept Terms</button>
+    </div>
+  </div>
+</div>
+
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab delectus, dolor expedita fugiat laborum, nesciunt officia perferendis quod sequi sit temporibus voluptates. Doloribus dolorum exercitationem illo optio quam repellendus, ut.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab delectus, dolor expedita fugiat laborum, nesciunt officia perferendis quod sequi sit temporibus voluptates. Doloribus dolorum exercitationem illo optio quam repellendus, ut.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab delectus, dolor expedita fugiat laborum, nesciunt officia perferendis quod sequi sit temporibus voluptates. Doloribus dolorum exercitationem illo optio quam repellendus, ut.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab delectus, dolor expedita fugiat laborum, nesciunt officia perferendis quod sequi sit temporibus voluptates. Doloribus dolorum exercitationem illo optio quam repellendus, ut.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab delectus, dolor expedita fugiat laborum, nesciunt officia perferendis quod sequi sit temporibus voluptates. Doloribus dolorum exercitationem illo optio quam repellendus, ut.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab delectus, dolor expedita fugiat laborum, nesciunt officia perferendis quod sequi sit temporibus voluptates. Doloribus dolorum exercitationem illo optio quam repellendus, ut.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab delectus, dolor expedita fugiat laborum, nesciunt officia perferendis quod sequi sit temporibus voluptates. Doloribus dolorum exercitationem illo optio quam repellendus, ut.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab delectus, dolor expedita fugiat laborum, nesciunt officia perferendis quod sequi sit temporibus voluptates. Doloribus dolorum exercitationem illo optio quam repellendus, ut.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab delectus, dolor expedita fugiat laborum, nesciunt officia perferendis quod sequi sit temporibus voluptates. Doloribus dolorum exercitationem illo optio quam repellendus, ut.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab delectus, dolor expedita fugiat laborum, nesciunt officia perferendis quod sequi sit temporibus voluptates. Doloribus dolorum exercitationem illo optio quam repellendus, ut.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab delectus, dolor expedita fugiat laborum, nesciunt officia perferendis quod sequi sit temporibus voluptates. Doloribus dolorum exercitationem illo optio quam repellendus, ut.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab delectus, dolor expedita fugiat laborum, nesciunt officia perferendis quod sequi sit temporibus voluptates. Doloribus dolorum exercitationem illo optio quam repellendus, ut.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab delectus, dolor expedita fugiat laborum, nesciunt officia perferendis quod sequi sit temporibus voluptates. Doloribus dolorum exercitationem illo optio quam repellendus, ut.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab delectus, dolor expedita fugiat laborum, nesciunt officia perferendis quod sequi sit temporibus voluptates. Doloribus dolorum exercitationem illo optio quam repellendus, ut.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab delectus, dolor expedita fugiat laborum, nesciunt officia perferendis quod sequi sit temporibus voluptates. Doloribus dolorum exercitationem illo optio quam repellendus, ut.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab delectus, dolor expedita fugiat laborum, nesciunt officia perferendis quod sequi sit temporibus voluptates. Doloribus dolorum exercitationem illo optio quam repellendus, ut.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab delectus, dolor expedita fugiat laborum, nesciunt officia perferendis quod sequi sit temporibus voluptates. Doloribus dolorum exercitationem illo optio quam repellendus, ut.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab delectus, dolor expedita fugiat laborum, nesciunt officia perferendis quod sequi sit temporibus voluptates. Doloribus dolorum exercitationem illo optio quam repellendus, ut.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab delectus, dolor expedita fugiat laborum, nesciunt officia perferendis quod sequi sit temporibus voluptates. Doloribus dolorum exercitationem illo optio quam repellendus, ut.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab delectus, dolor expedita fugiat laborum, nesciunt officia perferendis quod sequi sit temporibus voluptates. Doloribus dolorum exercitationem illo optio quam repellendus, ut.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab delectus, dolor expedita fugiat laborum, nesciunt officia perferendis quod sequi sit temporibus voluptates. Doloribus dolorum exercitationem illo optio quam repellendus, ut.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab delectus, dolor expedita fugiat laborum, nesciunt officia perferendis quod sequi sit temporibus voluptates. Doloribus dolorum exercitationem illo optio quam repellendus, ut.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab delectus, dolor expedita fugiat laborum, nesciunt officia perferendis quod sequi sit temporibus voluptates. Doloribus dolorum exercitationem illo optio quam repellendus, ut.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab delectus, dolor expedita fugiat laborum, nesciunt officia perferendis quod sequi sit temporibus voluptates. Doloribus dolorum exercitationem illo optio quam repellendus, ut.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab delectus, dolor expedita fugiat laborum, nesciunt officia perferendis quod sequi sit temporibus voluptates. Doloribus dolorum exercitationem illo optio quam repellendus, ut.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab delectus, dolor expedita fugiat laborum, nesciunt officia perferendis quod sequi sit temporibus voluptates. Doloribus dolorum exercitationem illo optio quam repellendus, ut.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab delectus, dolor expedita fugiat laborum, nesciunt officia perferendis quod sequi sit temporibus voluptates. Doloribus dolorum exercitationem illo optio quam repellendus, ut.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab delectus, dolor expedita fugiat laborum, nesciunt officia perferendis quod sequi sit temporibus voluptates. Doloribus dolorum exercitationem illo optio quam repellendus, ut.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab delectus, dolor expedita fugiat laborum, nesciunt officia perferendis quod sequi sit temporibus voluptates. Doloribus dolorum exercitationem illo optio quam repellendus, ut.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab delectus, dolor expedita fugiat laborum, nesciunt officia perferendis quod sequi sit temporibus voluptates. Doloribus dolorum exercitationem illo optio quam repellendus, ut.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab delectus, dolor expedita fugiat laborum, nesciunt officia perferendis quod sequi sit temporibus voluptates. Doloribus dolorum exercitationem illo optio quam repellendus, ut.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab delectus, dolor expedita fugiat laborum, nesciunt officia perferendis quod sequi sit temporibus voluptates. Doloribus dolorum exercitationem illo optio quam repellendus, ut.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab delectus, dolor expedita fugiat laborum, nesciunt officia perferendis quod sequi sit temporibus voluptates. Doloribus dolorum exercitationem illo optio quam repellendus, ut.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab delectus, dolor expedita fugiat laborum, nesciunt officia perferendis quod sequi sit temporibus voluptates. Doloribus dolorum exercitationem illo optio quam repellendus, ut.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab delectus, dolor expedita fugiat laborum, nesciunt officia perferendis quod sequi sit temporibus voluptates. Doloribus dolorum exercitationem illo optio quam repellendus, ut.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab delectus, dolor expedita fugiat laborum, nesciunt officia perferendis quod sequi sit temporibus voluptates. Doloribus dolorum exercitationem illo optio quam repellendus, ut.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab delectus, dolor expedita fugiat laborum, nesciunt officia perferendis quod sequi sit temporibus voluptates. Doloribus dolorum exercitationem illo optio quam repellendus, ut.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab delectus, dolor expedita fugiat laborum, nesciunt officia perferendis quod sequi sit temporibus voluptates. Doloribus dolorum exercitationem illo optio quam repellendus, ut.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab delectus, dolor expedita fugiat laborum, nesciunt officia perferendis quod sequi sit temporibus voluptates. Doloribus dolorum exercitationem illo optio quam repellendus, ut.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab delectus, dolor expedita fugiat laborum, nesciunt officia perferendis quod sequi sit temporibus voluptates. Doloribus dolorum exercitationem illo optio quam repellendus, ut.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab delectus, dolor expedita fugiat laborum, nesciunt officia perferendis quod sequi sit temporibus voluptates. Doloribus dolorum exercitationem illo optio quam repellendus, ut.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab delectus, dolor expedita fugiat laborum, nesciunt officia perferendis quod sequi sit temporibus voluptates. Doloribus dolorum exercitationem illo optio quam repellendus, ut.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab delectus, dolor expedita fugiat laborum, nesciunt officia perferendis quod sequi sit temporibus voluptates. Doloribus dolorum exercitationem illo optio quam repellendus, ut.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab delectus, dolor expedita fugiat laborum, nesciunt officia perferendis quod sequi sit temporibus voluptates. Doloribus dolorum exercitationem illo optio quam repellendus, ut.</p>
+
+`;
   },
 };
 
@@ -604,7 +728,7 @@ export const ModalWithComplexContent: StoryObj = {
                   <p class="mb-1"><strong>Phone:</strong> +1 (555) 123-4567</p>
                   <p class="mb-1"><strong>Location:</strong> San Francisco, CA</p>
                 </div>
-                
+
                 <div class="card card-body">
                   <h5 class="mb-2 card-title">Account Status</h5>
                   <p class="mb-1"><span class="badge badge-success">Active</span></p>

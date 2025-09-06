@@ -4,6 +4,7 @@
     --bl-modal-animation-transform: var(--bl-transition-lg);
     --bl-modal-dialog-bg: var(--bl-clr-surface);
     --bl-modal-footer-bg: var(--bl-clr-gray-50);
+    --bl-modal-title-color: var(--bl-clr-gray-800);
     --bl-modal-padding: 1.5rem;
     --bl-modal-margin: 4rem;
     --bl-modal-backdrop-bg: rgba(from var(--bl-clr-gray-900) r g b / 0.25);
@@ -26,6 +27,7 @@
     z-index: var(--bl-modal-zindex);
     display: none;
     animation: modalFadeIn 150ms both linear;
+    overflow-y: auto;
   }
 
   .modal.open {
@@ -90,10 +92,11 @@
   .modal-title {
     font-size: var(--bl-fs-xl);
     font-weight: var(--bl-fw-bold);
-    color: var(--bl-clr-gray-700);
+    color: var(--bl-modal-title-color);
   }
 
   .modal-header button[data-modal-close] {
+    font-size: 0.875rem;
     position: absolute;
     top: 0;
     right: 0;
@@ -147,26 +150,6 @@
 
   .dark .modal {
     --bl-modal-footer-bg: var(--bl-clr-surface);
-  }
-
-  /* Storybook-specific fixes for modal positioning */
-  .sb-show-main .modal {
-    /* Ensure modals cover the entire Storybook iframe */
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 9999;
-  }
-
-  /* Fix for Storybook docs view */
-  .docs-story .modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 9999;
+    --bl-modal-title-color: var(--bl-clr-gray-200);
   }
 }
