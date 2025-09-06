@@ -19,7 +19,7 @@ import { initAutogrowTextarea } from "../components/textarea/autogrow-textarea";
 import { initToast } from "../components/toast/toast";
 import { initTooltip } from "../components/tooltip/tooltip";
 
-export function init() {
+export function init(htmxSupport = true) {
   Tabs.register();
   TabList.register();
   Tab.register();
@@ -41,4 +41,20 @@ export function init() {
   initAvatar();
   initPasswordToggle();
   initPinInput();
+
+  if (htmxSupport) {
+    document.addEventListener("htmx:load", () => {
+      initTooltip();
+      initDrawers();
+      initMenus();
+      initCollapse();
+      initAccordion();
+      initAutogrowTextarea();
+      initPopover();
+      initToast();
+      initAvatar();
+      initPasswordToggle();
+      initPinInput();
+    });
+  }
 }

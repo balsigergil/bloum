@@ -31,7 +31,7 @@ export class Popover {
     try {
       this.#focusTrap.activate();
     } catch {
-      console.warn("No focusable elements found in popover");
+      console.warn("[Popover] No focusable elements found in popover");
     }
 
     if (this.#arrowElement === null) {
@@ -121,19 +121,30 @@ export class Popover {
   }
 }
 
+let popoverMouseDownHandler: ((e: MouseEvent) => void) | null = null;
+let popoverKeydownHandler: ((e: KeyboardEvent) => void) | null = null;
+const popoverOpenHandlers: Array<[HTMLElement, VoidFunction]> = [];
+
 export function initPopover() {
   document.querySelectorAll(".popover").forEach((element) => {
+    element.classList.remove("show");
     new Popover(element as HTMLElement);
   });
+
+  // Cleanup event listeners
+  for (const [element, handler] of popoverOpenHandlers) {
+    element.removeEventListener("click", handler);
+  }
 
   document
     .querySelectorAll<HTMLElement>("[data-popover]")
     .forEach((element) => {
-      const popoverEl = element.dataset.popover;
-      if (!popoverEl) {
+      const popoverSelector = element.dataset.popover;
+      if (!popoverSelector) {
         return;
       }
-      const popover = document.querySelector<BloumPopoverElement>(popoverEl);
+      const popover =
+        document.querySelector<BloumPopoverElement>(popoverSelector);
       if (!popover) {
         return;
       }
@@ -141,27 +152,45 @@ export function initPopover() {
       if (popoverInstance === undefined) {
         return;
       }
-      element.addEventListener("click", () => {
+      const openHandler = () => {
         popoverInstance.toggle(element);
-      });
+      };
+      element.addEventListener("click", openHandler);
+      popoverOpenHandlers.push([element, openHandler]);
     });
 
-  addEventListener("click", (event) => {
+  // Cleanup event listeners
+  if (popoverMouseDownHandler) {
+    removeEventListener("mousedown", popoverMouseDownHandler);
+  }
+  if (popoverKeydownHandler) {
+    removeEventListener("keydown", popoverKeydownHandler);
+  }
+
+  popoverMouseDownHandler = (event) => {
     const target = event.target as HTMLElement;
     if (!target.closest(".popover") && !target.closest("[data-popover]")) {
-      document
-        .querySelectorAll<BloumPopoverElement>(".popover")
-        .forEach((popover) => {
-          const popoverInstance = popover.blpopover;
-          if (popoverInstance === undefined) {
-            return;
-          }
-          popoverInstance.close();
-        });
+      document.addEventListener(
+        "click",
+        (e) => {
+          const target2 = e.target as HTMLElement;
+          if (target2 !== target) return;
+          document
+            .querySelectorAll<BloumPopoverElement>(".popover")
+            .forEach((popover) => {
+              const popoverInstance = popover.blpopover;
+              if (popoverInstance === undefined) {
+                return;
+              }
+              popoverInstance.close();
+            });
+        },
+        { once: true },
+      );
     }
-  });
+  };
 
-  addEventListener("keydown", (event) => {
+  popoverKeydownHandler = (event) => {
     if (event.key === "Escape") {
       document
         .querySelectorAll<BloumPopoverElement>(".popover")
@@ -173,5 +202,8 @@ export function initPopover() {
           popoverInstance.close();
         });
     }
-  });
+  };
+
+  addEventListener("mousedown", popoverMouseDownHandler);
+  addEventListener("keydown", popoverKeydownHandler);
 }

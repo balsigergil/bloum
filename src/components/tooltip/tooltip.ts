@@ -35,13 +35,11 @@ export class Tooltip {
       "mouseenter",
       this.createTooltipElement.bind(this),
     );
-    element.addEventListener("focus", this.createTooltipElement.bind(this));
 
     element.addEventListener(
       "mouseleave",
       this.removeTooltipElement.bind(this),
     );
-    element.addEventListener("blur", this.removeTooltipElement.bind(this));
   }
 
   createTooltipElement() {
@@ -79,11 +77,6 @@ export class Tooltip {
   removeTooltipElement() {
     const tooltip = document.getElementById(this.tooltipId);
     if (!tooltip) {
-      return;
-    }
-
-    // Return early if the trigger is still focused
-    if (this.trigger === document.activeElement) {
       return;
     }
 
@@ -150,16 +143,15 @@ export class Tooltip {
 }
 
 export function initTooltip() {
+  // Clear existing tooltips
+  for (const tooltip of document.querySelectorAll(".tooltip")) {
+    tooltip.remove();
+  }
+
   const createTooltip = (element: HTMLElement) => {
     new Tooltip(element as HTMLElement);
   };
   document
     .querySelectorAll<HTMLElement>("[data-tooltip]")
     .forEach(createTooltip);
-
-  document.addEventListener("htmx:load", () => {
-    document
-      .querySelectorAll<HTMLElement>("[data-tooltip]")
-      .forEach(createTooltip);
-  });
 }
