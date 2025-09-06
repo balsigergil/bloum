@@ -23,6 +23,16 @@ export function parseOptions(
 
   if (field.dataset.comboboxPlaceholder) {
     datasetProps["placeholder"] = field.dataset.comboboxPlaceholder;
+  } else {
+    // Look an empy option for the placeholder
+    const emptyOption = field.querySelector("option[value='']");
+    if (
+      emptyOption !== null &&
+      emptyOption.textContent !== null &&
+      emptyOption.textContent !== ""
+    ) {
+      datasetProps["placeholder"] = emptyOption.textContent;
+    }
   }
 
   if (field.dataset.comboboxNoResults) {

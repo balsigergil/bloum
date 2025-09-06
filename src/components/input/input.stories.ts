@@ -43,14 +43,14 @@ export const PasswordWithToggle: Story = {
             <i class="fa-solid fa-eye"></i>
           </button>
         </div>
-        
+
         <div class="input-icon">
           <input type="password" class="input" placeholder="Confirm password" id="password2">
           <button type="button" class="password-toggle" aria-label="Show password">
             <i class="fa-solid fa-eye"></i>
           </button>
         </div>
-        
+
         <div class="field">
           <label class="label">With Label</label>
           <div class="input-icon">
@@ -59,7 +59,7 @@ export const PasswordWithToggle: Story = {
               <i class="fa-solid fa-eye"></i>
             </button>
           </div>
-          <p class="field-help">Password must be at least 8 characters long.</p>
+          <p class="field-text-help">Password must be at least 8 characters long.</p>
         </div>
       </div>
     `;

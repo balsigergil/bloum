@@ -4,6 +4,12 @@
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
+
+    --bl-field-text-help-color: var(--bl-clr-gray-500);
+    --bl-field-danger-color: var(--bl-clr-red-500);
+    --bl-field-text-danger-color: var(--bl-clr-red-600);
+    --bl-field-success-color: var(--bl-clr-green-500);
+    --bl-field-text-success-color: var(--bl-clr-green-600);
   }
 
   .field > .label {
@@ -26,28 +32,44 @@
     margin-bottom: 1rem;
   }
 
-  /* Form field help text */
-  .field-help {
+  .field-text {
     font-size: var(--bl-fs-base);
-    color: var(--bl-clr-gray-500);
+    color: var(--bl-field-text-help-color);
   }
 
-  /* Form field danger text */
-  .field-danger {
+  .field-danger .field-text {
+    color: var(--bl-field-text-danger-color);
+  }
+
+  .field-success .field-text {
+    color: var(--bl-field-text-success-color);
+  }
+
+  .field-text-help {
     font-size: var(--bl-fs-base);
-    color: var(--bl-clr-red-600);
+    color: var(--bl-field-text-help-color);
+  }
+
+  .field-text-danger {
+    font-size: var(--bl-fs-base);
+    color: var(--bl-field-text-danger-color);
+  }
+
+  .field-text-success {
+    font-size: var(--bl-fs-base);
+    color: var(--bl-field-text-success-color);
   }
 
   /* danger state for form control */
-  .field-danger-state .input {
-    border-color: var(--bl-clr-red-500);
-    --bl-focus-color: var(--bl-clr-red-500);
+  .field-danger .input {
+    border-color: var(--bl-field-danger-color);
+    --bl-focus-color: var(--bl-field-danger-color);
   }
 
   /* Success state for form control */
-  .field-success-state .input {
-    border-color: var(--bl-clr-green-500);
-    --bl-focus-color: var(--bl-clr-green-500);
+  .field-success .input {
+    border-color: var(--bl-field-success-color);
+    --bl-focus-color: var(--bl-field-success-color);
   }
 
   .label {
@@ -58,28 +80,14 @@
   }
 
   .dark {
-    .field-help {
-      color: var(--bl-clr-gray-500);
-    }
-
     .field-danger {
-      color: var(--bl-clr-red-400);
+      --bl-field-text-danger-color: var(--bl-clr-red-400);
+      --bl-field-danger-color: var(--bl-clr-red-400);
     }
 
-    .field-danger-state .input {
-      border-color: var(--bl-clr-red-600);
-    }
-
-    .field-danger-state .field:focus-visible {
-      outline-color: var(--bl-clr-red-600);
-    }
-
-    .field-success-state .input {
-      border-color: var(--bl-clr-green-600);
-    }
-
-    .field-success-state .field:focus-visible {
-      outline-color: var(--bl-clr-green-600);
+    .field-success {
+      --bl-field-success-color: var(--bl-clr-green-400);
+      --bl-field-text-success-color: var(--bl-clr-green-400);
     }
   }
 }

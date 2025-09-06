@@ -396,10 +396,18 @@ export class Combobox {
       }
     };
     document.addEventListener("click", handleDocumentClick);
-
     this.#cleanupEvents = () => {
       document.removeEventListener("click", handleDocumentClick);
     };
+
+    this.#field.addEventListener("invalid", (e) => {
+      e.preventDefault();
+      this.#wrapper.focus();
+    });
+
+    this.#field.addEventListener("click", () => {
+      this.#wrapper.focus();
+    });
   }
 
   /**
