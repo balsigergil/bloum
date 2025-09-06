@@ -28,7 +28,7 @@ export class Combobox {
 
   #wrapper!: HTMLDivElement;
   #inner!: HTMLDivElement;
-  #placeholderString!: string;
+  readonly #placeholderString!: string;
 
   // Wrapper around the selected items in the input field
   #itemsContainer!: HTMLDivElement;
@@ -183,6 +183,11 @@ export class Combobox {
       }
 
       if (this.#config.isMultiple) {
+        // Check if the option is not empty
+        if (this.#field.options[i].value === "") {
+          this.#searchInput?.focus();
+          return;
+        }
         if (!this.#selected.includes(i)) {
           this.#selected.push(i);
         }
@@ -445,6 +450,9 @@ export class Combobox {
           optionElement.innerText = `${i}: ${option.text} (${option.value})`;
         } else {
           optionElement.innerText = option.text;
+        }
+        if (option.value === "") {
+          optionElement.classList.add("bl-combobox-empty");
         }
         optionElement.setAttribute("data-value", option.value);
         optionElement.setAttribute("data-index", i.toString());

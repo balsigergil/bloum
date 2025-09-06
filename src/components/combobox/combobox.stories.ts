@@ -39,9 +39,10 @@ export const SelectSearchable: Story = {
   render: () => {
     return `
 <select name="fruits" id="combobox-2">
+  <option value="">-----------</option>
   <option value="apple">Apple</option>
   <option value="orange">Orange</option>
-  <option value="banana" selected>Banana</option>
+  <option value="banana">Banana</option>
   <option value="grape">Grape</option>
   <option value="kiwi">Kiwi</option>
   <option value="mango">Mango</option>
@@ -60,6 +61,7 @@ export const SelectMultiple: Story = {
   render: () => {
     return `
 <select name="fruits" id="combobox-3" required multiple>
+  <option value="">Choose a fruit</option>
   <option value="apple">Apple</option>
   <option value="orange">Orange</option>
   <option value="banana" selected>Banana</option>

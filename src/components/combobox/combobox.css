@@ -127,6 +127,10 @@
     user-select: none;
   }
 
+  .bl-combobox-empty {
+    font-style: italic;
+  }
+
   .bl-combobox-option.bl-combobox-highlighted {
     background-color: var(--bl-combobox-option-highlighted-bg);
   }
