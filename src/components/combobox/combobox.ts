@@ -52,6 +52,8 @@ export class Combobox {
   #cleanupEvents: VoidFunction | null = null;
   #cleanupFloating: VoidFunction | null = null;
 
+  #debugMode = true;
+
   constructor(element: string | ComboboxInput, options?: ComboboxConfig) {
     if (typeof element === "string") {
       const domElement = document.querySelector<HTMLSelectElement>(element);
@@ -429,7 +431,11 @@ export class Combobox {
         const option = this.#field.options[i];
         const optionElement = document.createElement("div");
         optionElement.classList.add("bl-combobox-option");
-        optionElement.innerText = option.text;
+        if (this.#debugMode) {
+          optionElement.innerText = `${i}: ${option.text} (${option.value})`;
+        } else {
+          optionElement.innerText = option.text;
+        }
         optionElement.setAttribute("data-value", option.value);
         optionElement.setAttribute("data-index", i.toString());
 
@@ -518,6 +524,7 @@ export class Combobox {
    * @private
    */
   #highlightNext() {
+    let hasFoundMatch = false;
     for (let i = this.#highlighted + 1; i < this.#optionCount; i++) {
       const option = this.#options[i];
       if (this.#config.isMultiple && this.#selected.includes(i)) {
@@ -525,7 +532,21 @@ export class Combobox {
       }
       if (this.#matchSearch(option)) {
         this.#setHighlightIndex(i);
+        hasFoundMatch = true;
         break;
+      }
+    }
+    if (!hasFoundMatch) {
+      // If no match is found, search in the opposite direction
+      for (let i = this.#highlighted; i >= 0; i--) {
+        const option = this.#options[i];
+        if (this.#config.isMultiple && this.#selected.includes(i)) {
+          continue;
+        }
+        if (this.#matchSearch(option)) {
+          this.#setHighlightIndex(i);
+          break;
+        }
       }
     }
   }
@@ -535,6 +556,7 @@ export class Combobox {
    * @private
    */
   #highlightPrevious() {
+    let hasFoundMatch = false;
     for (let i = this.#highlighted - 1; i >= 0; i--) {
       const option = this.#options[i];
       if (this.#config.isMultiple && this.#selected.includes(i)) {
@@ -542,11 +564,32 @@ export class Combobox {
       }
       if (this.#matchSearch(option)) {
         this.#setHighlightIndex(i);
+        hasFoundMatch = true;
         break;
+      }
+    }
+    if (!hasFoundMatch) {
+      // If no match is found, search in the opposite direction
+      for (let i = this.#highlighted; i < this.#optionCount; i++) {
+        const option = this.#options[i];
+        if (this.#config.isMultiple && this.#selected.includes(i)) {
+          continue;
+        }
+        if (this.#matchSearch(option)) {
+          this.#setHighlightIndex(i);
+          break;
+        }
       }
     }
   }
 
+  /**
+   * Set the highlighted index in the dropdown list
+   *
+   * This method is called when the user navigates with the keyboard and the mouse.
+   * It is triggered when the mouse moves over an option, so it has to be kept as light as possible.
+   * @private
+   */
   #setHighlightIndex(index: number) {
     this.#highlighted = index;
 
@@ -555,6 +598,9 @@ export class Combobox {
       this.#highlighted = 0;
     } else if (this.#highlighted >= this.#optionCount) {
       this.#highlighted = this.#optionCount - 1;
+    }
+    if (this.#debugMode) {
+      console.log("Highlighted index:", this.#highlighted);
     }
   }
 
