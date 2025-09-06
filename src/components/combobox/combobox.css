@@ -22,7 +22,11 @@
   .bl-combobox:focus-within {
     border-color: var(--bl-focus-color);
     box-shadow: 0 0 0 var(--bl-focus-width)
-      color-mix(in srgb, var(--bl-focus-color) 50%, transparent);
+      color-mix(
+        in srgb,
+        var(--bl-focus-color) var(--bl-focus-fade),
+        transparent
+      );
     outline: none;
   }
 
