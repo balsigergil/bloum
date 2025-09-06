@@ -1,5 +1,25 @@
 # Changelog
 
+## [0.14.0](https://github.com/balsigergil/bloum/compare/v0.13.5...v0.14.0) (2025-09-06)
+
+### Features
+
+* add HTMX support globally (fix [#76](https://github.com/balsigergil/bloum/issues/76)) ([b2db2f5](https://github.com/balsigergil/bloum/commit/b2db2f59b1687fa733fb9c1cc6da07780f69ff30))
+* make initialization functions globally available (fix [#75](https://github.com/balsigergil/bloum/issues/75)) ([f07dd1c](https://github.com/balsigergil/bloum/commit/f07dd1c754b9609affffbc0015098433341b0acb))
+* **menu:** initialization with data attribute ([d06f216](https://github.com/balsigergil/bloum/commit/d06f216b3000aff135f812c1c5fe4c3973bec3d3))
+* **tab:** push browser history state (fix [#77](https://github.com/balsigergil/bloum/issues/77)) ([3fa79c3](https://github.com/balsigergil/bloum/commit/3fa79c35d5156693820165c9354fad3d4aef74d8))
+
+### Bug Fixes
+
+* **combobox:** focus shadow is not the same as other inputs (fix [#79](https://github.com/balsigergil/bloum/issues/79)) ([d77b69b](https://github.com/balsigergil/bloum/commit/d77b69b682840d83d16c23cb4187747cdea213ed))
+* **combobox:** no highlighting after the last item has been selected (fix [#60](https://github.com/balsigergil/bloum/issues/60)) ([b83b62f](https://github.com/balsigergil/bloum/commit/b83b62f7fc1f1e44b03d60ac18adfada0405c170))
+* **combobox:** required does not work (fix [#69](https://github.com/balsigergil/bloum/issues/69)) ([d46bf8b](https://github.com/balsigergil/bloum/commit/d46bf8ba240ae1e5832de78cfa7b00026afefb5c))
+* **combobox:** select first option on open when multiple ([abd2c32](https://github.com/balsigergil/bloum/commit/abd2c32730fe7b9a148f8b2346dd9ffae830472a))
+* **combobox:** select options with empty value when multiple (fix [#72](https://github.com/balsigergil/bloum/issues/72)) ([03cf1d3](https://github.com/balsigergil/bloum/commit/03cf1d314fdd68eacdf9d76b88a1d843d2945535))
+* **menu:** hidden behind background elements (fix [#74](https://github.com/balsigergil/bloum/issues/74)) ([0def07a](https://github.com/balsigergil/bloum/commit/0def07af600e52d835630dc35ad17ffe441c79c0))
+* **modal:** close after drag and drop (fix [#73](https://github.com/balsigergil/bloum/issues/73)) ([0560939](https://github.com/balsigergil/bloum/commit/0560939791c1349b0a073351e38512874f9e4c05))
+* **modal:** long modal cannot be scrolled (fix [#71](https://github.com/balsigergil/bloum/issues/71)) ([991432f](https://github.com/balsigergil/bloum/commit/991432f3b942d97a595245ecc548c85a35daa59c))
+
 ## [0.13.5](https://github.com/balsigergil/bloum/compare/v0.13.4...v0.13.5) (2025-08-02)
 
 ### Bug Fixes
