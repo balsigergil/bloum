@@ -66,6 +66,7 @@ export class Modal {
 
 // Store references to event handlers for cleanup
 let modalClickHandler: ((e: Event) => void) | null = null;
+let modalMouseDownHandler: ((e: MouseEvent) => void) | null = null;
 let modalKeydownHandler: ((e: KeyboardEvent) => void) | null = null;
 let modalCustomEventHandler: (() => void) | null = null;
 
@@ -83,11 +84,13 @@ export function initModals() {
   if (modalKeydownHandler) {
     removeEventListener("keydown", modalKeydownHandler);
   }
+  if (modalMouseDownHandler) {
+    removeEventListener("mousedown", modalMouseDownHandler);
+  }
   if (modalCustomEventHandler) {
     removeEventListener("bl-modal-close", modalCustomEventHandler);
   }
 
-  // Create new event handlers
   modalClickHandler = (e: Event) => {
     const target = e.target as HTMLElement;
 
@@ -116,15 +119,27 @@ export function initModals() {
         e.stopPropagation();
       }
     }
+  };
 
-    // Close modal when clicking outside
+  modalMouseDownHandler = (e: MouseEvent) => {
+    const target = e.target as HTMLElement | null;
+    if (target === null) return;
     if (target.closest(".modal.open") && !target.closest(".modal-content")) {
-      const modal = target.closest<BloumModalElement>(".modal.open");
-      if (modal !== null && modal.blmodal !== undefined) {
-        modal.blmodal.close();
-        e.preventDefault();
-        e.stopPropagation();
-      }
+      document.addEventListener(
+        "click",
+        (e) => {
+          // Trick to prevent closing the modal when click began inside the modal content
+          const target2 = e.target as HTMLElement;
+          if (target2 !== target) return;
+          const modal = target.closest<BloumModalElement>(".modal.open");
+          if (modal !== null && modal.blmodal !== undefined) {
+            modal.blmodal.close();
+            e.preventDefault();
+            e.stopPropagation();
+          }
+        },
+        { once: true },
+      );
     }
   };
 
@@ -141,5 +156,6 @@ export function initModals() {
   // Add new event listeners
   addEventListener("click", modalClickHandler);
   addEventListener("keydown", modalKeydownHandler);
+  addEventListener("mousedown", modalMouseDownHandler);
   addEventListener("bl-modal-close", modalCustomEventHandler);
 }
