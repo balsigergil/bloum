@@ -4,7 +4,7 @@
     --bl-card-border-radius: var(--bl-border-radius-lg);
     --bl-card-border: 1px solid var(--bl-border-color);
     --bl-card-padding: 1rem;
-    --bl-card-title-fs: var(--bl-fs-xl);
+    --bl-card-title-fs: var(--bl-fs-lg);
     --bl-card-title-fw: var(--bl-fw-bold);
     --bl-card-title-color: var(--bl-clr-gray-800);
     --bl-card-image-max-height: 150px;
@@ -30,7 +30,6 @@
     padding-inline: var(--bl-card-padding);
     display: flex;
     justify-content: space-between;
-    align-items: center;
   }
 
   .card-footer {
