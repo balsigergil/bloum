@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from "@storybook/html-vite";
 type TableArgs = {
   striped: boolean;
   hover: boolean;
+  compact: boolean;
 };
 
 const meta: Meta<TableArgs> = {
@@ -17,6 +18,10 @@ const meta: Meta<TableArgs> = {
 
     if (args.hover) {
       table.classList.add("table-hover");
+    }
+
+    if (args.compact) {
+      table.classList.add("table-compact");
     }
 
     table.innerHTML = `
@@ -112,5 +117,12 @@ export const TableHover: Story = {
   args: {
     ...Table.args,
     hover: true,
+  },
+};
+
+export const TableCompact: Story = {
+  args: {
+    ...Table.args,
+    compact: true,
   },
 };

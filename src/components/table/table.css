@@ -49,6 +49,11 @@
     &.table-striped.table-hover tbody tr:hover {
       background-color: var(--bl-table-hover-bg);
     }
+
+    &.table-compact {
+      --bl-table-cell-padding-block: 0.25rem;
+      --bl-table-cell-padding-inline: 0.5rem;
+    }
   }
 
   .table-responsive {
