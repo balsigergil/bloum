@@ -38,7 +38,7 @@ export class Tabs extends HTMLElement {
       t.addEventListener("click", (e) => {
         e.preventDefault();
         e.stopPropagation();
-        this.setSelected(i, true);
+        this.setSelected(i);
       });
     });
 
@@ -46,87 +46,57 @@ export class Tabs extends HTMLElement {
     this.#useAnchor = useAnchor;
     if (useAnchor) {
       const hash = window.location.hash;
-      this.selectTabByHash(hash, false);
+      if (hash) {
+        const tab = this.querySelector<Tab>(`bl-tab[href="${hash}"]`);
+        if (tab) {
+          this.setSelected(Array.from(tabs).indexOf(tab), false);
+        } else {
+          this.setSelected(0, false);
+        }
+      } else {
+        this.setSelected(0, false);
+      }
     } else {
       this.setSelected(0, false);
     }
-
-    window.addEventListener("popstate", () => {
-      const tabs = this.querySelectorAll<Tab>("bl-tab");
-      const tab = tabs[this.#selectedIndex];
-      const tabHref = tab.getAttribute("href");
-      const urlHash = window.location.hash;
-      if (tabHref !== urlHash) {
-        console.log("Hash changed", tabHref, urlHash);
-        this.selectTabByHash(urlHash, false, false);
-      }
-    });
   }
 
-  selectTabByHash(
-    hash: string,
-    focus: boolean = true,
-    updateHash: boolean = true,
-  ) {
-    const tabs = this.querySelectorAll<Tab>("bl-tab");
-    if (hash) {
-      const tab = this.querySelector<Tab>(`bl-tab[href="${hash}"]`);
-      if (tab) {
-        this.setSelected(Array.from(tabs).indexOf(tab), focus, updateHash);
-      } else {
-        this.setSelected(0, focus, updateHash);
-      }
-    } else {
-      this.setSelected(0, focus, updateHash);
-    }
-  }
-
-  setSelected(
-    index: number,
-    focus: boolean = true,
-    updateHash: boolean = true,
-  ) {
-    console.log("Selecting tab", index);
-    if (index < 0) {
-      return;
-    }
-    if (this.#useAnchor && updateHash) {
-      const tabs = this.querySelectorAll<Tab>("bl-tab");
-      const tab = tabs[index];
-      const href = tab.getAttribute("href");
-      if (
-        href &&
-        href !== window.location.hash &&
-        history.pushState !== undefined
-      ) {
-        history.pushState(null, "", href);
-      }
-    }
-
-    this.#selectedIndex = index;
-
-    const tabs = this.querySelectorAll<Tab>("bl-tab");
-    for (let i = 0; i < tabs.length; i++) {
-      if (index === i) {
-        tabs[i].tabIndex = 0;
-        tabs[i].classList.add("active");
-        tabs[i].setAttribute("aria-selected", "true");
-        if (focus) {
-          tabs[i].focus();
+  setSelected(index: number, focus: boolean = true) {
+    if (index >= 0) {
+      if (this.#useAnchor && focus) {
+        const tabs = this.querySelectorAll<Tab>("bl-tab");
+        const tab = tabs[index];
+        const href = tab.getAttribute("href");
+        if (href) {
+          window.location.replace(href);
         }
-      } else {
-        tabs[i].tabIndex = -1;
-        tabs[i].classList.remove("active");
-        tabs[i].setAttribute("aria-selected", "false");
       }
-    }
 
-    const panels = this.querySelectorAll<TabPanel>("bl-tab-panel");
-    for (let i = 0; i < panels.length; i++) {
-      if (i === index) {
-        panels[i].classList.add("show");
-      } else {
-        panels[i].classList.remove("show");
+      this.#selectedIndex = index;
+
+      const tabs = this.querySelectorAll<Tab>("bl-tab");
+      for (let i = 0; i < tabs.length; i++) {
+        if (index === i) {
+          tabs[i].tabIndex = 0;
+          tabs[i].classList.add("active");
+          tabs[i].setAttribute("aria-selected", "true");
+          if (focus) {
+            tabs[i].focus();
+          }
+        } else {
+          tabs[i].tabIndex = -1;
+          tabs[i].classList.remove("active");
+          tabs[i].setAttribute("aria-selected", "false");
+        }
+      }
+
+      const panels = this.querySelectorAll<TabPanel>("bl-tab-panel");
+      for (let i = 0; i < panels.length; i++) {
+        if (i === index) {
+          panels[i].classList.add("show");
+        } else {
+          panels[i].classList.remove("show");
+        }
       }
     }
   }
