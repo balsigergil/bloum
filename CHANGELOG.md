@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.14.1](https://github.com/balsigergil/bloum/compare/v0.14.0...v0.14.1) (2025-09-13)
+
+### Features
+
+* **table:** add compact variant ([90c4b65](https://github.com/balsigergil/bloum/commit/90c4b658bfaa0e7fbe2f4f914d6d5244b3ae5147))
+
+### Bug Fixes
+
+* **card:** reduce font size (fix [#80](https://github.com/balsigergil/bloum/issues/80)) ([558207e](https://github.com/balsigergil/bloum/commit/558207e41671f5871ecc593784648324f5efbdd8))
+* **modal:** add init when HTMX loads (fix [#81](https://github.com/balsigergil/bloum/issues/81)) ([a56125b](https://github.com/balsigergil/bloum/commit/a56125b14b914e56d1a9a5d976251a4b886ed966))
+
+### Reverts
+
+* **tab:** push browser history state (fix [#77](https://github.com/balsigergil/bloum/issues/77)) ([e4dca2a](https://github.com/balsigergil/bloum/commit/e4dca2a24e35d56e99dbe2d83303a9a7016b5ac4))
+
 ## [0.14.0](https://github.com/balsigergil/bloum/compare/v0.13.5...v0.14.0) (2025-09-06)
 
 ### Features
