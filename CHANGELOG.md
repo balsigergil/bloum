@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.15.0](https://github.com/balsigergil/bloum/compare/v0.14.1...v0.15.0) (2025-09-13)
+
+### Features
+
+* update colors and dark theme ([f57f94b](https://github.com/balsigergil/bloum/commit/f57f94bd8307f247a04056f707e0c1b4c97bd028))
+
 ## [0.14.1](https://github.com/balsigergil/bloum/compare/v0.14.0...v0.14.1) (2025-09-13)
 
 ### Features
