@@ -42,7 +42,7 @@
 
   .checkbox-card:has(.input-check:focus-visible),
   .checkbox-card:has(.input-check:focus-visible) {
-    outline: 2px solid var(--bl-checkbox-checked-color);
+    outline: 2px solid var(--bl-checkbox-checked-bg);
     outline-offset: 2px;
   }
 

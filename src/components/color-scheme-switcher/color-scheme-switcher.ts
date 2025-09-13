@@ -7,15 +7,20 @@ enum ColorScheme {
 const SCHEME_KEY = "color-scheme";
 
 function getCurrentColorScheme(): ColorScheme {
-  return localStorage.getItem(SCHEME_KEY) as ColorScheme;
+  const scheme = localStorage.getItem(SCHEME_KEY);
+  if (scheme === null) {
+    return ColorScheme.System;
+  } else {
+    return scheme as ColorScheme;
+  }
 }
 
 function setCurrentColorScheme(colorScheme: ColorScheme) {
   localStorage.setItem(SCHEME_KEY, colorScheme);
 }
 
-function updateColorScheme() {
-  const colorScheme = getCurrentColorScheme();
+function updateColorScheme(scheme?: ColorScheme) {
+  const colorScheme = scheme ?? getCurrentColorScheme();
   switch (colorScheme) {
     case ColorScheme.Dark:
       document.documentElement.classList.add("dark");
@@ -34,12 +39,10 @@ function updateColorScheme() {
       break;
     }
   }
+  setCurrentColorScheme(colorScheme);
 }
 
 export function initColorScheme() {
-  if (!localStorage.getItem(SCHEME_KEY)) {
-    setCurrentColorScheme(ColorScheme.System);
-  }
   updateColorScheme();
 }
 
@@ -57,8 +60,7 @@ function switchToNextTheme() {
       nextTheme = ColorScheme.Dark;
       break;
   }
-  setCurrentColorScheme(nextTheme);
-  updateColorScheme();
+  updateColorScheme(nextTheme);
 }
 
 interface ColorSchemeSwitcherElement extends HTMLElement {

@@ -18,4 +18,8 @@
       color-scheme: dark;
     }
   }
+
+  a:hover {
+    text-decoration: underline;
+  }
 }

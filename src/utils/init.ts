@@ -10,7 +10,6 @@ import { initModals } from "../components/modal/modal";
 import { initPopover } from "../components/popover/popover";
 import { initPinInput } from "../components/pin-input/pin-input";
 import { initSidebar } from "../components/sidebar/sidebar";
-import { initSteps } from "../components/steps/steps";
 import { Tab } from "../components/tabs/tab";
 import { TabList } from "../components/tabs/tab-list";
 import { TabPanel } from "../components/tabs/tab-panel";
@@ -38,7 +37,6 @@ export function init(htmxSupport = true) {
   initPinInput();
   initPopover();
   initSidebar();
-  initSteps();
   initToast();
   initTooltip();
 

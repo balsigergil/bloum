@@ -4,6 +4,8 @@ import { withThemeByClassName } from "@storybook/addon-themes";
 import * as Bloum from "../src";
 
 import "@fontsource-variable/nunito-sans";
+import "@fontsource-variable/inter";
+import "@fontsource-variable/roboto";
 import "@fortawesome/fontawesome-free/css/all.css";
 
 import "../src/bloum.css";

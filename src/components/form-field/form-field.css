@@ -5,7 +5,7 @@
     flex-direction: column;
     gap: 0.25rem;
 
-    --bl-field-text-help-color: var(--bl-clr-gray-500);
+    --bl-field-text-help-color: var(--bl-clr-text-light);
     --bl-field-danger-color: var(--bl-clr-red-500);
     --bl-field-text-danger-color: var(--bl-clr-red-600);
     --bl-field-success-color: var(--bl-clr-green-500);
@@ -74,7 +74,7 @@
 
   .label {
     font-size: var(--bl-fs-base);
-    font-weight: var(--bl-fw-bold);
+    font-weight: var(--bl-fw-medium);
     user-select: none;
     display: inline-block;
   }

@@ -10,4 +10,8 @@
     white-space: nowrap;
     border-width: 0;
   }
+
+  .text-light {
+    color: var(--bl-clr-text-light);
+  }
 }

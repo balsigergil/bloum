@@ -216,17 +216,17 @@
     --bl-clr-slate-900: #0f172a;
     --bl-clr-slate-950: #020617;
 
-    --bl-clr-gray-50: #f9fafb;
-    --bl-clr-gray-100: #f3f4f6;
-    --bl-clr-gray-200: #e5e7eb;
-    --bl-clr-gray-300: #d1d5db;
-    --bl-clr-gray-400: #9ca3af;
-    --bl-clr-gray-500: #6b7280;
-    --bl-clr-gray-600: #4b5563;
-    --bl-clr-gray-700: #374151;
-    --bl-clr-gray-800: #1f2937;
-    --bl-clr-gray-900: #111827;
-    --bl-clr-gray-950: #0c111c;
+    --bl-clr-gray-50: hsl(210, 20%, 98%);
+    --bl-clr-gray-100: hsl(220, 14%, 96%);
+    --bl-clr-gray-200: hsl(220, 13%, 91%);
+    --bl-clr-gray-300: hsl(216, 12%, 84%);
+    --bl-clr-gray-400: hsl(218, 11%, 65%);
+    --bl-clr-gray-500: hsl(220, 9%, 46%);
+    --bl-clr-gray-600: hsl(215, 14%, 34%);
+    --bl-clr-gray-700: hsl(217, 19%, 27%);
+    --bl-clr-gray-800: hsl(215, 28%, 17%);
+    --bl-clr-gray-900: hsl(221, 39%, 11%);
+    --bl-clr-gray-950: hsl(221, 40%, 8%);
 
     --bl-clr-zinc-50: #fafafa;
     --bl-clr-zinc-100: #f4f4f5;
@@ -264,17 +264,17 @@
     --bl-clr-stone-900: #1c1917;
     --bl-clr-stone-950: #0c0a09;
 
-    /* --bl-clr-gray-50: var(--bl-clr-stone-50);
-    --bl-clr-gray-100: var(--bl-clr-stone-100);
-    --bl-clr-gray-200: var(--bl-clr-stone-200);
-    --bl-clr-gray-300: var(--bl-clr-stone-300);
-    --bl-clr-gray-400: var(--bl-clr-stone-400);
-    --bl-clr-gray-500: var(--bl-clr-stone-500);
-    --bl-clr-gray-600: var(--bl-clr-stone-600);
-    --bl-clr-gray-700: var(--bl-clr-stone-700);
-    --bl-clr-gray-800: var(--bl-clr-stone-800);
-    --bl-clr-gray-900: var(--bl-clr-stone-900);
-    --bl-clr-gray-950: var(--bl-clr-stone-950); */
+    /*--bl-clr-gray-50: var(--bl-clr-zinc-50);*/
+    /*--bl-clr-gray-100: var(--bl-clr-zinc-100);*/
+    /*--bl-clr-gray-200: var(--bl-clr-zinc-200);*/
+    /*--bl-clr-gray-300: var(--bl-clr-zinc-300);*/
+    /*--bl-clr-gray-400: var(--bl-clr-zinc-400);*/
+    /*--bl-clr-gray-500: var(--bl-clr-zinc-500);*/
+    /*--bl-clr-gray-600: var(--bl-clr-zinc-600);*/
+    /*--bl-clr-gray-700: var(--bl-clr-zinc-700);*/
+    /*--bl-clr-gray-800: var(--bl-clr-zinc-800);*/
+    /*--bl-clr-gray-900: var(--bl-clr-zinc-900);*/
+    /*--bl-clr-gray-950: var(--bl-clr-zinc-950);*/
 
     --bl-clr-black: #000;
     --bl-clr-white: #fff;

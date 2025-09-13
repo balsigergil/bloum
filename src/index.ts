@@ -6,6 +6,7 @@ import {
 import { Collapse, initCollapse } from "./components/collapse/collapse";
 import {
   ColorSchemeSwitcher,
+  initColorScheme,
   initColorSchemeSwitcher,
 } from "./components/color-scheme-switcher/color-scheme-switcher";
 import { Combobox } from "./components/combobox/combobox";
@@ -24,7 +25,6 @@ import { initToast, Toast } from "./components/toast/toast";
 import { initTooltip, Tooltip } from "./components/tooltip/tooltip";
 import { initAccordion } from "./components/accordion/accordion";
 import { initSidebar } from "./components/sidebar/sidebar";
-import { initSteps } from "./components/steps/steps";
 import { initAvatar } from "./components/avatar/avatar";
 import { initPasswordToggle } from "./components/input/password-input";
 
@@ -58,7 +58,7 @@ export {
   initPopover,
   initToast,
   initColorSchemeSwitcher,
-  initSteps,
+  initColorScheme,
   initAvatar,
   initPasswordToggle,
   initPinInput,

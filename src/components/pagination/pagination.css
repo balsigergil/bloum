@@ -1,6 +1,6 @@
 @layer components {
   .pagination {
-    --bl-pagination-color: var(--bl-clr-gray-700);
+    --bl-pagination-color: var(--bl-clr-text);
     --bl-pagination-active-border-color: var(--bl-clr-gray-300);
     --bl-pagination-item-bg-hover: var(--bl-clr-gray-200);
     --bl-pagination-height: 2.25rem;

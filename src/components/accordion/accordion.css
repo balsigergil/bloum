@@ -1,6 +1,6 @@
 @layer components {
   .accordion {
-    --bl-accordion-header-color: var(--bl-clr-gray-800);
+    --bl-accordion-header-color: var(--bl-clr-text);
   }
 
   .accordion-header {

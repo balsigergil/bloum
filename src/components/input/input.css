@@ -18,6 +18,7 @@
     min-width: var(--bl-input-height);
     background-color: var(--bl-input-bg);
     background-clip: padding-box;
+    outline: none;
 
     transition-property: box-shadow, border-color;
     transition-duration: var(--bl-focus-transition);

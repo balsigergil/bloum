@@ -1,14 +1,16 @@
 @layer base {
   :root {
-    --bl-clr-text: var(--bl-clr-gray-950);
-    --bl-clr-text-inverted: var(--bl-clr-white);
+    --bl-clr-text: var(--bl-clr-gray-700);
+    --bl-clr-text-light: var(--bl-clr-gray-500);
+    --bl-clr-text-inverted: var(--bl-clr-gray-200);
+    --bl-clr-text-light-inverted: var(--bl-clr-gray-400);
     --bl-clr-background: var(--bl-clr-gray-50);
     --bl-clr-surface: var(--bl-clr-white);
 
     /* Focus */
-    --bl-focus-color: var(--bl-clr-primary-400);
+    --bl-focus-color: var(--bl-clr-primary-500);
     --bl-focus-width: 0.2rem;
-    --bl-focus-fade: 30%;
+    --bl-focus-fade: 50%;
     --bl-focus-transition: 150ms;
 
     --bl-fw-bold: 700;
@@ -76,19 +78,22 @@
     --bl-input-border-color: var(--bl-clr-gray-300);
     --bl-input-border-radius: var(--bl-border-radius-md);
     --bl-input-bg: var(--bl-clr-surface);
+    /*--bl-checkbox-checked-bg: var(--bl-clr-primary-600);*/
   }
 
   .dark,
   [data-theme="dark"] {
-    --bl-clr-text: var(--bl-clr-white);
-    --bl-clr-text-inverted: var(--bl-clr-gray-950);
-    --bl-clr-background: var(--bl-clr-gray-950);
-    --bl-clr-surface: var(--bl-clr-gray-900);
-    --bl-border-color: var(--bl-clr-gray-800);
-    --bl-focus-color: var(--bl-clr-primary-500);
+    --bl-clr-text: var(--bl-clr-gray-300);
+    --bl-clr-text-light: var(--bl-clr-gray-400);
+    --bl-clr-text-inverted: var(--bl-clr-gray-700);
+    --bl-clr-text-light-inverted: var(--bl-clr-gray-500);
+    --bl-clr-background: var(--bl-clr-gray-900);
+    --bl-clr-surface: var(--bl-clr-gray-800);
+    --bl-border-color: hsla(from var(--bl-clr-gray-700) h s l / 0.5);
+    --bl-focus-color: var(--bl-clr-primary-600);
 
     /* Form tokens - dark mode */
-    --bl-input-border-color: var(--bl-clr-gray-700);
-    --bl-checkbox-checked-color: var(--bl-clr-primary-600);
+    --bl-input-border-color: var(--bl-clr-gray-600);
+    /*--bl-checkbox-checked-bg: var(--bl-clr-primary-600);*/
   }
 }

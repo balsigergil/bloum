@@ -4,7 +4,7 @@
     --bl-modal-animation-transform: var(--bl-transition-lg);
     --bl-modal-dialog-bg: var(--bl-clr-surface);
     --bl-modal-footer-bg: var(--bl-clr-gray-50);
-    --bl-modal-title-color: var(--bl-clr-gray-800);
+    --bl-modal-title-color: var(--bl-clr-text);
     --bl-modal-padding: 1.5rem;
     --bl-modal-margin: 4rem;
     --bl-modal-backdrop-bg: rgba(from var(--bl-clr-gray-900) r g b / 0.25);

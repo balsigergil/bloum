@@ -1,6 +1,6 @@
 @layer components {
   .progress {
-    --bl-progress-height: 0.75rem;
+    --bl-progress-height: 0.5rem;
     --bl-progress-bg: var(--bl-clr-gray-300);
     --bl-progress-color: var(--bl-clr-gray-700);
     --bl-progress-border-radius: var(--bl-border-radius-full);
@@ -128,27 +128,27 @@
   .dark {
     .progress {
       --bl-progress-bg: var(--bl-clr-gray-700);
-      --bl-progress-color: var(--bl-clr-primary-500);
+      --bl-progress-color: var(--bl-clr-primary-600);
     }
 
     .progress-primary {
-      --bl-progress-color: var(--bl-clr-primary-500);
+      --bl-progress-color: var(--bl-clr-primary-600);
     }
 
     .progress-success {
-      --bl-progress-color: var(--bl-clr-green-500);
+      --bl-progress-color: var(--bl-clr-green-600);
     }
 
     .progress-danger {
-      --bl-progress-color: var(--bl-clr-red-500);
+      --bl-progress-color: var(--bl-clr-red-600);
     }
 
     .progress-warning {
-      --bl-progress-color: var(--bl-clr-orange-500);
+      --bl-progress-color: var(--bl-clr-orange-600);
     }
 
     .progress-info {
-      --bl-progress-color: var(--bl-clr-blue-500);
+      --bl-progress-color: var(--bl-clr-blue-600);
     }
 
     .progress-label {

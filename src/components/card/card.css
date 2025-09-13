@@ -6,7 +6,7 @@
     --bl-card-padding: 1rem;
     --bl-card-title-fs: var(--bl-fs-lg);
     --bl-card-title-fw: var(--bl-fw-bold);
-    --bl-card-title-color: var(--bl-clr-gray-800);
+    --bl-card-title-color: var(--bl-clr-text);
     --bl-card-image-max-height: 150px;
 
     background-color: var(--bl-card-bg);
@@ -77,9 +77,5 @@
   .card .table > tfoot > tr:last-child > td,
   .card .table > tfoot > tr:last-child > th {
     border-bottom-width: 0;
-  }
-
-  .dark .card {
-    --bl-card-title-color: var(--bl-clr-gray-100);
   }
 }

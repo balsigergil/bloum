@@ -1,19 +1,22 @@
 @layer base {
   :root {
-    --bl-sidebar-width: 16rem;
     --bl-topbar-bg: var(--bl-clr-surface);
-    --bl-sidebar-border-color: var(--bl-border-color);
-    --bl-sidebar-color: var(--bl-clr-gray-700);
-    --bl-sidebar-color-hover: var(--bl-clr-gray-700);
-    --bl-sidebar-bg-hover: var(--bl-clr-gray-200);
-    --bl-sidebar-title-color: var(--bl-clr-gray-500);
     --bl-topbar-height: 3.5rem;
+
+    --bl-sidebar-width: 16rem;
+    --bl-sidebar-border-color: var(--bl-border-color);
+    --bl-sidebar-color: var(--bl-clr-text);
+    --bl-sidebar-color-hover: var(--bl-clr-text);
+    --bl-sidebar-bg: var(--bl-clr-surface);
+    --bl-sidebar-item-bg-hover: var(--bl-clr-gray-200);
+    --bl-sidebar-title-color: var(--bl-clr-text-light);
   }
 
   .dark {
+    --bl-sidebar-bg: var(--bl-clr-surface);
     --bl-sidebar-color: var(--bl-clr-gray-200);
     --bl-sidebar-color-hover: var(--bl-clr-gray-200);
-    --bl-sidebar-bg-hover: var(--bl-clr-gray-800);
+    --bl-sidebar-item-bg-hover: var(--bl-clr-gray-700);
     --bl-sidebar-title-color: var(--bl-clr-gray-400);
   }
 }
@@ -31,6 +34,7 @@
     border-bottom: 1px solid var(--bl-border-color);
     background-color: var(--bl-topbar-bg);
     justify-self: stretch;
+    overflow: hidden;
 
     .topbar-brand {
       font-weight: var(--bl-fw-bold);
@@ -47,6 +51,17 @@
       object-fit: contain;
       object-position: center;
     }
+  }
+
+  .topbar-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+  }
+
+  .btn-sidebar-toggle {
+    position: absolute;
   }
 
   html:has(.sidebar.show) {
@@ -78,7 +93,7 @@
     justify-content: space-between;
     border-right: 1px solid var(--bl-sidebar-border-color);
     overflow-y: auto;
-    background-color: var(--bl-clr-surface);
+    background-color: var(--bl-sidebar-bg);
     width: min(var(--bl-sidebar-width), 100%);
     height: 100dvh;
   }
@@ -171,13 +186,13 @@
   }
 
   .sidebar-link:hover {
-    background-color: var(--bl-sidebar-bg-hover);
+    background-color: var(--bl-sidebar-item-bg-hover);
     color: var(--bl-sidebar-color-hover);
   }
 
   .sidebar-item.active .sidebar-link {
     color: var(--bl-sidebar-color-hover);
-    background-color: var(--bl-sidebar-bg-hover);
+    background-color: var(--bl-sidebar-item-bg-hover);
   }
 
   .sidebar-bottom > * {
@@ -208,16 +223,15 @@
   @media screen and (min-width: 768px) {
     .app {
       display: grid;
-      grid-template-areas:
-        "sidebar topbar"
-        "sidebar main";
       grid-template-columns: minmax(var(--bl-sidebar-width), max-content) 1fr;
-      grid-template-rows: var(--bl-topbar-height) 1fr;
       align-items: start;
     }
 
+    .topbar {
+      display: none;
+    }
+
     .sidebar {
-      grid-area: sidebar;
       display: block;
       position: sticky;
       top: 0;
@@ -226,14 +240,6 @@
       .sidebar-content {
         width: 100%;
       }
-    }
-
-    .topbar {
-      grid-area: topbar;
-    }
-
-    .main {
-      grid-area: main;
     }
   }
 }

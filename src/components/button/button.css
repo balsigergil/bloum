@@ -9,8 +9,8 @@
     --bl-btn-height: 2.25rem;
     --bl-btn-outline-color: var(--bl-clr-primary-600);
     --bl-btn-fs: var(--bl-fs-base);
+    --bl-btn-fw: var(--bl-fw-medium);
     --bl-btn-spinner-size: calc(1 / 2.25 * var(--bl-btn-height));
-    --bl-btn-fw: var(--bl-fw-bold);
 
     appearance: none;
     white-space: nowrap;
@@ -187,8 +187,14 @@
   }
 
   .btn:focus-visible {
-    outline: solid 2px var(--bl-btn-outline-color);
-    outline-offset: 2px;
+    border-color: var(--bl-focus-color);
+    box-shadow: 0 0 0 var(--bl-focus-width)
+      color-mix(
+        in srgb,
+        var(--bl-focus-color) var(--bl-focus-fade),
+        transparent
+      );
+    outline: none;
   }
 
   .btn.btn-loading,

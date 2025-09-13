@@ -1,12 +1,12 @@
 @layer components {
   /* Checkbox and Radio */
   .input-check {
-    --bl-checkbox-checked-color: var(--bl-clr-primary-600);
+    --bl-checkbox-checked-bg: var(--bl-clr-primary-600);
 
     position: relative;
     appearance: none;
     background-color: transparent;
-    outline: solid 2px transparent;
+    outline: none;
     outline-offset: 2px;
     width: 1.125rem;
     height: 1.125rem;
@@ -14,8 +14,7 @@
     border-radius: var(--bl-border-radius);
     transition:
       background-color var(--bl-transition-sm),
-      border-color var(--bl-transition-sm),
-      outline-color var(--bl-transition-sm);
+      border-color var(--bl-transition-sm);
     cursor: pointer;
 
     &:disabled {
@@ -25,14 +24,19 @@
   }
 
   .input-check:focus-visible {
-    outline-color: var(--bl-checkbox-checked-color);
-    outline: solid 2px var(--bl-checkbox-checked-color);
-    outline-offset: 2px;
+    border-color: var(--bl-focus-color);
+    box-shadow: 0 0 0 var(--bl-focus-width)
+      color-mix(
+        in srgb,
+        var(--bl-focus-color) var(--bl-focus-fade),
+        transparent
+      );
+    outline: none;
   }
 
   input[type="checkbox"].input-check:checked {
-    border-color: var(--bl-checkbox-checked-color);
-    background-color: var(--bl-checkbox-checked-color);
+    border-color: var(--bl-checkbox-checked-bg);
+    background-color: var(--bl-checkbox-checked-bg);
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 7 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
   }
 
@@ -42,8 +46,8 @@
   }
 
   input[type="radio"].input-check:checked {
-    border-color: var(--bl-checkbox-checked-color);
-    background-color: var(--bl-checkbox-checked-color);
+    border-color: var(--bl-checkbox-checked-bg);
+    background-color: var(--bl-checkbox-checked-bg);
 
     &::after {
       content: "";
@@ -57,5 +61,9 @@
       left: 50%;
       transform: translate(-50%, -50%);
     }
+  }
+
+  .dark .input-check {
+    --bl-checkbox-checked-bg: var(--bl-clr-primary-600);
   }
 }

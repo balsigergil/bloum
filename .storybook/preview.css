@@ -2,8 +2,26 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+@theme {
+  --text-xs: var(--bl-fs-xs);
+  --text-sm: var(--bl-fs-sm);
+  --text-base: var(--bl-fs-base);
+  --text-lg: var(--bl-fs-lg);
+  --text-xl: var(--bl-fs-xl);
+  --text-2xl: var(--bl-fs-2xl);
+  --text-3xl: var(--bl-fs-3xl);
+  --text-4xl: var(--bl-fs-4xl);
+  --text-5xl: var(--bl-fs-5xl);
+  --text-6xl: var(--bl-fs-6xl);
+  --text-7xl: var(--bl-fs-7xl);
+  --text-8xl: var(--bl-fs-8xl);
+  --text-9xl: var(--bl-fs-9xl);
+}
+
 :root {
-  --bl-font-sans: "Nunito Sans Variable", ui-sans-serif, system-ui, sans-serif;
+  --bl-font-sans: "Inter Variable", sans-serif;
+  --bl-fw-bold: 600;
+  --bl-fw-medium: 500;
 }
 
 .dark .docs-story {

@@ -1,7 +1,6 @@
 import { Meta, StoryObj } from "@storybook/html-vite";
 
 type StepsArgs = {
-  orientation: "horizontal" | "vertical";
   size: "sm" | "default" | "lg";
   variant: "default" | "primary" | "success" | "danger" | "warning";
   currentStep: number;
@@ -12,17 +11,9 @@ type StepsArgs = {
 const meta: Meta<StepsArgs> = {
   title: "Components/Navigation/Steps",
   argTypes: {
-    orientation: {
-      control: { type: "select" },
-      options: ["horizontal", "vertical"],
-    },
     size: {
       control: { type: "select" },
       options: ["sm", "default", "lg"],
-    },
-    variant: {
-      control: { type: "select" },
-      options: ["default", "primary", "success", "danger", "warning"],
     },
     currentStep: {
       control: { type: "number", min: 1, max: 5 },
@@ -38,8 +29,6 @@ const meta: Meta<StepsArgs> = {
     const sizeClass = args.size !== "default" ? `steps-${args.size}` : "";
     const variantClass =
       args.variant !== "default" ? `steps-${args.variant}` : "";
-    const orientationClass =
-      args.orientation === "vertical" ? "steps-vertical" : "";
 
     const steps = [
       { title: "Account", description: "Create your account", icon: "fa-user" },
@@ -68,21 +57,23 @@ const meta: Meta<StepsArgs> = {
         const stepClass = isDone ? "done" : isActive ? "active" : "";
 
         return `
-        <a href="#" class="step ${stepClass}">
-          <div class="step-indicator">
-            ${args.showIcons && !isDone ? `<i class="fas ${step.icon}"></i>` : ""}
-          </div>
-          <div class="step-content">
-            <div class="step-title">${step.title}</div>
-            ${args.showDescriptions ? `<div class="step-description">${step.description}</div>` : ""}
-          </div>
-        </a>
+        <div class="step ${stepClass}">
+          <a href="#" class="step-inner">
+            <div class="step-indicator">
+              ${args.showIcons && !isDone ? `<i class="fas ${step.icon}"></i>` : ""}
+            </div>
+            <div class="step-content">
+              <div class="step-title">${step.title}</div>
+              ${args.showDescriptions ? `<div class="step-description">${step.description}</div>` : ""}
+            </div>
+          </a>
+        </div>
       `;
       })
       .join("");
 
     return `
-      <div class="steps ${sizeClass} ${variantClass} ${orientationClass}">
+      <div class="steps ${sizeClass} ${variantClass}">
         ${stepsHtml}
       </div>
     `;
@@ -94,7 +85,6 @@ type Story = StoryObj<StepsArgs>;
 
 export const Default: Story = {
   args: {
-    orientation: "horizontal",
     size: "default",
     variant: "default",
     currentStep: 2,
@@ -105,7 +95,6 @@ export const Default: Story = {
 
 export const WithDescriptions: Story = {
   args: {
-    orientation: "horizontal",
     size: "default",
     variant: "default",
     currentStep: 2,
@@ -116,7 +105,6 @@ export const WithDescriptions: Story = {
 
 export const WithIcons: Story = {
   args: {
-    orientation: "horizontal",
     size: "default",
     variant: "default",
     currentStep: 3,
@@ -125,31 +113,18 @@ export const WithIcons: Story = {
   },
 };
 
-export const Vertical: Story = {
+export const SmallSize: Story = {
   args: {
-    orientation: "vertical",
-    size: "default",
+    size: "sm",
     variant: "default",
     currentStep: 2,
     showDescriptions: true,
-    showIcons: false,
-  },
-};
-
-export const SmallSize: Story = {
-  args: {
-    orientation: "horizontal",
-    size: "sm",
-    variant: "default",
-    currentStep: 3,
-    showDescriptions: false,
-    showIcons: false,
+    showIcons: true,
   },
 };
 
 export const LargeSize: Story = {
   args: {
-    orientation: "horizontal",
     size: "lg",
     variant: "default",
     currentStep: 2,
@@ -160,7 +135,6 @@ export const LargeSize: Story = {
 
 export const AllCompleted: Story = {
   args: {
-    orientation: "horizontal",
     size: "default",
     variant: "default",
     currentStep: 5,
