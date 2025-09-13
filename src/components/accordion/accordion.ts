@@ -1,10 +1,16 @@
 import { BloumCollapseElement } from "../collapse/collapse";
 
+const accordionListeners: EventListener[] = [];
+
 export function initAccordion() {
+  accordionListeners.forEach((l) => {
+    document.removeEventListener("toggle", l);
+  });
+
   document
     .querySelectorAll<HTMLElement>(".accordion-header")
     .forEach((header) => {
-      document.addEventListener("toggle", (event) => {
+      const handler = (event: any) => {
         const ownedCollapseId = header.dataset.collapse;
         if (!ownedCollapseId) {
           return;
@@ -15,7 +21,7 @@ export function initAccordion() {
           return;
         }
 
-        const { collapse, show } = (event as any).detail;
+        const { collapse, show } = event.detail;
         if (collapse !== ownedCollapse) {
           return;
         }
@@ -37,6 +43,8 @@ export function initAccordion() {
               }
             });
         }
-      });
+      };
+      accordionListeners.push(handler);
+      document.addEventListener("toggle", handler);
     });
 }

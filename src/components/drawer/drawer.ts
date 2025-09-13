@@ -101,7 +101,7 @@ export function initDrawers() {
       }
     }
 
-    // Close drawer when clicking outside (on backdrop)
+    // Close the drawer when clicking outside (on backdrop)
     if (
       target.classList.contains("drawer") &&
       target.classList.contains("open")

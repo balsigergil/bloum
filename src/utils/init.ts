@@ -7,8 +7,8 @@ import { initDrawers } from "../components/drawer/drawer";
 import { initPasswordToggle } from "../components/input/password-input";
 import { initMenus } from "../components/menu/menu";
 import { initModals } from "../components/modal/modal";
-import { initPinInput } from "../components/pin-input/pin-input";
 import { initPopover } from "../components/popover/popover";
+import { initPinInput } from "../components/pin-input/pin-input";
 import { initSidebar } from "../components/sidebar/sidebar";
 import { initSteps } from "../components/steps/steps";
 import { Tab } from "../components/tabs/tab";
@@ -26,35 +26,35 @@ export function init(htmxSupport = true) {
   TabPanel.register();
   CopyButton.register();
 
-  initTooltip();
-  initSidebar();
-  initModals();
-  initDrawers();
-  initMenus();
-  initCollapse();
   initAccordion();
   initAutogrowTextarea();
-  initPopover();
-  initToast();
-  initColorSchemeSwitcher();
-  initSteps();
   initAvatar();
+  initCollapse();
+  initColorSchemeSwitcher();
+  initDrawers();
+  initMenus();
+  initModals();
   initPasswordToggle();
   initPinInput();
+  initPopover();
+  initSidebar();
+  initSteps();
+  initToast();
+  initTooltip();
 
   if (htmxSupport) {
     document.addEventListener("htmx:load", () => {
-      initTooltip();
-      initDrawers();
-      initMenus();
-      initCollapse();
       initAccordion();
       initAutogrowTextarea();
-      initPopover();
-      initToast();
       initAvatar();
+      initCollapse();
+      initDrawers();
+      initMenus();
       initPasswordToggle();
       initPinInput();
+      initPopover();
+      initToast();
+      initTooltip();
     });
   }
 }
