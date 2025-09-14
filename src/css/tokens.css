@@ -8,7 +8,7 @@
     --bl-clr-surface: var(--bl-clr-white);
 
     /* Focus */
-    --bl-focus-color: var(--bl-clr-primary-500);
+    --bl-focus-color: var(--bl-clr-primary-400);
     --bl-focus-width: 0.2rem;
     --bl-focus-fade: 50%;
     --bl-focus-transition: 150ms;

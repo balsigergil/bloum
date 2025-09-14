@@ -1,6 +1,6 @@
 @layer components {
   .btn {
-    --bl-btn-color: var(--bl-clr-gray-800);
+    --bl-btn-color: var(--bl-clr-text);
     --bl-btn-bg: var(--bl-clr-gray-200);
     --bl-btn-hover-bg: hsl(from var(--bl-btn-bg) h s calc(l - 4));
     --bl-btn-active-bg: hsl(from var(--bl-btn-hover-bg) h s calc(l - 6));
@@ -108,7 +108,7 @@
 
   .btn-ghost {
     --bl-btn-bg: transparent;
-    --bl-btn-color: var(--bl-clr-gray-800);
+    --bl-btn-color: var(--bl-clr-text);
     --bl-btn-hover-bg: var(--bl-clr-gray-200);
 
     &.btn-primary {
@@ -143,7 +143,7 @@
   .btn-outline {
     --bl-btn-bg: transparent;
     --bl-btn-hover-bg: var(--bl-clr-gray-200);
-    --bl-btn-color: var(--bl-clr-gray-800);
+    --bl-btn-color: var(--bl-clr-text);
     --bl-btn-border: 1px solid var(--bl-clr-gray-300);
 
     &.btn-primary {
