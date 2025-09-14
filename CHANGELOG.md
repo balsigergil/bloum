@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.15.2](https://github.com/balsigergil/bloum/compare/v0.15.1...v0.15.2) (2025-09-14)
+
+### Bug Fixes
+
+* **button:** remove text decoration on links ([2e07970](https://github.com/balsigergil/bloum/commit/2e0797001543206021796015847b0434499c2431))
+
 ## [0.15.1](https://github.com/balsigergil/bloum/compare/v0.15.0...v0.15.1) (2025-09-14)
 
 ### Bug Fixes
