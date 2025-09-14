@@ -2,7 +2,6 @@ import { Meta, StoryObj } from "@storybook/html-vite";
 
 type StepsArgs = {
   size: "sm" | "default" | "lg";
-  variant: "default" | "primary" | "success" | "danger" | "warning";
   currentStep: number;
   showDescriptions: boolean;
   showIcons: boolean;
@@ -27,9 +26,6 @@ const meta: Meta<StepsArgs> = {
   },
   render: (args) => {
     const sizeClass = args.size !== "default" ? `steps-${args.size}` : "";
-    const variantClass =
-      args.variant !== "default" ? `steps-${args.variant}` : "";
-
     const steps = [
       { title: "Account", description: "Create your account", icon: "fa-user" },
       {
@@ -73,7 +69,7 @@ const meta: Meta<StepsArgs> = {
       .join("");
 
     return `
-      <div class="steps ${sizeClass} ${variantClass}">
+      <div class="steps ${sizeClass}">
         ${stepsHtml}
       </div>
     `;
@@ -86,7 +82,6 @@ type Story = StoryObj<StepsArgs>;
 export const Default: Story = {
   args: {
     size: "default",
-    variant: "default",
     currentStep: 2,
     showDescriptions: false,
     showIcons: false,
@@ -96,7 +91,6 @@ export const Default: Story = {
 export const WithDescriptions: Story = {
   args: {
     size: "default",
-    variant: "default",
     currentStep: 2,
     showDescriptions: true,
     showIcons: false,
@@ -106,7 +100,6 @@ export const WithDescriptions: Story = {
 export const WithIcons: Story = {
   args: {
     size: "default",
-    variant: "default",
     currentStep: 3,
     showDescriptions: true,
     showIcons: true,
@@ -116,7 +109,6 @@ export const WithIcons: Story = {
 export const SmallSize: Story = {
   args: {
     size: "sm",
-    variant: "default",
     currentStep: 2,
     showDescriptions: true,
     showIcons: true,
@@ -126,7 +118,6 @@ export const SmallSize: Story = {
 export const LargeSize: Story = {
   args: {
     size: "lg",
-    variant: "default",
     currentStep: 2,
     showDescriptions: true,
     showIcons: true,
@@ -136,7 +127,6 @@ export const LargeSize: Story = {
 export const AllCompleted: Story = {
   args: {
     size: "default",
-    variant: "default",
     currentStep: 5,
     showDescriptions: true,
     showIcons: false,

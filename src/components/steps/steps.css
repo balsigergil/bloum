@@ -3,8 +3,8 @@
     --bl-steps-size: 2rem;
     --bl-steps-border-width: 2px;
 
-    --bl-steps-fs: var(--bl-fs-lg);
-    --bl-steps-description-fs: var(--bl-fs-base);
+    --bl-steps-fs: var(--bl-fs-base);
+    --bl-steps-description-fs: var(--bl-fs-sm);
 
     --bl-steps-line-color: var(--bl-clr-text);
     --bl-steps-line-thickness: 3px;
@@ -19,20 +19,24 @@
     align-items: center;
     justify-content: space-between;
     counter-reset: step;
+
+    a {
+      text-decoration: none;
+    }
   }
 
   /* Size variants */
   .steps.steps-sm {
     --bl-steps-size: 1.5rem;
-    --bl-steps-fs: var(--bl-fs-base);
-    --bl-steps-description-fs: var(--bl-fs-sm);
+    --bl-steps-fs: var(--bl-fs-sm);
+    --bl-steps-description-fs: var(--bl-fs-xs);
     --bl-steps-line-thickness: 2px;
   }
 
   .steps.steps-lg {
     --bl-steps-size: 2.5rem;
-    --bl-steps-fs: var(--bl-fs-xl);
-    --bl-steps-description-fs: var(--bl-fs-lg);
+    --bl-steps-fs: var(--bl-fs-lg);
+    --bl-steps-description-fs: var(--bl-fs-base);
     --bl-steps-line-thickness: 4px;
   }
 
@@ -53,6 +57,22 @@
     flex-direction: column;
     align-items: center;
     gap: 0.5rem;
+    outline: none;
+    border: 1px solid transparent;
+    padding: 0.5rem;
+  }
+
+  /* Focus styles */
+  .step-inner:focus-visible {
+    border-radius: var(--bl-border-radius-lg);
+    border: 1px solid var(--bl-focus-color);
+    box-shadow: 0 0 0 var(--bl-focus-width)
+      color-mix(
+        in srgb,
+        var(--bl-focus-color) var(--bl-focus-fade),
+        transparent
+      );
+    outline: none;
   }
 
   .step-inner[href] {
@@ -106,10 +126,11 @@
   .step:not(:last-child)::after {
     content: "";
     height: var(--bl-steps-line-thickness);
+    border-radius: var(--bl-border-radius-full);
     background-color: var(--bl-steps-line-color);
     align-self: center;
     flex: 1 1 0;
-    margin-inline: 0.5rem;
+    margin-inline: 0.25rem;
   }
 
   .step:last-of-type {
@@ -139,12 +160,6 @@
   .step.done .step-indicator::before {
     content: "✓";
     font-size: calc(var(--bl-steps-fs));
-  }
-
-  /* Focus styles */
-  .step:focus-visible .step-indicator {
-    outline: 2px solid var(--bl-steps-border-color);
-    outline-offset: 2px;
   }
 
   /* Dark mode */

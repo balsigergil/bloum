@@ -102,3 +102,9 @@ export const Split: Story = {
 </div>`;
   },
 };
+
+export const Link: Story = {
+  render: () => {
+    return `<a href="#" class="btn btn-primary"><i class="fas fa-link"></i> I'm a link</a>`;
+  },
+};

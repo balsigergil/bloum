@@ -34,6 +34,7 @@
     user-select: none;
     line-height: 1.25rem;
     gap: 0.5rem;
+    text-decoration: none;
 
     &:hover {
       background-color: var(--bl-btn-hover-bg);
