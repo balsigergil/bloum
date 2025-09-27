@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.15.3](https://github.com/balsigergil/bloum/compare/v0.15.2...v0.15.3) (2025-09-27)
+
+### Features
+
+* **combobox:** dispatch event on change ([57f9bd5](https://github.com/balsigergil/bloum/commit/57f9bd538eb5a4b65c851cc21c45eccf50698cfb))
+
 ## [0.15.2](https://github.com/balsigergil/bloum/compare/v0.15.1...v0.15.2) (2025-09-14)
 
 ### Bug Fixes
