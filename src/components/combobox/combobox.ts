@@ -53,6 +53,9 @@ export class Combobox {
   #cleanupEvents: VoidFunction | null = null;
   #cleanupFloating: VoidFunction | null = null;
 
+  // Prevent dispatching change during initial sync
+  #suppressChangeEvent = false;
+
   constructor(element: string | ComboboxInput, options?: ComboboxConfig) {
     if (typeof element === "string") {
       const domElement = document.querySelector<HTMLSelectElement>(element);
@@ -176,6 +179,8 @@ export class Combobox {
       return;
     }
 
+    const prevSelected = [...this.#selected];
+
     for (const i of index) {
       // Check if the index is out of bounds
       if (i < 0 || i >= this.#optionsContainer.children.length) {
@@ -214,6 +219,8 @@ export class Combobox {
       this.#updateOptionsList();
       this.#searchInput?.focus();
     }
+
+    this.#dispatchChangeIfChanged(prevSelected);
   }
 
   /**
@@ -240,6 +247,23 @@ export class Combobox {
   #updateUnderlyingSelect() {
     for (let i = 0; i < this.#field.options.length; i++) {
       this.#field.options[i].selected = this.#selected.includes(i);
+    }
+  }
+
+  #arraysEqual(a: number[], b: number[]) {
+    if (a.length !== b.length) return false;
+    for (let i = 0; i < a.length; i++) {
+      if (a[i] !== b[i]) return false;
+    }
+    return true;
+  }
+
+  #dispatchChangeIfChanged(prevSelected: number[]) {
+    if (this.#suppressChangeEvent) return;
+    if (!this.#arraysEqual(prevSelected, this.#selected)) {
+      // Mirror native select: change bubbles, not cancelable
+      const evt = new Event("change", { bubbles: true });
+      this.#field.dispatchEvent(evt);
     }
   }
 
@@ -421,7 +445,7 @@ export class Combobox {
    * @private
    */
   #setInitialSelected() {
-    const selected = [];
+    const selected = [] as number[];
 
     // Look for selected options
     for (let i = 0; i < this.#field.options.length; i++) {
@@ -431,7 +455,13 @@ export class Combobox {
     }
 
     if (selected.length > 0) {
-      this.selectIndex(selected);
+      // Avoid firing change during initial hydration
+      this.#suppressChangeEvent = true;
+      try {
+        this.selectIndex(selected);
+      } finally {
+        this.#suppressChangeEvent = false;
+      }
     }
   }
 
@@ -704,6 +734,7 @@ export class Combobox {
    * @private
    */
   #removeItem(index: number | number[]) {
+    const prevSelected = [...this.#selected];
     if (Array.isArray(index)) {
       this.#selected = this.#selected.filter((_, i) => !index.includes(i));
     } else {
@@ -712,6 +743,7 @@ export class Combobox {
     this.#updateItemsList();
     this.#updateOptionsList();
     this.#updateUnderlyingSelect();
+    this.#dispatchChangeIfChanged(prevSelected);
     this.#searchInput?.focus();
   }
 

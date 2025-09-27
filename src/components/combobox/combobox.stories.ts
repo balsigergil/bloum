@@ -53,6 +53,9 @@ export const SelectSearchable: Story = {
 </select>
 <script>
 new Bloum.Combobox('#combobox-2', { isSearchable: true });
+document.getElementById("combobox-2").addEventListener("change", (event) => {
+  console.log("Changed");
+})
 </script>`;
   },
 };
@@ -75,6 +78,9 @@ export const SelectMultiple: Story = {
 </select>
 <script>
 new Bloum.Combobox('#combobox-3', { isSearchable: true });
+document.getElementById("combobox-3").addEventListener("change", (event) => {
+  console.log("Changed");
+})
 </script>
     `;
   },
