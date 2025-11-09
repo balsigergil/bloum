@@ -1,6 +1,6 @@
 {
   "name": "bloum",
-  "version": "0.15.4",
+  "version": "0.15.5",
   "author": "Gil Balsiger <gil.balsiger@gmail.com>",
   "description": "A modern library of web components.",
   "license": "MIT",

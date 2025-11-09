@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.15.5](https://github.com/balsigergil/bloum/compare/v0.15.4...v0.15.5) (2025-11-09)
+
+### Bug Fixes
+
+* **modal:** enhance observer to handle ancestor removal ([f7fcd02](https://github.com/balsigergil/bloum/commit/f7fcd026066ffbf752429696f9ad7049953da2c2))
+
 ## [0.15.4](https://github.com/balsigergil/bloum/compare/v0.15.3...v0.15.4) (2025-11-09)
 
 ### Bug Fixes
