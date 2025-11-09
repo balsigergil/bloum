@@ -23,7 +23,13 @@ export class Modal {
     this.#removalObserver = new MutationObserver((mutations) => {
       for (const mutation of mutations) {
         for (const removed of mutation.removedNodes) {
+          // Check if the removed node is the modal itself
           if (removed === this.#element) {
+            this.destroy();
+            return;
+          }
+          // Check if the removed node is an ancestor containing the modal
+          if (removed instanceof Element && removed.contains(this.#element)) {
             this.destroy();
             return;
           }
@@ -31,12 +37,11 @@ export class Modal {
       }
     });
 
-    // Observe the parent node for child removals
-    if (this.#element.parentNode) {
-      this.#removalObserver.observe(this.#element.parentNode, {
-        childList: true,
-      });
-    }
+    // Observe document body with subtree to catch ancestor removals
+    this.#removalObserver.observe(document.body, {
+      childList: true,
+      subtree: true,
+    });
   }
 
   open() {
