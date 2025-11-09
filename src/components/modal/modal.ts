@@ -7,6 +7,7 @@ export interface BloumModalElement extends HTMLElement {
 export class Modal {
   readonly #element: BloumModalElement;
   readonly #focusTrap: FocusTrap;
+  readonly #removalObserver: MutationObserver;
 
   constructor(element: BloumModalElement) {
     if (element.blmodal !== undefined) {
@@ -17,6 +18,25 @@ export class Modal {
     this.#focusTrap = createFocusTrap(this.#element, {
       escapeDeactivates: false,
     });
+
+    // Watch for element removal from DOM (e.g., HTMX swaps)
+    this.#removalObserver = new MutationObserver((mutations) => {
+      for (const mutation of mutations) {
+        for (const removed of mutation.removedNodes) {
+          if (removed === this.#element) {
+            this.destroy();
+            return;
+          }
+        }
+      }
+    });
+
+    // Observe the parent node for child removals
+    if (this.#element.parentNode) {
+      this.#removalObserver.observe(this.#element.parentNode, {
+        childList: true,
+      });
+    }
   }
 
   open() {
@@ -36,13 +56,13 @@ export class Modal {
     this.#element.setAttribute("aria-hidden", "true");
     this.#element.removeAttribute("aria-modal");
     this.#element.removeAttribute("role");
+    this.#focusTrap.deactivate();
 
     this.#element.addEventListener(
       "animationend",
       () => {
         this.#element.classList.remove("open");
         this.#element.classList.remove("closing");
-        this.#focusTrap.deactivate();
       },
       { once: true },
     );
@@ -51,6 +71,7 @@ export class Modal {
   destroy() {
     this.#element.classList.remove("open");
     this.#focusTrap.deactivate();
+    this.#removalObserver.disconnect();
     delete this.#element.blmodal;
   }
 
