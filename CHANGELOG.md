@@ -2,7 +2,7 @@
 
 ## [0.15.4](https://github.com/balsigergil/bloum/compare/v0.15.3...v0.15.4) (2025-11-09)
 
-### Features
+### Bug Fixes
 
 * **modal:** handle focus trap cleanup on DOM removal ([0c05eff](https://github.com/balsigergil/bloum/commit/0c05eff34f386136cc59521df2d0e22dbf9924a5))
 
