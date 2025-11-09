@@ -1,6 +1,10 @@
+// This file has been automatically migrated to valid ESM format by Storybook.
+import { createRequire } from "node:module";
 import { dirname, join } from "path";
 import type { StorybookConfig } from "@storybook/html-vite";
 import remarkGfm from "remark-gfm";
+
+const require = createRequire(import.meta.url);
 
 function getAbsolutePath(value: string): any {
   return dirname(require.resolve(join(value, "package.json")));
