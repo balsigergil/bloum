@@ -6,6 +6,7 @@ type TagArgs = {
   size: string;
   solid: boolean;
   removable: boolean;
+  rounded: boolean;
 };
 
 const meta: Meta<TagArgs> = {
@@ -28,6 +29,9 @@ const meta: Meta<TagArgs> = {
     removable: {
       control: "boolean",
     },
+    rounded: {
+      control: "boolean",
+    },
   },
   args: {
     text: "JavaScript",
@@ -35,13 +39,15 @@ const meta: Meta<TagArgs> = {
     size: "default",
     solid: false,
     removable: false,
+    rounded: false,
   },
   render: (args) => {
     const typeClass = args.type === "default" ? "" : `tag-${args.type}`;
     const sizeClass = args.size === "default" ? "" : `tag-${args.size}`;
     const solidClass = args.solid ? "tag-solid" : "";
+    const roundedClass = args.rounded ? "tag-rounded" : "";
 
-    const classes = ["tag", typeClass, sizeClass, solidClass]
+    const classes = ["tag", typeClass, sizeClass, solidClass, roundedClass]
       .filter(Boolean)
       .join(" ");
 

@@ -45,7 +45,7 @@
     min-width: var(--bl-tag-remove-size);
     padding: 0;
     border: none;
-    border-radius: var(--bl-border-radius-sm);
+    border-radius: var(--bl-tag-border-radius);
     background-color: var(--bl-tag-remove-bg);
     color: var(--bl-tag-remove-color);
     cursor: pointer;
@@ -70,6 +70,10 @@
   .tag-remove::before {
     content: "×";
     font-weight: var(--bl-fw-bold);
+  }
+
+  .tag-rounded {
+    --bl-tag-border-radius: var(--bl-border-radius-full);
   }
 
   /* Size variants */
