@@ -25,6 +25,7 @@
     position: absolute;
     z-index: var(--bl-menu-zindex);
     display: none;
+    white-space: nowrap;
 
     transition-duration: var(--bl-transition-md);
     transition-timing-function: ease-out;
