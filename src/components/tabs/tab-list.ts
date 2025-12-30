@@ -10,6 +10,7 @@ export class TabList extends HTMLElement {
   }
 
   private keydownHandler = (e: KeyboardEvent) => {
+    e.preventDefault();
     if (e.key === "ArrowRight") {
       this.closest<Tabs>("bl-tabs")?.selectNextTab();
     }

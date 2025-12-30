@@ -38,7 +38,7 @@ export class Tabs extends HTMLElement {
       t.addEventListener("click", (e) => {
         e.preventDefault();
         e.stopPropagation();
-        this.setSelected(i);
+        this.setSelected(i, false);
       });
     });
 
@@ -63,12 +63,12 @@ export class Tabs extends HTMLElement {
 
   setSelected(index: number, focus: boolean = true) {
     if (index >= 0) {
-      if (this.#useAnchor && focus) {
+      if (this.#useAnchor) {
         const tabs = this.querySelectorAll<Tab>("bl-tab");
         const tab = tabs[index];
         const href = tab.getAttribute("href");
         if (href) {
-          window.location.replace(href);
+          history.replaceState(null, "", href);
         }
       }
 
