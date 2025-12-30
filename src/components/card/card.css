@@ -30,6 +30,7 @@
     padding-inline: var(--bl-card-padding);
     display: flex;
     justify-content: space-between;
+    gap: 1rem;
   }
 
   .card-footer {
