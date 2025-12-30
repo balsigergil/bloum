@@ -40,17 +40,6 @@ const meta: Meta = {
         component: `
 The Pin Input component is used for entering PIN codes, one-time passwords, or any other numeric codes that need to be entered digit by digit.
 
-## Features
-
-- **Automatic focus management**: Automatically moves to the next field when typing and to the previous field when deleting
-- **Paste support**: Paste a complete code from clipboard into any field
-- **Numeric only**: Restricts input to numbers only
-- **Form integration**: Works seamlessly with HTML forms using a hidden input field
-- **HTMX compatible**: Works with HTMX and hx-boost
-- **Customizable size**: Configure the number of input fields
-- **Keyboard navigation**: Support for arrow keys to navigate between fields
-- **Accessibility**: Proper ARIA attributes and focus management
-
 ## Usage
 
 Simply add the \`data-pin-input\` attribute to any input element:
@@ -95,8 +84,8 @@ export const Default: Story = {
 
     return `
       <div class="space-y-4">
-        <div>
-          <label class="block text-sm font-medium mb-2">Enter PIN Code:</label>
+        <div class="field">
+          <label class="label">Enter PIN Code:</label>
           <input type="text" data-pin-input data-pin-input-size="6" name="pin" />
         </div>
       </div>
@@ -114,8 +103,8 @@ export const WithValue: Story = {
 
     return `
       <div class="space-y-4">
-        <div>
-          <label class="block text-sm font-medium mb-2">PIN with initial value:</label>
+        <div class="field">
+          <label class="label">PIN with initial value:</label>
           <input type="text" data-pin-input data-pin-input-size="6" value="123456" name="pin" />
         </div>
       </div>
@@ -133,8 +122,8 @@ export const InForm: Story = {
 
     return `
       <form class="space-y-4" onsubmit="event.preventDefault(); alert('PIN: ' + new FormData(event.target).get('verification_code'));">
-        <div>
-          <label class="block text-sm font-medium mb-2">Enter verification code:</label>
+        <div class="field">
+          <label class="label">Enter verification code:</label>
           <input 
             type="text" 
             data-pin-input 
@@ -143,9 +132,9 @@ export const InForm: Story = {
             required 
           />
         </div>
-        
-        <div>
-          <label class="block text-sm font-medium mb-2">Your email:</label>
+
+        <div class="field">
+          <label class="label">Your email:</label>
           <input type="email" class="input w-full" name="email" placeholder="your@email.com" />
         </div>
         
@@ -167,29 +156,29 @@ export const WithStates: Story = {
 
     return `
       <div class="space-y-6">
-        <div>
-          <label class="block text-sm font-medium mb-2">Default state:</label>
+        <div class="field">
+          <label class="label">Default state:</label>
           <input type="text" data-pin-input data-pin-input-size="4" name="pin_default" />
         </div>
         
-                 <div>
-           <label class="block text-sm font-medium mb-2 text-red-600">Error state:</label>
-           <div data-pin-input-container class="pin-input pin-input-danger">
-             <input type="text" class="input pin-input-field" maxlength="1" value="1" />
-             <input type="text" class="input pin-input-field" maxlength="1" value="2" />
-             <input type="text" class="input pin-input-field" maxlength="1" value="3" />
-             <input type="text" class="input pin-input-field" maxlength="1" />
-           </div>
-           <p class="text-sm text-red-600 mt-1">Invalid PIN code</p>
-         </div>
-         
-         <div>
-           <label class="block text-sm font-medium mb-2 text-green-600">Success state:</label>
-           <div data-pin-input-container class="pin-input pin-input-success">
-             <input type="text" class="input pin-input-field" maxlength="1" value="1" />
-             <input type="text" class="input pin-input-field" maxlength="1" value="2" />
-             <input type="text" class="input pin-input-field" maxlength="1" value="3" />
-             <input type="text" class="input pin-input-field" maxlength="1" value="4" />
+        <div class="field">
+          <label class="label text-red-600">Error state:</label>
+          <div data-pin-input-container class="pin-input pin-input-danger">
+            <input type="text" class="input pin-input-field" maxlength="1" value="1" />
+            <input type="text" class="input pin-input-field" maxlength="1" value="2" />
+            <input type="text" class="input pin-input-field" maxlength="1" value="3" />
+            <input type="text" class="input pin-input-field" maxlength="1" />
+          </div>
+          <p class="text-sm text-red-600 mt-1">Invalid PIN code</p>
+        </div>
+
+        <div class="field">
+          <label class="label text-green-600">Success state:</label>
+          <div data-pin-input-container class="pin-input pin-input-success">
+            <input type="text" class="input pin-input-field" maxlength="1" value="1" />
+            <input type="text" class="input pin-input-field" maxlength="1" value="2" />
+            <input type="text" class="input pin-input-field" maxlength="1" value="3" />
+            <input type="text" class="input pin-input-field" maxlength="1" value="4" />
            </div>
            <p class="text-sm text-green-600 mt-1">PIN code verified</p>
          </div>
