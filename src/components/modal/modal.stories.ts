@@ -141,10 +141,7 @@ export const BasicModal: StoryObj = {
     <div class="modal-header">
       <h3 class="modal-title" id="my-basic-modal-title">Login</h3>
       <button type="button" class="btn btn-icon btn-ghost" aria-label="Close" data-modal-close>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
+        <i class="fas fa-times"></i>
       </button>
     </div>
     <div class="modal-body">
@@ -193,10 +190,7 @@ export const ModalSizes: StoryObj = {
     <div class="modal-header">
       <h3 class="modal-title" id="modal-sm-title">Small Modal</h3>
       <button type="button" class="btn btn-icon btn-ghost" aria-label="Close" data-modal-close>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
+        <i class="fas fa-times"></i>
       </button>
     </div>
     <div class="modal-body">
@@ -229,10 +223,7 @@ export const ModalSizes: StoryObj = {
     <div class="modal-header">
       <h3 class="modal-title" id="modal-lg-title">Large Modal</h3>
       <button type="button" class="btn btn-icon btn-ghost" aria-label="Close" data-modal-close>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
+        <i class="fas fa-times"></i>
       </button>
     </div>
     <div class="modal-body">
@@ -265,10 +256,7 @@ export const ModalSizes: StoryObj = {
     <div class="modal-header">
       <h3 class="modal-title" id="modal-full-title">Full Width Modal</h3>
       <button type="button" class="btn btn-icon btn-ghost" aria-label="Close" data-modal-close>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
+        <i class="fas fa-times"></i>
       </button>
     </div>
     <div class="modal-body">
@@ -297,10 +285,7 @@ export const ConfirmationModal: StoryObj = {
     <div class="modal-header">
       <h3 class="modal-title" id="my-confirmation-modal-title">Confirm Deletion</h3>
       <button type="button" class="btn btn-icon btn-ghost" aria-label="Close" data-modal-close>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
+        <i class="fas fa-times"></i>
       </button>
     </div>
     <div class="modal-body">
@@ -333,10 +318,7 @@ export const ModalWithoutFooter: StoryObj = {
     <div class="modal-header">
       <h3 class="modal-title" id="no-footer-modal-title">Information</h3>
       <button type="button" class="btn btn-icon btn-ghost" aria-label="Close" data-modal-close>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
+        <i class="fas fa-times"></i>
       </button>
     </div>
     <div class="modal-body">
@@ -366,10 +348,7 @@ export const ModalWithForm: StoryObj = {
     <div class="modal-header">
       <h3 class="modal-title" id="form-modal-title">Create New User</h3>
       <button type="button" class="btn btn-icon btn-ghost" aria-label="Close" data-modal-close>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
+        <i class="fas fa-times"></i>
       </button>
     </div>
     <div class="modal-body">
@@ -440,10 +419,7 @@ export const NestedModals: StoryObj = {
     <div class="modal-header">
       <h3 class="modal-title" id="modal-1-title">First Modal</h3>
       <button type="button" class="btn btn-icon btn-ghost" aria-label="Close" data-modal-close>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
+        <i class="fas fa-times"></i>
       </button>
     </div>
     <div class="modal-body">
@@ -482,10 +458,7 @@ export const NestedModals: StoryObj = {
     <div class="modal-header">
       <h3 class="modal-title" id="modal-3-title">Third Modal</h3>
       <button type="button" class="btn btn-icon btn-ghost" aria-label="Close" data-modal-close>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
+        <i class="fas fa-times"></i>
       </button>
     </div>
     <div class="modal-body">
@@ -518,10 +491,7 @@ export const ModalWithScrollableContent: StoryObj = {
     <div class="modal-header">
       <h3 class="modal-title" id="scrollable-modal-title">Terms and Conditions</h3>
       <button type="button" class="btn btn-icon btn-ghost" aria-label="Close" data-modal-close>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
+        <i class="fas fa-times"></i>
       </button>
     </div>
     <div class="modal-body" style="max-height: 400px; overflow-y: auto;">
@@ -706,10 +676,7 @@ export const ModalWithComplexContent: StoryObj = {
     <div class="modal-header">
       <h3 class="modal-title" id="complex-modal-title">User Details - John Doe</h3>
       <button type="button" class="btn btn-icon btn-ghost" aria-label="Close" data-modal-close>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
+        <i class="fas fa-times"></i>
       </button>
     </div>
     <div class="modal-body">
@@ -782,57 +749,6 @@ export const ModalWithComplexContent: StoryObj = {
         <button type="button" class="btn btn-outline" data-modal-close>Close</button>
         <button type="button" class="btn btn-primary">Edit User</button>
       </div>
-    </div>
-  </div>
-</div>`;
-  },
-};
-
-export const DOMRemovalTest: StoryObj = {
-  name: "DOM Removal Test",
-  parameters: {
-    docs: {
-      description: {
-        story:
-          "Tests that the focus trap is properly cleaned up when the modal element is removed from the DOM (e.g., HTMX replacement). Click the button inside the modal to remove it from the DOM entirely.",
-      },
-    },
-  },
-  render: () => {
-    setTimeout(() => {
-      const removeBtn = document.getElementById("remove-modal-btn");
-      if (removeBtn) {
-        removeBtn.addEventListener("click", () => {
-          const modal = document.getElementById("removal-test-modal");
-          if (modal) {
-            modal.remove();
-          }
-        });
-      }
-    }, 0);
-
-    return `<button class="btn btn-primary" data-modal="#removal-test-modal">Open Modal</button>
-<button onclick="alert('Button clicked!')" class="btn">Alert</button>
-
-<div class="modal" id="removal-test-modal" aria-labelledby="removal-test-modal-title">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h3 class="modal-title" id="removal-test-modal-title">DOM Removal Test</h3>
-      <button type="button" class="btn btn-icon btn-ghost" aria-label="Close" data-modal-close>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
-      </button>
-    </div>
-    <div class="modal-body">
-      <p>This modal tests the focus trap cleanup when the modal is removed from the DOM.</p>
-      <p>Click the button below to remove this modal from the DOM entirely (not just close it).</p>
-      <p>After removal, the focus trap should be properly deactivated and you should be able to tab through the page normally.</p>
-    </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-outline" data-modal-close>Close Modal</button>
-      <button type="button" class="btn btn-danger" id="remove-modal-btn">Remove Modal from DOM</button>
     </div>
   </div>
 </div>`;

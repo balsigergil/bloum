@@ -16,22 +16,20 @@
     --bl-modal-size-md: 500px;
     --bl-modal-size-lg: 800px;
     --bl-modal-size-xl: 1200px;
-    --bl-modal-size-full: calc(100% - 2rem);
+    --bl-modal-size-full: calc(100% - 1rem);
 
+    display: none;
     position: fixed;
     background-color: var(--bl-modal-backdrop-bg);
     backdrop-filter: var(--bl-modal-backdrop-filter);
     inset: 0;
-    justify-content: center;
-    align-items: flex-start;
     z-index: var(--bl-modal-zindex);
-    display: none;
     animation: modalFadeIn 150ms both linear;
     overflow-y: auto;
   }
 
   .modal.open {
-    display: flex;
+    display: block;
   }
 
   html:has(.modal.open) {
@@ -44,10 +42,11 @@
 
   .modal-content {
     background-color: var(--bl-modal-dialog-bg);
-    width: 100%;
+    width: calc(100% - 1rem);
     max-width: var(--bl-modal-size-md);
     border-radius: var(--bl-modal-border-radius);
     margin-block: var(--bl-modal-margin);
+    margin-inline: auto;
     animation:
       modalScaleIn 300ms 200ms both ease-out,
       modalFadeIn 150ms 200ms both linear;
@@ -78,10 +77,11 @@
   }
 
   .modal-header {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 3.5rem 0 1.5rem;
+    padding: 0.5rem 3.5rem 0.5rem 1.5rem;
     min-height: 3.5rem;
     flex-shrink: 0;
     border-bottom: 1px solid var(--bl-border-color);
@@ -101,7 +101,7 @@
     top: 0;
     right: 0;
     width: 3.5rem;
-    height: 3.5rem;
+    height: 100%;
     margin: 0;
     padding: 0;
     border-radius: 0 var(--bl-modal-border-radius) 0 0;
