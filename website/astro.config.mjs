@@ -17,7 +17,12 @@ export default defineConfig({
       sidebar: [
         {
           label: "Start Here",
-          items: ["getting-started", "design-tokens"],
+          items: [
+            "introduction",
+            "getting-started",
+            "design-tokens",
+            "tailwindcss",
+          ],
         },
         {
           label: "Components",
