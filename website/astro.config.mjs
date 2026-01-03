@@ -14,6 +14,12 @@ export default defineConfig({
   integrations: [
     starlight({
       title: "Bloum",
+      description: "A powerful library of modern web components for your design system.",
+      logo: {
+        replacesTitle: true,
+        dark: "./src/assets/logo_dark.png",
+        light: "./src/assets/logo.png",
+      },
       sidebar: [
         {
           label: "Start Here",

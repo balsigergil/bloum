@@ -1,5 +1,7 @@
 ---
 import "../styles/global.css";
+import { Image } from 'astro:assets';
+import logoSrc from '../assets/logo.png';
 ---
 
 <html lang="en">
@@ -26,14 +28,11 @@ import "../styles/global.css";
       class="container mx-auto px-6 py-6 flex items-center justify-between"
     >
       <a href="/" class="block">
-        <img src="/logo.png" alt="Bloum" class="h-20 w-auto" />
+        <Image src={logoSrc} alt="Bloum logo" width={200} priority={true} />
       </a>
       <nav
         class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600"
       >
-        <a href="#features" class="hover:text-slate-900 transition-colors"
-          >Features</a
-        >
         <a
           href="/getting-started"
           class="hover:text-slate-900 transition-colors">Installation</a

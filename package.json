@@ -2,7 +2,7 @@
   "name": "bloum",
   "version": "0.16.0",
   "author": "Gil Balsiger <gil.balsiger@gmail.com>",
-  "description": "A modern library of web components.",
+  "description": "A powerful library of modern web components for your design system.",
   "license": "MIT",
   "keywords": [
     "web-components",
