@@ -16,6 +16,7 @@
       background-color var(--bl-transition-sm),
       border-color var(--bl-transition-sm);
     cursor: pointer;
+    flex-shrink: 0;
 
     &:disabled {
       opacity: var(--bl-disabled-opacity);
