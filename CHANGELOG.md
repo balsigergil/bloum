@@ -1,5 +1,21 @@
 # Changelog
 
+## [0.16.0](https://github.com/balsigergil/bloum/compare/v0.15.5...v0.16.0) (2026-01-03)
+
+### Features
+
+* **tag:** add rounded variant ([1983127](https://github.com/balsigergil/bloum/commit/19831274f16ab33a35a430a38a6e5cef78db4712))
+
+### Bug Fixes
+
+* border on tab list (fixed [#93](https://github.com/balsigergil/bloum/issues/93)) ([8ee8575](https://github.com/balsigergil/bloum/commit/8ee8575e9087017d7385e7dc154003ca9f3f0440))
+* **card:** add gap between header items (fixed [#86](https://github.com/balsigergil/bloum/issues/86)) ([871bc89](https://github.com/balsigergil/bloum/commit/871bc896e54ccde6047aa4cb95641cb32334d2b6))
+* **checkbox:** flex shrink on checkbox (fixed [#91](https://github.com/balsigergil/bloum/issues/91)) ([f238f84](https://github.com/balsigergil/bloum/commit/f238f84b676976b49590f70b21bfe8983a681a62))
+* **command-menu:** better layout ([df25349](https://github.com/balsigergil/bloum/commit/df2534965315cb7906003d48af52581f1ecb210f))
+* **menu:** ensure menu items do not wrap (fix [#87](https://github.com/balsigergil/bloum/issues/87)) ([1437a45](https://github.com/balsigergil/bloum/commit/1437a45ef040fa1605d64ff2bf1870aff7b92471))
+* **modal:** add padding to header (fixed [#94](https://github.com/balsigergil/bloum/issues/94)) ([4a50204](https://github.com/balsigergil/bloum/commit/4a502047a4ab48800fbc046eaedfd03e2e71225a))
+* **tabs:** prevent scroll when clicking on tab (fixed [#90](https://github.com/balsigergil/bloum/issues/90)) ([46eb1e3](https://github.com/balsigergil/bloum/commit/46eb1e31a143499c68dcffe294e85e9fe11391d7))
+
 ## [0.15.5](https://github.com/balsigergil/bloum/compare/v0.15.4...v0.15.5) (2025-11-09)
 
 ### Bug Fixes
