@@ -1,0 +1,161 @@
+---
+title: Design Tokens
+description: Reference for all design tokens available in Bloum
+---
+
+Bloum uses a comprehensive system of CSS custom properties (design tokens) to maintain consistency across the UI. These tokens control colors, typography, spacing, and more. You can override these variables to customize the look and feel of your application.
+
+## Colors
+
+Bloum includes a predefined color palette with multiple shades (50-950) for each color.
+
+### Semantic Colors
+
+These colors are used throughout the components to convey meaning. They are mapped to specific colors from the palette by default but can be customized.
+
+| Token Name                 | Default Mapping | Description                          |
+| :------------------------- | :-------------- | :----------------------------------- |
+| `--bl-clr-primary-{shade}` | Blue            | Main brand color                     |
+| `--bl-clr-success-{shade}` | Green           | Success states and feedback          |
+| `--bl-clr-warning-{shade}` | Orange          | Warning states and alerts            |
+| `--bl-clr-danger-{shade}`  | Red             | Error states and destructive actions |
+| `--bl-clr-info-{shade}`    | Sky             | Informational messages               |
+
+**Usage:**
+
+```css
+.my-element {
+  background-color: var(--bl-clr-primary-500);
+  color: var(--bl-clr-primary-50);
+}
+```
+
+### Contextual Colors
+
+These tokens are used for general layout elements like text and backgrounds. They automatically adjust for dark mode.
+
+| Token Name                     | Light Mode Value | Dark Mode Value          | Description                           |
+| :----------------------------- | :--------------- | :----------------------- | :------------------------------------ |
+| `--bl-clr-background`          | `gray-50`        | `gray-900`               | Page background                       |
+| `--bl-clr-surface`             | `white`          | `gray-800`               | Component backgrounds (cards, modals) |
+| `--bl-clr-text`                | `gray-700`       | `gray-300`               | Primary text color                    |
+| `--bl-clr-text-light`          | `gray-500`       | `gray-400`               | Secondary/lighter text color          |
+| `--bl-clr-text-inverted`       | `gray-200`       | `gray-700`               | Text on dark backgrounds              |
+| `--bl-clr-text-light-inverted` | `gray-400`       | `gray-500`               | Muted text on dark backgrounds        |
+| `--bl-border-color`            | `gray-200`       | `gray-700` (50% opacity) | Default border color                  |
+
+### Color Palette
+
+Bloum uses the standard [Tailwind CSS color palette](https://tailwindcss.com/docs/colors). It provides the following color ranges:
+
+- **Reds & Pinks:** `red`, `rose`, `pink`, `fuchsia`
+- **Purples:** `purple`, `violet`, `indigo`
+- **Blues:** `blue`, `sky`, `cyan`
+- **Greens & Teals:** `teal`, `emerald`, `green`, `lime`
+- **Yellows & Oranges:** `yellow`, `amber`, `orange`
+- **Grays:** `slate`, `gray`, `zinc`, `neutral`, `stone`
+- **Base:** `black`, `white`
+
+Each color ranges from `50` (lightest) to `950` (darkest).
+Example: `--bl-clr-blue-500`
+
+## Typography
+
+### Font Families
+
+| Token Name        | Value                        | Description             |
+| :---------------- | :--------------------------- | :---------------------- |
+| `--bl-font-sans`  | System UI / Sans-serif stack | Default sans-serif font |
+| `--bl-font-serif` | Georgia / Serif stack        | Serif font              |
+| `--bl-font-mono`  | Monospace stack              | Monospace font for code |
+| `--bl-font-body`  | `var(--bl-font-sans)`        | Main body font          |
+
+### Font Sizes
+
+| Token Name     | Value | Rem      |
+| :------------- | :---- | :------- |
+| `--bl-fs-xs`   | 10px  | 0.625rem |
+| `--bl-fs-sm`   | 12px  | 0.75rem  |
+| `--bl-fs-base` | 14px  | 0.875rem |
+| `--bl-fs-lg`   | 16px  | 1rem     |
+| `--bl-fs-xl`   | 18px  | 1.125rem |
+| `--bl-fs-2xl`  | 20px  | 1.25rem  |
+| `--bl-fs-3xl`  | 24px  | 1.5rem   |
+| `--bl-fs-4xl`  | 30px  | 1.875rem |
+| `--bl-fs-5xl`  | 36px  | 2.25rem  |
+| `--bl-fs-6xl`  | 48px  | 3rem     |
+| `--bl-fs-7xl`  | 60px  | 3.75rem  |
+| `--bl-fs-8xl`  | 72px  | 4.5rem   |
+| `--bl-fs-9xl`  | 96px  | 6rem     |
+
+### Font Weights
+
+| Token Name       | Value |
+| :--------------- | :---- |
+| `--bl-fw-medium` | 600   |
+| `--bl-fw-bold`   | 700   |
+
+## Spacing & Layout
+
+### Border Radius
+
+| Token Name                | Value    |
+| :------------------------ | :------- |
+| `--bl-border-radius`      | 0.25rem  |
+| `--bl-border-radius-md`   | 0.375rem |
+| `--bl-border-radius-lg`   | 0.5rem   |
+| `--bl-border-radius-xl`   | 0.75rem  |
+| `--bl-border-radius-2xl`  | 1rem     |
+| `--bl-border-radius-full` | 9999px   |
+
+### Breakpoints
+
+| Token Name            | Value  |
+| :-------------------- | :----- |
+| `--bl-breakpoint-sm`  | 640px  |
+| `--bl-breakpoint-md`  | 768px  |
+| `--bl-breakpoint-lg`  | 1024px |
+| `--bl-breakpoint-xl`  | 1280px |
+| `--bl-breakpoint-2xl` | 1536px |
+
+## Effects
+
+### Shadows
+
+| Token Name       | Description        |
+| :--------------- | :----------------- |
+| `--bl-shadow-sm` | Small shadow       |
+| `--bl-shadow`    | Default shadow     |
+| `--bl-shadow-lg` | Large shadow       |
+| `--bl-shadow-xl` | Extra large shadow |
+
+### Transitions
+
+| Token Name           | Duration |
+| :------------------- | :------- |
+| `--bl-transition-xs` | 50ms     |
+| `--bl-transition-sm` | 100ms    |
+| `--bl-transition-md` | 150ms    |
+| `--bl-transition-lg` | 200ms    |
+| `--bl-transition-xl` | 300ms    |
+
+### Focus Ring
+
+| Token Name              | Value                                        |
+| :---------------------- | :------------------------------------------- |
+| `--bl-focus-color`      | `primary-400` (Light) / `primary-600` (Dark) |
+| `--bl-focus-width`      | 0.2rem                                       |
+| `--bl-focus-fade`       | 50%                                          |
+| `--bl-focus-transition` | 150ms                                        |
+
+## Form Tokens
+
+Specific tokens for form inputs:
+
+| Token Name                 | Light Mode Value        | Dark Mode Value |
+| :------------------------- | :---------------------- | :-------------- |
+| `--bl-input-height`        | 2.25rem                 | _Same_          |
+| `--bl-input-padding`       | 0.625rem                | _Same_          |
+| `--bl-input-bg`            | `var(--bl-clr-surface)` | _Same_          |
+| `--bl-input-border-color`  | `gray-300`              | `gray-600`      |
+| `--bl-input-border-radius` | `md`                    | _Same_          |

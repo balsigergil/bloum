@@ -32,7 +32,6 @@
 - 📋 [Documentation](#documentation)
 - ⚖️ [License](#license)
 
-
 ## What is Bloum?
 
 Bloum is an open-source library of web components.
@@ -53,8 +52,7 @@ like [HTMX](https://htmx.org/) and [Alpine.js](https://alpinejs.dev/).
 - 📦 **Single package:** Everything is bundled in a single package for an easy setup.
 - 🎨 **Theming:** Easy to customize with CSS variables.
 
-
-[//]: # (- 🧪 **Tested:** End-to-end tests with [Playwright]&#40;https://playwright.dev/&#41; and unit tests with [Vitest]&#40;https://vitejs.dev/guide/features.html#testing&#41;.)
+[//]: # "- 🧪 **Tested:** End-to-end tests with [Playwright](https://playwright.dev/) and unit tests with [Vitest](https://vitejs.dev/guide/features.html#testing)."
 
 ## Installation
 
@@ -65,7 +63,7 @@ to load the latest version of Bloum from a CDN:
 
 ```html
 <script src="https://unpkg.com/bloum" defer></script>
-<link href="https://unpkg.com/bloum/dist/bloum.min.css" rel="stylesheet">
+<link href="https://unpkg.com/bloum/dist/bloum.min.css" rel="stylesheet" />
 ```
 
 ### Package Manager
@@ -88,10 +86,11 @@ bun add bloum
 
 ## Usage
 
-Once installed, import the library in your JavaScript project:
+Once installed, import the library in your project and intialize it:
 
 ```js
-import "bloum"
+import { init } from "bloum";
+init();
 ```
 
 This will register all the components globally.
@@ -100,7 +99,7 @@ After that, include the stylesheet in your JavaScript
 if you're using a bundler like Vite or Webpack:
 
 ```js
-import "bloum/dist/bloum.min.css"
+import "bloum/dist/bloum.min.css";
 ```
 
 Then, use the components in your HTML.
