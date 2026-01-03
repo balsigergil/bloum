@@ -12,7 +12,7 @@ const meta: Meta = {
     <button class="btn btn-icon btn-ghost md:hidden" data-sidebar="#collapsible-sidebar">
       <i class="fa-solid fa-bars"></i>
     </button>
-    <div class="w-[1px] h-full border-l border-[var(--bl-border-color)] md:hidden"></div>
+    <div class="w-px h-full border-l border-(--bl-border-color) md:hidden"></div>
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="#">Home</a></li>
