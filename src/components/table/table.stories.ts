@@ -9,8 +9,12 @@ type TableArgs = {
 const meta: Meta<TableArgs> = {
   title: "Components/Data/Table",
   render: (args) => {
+    const container = document.createElement("div");
+    container.classList.add("table-responsive");
+
     const table = document.createElement("table");
     table.classList.add("table");
+    container.appendChild(table);
 
     if (args.striped) {
       table.classList.add("table-striped");
@@ -33,7 +37,7 @@ const meta: Meta<TableArgs> = {
           <th>Name</th>
           <th>Email</th>
           <th>Role</th>
-          <th><span class="sr-only">Actions</span></th>
+          <th>Actions</th>
         </tr>
       </thead>
       <tbody>
@@ -92,7 +96,7 @@ const meta: Meta<TableArgs> = {
         </tr>
       </tfoot>
       `;
-    return table;
+    return container;
   },
 };
 
