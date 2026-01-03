@@ -129,5 +129,8 @@
         "ignoreRecommendedBump": true
       }
     }
-  }
+  },
+  "workspaces": [
+    "website"
+  ]
 }
