@@ -1,6 +1,6 @@
 # Bloum Guidelines
 
-This document captures architectural decisions and conventions unique to this repository. It is intended for contributors who will extend or maintain the library.
+This guide provides essential information for AI coding agents working on Bloum, a UI component library.
 
 ## Architecture, technologies, and tools
 
@@ -51,7 +51,6 @@ This document captures architectural decisions and conventions unique to this re
 - Testing
   - Playwright is configured (`playwright.config.ts`) to run against the local dev server (`npm run dev` -> `storybook dev`) at `http://127.0.0.1:5173`. The test directory is `./tests`.
   - As of this writing, there are no test files in `tests/` (the folder exists but is empty). Future tests should navigate Storybook stories or dedicated test pages.
-
 
 ## Coding styles and conventions
 
