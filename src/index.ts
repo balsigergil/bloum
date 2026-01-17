@@ -27,6 +27,7 @@ import { initAccordion } from "./components/accordion/accordion";
 import { initSidebar } from "./components/sidebar/sidebar";
 import { initAvatar } from "./components/avatar/avatar";
 import { initPasswordToggle } from "./components/input/password-input";
+import { initDatePicker } from "./components/datepicker/datepicker";
 
 export {
   init,
@@ -62,4 +63,5 @@ export {
   initAvatar,
   initPasswordToggle,
   initPinInput,
+  initDatePicker,
 };

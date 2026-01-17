@@ -1,0 +1,54 @@
+@layer components {
+  .datepicker-wrapper {
+    position: relative;
+  }
+
+  .datepicker {
+    appearance: none;
+  }
+
+  .datepicker::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+  }
+
+  .datepicker-calendar {
+    border: 1px solid var(--bl-border-color);
+    box-shadow: var(--bl-shadow-sm);
+    border-radius: var(--bl-border-radius-lg);
+    position: absolute;
+    background-color: var(--bl-clr-surface);
+    padding: 0.5rem;
+  }
+
+  .datepicker-nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+
+  .datepicker-nav-button {
+    color: var(--bl-clr-gray-500);
+  }
+
+  .datepicker-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    place-items: center;
+    gap: 0.125rem;
+  }
+
+  .datepicker-day {
+    height: 2.25rem;
+    width: 2.25rem;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 400;
+  }
+
+  .datepicker-day-placeholder {
+    color: var(--bl-clr-gray-400);
+  }
+}

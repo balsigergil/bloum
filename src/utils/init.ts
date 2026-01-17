@@ -17,6 +17,7 @@ import { Tabs } from "../components/tabs/tabs";
 import { initAutogrowTextarea } from "../components/textarea/autogrow-textarea";
 import { initToast } from "../components/toast/toast";
 import { initTooltip } from "../components/tooltip/tooltip";
+import { initDatePicker } from "../components/datepicker/datepicker";
 
 export function init(htmxSupport = true) {
   Tabs.register();
@@ -39,6 +40,7 @@ export function init(htmxSupport = true) {
   initSidebar();
   initToast();
   initTooltip();
+  initDatePicker();
 
   if (htmxSupport) {
     document.addEventListener("htmx:load", () => {
@@ -53,6 +55,7 @@ export function init(htmxSupport = true) {
       initPopover();
       initToast();
       initTooltip();
+      initDatePicker();
     });
   }
 }
