@@ -1,4 +1,10 @@
-import { autoUpdate, computePosition, offset, shift } from "@floating-ui/dom";
+import {
+  autoUpdate,
+  computePosition,
+  offset,
+  shift,
+  flip,
+} from "@floating-ui/dom";
 
 export interface BlMenuElement extends HTMLElement {
   blmenu?: Menu;
@@ -87,7 +93,13 @@ export class Menu {
   #updatePosition() {
     computePosition(this.#trigger, this.#menu, {
       placement: "bottom-end",
-      middleware: [offset(6), shift({ padding: 6 })],
+      middleware: [
+        offset(6),
+        flip({
+          crossAxis: false,
+        }),
+        shift({ padding: 6 }),
+      ],
     }).then(({ x, y }) => {
       Object.assign(this.#menu.style, {
         left: `${x}px`,
