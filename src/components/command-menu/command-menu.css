@@ -1,5 +1,5 @@
 @layer components {
-  .command-menu {
+  .cmd {
     --bl-cmd-item-bg-hover: var(--bl-clr-gray-100);
     --bl-cmd-item-color: var(--bl-clr-gray-800);
     --bl-cmd-search-icon-color: var(--bl-clr-gray-600);
@@ -8,54 +8,43 @@
     overflow: hidden;
   }
 
-  .command-menu-header {
+  .cmd-search {
     position: relative;
-    display: flex;
+    display: grid;
+    grid-template-columns: 2.5rem 1fr;
+    place-items: center;
     align-items: center;
     border-bottom: 1px solid var(--bl-border-color);
-    gap: 0.75rem;
-  }
 
-  .command-menu-input {
-    width: 100%;
-    padding-block: 0.75rem;
-    background-color: transparent;
+    & > input {
+      width: 100%;
+      padding-block: 0.75rem;
+      background-color: transparent;
 
-    &:focus {
-      outline: none;
+      &:focus {
+        outline: none;
+      }
+    }
+
+    & > svg,
+    & > i {
+      color: var(--bl-clr-gray-400);
     }
   }
 
-  .command-menu-search-icon {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    padding-inline: 0.75rem;
-    color: var(--bl-cmd-search-icon-color);
-  }
-
-  .command-menu-body {
+  .cmd-group {
     padding: 0.5rem;
   }
 
-  .command-section {
-  }
-
-  .command-menu-title {
-    font-weight: var(--bl-fw-medium);
-    font-size: var(--bl-fs-base);
+  .cmd-group-title {
+    font-weight: var(--bl-fw-bold);
+    font-size: var(--bl-fs-sm);
     padding-inline: 0.75rem;
+    color: var(--bl-clr-gray-500);
+    margin-bottom: 0.25rem;
   }
 
-  .command-menu-title:not(:first-child) {
-    margin-top: 0.5rem;
-  }
-
-  .command-menu-list {
-    list-style: none;
-  }
-
-  .command-menu-item {
+  .cmd-item {
     padding-block: 0.5rem;
     padding-inline: 0.75rem;
     display: flex;
@@ -65,22 +54,33 @@
     border-radius: var(--bl-border-radius);
 
     &:hover {
-      background-color: var(--bl-cmd-item-bg-hover);
+      background-color: var(--bl-clr-primary-600);
+      color: var(--bl-clr-white);
+      .cmd-item-left > i {
+        color: inherit;
+      }
+      .cmd-item-right {
+        color: inherit;
+      }
     }
   }
 
-  .command-menu-link-label {
+  .cmd-item-left {
     display: flex;
     align-items: center;
     gap: 1rem;
+
+    & > i {
+      color: var(--bl-clr-gray-400);
+    }
   }
 
-  .command-menu-link-description {
-    font-size: var(--bl-fs-base);
-    color: var(--bl-cmd-item-description-color);
+  .cmd-item-right {
+    font-size: var(--bl-fs-sm);
+    color: var(--bl-clr-gray-500);
   }
 
-  .dark .command-menu {
+  .dark .cmd {
     --bl-cmd-item-bg-hover: var(--bl-clr-gray-900);
     --bl-cmd-item-color: var(--bl-clr-gray-300);
     --bl-cmd-search-icon-color: var(--bl-clr-gray-400);
