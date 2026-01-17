@@ -1,7 +1,7 @@
 @layer components {
   .modal {
     --bl-modal-animation-opacity: var(--bl-transition-md);
-    --bl-modal-animation-transform: var(--bl-transition-lg);
+    --bl-modal-animation-transform: var(--bl-transition-md);
     --bl-modal-dialog-bg: var(--bl-clr-surface);
     --bl-modal-footer-bg: var(--bl-clr-gray-50);
     --bl-modal-title-color: var(--bl-clr-text);
@@ -24,7 +24,7 @@
     backdrop-filter: var(--bl-modal-backdrop-filter);
     inset: 0;
     z-index: var(--bl-modal-zindex);
-    animation: modalFadeIn 150ms both linear;
+    animation: modalFadeIn var(--bl-modal-animation-opacity) both linear;
     overflow-y: auto;
   }
 
@@ -48,7 +48,7 @@
     margin-block: var(--bl-modal-margin);
     margin-inline: auto;
     animation:
-      modalScaleIn 300ms 200ms both ease-out,
+      modalScaleIn 200ms 200ms both ease-out,
       modalFadeIn 150ms 200ms both linear;
   }
 
