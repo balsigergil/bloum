@@ -39,7 +39,7 @@ const meta: Meta<ToastArgs> = {
   },
   args: {
     title: "Toast Notification",
-    description: "This is a toast message",
+    description: "",
     variant: "default",
     placement: "top-right",
     duration: 5000,
@@ -48,28 +48,19 @@ const meta: Meta<ToastArgs> = {
   render: (args) => {
     return `
       <div class="flex flex-col gap-4">
-        <div>
-          <h3 class="text-lg font-semibold mb-2">Interactive Toast Demo</h3>
-          <button 
-            class="btn btn-primary"
-            onclick="Toast.show({
-              title: '${args.title}',
-              description: '${args.description}',
-              variant: '${args.variant}',
-              placement: '${args.placement}',
-              duration: ${args.duration},
-              closeable: ${args.closeable}
-            })"
-          >
-            Show Toast
-          </button>
-        </div>
-        
-        <div>
-          <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">
-            Use the controls to customize the toast and click the button to show it.
-          </p>
-        </div>
+        <button
+          class="btn btn-primary"
+          onclick="Toast.show({
+            title: '${args.title}',
+            description: '${args.description}',
+            variant: '${args.variant}',
+            placement: '${args.placement}',
+            duration: ${args.duration},
+            closeable: ${args.closeable}
+          })"
+        >
+          Show Toast
+        </button>
       </div>
     `;
   },
@@ -85,7 +76,7 @@ export const Variants: Story = {
     <div class="flex flex-col gap-4">
       <h3 class="text-lg font-semibold mb-2">Toast Variants</h3>
       <div class="flex flex-wrap gap-2">
-        <button 
+        <button
           class="btn"
           onclick="Toast.show({
             title: 'Default Toast',
@@ -95,29 +86,29 @@ export const Variants: Story = {
         >
           Default
         </button>
-        
-        <button 
+
+        <button
           class="btn btn-primary"
           onclick="Toast.primary('Primary Toast', 'This is a primary toast message')"
         >
           Primary
         </button>
-        
-        <button 
+
+        <button
           class="btn btn-success"
           onclick="Toast.success('Success!', 'Your action was completed successfully')"
         >
           Success
         </button>
-        
-        <button 
+
+        <button
           class="btn btn-danger"
-          onclick="Toast.danger('danger!', 'Something went wrong')"
+          onclick="Toast.danger('Danger!', 'Something went wrong')"
         >
           Error
         </button>
-        
-        <button 
+
+        <button
           class="btn btn-warning"
           onclick="Toast.warning('Warning!', 'Please be careful')"
         >
@@ -133,7 +124,7 @@ export const Placements: Story = {
     <div class="flex flex-col gap-4">
       <h3 class="text-lg font-semibold mb-2">Toast Placements</h3>
       <div class="grid grid-cols-3 gap-2 max-w-2xl">
-        <button 
+        <button
           class="btn btn-sm"
           onclick="Toast.show({
             title: 'Top Left',
@@ -142,8 +133,8 @@ export const Placements: Story = {
         >
           Top Left
         </button>
-        
-        <button 
+
+        <button
           class="btn btn-sm"
           onclick="Toast.show({
             title: 'Top Center',
@@ -152,8 +143,8 @@ export const Placements: Story = {
         >
           Top Center
         </button>
-        
-        <button 
+
+        <button
           class="btn btn-sm"
           onclick="Toast.show({
             title: 'Top Right',
@@ -162,8 +153,8 @@ export const Placements: Story = {
         >
           Top Right
         </button>
-        
-        <button 
+
+        <button
           class="btn btn-sm"
           onclick="Toast.show({
             title: 'Bottom Left',
@@ -172,8 +163,8 @@ export const Placements: Story = {
         >
           Bottom Left
         </button>
-        
-        <button 
+
+        <button
           class="btn btn-sm"
           onclick="Toast.show({
             title: 'Bottom Center',
@@ -182,8 +173,8 @@ export const Placements: Story = {
         >
           Bottom Center
         </button>
-        
-        <button 
+
+        <button
           class="btn btn-sm"
           onclick="Toast.show({
             title: 'Bottom Right',
@@ -202,7 +193,7 @@ export const Durations: Story = {
     <div class="flex flex-col gap-4">
       <h3 class="text-lg font-semibold mb-2">Toast Durations</h3>
       <div class="flex flex-wrap gap-2">
-        <button 
+        <button
           class="btn"
           onclick="Toast.show({
             title: 'Quick Toast (2s)',
@@ -212,8 +203,8 @@ export const Durations: Story = {
         >
           2 seconds
         </button>
-        
-        <button 
+
+        <button
           class="btn"
           onclick="Toast.show({
             title: 'Normal Toast (5s)',
@@ -223,8 +214,8 @@ export const Durations: Story = {
         >
           5 seconds
         </button>
-        
-        <button 
+
+        <button
           class="btn"
           onclick="Toast.show({
             title: 'Long Toast (10s)',
@@ -234,8 +225,8 @@ export const Durations: Story = {
         >
           10 seconds
         </button>
-        
-        <button 
+
+        <button
           class="btn"
           onclick="Toast.show({
             title: 'Persistent Toast',
@@ -256,7 +247,7 @@ export const MultipleToasts: Story = {
     <div class="flex flex-col gap-4">
       <h3 class="text-lg font-semibold mb-2">Multiple Toasts</h3>
       <div class="flex flex-wrap gap-2">
-        <button 
+        <button
           class="btn btn-primary"
           onclick="
             Toast.success('First Toast', 'This is the first toast');
@@ -266,8 +257,8 @@ export const MultipleToasts: Story = {
         >
           Show Multiple Toasts
         </button>
-        
-        <button 
+
+        <button
           class="btn btn-danger"
           onclick="Toast.dismissAll()"
         >
@@ -283,28 +274,28 @@ export const RealWorldExamples: Story = {
     <div class="flex flex-col gap-4">
       <h3 class="text-lg font-semibold mb-2">Real World Examples</h3>
       <div class="flex flex-wrap gap-2">
-        <button 
+        <button
           class="btn btn-success"
           onclick="Toast.success('Saved!', 'Your changes have been saved successfully.')"
         >
           Save Success
         </button>
-        
-        <button 
+
+        <button
           class="btn btn-danger"
           onclick="Toast.danger('Connection Failed', 'Unable to connect to the server. Please check your internet connection.')"
         >
           Network Error
         </button>
-        
-        <button 
+
+        <button
           class="btn btn-warning"
           onclick="Toast.warning('Low Storage', 'You are running low on storage space.')"
         >
           Storage Warning
         </button>
-        
-        <button 
+
+        <button
           class="btn btn-primary"
           onclick="Toast.show({
             title: 'Update Available',
@@ -326,21 +317,21 @@ export const WithoutDescription: Story = {
     <div class="flex flex-col gap-4">
       <h3 class="text-lg font-semibold mb-2">Toasts Without Description</h3>
       <div class="flex flex-wrap gap-2">
-        <button 
+        <button
           class="btn"
           onclick="Toast.show({ title: 'Simple notification' })"
         >
           Default
         </button>
-        
-        <button 
+
+        <button
           class="btn btn-success"
           onclick="Toast.success('Saved!')"
         >
           Success
         </button>
-        
-        <button 
+
+        <button
           class="btn btn-danger"
           onclick="Toast.danger('Failed!')"
         >
