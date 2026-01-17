@@ -12,7 +12,7 @@
     overflow-x: auto;
     scrollbar-width: none;
 
-    /* &::after {
+    &::after {
       content: "";
       position: absolute;
       bottom: 0;
@@ -22,7 +22,7 @@
       height: 1px;
       background-color: var(--bl-border-color);
       z-index: 1;
-    } */
+    }
   }
 
   bl-tab-list::-webkit-scrollbar {
