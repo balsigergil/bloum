@@ -41,6 +41,29 @@ export const CommandMenu: Story = {
         </a>
       </div>
     </div>
+    <div class="cmd-group">
+      <h3 class="cmd-group-title">Social</h3>
+      <div class="cmd-list">
+        <a href="#" class="cmd-item">
+          <div class="cmd-item-left">
+            <i class="fab fa-twitter"></i> Twitter
+          </div>
+          <div class="cmd-item-right">Link</div>
+        </a>
+        <a href="#" class="cmd-item">
+          <div class="cmd-item-left">
+            <i class="fab fa-github"></i> GitHub
+          </div>
+          <div class="cmd-item-right">Link</div>
+        </a>
+        <a href="#" class="cmd-item">
+          <div class="cmd-item-left">
+            <i class="fab fa-discord"></i> Discord
+          </div>
+          <div class="cmd-item-right">Link</div>
+        </a>
+      </div>
+    </div>
   </div>
 </div>
 `;
