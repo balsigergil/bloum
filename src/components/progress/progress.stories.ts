@@ -226,7 +226,7 @@ export const Indeterminate: Story = {
   `,
 };
 
-export const ComplexExample: Story = {
+export const MoreExamples: Story = {
   render: () => `
     <div class="flex flex-col gap-6">
       <div>
@@ -240,7 +240,7 @@ export const ComplexExample: Story = {
           </div>
         </div>
       </div>
-      
+
       <div>
         <div class="flex justify-between mb-2">
           <span class="text-sm font-medium">System Health</span>
@@ -250,7 +250,7 @@ export const ComplexExample: Story = {
           <div class="progress-bar" style="width: 92%"></div>
         </div>
       </div>
-      
+
       <div>
         <div class="flex justify-between mb-2">
           <span class="text-sm font-medium">Storage Usage</span>
@@ -260,7 +260,7 @@ export const ComplexExample: Story = {
           <div class="progress-bar" style="width: 85%"></div>
         </div>
       </div>
-      
+
       <div>
         <div class="flex justify-between mb-2">
           <span class="text-sm font-medium">Processing...</span>

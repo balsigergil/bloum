@@ -6,9 +6,9 @@
   .menu {
     --bl-menu-bg: var(--bl-clr-surface);
     --bl-menu-item-hover-bg: var(--bl-clr-gray-100);
-    --bl-menu-item-color: var(--bl-clr-text);
+    --bl-menu-item-color: var(--bl-clr-gray-600);
     --bl-menu-divider-color: var(--bl-border-color);
-    --bl-menu-item-padding: 0.75rem;
+    --bl-menu-item-padding: 1rem;
     --bl-menu-zindex: 20;
 
     a {
@@ -17,33 +17,20 @@
 
     border: var(--bl-border-color) 1px solid;
     border-radius: var(--bl-border-radius);
-    padding: 0.25rem;
     background-color: var(--bl-menu-bg);
-    min-width: 8rem;
+    width: 14rem;
     font-size: var(--bl-fs-base);
     line-height: 1.25rem;
     position: absolute;
     z-index: var(--bl-menu-zindex);
     display: none;
-    white-space: nowrap;
-
-    transition-duration: var(--bl-transition-md);
-    transition-timing-function: ease-out;
-    transition-behavior: allow-discrete;
-    transition-property: display, opacity, transform;
-    opacity: 0;
-    transform: translateY(-0.5rem);
+    overflow: hidden;
+    padding-block: 0.25rem;
   }
 
   .menu.show {
-    display: inline-block;
-    opacity: 1;
-    transform: translateY(0);
-
-    @starting-style {
-      opacity: 0;
-      transform: translateY(-0.5rem);
-    }
+    display: inline-flex;
+    flex-direction: column;
   }
 
   .menu-item {
@@ -52,15 +39,15 @@
     padding-block: calc(var(--bl-menu-item-padding) * 0.5);
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.75rem;
     width: 100%;
     text-align: left;
-    border-radius: var(--bl-border-radius);
     cursor: pointer;
     user-select: none;
-    transition-duration: var(--bl-transition-xs);
-    transition-property: color, background-color;
-    transition-timing-function: ease-in-out;
+
+    & > i {
+      flex-shrink: 0;
+    }
   }
 
   .menu-item:hover {
@@ -84,16 +71,6 @@
     .menu-item-danger {
       --bl-menu-item-color: var(--bl-clr-red-400);
       --bl-menu-item-hover-bg: var(--bl-clr-red-950);
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .menu {
-      transition-duration: 0s;
-    }
-
-    .menu-item {
-      transition-duration: 0s;
     }
   }
 }

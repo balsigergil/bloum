@@ -11,8 +11,8 @@ type Story = StoryObj;
 export const Menu: Story = {
   render: () => {
     return `
-<div class="dropdown">
-  <button class="btn" data-dropdown-toggle>Click to open the menu</button>
+<div class="dropdown ml-md">
+  <button class="btn" data-dropdown-toggle>Options</button>
   <div class="menu" id="menu">
     <a href="#" class="menu-item">New File</a>
     <a href="#" class="menu-item">Open File...</a>
@@ -28,12 +28,13 @@ export const Menu: Story = {
 export const MenuWithIcons: Story = {
   render: () => {
     return `
-<div class="dropdown">
-  <button class="btn" data-dropdown-toggle><i class="fas fa-bars"></i>Click to open the menu</button>
+<div class="dropdown ml-32">
+  <button class="btn" data-dropdown-toggle><i class="fas fa-bars"></i> Options</button>
   <div class="menu">
     <a href="#" class="menu-item"><i class="fas fa-file fa-fw"></i> New File</a>
     <a href="#" class="menu-item"><i class="fas fa-folder-open fa-fw"></i> Open...</a>
     <button class="menu-item"><i class="fas fa-floppy-disk fa-fw"></i> Save</button>
+    <button class="menu-item"><i class="fas fa-exclamation-triangle fa-fw"></i> This is an example with a name that is quite long but is still readable.</button>
     <div class="menu-divider"></div>
     <button class="menu-item"><i class="fas fa-arrow-right-to-bracket fa-fw"></i> Quit</button>
   </div>
