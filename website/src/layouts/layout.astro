@@ -1,0 +1,32 @@
+---
+import "../styles/global.css";
+import Head from "../components/head.astro";
+import Header from "../components/header.astro";
+---
+
+<html lang="en">
+  <Head />
+  <body
+    class="bg-white text-slate-900 antialiased selection:bg-indigo-100 selection:text-indigo-700 relative overflow-x-hidden"
+  >
+    <div
+      class="absolute top-0 z-[-2] h-screen w-screen bg-white bg-[radial-gradient(100%_50%_at_50%_0%,rgba(0,163,255,0.13)_0,rgba(0,163,255,0)_50%,rgba(0,163,255,0)_100%)]"
+    >
+    </div>
+
+    <Header />
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="bg-slate-50 border-t border-slate-200 py-8">
+      <div class="container mx-auto px-6 text-center text-slate-500">
+        <p>
+          &copy; {new Date().getFullYear()} Bloum. Made with ❤️ by Gil Balsiger. MIT
+          License.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

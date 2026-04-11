@@ -94,7 +94,7 @@
     "tslib": "^2.8.1",
     "typescript": "^6.0",
     "typescript-eslint": "^8.58.1",
-    "vite": "^8.0.8"
+    "vite": "^7"
   },
   "lint-staged": {
     "./src/**/*.ts": "eslint",

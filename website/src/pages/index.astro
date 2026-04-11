@@ -1,300 +1,227 @@
 ---
 import "../styles/global.css";
-import { Image } from 'astro:assets';
-import logoSrc from '../assets/logo.png';
+import Layout from "../layouts/layout.astro";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Bloum - Modern UI Component Library</title>
-    <meta
-      name="description"
-      content="A powerful library of modern web components for your design system."
-    />
-  </head>
-  <body
-    class="bg-white text-slate-900 antialiased selection:bg-indigo-100 selection:text-indigo-700 relative overflow-x-hidden"
-  >
-    <div
-      class="absolute top-0 z-[-2] h-screen w-screen bg-white bg-[radial-gradient(100%_50%_at_50%_0%,rgba(0,163,255,0.13)_0,rgba(0,163,255,0)_50%,rgba(0,163,255,0)_100%)]"
-    >
-    </div>
-
-    <header
-      class="container mx-auto px-6 py-6 flex items-center justify-center md:justify-between"
-    >
-      <a href="/" class="block">
-        <Image src={logoSrc} alt="Bloum logo" class="max-w-[300px]" priority={true} />
-      </a>
-      <nav
-        class="hidden md:flex items-center gap-8 font-medium text-slate-600"
+<Layout>
+  <!-- Hero Section -->
+  <section class="container mx-auto px-6 pt-20 pb-32 text-center">
+    <div class="max-w-4xl mx-auto space-y-8">
+      <h1
+        class="text-5xl md:text-7xl font-bold tracking-tight text-slate-900 text-balance"
+      >
+        The UI component library <br />
+        <span class="text-indigo-600">for the modern web</span>
+      </h1>
+      <p
+        class="text-xl text-slate-600 max-w-2xl mx-auto text-balance leading-relaxed"
+      >
+        The modern Bootstrap alternative. Lightweight yet powerful, accessible,
+        customizable, and built on modern standards.
+      </p>
+      <div
+        class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4"
       >
         <a
-          href="https://docs.bloum.dev/"
-          class="hover:text-slate-900 transition-colors flex items-center gap-2">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open-icon lucide-book-open"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
-          Documentation
+          href="https://docs.bloum.dev/?path=/docs/documentation-getting-started--docs"
+          class="w-full sm:w-auto px-8 py-3.5 bg-slate-900 text-white font-semibold rounded-full hover:bg-slate-800 transition-all focus:ring-4 focus:ring-slate-200"
+        >
+          Get Started
         </a>
         <a
           href="https://github.com/balsigergil/bloum"
           target="_blank"
           rel="noopener noreferrer"
-          class="hover:text-slate-900 transition-colors flex items-center gap-2">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github-icon lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
-          GitHub
+          class="w-full sm:w-auto px-8 py-3.5 bg-white text-slate-900 border border-slate-200 font-semibold rounded-full hover:bg-slate-50 transition-all focus:ring-4 focus:ring-slate-100"
+        >
+          View Sources
         </a>
-      </nav>
-    </header>
+      </div>
+    </div>
+  </section>
 
-    <main>
-      <!-- Hero Section -->
-      <section class="container mx-auto px-6 pt-20 pb-32 text-center">
-        <div class="max-w-4xl mx-auto space-y-8">
-          <h1
-            class="text-5xl md:text-7xl font-bold tracking-tight text-slate-900 text-balance"
+  <!-- Features Grid -->
+  <section id="features" class="bg-slate-50 py-24">
+    <div class="container mx-auto px-6">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
+        <div
+          class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow"
+        >
+          <div
+            class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center text-indigo-600 mb-6"
           >
-            The UI component library <br />
-            <span class="text-indigo-600">for the modern web</span>
-          </h1>
-          <p
-            class="text-xl text-slate-600 max-w-2xl mx-auto text-balance leading-relaxed"
-          >
-            The modern Bootstrap alternative. Lightweight yet powerful,
-            accessible, customizable, and built on modern standards.
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-rocket-icon lucide-rocket"
+              ><path
+                d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"
+              ></path><path
+                d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"
+              ></path><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"
+              ></path><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"
+              ></path></svg
+            >
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Feature-Rich</h3>
+          <p class="text-slate-600 leading-relaxed">
+            A comprehensive set of modern components right out of the box.
           </p>
-          <div
-            class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4"
-          >
-            <a
-              href="https://docs.bloum.dev/?path=/docs/documentation-getting-started--docs"
-              class="w-full sm:w-auto px-8 py-3.5 bg-slate-900 text-white font-semibold rounded-full hover:bg-slate-800 transition-all focus:ring-4 focus:ring-slate-200"
-            >
-              Get Started
-            </a>
-            <a
-              href="https://github.com/balsigergil/bloum"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="w-full sm:w-auto px-8 py-3.5 bg-white text-slate-900 border border-slate-200 font-semibold rounded-full hover:bg-slate-50 transition-all focus:ring-4 focus:ring-slate-100"
-            >
-              View Sources
-            </a>
-          </div>
         </div>
-      </section>
-
-      <!-- Features Grid -->
-      <section id="features" class="bg-slate-50 py-24">
-        <div class="container mx-auto px-6">
-          <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
-            <div
-              class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow"
-            >
-              <div
-                class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center text-indigo-600 mb-6"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="lucide lucide-rocket-icon lucide-rocket"
-                  ><path
-                    d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"
-                  ></path><path
-                    d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"
-                  ></path><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"
-                  ></path><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"
-                  ></path></svg
-                >
-              </div>
-              <h3 class="text-lg font-bold text-slate-900 mb-2">
-                Feature-Rich
-              </h3>
-              <p class="text-slate-600 leading-relaxed">
-                A comprehensive set of modern components right out of the box.
-              </p>
-            </div>
-            <div
-              class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow"
-            >
-              <div
-                class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center text-indigo-600 mb-6"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="lucide lucide-palette-icon lucide-palette"
-                  ><path
-                    d="M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z"
-                  ></path><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"
-                  ></circle><circle
-                    cx="17.5"
-                    cy="10.5"
-                    r=".5"
-                    fill="currentColor"></circle><circle
-                    cx="6.5"
-                    cy="12.5"
-                    r=".5"
-                    fill="currentColor"></circle><circle
-                    cx="8.5"
-                    cy="7.5"
-                    r=".5"
-                    fill="currentColor"></circle></svg
-                >
-              </div>
-              <h3 class="text-lg font-bold text-slate-900 mb-2">
-                Customizable
-              </h3>
-              <p class="text-slate-600 leading-relaxed">
-                Easily themeable with CSS variables. Adapt the look to fit your
-                brand and create you own design system.
-              </p>
-            </div>
-            <div
-              class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow"
-            >
-              <div
-                class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center text-indigo-600 mb-6"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="lucide lucide-feather-icon lucide-feather"
-                  ><path
-                    d="M12.67 19a2 2 0 0 0 1.416-.588l6.154-6.172a6 6 0 0 0-8.49-8.49L5.586 9.914A2 2 0 0 0 5 11.328V18a1 1 0 0 0 1 1z"
-                  ></path><path d="M16 8 2 22"></path><path d="M17.5 15H9"
-                  ></path></svg
-                >
-              </div>
-              <h3 class="text-lg font-bold text-slate-900 mb-2">Lightweight</h3>
-              <p class="text-slate-600 leading-relaxed">
-                Tiny footprint. DOM-controller patterns that don't take over
-                your markup.
-              </p>
-            </div>
-            <div
-              class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow"
-            >
-              <div
-                class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center text-indigo-600 mb-6"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="lucide lucide-accessibility-icon lucide-accessibility"
-                  ><circle cx="16" cy="4" r="1"></circle><path
-                    d="m18 19 1-7-6 1"></path><path d="m5 8 3-3 5.5 3-2.36 3.5"
-                  ></path><path d="M4.24 14.5a5 5 0 0 0 6.88 6"></path><path
-                    d="M13.76 17.5a5 5 0 0 0-6.88-6"></path></svg
-                >
-              </div>
-              <h3 class="text-lg font-bold text-slate-900 mb-2">Accessible</h3>
-              <p class="text-slate-600 leading-relaxed">
-                Built with WAI-ARIA best practices. Keyboard navigation and
-                screen readers first.
-              </p>
-            </div>
-            <div
-              class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow"
-            >
-              <div
-                class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center text-indigo-600 mb-6"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="lucide lucide-code-icon lucide-code"
-                  ><path d="m16 18 6-6-6-6"></path><path d="m8 6-6 6 6 6"
-                  ></path></svg
-                >
-              </div>
-              <h3 class="text-lg font-bold text-slate-900 mb-2">HTMX Ready</h3>
-              <p class="text-slate-600 leading-relaxed">
-                Native support for dynamic content. Automagically initializes
-                components from HTMX requests.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Code/Preview Section -->
-      <section id="installation" class="py-24">
-        <div class="container mx-auto px-6">
+        <div
+          class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow"
+        >
           <div
-            class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center"
+            class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center text-indigo-600 mb-6"
           >
-            <div class="space-y-6">
-              <h2 class="text-3xl md:text-4xl font-bold text-slate-900">
-                Zero-config initialization
-              </h2>
-              <p class="text-lg text-slate-600 leading-relaxed">
-                Get started in seconds.
-              </p>
-            </div>
-            <div class="bg-slate-900 rounded-xl p-6 shadow-2xl overflow-hidden">
-              <div class="flex items-center gap-2 mb-4">
-                <div class="w-3 h-3 rounded-full bg-red-500"></div>
-                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
-                <div class="w-3 h-3 rounded-full bg-green-500"></div>
-              </div>
-              <pre
-                class="font-mono text-sm text-slate-300 overflow-x-auto"><code><span class="text-indigo-400">import</span> &#123; init &#125; <span class="text-indigo-400">from</span> 'bloum';
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-palette-icon lucide-palette"
+              ><path
+                d="M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z"
+              ></path><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"
+              ></circle><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"
+              ></circle><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"
+              ></circle><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"
+              ></circle></svg
+            >
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Customizable</h3>
+          <p class="text-slate-600 leading-relaxed">
+            Easily themeable with CSS variables. Adapt the look to fit your
+            brand and create you own design system.
+          </p>
+        </div>
+        <div
+          class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow"
+        >
+          <div
+            class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center text-indigo-600 mb-6"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-feather-icon lucide-feather"
+              ><path
+                d="M12.67 19a2 2 0 0 0 1.416-.588l6.154-6.172a6 6 0 0 0-8.49-8.49L5.586 9.914A2 2 0 0 0 5 11.328V18a1 1 0 0 0 1 1z"
+              ></path><path d="M16 8 2 22"></path><path d="M17.5 15H9"
+              ></path></svg
+            >
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Lightweight</h3>
+          <p class="text-slate-600 leading-relaxed">
+            Tiny footprint. DOM-controller patterns that don't take over your
+            markup.
+          </p>
+        </div>
+        <div
+          class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow"
+        >
+          <div
+            class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center text-indigo-600 mb-6"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-accessibility-icon lucide-accessibility"
+              ><circle cx="16" cy="4" r="1"></circle><path d="m18 19 1-7-6 1"
+              ></path><path d="m5 8 3-3 5.5 3-2.36 3.5"></path><path
+                d="M4.24 14.5a5 5 0 0 0 6.88 6"></path><path
+                d="M13.76 17.5a5 5 0 0 0-6.88-6"></path></svg
+            >
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Accessible</h3>
+          <p class="text-slate-600 leading-relaxed">
+            Built with WAI-ARIA best practices. Keyboard navigation and screen
+            readers first.
+          </p>
+        </div>
+        <div
+          class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow"
+        >
+          <div
+            class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center text-indigo-600 mb-6"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-code-icon lucide-code"
+              ><path d="m16 18 6-6-6-6"></path><path d="m8 6-6 6 6 6"
+              ></path></svg
+            >
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">HTMX Ready</h3>
+          <p class="text-slate-600 leading-relaxed">
+            Native support for dynamic content. Automagically initializes
+            components from HTMX requests.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Code/Preview Section -->
+  <section id="installation" class="py-24">
+    <div class="container mx-auto px-6">
+      <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+        <div class="space-y-6">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900">
+            Zero-config initialization
+          </h2>
+          <p class="text-lg text-slate-600 leading-relaxed">
+            Get started in seconds.
+          </p>
+        </div>
+        <div class="bg-slate-900 rounded-xl p-6 shadow-2xl overflow-hidden">
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-3 h-3 rounded-full bg-red-500"></div>
+            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+          </div>
+          <pre
+            class="font-mono text-sm text-slate-300 overflow-x-auto"><code><span class="text-indigo-400">import</span> &#123; init &#125; <span class="text-indigo-400">from</span> 'bloum';
 <span class="text-indigo-400">import</span> 'bloum/dist/bloum.css';
 
 <span class="text-slate-500">// Initialize all components</span>
 <span class="text-yellow-300">init</span>();</code></pre>
-            </div>
-          </div>
         </div>
-      </section>
-    </main>
-
-    <footer class="bg-slate-50 border-t border-slate-200 py-8">
-      <div class="container mx-auto px-6 text-center text-slate-500">
-        <p>
-          &copy; {new Date().getFullYear()} Bloum. Made with ❤️ by Gil Balsiger. MIT
-          License.
-        </p>
       </div>
-    </footer>
-  </body>
-</html>
+    </div>
+  </section>
+</Layout>
