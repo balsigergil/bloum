@@ -10,11 +10,24 @@ export interface BlMenuElement extends HTMLElement {
   blmenu?: Menu;
 }
 
+function getOrCreatePortal(): HTMLElement {
+  const PORTAL_ID = "bl-menu-portal";
+  let portal = document.getElementById(PORTAL_ID);
+  if (!portal) {
+    portal = document.createElement("div");
+    portal.id = PORTAL_ID;
+    document.body.appendChild(portal);
+  }
+  return portal;
+}
+
 export class Menu {
   readonly #menu: HTMLElement;
   readonly #trigger: HTMLElement;
   #cleanup: VoidFunction | null = null;
   #cleanupEvents: VoidFunction | null = null;
+  #portalParent: Node | null = null;
+  #portalNextSibling: Node | null = null;
 
   constructor(element: BlMenuElement, trigger: HTMLElement) {
     if (element.blmenu !== undefined) {
@@ -27,6 +40,10 @@ export class Menu {
   }
 
   open() {
+    this.#portalParent = this.#menu.parentNode;
+    this.#portalNextSibling = this.#menu.nextSibling;
+    getOrCreatePortal().appendChild(this.#menu);
+
     this.#menu.classList.add("show");
     this.#cleanup = autoUpdate(
       this.#trigger,
@@ -39,7 +56,17 @@ export class Menu {
     this.#menu.classList.remove("show");
     if (this.#cleanup) {
       this.#cleanup();
+      this.#cleanup = null;
     }
+    this.#restoreFromPortal();
+  }
+
+  #restoreFromPortal() {
+    if (this.#portalParent && this.#menu.parentNode !== this.#portalParent) {
+      this.#portalParent.insertBefore(this.#menu, this.#portalNextSibling);
+    }
+    this.#portalParent = null;
+    this.#portalNextSibling = null;
   }
 
   isOpen() {
