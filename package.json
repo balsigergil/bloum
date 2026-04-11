@@ -33,6 +33,7 @@
     "build:js": "node scripts/bundle.js",
     "build:css": "postcss --config config/postcss.config.js src/*.css --dir dist --ext .min.css",
     "build:types": "tsc -p tsconfig.types.json",
+    "build:website": "npm run build && npm run -w website build",
     "test": "playwright test",
     "lint": "eslint src",
     "lint:fix": "npm run lint -- --fix",

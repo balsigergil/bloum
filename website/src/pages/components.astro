@@ -1,9 +1,1305 @@
 ---
-import Layout from "../layouts/layout.astro";
+import Layout from "../layouts/showcase.astro";
+import Section from "../components/component-section.astro";
+import Demo from "../components/component-demo.astro";
 ---
 
 <Layout>
-  <div class="mx-auto max-w-7xl">
-    <h1 class="font-bold text-gray-700 text-4xl text-center">Components</h1>
+  <div class="mx-auto max-w-7xl px-6 py-12">
+    <h1 class="text-4xl font-bold text-center text-slate-800 mb-4">
+      Components
+    </h1>
+    <p class="text-center text-slate-500 mb-12 max-w-2xl mx-auto">
+      A showcase of all Bloum components. Each component is fully interactive.
+    </p>
+
+    <!-- Quick nav -->
+    <nav class="mb-12 flex flex-wrap justify-center gap-2">
+      <a href="#elements" class="btn btn-sm btn-ghost">Elements</a>
+      <a href="#inputs" class="btn btn-sm btn-ghost">Inputs</a>
+      <a href="#data" class="btn btn-sm btn-ghost">Data Display</a>
+      <a href="#overlays" class="btn btn-sm btn-ghost">Overlays</a>
+      <a href="#layout" class="btn btn-sm btn-ghost">Layout</a>
+    </nav>
+
+    <!-- ==================== ELEMENTS ==================== -->
+    <Section title="Elements" id="elements">
+      <!-- Button -->
+      <Demo title="Button">
+        <div class="flex flex-wrap items-center gap-3">
+          <button class="btn btn-primary">Primary</button>
+          <button class="btn btn-danger">Danger</button>
+          <button class="btn btn-success">Success</button>
+          <button class="btn btn-warning">Warning</button>
+          <button class="btn btn-info">Info</button>
+          <button class="btn btn-default">Default</button>
+        </div>
+        <div class="flex flex-wrap items-center gap-3 mt-4">
+          <button class="btn btn-outline btn-primary">Outline</button>
+          <button class="btn btn-ghost btn-primary">Ghost</button>
+          <button class="btn btn-primary btn-sm">Small</button>
+          <button class="btn btn-primary btn-lg">Large</button>
+          <button class="btn btn-primary btn-loading">Loading</button>
+          <button class="btn btn-primary" disabled>Disabled</button>
+        </div>
+        <div class="flex flex-wrap items-center gap-3 mt-4">
+          <button class="btn btn-icon btn-primary">
+            <i class="fas fa-plus"></i>
+          </button>
+          <button class="btn btn-icon btn-outline btn-primary">
+            <i class="fas fa-pen"></i>
+          </button>
+          <button class="btn btn-icon btn-ghost">
+            <i class="fas fa-trash"></i>
+          </button>
+          <button class="btn btn-primary">
+            <i class="fas fa-paper-plane"></i> Send
+          </button>
+        </div>
+      </Demo>
+
+      <!-- Badge -->
+      <Demo title="Badge">
+        <div class="flex flex-wrap items-center gap-4">
+          <button class="btn">
+            Messages
+            <span class="badge badge-primary">5</span>
+          </button>
+          <button class="btn">
+            Alerts
+            <span class="badge badge-danger">12</span>
+          </button>
+          <button class="btn">
+            Updates
+            <span class="badge badge-success">3</span>
+          </button>
+          <button class="btn">
+            Notifications
+            <span class="badge badge-danger badge-top-right badge-ping">3</span>
+          </button>
+          <button class="btn">
+            Status
+            <span class="badge badge-success badge-top-right badge-dot"></span>
+          </button>
+        </div>
+      </Demo>
+
+      <!-- Tag -->
+      <Demo title="Tag">
+        <div class="flex flex-wrap items-center gap-3">
+          <div class="tag tag-primary">
+            <span class="tag-text">Primary</span>
+          </div>
+          <div class="tag tag-success">
+            <span class="tag-text">Success</span>
+          </div>
+          <div class="tag tag-danger">
+            <span class="tag-text">Danger</span>
+          </div>
+          <div class="tag tag-warning">
+            <span class="tag-text">Warning</span>
+          </div>
+          <div class="tag tag-info">
+            <span class="tag-text">Info</span>
+          </div>
+        </div>
+        <div class="flex flex-wrap items-center gap-3 mt-4">
+          <div class="tag tag-primary tag-solid">
+            <span class="tag-text">Solid</span>
+          </div>
+          <div class="tag tag-primary tag-rounded">
+            <span class="tag-text">Rounded</span>
+          </div>
+          <div class="tag tag-primary tag-sm">
+            <span class="tag-text">Small</span>
+          </div>
+          <div class="tag tag-primary tag-lg">
+            <span class="tag-text">Large</span>
+          </div>
+          <div class="tag tag-danger">
+            <span class="tag-text">Removable</span>
+            <button class="tag-remove" type="button"></button>
+          </div>
+        </div>
+      </Demo>
+
+      <!-- Avatar -->
+      <Demo title="Avatar">
+        <div class="flex flex-wrap items-end gap-4">
+          <div class="avatar avatar-xs" data-avatar data-avatar-initials="XS">
+          </div>
+          <div class="avatar avatar-sm" data-avatar data-avatar-initials="SM">
+          </div>
+          <div class="avatar" data-avatar data-avatar-initials="MD"></div>
+          <div class="avatar avatar-lg" data-avatar data-avatar-initials="LG">
+          </div>
+          <div class="avatar avatar-xl" data-avatar data-avatar-initials="XL">
+          </div>
+        </div>
+        <div class="flex flex-wrap items-center gap-4 mt-4">
+          <div
+            class="avatar"
+            data-avatar
+            data-avatar-initials="DF"
+            data-avatar-variant="default"
+          >
+          </div>
+          <div
+            class="avatar"
+            data-avatar
+            data-avatar-initials="SL"
+            data-avatar-variant="solid"
+          >
+          </div>
+          <div
+            class="avatar"
+            data-avatar
+            data-avatar-initials="OL"
+            data-avatar-variant="outline"
+          >
+          </div>
+          <div
+            class="avatar"
+            data-avatar
+            data-avatar-initials="SB"
+            data-avatar-variant="subtle"
+          >
+          </div>
+        </div>
+      </Demo>
+
+      <!-- Alert -->
+      <Demo title="Alert">
+        <div class="space-y-4">
+          <div class="alert alert-primary">
+            <div class="alert-icon"><i class="fas fa-info-circle"></i></div>
+            <div class="alert-content">
+              <div class="alert-title">Information</div>
+              <div class="alert-text">
+                This is an informational alert message.
+              </div>
+            </div>
+          </div>
+          <div class="alert alert-success">
+            <div class="alert-icon"><i class="fas fa-check-circle"></i></div>
+            <div class="alert-content">
+              <div class="alert-title">Success</div>
+              <div class="alert-text">Operation completed successfully.</div>
+            </div>
+          </div>
+          <div class="alert alert-warning">
+            <div class="alert-icon">
+              <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            <div class="alert-content">
+              <div class="alert-title">Warning</div>
+              <div class="alert-text">Please review before proceeding.</div>
+            </div>
+          </div>
+          <div class="alert alert-danger">
+            <div class="alert-icon">
+              <i class="fas fa-exclamation-circle"></i>
+            </div>
+            <div class="alert-content">
+              <div class="alert-title">Error</div>
+              <div class="alert-text">Something went wrong.</div>
+            </div>
+          </div>
+        </div>
+      </Demo>
+
+      <!-- Card -->
+      <Demo title="Card">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">List of users</h3>
+              <div class="card-actions">
+                <button class="btn btn-icon btn-ghost" aria-label="Add user">
+                  <i class="fas fa-plus"></i>
+                </button>
+                <button class="btn btn-icon btn-ghost" aria-label="Settings">
+                  <i class="fas fa-cog"></i>
+                </button>
+              </div>
+            </div>
+            <div class="card-body">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis
+              culpa cumque ea exercitationem neque nulla.
+            </div>
+            <div class="card-footer">
+              <button class="btn btn-primary">Save</button>
+              <button class="btn btn-outline">Cancel</button>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Simple card</h3>
+            </div>
+            <div class="card-body">
+              A card with only a body section. Useful for simple content blocks.
+            </div>
+          </div>
+        </div>
+      </Demo>
+
+      <!-- Spinner -->
+      <Demo title="Spinner">
+        <div class="flex flex-wrap items-center gap-6">
+          <span class="spinner spinner-sm"></span>
+          <span class="spinner"></span>
+          <span class="spinner spinner-lg"></span>
+          <span class="spinner spinner-xl"></span>
+        </div>
+      </Demo>
+
+      <!-- Skeleton -->
+      <Demo title="Skeleton">
+        <div class="space-y-3 max-w-sm">
+          <div class="skeleton" style="width: 100%; height: 20px;"></div>
+          <div class="skeleton" style="width: 80%; height: 20px;"></div>
+          <div class="skeleton" style="width: 60%; height: 20px;"></div>
+          <div class="flex items-center gap-3 mt-4">
+            <div
+              class="skeleton"
+              style="width: 48px; height: 48px; border-radius: 50%;"
+            >
+            </div>
+            <div class="flex-1 space-y-2">
+              <div class="skeleton" style="width: 70%; height: 16px;"></div>
+              <div class="skeleton" style="width: 50%; height: 14px;"></div>
+            </div>
+          </div>
+        </div>
+      </Demo>
+
+      <!-- Progress -->
+      <Demo title="Progress">
+        <div class="space-y-4">
+          <div class="progress progress-primary">
+            <div class="progress-bar" style="width: 25%">
+              <span class="progress-label">25%</span>
+            </div>
+          </div>
+          <div class="progress progress-success">
+            <div class="progress-bar" style="width: 50%">
+              <span class="progress-label">50%</span>
+            </div>
+          </div>
+          <div class="progress progress-warning">
+            <div class="progress-bar" style="width: 75%">
+              <span class="progress-label">75%</span>
+            </div>
+          </div>
+          <div
+            class="progress progress-primary progress-striped progress-animated"
+          >
+            <div class="progress-bar" style="width: 60%"></div>
+          </div>
+          <div class="progress progress-info progress-indeterminate">
+            <div class="progress-bar"></div>
+          </div>
+        </div>
+      </Demo>
+
+      <!-- Steps -->
+      <Demo title="Steps">
+        <div class="steps">
+          <div class="step done">
+            <a href="#" class="step-inner">
+              <div class="step-indicator"></div>
+              <div class="step-content">
+                <div class="step-title">Account</div>
+                <div class="step-description">Create your account</div>
+              </div>
+            </a>
+          </div>
+          <div class="step done">
+            <a href="#" class="step-inner">
+              <div class="step-indicator"></div>
+              <div class="step-content">
+                <div class="step-title">Profile</div>
+                <div class="step-description">Set up your profile</div>
+              </div>
+            </a>
+          </div>
+          <div class="step active">
+            <a href="#" class="step-inner">
+              <div class="step-indicator"></div>
+              <div class="step-content">
+                <div class="step-title">Settings</div>
+                <div class="step-description">Configure settings</div>
+              </div>
+            </a>
+          </div>
+          <div class="step">
+            <a href="#" class="step-inner">
+              <div class="step-indicator"></div>
+              <div class="step-content">
+                <div class="step-title">Review</div>
+                <div class="step-description">Review and confirm</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </Demo>
+
+      <!-- Timeline -->
+      <Demo title="Timeline">
+        <div class="timeline">
+          <div class="timeline-item timeline-item-completed">
+            <div class="timeline-indicator">
+              <i class="fas fa-check"></i>
+            </div>
+            <div class="timeline-content">
+              <div class="timeline-title">Application Submitted</div>
+              <div class="timeline-date">15th March 2024</div>
+              <div class="timeline-description">
+                Your job application has been successfully submitted.
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item timeline-item-completed">
+            <div class="timeline-indicator">
+              <i class="fas fa-check"></i>
+            </div>
+            <div class="timeline-content">
+              <div class="timeline-title">Application Reviewed</div>
+              <div class="timeline-date">18th March 2024</div>
+              <div class="timeline-description">
+                Your application has been reviewed by the hiring team.
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item timeline-item-active">
+            <div class="timeline-indicator">
+              <i class="fas fa-clock"></i>
+            </div>
+            <div class="timeline-content">
+              <div class="timeline-title">Interview Scheduled</div>
+              <div class="timeline-date">22nd March 2024</div>
+              <div class="timeline-description">
+                Your interview has been scheduled.
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-indicator"></div>
+            <div class="timeline-content">
+              <div class="timeline-title">Decision</div>
+              <div class="timeline-date">Pending</div>
+            </div>
+          </div>
+        </div>
+      </Demo>
+
+      <!-- Breadcrumb -->
+      <Demo title="Breadcrumb">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item breadcrumb-separator">
+              <i class="fas fa-angle-right"></i>
+            </li>
+            <li class="breadcrumb-item"><a href="#">Library</a></li>
+            <li class="breadcrumb-item breadcrumb-separator">
+              <i class="fas fa-angle-right"></i>
+            </li>
+            <li class="breadcrumb-item"><a href="#">Category</a></li>
+            <li class="breadcrumb-item breadcrumb-separator">
+              <i class="fas fa-angle-right"></i>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">
+              Current Page
+            </li>
+          </ol>
+        </nav>
+      </Demo>
+
+      <!-- Pagination -->
+      <Demo title="Pagination">
+        <nav aria-label="Page navigation">
+          <ul class="pagination">
+            <li>
+              <a class="page-item" href="#">
+                <i class="fas fa-angle-double-left"></i>
+              </a>
+            </li>
+            <li>
+              <a class="page-item" href="#">
+                <i class="fas fa-angle-left"></i>
+              </a>
+            </li>
+            <li><a class="page-item" href="#">1</a></li>
+            <li><a class="page-item active" href="#">2</a></li>
+            <li><a class="page-item" href="#">3</a></li>
+            <li><button class="page-item">...</button></li>
+            <li><a class="page-item" href="#">10</a></li>
+            <li>
+              <a class="page-item" href="#">
+                <i class="fas fa-angle-right"></i>
+              </a>
+            </li>
+            <li>
+              <a class="page-item" href="#">
+                <i class="fas fa-angle-double-right"></i>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </Demo>
+
+      <!-- Tooltip -->
+      <Demo title="Tooltip">
+        <div class="flex flex-wrap items-center gap-3">
+          <button class="btn btn-primary" data-tooltip="Hello World!">
+            Hover me
+          </button>
+          <button class="btn btn-outline" data-tooltip="Another tooltip">
+            Tooltip too
+          </button>
+          <span data-tooltip="Tooltips work on any element" class="underline">
+            Hover this text
+          </span>
+        </div>
+      </Demo>
+
+      <!-- Copy Button -->
+      <Demo title="Copy Button">
+        <div class="flex items-center gap-3">
+          <code class="px-3 py-1 bg-slate-100 rounded text-sm">
+            npm install bloum
+          </code>
+          <bl-copy-button class="btn btn-icon btn-sm" value="npm install bloum">
+            <i class="fas fa-clipboard"></i>
+          </bl-copy-button>
+        </div>
+      </Demo>
+    </Section>
+
+    <!-- ==================== INPUTS ==================== -->
+    <Section title="Inputs" id="inputs">
+      <!-- Form Field -->
+      <Demo title="Form Field">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="field">
+            <label for="demo-email" class="label">Email</label>
+            <input
+              type="email"
+              id="demo-email"
+              class="input"
+              placeholder="Enter your email"
+            />
+          </div>
+          <div class="field field-success">
+            <label for="demo-name" class="label">Name</label>
+            <input type="text" id="demo-name" class="input" value="John Doe" />
+            <p class="field-text-success">Looks good!</p>
+          </div>
+          <div class="field field-danger">
+            <label for="demo-url" class="label">Website</label>
+            <input type="url" id="demo-url" class="input" value="not-a-url" />
+            <p class="field-text-danger">Please enter a valid URL.</p>
+          </div>
+          <div class="field">
+            <label for="demo-disabled" class="label">Disabled</label>
+            <input
+              type="text"
+              id="demo-disabled"
+              class="input"
+              disabled
+              value="Can't edit this"
+            />
+          </div>
+        </div>
+      </Demo>
+
+      <!-- Input with icon -->
+      <Demo title="Input with Icon">
+        <div class="max-w-md">
+          <div class="input-icon">
+            <div class="input-icon-addon">
+              <i class="fas fa-search"></i>
+            </div>
+            <input type="text" class="input" placeholder="Search..." />
+          </div>
+        </div>
+      </Demo>
+
+      <!-- Password -->
+      <Demo title="Password Input">
+        <div class="max-w-md">
+          <div class="field">
+            <label for="demo-password" class="label">Password</label>
+            <div class="input-icon">
+              <input
+                type="password"
+                id="demo-password"
+                class="input"
+                placeholder="Enter your password"
+                value="mypassword123"
+              />
+              <button type="button" class="password-toggle">
+                <i class="fa-solid fa-eye"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </Demo>
+
+      <!-- Checkbox -->
+      <Demo title="Checkbox">
+        <div class="space-y-3">
+          <div class="field">
+            <input type="checkbox" id="demo-cb1" class="input-check" />
+            <label for="demo-cb1" class="label">
+              Accept terms and conditions
+            </label>
+          </div>
+          <div class="field">
+            <input type="checkbox" id="demo-cb2" class="input-check" checked />
+            <label for="demo-cb2" class="label">
+              Subscribe to newsletter
+            </label>
+          </div>
+          <div class="field">
+            <input type="checkbox" id="demo-cb3" class="input-check" disabled />
+            <label for="demo-cb3" class="label">Disabled checkbox</label>
+          </div>
+        </div>
+      </Demo>
+
+      <!-- Radio -->
+      <Demo title="Radio">
+        <div class="space-y-3">
+          <div class="field">
+            <input
+              type="radio"
+              id="demo-radio1"
+              name="demo-radio"
+              class="input-check"
+              checked
+            />
+            <label for="demo-radio1" class="label">Option A</label>
+          </div>
+          <div class="field">
+            <input
+              type="radio"
+              id="demo-radio2"
+              name="demo-radio"
+              class="input-check"
+            />
+            <label for="demo-radio2" class="label">Option B</label>
+          </div>
+          <div class="field">
+            <input
+              type="radio"
+              id="demo-radio3"
+              name="demo-radio"
+              class="input-check"
+            />
+            <label for="demo-radio3" class="label">Option C</label>
+          </div>
+        </div>
+      </Demo>
+
+      <!-- Switch -->
+      <Demo title="Switch">
+        <div class="flex flex-col gap-3">
+          <div class="form-switch">
+            <input type="checkbox" class="switch" role="switch" id="demo-sw1" />
+            <label for="demo-sw1" class="label">Enable notifications</label>
+          </div>
+          <div class="form-switch">
+            <input
+              type="checkbox"
+              class="switch"
+              role="switch"
+              id="demo-sw2"
+              checked
+            />
+            <label for="demo-sw2" class="label">Dark mode</label>
+          </div>
+          <div class="form-switch">
+            <input
+              type="checkbox"
+              class="switch"
+              role="switch"
+              id="demo-sw3"
+              disabled
+            />
+            <label for="demo-sw3" class="label">Disabled</label>
+          </div>
+        </div>
+      </Demo>
+
+      <!-- Textarea -->
+      <Demo title="Textarea">
+        <div class="max-w-md space-y-4">
+          <div class="field">
+            <label for="demo-textarea" class="label">Message</label>
+            <textarea
+              class="input"
+              id="demo-textarea"
+              rows="3"
+              placeholder="Enter your message..."></textarea>
+          </div>
+          <div class="field">
+            <label for="demo-autogrow" class="label">
+              Auto-growing Textarea
+            </label>
+            <textarea
+              class="input"
+              id="demo-autogrow"
+              data-autogrow
+              rows="2"
+              placeholder="Start typing, I'll grow..."></textarea>
+          </div>
+        </div>
+      </Demo>
+
+      <!-- Combobox -->
+      <Demo title="Combobox">
+        <div class="max-w-sm">
+          <div class="field">
+            <label for="demo-combobox" class="label">Select a fruit</label>
+            <select name="fruits" id="demo-combobox">
+              <option value="apple">Apple</option>
+              <option value="orange">Orange</option>
+              <option value="banana" selected>Banana</option>
+              <option value="grape">Grape</option>
+              <option value="kiwi">Kiwi</option>
+              <option value="mango">Mango</option>
+              <option value="strawberry">Strawberry</option>
+              <option value="watermelon">Watermelon</option>
+              <option value="pineapple">Pineapple</option>
+              <option value="pear">Pear</option>
+            </select>
+          </div>
+        </div>
+      </Demo>
+
+      <!-- Pin Input -->
+      <Demo title="Pin Input">
+        <div class="field">
+          <label class="label">Enter PIN Code:</label>
+          <input
+            type="text"
+            data-pin-input
+            data-pin-input-size="6"
+            name="demo-pin"
+          />
+        </div>
+      </Demo>
+
+      <!-- Checkbox Card -->
+      <Demo title="Checkbox Card">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          <label for="demo-plan1" class="card checkbox-card">
+            <input
+              type="radio"
+              id="demo-plan1"
+              name="demo-plan"
+              class="input-check"
+              checked
+            />
+            <div class="card-header">
+              <h3 class="card-title">Basic</h3>
+            </div>
+            <div class="card-body">
+              <div class="text-sm text-slate-500">
+                Get started with the basics
+              </div>
+              <p class="font-semibold mt-2">$10/month</p>
+            </div>
+          </label>
+          <label for="demo-plan2" class="card checkbox-card">
+            <input
+              type="radio"
+              id="demo-plan2"
+              name="demo-plan"
+              class="input-check"
+            />
+            <div class="card-header">
+              <h3 class="card-title">Pro</h3>
+            </div>
+            <div class="card-body">
+              <div class="text-sm text-slate-500">
+                For growing teams and businesses
+              </div>
+              <p class="font-semibold mt-2">$25/month</p>
+            </div>
+          </label>
+          <label for="demo-plan3" class="card checkbox-card">
+            <input
+              type="radio"
+              id="demo-plan3"
+              name="demo-plan"
+              class="input-check"
+            />
+            <div class="card-header">
+              <h3 class="card-title">Enterprise</h3>
+            </div>
+            <div class="card-body">
+              <div class="text-sm text-slate-500">
+                Advanced features and support
+              </div>
+              <p class="font-semibold mt-2">$99/month</p>
+            </div>
+          </label>
+        </div>
+      </Demo>
+    </Section>
+
+    <!-- ==================== DATA DISPLAY ==================== -->
+    <Section title="Data Display" id="data">
+      <!-- Table -->
+      <Demo title="Table">
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>
+                  <input
+                    type="checkbox"
+                    class="input-check"
+                    aria-label="Select all"
+                  />
+                </th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <input
+                    type="checkbox"
+                    class="input-check"
+                    aria-label="Select user"
+                  />
+                </td>
+                <td>Alice Johnson</td>
+                <td>alice@example.com</td>
+                <td
+                  ><span class="tag tag-primary tag-sm"
+                    ><span class="tag-text">Admin</span></span
+                  ></td
+                >
+                <td>
+                  <button
+                    class="btn btn-icon btn-xs btn-ghost"
+                    aria-label="Edit"
+                  >
+                    <i class="fas fa-pen"></i>
+                  </button>
+                  <button
+                    class="btn btn-icon btn-xs btn-danger"
+                    aria-label="Delete"
+                  >
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <input
+                    type="checkbox"
+                    class="input-check"
+                    aria-label="Select user"
+                  />
+                </td>
+                <td>Bob Smith</td>
+                <td>bob@example.com</td>
+                <td
+                  ><span class="tag tag-sm"
+                    ><span class="tag-text">Editor</span></span
+                  ></td
+                >
+                <td>
+                  <button
+                    class="btn btn-icon btn-xs btn-ghost"
+                    aria-label="Edit"
+                  >
+                    <i class="fas fa-pen"></i>
+                  </button>
+                  <button
+                    class="btn btn-icon btn-xs btn-danger"
+                    aria-label="Delete"
+                  >
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <input
+                    type="checkbox"
+                    class="input-check"
+                    aria-label="Select user"
+                  />
+                </td>
+                <td>Clara Davis</td>
+                <td>clara@example.com</td>
+                <td
+                  ><span class="tag tag-sm"
+                    ><span class="tag-text">Viewer</span></span
+                  ></td
+                >
+                <td>
+                  <button
+                    class="btn btn-icon btn-xs btn-ghost"
+                    aria-label="Edit"
+                  >
+                    <i class="fas fa-pen"></i>
+                  </button>
+                  <button
+                    class="btn btn-icon btn-xs btn-danger"
+                    aria-label="Delete"
+                  >
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </Demo>
+
+      <!-- ==================== OVERLAYS ==================== -->
+      <Section title="Overlays" id="overlays">
+        <!-- Modal -->
+        <Demo title="Modal">
+          <button class="btn btn-primary" data-modal="#demo-modal">
+            Open Modal
+          </button>
+          <div class="modal" id="demo-modal" aria-labelledby="demo-modal-title">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h3 class="modal-title" id="demo-modal-title">Login</h3>
+                <button
+                  type="button"
+                  class="btn btn-icon btn-ghost"
+                  aria-label="Close"
+                  data-modal-close
+                >
+                  <i class="fas fa-times"></i>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="field">
+                    <label for="modal-email" class="label">Email</label>
+                    <input
+                      type="email"
+                      id="modal-email"
+                      class="input"
+                      placeholder="Enter your email"
+                    />
+                  </div>
+                  <div class="field">
+                    <label for="modal-password" class="label">Password</label>
+                    <input
+                      type="password"
+                      id="modal-password"
+                      class="input"
+                      placeholder="Enter your password"
+                    />
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-outline" data-modal-close>
+                  Cancel
+                </button>
+                <button type="submit" class="btn btn-primary">Sign In</button>
+              </div>
+            </div>
+          </div>
+        </Demo>
+
+        <!-- Drawer -->
+        <Demo title="Drawer">
+          <div class="flex gap-3">
+            <button class="btn btn-primary" data-drawer="#demo-drawer-right">
+              Open Drawer (Right)
+            </button>
+            <button class="btn btn-outline" data-drawer="#demo-drawer-left">
+              Open Drawer (Left)
+            </button>
+          </div>
+
+          <div
+            class="drawer"
+            id="demo-drawer-right"
+            aria-labelledby="demo-drawer-right-title"
+            aria-hidden="true"
+          >
+            <div class="drawer-content">
+              <div class="drawer-header">
+                <h3 class="drawer-title" id="demo-drawer-right-title">
+                  Navigation
+                </h3>
+                <button
+                  type="button"
+                  class="btn btn-icon btn-ghost"
+                  aria-label="Close"
+                  data-drawer-close
+                >
+                  <i class="fa-solid fa-xmark"></i>
+                </button>
+              </div>
+              <div class="drawer-body">
+                <nav>
+                  <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li style="margin-bottom: 0.5rem;">
+                      <a
+                        href="#"
+                        class="btn btn-ghost"
+                        style="width: 100%; justify-content: flex-start;"
+                      >
+                        <i
+                          class="fa-solid fa-house"
+                          style="margin-right: 0.5rem;"></i>
+                        Home
+                      </a>
+                    </li>
+                    <li style="margin-bottom: 0.5rem;">
+                      <a
+                        href="#"
+                        class="btn btn-ghost"
+                        style="width: 100%; justify-content: flex-start;"
+                      >
+                        <i
+                          class="fa-solid fa-user"
+                          style="margin-right: 0.5rem;"></i>
+                        Profile
+                      </a>
+                    </li>
+                    <li style="margin-bottom: 0.5rem;">
+                      <a
+                        href="#"
+                        class="btn btn-ghost"
+                        style="width: 100%; justify-content: flex-start;"
+                      >
+                        <i
+                          class="fa-solid fa-gear"
+                          style="margin-right: 0.5rem;"></i>
+                        Settings
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+              <div class="drawer-footer">
+                <button type="button" class="btn btn-outline" data-drawer-close>
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="drawer drawer-left"
+            id="demo-drawer-left"
+            aria-labelledby="demo-drawer-left-title"
+            aria-hidden="true"
+          >
+            <div class="drawer-content">
+              <div class="drawer-header">
+                <h3 class="drawer-title" id="demo-drawer-left-title">
+                  Left Drawer
+                </h3>
+                <button
+                  type="button"
+                  class="btn btn-icon btn-ghost"
+                  aria-label="Close"
+                  data-drawer-close
+                >
+                  <i class="fa-solid fa-xmark"></i>
+                </button>
+              </div>
+              <div class="drawer-body">
+                <p>This drawer slides in from the left.</p>
+              </div>
+              <div class="drawer-footer">
+                <button type="button" class="btn btn-outline" data-drawer-close>
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </Demo>
+
+        <!-- Popover -->
+        <Demo title="Popover">
+          <button class="btn btn-primary" data-popover="#demo-popover">
+            Click me
+          </button>
+          <div class="popover" id="demo-popover">
+            <p class="font-bold mb-4">Set the dimensions for the layer.</p>
+            <div class="grid grid-cols-2 gap-4">
+              <label class="label">Width</label>
+              <input class="input" />
+              <label class="label">Height</label>
+              <input class="input" />
+            </div>
+          </div>
+        </Demo>
+
+        <!-- Menu -->
+        <Demo title="Menu">
+          <div class="dropdown">
+            <button class="btn" data-dropdown-toggle>
+              <i class="fas fa-ellipsis-v"></i> Options
+            </button>
+            <div class="menu">
+              <a href="#" class="menu-item">
+                <i class="fas fa-file"></i> New File
+              </a>
+              <a href="#" class="menu-item">
+                <i class="fas fa-folder-open"></i> Open File...
+              </a>
+              <button class="menu-item">
+                <i class="fas fa-save"></i> Save
+              </button>
+              <div class="menu-divider"></div>
+              <button class="menu-item menu-item-danger">
+                <i class="fas fa-trash"></i> Delete
+              </button>
+            </div>
+          </div>
+        </Demo>
+
+        <!-- Toast -->
+        <Demo title="Toast">
+          <div class="flex flex-wrap gap-3">
+            <button class="btn btn-default" id="toast-default">
+              Default Toast
+            </button>
+            <button class="btn btn-primary" id="toast-primary">
+              Primary Toast
+            </button>
+            <button class="btn btn-success" id="toast-success">
+              Success Toast
+            </button>
+            <button class="btn btn-danger" id="toast-danger">
+              Danger Toast
+            </button>
+            <button class="btn btn-warning" id="toast-warning">
+              Warning Toast
+            </button>
+          </div>
+        </Demo>
+
+        <!-- ==================== LAYOUT ==================== -->
+        <Section title="Layout" id="layout">
+          <!-- Tabs -->
+          <Demo title="Tabs">
+            <bl-tabs>
+              <bl-tab-list>
+                <bl-tab href="#demo-tab1">
+                  <i class="fas fa-user"></i> Users
+                </bl-tab>
+                <bl-tab href="#demo-tab2">
+                  <i class="fas fa-users"></i> Groups
+                </bl-tab>
+                <bl-tab href="#demo-tab3">
+                  <i class="fas fa-bell"></i> Notifications
+                </bl-tab>
+                <bl-tab href="#demo-tab4">
+                  <i class="fas fa-cog"></i> Settings
+                </bl-tab>
+              </bl-tab-list>
+              <bl-tab-panel id="demo-tab1">
+                <p class="p-4">
+                  Manage your users here. Add, edit, or remove users from your
+                  organization.
+                </p>
+              </bl-tab-panel>
+              <bl-tab-panel id="demo-tab2">
+                <p class="p-4">
+                  Organize users into groups for easier permission management.
+                </p>
+              </bl-tab-panel>
+              <bl-tab-panel id="demo-tab3">
+                <p class="p-4">
+                  Configure notification preferences and channels.
+                </p>
+              </bl-tab-panel>
+              <bl-tab-panel id="demo-tab4">
+                <p class="p-4">
+                  General settings for your account and organization.
+                </p>
+              </bl-tab-panel>
+            </bl-tabs>
+          </Demo>
+
+          <!-- Accordion -->
+          <Demo title="Accordion">
+            <div class="accordion" id="demo-accordion">
+              <div class="accordion-item">
+                <button
+                  class="accordion-header"
+                  type="button"
+                  data-collapse="#demo-acc1"
+                  aria-expanded="true"
+                  aria-controls="demo-acc1"
+                >
+                  What is Bloum?
+                </button>
+                <div
+                  id="demo-acc1"
+                  class="accordion-collapse collapsible show"
+                  data-bs-parent="#demo-accordion"
+                >
+                  <div class="accordion-body">
+                    Bloum is a modern UI component library built with vanilla
+                    JavaScript and CSS. It provides a comprehensive set of
+                    accessible, customizable components for building web
+                    applications.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button
+                  class="accordion-header"
+                  type="button"
+                  data-collapse="#demo-acc2"
+                  aria-expanded="false"
+                  aria-controls="demo-acc2"
+                >
+                  How do I install it?
+                </button>
+                <div
+                  id="demo-acc2"
+                  class="accordion-collapse collapsible"
+                  data-bs-parent="#demo-accordion"
+                >
+                  <div class="accordion-body">
+                    Install via npm with <code>npm install bloum</code>, then
+                    import the CSS and call <code>init()</code> to initialize all
+                    components automatically.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button
+                  class="accordion-header"
+                  type="button"
+                  data-collapse="#demo-acc3"
+                  aria-expanded="false"
+                  aria-controls="demo-acc3"
+                >
+                  Does it work with HTMX?
+                </button>
+                <div
+                  id="demo-acc3"
+                  class="accordion-collapse collapsible"
+                  data-bs-parent="#demo-accordion"
+                >
+                  <div class="accordion-body">
+                    Yes! Bloum has native support for HTMX. Components are
+                    automatically initialized when new content is loaded via
+                    HTMX requests.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Demo>
+
+          <!-- Collapse -->
+          <Demo title="Collapse">
+            <button class="btn btn-primary" data-collapse="#demo-collapse">
+              Toggle Collapse
+            </button>
+            <div class="collapsible mt-4" id="demo-collapse">
+              <div class="card">
+                <div class="card-body">
+                  <p>
+                    This content is collapsible. Click the button above to
+                    toggle its visibility with a smooth animation.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </Demo>
+        </Section>
+
+        <script>
+          import { Combobox, DataTable, Toast } from "bloum";
+
+          // Initialize Combobox
+          const comboboxEl = document.querySelector("#demo-combobox") as any;
+          if (comboboxEl) {
+            new Combobox(comboboxEl, { isSearchable: true });
+          }
+
+          // Initialize DataTable
+          const datatableEl = document.querySelector("#demo-datatable") as any;
+          if (datatableEl) {
+            new DataTable(datatableEl);
+          }
+
+          // Toast demo buttons
+          document
+            .getElementById("toast-default")
+            ?.addEventListener("click", () => {
+              Toast.show({
+                title: "Default",
+                description: "This is a default toast notification.",
+                variant: "default",
+                placement: "top-right",
+              });
+            });
+
+          document
+            .getElementById("toast-primary")
+            ?.addEventListener("click", () => {
+              Toast.show({
+                title: "Info",
+                description: "Here is some useful information.",
+                variant: "primary",
+                placement: "top-right",
+              });
+            });
+
+          document
+            .getElementById("toast-success")
+            ?.addEventListener("click", () => {
+              Toast.show({
+                title: "Success!",
+                description: "Your changes have been saved.",
+                variant: "success",
+                placement: "top-right",
+              });
+            });
+
+          document
+            .getElementById("toast-danger")
+            ?.addEventListener("click", () => {
+              Toast.show({
+                title: "Error",
+                description: "Something went wrong. Please try again.",
+                variant: "danger",
+                placement: "top-right",
+              });
+            });
+
+          document
+            .getElementById("toast-warning")
+            ?.addEventListener("click", () => {
+              Toast.show({
+                title: "Warning",
+                description: "Please review before proceeding.",
+                variant: "warning",
+                placement: "top-right",
+              });
+            });
+        </script>
+      </Section>
+    </Section>
   </div>
 </Layout>

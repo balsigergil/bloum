@@ -2,10 +2,14 @@
 import "../styles/global.css";
 import Head from "../components/head.astro";
 import Header from "../components/header.astro";
+import Footer from "../components/footer.astro";
 ---
 
 <html lang="en">
-  <Head />
+  <head>
+    <Head />
+    <title>Bloum - Modern UI Component Library</title>
+  </head>
   <body
     class="bg-white text-slate-900 antialiased selection:bg-indigo-100 selection:text-indigo-700 relative overflow-x-hidden"
   >
@@ -20,13 +24,6 @@ import Header from "../components/header.astro";
       <slot />
     </main>
 
-    <footer class="bg-slate-50 border-t border-slate-200 py-8">
-      <div class="container mx-auto px-6 text-center text-slate-500">
-        <p>
-          &copy; {new Date().getFullYear()} Bloum. Made with ❤️ by Gil Balsiger. MIT
-          License.
-        </p>
-      </div>
-    </footer>
+    <Footer />
   </body>
 </html>
