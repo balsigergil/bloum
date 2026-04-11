@@ -1,0 +1,46 @@
+---
+import Layout from "../layouts/showcase.astro";
+---
+
+<Layout title="Templates">
+  <div class="mx-auto max-w-7xl px-6 py-12">
+    <h1 class="text-4xl font-bold text-center text-slate-800 mb-4">
+      Templates
+    </h1>
+    <p class="text-center text-slate-500 mb-12 max-w-2xl mx-auto">
+      Ready-to-use page templates built with Bloum. Preview them live or
+      download the HTML to use in your own project.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+      <!-- Sidebar Dashboard Template -->
+      <div class="card">
+        <div
+          class="aspect-video bg-slate-100 flex items-center justify-center text-slate-400 rounded-t-lg"
+        >
+          <div class="text-center">
+            <i class="fa-solid fa-image text-4xl mb-2"></i>
+            <p class="text-sm">Preview coming soon</p>
+          </div>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Dashboard with Collapsible Sidebar</h3>
+          <p class="text-sm text-slate-500 mt-1">
+            A full admin dashboard layout featuring a sidebar with collapsible
+            menu sections, a top bar, and a content area with cards and tables.
+          </p>
+        </div>
+        <div class="card-footer">
+          <a href="/templates/sidebar-dashboard" class="btn btn-primary">
+            <i class="fa-solid fa-eye"></i>
+            Preview
+          </a>
+          <button class="btn btn-outline" disabled>
+            <i class="fa-solid fa-download"></i>
+            Download HTML
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

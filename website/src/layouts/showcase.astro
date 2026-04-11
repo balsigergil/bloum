@@ -4,17 +4,22 @@ import "../../../dist/bloum.min.css";
 import Head from "../components/head.astro";
 import Header from "../components/header.astro";
 import Footer from "../components/footer.astro";
+
+interface Props {
+  title?: string;
+}
+
+const { title = "Components" } = Astro.props;
 ---
 
 <html lang="en">
   <head>
     <Head />
-    <title></title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     />
-    <title>Bloum - Components</title>
+    <title>Bloum - {title}</title>
   </head>
   <body class="bg-white text-slate-900 antialiased">
     <Header />
