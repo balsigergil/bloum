@@ -143,10 +143,10 @@ const meta: Meta = {
           <div class="card-header">
             <h3 class="card-title">List of users</h3>
             <div class="card-actions">
-              <button class="btn btn-icon btn-ghost" aria-label="Add user">
+              <button class="btn btn-icon btn-ghost btn-sm" aria-label="Add user">
                 <i class="fas fa-plus"></i>
               </button>
-              <button class="btn btn-icon btn-ghost" aria-label="Settings">
+              <button class="btn btn-icon btn-ghost btn-sm" aria-label="Settings">
                 <i class="fas fa-cog"></i>
               </button>
             </div>
@@ -159,10 +159,10 @@ const meta: Meta = {
           <div class="card-header">
             <h3 class="card-title">List of users</h3>
             <div class="card-actions">
-              <button class="btn btn-icon btn-ghost" aria-label="Add user">
+              <button class="btn btn-icon btn-ghost btn-sm" aria-label="Add user">
                 <i class="fas fa-plus"></i>
               </button>
-              <button class="btn btn-icon btn-ghost" aria-label="Settings">
+              <button class="btn btn-icon btn-ghost btn-sm" aria-label="Settings">
                 <i class="fas fa-cog"></i>
               </button>
             </div>
@@ -175,10 +175,10 @@ const meta: Meta = {
           <div class="card-header">
             <h3 class="card-title">List of users</h3>
             <div class="card-actions">
-              <button class="btn btn-icon btn-ghost" aria-label="Add user">
+              <button class="btn btn-icon btn-ghost btn-sm" aria-label="Add user">
                 <i class="fas fa-plus"></i>
               </button>
-              <button class="btn btn-icon btn-ghost" aria-label="Settings">
+              <button class="btn btn-icon btn-ghost btn-sm" aria-label="Settings">
                 <i class="fas fa-cog"></i>
               </button>
             </div>
@@ -191,10 +191,10 @@ const meta: Meta = {
           <div class="card-header">
             <h3 class="card-title">List of users</h3>
             <div class="card-actions">
-              <button class="btn btn-icon btn-ghost" aria-label="Add user">
+              <button class="btn btn-icon btn-ghost btn-sm" aria-label="Add user">
                 <i class="fas fa-plus"></i>
               </button>
-              <button class="btn btn-icon btn-ghost" aria-label="Settings">
+              <button class="btn btn-icon btn-ghost btn-sm" aria-label="Settings">
                 <i class="fas fa-cog"></i>
               </button>
             </div>
@@ -424,10 +424,10 @@ export const WithCollapsible: Story = {
         <div class="card-header">
           <h3 class="card-title">List of users</h3>
           <div class="card-actions">
-            <button class="btn btn-icon btn-ghost" aria-label="Add user">
+            <button class="btn btn-sm btn-icon btn-ghost" aria-label="Add user">
               <i class="fas fa-plus"></i>
             </button>
-            <button class="btn btn-icon btn-ghost" aria-label="Settings">
+            <button class="btn btn-sm btn-icon btn-ghost" aria-label="Settings">
               <i class="fas fa-cog"></i>
             </button>
           </div>

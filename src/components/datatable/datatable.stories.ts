@@ -9,7 +9,7 @@ type DataTableArgs = {
 };
 
 const meta: Meta<DataTableArgs> = {
-  title: "Components/Data/Data Table",
+  title: "Lab/Data Table",
   argTypes: {
     rows: {
       control: { type: "number", min: 5, max: 100 },
@@ -368,7 +368,7 @@ export const ApiExample: Story = {
           <button class="btn btn-sm btn-danger" id="destroy-btn">Destroy DataTable</button>
         </div>
       </div>
-      
+
       <table id="api-table" class="table table-hover">
         <thead>
           <tr>

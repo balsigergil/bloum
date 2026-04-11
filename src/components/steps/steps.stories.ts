@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from "@storybook/html-vite";
 
 type StepsArgs = {
-  size: "sm" | "default" | "lg";
+  size: "default" | "lg";
   currentStep: number;
   showDescriptions: boolean;
   showIcons: boolean;
@@ -12,7 +12,7 @@ const meta: Meta<StepsArgs> = {
   argTypes: {
     size: {
       control: { type: "select" },
-      options: ["sm", "default", "lg"],
+      options: ["default", "lg"],
     },
     currentStep: {
       control: { type: "number", min: 1, max: 5 },
@@ -101,15 +101,6 @@ export const WithIcons: Story = {
   args: {
     size: "default",
     currentStep: 3,
-    showDescriptions: true,
-    showIcons: true,
-  },
-};
-
-export const SmallSize: Story = {
-  args: {
-    size: "sm",
-    currentStep: 2,
     showDescriptions: true,
     showIcons: true,
   },

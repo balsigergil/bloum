@@ -55,11 +55,6 @@
   .card-actions {
     display: flex;
     gap: 0.25rem;
-
-    .btn {
-      --bl-btn-height: 2rem;
-      --bl-btn-fs: 1rem;
-    }
   }
 
   .card-body {

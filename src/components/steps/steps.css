@@ -26,13 +26,6 @@
   }
 
   /* Size variants */
-  .steps.steps-sm {
-    --bl-steps-size: 1.5rem;
-    --bl-steps-fs: var(--bl-fs-sm);
-    --bl-steps-description-fs: var(--bl-fs-xs);
-    --bl-steps-line-thickness: 2px;
-  }
-
   .steps.steps-lg {
     --bl-steps-size: 2.5rem;
     --bl-steps-fs: var(--bl-fs-lg);
@@ -152,8 +145,8 @@
     --bl-steps-border-color: var(--bl-clr-green-600);
     --bl-steps-indicator-color: var(--bl-clr-white);
     --bl-steps-line-color: var(--bl-clr-green-600);
-    --bl-steps-title-color: var(--bl-clr-text-light);
-    --bl-steps-description-color: var(--bl-clr-text-light);
+    --bl-steps-title-color: var(--bl-clr-text);
+    --bl-steps-description-color: var(--bl-clr-text);
   }
 
   /* Done checkmark icon */

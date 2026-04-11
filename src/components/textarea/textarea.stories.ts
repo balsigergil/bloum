@@ -27,18 +27,6 @@ export const WithContent: Story = {
   },
 };
 
-export const DifferentSizes: Story = {
-  render: () => {
-    return `
-      <div class="max-w-md space-y-4">
-        <textarea class="input" rows="2" placeholder="Small textarea (2 rows)"></textarea>
-        <textarea class="input" rows="4" placeholder="Medium textarea (4 rows)"></textarea>
-        <textarea class="input" rows="6" placeholder="Large textarea (6 rows)"></textarea>
-      </div>
-    `;
-  },
-};
-
 export const Disabled: Story = {
   render: () => {
     return `

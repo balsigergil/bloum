@@ -3,5 +3,9 @@
   textarea.input {
     padding-block: 0.5rem;
     height: auto;
+
+    &:disabled {
+      cursor: not-allowed;
+    }
   }
 }
