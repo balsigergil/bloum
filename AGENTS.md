@@ -59,3 +59,31 @@ Built via `scripts/bundle.js` (esbuild) for JS and PostCSS for CSS.
 - **TypeScript**: Strict mode, ESNext target, private class fields (`#field`)
 - **Line length**: 80 characters (Prettier)
 - Pre-commit hooks (Husky + lint-staged) run lint and format checks automatically
+
+## Website (`website/`)
+
+The `website/` directory is a standalone Astro 6 static site — the homepage at
+bloum.dev. Run all commands from inside that directory.
+
+### Commands
+
+```bash
+cd website
+npm run dev      # Start local dev server (default port 4321)
+npm run build    # Build for production
+npm run preview  # Preview the production build
+```
+
+### Structure
+
+- `src/pages/` — File-based routing; `index.astro` is the single landing page
+- `src/styles/global.css` — Global styles (imports Tailwind via `@import`)
+- `src/assets/` — Optimized images (logo etc.) referenced via `astro:assets`
+- `public/` — Static files served as-is (e.g. `favicon.svg`)
+
+### Key conventions
+
+- **Tailwind CSS v4** via `@tailwindcss/vite` — all styling uses utility classes
+  inline in `.astro` templates
+- **TypeScript strict** mode enabled
+- No reusable component layer yet — markup lives directly in page files
