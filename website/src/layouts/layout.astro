@@ -1,14 +1,22 @@
 ---
+import "@fontsource-variable/inter/wght.css";
+import "../../../src/bloum.css";
 import "../styles/global.css";
-import Head from "../components/head.astro";
 import Header from "../components/header.astro";
 import Footer from "../components/footer.astro";
+import Head from "../components/head.astro";
+
+interface Props {
+  title?: string;
+}
+
+const { title = "Modern UI component library" } = Astro.props;
 ---
 
 <html lang="en">
   <head>
     <Head />
-    <title>Bloum - Modern UI Component Library</title>
+    <title>Bloum - {title}</title>
   </head>
   <body
     class="bg-white text-slate-900 antialiased selection:bg-indigo-100 selection:text-indigo-700 relative overflow-x-hidden"
@@ -25,5 +33,10 @@ import Footer from "../components/footer.astro";
     </main>
 
     <Footer />
+
+    <script>
+      import { init } from "../../../src";
+      init();
+    </script>
   </body>
 </html>

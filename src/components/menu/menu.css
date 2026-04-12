@@ -99,6 +99,10 @@
     }
   }
 
+  .menu-item:hover {
+    background-color: var(--bl-menu-item-hover-bg);
+  }
+
   .menu-item-danger {
     --bl-menu-item-color: var(--bl-clr-red-600);
     --bl-menu-item-hover-bg: var(--bl-clr-red-50);

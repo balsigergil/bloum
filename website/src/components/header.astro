@@ -9,7 +9,9 @@ import { Image } from "astro:assets";
   <a href="/" class="block">
     <Image src={logoSrc} alt="Bloum logo" class="max-w-75" priority={true} />
   </a>
-  <nav class="hidden md:flex items-center gap-8 font-medium text-slate-600">
+  <nav
+    class="hidden md:flex items-center gap-8 font-medium text-base text-slate-600"
+  >
     <a
       href="/components"
       class="hover:text-slate-900 transition-colors flex items-center gap-2"
@@ -57,12 +59,8 @@ import { Image } from "astro:assets";
           height="7"
           x="3"
           y="14"
-          rx="1"></rect><rect
-          width="5"
-          height="7"
-          x="16"
-          y="14"
-          rx="1"></rect></svg
+          rx="1"></rect><rect width="5" height="7" x="16" y="14" rx="1"
+        ></rect></svg
       >
       Templates
     </a>

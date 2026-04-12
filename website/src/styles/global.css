@@ -1,1 +1,5 @@
 @import "tailwindcss";
+
+:root {
+  --bl-font-sans: "Inter Variable", sans-serif;
+}

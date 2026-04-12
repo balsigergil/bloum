@@ -1,0 +1,26 @@
+---
+const fonts = [
+  { name: "Inter", value: "Inter Variable, sans-serif" },
+  { name: "FigTree", value: "FigTree Variable, sans-serif" },
+  { name: "Geist", value: "Geist Variable, sans-serif" },
+  { name: "Roboto", value: "Roboto Variable, sans-serif" },
+];
+---
+
+<select class="input" id="font-selector">
+  {fonts.map((font) => <option value={font.value}>{font.name}</option>)}
+</select>
+
+<script>
+  const fontSelector = document.getElementById(
+    "font-selector",
+  ) as HTMLSelectElement | null;
+  if (fontSelector) {
+    fontSelector.addEventListener("change", () => {
+      document.documentElement.style.setProperty(
+        "--bl-font-sans",
+        fontSelector.value,
+      );
+    });
+  }
+</script>

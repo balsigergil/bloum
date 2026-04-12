@@ -1,7 +1,11 @@
 ---
-import Layout from "../layouts/showcase.astro";
+import "@fontsource-variable/figtree/wght.css";
+import "@fontsource-variable/geist/wght.css";
+import "@fontsource-variable/roboto/wght.css";
+import Layout from "../layouts/layout.astro";
 import Section from "../components/component-section.astro";
 import Demo from "../components/component-demo.astro";
+import FontSelector from "../components/font-selector.astro";
 ---
 
 <Layout title="Components">
@@ -9,17 +13,21 @@ import Demo from "../components/component-demo.astro";
     <h1 class="text-4xl font-bold text-center text-slate-800 mb-4">
       Components
     </h1>
-    <p class="text-center text-slate-500 mb-12 max-w-2xl mx-auto">
+    <p class="text-center text-slate-500 max-w-2xl mx-auto">
       A showcase of all Bloum components. Each component is fully interactive.
     </p>
 
+    <div class="max-w-32 mx-auto my-4">
+      <FontSelector />
+    </div>
+
     <!-- Quick nav -->
     <nav class="mb-12 flex flex-wrap justify-center gap-2">
-      <a href="#elements" class="btn btn-sm btn-ghost">Elements</a>
-      <a href="#inputs" class="btn btn-sm btn-ghost">Inputs</a>
-      <a href="#data" class="btn btn-sm btn-ghost">Data Display</a>
-      <a href="#overlays" class="btn btn-sm btn-ghost">Overlays</a>
-      <a href="#layout" class="btn btn-sm btn-ghost">Layout</a>
+      <a href="#elements" class="btn btn-ghost">Elements</a>
+      <a href="#inputs" class="btn btn-ghost">Inputs</a>
+      <a href="#data" class="btn btn-ghost">Data Display</a>
+      <a href="#overlays" class="btn btn-ghost">Overlays</a>
+      <a href="#layout" class="btn btn-ghost">Layout</a>
     </nav>
 
     <!-- ==================== ELEMENTS ==================== -->
@@ -63,7 +71,7 @@ import Demo from "../components/component-demo.astro";
         <div class="flex flex-wrap items-center gap-4">
           <button class="btn">
             Messages
-            <span class="badge badge-primary">5</span>
+            <span class="badge">5</span>
           </button>
           <button class="btn">
             Alerts
@@ -75,11 +83,13 @@ import Demo from "../components/component-demo.astro";
           </button>
           <button class="btn">
             Notifications
-            <span class="badge badge-danger badge-top-right badge-ping">3</span>
+            <span class="badge badge-danger badge-top-right">3</span>
           </button>
           <button class="btn">
             Status
-            <span class="badge badge-success badge-top-right badge-dot"></span>
+            <span
+              class="badge badge-success badge-top-right badge-dot badge-ping"
+            ></span>
           </button>
         </div>
       </Demo>
@@ -1123,9 +1133,9 @@ import Demo from "../components/component-demo.astro";
           <div class="popover" id="demo-popover">
             <p class="font-bold mb-4">Set the dimensions for the layer.</p>
             <div class="grid grid-cols-[auto_auto] gap-4 items-center">
-              <label class="label w-max">Width</label>
+              <p>Width</p>
               <input class="input" />
-              <label class="label w-max">Height</label>
+              <p>Height</p>
               <input class="input" />
             </div>
           </div>
