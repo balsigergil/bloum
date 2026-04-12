@@ -191,7 +191,7 @@ export class DataTable {
       const aNum = parseFloat(aText);
       const bNum = parseFloat(bText);
 
-      let comparison = 0;
+      let comparison;
       if (!isNaN(aNum) && !isNaN(bNum)) {
         comparison = aNum - bNum;
       } else {

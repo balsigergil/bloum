@@ -124,7 +124,6 @@ The Modal component provides an accessible, focus-trapped dialog overlay for dis
 export default meta;
 
 export const BasicModal: StoryObj = {
-  name: "Basic Modal",
   parameters: {
     docs: {
       description: {
@@ -166,7 +165,6 @@ export const BasicModal: StoryObj = {
 };
 
 export const ModalSizes: StoryObj = {
-  name: "Modal Sizes",
   parameters: {
     docs: {
       description: {
@@ -268,7 +266,6 @@ export const ModalSizes: StoryObj = {
 };
 
 export const ConfirmationModal: StoryObj = {
-  name: "Confirmation Modal",
   parameters: {
     docs: {
       description: {
@@ -301,7 +298,6 @@ export const ConfirmationModal: StoryObj = {
 };
 
 export const ModalWithoutFooter: StoryObj = {
-  name: "Modal Without Footer",
   parameters: {
     docs: {
       description: {
@@ -331,7 +327,6 @@ export const ModalWithoutFooter: StoryObj = {
 };
 
 export const ModalWithForm: StoryObj = {
-  name: "Modal with Form",
   parameters: {
     docs: {
       description: {
@@ -402,7 +397,6 @@ export const ModalWithForm: StoryObj = {
 };
 
 export const NestedModals: StoryObj = {
-  name: "Nested Modals",
   parameters: {
     docs: {
       description: {
@@ -473,7 +467,6 @@ export const NestedModals: StoryObj = {
 };
 
 export const ModalWithScrollableContent: StoryObj = {
-  name: "Modal with Scrollable Content",
   parameters: {
     docs: {
       description: {
@@ -659,7 +652,6 @@ export const ModalWithScrollableContent: StoryObj = {
 };
 
 export const ModalWithComplexContent: StoryObj = {
-  name: "Modal with Complex Content",
   parameters: {
     docs: {
       description: {

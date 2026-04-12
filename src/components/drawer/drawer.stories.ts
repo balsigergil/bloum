@@ -126,7 +126,6 @@ The Drawer component provides a slide-out panel that appears from the left or ri
 export default meta;
 
 export const BasicDrawer: StoryObj = {
-  name: "Basic Drawer",
   parameters: {
     docs: {
       description: {
@@ -185,7 +184,6 @@ export const BasicDrawer: StoryObj = {
 };
 
 export const DrawerSizes: StoryObj = {
-  name: "Drawer Sizes",
   parameters: {
     docs: {
       description: {
@@ -249,7 +247,6 @@ export const DrawerSizes: StoryObj = {
 };
 
 export const DrawerPositions: StoryObj = {
-  name: "Drawer Positions",
   parameters: {
     docs: {
       description: {
@@ -310,7 +307,6 @@ export const DrawerPositions: StoryObj = {
 };
 
 export const DrawerWithForm: StoryObj = {
-  name: "Drawer with Form",
   parameters: {
     docs: {
       description: {
@@ -336,12 +332,12 @@ export const DrawerWithForm: StoryObj = {
           <label for="user-name" class="label">Display Name</label>
           <input type="text" id="user-name" name="displayName" class="input" placeholder="Enter your name" value="John Doe">
         </div>
-        
+
         <div class="field">
           <label for="user-email" class="label">Email</label>
           <input type="email" id="user-email" name="email" class="input" placeholder="Enter your email" value="john@example.com">
         </div>
-        
+
         <div class="field">
           <label for="user-timezone" class="label">Timezone</label>
           <select id="user-timezone" name="timezone" class="input">
@@ -352,26 +348,26 @@ export const DrawerWithForm: StoryObj = {
             <option value="America/Los_Angeles" selected>Pacific Time</option>
           </select>
         </div>
-        
+
         <div class="field">
           <label for="user-bio" class="label">Bio</label>
           <textarea id="user-bio" name="bio" class="input" rows="3" placeholder="Tell us about yourself...">Frontend developer with a passion for creating beautiful user experiences.</textarea>
         </div>
-        
+
         <div class="field">
           <div class="field">
             <input type="checkbox" class="input-check" id="notifications" name="notifications" checked>
             <label class="label" for="notifications">Email notifications</label>
           </div>
         </div>
-        
+
         <div class="field">
           <div class="field">
             <input type="checkbox" class="input-check" id="marketing" name="marketing">
             <label class="label" for="marketing">Marketing emails</label>
           </div>
         </div>
-        
+
         <div class="field">
           <div class="field">
             <input type="checkbox" class="input-check" id="dark-mode" name="darkMode" checked>

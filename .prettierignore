@@ -1,2 +1,4 @@
 docs/build/
 docs/.docusaurus/
+website/.astro/
+src/vite-env.d.ts
