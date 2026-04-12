@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.17.1](https://github.com/balsigergil/bloum/compare/v0.17.0...v0.17.1) (2026-04-12)
+
+### Features
+
+* removed reset CSS ([5ad8d8a](https://github.com/balsigergil/bloum/commit/5ad8d8a03d10421b04048e38ee35751c7f732926))
+
+### Bug Fixes
+
+* **sidebar:** topbar above sidebar ([36b8c27](https://github.com/balsigergil/bloum/commit/36b8c2705931cb0ccb2d63d84d908710332f7319))
+
 ## [0.17.0](https://github.com/balsigergil/bloum/compare/v0.16.0...v0.17.0) (2026-04-12)
 
 ### Features
