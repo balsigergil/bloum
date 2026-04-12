@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.17.0](https://github.com/balsigergil/bloum/compare/v0.16.0...v0.17.0) (2026-04-12)
+
+### Features
+
+* **components:** clean up styles and enhance consistency across components ([17a8c0e](https://github.com/balsigergil/bloum/commit/17a8c0e05ddadd9bbe9a20742eaeb8317dc1f097))
+* enhance card and button styles ([6ca4db9](https://github.com/balsigergil/bloum/commit/6ca4db9f4bfd9b8a4a800ac3867616f3d757ff93))
+
+### Bug Fixes
+
+* **menu:** add portal support for correct overlay positioning ([75e90fc](https://github.com/balsigergil/bloum/commit/75e90fc0dba7279cf6279a6eacd8947403b2486b))
+* **menu:** adjust styles and positioning ([2016e52](https://github.com/balsigergil/bloum/commit/2016e52af692fcfb90d0d5efaee115db0bf5f05b))
+* **menu:** flip only on main axis ([c0311d8](https://github.com/balsigergil/bloum/commit/c0311d86ff7b7d8a528123d112aa29cf829aec79))
+* **tab:** border until the end of the tab list ([9520bb4](https://github.com/balsigergil/bloum/commit/9520bb4c6b52de1707b7b5626842960a8d03bb84))
+
 ## [0.16.0](https://github.com/balsigergil/bloum/compare/v0.15.5...v0.16.0) (2026-01-03)
 
 ### Features
