@@ -81,7 +81,8 @@
     /*--bl-checkbox-checked-bg: var(--bl-clr-primary-600);*/
 
     /* Z-index */
-    --bl-z-sidebar: 50;
+    --bl-z-topbar: 50;
+    --bl-z-sidebar: 60;
     --bl-z-popover: 100;
     --bl-z-dropdown: 100;
     --bl-z-tooltip: 100;

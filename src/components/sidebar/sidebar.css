@@ -24,7 +24,7 @@
 @layer components {
   .topbar {
     position: sticky;
-    z-index: var(--bl-z-sidebar);
+    z-index: var(--bl-z-topbar);
     top: 0;
     height: var(--bl-topbar-height);
     display: flex;
@@ -62,7 +62,7 @@
 
   .btn-sidebar-toggle {
     position: absolute;
-    z-index: var(--bl-z-sidebar);
+    z-index: var(--bl-z-topbar);
   }
 
   html:has(.sidebar.show) {
