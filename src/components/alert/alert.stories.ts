@@ -9,12 +9,12 @@ const meta: Meta<AlertArgs> = {
   argTypes: {
     color: {
       control: "select",
-      options: ["default", "primary", "danger", "success", "warning"],
+      options: ["neutral", "primary", "danger", "success", "warning"],
     },
   },
   render: (args) => {
     return `
-<div class="alert${args.color !== `default` ? ` alert-${args.color}` : ``}">
+<div class="alert${args.color !== `neutral` ? ` alert-${args.color}` : ``}">
   <div class="alert-icon">
     <i class="fas fa-info-circle"></i>
   </div>
@@ -31,7 +31,7 @@ type Story = StoryObj<AlertArgs>;
 
 export const Alert: Story = {
   args: {
-    color: "default",
+    color: "neutral",
   },
 };
 
@@ -41,7 +41,7 @@ export const SimpleAlert: Story = {
   },
   render: (args) => {
     return `
-<div class="alert${args.color !== `default` ? ` alert-${args.color}` : ``}">
+<div class="alert${args.color !== `neutral` ? ` alert-${args.color}` : ``}">
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores earum fugiat laborum nisi perferendis quibusdam. Consequuntur, delectus danger est illum incidunt ipsam, laudantium nesciunt optio recusandae sapiente suscipit veniam vero!
 </div>`;
   },
