@@ -4,7 +4,7 @@
     --bl-clr-text-light: var(--bl-clr-gray-500);
     --bl-clr-text-inverted: var(--bl-clr-gray-200);
     --bl-clr-text-light-inverted: var(--bl-clr-gray-400);
-    --bl-clr-background: var(--bl-clr-gray-50);
+    --bl-clr-background: var(--bl-clr-white);
     --bl-clr-surface: var(--bl-clr-white);
 
     /* Focus */

@@ -119,7 +119,7 @@ export class Menu {
 
   #updatePosition() {
     computePosition(this.#trigger, this.#menu, {
-      placement: "bottom-end",
+      placement: "bottom-start",
       middleware: [
         offset(6),
         flip({
