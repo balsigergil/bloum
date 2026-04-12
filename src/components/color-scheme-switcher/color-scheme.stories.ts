@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from "@storybook/html-vite";
 
 const meta: Meta = {
-  title: "Components/Elements/Color Scheme Switcher",
+  title: "Lab/Color Scheme Switcher",
   render: () => {
     return `
 <button class="btn btn-icon color-scheme-switcher">

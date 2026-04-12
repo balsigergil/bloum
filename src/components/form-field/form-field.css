@@ -1,10 +1,6 @@
 @layer components {
   /* Form field wrapper */
   .field {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-
     --bl-field-text-help-color: var(--bl-clr-text-light);
     --bl-field-danger-color: var(--bl-clr-red-500);
     --bl-field-text-danger-color: var(--bl-clr-red-600);
@@ -14,18 +10,6 @@
 
   .field > .label {
     align-self: flex-start;
-  }
-
-  /* Checkbox wrapper */
-  .field:has(> .input-check) {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    flex-direction: row;
-
-    .label {
-      margin-bottom: 0;
-    }
   }
 
   .field:not(:last-child) {
@@ -77,6 +61,7 @@
     font-weight: var(--bl-fw-medium);
     user-select: none;
     display: inline-block;
+    margin-bottom: 0.5rem;
   }
 
   .dark {

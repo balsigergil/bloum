@@ -43,17 +43,14 @@
     }
   }
 
-  .form-switch {
+  .field-switch {
     display: inline-flex;
     align-items: center;
     gap: 1rem;
-
-    label {
-      margin: 0;
-    }
   }
 
-  .form-switch:has(.switch:disabled) .label {
+  .field-switch:has(.switch:disabled) .input-check-label {
+    cursor: not-allowed;
     opacity: var(--bl-disabled-opacity);
   }
 

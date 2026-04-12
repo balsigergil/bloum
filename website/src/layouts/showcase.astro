@@ -1,6 +1,6 @@
 ---
 import "../styles/global.css";
-import "../../../dist/bloum.min.css";
+import "../../../src/bloum.css";
 import Head from "../components/head.astro";
 import Header from "../components/header.astro";
 import Footer from "../components/footer.astro";
@@ -21,7 +21,14 @@ const { title = "Components" } = Astro.props;
     />
     <title>Bloum - {title}</title>
   </head>
-  <body class="bg-white text-slate-900 antialiased">
+  <body
+    class="antialiased selection:bg-indigo-100 selection:text-indigo-700 relative overflow-x-hidden"
+  >
+    <div
+      class="absolute top-0 z-[-2] h-screen w-screen bg-white bg-[radial-gradient(100%_50%_at_50%_0%,rgba(0,163,255,0.13)_0,rgba(0,163,255,0)_50%,rgba(0,163,255,0)_100%)]"
+    >
+    </div>
+
     <Header />
 
     <main>
@@ -31,7 +38,7 @@ const { title = "Components" } = Astro.props;
     <Footer />
 
     <script>
-      import { init } from "../../../dist/esm/bloum";
+      import { init } from "../../../src";
       init();
     </script>
   </body>

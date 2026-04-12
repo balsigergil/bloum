@@ -7,7 +7,6 @@
     --bl-drawer-padding: 1.5rem;
     --bl-drawer-backdrop-bg: rgba(from var(--bl-clr-gray-900) r g b / 0.25);
     --bl-drawer-border-radius: var(--bl-border-radius-lg);
-    --bl-drawer-zindex: 1000;
     --bl-drawer-shadow: var(--bl-shadow-xl);
 
     --bl-drawer-size-sm: 300px;
@@ -17,7 +16,7 @@
     position: fixed;
     background-color: var(--bl-drawer-backdrop-bg);
     inset: 0;
-    z-index: var(--bl-drawer-zindex);
+    z-index: var(--bl-z-drawer);
     display: none;
     animation: drawerBackdropFadeIn 150ms both ease-in-out;
   }

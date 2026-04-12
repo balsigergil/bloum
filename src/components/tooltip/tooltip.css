@@ -3,7 +3,7 @@
   --bl-tooltip-color: var(--bl-clr-text-inverted);
 
   position: absolute;
-  z-index: 2000;
+  z-index: var(--bl-z-tooltip);
   width: max-content;
   top: 0;
   left: 0;
@@ -33,7 +33,7 @@
 
 .tooltip-arrow {
   position: absolute;
-  z-index: 2000;
+  z-index: var(--bl-z-tooltip);
   width: 8px;
   height: 8px;
   background-color: var(--bl-tooltip-bg);

@@ -169,6 +169,20 @@ export const MultipleFields: Story = {
           <p class="field-text-help">Brief description for your profile (max 200 chars)</p>
         </div>
 
+        <div class="field">
+          <p class="label">Subscribe to the newsletter</p>
+          <div class="flex gap-4">
+            <div class="field-check">
+              <input type="radio" name="newsletter" value="yes" id="newsletter-yes" class="input-check">
+              <label for="newsletter-yes" class="input-check-label">Yes, please</label>
+            </div>
+            <div class="field-check">
+              <input type="radio" name="newsletter" value="no" id="newsletter-no" class="input-check">
+              <label for="newsletter-no" class="input-check-label">No, thanks</label>
+            </div>
+          </div>
+        </div>
+
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
       <script>

@@ -1,8 +1,5 @@
 @layer components {
   .breadcrumb {
-    --bl-breadbrumb-color: var(--bl-clr-gray-600);
-    --bl-breadbrumb-color-active: var(--bl-clr-gray-700);
-
     display: flex;
     flex-wrap: wrap;
     padding: 0;
@@ -13,7 +10,6 @@
   }
 
   .breadcrumb-item {
-    color: var(--bl-breadbrumb-color);
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
@@ -26,16 +22,10 @@
   }
 
   .breadcrumb-item.active {
-    color: var(--bl-breadbrumb-color-active);
     font-weight: var(--bl-fw-bold);
   }
 
   .breadcrumb-separator {
     font-size: var(--bl-fs-xs);
-  }
-
-  .dark .breadcrumb {
-    --bl-breadbrumb-color: var(--bl-clr-gray-400);
-    --bl-breadbrumb-color-active: var(--bl-clr-gray-300);
   }
 }

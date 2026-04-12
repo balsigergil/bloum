@@ -6,7 +6,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 2000;
+    z-index: var(--bl-z-popover);
     width: max-content;
     background-color: var(--bl-popover-bg);
     border-radius: var(--bl-border-radius);
@@ -15,15 +15,28 @@
     box-shadow: var(--bl-shadow-sm);
     font-size: var(--bl-fs-base);
     padding: 0.75rem;
+    transition-property: opacity, transform, display;
+    transition-duration: var(--bl-transition-md);
+    transition-timing-function: ease;
+    transition-behavior: allow-discrete;
+    opacity: 0;
+    transform: scale(0.95);
   }
 
   .popover.show {
     display: block;
+    opacity: 1;
+    transform: scale(1);
+
+    @starting-style {
+      opacity: 0;
+      transform: scale(0.95);
+    }
   }
 
   .popover-arrow {
     position: absolute;
-    z-index: 2000;
+    z-index: var(--bl-z-popover);
     width: 12px;
     height: 12px;
     background-color: var(--bl-popover-bg);

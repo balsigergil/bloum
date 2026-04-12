@@ -1,4 +1,5 @@
 import { FocusTrap, createFocusTrap } from "focus-trap";
+import { allowBodyScroll, preventBodyScroll } from "../../utils/scrollbar";
 
 export interface BloumDrawerElement extends HTMLElement {
   bloumDrawer?: Drawer;
@@ -18,6 +19,7 @@ export class Drawer {
   }
 
   open() {
+    preventBodyScroll();
     this.#element.classList.add("open");
     this.#element.setAttribute("aria-hidden", "false");
     this.#element.setAttribute("aria-modal", "true");
@@ -41,6 +43,7 @@ export class Drawer {
         this.#element.removeAttribute("aria-modal");
         this.#element.removeAttribute("role");
         this.#focusTrap.deactivate();
+        allowBodyScroll();
       },
       { once: true },
     );

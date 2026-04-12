@@ -18,7 +18,7 @@
     align-items: center;
     font-size: max(0.75rem, calc(0.875 / 2.25 * var(--bl-pagination-height)));
     font-weight: var(--bl-fw-medium);
-    color: var(--bl-pagination-color);
+    /*color: var(--bl-pagination-color);*/
     border-radius: var(--bl-border-radius);
     border: 1px solid transparent;
     transition-property: background-color, border-color;

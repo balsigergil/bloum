@@ -1,41 +1,17 @@
 @layer components {
   .timeline {
-    --bl-timeline-size: 1.25rem;
+    --bl-timeline-connector-color: var(--bl-clr-gray-300);
+    --bl-timeline-size: 2rem;
     --bl-timeline-border-width: 2px;
     --bl-timeline-line-thickness: 2px;
     --bl-timeline-line-offset: 0.75rem;
-    --bl-timeline-color: var(--bl-clr-gray-300);
-    --bl-timeline-color-active: var(--bl-clr-gray-800);
-    --bl-timeline-color-completed: var(--bl-clr-green-600);
-    --bl-timeline-title-color: var(--bl-clr-gray-700);
-    --bl-timeline-date-color: var(--bl-clr-gray-600);
-    --bl-timeline-text-color: var(--bl-clr-gray-900);
-    --bl-timeline-bg: var(--bl-clr-surface);
+    --bl-timeline-description-color: var(--bl-clr-gray-500);
     --bl-timeline-title-fs: var(--bl-fs-base);
-    --bl-timeline-date-fs: 0.75rem;
-    --bl-timeline-text-fs: var(--bl-fs-base);
     --bl-timeline-padding-left: 2.5rem;
 
     display: flex;
     flex-direction: column;
     position: relative;
-  }
-
-  /* Size variants */
-  .timeline-sm {
-    --bl-timeline-size: 1rem;
-    --bl-timeline-title-fs: 0.75rem;
-    --bl-timeline-date-fs: 0.625rem;
-    --bl-timeline-text-fs: 0.75rem;
-    --bl-timeline-padding-left: 2rem;
-  }
-
-  .timeline-lg {
-    --bl-timeline-size: 1.5rem;
-    --bl-timeline-title-fs: var(--bl-fs-lg);
-    --bl-timeline-date-fs: var(--bl-fs-base);
-    --bl-timeline-text-fs: var(--bl-fs-lg);
-    --bl-timeline-padding-left: 3rem;
   }
 
   /* Timeline item */
@@ -52,11 +28,11 @@
     width: var(--bl-timeline-size);
     height: var(--bl-timeline-size);
     border-radius: var(--bl-border-radius-full);
-    background-color: var(--bl-timeline-bg);
-    border: var(--bl-timeline-border-width) solid var(--bl-timeline-color);
+    background-color: var(--bl-clr-gray-800);
+    color: white;
+    /*border: var(--bl-timeline-border-width) solid var(--bl-timeline-color);*/
     flex-shrink: 0;
-    z-index: 1;
-    transition: all var(--bl-transition-md);
+    /*transition: all var(--bl-transition-md);*/
   }
 
   /* Connector line */
@@ -67,93 +43,39 @@
     margin-inline-start: calc(-1 * var(--bl-timeline-line-thickness) / 2);
     inset-inline-start: calc(var(--bl-timeline-size) / 2);
     inset-block: 0;
-    border-color: var(--bl-timeline-color);
+    border-color: var(--bl-timeline-connector-color);
   }
 
-  /* Timeline content */
   .timeline-content {
     flex: 1;
     min-width: 0;
     display: flex;
     flex-direction: column;
-    gap: 0.375rem;
-    padding-block-end: 1.5rem;
+    padding-block-end: 1rem;
   }
 
   .timeline-title {
     line-height: var(--bl-timeline-size);
-    font-size: var(--bl-timeline-title-fs);
     font-weight: var(--bl-fw-bold);
-    color: var(--bl-timeline-title-color);
-  }
-
-  .timeline-date {
-    font-size: var(--bl-timeline-date-fs);
-    color: var(--bl-timeline-date-color);
   }
 
   .timeline-description {
-    font-size: var(--bl-timeline-text-fs);
-    color: var(--bl-timeline-text-color);
+    color: var(--bl-timeline-description-color);
+    font-size: var(--bl-fs-sm);
   }
 
-  /* Active state */
-  .timeline-item-active .timeline-indicator {
-    border-color: var(--bl-timeline-color-active);
-    background-color: var(--bl-timeline-color-active);
-  }
-
-  .timeline-item-active::before {
-    background-color: var(--bl-timeline-color-active);
-  }
-
-  /* Completed state */
-  .timeline-item-completed .timeline-indicator {
-    border-color: var(--bl-timeline-color-completed);
-    background-color: var(--bl-timeline-color-completed);
-  }
-
-  .timeline-item-completed::before {
-    background-color: var(--bl-timeline-color-completed);
+  .timeline-description + .timeline-body {
+    margin-top: 0.25rem;
   }
 
   /* Icon support */
-  .timeline-indicator i,
-  .timeline-indicator svg {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  .timeline-indicator {
+    display: grid;
+    place-items: center;
     font-size: calc(var(--bl-timeline-size) * 0.5);
-    color: var(--bl-timeline-bg);
-  }
-
-  .timeline-indicator:has(i, svg) {
-    background-color: var(--bl-timeline-color-active);
-    border-color: var(--bl-timeline-color-active);
-  }
-
-  /* Compact variant - less spacing */
-  .timeline-compact {
-    --bl-timeline-gap: 1rem;
-  }
-
-  .timeline-compact.timeline-sm {
-    --bl-timeline-gap: 0.75rem;
-  }
-
-  .timeline-compact.timeline-lg {
-    --bl-timeline-gap: 1.5rem;
   }
 
   /* Dark mode */
   .dark .timeline {
-    --bl-timeline-color: var(--bl-clr-gray-600);
-    --bl-timeline-color-active: var(--bl-clr-gray-300);
-    --bl-timeline-color-completed: var(--bl-clr-green-500);
-    --bl-timeline-title-color: var(--bl-clr-gray-100);
-    --bl-timeline-text-color: var(--bl-clr-gray-300);
-    --bl-timeline-date-color: var(--bl-clr-gray-400);
-    --bl-timeline-bg: var(--bl-clr-gray-800);
   }
 }

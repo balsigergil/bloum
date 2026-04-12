@@ -16,11 +16,9 @@ export const CheckboxCard: Story = {
           <img src="https://picsum.photos/id/25/300/200" alt="Nature" class="card-image" />
           <div class="card-header">
             <h3 class="card-title">Basic</h3>
+            <div class="card-description">Get started with the basics</div>
           </div>
-          <div class="card-body">
-            <div class="font-semibold text-gray-500 text-sm">Get started with the basics</div>
-            <p class="font-semibold mt-2">$10/month</p>
-          </div>
+          <div class="card-body text-xl">$10/month</div>
         </label>
 
         <label for="pack2" class="card checkbox-card">
@@ -28,11 +26,9 @@ export const CheckboxCard: Story = {
           <img src="https://picsum.photos/id/27/300/200" alt="Nature" class="card-image" />
           <div class="card-header">
             <h3 class="card-title">Pro</h3>
+            <div class="card-description">For the professionals</div>
           </div>
-          <div class="card-body">
-            <div class="font-semibold text-gray-500 text-sm">For the professionals</div>
-            <p class="font-semibold mt-2">$20/month</p>
-          </div>
+          <div class="card-body text-xl">$20/month</div>
         </label>
 
         <label for="pack3" class="card checkbox-card">
@@ -40,10 +36,10 @@ export const CheckboxCard: Story = {
           <img src="https://picsum.photos/id/28/300/200" alt="Nature" class="card-image" />
           <div class="card-header">
             <h3 class="card-title">Expert</h3>
+            <div class="card-description">When you know what you're doing</div>
           </div>
-          <div class="card-body">
-            <div class="font-semibold text-gray-500 text-sm">When you know what you're doing</div>
-            <p class="font-semibold mt-2">$50/month</p>
+          <div class="card-body text-xl">
+            $50/month
           </div>
         </label>
       </div>
@@ -60,10 +56,10 @@ export const RadioCard: Story = {
           <img src="https://picsum.photos/id/25/300/200" alt="Nature" class="card-image" />
           <div class="card-header">
             <h3 class="card-title">Basic</h3>
+            <div class="card-description">Get started with the basics</div>
           </div>
-          <div class="card-body">
-            <div class="font-semibold text-gray-500 text-sm">Get started with the basics</div>
-            <p class="font-semibold mt-2">$10/month</p>
+          <div class="card-body text-xl">
+            $10/month
           </div>
         </label>
 
@@ -72,10 +68,10 @@ export const RadioCard: Story = {
           <img src="https://picsum.photos/id/27/300/200" alt="Nature" class="card-image" />
           <div class="card-header">
             <h3 class="card-title">Pro</h3>
+            <div class="card-description">For the professionals</div>
           </div>
-          <div class="card-body">
-            <div class="font-semibold text-gray-500 text-sm">For the professionals</div>
-            <p class="font-semibold mt-2">$20/month</p>
+          <div class="card-body text-xl">
+            $20/month
           </div>
         </label>
 
@@ -84,10 +80,10 @@ export const RadioCard: Story = {
           <img src="https://picsum.photos/id/28/300/200" alt="Nature" class="card-image" />
           <div class="card-header">
             <h3 class="card-title">Enterprise</h3>
+            <div class="card-description">Contact us for pricing</div>
           </div>
-          <div class="card-body">
-            <div class="font-semibold text-gray-500 text-sm">Contact us for pricing</div>
-            <p class="font-semibold mt-2">Custom pricing</p>
+          <div class="card-body text-xl">
+            Custom pricing
           </div>
         </label>
       </div>

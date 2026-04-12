@@ -3,7 +3,7 @@
   .toast-container {
     --bl-toast-gap: 1rem;
     position: fixed;
-    z-index: 1050;
+    z-index: var(--bl-z-toast);
     pointer-events: none;
     display: flex;
     flex-direction: column;
@@ -55,11 +55,11 @@
     --bl-toast-bg: var(--bl-clr-white);
     --bl-toast-color: var(--bl-clr-gray-900);
     --bl-toast-border: var(--bl-clr-gray-200);
-    --bl-toast-shadow: var(--bl-shadow-lg);
+    --bl-toast-shadow: var(--bl-shadow);
     --bl-toast-min-width: 20rem;
     --bl-toast-max-width: 24rem;
     --bl-toast-padding: 1rem;
-    --bl-toast-border-radius: var(--bl-border-radius-lg);
+    --bl-toast-border-radius: var(--bl-border-radius);
     --bl-toast-close-color: var(--bl-clr-gray-400);
     --bl-toast-close-hover-color: var(--bl-clr-gray-600);
 

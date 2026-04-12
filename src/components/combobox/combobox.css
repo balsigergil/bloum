@@ -88,12 +88,12 @@
     position: absolute;
     width: max-content;
     min-width: 100%;
-    z-index: 50;
+    z-index: var(--bl-z-dropdown);
     background: var(--bl-combobox-menu-bg);
     display: none;
     border: 1px solid var(--bl-input-border-color);
     border-radius: var(--bl-input-border-radius);
-    box-shadow: var(--bl-shadow-sm);
+    box-shadow: var(--bl-shadow);
     overflow: hidden;
   }
 

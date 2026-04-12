@@ -171,6 +171,13 @@ import Demo from "../components/component-demo.astro";
       <!-- Alert -->
       <Demo title="Alert">
         <div class="space-y-4">
+          <div class="alert">
+            <div class="alert-icon"><i class="fas fa-info-circle"></i></div>
+            <div class="alert-content">
+              <div class="alert-title">Neutral alert</div>
+              <div class="alert-text">This is a general message.</div>
+            </div>
+          </div>
           <div class="alert alert-primary">
             <div class="alert-icon"><i class="fas fa-info-circle"></i></div>
             <div class="alert-content">
@@ -214,11 +221,21 @@ import Demo from "../components/component-demo.astro";
           <div class="card">
             <div class="card-header">
               <h3 class="card-title">List of users</h3>
+              <p class="card-description">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Aliquid animi asperiores assumenda at corporis debitis dolore.
+              </p>
               <div class="card-actions">
-                <button class="btn btn-icon btn-ghost" aria-label="Add user">
+                <button
+                  class="btn btn-sm btn-icon btn-ghost"
+                  aria-label="Add user"
+                >
                   <i class="fas fa-plus"></i>
                 </button>
-                <button class="btn btn-icon btn-ghost" aria-label="Settings">
+                <button
+                  class="btn btn-sm btn-icon btn-ghost"
+                  aria-label="Settings"
+                >
                   <i class="fas fa-cog"></i>
                 </button>
               </div>
@@ -279,6 +296,16 @@ import Demo from "../components/component-demo.astro";
           <div class="progress progress-primary">
             <div class="progress-bar" style="width: 25%">
               <span class="progress-label">25%</span>
+            </div>
+          </div>
+          <div class="progress progress-sm">
+            <div class="progress-bar" style="width: 33%">
+              <span class="progress-label">33%</span>
+            </div>
+          </div>
+          <div class="progress progress-lg progress-danger">
+            <div class="progress-bar" style="width: 45%">
+              <span class="progress-label">45%</span>
             </div>
           </div>
           <div class="progress progress-success">
@@ -346,48 +373,108 @@ import Demo from "../components/component-demo.astro";
 
       <!-- Timeline -->
       <Demo title="Timeline">
-        <div class="timeline">
-          <div class="timeline-item timeline-item-completed">
-            <div class="timeline-indicator">
-              <i class="fas fa-check"></i>
+        <div class="grid grid-cols-2">
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-indicator bg-green-600">
+                <i class="fas fa-check"></i>
+              </div>
+              <div class="timeline-content">
+                <div class="timeline-title">Application Submitted</div>
+                <div class="timeline-description">15th March 2024</div>
+                <div class="timeline-body">
+                  Your job application has been successfully submitted.
+                </div>
+              </div>
             </div>
-            <div class="timeline-content">
-              <div class="timeline-title">Application Submitted</div>
-              <div class="timeline-date">15th March 2024</div>
-              <div class="timeline-description">
-                Your job application has been successfully submitted.
+            <div class="timeline-item timeline-item-completed">
+              <div class="timeline-indicator">
+                <i class="fas fa-check"></i>
+              </div>
+              <div class="timeline-content">
+                <div class="timeline-title">Application Reviewed</div>
+                <div class="timeline-description">18th March 2024</div>
+                <div class="timeline-body">
+                  Your application has been reviewed by the hiring team.
+                </div>
+              </div>
+            </div>
+            <div class="timeline-item timeline-item-active">
+              <div class="timeline-indicator">
+                <i class="fas fa-clock"></i>
+              </div>
+              <div class="timeline-content">
+                <div class="timeline-title">Interview Scheduled</div>
+                <div class="timeline-description">22nd March 2024</div>
+                <div class="timeline-body">
+                  Your interview has been scheduled.
+                </div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-indicator">
+                <i class="fas fa-hourglass"></i>
+              </div>
+              <div class="timeline-content">
+                <div class="timeline-title">Decision</div>
+                <div class="timeline-body">Pending</div>
               </div>
             </div>
           </div>
-          <div class="timeline-item timeline-item-completed">
-            <div class="timeline-indicator">
-              <i class="fas fa-check"></i>
-            </div>
-            <div class="timeline-content">
-              <div class="timeline-title">Application Reviewed</div>
-              <div class="timeline-date">18th March 2024</div>
-              <div class="timeline-description">
-                Your application has been reviewed by the hiring team.
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-indicator bg-green-600">
+                <i class="fas fa-check"></i>
+              </div>
+              <div class="timeline-content">
+                <div class="flex items-center gap-2">
+                  <div class="timeline-title">Application Submitted</div>
+                  <span class="text-gray-500">&bullet;</span>
+                  <div class="timeline-description">15th March 2024</div>
+                </div>
+                <div class="timeline-body">
+                  Your job application has been successfully submitted.
+                </div>
               </div>
             </div>
-          </div>
-          <div class="timeline-item timeline-item-active">
-            <div class="timeline-indicator">
-              <i class="fas fa-clock"></i>
-            </div>
-            <div class="timeline-content">
-              <div class="timeline-title">Interview Scheduled</div>
-              <div class="timeline-date">22nd March 2024</div>
-              <div class="timeline-description">
-                Your interview has been scheduled.
+            <div class="timeline-item timeline-item-completed">
+              <div class="timeline-indicator">
+                <i class="fas fa-check"></i>
+              </div>
+              <div class="timeline-content">
+                <div class="flex items-center gap-2">
+                  <div class="timeline-title">Application Reviewed</div>
+                  <span class="text-gray-500">&bullet;</span>
+                  <div class="timeline-description">18th March 2024</div>
+                </div>
+                <div class="timeline-body">
+                  Your application has been reviewed by the hiring team.
+                </div>
               </div>
             </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-indicator"></div>
-            <div class="timeline-content">
-              <div class="timeline-title">Decision</div>
-              <div class="timeline-date">Pending</div>
+            <div class="timeline-item timeline-item-active">
+              <div class="timeline-indicator">
+                <i class="fas fa-clock"></i>
+              </div>
+              <div class="timeline-content">
+                <div class="flex items-center gap-2">
+                  <div class="timeline-title">Interview Scheduled</div>
+                  <span class="text-gray-500">&bullet;</span>
+                  <div class="timeline-description">22nd March 2024</div>
+                </div>
+                <div class="timeline-body">
+                  Your interview has been scheduled.
+                </div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-indicator">
+                <i class="fas fa-hourglass"></i>
+              </div>
+              <div class="timeline-content">
+                <div class="timeline-title">Decision</div>
+                <div class="timeline-body">Pending</div>
+              </div>
             </div>
           </div>
         </div>
@@ -550,21 +637,23 @@ import Demo from "../components/component-demo.astro";
       <!-- Checkbox -->
       <Demo title="Checkbox">
         <div class="space-y-3">
-          <div class="field">
+          <div class="field-check">
             <input type="checkbox" id="demo-cb1" class="input-check" />
-            <label for="demo-cb1" class="label">
+            <label for="demo-cb1" class="input-check-label">
               Accept terms and conditions
             </label>
           </div>
-          <div class="field">
+          <div class="field-check">
             <input type="checkbox" id="demo-cb2" class="input-check" checked />
-            <label for="demo-cb2" class="label">
+            <label for="demo-cb2" class="input-check-label">
               Subscribe to newsletter
             </label>
           </div>
-          <div class="field">
+          <div class="field-check">
             <input type="checkbox" id="demo-cb3" class="input-check" disabled />
-            <label for="demo-cb3" class="label">Disabled checkbox</label>
+            <label for="demo-cb3" class="input-check-label"
+              >Disabled checkbox</label
+            >
           </div>
         </div>
       </Demo>
@@ -572,7 +661,7 @@ import Demo from "../components/component-demo.astro";
       <!-- Radio -->
       <Demo title="Radio">
         <div class="space-y-3">
-          <div class="field">
+          <div class="field-check">
             <input
               type="radio"
               id="demo-radio1"
@@ -580,25 +669,26 @@ import Demo from "../components/component-demo.astro";
               class="input-check"
               checked
             />
-            <label for="demo-radio1" class="label">Option A</label>
+            <label for="demo-radio1" class="input-check-label">Option A</label>
           </div>
-          <div class="field">
+          <div class="field-check">
             <input
               type="radio"
               id="demo-radio2"
               name="demo-radio"
               class="input-check"
             />
-            <label for="demo-radio2" class="label">Option B</label>
+            <label for="demo-radio2" class="input-check-label">Option B</label>
           </div>
-          <div class="field">
+          <div class="field-check">
             <input
               type="radio"
               id="demo-radio3"
               name="demo-radio"
               class="input-check"
+              disabled
             />
-            <label for="demo-radio3" class="label">Option C</label>
+            <label for="demo-radio3" class="input-check-label">Option C</label>
           </div>
         </div>
       </Demo>
@@ -606,11 +696,13 @@ import Demo from "../components/component-demo.astro";
       <!-- Switch -->
       <Demo title="Switch">
         <div class="flex flex-col gap-3">
-          <div class="form-switch">
+          <div class="field-switch">
             <input type="checkbox" class="switch" role="switch" id="demo-sw1" />
-            <label for="demo-sw1" class="label">Enable notifications</label>
+            <label for="demo-sw1" class="input-check-label"
+              >Enable notifications</label
+            >
           </div>
-          <div class="form-switch">
+          <div class="field-switch">
             <input
               type="checkbox"
               class="switch"
@@ -618,9 +710,9 @@ import Demo from "../components/component-demo.astro";
               id="demo-sw2"
               checked
             />
-            <label for="demo-sw2" class="label">Dark mode</label>
+            <label for="demo-sw2" class="input-check-label">Dark mode</label>
           </div>
-          <div class="form-switch">
+          <div class="field-switch">
             <input
               type="checkbox"
               class="switch"
@@ -628,7 +720,7 @@ import Demo from "../components/component-demo.astro";
               id="demo-sw3"
               disabled
             />
-            <label for="demo-sw3" class="label">Disabled</label>
+            <label for="demo-sw3" class="input-check-label">Disabled</label>
           </div>
         </div>
       </Demo>
@@ -705,13 +797,9 @@ import Demo from "../components/component-demo.astro";
             />
             <div class="card-header">
               <h3 class="card-title">Basic</h3>
+              <div class="card-description">Get started with the basics</div>
             </div>
-            <div class="card-body">
-              <div class="text-sm text-slate-500">
-                Get started with the basics
-              </div>
-              <p class="font-semibold mt-2">$10/month</p>
-            </div>
+            <div class="card-body text-lg font-semibold">$10/month</div>
           </label>
           <label for="demo-plan2" class="card checkbox-card">
             <input
@@ -722,13 +810,11 @@ import Demo from "../components/component-demo.astro";
             />
             <div class="card-header">
               <h3 class="card-title">Pro</h3>
-            </div>
-            <div class="card-body">
-              <div class="text-sm text-slate-500">
+              <div class="card-description">
                 For growing teams and businesses
               </div>
-              <p class="font-semibold mt-2">$25/month</p>
             </div>
+            <div class="card-body text-lg font-semibold">$25/month</div>
           </label>
           <label for="demo-plan3" class="card checkbox-card">
             <input
@@ -739,13 +825,9 @@ import Demo from "../components/component-demo.astro";
             />
             <div class="card-header">
               <h3 class="card-title">Enterprise</h3>
+              <div class="card-description">Advanced features and support</div>
             </div>
-            <div class="card-body">
-              <div class="text-sm text-slate-500">
-                Advanced features and support
-              </div>
-              <p class="font-semibold mt-2">$99/month</p>
-            </div>
+            <div class="card-body text-lg font-semibold">$99/month</div>
           </label>
         </div>
       </Demo>
@@ -1040,10 +1122,10 @@ import Demo from "../components/component-demo.astro";
           </button>
           <div class="popover" id="demo-popover">
             <p class="font-bold mb-4">Set the dimensions for the layer.</p>
-            <div class="grid grid-cols-2 gap-4">
-              <label class="label">Width</label>
+            <div class="grid grid-cols-[auto_auto] gap-4 items-center">
+              <label class="label w-max">Width</label>
               <input class="input" />
-              <label class="label">Height</label>
+              <label class="label w-max">Height</label>
               <input class="input" />
             </div>
           </div>
@@ -1052,23 +1134,70 @@ import Demo from "../components/component-demo.astro";
         <!-- Menu -->
         <Demo title="Menu">
           <div class="dropdown">
-            <button class="btn" data-dropdown-toggle>
-              <i class="fas fa-ellipsis-v"></i> Options
-            </button>
-            <div class="menu">
-              <a href="#" class="menu-item">
-                <i class="fas fa-file"></i> New File
-              </a>
-              <a href="#" class="menu-item">
-                <i class="fas fa-folder-open"></i> Open File...
-              </a>
-              <button class="menu-item">
-                <i class="fas fa-save"></i> Save
-              </button>
+            <button class="btn btn-outline" data-dropdown-toggle>Options</button
+            >
+            <div class="menu" id="menu">
+              <div class="menu-group">
+                <div class="menu-label">My Account</div>
+                <a href="#" class="menu-item">
+                  <i class="fas fa-user fa-fw"></i>
+                  Profile
+                  <span class="menu-shortcut">⇧⌘P</span>
+                </a>
+                <a href="#" class="menu-item">
+                  <i class="fas fa-credit-card fa-fw"></i>
+                  Billing
+                  <span class="menu-shortcut">⌘B</span>
+                </a>
+                <a href="#" class="menu-item">
+                  <i class="fas fa-cog fa-fw"></i>
+                  Settings
+                  <span class="menu-shortcut">⌘S</span>
+                </a>
+              </div>
               <div class="menu-divider"></div>
-              <button class="menu-item menu-item-danger">
-                <i class="fas fa-trash"></i> Delete
-              </button>
+              <div class="menu-group">
+                <button type="button" class="menu-item">
+                  <i class="fas fa-users fa-fw"></i>
+                  Team
+                </button>
+                <div class="menu-item">
+                  <i class="fas fa-user-plus fa-fw"></i>
+                  Invite users
+                  <i class="fas fa-chevron-right ml-auto"></i>
+                  <div class="submenu">
+                    <div class="menu-group">
+                      <a href="#" class="menu-item">Email</a>
+                      <a href="#" class="menu-item">Slack</a>
+                    </div>
+                    <div class="menu-divider"></div>
+                    <div class="menu-group">
+                      <div class="menu-item">
+                        More...
+                        <i class="fas fa-chevron-right ml-auto"></i>
+                        <div class="submenu">
+                          <div class="menu-group">
+                            <a href="#" class="menu-item">Email</a>
+                            <a href="#" class="menu-item">Slack</a>
+                            <a href="#" class="menu-item">Phone</a>
+                            <a href="#" class="menu-item">Pigeon</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <a class="menu-item" href="#">
+                  New Team
+                  <span class="menu-shortcut">⌘T</span>
+                </a>
+              </div>
+              <div class="menu-divider"></div>
+              <div class="menu-group">
+                <a class="menu-item" href="#">GitHub</a>
+                <a class="menu-item" href="#">Support</a>
+                <a class="menu-item disabled" href="#">API</a>
+              </div>
             </div>
           </div>
         </Demo>
@@ -1229,7 +1358,7 @@ import Demo from "../components/component-demo.astro";
         </Section>
 
         <script>
-          import { Combobox, DataTable, Toast } from "bloum";
+          import { Combobox, DataTable, Toast } from "../../../src";
 
           // Initialize Combobox
           const comboboxEl = document.querySelector("#demo-combobox") as any;

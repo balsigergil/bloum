@@ -54,7 +54,7 @@ const meta: Meta<TagArgs> = {
     return `
 <div class="${classes}">
   <span class="tag-text">${args.text}</span>
-  ${args.removable ? '<button class="tag-remove" type="button" aria-label="Remove tag"></button>' : ""}
+  ${args.removable ? '<button class="tag-remove" type="button" aria-label="Remove tag"><i class="fas fa-xmark"></i></button>' : ""}
 </div>`;
   },
 };

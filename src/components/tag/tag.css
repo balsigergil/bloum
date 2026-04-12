@@ -35,27 +35,24 @@
   }
 
   .tag-remove {
-    --bl-tag-remove-size: calc(var(--bl-tag-height) - 0.5rem);
+    --bl-tag-remove-size: calc(var(--bl-tag-height) / 3 * 2);
     --bl-tag-remove-color: var(--bl-tag-color);
     --bl-tag-remove-bg: transparent;
     --bl-tag-remove-hover-bg: rgba(0, 0, 0, 0.1);
 
     width: var(--bl-tag-remove-size);
     height: var(--bl-tag-remove-size);
-    min-width: var(--bl-tag-remove-size);
+    flex-shrink: 0;
     padding: 0;
     border: none;
     border-radius: var(--bl-tag-border-radius);
     background-color: var(--bl-tag-remove-bg);
     color: var(--bl-tag-remove-color);
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(var(--bl-tag-fs) * 0.8);
-    line-height: 1;
+    display: grid;
+    place-items: center;
+    font-size: calc(var(--bl-tag-fs) * 0.75);
     transition: background-color var(--bl-transition-sm) ease-in-out;
-    margin-inline-end: calc(var(--bl-tag-padding-inline) * -0.25);
   }
 
   .tag-remove:hover {
@@ -63,13 +60,7 @@
   }
 
   .tag-remove:focus-visible {
-    outline: 2px solid var(--bl-clr-primary-600);
-    outline-offset: -1px;
-  }
-
-  .tag-remove::before {
-    content: "×";
-    font-weight: var(--bl-fw-bold);
+    outline: 1px solid var(--bl-clr-primary-600);
   }
 
   .tag-rounded {

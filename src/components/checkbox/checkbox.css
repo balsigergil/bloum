@@ -64,6 +64,22 @@
     }
   }
 
+  .input-check-label {
+    display: block;
+    user-select: none;
+  }
+
+  .input-check:disabled + .input-check-label {
+    opacity: var(--bl-disabled-opacity);
+    cursor: not-allowed;
+  }
+
+  .field-check {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
   .dark .input-check {
     --bl-checkbox-checked-bg: var(--bl-clr-primary-600);
   }

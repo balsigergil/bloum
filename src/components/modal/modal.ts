@@ -1,4 +1,5 @@
 import { FocusTrap, createFocusTrap } from "focus-trap";
+import { allowBodyScroll, preventBodyScroll } from "../../utils/scrollbar";
 
 export interface BloumModalElement extends HTMLElement {
   blmodal?: Modal;
@@ -45,6 +46,8 @@ export class Modal {
   }
 
   open() {
+    preventBodyScroll();
+
     this.#element.classList.add("open");
     this.#element.setAttribute("aria-hidden", "false");
     this.#element.setAttribute("aria-modal", "true");
@@ -68,6 +71,7 @@ export class Modal {
       () => {
         this.#element.classList.remove("open");
         this.#element.classList.remove("closing");
+        allowBodyScroll();
       },
       { once: true },
     );

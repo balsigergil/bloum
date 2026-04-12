@@ -43,13 +43,17 @@ export const BreadcrumbWithMenu: Story = {
     <li class="breadcrumb-item breadcrumb-separator"><i class="fas fa-angle-right"></i></li>
     <li class="breadcrumb-item">
       <div class="dropdown">
-        <button data-menu="#menu" class="flex items-center gap-2">Library<i class="fas fa-angle-down text-xs"></i></button>
+        <button data-dropdown-toggle class="flex items-center gap-2">Library<i class="fas fa-angle-down text-xs"></i></button>
         <div class="menu" id="menu">
-          <a href="#" class="menu-item">New File</a>
-          <a href="#" class="menu-item">Open File...</a>
-          <button class="menu-item">Save</button>
+          <div class="menu-group">
+            <a href="#" class="menu-item">New File</a>
+            <a href="#" class="menu-item">Open File...</a>
+            <button class="menu-item">Save</button>
+          </div>
           <div class="menu-divider"></div>
-          <button class="menu-item">Close</button>
+          <div class="menu-group">
+            <button class="menu-item">Close</button>
+          </div>
         </div>
       </div>
     </li>

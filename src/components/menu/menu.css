@@ -9,7 +9,6 @@
     --bl-menu-item-color: var(--bl-clr-text);
     --bl-menu-divider-color: var(--bl-border-color);
     --bl-menu-item-padding: 0.5rem;
-    --bl-menu-zindex: 20;
     --bl-menu-shortcut-color: var(--bl-clr-gray-500);
     --bl-menu-transition: var(--bl-transition-md);
 
@@ -30,7 +29,7 @@
     background-color: var(--bl-menu-bg);
     width: 12rem;
     position: absolute;
-    z-index: var(--bl-menu-zindex);
+    z-index: var(--bl-z-dropdown);
     box-shadow: var(--bl-shadow);
     opacity: 0;
     visibility: hidden;
@@ -90,19 +89,14 @@
     width: 100%;
     align-items: center;
     gap: 0.5rem;
-    font-weight: var(--bl-fw-medium);
     cursor: pointer;
     user-select: none;
 
+    &.disabled,
     &[disabled] {
       opacity: var(--bl-disabled-opacity);
-      cursor: not-allowed;
       pointer-events: none;
     }
-  }
-
-  .menu-item:hover:not([disabled]) {
-    background-color: var(--bl-menu-item-hover-bg);
   }
 
   .menu-item-danger {

@@ -4,7 +4,7 @@
     --bl-steps-border-width: 2px;
 
     --bl-steps-fs: var(--bl-fs-base);
-    --bl-steps-description-fs: var(--bl-fs-sm);
+    --bl-steps-description-fs: var(--bl-fs-base);
 
     --bl-steps-line-color: var(--bl-clr-text);
     --bl-steps-line-thickness: 3px;
@@ -29,7 +29,7 @@
   .steps.steps-lg {
     --bl-steps-size: 2.5rem;
     --bl-steps-fs: var(--bl-fs-lg);
-    --bl-steps-description-fs: var(--bl-fs-base);
+    --bl-steps-description-fs: var(--bl-fs-lg);
     --bl-steps-line-thickness: 4px;
   }
 
@@ -161,12 +161,6 @@
     .step.active {
       --bl-steps-title-color: var(--bl-clr-primary-500);
       --bl-steps-description-color: var(--bl-clr-primary-500);
-    }
-
-    /* Done state */
-    .step.done {
-      --bl-steps-title-color: var(--bl-clr-text-light);
-      --bl-steps-description-color: var(--bl-clr-text-light);
     }
   }
 }

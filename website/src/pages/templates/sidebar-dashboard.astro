@@ -1,6 +1,6 @@
 ---
 import "../../styles/global.css";
-import "../../../../dist/bloum.min.css";
+import "../../../../src/bloum.css";
 import Head from "../../components/head.astro";
 ---
 
@@ -196,17 +196,21 @@ import Head from "../../components/head.astro";
                   <i class="fa-solid fa-ellipsis-vertical"></i>
                 </button>
                 <div class="menu">
-                  <a href="#" class="menu-item"
-                    ><i class="fas fa-fw fa-user"></i>Profile</a
-                  >
-                  <a href="#" class="menu-item"
-                    ><i class="fas fa-fw fa-cog"></i>Settings</a
-                  >
+                  <div class="menu-group">
+                    <div class="menu-label">My Account</div>
+                    <a href="#" class="menu-item"
+                      ><i class="fas fa-fw fa-user"></i>Profile</a
+                    >
+                    <a href="#" class="menu-item"
+                      ><i class="fas fa-fw fa-cog"></i>Settings</a
+                    >
+                  </div>
                   <div class="menu-divider"></div>
-                  <button class="menu-item"
-                    ><i class="fas fa-fw fa-right-from-bracket"
-                    ></i>Logout</button
-                  >
+                  <div class="menu-group">
+                    <button class="menu-item">
+                      <i class="fas fa-fw fa-right-from-bracket"></i> Logout
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -372,16 +376,20 @@ import Head from "../../components/head.astro";
                     <i class="fas fa-ellipsis-vertical"></i>
                   </button>
                   <div class="menu">
-                    <button class="menu-item">
-                      <i class="fas fa-fw fa-download"></i>Export CSV
-                    </button>
-                    <button class="menu-item">
-                      <i class="fas fa-fw fa-print"></i>Print
-                    </button>
+                    <div class="menu-group">
+                      <button class="menu-item">
+                        <i class="fas fa-fw fa-download"></i>Export CSV
+                      </button>
+                      <button class="menu-item">
+                        <i class="fas fa-fw fa-print"></i>Print
+                      </button>
+                    </div>
                     <div class="menu-divider"></div>
-                    <button class="menu-item">
-                      <i class="fas fa-fw fa-cog"></i>Table settings
-                    </button>
+                    <div class="menu-group">
+                      <button class="menu-item">
+                        <i class="fas fa-fw fa-cog"></i>Table settings
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -690,7 +698,7 @@ import Head from "../../components/head.astro";
                 </button>
               </div>
             </div>
-            <div class="card-body p-0">
+            <div class="card-body p-0 mt-2">
               <div class="divide-y">
                 <div class="flex items-center gap-4 px-6 py-3">
                   <input type="checkbox" class="input-check" />
@@ -895,7 +903,7 @@ import Head from "../../components/head.astro";
     </div>
 
     <script>
-      import { init } from "../../../../dist/esm/bloum";
+      import { init } from "../../../../src";
       init();
     </script>
   </body>

@@ -1,6 +1,6 @@
 @layer components {
   .progress {
-    --bl-progress-height: 0.5rem;
+    --bl-progress-height: 1rem;
     --bl-progress-bg: var(--bl-clr-gray-300);
     --bl-progress-color: var(--bl-clr-gray-700);
     --bl-progress-border-radius: var(--bl-border-radius-full);
@@ -28,7 +28,7 @@
   }
 
   .progress-label {
-    font-size: 0.625rem;
+    font-size: var(--bl-fs-sm);
     font-weight: var(--bl-fw-bold);
     color: var(--bl-progress-label-color);
     white-space: nowrap;
@@ -38,10 +38,10 @@
 
   /* Size variants */
   .progress-sm {
-    --bl-progress-height: 0.25rem;
+    --bl-progress-height: 0.75rem;
 
     .progress-label {
-      font-size: 0.5rem;
+      font-size: var(--bl-fs-xs);
     }
   }
 
