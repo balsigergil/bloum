@@ -26,8 +26,8 @@ export class Menu {
   readonly #trigger: HTMLElement;
   #cleanup: VoidFunction | null = null;
   #cleanupEvents: VoidFunction | null = null;
-  #portalParent: Node | null = null;
-  #portalNextSibling: Node | null = null;
+  // #portalParent: Node | null = null;
+  // #portalNextSibling: Node | null = null;
 
   constructor(element: BlMenuElement, trigger: HTMLElement) {
     if (element.blmenu !== undefined) {
@@ -40,8 +40,8 @@ export class Menu {
   }
 
   open() {
-    this.#portalParent = this.#menu.parentNode;
-    this.#portalNextSibling = this.#menu.nextSibling;
+    // this.#portalParent = this.#menu.parentNode;
+    // this.#portalNextSibling = this.#menu.nextSibling;
     getOrCreatePortal().appendChild(this.#menu);
 
     this.#menu.classList.add("show");
@@ -58,16 +58,16 @@ export class Menu {
       this.#cleanup();
       this.#cleanup = null;
     }
-    this.#restoreFromPortal();
+    // this.#restoreFromPortal();
   }
 
-  #restoreFromPortal() {
-    if (this.#portalParent && this.#menu.parentNode !== this.#portalParent) {
-      this.#portalParent.insertBefore(this.#menu, this.#portalNextSibling);
-    }
-    this.#portalParent = null;
-    this.#portalNextSibling = null;
-  }
+  // #restoreFromPortal() {
+  //   if (this.#portalParent && this.#menu.parentNode !== this.#portalParent) {
+  //     this.#portalParent.insertBefore(this.#menu, this.#portalNextSibling);
+  //   }
+  //   this.#portalParent = null;
+  //   this.#portalNextSibling = null;
+  // }
 
   isOpen() {
     return this.#menu.classList.contains("show");
@@ -131,6 +131,27 @@ export class Menu {
       Object.assign(this.#menu.style, {
         left: `${x}px`,
         top: `${y}px`,
+      });
+    });
+
+    // Compute position of submenus
+    this.#menu.querySelectorAll<HTMLElement>(".submenu").forEach((submenu) => {
+      const anchor = submenu.closest(".menu-item");
+      if (!anchor) {
+        return;
+      }
+      computePosition(anchor, submenu, {
+        placement: "right-start",
+        middleware: [
+          flip({
+            crossAxis: false,
+          }),
+        ],
+      }).then(({ x, y }) => {
+        Object.assign(submenu.style, {
+          left: `${x}px`,
+          top: `${y}px`,
+        });
       });
     });
   }
