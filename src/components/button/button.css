@@ -142,8 +142,8 @@
   }
 
   .btn-outline {
-    --bl-btn-bg: transparent;
-    --bl-btn-hover-bg: var(--bl-clr-gray-200);
+    --bl-btn-bg: var(--bl-clr-white);
+    --bl-btn-hover-bg: var(--bl-clr-gray-100);
     --bl-btn-color: var(--bl-clr-text);
     --bl-btn-border: 1px solid var(--bl-clr-gray-300);
 

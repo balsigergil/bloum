@@ -2,11 +2,16 @@ import type { Meta, StoryObj } from "@storybook/html-vite";
 
 const meta: Meta = {
   title: "Components/Layout/Card",
+};
+
+export default meta;
+type Story = StoryObj;
+
+export const Card: Story = {
   render: () => {
     return `
-      <div class="card">
+      <div class="card max-w-lg">
         <div class="card-header">
-          <h3 class="card-title">List of users</h3>
           <div class="card-actions">
             <button class="btn btn-sm btn-icon btn-ghost" aria-label="Add user">
               <i class="fas fa-plus"></i>
@@ -15,31 +20,68 @@ const meta: Meta = {
               <i class="fas fa-cog"></i>
             </button>
           </div>
+          <h3 class="card-title">List of users</h3>
+          <div class="card-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur corporis deleniti dolores doloribus eius facere.</div>
         </div>
         <div class="card-body">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. At corporis culpa cumque ea ex exercitationem neque nulla perferendis porro rerum totam, veniam voluptates voluptatibus. Dolor dolorum iusto nemo provident quis!
         </div>
+        <div class="card-footer grid grid-cols-2">
+          <button class="btn btn-primary">Action 1</button>
+          <button class="btn btn-outline">Action 2</button>
+        </div>
       </div>
-      `;
+    `;
   },
 };
 
-export default meta;
-type Story = StoryObj;
+export const CardOnlyBody: Story = {
+  render: () => {
+    return `
+      <div class="card max-w-lg">
+        <div class="card-body">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. At corporis culpa cumque ea ex exercitationem neque nulla perferendis porro rerum totam, veniam voluptates voluptatibus. Dolor dolorum iusto nemo provident quis!
+        </div>
+      </div>
+    `;
+  },
+};
 
-export const Card: Story = {};
+export const CardOnlyHeader: Story = {
+  render: () => {
+    return `
+      <div class="card max-w-lg">
+        <div class="card-header">
+          <div class="card-actions">
+            <button class="btn btn-sm btn-icon btn-ghost" aria-label="Add user">
+              <i class="fas fa-plus"></i>
+            </button>
+            <button class="btn btn-sm btn-icon btn-ghost" aria-label="Settings">
+              <i class="fas fa-cog"></i>
+            </button>
+          </div>
+          <h3 class="card-title">List of users</h3>
+          <div class="card-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur corporis deleniti dolores doloribus eius facere.</div>
+        </div>
+      </div>
+    `;
+  },
+};
 
 export const CardWithImage: Story = {
   render: () => {
     return `
       <div class="card" style="max-width: 350px">
         <img src="https://picsum.photos/300/200" alt="Nature" class="card-image" />
-        <div class="card-body">
+        <div class="card-header">
+          <div class="card-actions">
+            <span class="tag">Featured</span>
+          </div>
           <h3 class="card-title">List of users</h3>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, at, commodi ducimus eveniet fugit in, iste mollitia neque nulla obcaecati provident quibusdam repellat sit tempore tenetur ut voluptatem. Provident, quisquam!
+          <div class="card-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, at, commodi ducimus eveniet fugit in, iste mollitia neque nulla obcaecati provident quibusdam repellat sit tempore tenetur ut voluptatem. Provident, quisquam!</div>
         </div>
-        <div class="card-footer">
-          <button class="btn btn-ghost">Cancel</button>
+        <div class="card-footer justify-end">
+          <button class="btn btn-outline">Cancel</button>
           <button class="btn btn-primary">Save</button>
         </div>
       </div>

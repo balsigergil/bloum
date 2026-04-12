@@ -6,14 +6,9 @@
     position: relative;
     user-select: none;
     cursor: pointer;
-    transition-property: transform, border-color;
+    transition-property: border-color;
     transition-duration: var(--bl-transition-md);
     display: block;
-
-    &:has(.input-check:active:not(:disabled)),
-    &:has(.input-check:active:not(:disabled)) {
-      transform: scale(0.96);
-    }
 
     .card-image {
       --bl-card-image-max-height: 100px;
