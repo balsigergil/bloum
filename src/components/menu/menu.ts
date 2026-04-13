@@ -43,7 +43,7 @@ export class Menu {
 
     this.#menu.setAttribute("tabindex", "-1");
     this.#menu.classList.add("show");
-    this.#menu.focus();
+    this.#menu.focus({ preventScroll: true });
     this.#cleanup = autoUpdate(
       this.#trigger,
       this.#menu,
@@ -51,7 +51,7 @@ export class Menu {
     );
   }
 
-  close() {
+  close(focusTrigger = false) {
     this.#menu.classList.remove("show");
     this.#menu.removeAttribute("tabindex");
     if (this.#cleanup) {
@@ -59,7 +59,9 @@ export class Menu {
       this.#cleanup = null;
     }
     this.#clearAllFocus();
-    this.#trigger.focus();
+    if (focusTrigger) {
+      this.#trigger.focus();
+    }
   }
 
   isOpen() {
@@ -98,7 +100,6 @@ export class Menu {
     this.#closeUnrelatedSubmenus(item);
     this.#focusedItem = item;
     item.classList.add("active");
-    item.scrollIntoView({ block: "nearest" });
   }
 
   #deactivatePrevious(newItem: HTMLElement) {
@@ -256,7 +257,7 @@ export class Menu {
         if (this.#isInsideSubmenu()) {
           this.#closeSubmenuAndReturn();
         } else {
-          this.close();
+          this.close(true);
         }
         return;
       }
