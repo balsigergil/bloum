@@ -72,8 +72,8 @@ export const Menu: Story = {
     <div class="menu-divider"></div>
     <div class="menu-group">
       <a class="menu-item" href="#">GitHub</a>
-      <a class="menu-item" href="#">Support</a>
       <a class="menu-item" href="#" disabled>API</a>
+      <a class="menu-item" href="#">Support</a>
     </div>
   </div>
 </div>
