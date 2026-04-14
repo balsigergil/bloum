@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.17.2](https://github.com/balsigergil/bloum/compare/v0.17.1...v0.17.2) (2026-04-14)
+
+### Features
+
+* **menu:** add keyboard navigation ([196ceb2](https://github.com/balsigergil/bloum/commit/196ceb24a3856f0854f32969b911a7be650f313a))
+
+### Bug Fixes
+
+* **menu:** prevent auto-scroll in menu component ([8bc9491](https://github.com/balsigergil/bloum/commit/8bc94919d5d3ac3dd14e3d359fed22237f1f1c3f))
+
 ## [0.17.1](https://github.com/balsigergil/bloum/compare/v0.17.0...v0.17.1) (2026-04-12)
 
 ### Features
