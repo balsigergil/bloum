@@ -85,6 +85,8 @@
   }
 
   .bl-combobox-menu {
+    --bl-combobox-transition: var(--bl-transition-md);
+
     position: absolute;
     width: max-content;
     min-width: 100%;
@@ -95,6 +97,14 @@
     border-radius: var(--bl-input-border-radius);
     box-shadow: var(--bl-shadow);
     overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-0.5rem) scale(0.95);
+
+    transition-behavior: allow-discrete;
+    transition-property: opacity, transform, display, visibility;
+    transition-duration: var(--bl-combobox-transition);
+    transition-timing-function: ease;
   }
 
   .bl-combobox-search {
@@ -109,6 +119,14 @@
 
   .bl-combobox.open .bl-combobox-menu {
     display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+
+    @starting-style {
+      opacity: 0;
+      transform: translateY(-0.5rem) scale(0.95);
+    }
   }
 
   .bl-combobox-option.bl-combobox-hidden {
@@ -119,10 +137,12 @@
     max-height: 16rem;
     overflow-y: auto;
     outline: none;
+    padding: 0.25rem;
   }
 
   .bl-combobox-option {
     padding: 0.25rem 0.5rem;
+    border-radius: var(--bl-border-radius);
     cursor: pointer;
     user-select: none;
   }
