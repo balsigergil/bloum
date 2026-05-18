@@ -11,9 +11,6 @@
         <a aria-label="NPM version" href="https://www.npmjs.com/package/bloum">
           <img alt="NPM version" src="https://img.shields.io/npm/v/bloum?style=for-the-badge">
         </a>
-        <a aria-label="Minzipped size" href="https://bundlephobia.com/package/bloum">
-          <img alt="Minzipped size" src="https://img.shields.io/bundlephobia/minzip/bloum?style=for-the-badge">
-        </a>
         <a aria-label="License" href="https://github.com/balsigergil/bloum/blob/main/LICENSE">
           <img alt="License" src="https://img.shields.io/npm/l/bloum?style=for-the-badge">
         </a>
