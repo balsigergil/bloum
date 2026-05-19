@@ -1235,6 +1235,73 @@ import FontSelector from "../components/font-selector.astro";
 
         <!-- ==================== LAYOUT ==================== -->
         <Section title="Layout" id="layout">
+          <!-- Navbar -->
+          <Demo title="Navbar">
+            <nav class="navbar">
+              <a class="navbar-brand" href="#">Bloum</a>
+              <button
+                class="btn btn-icon btn-ghost navbar-toggle"
+                data-collapse="#demo-navbar-collapse"
+              >
+                <i class="fas fa-bars"></i>
+              </button>
+              <div
+                class="navbar-nav collapsible"
+                id="demo-navbar-collapse"
+              >
+                <div class="nav-items">
+                  <div class="nav-item">
+                    <a class="nav-link active" href="#" aria-current="page">
+                      Home
+                    </a>
+                  </div>
+                  <div class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                  </div>
+                  <div class="nav-item">
+                    <a class="nav-link" href="#">Docs</a>
+                  </div>
+                  <div class="nav-item dropdown">
+                    <a
+                      class="nav-link hstack gap-2"
+                      href="#"
+                      data-dropdown-toggle
+                    >
+                      More <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="menu">
+                      <div class="menu-group">
+                        <a class="menu-item" href="#">Components</a>
+                        <a class="menu-item" href="#">Changelog</a>
+                      </div>
+                      <div class="menu-divider"></div>
+                      <div class="menu-group">
+                        <a class="menu-item" href="#">GitHub</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="nav-items">
+                  <div class="nav-item dropdown">
+                    <div class="avatar cursor-pointer" data-dropdown-toggle>
+                      <span class="avatar-initials">JD</span>
+                    </div>
+                    <div class="menu">
+                      <div class="menu-group">
+                        <a class="menu-item" href="#">Profile</a>
+                        <a class="menu-item" href="#">Settings</a>
+                      </div>
+                      <div class="menu-divider"></div>
+                      <div class="menu-group">
+                        <a class="menu-item" href="#">Sign out</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </nav>
+          </Demo>
+
           <!-- Tabs -->
           <Demo title="Tabs">
             <bl-tabs>
