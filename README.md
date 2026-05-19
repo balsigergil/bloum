@@ -31,14 +31,11 @@
 
 ## What is Bloum?
 
-Bloum is an open-source library of web components.
-The goal of this library is to provide a set of CSS and JavaScript components
-that can be used in any backend web project.
+Bloum is an open-source library of UI web components intended to provide a complete set of CSS and JS components to compose your design system.
+The goal for Bloum is to be a modern alternative to Bootstrap and easy to use for non-frontend developers.
 
-The main use-case for Bloum is to provide easy-to-use components for a multipage
-application (MPA) project like Laravel, Django or Rails.
-It pairs well with server-side rendering and progressive enhancement tools
-like [HTMX](https://htmx.org/) and [Alpine.js](https://alpinejs.dev/).
+The main use-case for Bloum is to provide components for a multipage application (MPA) project like Laravel, Django or Rails. It is not (and won't be) intended to be used with frontend frameworks like React or Vue.
+It pairs well with server-side rendering and progressive enhancement tools like [HTMX](https://htmx.org/) and [Alpine.js](https://alpinejs.dev/).
 
 ## Features
 
