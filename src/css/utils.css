@@ -14,4 +14,14 @@
   .text-light {
     color: var(--bl-clr-text-light);
   }
+
+  .hstack {
+    display: flex;
+    align-items: center;
+  }
+
+  .vstack {
+    display: flex;
+    flex-direction: column;
+  }
 }
