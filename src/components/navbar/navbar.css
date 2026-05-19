@@ -60,7 +60,6 @@
       align-items: center;
     }
 
-
     .nav-link {
       display: flex;
       align-items: center;
@@ -69,7 +68,6 @@
       color: var(--bl-clr-gray-600);
       transition: all var(--bl-transition-sm);
     }
-
 
     .nav-link:hover {
       background-color: var(--bl-clr-gray-50);

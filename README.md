@@ -4,7 +4,7 @@
         <img src="https://raw.githubusercontent.com/balsigergil/bloum/main/.github/bloum_logo_light.png" height="150" alt="Bloum Logo">
       </a>
     </div>
-    <strong>A powerful library of modern web components</strong>
+    <strong>A library of UI web components for backend developers</strong>
     <br>
     <br>
     <div align="center">
@@ -33,9 +33,10 @@
 
 Bloum is an open-source library of web components.
 The goal of this library is to provide a set of CSS and JavaScript components
-that can be used in any web project, regardless of the framework or library used.
-The main use-case for Bloum is to provide easy-to-use components for a project
-using MPA (Multi-Page Application) like Laravel, Django or Rails.
+that can be used in any backend web project.
+
+The main use-case for Bloum is to provide easy-to-use components for a multipage
+application (MPA) project like Laravel, Django or Rails.
 It pairs well with server-side rendering and progressive enhancement tools
 like [HTMX](https://htmx.org/) and [Alpine.js](https://alpinejs.dev/).
 
@@ -83,7 +84,7 @@ bun add bloum
 
 ## Usage
 
-Once installed, import the library in your project and intialize it:
+Once installed, import the library in your project and initialize it:
 
 ```js
 import { init } from "bloum";
