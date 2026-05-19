@@ -57,6 +57,7 @@
     "@eslint/js": "^10.0.1",
     "@floating-ui/dom": "^1.7.6",
     "@fontsource-variable/inter": "^5.2.8",
+    "@fontsource/madimi-one": "^5.2.7",
     "@fortawesome/fontawesome-free": "^7.2.0",
     "@playwright/test": "^1.59.1",
     "@release-it/conventional-changelog": "^10.0.6",

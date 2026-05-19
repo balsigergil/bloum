@@ -5,6 +5,6 @@ export const bloumTheme = create({
   brandTitle: "Bloum",
   brandUrl: "https://docs.bloum.dev",
   brandImage:
-    "https://raw.githubusercontent.com/balsigergil/bloum/main/.github/bloum_logo.png",
+    "https://raw.githubusercontent.com/balsigergil/bloum/main/.github/bloum_logo_light.png",
   brandTarget: "_self",
 });

@@ -1,16 +1,22 @@
 ---
-import logoSrc from "../assets/logo.png";
+import logoSrc from "../../public/favicon.svg";
 import { Image } from "astro:assets";
 ---
 
 <header
-  class="container mx-auto px-6 py-6 flex items-center justify-center md:justify-between"
+  class="container mx-auto px-6 py-6 lg:flex lg:items-center justify-center md:justify-between"
 >
-  <a href="/" class="block">
-    <Image src={logoSrc} alt="Bloum logo" class="max-w-75" priority={true} />
+  <a href="/" class="flex items-center gap-2 justify-center">
+    <Image
+      src={logoSrc}
+      alt="Bloum logo"
+      class="w-24 animate-[spin_40s_linear_infinite]"
+      priority={true}
+    />
+    <span class="text-6xl font-madimi">Bloum</span>
   </a>
   <nav
-    class="hidden md:flex items-center gap-8 font-medium text-base text-slate-600"
+    class="flex flex-col lg:flex-row items-center gap-4 lg:gap-8 mt-4 font-medium text-base text-slate-700"
   >
     <a
       href="/components"

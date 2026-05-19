@@ -17,7 +17,7 @@ import Layout from "../layouts/layout.astro";
         class="text-5xl md:text-7xl font-bold tracking-tight text-slate-900 text-balance"
       >
         The UI component library <br />
-        <span class="text-indigo-600">for the modern web</span>
+        <span class="text-primary-600">for backend developers</span>
       </h1>
       <p
         class="text-xl text-slate-600 max-w-2xl mx-auto text-balance leading-relaxed"
@@ -28,17 +28,14 @@ import Layout from "../layouts/layout.astro";
       <div
         class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4"
       >
-        <a
-          href="https://docs.bloum.dev/?path=/docs/documentation-getting-started--docs"
-          class="w-full sm:w-auto px-8 py-3.5 bg-slate-900 text-white font-semibold rounded-full hover:bg-slate-800 transition-all focus:ring-4 focus:ring-slate-200"
-        >
-          Get Started
+        <a href="/components" class="btn btn-primary btn-lg rounded-full">
+          See Components
         </a>
         <a
           href="https://github.com/balsigergil/bloum"
           target="_blank"
           rel="noopener noreferrer"
-          class="w-full sm:w-auto px-8 py-3.5 bg-white text-slate-900 border border-slate-200 font-semibold rounded-full hover:bg-slate-50 transition-all focus:ring-4 focus:ring-slate-100"
+          class="btn btn-lg btn-outline rounded-full"
         >
           View Sources
         </a>
@@ -50,11 +47,9 @@ import Layout from "../layouts/layout.astro";
   <section id="features" class="bg-slate-50 py-24">
     <div class="container mx-auto px-6">
       <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
-        <div
-          class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow"
-        >
+        <div class="card card-body">
           <div
-            class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center text-indigo-600 mb-6"
+            class="w-12 h-12 bg-cyan-100 rounded-lg flex items-center justify-center text-cyan-600 mb-6"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -81,11 +76,9 @@ import Layout from "../layouts/layout.astro";
             A comprehensive set of modern components right out of the box.
           </p>
         </div>
-        <div
-          class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow"
-        >
+        <div class="card card-body">
           <div
-            class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center text-indigo-600 mb-6"
+            class="w-12 h-12 bg-cyan-100 rounded-lg flex items-center justify-center text-cyan-600 mb-6"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -113,11 +106,9 @@ import Layout from "../layouts/layout.astro";
             brand and create you own design system.
           </p>
         </div>
-        <div
-          class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow"
-        >
+        <div class="card card-body">
           <div
-            class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center text-indigo-600 mb-6"
+            class="w-12 h-12 bg-cyan-100 rounded-lg flex items-center justify-center text-cyan-600 mb-6"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -142,11 +133,9 @@ import Layout from "../layouts/layout.astro";
             markup.
           </p>
         </div>
-        <div
-          class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow"
-        >
+        <div class="card card-body">
           <div
-            class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center text-indigo-600 mb-6"
+            class="w-12 h-12 bg-cyan-100 rounded-lg flex items-center justify-center text-cyan-600 mb-6"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -171,11 +160,9 @@ import Layout from "../layouts/layout.astro";
             readers first.
           </p>
         </div>
-        <div
-          class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow"
-        >
+        <div class="card card-body">
           <div
-            class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center text-indigo-600 mb-6"
+            class="w-12 h-12 bg-cyan-100 rounded-lg flex items-center justify-center text-cyan-600 mb-6"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -221,8 +208,8 @@ import Layout from "../layouts/layout.astro";
             <div class="w-3 h-3 rounded-full bg-green-500"></div>
           </div>
           <pre
-            class="font-mono text-sm text-slate-300 overflow-x-auto"><code><span class="text-indigo-400">import</span> &#123; init &#125; <span class="text-indigo-400">from</span> 'bloum';
-<span class="text-indigo-400">import</span> 'bloum/dist/bloum.css';
+            class="font-mono text-sm text-slate-300 overflow-x-auto"><code><span class="text-cyan-400">import</span> &#123; init &#125; <span class="text-cyan-400">from</span> 'bloum';
+<span class="text-cyan-400">import</span> 'bloum/dist/bloum.min.css';
 
 <span class="text-slate-500">// Initialize all components</span>
 <span class="text-yellow-300">init</span>();</code></pre>
