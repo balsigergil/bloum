@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.18.0](https://github.com/balsigergil/bloum/compare/v0.17.2...v0.18.0) (2026-05-19)
+
+### Features
+
+* **combobox:** add padding and animation ([7d2ae30](https://github.com/balsigergil/bloum/commit/7d2ae30ff8e1555d3685b5790e52bc3372c076b2))
+* **navbar:** implement responsive navbar component ([298bcf0](https://github.com/balsigergil/bloum/commit/298bcf0dd08d96dff287d56eb824a7925af3ce23))
+
 ## [0.17.2](https://github.com/balsigergil/bloum/compare/v0.17.1...v0.17.2) (2026-04-14)
 
 ### Features
