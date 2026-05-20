@@ -237,7 +237,7 @@ import Template from "../../layouts/template.astro";
           </h2>
           <h1 class="font-semibold text-2xl">Dashboard</h1>
         </div>
-        <div class="flex gap-2">
+        <div class="flex gap-2 flex-col md:flex-row">
           <button class="btn btn-outline">
             <i class="fas fa-download fa-fw"></i>Export
           </button>
@@ -862,19 +862,17 @@ import Template from "../../layouts/template.astro";
                   placeholder="Tell us about yourself..."></textarea>
               </div>
 
-              <div class="field">
-                <div class="field">
-                  <input
-                    type="checkbox"
-                    class="input-check"
-                    id="notifications"
-                    name="notifications"
-                    checked
-                  />
-                  <label class="label" for="notifications"
-                    >Send welcome email</label
-                  >
-                </div>
+              <div class="field-check">
+                <input
+                  type="checkbox"
+                  class="input-check"
+                  id="notifications"
+                  name="notifications"
+                  checked
+                />
+                <label class="input-check-label" for="notifications"
+                  >Send welcome email</label
+                >
               </div>
             </form>
           </div>

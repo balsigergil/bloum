@@ -113,6 +113,7 @@
   .step-description {
     font-size: var(--bl-steps-description-fs);
     color: var(--bl-steps-description-color);
+    white-space: nowrap;
   }
 
   /* Connector line */
@@ -123,7 +124,7 @@
     background-color: var(--bl-steps-line-color);
     align-self: center;
     flex: 1 1 0;
-    margin-inline: 0.25rem;
+    min-width: 1rem;
   }
 
   .step:last-of-type {
