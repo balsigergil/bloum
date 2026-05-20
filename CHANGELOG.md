@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.18.1](https://github.com/balsigergil/bloum/compare/v0.18.0...v0.18.1) (2026-05-20)
+
+### Changes
+
+* **steps**: update line connection length
+
 ## [0.18.0](https://github.com/balsigergil/bloum/compare/v0.17.2...v0.18.0) (2026-05-19)
 
 ### Features
