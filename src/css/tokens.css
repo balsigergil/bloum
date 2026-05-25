@@ -83,11 +83,11 @@
     /* Z-index */
     --bl-z-topbar: 50;
     --bl-z-sidebar: 60;
-    --bl-z-popover: 100;
-    --bl-z-dropdown: 100;
-    --bl-z-tooltip: 100;
-    --bl-z-modal: 200;
-    --bl-z-drawer: 200;
+    --bl-z-modal: 100;
+    --bl-z-drawer: 100;
+    --bl-z-popover: 200;
+    --bl-z-dropdown: 200;
+    --bl-z-tooltip: 200;
     --bl-z-toast: 300;
   }
 
