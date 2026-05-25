@@ -4,9 +4,9 @@
 
   position: absolute;
   z-index: var(--bl-z-tooltip);
-  width: max-content;
   top: 0;
   left: 0;
+  max-width: 20rem;
 
   background-color: var(--bl-tooltip-bg);
   color: var(--bl-tooltip-color);
