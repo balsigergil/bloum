@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.18.3](https://github.com/balsigergil/bloum/compare/v0.18.2...v0.18.3) (2026-05-25)
+
+### Features
+
+* **tooltip:** add max-width to tooltips ([e9f677d](https://github.com/balsigergil/bloum/commit/e9f677d2bb4108113acb01b5c41f68618025f6b6))
+
 ## [0.18.2](https://github.com/balsigergil/bloum/compare/v0.18.1...v0.18.2) (2026-05-25)
 
 ### Bug Fixes
