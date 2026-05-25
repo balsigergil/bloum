@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.18.2](https://github.com/balsigergil/bloum/compare/v0.18.1...v0.18.2) (2026-05-25)
+
+### Bug Fixes
+
+* tooltip appears behind modal (fix [#101](https://github.com/balsigergil/bloum/issues/101)) ([e4026b7](https://github.com/balsigergil/bloum/commit/e4026b7f89eb4484c8fbcdf03567f0d18d727756))
+
 ## [0.18.1](https://github.com/balsigergil/bloum/compare/v0.18.0...v0.18.1) (2026-05-20)
 
 ### Changes
