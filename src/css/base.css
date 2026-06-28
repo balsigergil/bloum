@@ -1,4 +1,17 @@
 @layer base {
+  *,
+  ::before,
+  ::after {
+    border-color: var(--bl-border-color);
+  }
+
+  code,
+  kbd,
+  samp,
+  pre {
+    font-family: var(--bl-font-mono) monospace;
+  }
+
   body {
     font-family: var(--bl-font-body), sans-serif;
     font-size: var(--bl-fs-base);
