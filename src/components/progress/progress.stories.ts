@@ -244,7 +244,7 @@ export const MoreExamples: Story = {
       <div>
         <div class="flex justify-between mb-2">
           <span class="text-sm font-medium">System Health</span>
-          <span class="text-sm text-green-600">Good</span>
+          <span class="text-sm" style="color: var(--bl-clr-green-600)">Good</span>
         </div>
         <div class="progress progress-success">
           <div class="progress-bar" style="width: 92%"></div>
@@ -254,7 +254,7 @@ export const MoreExamples: Story = {
       <div>
         <div class="flex justify-between mb-2">
           <span class="text-sm font-medium">Storage Usage</span>
-          <span class="text-sm text-orange-600">Warning</span>
+          <span class="text-sm" style="color: var(--bl-clr-orange-600)">Warning</span>
         </div>
         <div class="progress progress-warning">
           <div class="progress-bar" style="width: 85%"></div>

@@ -62,7 +62,7 @@ const meta: Meta<TimelineArgs> = {
             ? `
               <div class="flex items-center gap-2">
                 <div class="timeline-title">${event.title}</div>
-                <span class="text-gray-500">&bullet;</span>
+                <span class="text-light">&bullet;</span>
                 <div class="timeline-description">${event.date}</div>
               </div>
               <div class="timeline-body">${event.body}</div>`

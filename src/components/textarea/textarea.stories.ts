@@ -41,7 +41,7 @@ export const AutogrowTextarea: Story = {
   render: () => {
     return `
       <div class="max-w-md space-y-4">
-        <p class="text-sm text-gray-600">This textarea will automatically grow as you type:</p>
+        <p class="text-sm text-light">This textarea will automatically grow as you type:</p>
         <textarea class="input" data-autogrow placeholder="Start typing to see the autogrow effect..."></textarea>
       </div>
     `;

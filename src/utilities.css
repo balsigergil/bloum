@@ -1,0 +1,436 @@
+/*
+ * Bloum layout utilities — OPT-IN.
+ *
+ * This file is intentionally NOT imported by `bloum.css`. Core Bloum ships with
+ * zero layout utilities so projects that already use Tailwind (or any other
+ * utility framework) hit no class-name conflicts. Load this stylesheet only if
+ * you want a small set of unprefixed, Tailwind-compatible helpers to lay out
+ * Bloum components without pulling in Tailwind:
+ *
+ *   import "bloum/dist/utilities.min.css";
+ *
+ * Everything lives in `@layer utilities`, so a consumer's real Tailwind always
+ * wins the cascade.
+ */
+
+@layer utilities {
+  /* Accessibility */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  /* Display */
+  .block {
+    display: block;
+  }
+  .inline-block {
+    display: inline-block;
+  }
+  .flex {
+    display: flex;
+  }
+  .inline-flex {
+    display: inline-flex;
+  }
+  .grid {
+    display: grid;
+  }
+  .hidden {
+    display: none;
+  }
+
+  /* Position */
+  .relative {
+    position: relative;
+  }
+
+  /* Flexbox */
+  .flex-row {
+    flex-direction: row;
+  }
+  .flex-col {
+    flex-direction: column;
+  }
+  .flex-wrap {
+    flex-wrap: wrap;
+  }
+  .flex-1 {
+    flex: 1 1 0%;
+  }
+
+  .items-start {
+    align-items: flex-start;
+  }
+  .items-center {
+    align-items: center;
+  }
+  .items-end {
+    align-items: flex-end;
+  }
+
+  .justify-start {
+    justify-content: flex-start;
+  }
+  .justify-center {
+    justify-content: center;
+  }
+  .justify-end {
+    justify-content: flex-end;
+  }
+  .justify-between {
+    justify-content: space-between;
+  }
+
+  /* Convenience flex shorthands */
+  .hstack {
+    display: flex;
+    align-items: center;
+  }
+  .vstack {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Grid */
+  .grid-cols-1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  .grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .col-span-2 {
+    grid-column: span 2 / span 2;
+  }
+  .place-items-center {
+    place-items: center;
+  }
+
+  /* Gap (Tailwind scale: 1 = 0.25rem) */
+  .gap-1 {
+    gap: 0.25rem;
+  }
+  .gap-2 {
+    gap: 0.5rem;
+  }
+  .gap-3 {
+    gap: 0.75rem;
+  }
+  .gap-4 {
+    gap: 1rem;
+  }
+  .gap-5 {
+    gap: 1.25rem;
+  }
+  .gap-6 {
+    gap: 1.5rem;
+  }
+
+  /* Margin */
+  .m-0 {
+    margin: 0;
+  }
+  .m-auto {
+    margin: auto;
+  }
+  .mx-auto {
+    margin-inline: auto;
+  }
+  .ml-auto {
+    margin-left: auto;
+  }
+  .mr-auto {
+    margin-right: auto;
+  }
+
+  .mt-1 {
+    margin-top: 0.25rem;
+  }
+  .mt-2 {
+    margin-top: 0.5rem;
+  }
+  .mt-3 {
+    margin-top: 0.75rem;
+  }
+  .mt-4 {
+    margin-top: 1rem;
+  }
+  .mt-5 {
+    margin-top: 1.25rem;
+  }
+  .mt-6 {
+    margin-top: 1.5rem;
+  }
+  .mt-8 {
+    margin-top: 2rem;
+  }
+  .-mt-4 {
+    margin-top: -1rem;
+  }
+
+  .mb-1 {
+    margin-bottom: 0.25rem;
+  }
+  .mb-2 {
+    margin-bottom: 0.5rem;
+  }
+  .mb-3 {
+    margin-bottom: 0.75rem;
+  }
+  .mb-4 {
+    margin-bottom: 1rem;
+  }
+  .mb-5 {
+    margin-bottom: 1.25rem;
+  }
+  .mb-6 {
+    margin-bottom: 1.5rem;
+  }
+
+  .ml-2 {
+    margin-left: 0.5rem;
+  }
+  .ml-4 {
+    margin-left: 1rem;
+  }
+  .ml-8 {
+    margin-left: 2rem;
+  }
+  .mr-2 {
+    margin-right: 0.5rem;
+  }
+  .mr-4 {
+    margin-right: 1rem;
+  }
+
+  .mx-2 {
+    margin-inline: 0.5rem;
+  }
+  .mx-4 {
+    margin-inline: 1rem;
+  }
+  .my-2 {
+    margin-block: 0.5rem;
+  }
+  .my-4 {
+    margin-block: 1rem;
+  }
+
+  /* Padding */
+  .p-0 {
+    padding: 0;
+  }
+  .p-2 {
+    padding: 0.5rem;
+  }
+  .p-3 {
+    padding: 0.75rem;
+  }
+  .p-4 {
+    padding: 1rem;
+  }
+  .p-6 {
+    padding: 1.5rem;
+  }
+  .px-2 {
+    padding-inline: 0.5rem;
+  }
+  .px-4 {
+    padding-inline: 1rem;
+  }
+  .py-2 {
+    padding-block: 0.5rem;
+  }
+  .py-4 {
+    padding-block: 1rem;
+  }
+
+  /* Space between children */
+  .space-y-1 > * + * {
+    margin-top: 0.25rem;
+  }
+  .space-y-2 > * + * {
+    margin-top: 0.5rem;
+  }
+  .space-y-3 > * + * {
+    margin-top: 0.75rem;
+  }
+  .space-y-4 > * + * {
+    margin-top: 1rem;
+  }
+  .space-y-6 > * + * {
+    margin-top: 1.5rem;
+  }
+  .space-x-2 > * + * {
+    margin-left: 0.5rem;
+  }
+  .space-x-4 > * + * {
+    margin-left: 1rem;
+  }
+
+  /* Sizing */
+  .w-full {
+    width: 100%;
+  }
+  .w-px {
+    width: 1px;
+  }
+  .w-16 {
+    width: 4rem;
+  }
+  .h-full {
+    height: 100%;
+  }
+  .size-10 {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .max-w-sm {
+    max-width: 24rem;
+  }
+  .max-w-md {
+    max-width: 28rem;
+  }
+  .max-w-lg {
+    max-width: 32rem;
+  }
+  .max-w-xl {
+    max-width: 36rem;
+  }
+  .max-w-2xl {
+    max-width: 42rem;
+  }
+
+  /* Typography — sizes map to Bloum's font-size tokens */
+  .text-xs {
+    font-size: var(--bl-fs-xs);
+  }
+  .text-sm {
+    font-size: var(--bl-fs-sm);
+  }
+  .text-base {
+    font-size: var(--bl-fs-base);
+  }
+  .text-lg {
+    font-size: var(--bl-fs-lg);
+  }
+  .text-xl {
+    font-size: var(--bl-fs-xl);
+  }
+  .text-2xl {
+    font-size: var(--bl-fs-2xl);
+  }
+  .text-3xl {
+    font-size: var(--bl-fs-3xl);
+  }
+
+  .font-medium {
+    font-weight: var(--bl-fw-medium);
+  }
+  .font-semibold {
+    font-weight: 600;
+  }
+  .font-bold {
+    font-weight: var(--bl-fw-bold);
+  }
+
+  .uppercase {
+    text-transform: uppercase;
+  }
+  .tracking-wide {
+    letter-spacing: 0.025em;
+  }
+  .tracking-wider {
+    letter-spacing: 0.05em;
+  }
+  .text-center {
+    text-align: center;
+  }
+  .truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  /* Theme-aware text color */
+  .text-light {
+    color: var(--bl-clr-text-light);
+  }
+
+  /* Lists */
+  .list-disc {
+    list-style-type: disc;
+  }
+  .list-inside {
+    list-style-position: inside;
+  }
+
+  /* Borders & radius */
+  .rounded {
+    border-radius: var(--bl-border-radius);
+  }
+  .rounded-full {
+    border-radius: var(--bl-border-radius-full);
+  }
+  .border-l {
+    border-left-width: 1px;
+    border-left-style: solid;
+  }
+
+  /* Misc */
+  .cursor-pointer {
+    cursor: pointer;
+  }
+
+  /* Responsive — only the variants the components/demos rely on */
+  @media (min-width: 640px) {
+    .sm\:grid-cols-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 768px) {
+    .md\:grid-cols-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .md\:grid-cols-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .md\:hidden {
+      display: none;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .lg\:grid-cols-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .lg\:grid-cols-4 {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+
+  /* Dark-scheme display variants (e.g. light/dark logo swaps) */
+  .dark .dark\:hidden,
+  [data-theme="dark"] .dark\:hidden {
+    display: none;
+  }
+  .dark .dark\:block,
+  [data-theme="dark"] .dark\:block {
+    display: block;
+  }
+}

@@ -245,7 +245,7 @@ export const JavaScriptAPI: Story = {
       ></div>
     </div>
     
-    <div class="mt-4 p-4 bg-gray-50 rounded text-sm dark:bg-gray-800">
+    <div class="mt-4 p-4 rounded text-sm" style="background-color: var(--bl-clr-surface)">
       <p class="mb-2 font-bold">JavaScript API Usage</p>
       These avatars are initialized automatically using data attributes:<br/>
       <code>data-avatar</code> - Enables auto-initialization<br/>

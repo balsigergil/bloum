@@ -162,25 +162,25 @@ export const WithStates: Story = {
         </div>
         
         <div class="field">
-          <label class="label text-red-600">Error state:</label>
+          <label class="label" style="color: var(--bl-clr-red-600)">Error state:</label>
           <div data-pin-input-container class="pin-input pin-input-danger">
             <input type="text" class="input pin-input-field" maxlength="1" value="1" />
             <input type="text" class="input pin-input-field" maxlength="1" value="2" />
             <input type="text" class="input pin-input-field" maxlength="1" value="3" />
             <input type="text" class="input pin-input-field" maxlength="1" />
           </div>
-          <p class="text-sm text-red-600 mt-1">Invalid PIN code</p>
+          <p class="text-sm mt-1" style="color: var(--bl-clr-red-600)">Invalid PIN code</p>
         </div>
 
         <div class="field">
-          <label class="label text-green-600">Success state:</label>
+          <label class="label" style="color: var(--bl-clr-green-600)">Success state:</label>
           <div data-pin-input-container class="pin-input pin-input-success">
             <input type="text" class="input pin-input-field" maxlength="1" value="1" />
             <input type="text" class="input pin-input-field" maxlength="1" value="2" />
             <input type="text" class="input pin-input-field" maxlength="1" value="3" />
             <input type="text" class="input pin-input-field" maxlength="1" value="4" />
            </div>
-           <p class="text-sm text-green-600 mt-1">PIN code verified</p>
+           <p class="text-sm mt-1" style="color: var(--bl-clr-green-600)">PIN code verified</p>
          </div>
       </div>
     `;

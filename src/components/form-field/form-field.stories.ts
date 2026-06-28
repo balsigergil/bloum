@@ -121,7 +121,7 @@ export const RequiredField: Story = {
       <div class="max-w-md">
         <div class="field">
           <label for="fullname" class="label">
-            Full Name <span class="text-red-500">*</span>
+            Full Name <span style="color: var(--bl-clr-red-500)">*</span>
           </label>
           <input type="text" id="fullname" class="input" placeholder="John Doe" required>
           <p class="field-text-help">This field is required</p>

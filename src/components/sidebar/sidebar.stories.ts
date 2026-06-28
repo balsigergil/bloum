@@ -12,7 +12,7 @@ const meta: Meta = {
     <button class="btn btn-icon btn-ghost md:hidden" data-sidebar="#collapsible-sidebar">
       <i class="fa-solid fa-bars"></i>
     </button>
-    <div class="w-px h-full border-l border-(--bl-border-color) md:hidden"></div>
+    <div class="w-px h-full border-l md:hidden"></div>
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="#">Home</a></li>
@@ -113,10 +113,10 @@ const meta: Meta = {
         </ul>
         <div class="p-4 flex justify-between items-center">
           <div class="flex items-center gap-4">
-            <div class="rounded-full bg-gray-500 text-white size-10 grid place-items-center font-semibold">GB</div>
+            <div class="rounded-full size-10 grid place-items-center font-semibold" style="background-color: var(--bl-clr-gray-500); color: var(--bl-clr-white)">GB</div>
             <div class="text-sm">
               <div class="font-semibold">John Doe</div>
-              <div class="text-gray-600 dark:text-gray-400">Administrator</div>
+              <div class="text-light">Administrator</div>
             </div>
           </div>
           <div class="dropdown">
@@ -137,7 +137,7 @@ const meta: Meta = {
     </div>
   </aside>
   <main class="main p-4 space-y-4">
-    <h1 class="font-semibold text-3xl text-gray-700 dark:text-gray-300">Content</h1>
+    <h1 class="font-semibold text-3xl">Content</h1>
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
         <div class="card">
           <div class="card-header">
@@ -366,10 +366,10 @@ export const WithCollapsible: Story = {
         </ul>
         <div class="p-4 flex justify-between items-center">
           <div class="flex items-center gap-4">
-            <div class="rounded-full bg-gray-500 text-white size-10 grid place-items-center font-semibold">GB</div>
+            <div class="rounded-full size-10 grid place-items-center font-semibold" style="background-color: var(--bl-clr-gray-500); color: var(--bl-clr-white)">GB</div>
             <div>
               <div class="font-semibold">John Doe</div>
-              <div class="text-light dark:text-gray-400">Administrator</div>
+              <div class="text-light">Administrator</div>
             </div>
           </div>
           <div class="dropdown">

@@ -6,7 +6,9 @@ import * as Bloum from "../src";
 import "@fontsource-variable/inter";
 import "@fortawesome/fontawesome-free/css/all.css";
 
+import "../src/reset.css";
 import "../src/bloum.css";
+import "../src/utilities.css";
 import "./preview.css";
 
 // @ts-ignore

@@ -84,7 +84,7 @@ export const Menu: Story = {
 export const MenuWithIcons: Story = {
   render: () => {
     return `
-<div class="dropdown ml-32">
+<div class="dropdown" style="margin-left: 8rem">
   <button class="btn" data-dropdown-toggle><i class="fas fa-bars"></i> Options</button>
   <div class="menu">
     <a href="#" class="menu-item"><i class="fas fa-file fa-fw"></i> New File</a>
