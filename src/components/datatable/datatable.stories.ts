@@ -358,7 +358,7 @@ export const ApiExample: Story = {
     container.innerHTML = `
       <div style="margin-bottom: 1rem;">
         <h3 style="margin-bottom: 0.5rem;">DataTable API Example</h3>
-        <p style="margin-bottom: 1rem; color: var(--bl-clr-gray-600);">
+        <p class="mb-4 text-light">
           Use the buttons below to interact with the DataTable API
         </p>
         <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem;">
