@@ -3,17 +3,17 @@
 :root {
   --bl-font-sans: "Inter Variable", sans-serif;
 
-  --bl-clr-primary-50: var(--bl-clr-cyan-50);
-  --bl-clr-primary-100: var(--bl-clr-cyan-100);
-  --bl-clr-primary-200: var(--bl-clr-cyan-200);
-  --bl-clr-primary-300: var(--bl-clr-cyan-300);
-  --bl-clr-primary-400: var(--bl-clr-cyan-400);
-  --bl-clr-primary-500: var(--bl-clr-cyan-500);
-  --bl-clr-primary-600: var(--bl-clr-cyan-600);
-  --bl-clr-primary-700: var(--bl-clr-cyan-700);
-  --bl-clr-primary-800: var(--bl-clr-cyan-800);
-  --bl-clr-primary-900: var(--bl-clr-cyan-900);
-  --bl-clr-primary-950: var(--bl-clr-cyan-950);
+  --bl-clr-primary-50: var(--bl-clr-blue-50);
+  --bl-clr-primary-100: var(--bl-clr-blue-100);
+  --bl-clr-primary-200: var(--bl-clr-blue-200);
+  --bl-clr-primary-300: var(--bl-clr-blue-300);
+  --bl-clr-primary-400: var(--bl-clr-blue-400);
+  --bl-clr-primary-500: var(--bl-clr-blue-500);
+  --bl-clr-primary-600: var(--bl-clr-blue-600);
+  --bl-clr-primary-700: var(--bl-clr-blue-700);
+  --bl-clr-primary-800: var(--bl-clr-blue-800);
+  --bl-clr-primary-900: var(--bl-clr-blue-900);
+  --bl-clr-primary-950: var(--bl-clr-blue-950);
 }
 
 @theme {
