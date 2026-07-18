@@ -1,11 +1,13 @@
 @layer components {
   .timeline {
-    --bl-timeline-connector-color: var(--bl-clr-gray-300);
+    --bl-timeline-connector-color: var(--bl-border-color-strong);
+    --bl-timeline-indicator-bg: var(--bl-clr-inverted-bg);
+    --bl-timeline-indicator-color: var(--bl-clr-inverted-text);
     --bl-timeline-size: 2rem;
     --bl-timeline-border-width: 2px;
     --bl-timeline-line-thickness: 2px;
     --bl-timeline-line-offset: 0.75rem;
-    --bl-timeline-description-color: var(--bl-clr-gray-500);
+    --bl-timeline-description-color: var(--bl-clr-text-light);
     --bl-timeline-title-fs: var(--bl-fs-base);
     --bl-timeline-padding-left: 2.5rem;
 
@@ -28,8 +30,8 @@
     width: var(--bl-timeline-size);
     height: var(--bl-timeline-size);
     border-radius: var(--bl-border-radius-full);
-    background-color: var(--bl-clr-gray-800);
-    color: white;
+    background-color: var(--bl-timeline-indicator-bg);
+    color: var(--bl-timeline-indicator-color);
     /*border: var(--bl-timeline-border-width) solid var(--bl-timeline-color);*/
     flex-shrink: 0;
     /*transition: all var(--bl-transition-md);*/
@@ -73,9 +75,5 @@
     display: grid;
     place-items: center;
     font-size: calc(var(--bl-timeline-size) * 0.5);
-  }
-
-  /* Dark mode */
-  .dark .timeline {
   }
 }

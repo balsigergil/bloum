@@ -142,10 +142,10 @@
 
   /* Done state */
   .step.done {
-    --bl-steps-bg-color: var(--bl-clr-green-600);
-    --bl-steps-border-color: var(--bl-clr-green-600);
+    --bl-steps-bg-color: var(--bl-clr-success-600);
+    --bl-steps-border-color: var(--bl-clr-success-600);
     --bl-steps-indicator-color: var(--bl-clr-white);
-    --bl-steps-line-color: var(--bl-clr-green-600);
+    --bl-steps-line-color: var(--bl-clr-success-600);
     --bl-steps-title-color: var(--bl-clr-text);
     --bl-steps-description-color: var(--bl-clr-text);
   }

@@ -1,7 +1,7 @@
 @layer components {
   bl-tabs {
     --bl-tab-padding: 1rem;
-    --bl-tab-color: var(--bl-clr-gray-700);
+    --bl-tab-color: var(--bl-clr-text);
     --bl-tab-active-color: var(--bl-clr-primary-600);
     display: block;
   }
@@ -91,7 +91,6 @@
   }
 
   .dark bl-tabs {
-    --bl-tab-color: var(--bl-clr-gray-300);
     --bl-tab-active-color: var(--bl-clr-primary-500);
   }
 }

@@ -2,10 +2,10 @@
   /* Form field wrapper */
   .field {
     --bl-field-text-help-color: var(--bl-clr-text-light);
-    --bl-field-danger-color: var(--bl-clr-red-500);
-    --bl-field-text-danger-color: var(--bl-clr-red-600);
-    --bl-field-success-color: var(--bl-clr-green-500);
-    --bl-field-text-success-color: var(--bl-clr-green-600);
+    --bl-field-danger-color: var(--bl-clr-danger-500);
+    --bl-field-text-danger-color: var(--bl-clr-danger-600);
+    --bl-field-success-color: var(--bl-clr-success-500);
+    --bl-field-text-success-color: var(--bl-clr-success-600);
   }
 
   .field > .label {
@@ -66,13 +66,13 @@
 
   .dark {
     .field-danger {
-      --bl-field-text-danger-color: var(--bl-clr-red-400);
-      --bl-field-danger-color: var(--bl-clr-red-400);
+      --bl-field-text-danger-color: var(--bl-clr-danger-400);
+      --bl-field-danger-color: var(--bl-clr-danger-400);
     }
 
     .field-success {
-      --bl-field-success-color: var(--bl-clr-green-400);
-      --bl-field-text-success-color: var(--bl-clr-green-400);
+      --bl-field-success-color: var(--bl-clr-success-400);
+      --bl-field-text-success-color: var(--bl-clr-success-400);
     }
   }
 }

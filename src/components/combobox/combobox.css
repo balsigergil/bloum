@@ -1,10 +1,11 @@
 @layer components {
   .bl-combobox {
     --bl-combobox-menu-bg: var(--bl-clr-surface);
-    --bl-combobox-item-bg: var(--bl-clr-gray-200);
-    --bl-combobox-item-active-bg: var(--bl-clr-gray-300);
-    --bl-combobox-option-highlighted-bg: var(--bl-clr-gray-100);
-    --bl-combobox-option-selected-bg: var(--bl-clr-gray-200);
+    --bl-combobox-item-bg: var(--bl-clr-control-bg);
+    --bl-combobox-item-active-bg: var(--bl-clr-control-bg-hover);
+    --bl-combobox-placeholder-color: var(--bl-clr-text-subtle);
+    --bl-combobox-option-highlighted-bg: var(--bl-clr-hover-bg);
+    --bl-combobox-option-selected-bg: var(--bl-clr-active-bg);
 
     position: relative;
     display: flex;
@@ -62,7 +63,7 @@
   }
 
   .bl-combobox-placeholder {
-    color: var(--bl-clr-gray-400);
+    color: var(--bl-combobox-placeholder-color);
   }
 
   .bl-combobox-item {
@@ -157,12 +158,5 @@
 
   .bl-combobox-option.bl-combobox-selected {
     background-color: var(--bl-combobox-option-selected-bg);
-  }
-
-  .dark .bl-combobox {
-    --bl-combobox-item-bg: var(--bl-clr-gray-800);
-    --bl-combobox-item-active-bg: var(--bl-clr-gray-700);
-    --bl-combobox-option-highlighted-bg: var(--bl-clr-gray-600);
-    --bl-combobox-option-selected-bg: var(--bl-clr-gray-700);
   }
 }

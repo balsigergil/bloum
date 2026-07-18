@@ -3,11 +3,11 @@
     --bl-modal-animation-opacity: var(--bl-transition-md);
     --bl-modal-animation-transform: var(--bl-transition-md);
     --bl-modal-dialog-bg: var(--bl-clr-surface);
-    --bl-modal-footer-bg: var(--bl-clr-gray-50);
+    --bl-modal-footer-bg: var(--bl-clr-surface-muted);
     --bl-modal-title-color: var(--bl-clr-text);
     --bl-modal-padding: 1.5rem;
     --bl-modal-margin: 4rem;
-    --bl-modal-backdrop-bg: rgba(from var(--bl-clr-gray-900) r g b / 0.25);
+    --bl-modal-backdrop-bg: var(--bl-clr-overlay);
     --bl-modal-backdrop-filter: blur(4px);
     --bl-modal-border-radius: var(--bl-border-radius-lg);
 
@@ -145,10 +145,5 @@
     .modal.closing .modal-content {
       animation-duration: 0s;
     }
-  }
-
-  .dark .modal {
-    --bl-modal-footer-bg: var(--bl-clr-surface);
-    --bl-modal-title-color: var(--bl-clr-gray-200);
   }
 }

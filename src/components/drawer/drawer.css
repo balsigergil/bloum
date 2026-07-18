@@ -3,9 +3,10 @@
     --bl-drawer-animation-opacity: var(--bl-transition-md);
     --bl-drawer-animation-transform: var(--bl-transition-lg);
     --bl-drawer-panel-bg: var(--bl-clr-surface);
-    --bl-drawer-footer-bg: var(--bl-clr-gray-50);
+    --bl-drawer-footer-bg: var(--bl-clr-surface-muted);
+    --bl-drawer-title-color: var(--bl-clr-text);
     --bl-drawer-padding: 1.5rem;
-    --bl-drawer-backdrop-bg: rgba(from var(--bl-clr-gray-900) r g b / 0.25);
+    --bl-drawer-backdrop-bg: var(--bl-clr-overlay);
     --bl-drawer-border-radius: var(--bl-border-radius-lg);
     --bl-drawer-shadow: var(--bl-shadow-xl);
 
@@ -97,7 +98,7 @@
   .drawer-title {
     font-size: var(--bl-fs-xl);
     font-weight: var(--bl-fw-bold);
-    color: var(--bl-clr-gray-700);
+    color: var(--bl-drawer-title-color);
   }
 
   .drawer-header button[data-drawer-close] {
@@ -204,11 +205,6 @@
     .drawer.closing .drawer-content {
       animation-duration: 0s;
     }
-  }
-
-  /* Dark mode support */
-  .dark .drawer {
-    --bl-drawer-footer-bg: var(--bl-clr-surface);
   }
 
   /* Storybook-specific fixes for drawer positioning */

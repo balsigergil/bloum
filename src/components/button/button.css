@@ -286,7 +286,7 @@
       }
 
       &.btn-danger {
-        --bl-btn-hover-bg: var(--bl-clr-red-700);
+        --bl-btn-hover-bg: var(--bl-clr-danger-700);
       }
 
       &.btn-warning {

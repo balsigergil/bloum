@@ -8,16 +8,9 @@
     --bl-sidebar-color: var(--bl-clr-text);
     --bl-sidebar-color-hover: var(--bl-clr-text);
     --bl-sidebar-bg: var(--bl-clr-surface);
-    --bl-sidebar-item-bg-hover: var(--bl-clr-gray-200);
+    --bl-sidebar-item-bg-hover: var(--bl-clr-hover-bg);
     --bl-sidebar-title-color: var(--bl-clr-text-light);
-  }
-
-  .dark {
-    --bl-sidebar-bg: var(--bl-clr-surface);
-    --bl-sidebar-color: var(--bl-clr-gray-200);
-    --bl-sidebar-color-hover: var(--bl-clr-gray-200);
-    --bl-sidebar-item-bg-hover: var(--bl-clr-gray-700);
-    --bl-sidebar-title-color: var(--bl-clr-gray-400);
+    --bl-sidebar-backdrop-bg: var(--bl-clr-overlay);
   }
 }
 
@@ -75,7 +68,7 @@
     inset: 0;
     width: 100%;
     z-index: var(--bl-z-sidebar);
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: var(--bl-sidebar-backdrop-bg);
     backdrop-filter: blur(4px);
   }
 

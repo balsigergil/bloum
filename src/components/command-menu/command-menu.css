@@ -1,8 +1,8 @@
 @layer components {
   .cmd {
-    --bl-cmd-item-bg-hover: var(--bl-clr-gray-200);
+    --bl-cmd-item-bg-hover: var(--bl-clr-hover-bg);
     --bl-cmd-item-color: var(--bl-clr-text);
-    --bl-cmd-group-color: var(--bl-clr-gray-500);
+    --bl-cmd-group-color: var(--bl-clr-text-light);
 
     overflow: hidden;
   }
@@ -61,11 +61,5 @@
   .cmd-item-right {
     font-size: var(--bl-fs-sm);
     color: var(--bl-cmd-item-color);
-  }
-
-  .dark .cmd {
-    --bl-cmd-item-bg-hover: var(--bl-clr-gray-700);
-    --bl-cmd-item-color: var(--bl-clr-gray-300);
-    --bl-cmd-group-color: var(--bl-clr-gray-400);
   }
 }

@@ -1,7 +1,7 @@
 @layer components {
   .popover {
     --bl-popover-bg: var(--bl-clr-surface);
-    --bl-popover-title-bg: var(--bl-clr-gray-100);
+    --bl-popover-title-bg: var(--bl-clr-surface-muted);
 
     position: absolute;
     top: 0;

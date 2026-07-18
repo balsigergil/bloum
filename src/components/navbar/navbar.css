@@ -1,7 +1,11 @@
 @layer components {
   .navbar {
+    --bl-navbar-bg: var(--bl-clr-surface);
+    --bl-navbar-link-color: var(--bl-clr-text-light);
+    --bl-navbar-link-bg-hover: var(--bl-clr-hover-bg-subtle);
+
     border-bottom: 1px solid var(--bl-border-color);
-    background-color: var(--bl-clr-white);
+    background-color: var(--bl-navbar-bg);
     position: relative;
     padding: 1rem;
     display: flex;
@@ -65,12 +69,12 @@
       align-items: center;
       margin: 0.25rem;
       border-radius: var(--bl-border-radius);
-      color: var(--bl-clr-gray-600);
+      color: var(--bl-navbar-link-color);
       transition: all var(--bl-transition-sm);
     }
 
     .nav-link:hover {
-      background-color: var(--bl-clr-gray-50);
+      background-color: var(--bl-navbar-link-bg-hover);
     }
 
     .nav-link.active::after {
