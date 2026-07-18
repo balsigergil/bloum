@@ -1,0 +1,136 @@
+/*
+ * Linear-inspired theme for Bloum.
+ *
+ * Opt-in: import *after* bloum.css.
+ *   @import "bloum/css";
+ *   @import "bloum/themes/linear";
+ *
+ * This file only remaps tokens — it contains no component selectors.
+ */
+
+@layer theme {
+  :root {
+    /* Accent — Linear's indigo */
+    --bl-clr-primary-50: #f0f1fd;
+    --bl-clr-primary-100: #e0e2fb;
+    --bl-clr-primary-200: #c4c8f6;
+    --bl-clr-primary-300: #a3a9ef;
+    --bl-clr-primary-400: #828ae6;
+    --bl-clr-primary-500: #6e79dd;
+    --bl-clr-primary-600: #5e6ad2;
+    --bl-clr-primary-700: #4e59b8;
+    --bl-clr-primary-800: #3f4894;
+    --bl-clr-primary-900: #333a75;
+    --bl-clr-primary-950: #1f2347;
+
+    /* Status hues — muted to sit alongside the neutrals */
+    --bl-clr-red-50: #fdf2f2;
+    --bl-clr-red-100: #fbe0e0;
+    --bl-clr-red-200: #f6c2c2;
+    --bl-clr-red-300: #f09b9b;
+    --bl-clr-red-400: #eb7676;
+    --bl-clr-red-500: #eb5757;
+    --bl-clr-red-600: #d94141;
+    --bl-clr-red-700: #b53434;
+    --bl-clr-red-800: #932c2c;
+    --bl-clr-red-900: #762727;
+    --bl-clr-red-950: #401313;
+
+    --bl-clr-green-50: #eefaf4;
+    --bl-clr-green-100: #d6f3e5;
+    --bl-clr-green-200: #ade7cc;
+    --bl-clr-green-300: #7bd6ac;
+    --bl-clr-green-400: #5ec795;
+    --bl-clr-green-500: #4cb782;
+    --bl-clr-green-600: #3a9d6c;
+    --bl-clr-green-700: #2f7f58;
+    --bl-clr-green-800: #286547;
+    --bl-clr-green-900: #22523b;
+    --bl-clr-green-950: #0f2b1f;
+
+    --bl-clr-amber-50: #fef8e7;
+    --bl-clr-amber-100: #fdefc4;
+    --bl-clr-amber-200: #fbdf8c;
+    --bl-clr-amber-300: #f8cd53;
+    --bl-clr-amber-400: #f2c94c;
+    --bl-clr-amber-500: #e0b230;
+    --bl-clr-amber-600: #c29224;
+    --bl-clr-amber-700: #9b7220;
+    --bl-clr-amber-800: #7f5c20;
+    --bl-clr-amber-900: #6a4c1d;
+    --bl-clr-amber-950: #3c2a0d;
+
+    --bl-clr-blue-50: #eef6ff;
+    --bl-clr-blue-100: #d9ecff;
+    --bl-clr-blue-200: #b8dbff;
+    --bl-clr-blue-300: #85c4ff;
+    --bl-clr-blue-400: #4ea7fc;
+    --bl-clr-blue-500: #2f8de8;
+    --bl-clr-blue-600: #1f72c6;
+    --bl-clr-blue-700: #1c5b9e;
+    --bl-clr-blue-800: #1c4d82;
+    --bl-clr-blue-900: #1c426c;
+    --bl-clr-blue-950: #132a47;
+
+    /* Neutrals — cool, desaturated */
+    --bl-clr-gray-50: #f9f9fa;
+    --bl-clr-gray-100: #f2f2f3;
+    --bl-clr-gray-200: #e6e6e7;
+    --bl-clr-gray-300: #d2d3d5;
+    --bl-clr-gray-400: #8a8f98;
+    --bl-clr-gray-500: #6f747d;
+    --bl-clr-gray-600: #55585f;
+    --bl-clr-gray-700: #3c3f45;
+    --bl-clr-gray-800: #212327;
+    --bl-clr-gray-900: #131417;
+    --bl-clr-gray-950: #08090a;
+
+    /* Linear leans on hairlines and flat fills, not shadow */
+    --bl-shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.04);
+    --bl-shadow: 0 2px 4px 0 rgb(0 0 0 / 0.05);
+    --bl-shadow-lg: 0 4px 12px 0 rgb(0 0 0 / 0.07);
+    --bl-shadow-xl: 0 8px 24px 0 rgb(0 0 0 / 0.09);
+
+    /* Tighter, more compact geometry */
+    --bl-border-radius: 0.25rem;
+    --bl-border-radius-md: 0.375rem;
+    --bl-border-radius-lg: 0.5rem;
+    --bl-border-radius-xl: 0.75rem;
+
+    --bl-input-height: 2rem;
+    --bl-input-border-radius: var(--bl-border-radius-md);
+
+    /* Typography — Inter with tight tracking is the Linear signature */
+    --bl-font-sans:
+      "Inter Variable", "Inter", ui-sans-serif, system-ui, sans-serif;
+    --bl-fs-base: 0.8125rem; /* 13px */
+    --bl-fw-medium: 510;
+    --bl-fw-bold: 538;
+
+    /* Focus — a thin ring rather than a wide glow */
+    --bl-focus-width: 0.125rem;
+    --bl-focus-fade: 40%;
+  }
+
+  .dark,
+  [data-theme="dark"] {
+    --bl-clr-background: var(--bl-clr-gray-950);
+    --bl-clr-surface: var(--bl-clr-gray-900);
+
+    --bl-clr-text: #f7f8f8;
+    --bl-clr-text-light: #8a8f98;
+    --bl-clr-text-subtle: #6f747d;
+
+    /* Translucent fills read as elevation over a near-black base */
+    --bl-clr-fill-faint: rgb(255 255 255 / 0.03);
+    --bl-clr-fill-soft: rgb(255 255 255 / 0.05);
+    --bl-clr-fill-medium: rgb(255 255 255 / 0.08);
+    --bl-clr-fill-strong: rgb(255 255 255 / 0.12);
+
+    --bl-border-color: rgb(255 255 255 / 0.08);
+    --bl-border-color-subtle: rgb(255 255 255 / 0.05);
+    --bl-border-color-strong: rgb(255 255 255 / 0.14);
+
+    --bl-clr-overlay: rgb(0 0 0 / 0.6);
+  }
+}

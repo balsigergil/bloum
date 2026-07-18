@@ -5,8 +5,8 @@
     --bl-table-fs: 0.875rem;
     --bl-table-header-fw: var(--bl-fw-bold);
     --bl-table-border-color: var(--bl-border-color);
-    --bl-table-stripe-bg: var(--bl-clr-gray-100);
-    --bl-table-hover-bg: var(--bl-clr-gray-200);
+    --bl-table-stripe-bg: var(--bl-clr-surface-subtle);
+    --bl-table-hover-bg: var(--bl-clr-hover-bg);
 
     border-color: var(--bl-table-border-color);
     font-size: var(--bl-table-fs);
@@ -59,10 +59,5 @@
   .table-responsive {
     overflow-x: auto;
     --webkit-overflow-scrolling: touch;
-  }
-
-  .dark table.table {
-    --bl-table-stripe-bg: var(--bl-clr-gray-900);
-    --bl-table-hover-bg: var(--bl-clr-gray-800);
   }
 }

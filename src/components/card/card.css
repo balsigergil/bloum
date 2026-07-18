@@ -8,8 +8,8 @@
     --bl-card-title-fw: var(--bl-fw-bold);
     --bl-card-title-color: var(--bl-clr-text);
     --bl-card-image-max-height: 150px;
-    --bl-card-footer-bg: var(--bl-clr-gray-100);
-    --bl-card-description-color: var(--bl-clr-gray-500);
+    --bl-card-footer-bg: var(--bl-clr-surface-muted);
+    --bl-card-description-color: var(--bl-clr-text-light);
 
     background-color: var(--bl-card-bg);
     border-radius: var(--bl-card-border-radius);
@@ -98,10 +98,5 @@
   .card .table > tfoot > tr:last-child > td,
   .card .table > tfoot > tr:last-child > th {
     border-bottom-width: 0;
-  }
-
-  .dark .card,
-  [data-theme="dark"] .card {
-    --bl-card-description-color: var(--bl-clr-gray-400);
   }
 }

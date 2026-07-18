@@ -1,11 +1,11 @@
 @layer components {
   .btn {
     --bl-btn-color: var(--bl-clr-text);
-    --bl-btn-bg: var(--bl-clr-gray-200);
+    --bl-btn-bg: var(--bl-clr-control-bg);
     --bl-btn-hover-bg: hsl(from var(--bl-btn-bg) h s calc(l - 4));
     --bl-btn-active-bg: hsl(from var(--bl-btn-hover-bg) h s calc(l - 6));
     --bl-btn-border-radius: var(--bl-border-radius);
-    --bl-btn-border: solid 1px transparent;
+    --bl-btn-border: solid var(--bl-border-width) transparent;
     --bl-btn-height: 2.25rem;
     --bl-btn-outline-color: var(--bl-clr-primary-600);
     --bl-btn-fs: var(--bl-fs-base);
@@ -110,7 +110,7 @@
   .btn-ghost {
     --bl-btn-bg: transparent;
     --bl-btn-color: var(--bl-clr-text);
-    --bl-btn-hover-bg: var(--bl-clr-gray-200);
+    --bl-btn-hover-bg: var(--bl-clr-hover-bg);
 
     &.btn-primary {
       --bl-btn-hover-bg: var(--bl-clr-primary-600);
@@ -142,10 +142,10 @@
   }
 
   .btn-outline {
-    --bl-btn-bg: var(--bl-clr-white);
-    --bl-btn-hover-bg: var(--bl-clr-gray-100);
+    --bl-btn-bg: var(--bl-clr-surface);
+    --bl-btn-hover-bg: var(--bl-clr-hover-bg-subtle);
     --bl-btn-color: var(--bl-clr-text);
-    --bl-btn-border: 1px solid var(--bl-clr-gray-300);
+    --bl-btn-border: var(--bl-border-width) solid var(--bl-border-color-strong);
 
     &.btn-primary {
       --bl-btn-color: var(--bl-clr-primary-600);
@@ -213,7 +213,7 @@
       width: var(--bl-btn-spinner-size);
       height: var(--bl-btn-spinner-size);
       border: calc(var(--bl-btn-spinner-size) * 0.16) solid
-        rgba(255, 255, 255, 0.25);
+        color-mix(in srgb, currentColor 25%, transparent);
       border-top-color: currentColor;
       border-radius: 50%;
       margin-left: calc(var(--bl-btn-spinner-size) * -0.2);
@@ -257,7 +257,6 @@
   .dark {
     .btn {
       --bl-btn-color: var(--bl-clr-white);
-      --bl-btn-bg: var(--bl-clr-gray-700);
       --bl-btn-outline-color: var(--bl-clr-primary-500);
     }
 
@@ -282,9 +281,6 @@
     }
 
     .btn-ghost {
-      --bl-btn-bg: transparent;
-      --bl-btn-hover-bg: var(--bl-clr-gray-700);
-
       &.btn-primary {
         --bl-btn-hover-bg: var(--bl-clr-primary-700);
       }
@@ -308,9 +304,7 @@
 
     .btn-outline {
       --bl-btn-bg: transparent;
-      --bl-btn-hover-bg: var(--bl-clr-gray-700);
       --bl-btn-color: var(--bl-clr-text);
-      --bl-btn-border: 1px solid var(--bl-clr-gray-700);
 
       &.btn-primary {
         --bl-btn-color: var(--bl-clr-primary-400);

@@ -1,6 +1,6 @@
 .tooltip {
-  --bl-tooltip-bg: var(--bl-clr-gray-700);
-  --bl-tooltip-color: var(--bl-clr-text-inverted);
+  --bl-tooltip-bg: var(--bl-clr-inverted-bg);
+  --bl-tooltip-color: var(--bl-clr-inverted-text);
 
   position: absolute;
   z-index: var(--bl-z-tooltip);
@@ -38,8 +38,4 @@
   height: 8px;
   background-color: var(--bl-tooltip-bg);
   transform: rotate(45deg);
-}
-
-.dark .tooltip {
-  --bl-tooltip-bg: var(--bl-clr-gray-300);
 }

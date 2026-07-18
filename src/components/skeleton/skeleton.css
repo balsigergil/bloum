@@ -1,7 +1,7 @@
 @layer components {
   .skeleton {
     /* CSS variables */
-    --bl-skeleton-color: var(--bl-clr-gray-200);
+    --bl-skeleton-color: var(--bl-clr-control-bg);
     --bl-skeleton-height: 2rem;
     --bl-skeleton-width: 100%;
     --bl-skeleton-border-radius: var(--bl-border-radius);
@@ -90,10 +90,6 @@
 
   /* Dark theme support */
   .dark {
-    .skeleton {
-      --bl-skeleton-color: var(--bl-clr-gray-700);
-    }
-
     .skeleton-shine .skeleton::before,
     .skeleton-shine.skeleton::before {
       background: linear-gradient(
