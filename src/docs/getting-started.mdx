@@ -4,37 +4,69 @@ import { Meta } from "@storybook/addon-docs/blocks";
 
 # Getting Started
 
-## Installation
+## Choose your setup
 
-You can install Bloum via a CDN for quick prototyping or via a package manager for production.
+Bloum ships its CSS as three separate stylesheets. Which ones you load depends on
+whether your project already uses Tailwind CSS.
+
+| Stylesheet          | Standalone | With Tailwind | Contains                                     |
+| :------------------ | :--------- | :------------ | :------------------------------------------- |
+| `reset.min.css`     | ✅ Yes     | ❌ No         | Cross-browser normalization                  |
+| `bloum.min.css`     | ✅ Yes     | ✅ Yes        | Design tokens and all component styles       |
+| `utilities.min.css` | ✅ Yes     | ❌ No         | Layout helpers (flex, grid, spacing, sizing) |
+
+**Standalone** — Bloum has no dependency on Tailwind. The reset gives you the
+same normalization a utility framework's preflight would, and the utilities give
+you just enough layout classes to arrange components without pulling in a whole
+framework.
+
+**With Tailwind** — load only `bloum.min.css`. Tailwind's preflight already
+covers the reset, and Tailwind's own utilities already cover the helpers, so the
+other two files are redundant. See
+[Tailwind CSS](/?path=/docs/documentation-tailwind-css--docs) for details.
+
+## Installation
 
 ### CDN
 
-The fastest way to get started is using a CDN. Add the following lines to your HTML `<head>` tag:
+The fastest way to get started. Add the following to your HTML `<head>` tag:
 
 ```html
-<!-- Bloum CSS -->
+<!-- Standalone (no Tailwind) -->
+<link href="https://unpkg.com/bloum/dist/reset.min.css" rel="stylesheet" />
 <link href="https://unpkg.com/bloum/dist/bloum.min.css" rel="stylesheet" />
+<link href="https://unpkg.com/bloum/dist/utilities.min.css" rel="stylesheet" />
 
-<!-- Bloum JavaScript -->
-<script src="https://unpkg.com/bloum" defer></script>
+<script src="https://unpkg.com/bloum/dist/bloum.bundle.min.js" defer></script>
 ```
 
-> **Note:** For production, it is recommended to use a specific version to avoid unexpected breaking changes:
->
-> ```html
-> <link
->   href="https://unpkg.com/bloum@0.0.1/dist/bloum.min.css"
->   rel="stylesheet"
-> />
-> <script src="https://unpkg.com/bloum@0.0.1" defer></script>
-> ```
->
-> _(Replace `0.0.1` with the latest version)_
+If you already use Tailwind, keep only the middle stylesheet:
+
+```html
+<!-- With Tailwind -->
+<link href="https://unpkg.com/bloum/dist/bloum.min.css" rel="stylesheet" />
+
+<script src="https://unpkg.com/bloum/dist/bloum.bundle.min.js" defer></script>
+```
+
+`bloum.bundle.min.js` is a self-contained browser build that exposes a global
+`Bloum` object. Call `init()` on it once the DOM is ready to register all
+components:
+
+```html
+<script>
+  document.addEventListener("DOMContentLoaded", () => Bloum.init());
+</script>
+```
+
+> **Note:** For production, pin a specific version to avoid unexpected breaking
+> changes — replace `bloum` with `bloum@0.0.1` in each URL above _(using the
+> latest version number)_.
 
 ### Package Manager
 
-For modern JavaScript projects using build tools, install Bloum using your favorite package manager:
+For projects using a build tool, install Bloum with your favorite package
+manager:
 
 ```bash
 # NPM
@@ -52,15 +84,29 @@ bun add bloum
 
 ## Usage
 
-If you installed Bloum via a package manager, you need to import the styles and initialize the library in your application's entry point.
-
 ### 1. Import Styles
 
-Include the stylesheet in your JavaScript file (if using a bundler like Vite or Webpack):
+In your application's entry point, import the stylesheets for your setup.
+
+**Standalone (no Tailwind)** — import all three:
 
 ```js
+import "bloum/dist/reset.min.css";
+import "bloum/dist/bloum.min.css";
+import "bloum/dist/utilities.min.css";
+```
+
+**With Tailwind** — import only Bloum's core stylesheet, after Tailwind:
+
+```js
+import "tailwindcss";
 import "bloum/dist/bloum.min.css";
 ```
+
+Bloum's styles are organized with native CSS layers
+(`@layer theme, base, components, utilities`), so the cascade stays predictable
+regardless of import order. The order above is the one Bloum's own Storybook
+environment uses, and the one we develop against.
 
 ### 2. Initialize Bloum
 
@@ -74,7 +120,8 @@ init();
 
 ### 3. Use Components
 
-Now you can use the components in your HTML. Here is a simple example to verify your installation:
+Now you can use the components in your HTML. Here is a simple example to verify
+your installation:
 
 ```html
 <button class="btn btn-primary">Hello Bloum!</button>
@@ -82,9 +129,25 @@ Now you can use the components in your HTML. Here is a simple example to verify 
 
 If you see a styled button, congratulations! You are ready to build.
 
+## Upgrading from an earlier version
+
+Earlier releases bundled a reset and a handful of helper classes directly into
+`bloum.css`. Both are now separate, opt-in stylesheets. If you are upgrading and
+are **not** using Tailwind, add the two new imports:
+
+```js
+import "bloum/dist/reset.min.css"; // new
+import "bloum/dist/bloum.min.css";
+import "bloum/dist/utilities.min.css"; // new
+```
+
+In particular, `sr-only`, `text-light`, `hstack` and `vstack` moved out of
+`bloum.css` and now live in `utilities.min.css`.
+
 ## Next Steps
 
 Now that you have Bloum installed, you can explore:
 
 - **[Components](/?path=/docs/documentation-components--docs):** Browse the full list of available components.
+- **[Utilities](/?path=/docs/documentation-utilities--docs):** The layout classes available in standalone mode.
 - **[Design Tokens](/?path=/docs/documentation-design-tokens--docs):** Learn how to customize the design system using CSS variables.

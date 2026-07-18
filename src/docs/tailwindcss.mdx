@@ -4,25 +4,53 @@ import { Meta } from "@storybook/addon-docs/blocks";
 
 # Tailwind CSS Integration
 
-Bloum is designed to work seamlessly with Tailwind CSS. Bloum provides the components as building blocks to make your UI, while Tailwind provides utility classes to glue everything together.
+Bloum does not depend on Tailwind — but it is designed to pair with it. Bloum
+provides the components as building blocks to make your UI, while Tailwind
+provides the utility classes to glue everything together.
 
 ## Installation
 
-Integrating Tailwind requires no specific configuration for Bloum. You can simply follow the official setup instructions from the Tailwind team:
+Integrating Tailwind requires no specific configuration for Bloum. Follow the
+official setup instructions from the Tailwind team:
 
 [**Install Tailwind CSS**](https://tailwindcss.com/docs/installation)
 
+### Import only the core stylesheet
+
+This is the one rule that matters. With Tailwind, import **only**
+`bloum.min.css`:
+
+```js
+import "tailwindcss";
+import "bloum/dist/bloum.min.css";
+```
+
+Do **not** import `bloum/dist/reset.min.css` or
+`bloum/dist/utilities.min.css`. Both exist for projects running Bloum
+standalone, and both duplicate what Tailwind already gives you:
+
+| Bloum stylesheet    | Why you skip it with Tailwind                                        |
+| :------------------ | :------------------------------------------------------------------- |
+| `reset.min.css`     | It is a port of Tailwind's Preflight — you already have the original. |
+| `utilities.min.css` | Tailwind's utilities supersede it, with far broader coverage.         |
+
+Loading them anyway is wasteful but not harmful: Bloum's utilities are declared
+inside `@layer utilities`, so your real Tailwind classes still win the cascade.
+
 ## Customizing Colors
 
-Bloum uses the default Tailwind color palette out of the box. If you are using the default Tailwind configuration, no further action is needed.
+Bloum ships its own copy of the Tailwind color palette, so the default theme
+matches a stock Tailwind project out of the box. If you use the default Tailwind
+colors, no further action is needed.
 
-However, if you have defined **custom colors** in your `tailwind.config.js`, you will likely want Bloum's components to reflect those changes. Bloum uses semantic CSS variables (e.g., `--bl-clr-primary-500`) which you can override to match your custom theme.
-
-To use your custom Tailwind colors, simply map the Bloum variables to your desired values in your CSS.
+If you have defined **custom colors** in your Tailwind theme, you will likely
+want Bloum's components to reflect them. Bloum exposes semantic CSS variables
+(e.g. `--bl-clr-primary-500`) that you can point at your own values.
 
 ### Example: Using the Indigo Color from Tailwind
 
-For example, if you want your **Primary** color to be `indigo` (or a custom color) instead of the default `blue`:
+For example, if you want your **Primary** color to be `indigo` instead of the
+default `blue`:
 
 ```css
 :root {
@@ -39,3 +67,24 @@ For example, if you want your **Primary** color to be `indigo` (or a custom colo
   --bl-clr-primary-950: var(--color-indigo-950);
 }
 ```
+
+The same works for a color you defined yourself. In Tailwind v4, theme values
+are declared in CSS with `@theme`, and every entry becomes a custom property you
+can reference directly:
+
+```css
+@import "tailwindcss";
+
+@theme {
+  --color-brand-500: oklch(0.62 0.19 260);
+  /* ...remaining shades... */
+}
+
+:root {
+  --bl-clr-primary-500: var(--color-brand-500);
+  /* ...remaining shades... */
+}
+```
+
+See [Design Tokens](/?path=/docs/documentation-design-tokens--docs) for the full
+list of variables you can override.

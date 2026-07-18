@@ -1,0 +1,177 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+<Meta title="Documentation/Utilities" />
+
+# Utilities
+
+Bloum ships a small, optional set of layout utility classes in a separate
+stylesheet:
+
+```js
+import "bloum/dist/utilities.min.css";
+```
+
+**This file is opt-in and is not imported by `bloum.css`.** Core Bloum ships
+with zero layout utilities, so projects that already use Tailwind hit no
+class-name conflicts.
+
+> **Using Tailwind?** Skip this stylesheet entirely — Tailwind's utilities cover
+> everything here and much more. See
+> [Tailwind CSS](/?path=/docs/documentation-tailwind-css--docs).
+
+The goal is not to reimplement a utility framework. It is to give standalone
+projects just enough classes to lay out Bloum components without adding a build
+step. Class names follow Tailwind's conventions, and everything is declared
+inside `@layer utilities`, so if Tailwind is ever loaded alongside, Tailwind
+wins the cascade.
+
+## The spacing scale
+
+Numeric steps map to `step × 0.25rem` — so `4` is `1rem`. Every family below
+exposes the same complete scale, rather than a cherry-picked subset:
+
+```
+0  1  2  3  4  5  6  8  10  12  16
+```
+
+| Class  | Value     |
+| :----- | :-------- |
+| `p-0`  | `0`       |
+| `p-1`  | `0.25rem` |
+| `p-2`  | `0.5rem`  |
+| `p-4`  | `1rem`    |
+| `p-8`  | `2rem`    |
+| `p-16` | `4rem`    |
+
+This scale is shared by **margin**, **padding**, **gap** and **space**. The
+sizing utilities (`w-*`, `h-*`, `size-*`) extend it with three larger steps —
+`20`, `24` and `32`.
+
+## Layout
+
+| Family       | Classes                                                                                |
+| :----------- | :------------------------------------------------------------------------------------- |
+| Display      | `block`, `inline-block`, `flex`, `inline-flex`, `grid`, `hidden`                        |
+| Position     | `relative`, `absolute`, `fixed`, `sticky`                                               |
+| Flex         | `flex-row`, `flex-col`, `flex-wrap`, `flex-1`, `grow`, `grow-0`, `shrink-0`             |
+| Align        | `items-start`, `items-center`, `items-end`, `items-baseline`                            |
+| Justify      | `justify-start`, `justify-center`, `justify-end`, `justify-between`                     |
+| Grid         | `grid-cols-1` … `grid-cols-6`, `col-span-1` … `col-span-6`, `col-span-full`             |
+| Place        | `place-items-center`                                                                    |
+| Gap          | `gap-*`, `gap-x-*`, `gap-y-*`                                                            |
+| Container    | `container` (full width, centered, capped at each breakpoint)                            |
+
+### Stack shorthands
+
+Two convenience classes cover the most common flex arrangements:
+
+```html
+<div class="hstack gap-2">
+  <!-- display: flex; align-items: center -->
+</div>
+
+<div class="vstack gap-4">
+  <!-- display: flex; flex-direction: column -->
+</div>
+```
+
+## Spacing
+
+| Family         | Classes                                                            |
+| :------------- | :----------------------------------------------------------------- |
+| Margin         | `m-*`, `mx-*`, `my-*`, `mt-*`, `mr-*`, `mb-*`, `ml-*`, `m-auto`     |
+| Negative margin | `-mt-*`, `-mr-*`, `-mb-*`, `-ml-*`                                 |
+| Padding        | `p-*`, `px-*`, `py-*`, `pt-*`, `pr-*`, `pb-*`, `pl-*`               |
+| Space between  | `space-x-*`, `space-y-*` (applies to children, not the element)     |
+
+## Sizing
+
+| Family      | Classes                                                        |
+| :---------- | :------------------------------------------------------------- |
+| Width       | `w-*`, plus `w-px`, `w-auto`, `w-full`, `w-screen`              |
+| Height      | `h-*`, plus `h-px`, `h-auto`, `h-full`, `h-screen`              |
+| Square      | `size-*` (sets width and height together)                       |
+| Max width   | `max-w-sm` … `max-w-7xl`, `max-w-full`, `max-w-none`            |
+| Min size    | `min-w-0`, `min-w-full`, `min-h-0`, `min-h-full`                |
+
+## Typography
+
+Font sizes map to Bloum's design tokens, so `text-lg` resolves to
+`var(--bl-fs-lg)` and stays in sync if you override the token.
+
+| Family      | Classes                                                                     |
+| :---------- | :-------------------------------------------------------------------------- |
+| Size        | `text-xs` … `text-9xl`                                                       |
+| Weight      | `font-normal`, `font-medium`, `font-semibold`, `font-bold`                   |
+| Leading     | `leading-none`, `leading-tight`, `leading-snug`, `leading-normal`, `leading-relaxed`, `leading-loose` |
+| Tracking    | `tracking-tighter`, `tracking-tight`, `tracking-normal`, `tracking-wide`, `tracking-wider`, `tracking-widest` |
+| Alignment   | `text-center`, `text-balance`                                                |
+| Overflow    | `truncate`                                                                   |
+| Transform   | `uppercase`                                                                  |
+| Lists       | `list-disc`, `list-inside`                                                   |
+
+## Colors
+
+Color utilities are semantic — they reference Bloum's tokens rather than raw
+palette values, so they follow your theme and adapt to dark mode automatically.
+
+| Family     | Classes                                                                       |
+| :--------- | :---------------------------------------------------------------------------- |
+| Text       | `text-primary`, `text-success`, `text-warning`, `text-danger`, `text-info`     |
+| Muted text | `text-light`, `text-muted` (both map to `--bl-clr-text-light`)                 |
+| Background | `bg-primary`, `bg-success`, `bg-warning`, `bg-danger`, `bg-info`               |
+| Surfaces   | `bg-surface`, `bg-muted`                                                       |
+
+## Borders & effects
+
+| Family   | Classes                                                                              |
+| :------- | :----------------------------------------------------------------------------------- |
+| Radius   | `rounded-none`, `rounded`, `rounded-md`, `rounded-lg`, `rounded-xl`, `rounded-2xl`, `rounded-full` |
+| Border   | `border-l`                                                                            |
+| Cursor   | `cursor-pointer`                                                                      |
+
+## Accessibility
+
+`sr-only` visually hides an element while keeping it available to screen
+readers:
+
+```html
+<button class="btn">
+  <i class="fa-solid fa-xmark"></i>
+  <span class="sr-only">Close</span>
+</button>
+```
+
+## Responsive variants
+
+Responsive coverage is intentionally narrow — utilities are **not** fanned out
+across every breakpoint. Only the layout variants needed to make a page
+responsive are provided:
+
+| Prefix | Min-width | Available variants                          |
+| :----- | :-------- | :------------------------------------------ |
+| `sm:`  | 640px     | `flex`, `hidden`, `grid-cols-1` … `grid-cols-6` |
+| `md:`  | 768px     | `flex`, `hidden`, `grid-cols-1` … `grid-cols-6` |
+| `lg:`  | 1024px    | `flex`, `hidden`, `grid-cols-1` … `grid-cols-6` |
+| `xl:`  | 1280px    | `container` cap only                         |
+| `2xl:` | 1536px    | `container` cap only                         |
+
+```html
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">...</div>
+```
+
+If you need broader responsive coverage, that is the point at which reaching for
+Tailwind makes sense.
+
+## Dark mode variants
+
+Two display variants are available for light/dark asset swaps:
+
+```html
+<img src="logo-light.svg" class="dark:hidden" alt="Logo" />
+<img src="logo-dark.svg" class="hidden dark:block" alt="Logo" />
+```
+
+These key off a `.dark` class or `[data-theme="dark"]` attribute on an
+**ancestor** element — not the `prefers-color-scheme` media query — so they
+follow whatever theme your app has explicitly applied.

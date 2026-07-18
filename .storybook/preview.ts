@@ -38,6 +38,7 @@ const preview: Preview = {
             "Introduction",
             "Getting Started",
             "Design Tokens",
+            "Utilities",
             "Tailwind CSS",
             "Components",
           ],

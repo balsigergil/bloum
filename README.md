@@ -44,12 +44,24 @@ It pairs well with server-side rendering and progressive enhancement tools like 
 - 🔍 **Accessible:** Built with accessibility in mind. It's fully keyboard-navigable and [WAI-ARIA](https://www.w3.org/WAI/ARIA/apg/) compliant.
 - 🌓 **Dark mode:** Supports dark mode out of the box.
 - 📱 **Responsive:** Works on all modern browsers and devices.
-- 📦 **Single package:** Everything is bundled in a single package for an easy setup.
+- 📦 **No dependencies:** Works standalone, with no CSS framework required, easy Tainwind integration.
 - 🎨 **Theming:** Easy to customize with CSS variables.
 
 [//]: # "- 🧪 **Tested:** End-to-end tests with [Playwright](https://playwright.dev/) and unit tests with [Vitest](https://vitejs.dev/guide/features.html#testing)."
 
 ## Installation
+
+Bloum ships its CSS as three separate stylesheets. Which ones you load depends on
+whether your project already uses Tailwind CSS:
+
+| Stylesheet          | Standalone | With Tailwind | Contains                               |
+| :------------------ | :--------- | :------------ | :------------------------------------- |
+| `reset.min.css`     | ✅ Yes     | ❌ No         | Cross-browser normalization            |
+| `bloum.min.css`     | ✅ Yes     | ✅ Yes        | Design tokens and all component styles |
+| `utilities.min.css` | ✅ Yes     | ❌ No         | Basic utilities (flex, grid, spacing)   |
+
+With Tailwind, load only `bloum.min.css` — Tailwind's preflight and utilities
+already cover the other two.
 
 ### CDN
 
@@ -57,8 +69,21 @@ Use the following lines in your `head` tag
 to load the latest version of Bloum from a CDN:
 
 ```html
-<script src="https://unpkg.com/bloum" defer></script>
+<!-- Standalone (no Tailwind) -->
+<link href="https://unpkg.com/bloum/dist/reset.min.css" rel="stylesheet" />
 <link href="https://unpkg.com/bloum/dist/bloum.min.css" rel="stylesheet" />
+<link href="https://unpkg.com/bloum/dist/utilities.min.css" rel="stylesheet" />
+
+<script src="https://unpkg.com/bloum/dist/bloum.bundle.min.js" defer></script>
+```
+
+The bundle exposes a global `Bloum` object. Call `init()` on it once the DOM is
+ready:
+
+```html
+<script>
+  document.addEventListener("DOMContentLoaded", () => Bloum.init());
+</script>
 ```
 
 ### Package Manager
@@ -90,10 +115,19 @@ init();
 
 This will register all the components globally.
 
-After that, include the stylesheet in your JavaScript
+After that, include the stylesheets in your JavaScript
 if you're using a bundler like Vite or Webpack:
 
 ```js
+// Standalone (no Tailwind)
+import "bloum/dist/reset.min.css";
+import "bloum/dist/bloum.min.css";
+import "bloum/dist/utilities.min.css";
+```
+
+```js
+// With Tailwind — the reset and utilities are not needed
+import "tailwindcss";
 import "bloum/dist/bloum.min.css";
 ```
 
