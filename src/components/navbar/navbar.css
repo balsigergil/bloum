@@ -2,7 +2,7 @@
   .navbar {
     --bl-navbar-bg: var(--bl-clr-surface);
     --bl-navbar-link-color: var(--bl-clr-text-light);
-    --bl-navbar-link-bg-hover: var(--bl-clr-hover-bg-subtle);
+    --bl-navbar-link-bg-hover: var(--bl-clr-hover-bg);
 
     border-bottom: 1px solid var(--bl-border-color);
     background-color: var(--bl-navbar-bg);

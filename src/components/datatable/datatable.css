@@ -5,7 +5,7 @@
     --bl-datatable-sort-indicator-size: 0.375rem;
     --bl-datatable-sort-color: var(--bl-clr-text-light);
     --bl-datatable-sort-active-color: var(--bl-clr-primary-600);
-    --bl-datatable-sortable-hover-bg: var(--bl-clr-hover-bg-subtle);
+    --bl-datatable-sortable-hover-bg: var(--bl-clr-hover-bg);
     --bl-datatable-info-color: var(--bl-clr-text-light);
 
     display: flex;

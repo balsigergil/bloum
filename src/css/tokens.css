@@ -27,9 +27,8 @@
     --bl-clr-surface-muted: var(--bl-clr-fill-soft);
     --bl-clr-control-bg: var(--bl-clr-fill-medium);
     --bl-clr-control-bg-hover: var(--bl-clr-fill-strong);
-    --bl-clr-hover-bg: var(--bl-clr-fill-medium);
-    --bl-clr-hover-bg-subtle: var(--bl-clr-fill-soft);
-    --bl-clr-active-bg: var(--bl-clr-fill-strong);
+    --bl-clr-hover-bg: var(--bl-clr-fill-soft);
+    --bl-clr-active-bg: var(--bl-clr-fill-medium);
     --bl-clr-track-bg: var(--bl-clr-fill-strong);
     --bl-clr-inverted-bg: var(--bl-clr-fill-inverted);
     --bl-clr-inverted-text: var(--bl-clr-gray-100);

@@ -3,7 +3,7 @@
     --bl-btn-color: var(--bl-clr-text);
     --bl-btn-bg: var(--bl-clr-control-bg);
     --bl-btn-hover-bg: hsl(from var(--bl-btn-bg) h s calc(l - 4));
-    --bl-btn-active-bg: hsl(from var(--bl-btn-hover-bg) h s calc(l - 6));
+    --bl-btn-active-bg: hsl(from var(--bl-btn-hover-bg) h s calc(l - 4));
     --bl-btn-border-radius: var(--bl-border-radius);
     --bl-btn-border: solid var(--bl-border-width) transparent;
     --bl-btn-height: 2.25rem;
@@ -143,7 +143,7 @@
 
   .btn-outline {
     --bl-btn-bg: var(--bl-clr-surface);
-    --bl-btn-hover-bg: var(--bl-clr-hover-bg-subtle);
+    --bl-btn-hover-bg: var(--bl-clr-surface-subtle);
     --bl-btn-color: var(--bl-clr-text);
     --bl-btn-border: var(--bl-border-width) solid var(--bl-border-color-strong);
 
