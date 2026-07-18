@@ -3,8 +3,9 @@
     --bl-switch-width: 2.5rem;
     --bl-switch-height: calc(var(--bl-switch-width) / 2);
     --bl-switch-circle-size: calc(var(--bl-switch-width) * 0.375);
-    --bl-switch-bg: var(--bl-clr-gray-300);
+    --bl-switch-bg: var(--bl-clr-track-bg);
     --bl-switch-bg-checked: var(--bl-clr-primary-600);
+    --bl-switch-thumb-bg: var(--bl-clr-white);
 
     appearance: none;
     background-color: var(--bl-switch-bg);
@@ -24,7 +25,7 @@
       width: var(--bl-switch-height);
       height: var(--bl-switch-height);
       border-radius: var(--bl-border-radius-full);
-      background-color: #fff;
+      background-color: var(--bl-switch-thumb-bg);
       box-shadow: var(--bl-shadow-sm);
       transition: translate var(--bl-transition-md);
     }
@@ -56,7 +57,6 @@
 
   .dark {
     input[type="checkbox"].switch {
-      --bl-switch-bg: var(--bl-clr-gray-700);
       --bl-switch-bg-checked: var(--bl-clr-primary-500);
     }
   }

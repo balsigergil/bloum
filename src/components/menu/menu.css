@@ -5,11 +5,11 @@
 
   .menu {
     --bl-menu-bg: var(--bl-clr-surface);
-    --bl-menu-item-hover-bg: var(--bl-clr-gray-100);
+    --bl-menu-item-hover-bg: var(--bl-clr-hover-bg);
     --bl-menu-item-color: var(--bl-clr-text);
     --bl-menu-divider-color: var(--bl-border-color);
     --bl-menu-item-padding: 0.5rem;
-    --bl-menu-shortcut-color: var(--bl-clr-gray-500);
+    --bl-menu-shortcut-color: var(--bl-clr-text-light);
     --bl-menu-transition: var(--bl-transition-md);
 
     a {
@@ -77,7 +77,7 @@
     padding-inline: var(--bl-menu-item-padding);
     padding-block: calc(var(--bl-menu-item-padding) * 0.5);
     font-weight: var(--bl-fw-medium);
-    color: var(--bl-clr-gray-500);
+    color: var(--bl-clr-text-light);
     font-size: var(--bl-fs-sm);
   }
 
@@ -105,8 +105,8 @@
   }
 
   .menu-item-danger {
-    --bl-menu-item-color: var(--bl-clr-red-600);
-    --bl-menu-item-hover-bg: var(--bl-clr-red-50);
+    --bl-menu-item-color: var(--bl-clr-danger-600);
+    --bl-menu-item-hover-bg: var(--bl-clr-danger-50);
   }
 
   .menu-shortcut {
@@ -120,12 +120,9 @@
   }
 
   .dark .menu {
-    --bl-menu-item-hover-bg: var(--bl-clr-gray-700);
-    --bl-menu-shortcut-color: var(--bl-clr-gray-400);
-
     .menu-item-danger {
-      --bl-menu-item-color: var(--bl-clr-red-400);
-      --bl-menu-item-hover-bg: var(--bl-clr-red-950);
+      --bl-menu-item-color: var(--bl-clr-danger-400);
+      --bl-menu-item-hover-bg: var(--bl-clr-danger-950);
     }
   }
 }

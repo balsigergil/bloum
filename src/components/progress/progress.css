@@ -1,12 +1,11 @@
 @layer components {
   .progress {
     --bl-progress-height: 1rem;
-    --bl-progress-bg: var(--bl-clr-gray-300);
-    --bl-progress-color: var(--bl-clr-gray-700);
+    --bl-progress-bg: var(--bl-clr-track-bg);
+    --bl-progress-color: var(--bl-clr-fill-inverted);
     --bl-progress-border-radius: var(--bl-border-radius-full);
     --bl-progress-animation-duration: 1.5s;
-    --bl-progress-label-color: var(--bl-clr-gray-100);
-    --bl-progress-stripe-color: rgba(255, 255, 255, 0.15);
+    --bl-progress-label-color: var(--bl-clr-white);
 
     position: relative;
     width: 100%;
@@ -57,27 +56,22 @@
   /* Color variants */
   .progress-primary {
     --bl-progress-color: var(--bl-clr-primary-600);
-    --bl-progress-label-color: #fff;
   }
 
   .progress-success {
-    --bl-progress-color: var(--bl-clr-green-600);
-    --bl-progress-label-color: #fff;
+    --bl-progress-color: var(--bl-clr-success-600);
   }
 
   .progress-danger {
-    --bl-progress-color: var(--bl-clr-red-600);
-    --bl-progress-label-color: #fff;
+    --bl-progress-color: var(--bl-clr-danger-600);
   }
 
   .progress-warning {
-    --bl-progress-color: var(--bl-clr-orange-600);
-    --bl-progress-label-color: #fff;
+    --bl-progress-color: var(--bl-clr-warning-600);
   }
 
   .progress-info {
-    --bl-progress-color: var(--bl-clr-blue-600);
-    --bl-progress-label-color: #fff;
+    --bl-progress-color: var(--bl-clr-info-600);
   }
 
   /* Striped variant */
@@ -85,11 +79,11 @@
     .progress-bar {
       background-image: linear-gradient(
         45deg,
-        var(--bl-progress-stripe-color) 25%,
+        rgba(255, 255, 255, 0.15) 25%,
         transparent 25%,
         transparent 50%,
-        var(--bl-progress-stripe-color) 50%,
-        var(--bl-progress-stripe-color) 75%,
+        rgba(255, 255, 255, 0.15) 50%,
+        rgba(255, 255, 255, 0.15) 75%,
         transparent 75%,
         transparent
       );
@@ -132,42 +126,28 @@
 
   /* Dark theme */
   .dark {
-    .progress {
-      --bl-progress-bg: var(--bl-clr-gray-700);
-      --bl-progress-color: var(--bl-clr-gray-100);
-      --bl-progress-label-color: var(--bl-clr-gray-900);
-      --bl-progress-stripe-color: rgba(0, 0, 0, 0.15);
-    }
-
-    /* Color variants keep their light-theme fill, so the label stays white.
-       Repeated here to outrank the `.dark .progress` neutral defaults. */
-    .progress-primary,
-    .progress-success,
-    .progress-danger,
-    .progress-warning,
-    .progress-info {
-      --bl-progress-label-color: #fff;
-      --bl-progress-stripe-color: rgba(255, 255, 255, 0.15);
-    }
-
     .progress-primary {
       --bl-progress-color: var(--bl-clr-primary-600);
     }
 
     .progress-success {
-      --bl-progress-color: var(--bl-clr-green-600);
+      --bl-progress-color: var(--bl-clr-success-600);
     }
 
     .progress-danger {
-      --bl-progress-color: var(--bl-clr-red-600);
+      --bl-progress-color: var(--bl-clr-danger-600);
     }
 
     .progress-warning {
-      --bl-progress-color: var(--bl-clr-orange-600);
+      --bl-progress-color: var(--bl-clr-warning-600);
     }
 
     .progress-info {
-      --bl-progress-color: var(--bl-clr-blue-600);
+      --bl-progress-color: var(--bl-clr-info-600);
+    }
+
+    .progress-label {
+      text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
     }
   }
 

@@ -115,7 +115,7 @@
     /* Form tokens */
     --bl-input-height: 2.25rem;
     --bl-input-padding: 0.625rem;
-    --bl-input-border-color: var(--bl-clr-gray-300);
+    --bl-input-border-color: var(--bl-border-color-strong);
     --bl-input-border-radius: var(--bl-border-radius-md);
     --bl-input-bg: var(--bl-clr-surface);
     /*--bl-checkbox-checked-bg: var(--bl-clr-primary-600);*/
@@ -156,8 +156,6 @@
     --bl-border-color-strong: var(--bl-clr-gray-600);
     --bl-focus-color: var(--bl-clr-primary-600);
 
-    /* Form tokens - dark mode */
-    --bl-input-border-color: var(--bl-clr-gray-600);
     /*--bl-checkbox-checked-bg: var(--bl-clr-primary-600);*/
   }
 }

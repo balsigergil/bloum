@@ -1,8 +1,8 @@
 @layer components {
   .badge {
-    --bl-badge-bg: var(--bl-clr-gray-900);
-    --bl-badge-color: var(--bl-clr-gray-100);
-    --bl-badge-border-color: #fff;
+    --bl-badge-bg: var(--bl-clr-inverted-bg);
+    --bl-badge-color: var(--bl-clr-inverted-text);
+    --bl-badge-border-color: var(--bl-clr-background);
     --bl-badge-height: 1.25rem;
     --bl-badge-dot-size: 0.75rem;
     --bl-badge-fs: var(--bl-fs-sm);
@@ -59,7 +59,7 @@
   }
 
   .badge-danger {
-    --bl-badge-bg: var(--bl-clr-red-600);
+    --bl-badge-bg: var(--bl-clr-danger-600);
   }
 
   .badge-primary {
@@ -67,15 +67,15 @@
   }
 
   .badge-success {
-    --bl-badge-bg: var(--bl-clr-green-600);
+    --bl-badge-bg: var(--bl-clr-success-600);
   }
 
   .badge-warning {
-    --bl-badge-bg: var(--bl-clr-orange-600);
+    --bl-badge-bg: var(--bl-clr-warning-600);
   }
 
   .badge-info {
-    --bl-badge-bg: var(--bl-clr-blue-600);
+    --bl-badge-bg: var(--bl-clr-info-600);
   }
 
   .avatar + .badge.badge-top-right {
@@ -101,36 +101,35 @@
     }
   }
 
+  /* The neutral badge inverts via --bl-clr-inverted-*; only the color
+     variants need a dark pass, since they lighten one step. */
   .dark {
-    .badge {
-      --bl-badge-bg: var(--bl-clr-gray-100);
-      --bl-badge-color: var(--bl-clr-gray-900);
-      --bl-badge-border-color: var(--bl-clr-background);
+    .badge-danger,
+    .badge-primary,
+    .badge-success,
+    .badge-warning,
+    .badge-info {
+      --bl-badge-color: var(--bl-clr-white);
     }
 
     .badge-danger {
-      --bl-badge-bg: var(--bl-clr-red-500);
-      --bl-badge-color: #fff;
+      --bl-badge-bg: var(--bl-clr-danger-500);
     }
 
     .badge-primary {
       --bl-badge-bg: var(--bl-clr-primary-500);
-      --bl-badge-color: #fff;
     }
 
     .badge-success {
-      --bl-badge-bg: var(--bl-clr-green-500);
-      --bl-badge-color: #fff;
+      --bl-badge-bg: var(--bl-clr-success-500);
     }
 
     .badge-warning {
-      --bl-badge-bg: var(--bl-clr-orange-500);
-      --bl-badge-color: #fff;
+      --bl-badge-bg: var(--bl-clr-warning-500);
     }
 
     .badge-info {
-      --bl-badge-bg: var(--bl-clr-blue-500);
-      --bl-badge-color: #fff;
+      --bl-badge-bg: var(--bl-clr-info-500);
     }
   }
 }
