@@ -2,9 +2,9 @@
   .avatar {
     --bl-avatar-size: 2.5rem;
     --bl-avatar-fs: var(--bl-fs-lg);
-    --bl-avatar-bg: var(--bl-clr-gray-200);
-    --bl-avatar-color: var(--bl-clr-gray-800);
-    --bl-avatar-border-color: var(--bl-clr-gray-300);
+    --bl-avatar-bg: var(--bl-clr-control-bg);
+    --bl-avatar-color: var(--bl-clr-text);
+    --bl-avatar-border-color: var(--bl-border-color-strong);
     --bl-avatar-border-width: 0;
 
     width: var(--bl-avatar-size);
@@ -59,44 +59,16 @@
 
   /* Style variants for initials */
   .avatar-solid {
-    --bl-avatar-bg: var(--bl-clr-gray-900);
-    --bl-avatar-color: var(--bl-clr-gray-100);
+    --bl-avatar-bg: var(--bl-clr-inverted-bg);
+    --bl-avatar-color: var(--bl-clr-inverted-text);
   }
 
   .avatar-outline {
     --bl-avatar-bg: transparent;
-    --bl-avatar-color: var(--bl-clr-gray-800);
-    --bl-avatar-border-color: var(--bl-clr-gray-300);
-    --bl-avatar-border-width: 1px;
+    --bl-avatar-border-width: var(--bl-border-width);
   }
 
   .avatar-subtle {
-    --bl-avatar-bg: var(--bl-clr-gray-100);
-    --bl-avatar-color: var(--bl-clr-gray-800);
-  }
-
-  /* Dark theme support */
-  .dark {
-    .avatar {
-      --bl-avatar-bg: var(--bl-clr-gray-700);
-      --bl-avatar-color: var(--bl-clr-gray-300);
-      --bl-avatar-border-color: var(--bl-clr-gray-600);
-    }
-
-    .avatar-solid {
-      --bl-avatar-bg: var(--bl-clr-gray-100);
-      --bl-avatar-color: var(--bl-clr-gray-900);
-    }
-
-    .avatar-outline {
-      --bl-avatar-bg: transparent;
-      --bl-avatar-color: var(--bl-clr-gray-300);
-      --bl-avatar-border-color: var(--bl-clr-gray-600);
-    }
-
-    .avatar-subtle {
-      --bl-avatar-bg: var(--bl-clr-gray-700);
-      --bl-avatar-color: var(--bl-clr-gray-300);
-    }
+    --bl-avatar-bg: var(--bl-clr-surface-muted);
   }
 }
