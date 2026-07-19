@@ -2,7 +2,7 @@
   .timeline {
     --bl-timeline-connector-color: var(--bl-border-color-strong);
     --bl-timeline-indicator-bg: var(--bl-clr-background-inverted);
-    --bl-timeline-indicator-color: var(--bl-clr-inverted-text);
+    --bl-timeline-indicator-color: var(--bl-clr-text-inverted);
     --bl-timeline-size: 2rem;
     --bl-timeline-border-width: 2px;
     --bl-timeline-line-thickness: 2px;

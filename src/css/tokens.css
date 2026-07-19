@@ -18,8 +18,6 @@
     --bl-clr-active-bg: var(--bl-clr-gray-200);
     --bl-clr-track-bg: var(--bl-clr-gray-300);
 
-    --bl-clr-inverted-text: var(--bl-clr-gray-100);
-
     /* Scrims behind modals and drawers */
     --bl-clr-overlay: rgba(from var(--bl-clr-gray-900) r g b / 0.25);
 
@@ -135,7 +133,6 @@
     --bl-clr-track-bg: var(--bl-clr-gray-700);
 
     --bl-clr-background-inverted: var(--bl-clr-gray-100);
-    --bl-clr-inverted-text: var(--bl-clr-gray-900);
 
     --bl-clr-overlay: rgba(from var(--bl-clr-gray-900) r g b / 0.5);
 

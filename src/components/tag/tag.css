@@ -116,7 +116,7 @@
   /* Solid variants */
   .tag-solid {
     --bl-tag-bg: var(--bl-clr-background-inverted);
-    --bl-tag-color: var(--bl-clr-inverted-text);
+    --bl-tag-color: var(--bl-clr-text-inverted);
     --bl-tag-border-color: var(--bl-clr-background-inverted);
   }
 
