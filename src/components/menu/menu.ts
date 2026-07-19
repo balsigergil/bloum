@@ -385,9 +385,7 @@ export function initMenus() {
       return;
     }
 
-    const trigger = dropdown.querySelector<HTMLElement>(
-      "[data-dropdown-toggle]",
-    );
+    const trigger = dropdown.querySelector<HTMLElement>("[data-menu-toggle]");
     if (!trigger) {
       return;
     }
