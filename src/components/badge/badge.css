@@ -1,6 +1,6 @@
 @layer components {
   .badge {
-    --bl-badge-bg: var(--bl-clr-inverted-bg);
+    --bl-badge-bg: var(--bl-clr-background-inverted);
     --bl-badge-color: var(--bl-clr-inverted-text);
     --bl-badge-border-color: var(--bl-clr-background);
     --bl-badge-height: 1.25rem;

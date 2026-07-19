@@ -224,8 +224,8 @@ export const WithCollapsible: Story = {
       <div class="sidebar-top">
         <div class="sidebar-brand">
           <a href="#">
-            <img src="https://raw.githubusercontent.com/balsigergil/bloum/main/.github/bloum_logo_light.png" class="dark:hidden" alt="Bloum Logo" width="200" />
-            <img src="https://raw.githubusercontent.com/balsigergil/bloum/main/.github/bloum_logo.png" class="hidden dark:block" alt="Bloum Logo" width="200" />
+            <img src="https://raw.githubusercontent.com/balsigergil/bloum/main/.github/bloum_logo_dark.png" class="dark:hidden" alt="Bloum Logo" width="200" />
+            <img src="https://raw.githubusercontent.com/balsigergil/bloum/main/.github/bloum_logo_light.png" class="hidden dark:block" alt="Bloum Logo" width="200" />
           </a>
         </div>
         <div class="mx-4">
@@ -377,10 +377,14 @@ export const WithCollapsible: Story = {
               <i class="fa-solid fa-ellipsis-vertical"></i>
             </button>
             <div class="menu">
-              <a href="#" class="menu-item"><i class="fas fa-fw fa-user"></i>Profile</a>
-              <a href="#" class="menu-item"><i class="fas fa-fw fa-cog"></i>Settings</a>
+              <div class="menu-group">
+                <a href="#" class="menu-item"><i class="fas fa-fw fa-user"></i>Profile</a>
+                <a href="#" class="menu-item"><i class="fas fa-fw fa-cog"></i>Settings</a>
+              </div>
               <div class="menu-divider"></div>
-              <button class="menu-item"><i class="fas fa-fw fa-right-from-bracket"></i>Logout</button>
+              <div class="menu-group">
+                <button class="menu-item"><i class="fas fa-fw fa-right-from-bracket"></i>Logout</button>
+              </div>
             </div>
           </div>
         </div>

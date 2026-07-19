@@ -143,7 +143,6 @@
 
   .btn-outline {
     --bl-btn-bg: var(--bl-clr-surface);
-    --bl-btn-hover-bg: var(--bl-clr-surface-subtle);
     --bl-btn-color: var(--bl-clr-text);
     --bl-btn-border: var(--bl-border-width) solid var(--bl-border-color-strong);
 
@@ -303,7 +302,6 @@
     }
 
     .btn-outline {
-      --bl-btn-bg: transparent;
       --bl-btn-color: var(--bl-clr-text);
 
       &.btn-primary {

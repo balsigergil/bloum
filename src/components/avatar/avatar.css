@@ -59,7 +59,7 @@
 
   /* Style variants for initials */
   .avatar-solid {
-    --bl-avatar-bg: var(--bl-clr-inverted-bg);
+    --bl-avatar-bg: var(--bl-clr-background-inverted);
     --bl-avatar-color: var(--bl-clr-inverted-text);
   }
 

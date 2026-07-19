@@ -6,31 +6,18 @@
     --bl-clr-text-light-inverted: var(--bl-clr-gray-400);
     --bl-clr-text-subtle: var(--bl-clr-gray-400);
     --bl-clr-background: var(--bl-clr-white);
+    --bl-clr-background-inverted: var(--bl-clr-gray-900);
+
     --bl-clr-surface: var(--bl-clr-white);
+    --bl-clr-surface-muted: var(--bl-clr-gray-100);
 
-    /*
-     * Neutral fill ramp, ascending emphasis. Override these five to restyle
-     * every neutral at once; the role aliases below all resolve to them.
-     */
-    --bl-clr-fill-faint: var(--bl-clr-gray-50);
-    --bl-clr-fill-soft: var(--bl-clr-gray-100);
-    --bl-clr-fill-medium: var(--bl-clr-gray-200);
-    --bl-clr-fill-strong: var(--bl-clr-gray-300);
-    --bl-clr-fill-inverted: var(--bl-clr-gray-900);
+    --bl-clr-control-bg: var(--bl-clr-gray-200);
+    --bl-clr-control-bg-hover: var(--bl-clr-gray-300);
 
-    /*
-     * Role aliases: this is what component CSS should reference.
-     * Two roles may share a value in the default theme and still be worth
-     * distinguishing, since a theme can pull them apart.
-     */
-    --bl-clr-surface-subtle: var(--bl-clr-fill-faint);
-    --bl-clr-surface-muted: var(--bl-clr-fill-soft);
-    --bl-clr-control-bg: var(--bl-clr-fill-medium);
-    --bl-clr-control-bg-hover: var(--bl-clr-fill-strong);
-    --bl-clr-hover-bg: var(--bl-clr-fill-soft);
-    --bl-clr-active-bg: var(--bl-clr-fill-medium);
-    --bl-clr-track-bg: var(--bl-clr-fill-strong);
-    --bl-clr-inverted-bg: var(--bl-clr-fill-inverted);
+    --bl-clr-hover-bg: var(--bl-clr-gray-100);
+    --bl-clr-active-bg: var(--bl-clr-gray-200);
+    --bl-clr-track-bg: var(--bl-clr-gray-300);
+
     --bl-clr-inverted-text: var(--bl-clr-gray-100);
 
     /* Scrims behind modals and drawers */
@@ -67,7 +54,6 @@
     --bl-border-radius-full: 9999px;
 
     --bl-border-color: var(--bl-clr-gray-200);
-    --bl-border-color-subtle: var(--bl-clr-gray-100);
     --bl-border-color-strong: var(--bl-clr-gray-300);
     --bl-border-width: 1px;
 
@@ -117,7 +103,6 @@
     --bl-input-border-color: var(--bl-border-color-strong);
     --bl-input-border-radius: var(--bl-border-radius-md);
     --bl-input-bg: var(--bl-clr-surface);
-    /*--bl-checkbox-checked-bg: var(--bl-clr-primary-600);*/
 
     /* Z-index */
     --bl-z-topbar: 50;
@@ -132,29 +117,30 @@
 
   .dark,
   [data-theme="dark"] {
-    --bl-clr-text: var(--bl-clr-gray-200);
+    --bl-clr-text: var(--bl-clr-gray-100);
     --bl-clr-text-light: var(--bl-clr-gray-400);
     --bl-clr-text-inverted: var(--bl-clr-gray-700);
     --bl-clr-text-light-inverted: var(--bl-clr-gray-500);
     --bl-clr-text-subtle: var(--bl-clr-gray-500);
     --bl-clr-background: var(--bl-clr-gray-900);
-    --bl-clr-surface: var(--bl-clr-gray-800);
 
-    /* Only the ramp is restated — the role aliases resolve through it */
-    --bl-clr-fill-faint: var(--bl-clr-gray-900);
-    --bl-clr-fill-soft: var(--bl-clr-gray-800);
-    --bl-clr-fill-medium: var(--bl-clr-gray-700);
-    --bl-clr-fill-strong: var(--bl-clr-gray-600);
-    --bl-clr-fill-inverted: var(--bl-clr-gray-100);
+    --bl-clr-surface: var(--bl-clr-gray-800);
+    --bl-clr-surface-muted: var(--bl-clr-gray-800);
+
+    --bl-clr-control-bg: var(--bl-clr-gray-600);
+    --bl-clr-control-bg-hover: var(--bl-clr-gray-700);
+
+    --bl-clr-hover-bg: var(--bl-clr-gray-700);
+    --bl-clr-active-bg: var(--bl-clr-gray-700);
+    --bl-clr-track-bg: var(--bl-clr-gray-700);
+
+    --bl-clr-background-inverted: var(--bl-clr-gray-100);
     --bl-clr-inverted-text: var(--bl-clr-gray-900);
 
     --bl-clr-overlay: rgba(from var(--bl-clr-gray-900) r g b / 0.5);
 
     --bl-border-color: hsla(from var(--bl-clr-gray-700) h s l / 0.5);
-    --bl-border-color-subtle: var(--bl-clr-gray-800);
     --bl-border-color-strong: var(--bl-clr-gray-600);
     --bl-focus-color: var(--bl-clr-primary-600);
-
-    /*--bl-checkbox-checked-bg: var(--bl-clr-primary-600);*/
   }
 }

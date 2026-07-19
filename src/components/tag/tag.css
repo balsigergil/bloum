@@ -115,9 +115,9 @@
 
   /* Solid variants */
   .tag-solid {
-    --bl-tag-bg: var(--bl-clr-inverted-bg);
+    --bl-tag-bg: var(--bl-clr-background-inverted);
     --bl-tag-color: var(--bl-clr-inverted-text);
-    --bl-tag-border-color: var(--bl-clr-inverted-bg);
+    --bl-tag-border-color: var(--bl-clr-background-inverted);
   }
 
   .tag-solid.tag-primary {

@@ -2,7 +2,7 @@
   .progress {
     --bl-progress-height: 1rem;
     --bl-progress-bg: var(--bl-clr-track-bg);
-    --bl-progress-color: var(--bl-clr-fill-inverted);
+    --bl-progress-background-color: var(--bl-clr-background-inverted);
     --bl-progress-border-radius: var(--bl-border-radius-full);
     --bl-progress-animation-duration: 1.5s;
     --bl-progress-label-color: var(--bl-clr-white);
@@ -17,7 +17,7 @@
 
   .progress-bar {
     height: 100%;
-    background-color: var(--bl-progress-color);
+    background-color: var(--bl-progress-background-color);
     border-radius: var(--bl-progress-border-radius);
     transition: width var(--bl-transition-lg) ease-in-out;
     position: relative;
@@ -55,23 +55,23 @@
 
   /* Color variants */
   .progress-primary {
-    --bl-progress-color: var(--bl-clr-primary-600);
+    --bl-progress-background-color: var(--bl-clr-primary-600);
   }
 
   .progress-success {
-    --bl-progress-color: var(--bl-clr-success-600);
+    --bl-progress-background-color: var(--bl-clr-success-600);
   }
 
   .progress-danger {
-    --bl-progress-color: var(--bl-clr-danger-600);
+    --bl-progress-background-color: var(--bl-clr-danger-600);
   }
 
   .progress-warning {
-    --bl-progress-color: var(--bl-clr-warning-600);
+    --bl-progress-background-color: var(--bl-clr-warning-600);
   }
 
   .progress-info {
-    --bl-progress-color: var(--bl-clr-info-600);
+    --bl-progress-background-color: var(--bl-clr-info-600);
   }
 
   /* Striped variant */
@@ -126,28 +126,33 @@
 
   /* Dark theme */
   .dark {
+    .progress {
+      --bl-progress-label-color: var(--bl-clr-text-inverted);
+    }
+
     .progress-primary {
-      --bl-progress-color: var(--bl-clr-primary-600);
+      --bl-progress-background-color: var(--bl-clr-primary-600);
+      --bl-progress-label-color: var(--bl-clr-text);
     }
 
     .progress-success {
-      --bl-progress-color: var(--bl-clr-success-600);
+      --bl-progress-background-color: var(--bl-clr-success-600);
+      --bl-progress-label-color: var(--bl-clr-text);
     }
 
     .progress-danger {
-      --bl-progress-color: var(--bl-clr-danger-600);
+      --bl-progress-background-color: var(--bl-clr-danger-600);
+      --bl-progress-label-color: var(--bl-clr-text);
     }
 
     .progress-warning {
-      --bl-progress-color: var(--bl-clr-warning-600);
+      --bl-progress-background-color: var(--bl-clr-warning-600);
+      --bl-progress-label-color: var(--bl-clr-text);
     }
 
     .progress-info {
-      --bl-progress-color: var(--bl-clr-info-600);
-    }
-
-    .progress-label {
-      text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+      --bl-progress-background-color: var(--bl-clr-info-600);
+      --bl-progress-label-color: var(--bl-clr-text);
     }
   }
 

@@ -17,9 +17,9 @@ const meta: Meta<SwitchArgs> = {
   },
   render: (args) => {
     return `
-<div class="form-switch">
+<div class="field-switch">
   <input type="checkbox" class="switch" role="switch" id="switch1" ${args.checked ? "checked" : ""} ${args.disabled ? "disabled" : ""}>
-  <label for="switch1" class="label">Toggle me</label>
+  <label for="switch1" class="input-check-label">Toggle me</label>
 </div>
     `;
   },
