@@ -1,21 +1,5 @@
 /*
- * Bloum base reset — OPT-IN.
- *
- * A faithful port of Tailwind's Preflight, so standalone Bloum (no Tailwind) gets
- * the same cross-browser normalization a utility framework's preflight provides.
- * This file is intentionally NOT imported by `bloum.css`.
- *
- * - Standalone (no Tailwind): import all three —
- *     import "bloum/dist/reset.min.css";
- *     import "bloum/dist/bloum.min.css";
- *     import "bloum/dist/utilities.min.css";
- * - With Tailwind: import only `bloum.css`; Tailwind's preflight already covers
- *   this, and loading both would be redundant.
- *
- * Adaptations vs. Tailwind: its `--theme(...)` font hooks are resolved to Bloum's
- * font tokens (`--bl-font-body` / `--bl-font-mono`) with the same fallback stacks.
- * Everything lives in `@layer base` so Bloum components and utilities (later
- * layers) always win the cascade.
+ * Bloum base reset
  */
 
 @layer base {
