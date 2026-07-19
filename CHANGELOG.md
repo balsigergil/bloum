@@ -1,5 +1,27 @@
 # Changelog
 
+## [0.19.0](https://github.com/balsigergil/bloum/compare/v0.18.3...v0.19.0) (2026-07-19)
+
+### ⚠ BREAKING CHANGES
+
+* **menu:** `data-dropdown-toggle` is now `data-menu-toggle`.
+
+### Features
+
+* add generic utilites ([d46586c](https://github.com/balsigergil/bloum/commit/d46586c093aa92f83a97cf7342d6433921db8dee))
+* add sementic css variables ([48264e7](https://github.com/balsigergil/bloum/commit/48264e783d83bfdacf297cafa83680beb7f0371e))
+* close menu when item is clicked ([51f0d5c](https://github.com/balsigergil/bloum/commit/51f0d5c2e6fa30ee5b0dd0e092238f194dafc22c))
+* decouple from tailwind ([639e5d6](https://github.com/balsigergil/bloum/commit/639e5d6edf2083499d38941c08588f1521303785))
+
+### Bug Fixes
+
+* **progress:** make label color follow the theme ([f8475af](https://github.com/balsigergil/bloum/commit/f8475af08fb431770cf335d5c5299849bc55a551)), [#103](https://github.com/balsigergil/bloum/issues/103)
+* **sidebar:** collapse on wider screen ([350ba99](https://github.com/balsigergil/bloum/commit/350ba996c6c314d7c3d0bec0d8763cdb71e1474f))
+
+### Code Refactoring
+
+* **menu:** rename data-dropdown-toggle to data-menu-toggle ([879db69](https://github.com/balsigergil/bloum/commit/879db6974b86d98adacb9b357fbbb36f2c37bd19)), closes [#99](https://github.com/balsigergil/bloum/issues/99)
+
 ## [0.18.3](https://github.com/balsigergil/bloum/compare/v0.18.2...v0.18.3) (2026-05-25)
 
 ### Features
