@@ -244,6 +244,25 @@ export class Menu {
     };
     this.#menu.addEventListener("mousemove", menuMousemoveHandler);
 
+    const menuClickHandler = (e: MouseEvent) => {
+      if (!this.isOpen()) return;
+      const target = (e.target as HTMLElement).closest<HTMLElement>(
+        ".menu-item",
+      );
+      if (!target || !this.#menu.contains(target)) return;
+      if (
+        target.classList.contains("disabled") ||
+        target.hasAttribute("disabled")
+      )
+        return;
+      // Parent items only open their submenu, and toggles stay open so
+      // several can be flipped in a row.
+      if (target.querySelector(":scope > .submenu")) return;
+      if (target.querySelector("input")) return;
+      this.close();
+    };
+    this.#menu.addEventListener("click", menuClickHandler);
+
     const documentKeydownHandler = (e: KeyboardEvent) => {
       if (!this.isOpen()) return;
 
@@ -307,6 +326,7 @@ export class Menu {
       document.removeEventListener("click", documentClickHandler);
       document.removeEventListener("keydown", documentKeydownHandler);
       this.#menu.removeEventListener("mousemove", menuMousemoveHandler);
+      this.#menu.removeEventListener("click", menuClickHandler);
     };
   }
 
