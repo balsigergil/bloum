@@ -31,7 +31,7 @@ export const Navbar: Story = {
         <a class="nav-link" href="#">Page 3</a>
       </div>
       <div class="nav-item dropdown">
-        <a class="nav-link hstack gap-2" href="#" data-dropdown-toggle>
+        <a class="nav-link hstack gap-2" href="#" data-menu-toggle>
           Dropdown <i class="fas fa-chevron-down"></i>
         </a>
         <div class="menu">
@@ -48,7 +48,7 @@ export const Navbar: Story = {
     </div>
     <div class="nav-items">
       <div class="nav-item dropdown">
-        <div class="avatar cursor-pointer" data-dropdown-toggle>
+        <div class="avatar cursor-pointer" data-menu-toggle>
           <span class="avatar-initials">JD</span>
         </div>
         <div class="menu">

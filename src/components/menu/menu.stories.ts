@@ -12,7 +12,7 @@ export const Menu: Story = {
   render: () => {
     return `
 <div class="dropdown">
-  <button class="btn btn-outline" data-dropdown-toggle>Options</button>
+  <button class="btn btn-outline" data-menu-toggle>Options</button>
   <div class="menu" id="menu">
     <div class="menu-group">
       <div class="menu-label">My Account</div>
@@ -85,7 +85,7 @@ export const MenuWithIcons: Story = {
   render: () => {
     return `
 <div class="dropdown" style="margin-left: 8rem">
-  <button class="btn" data-dropdown-toggle><i class="fas fa-bars"></i> Options</button>
+  <button class="btn" data-menu-toggle><i class="fas fa-bars"></i> Options</button>
   <div class="menu">
     <a href="#" class="menu-item"><i class="fas fa-file fa-fw"></i> New File</a>
     <a href="#" class="menu-item"><i class="fas fa-folder-open fa-fw"></i> Open...</a>
@@ -103,7 +103,7 @@ export const MenuWithDanger: Story = {
   render: () => {
     return `
 <div class="dropdown">
-  <button class="btn" data-dropdown-toggle>Click to open the menu</button>
+  <button class="btn" data-menu-toggle>Click to open the menu</button>
   <div class="menu">
     <a href="#" class="menu-item">New File</a>
     <a href="#" class="menu-item">Open File...</a>
@@ -120,7 +120,7 @@ export const MenuWithCheckbox: Story = {
   render: () => {
     return `
 <div class="dropdown">
-  <button class="btn" data-dropdown-toggle><i class="fas fa-cog"></i>Features</button>
+  <button class="btn" data-menu-toggle><i class="fas fa-cog"></i>Features</button>
   <div class="menu">
     <label class="menu-item"><input type="checkbox" class="input-check">Feature 1</label>
     <label class="menu-item"><input type="checkbox" class="input-check">Feature 2</label>

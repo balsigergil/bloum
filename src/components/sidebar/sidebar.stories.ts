@@ -373,7 +373,7 @@ export const WithCollapsible: Story = {
             </div>
           </div>
           <div class="dropdown">
-            <button class="btn btn-icon btn-ghost btn-sm" data-dropdown-toggle>
+            <button class="btn btn-icon btn-ghost btn-sm" data-menu-toggle>
               <i class="fa-solid fa-ellipsis-vertical"></i>
             </button>
             <div class="menu">
@@ -508,7 +508,7 @@ export const WithCollapsible: Story = {
           <div class="flex justify-between items-center">
             <h3 class="text-light text-sm uppercase tracking-wide">Sales</h3>
             <div class="dropdown">
-              <a href="#" class="text-light" data-dropdown-toggle>Last 7 days <i class="fas fa-chevron-down"></i></a>
+              <a href="#" class="text-light" data-menu-toggle>Last 7 days <i class="fas fa-chevron-down"></i></a>
               <div class="menu">
                 <button class="menu-item">Last 7 days</button>
                 <button class="menu-item">Last month</button>

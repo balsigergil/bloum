@@ -43,7 +43,7 @@ export const BreadcrumbWithMenu: Story = {
     <li class="breadcrumb-item breadcrumb-separator"><i class="fas fa-angle-right"></i></li>
     <li class="breadcrumb-item">
       <div class="dropdown">
-        <button data-dropdown-toggle class="flex items-center gap-2">Library<i class="fas fa-angle-down text-xs"></i></button>
+        <button data-menu-toggle class="flex items-center gap-2">Library<i class="fas fa-angle-down text-xs"></i></button>
         <div class="menu" id="menu">
           <div class="menu-group">
             <a href="#" class="menu-item">New File</a>
