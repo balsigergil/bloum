@@ -15,7 +15,7 @@
   font-size: var(--bl-fs-sm);
   box-shadow: var(--bl-shadow-sm);
 
-  transition-duration: var(--bl-transition-md);
+  transition-duration: var(--bl-transition);
   transition-timing-function: ease-out;
   transition-behavior: allow-discrete;
   transition-property: display, opacity, transform;

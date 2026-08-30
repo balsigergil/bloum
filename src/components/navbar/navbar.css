@@ -70,7 +70,7 @@
       margin: 0.25rem;
       border-radius: var(--bl-border-radius);
       color: var(--bl-navbar-link-color);
-      transition: all var(--bl-transition-sm);
+      transition: all var(--bl-transition);
     }
 
     .nav-link:hover {

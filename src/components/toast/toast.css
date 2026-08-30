@@ -55,7 +55,7 @@
     --bl-toast-bg: var(--bl-clr-surface);
     --bl-toast-color: var(--bl-clr-text);
     --bl-toast-border: var(--bl-border-color);
-    --bl-toast-shadow: var(--bl-shadow);
+    --bl-toast-shadow: var(--bl-shadow-lg);
     --bl-toast-min-width: 20rem;
     --bl-toast-max-width: 24rem;
     --bl-toast-padding: 1rem;
@@ -78,7 +78,7 @@
     pointer-events: auto;
     opacity: 0;
     transform: translateY(-1rem);
-    transition: all var(--bl-transition-md);
+    transition: all var(--bl-transition);
   }
 
   /* Show state */
@@ -120,7 +120,7 @@
     border-radius: var(--bl-border-radius);
     color: var(--bl-toast-close-color);
     cursor: pointer;
-    transition: all var(--bl-transition-xs);
+    transition: all var(--bl-transition);
 
     & svg {
       width: 100%;

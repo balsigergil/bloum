@@ -105,11 +105,15 @@ export const MenuWithDanger: Story = {
 <div class="dropdown">
   <button class="btn" data-menu-toggle>Click to open the menu</button>
   <div class="menu">
-    <a href="#" class="menu-item">New File</a>
-    <a href="#" class="menu-item">Open File...</a>
-    <button class="menu-item">Save</button>
+    <div class="menu-group">
+      <a href="#" class="menu-item">New File</a>
+      <a href="#" class="menu-item">Open File...</a>
+      <button class="menu-item">Save</button>
+    </div>
     <div class="menu-divider"></div>
-    <button class="menu-item menu-item-danger">Delete</button>
+    <div class="menu-group">
+      <button class="menu-item menu-item-danger">Delete</button>
+    </div>
   </div>
 </div>
 `;
@@ -122,11 +126,15 @@ export const MenuWithCheckbox: Story = {
 <div class="dropdown">
   <button class="btn" data-menu-toggle><i class="fas fa-cog"></i>Features</button>
   <div class="menu">
-    <label class="menu-item"><input type="checkbox" class="input-check">Feature 1</label>
-    <label class="menu-item"><input type="checkbox" class="input-check">Feature 2</label>
+    <div class="menu-group">
+      <label class="menu-item"><input type="checkbox" class="input-check">Feature 1</label>
+      <label class="menu-item"><input type="checkbox" class="input-check">Feature 2</label>
+    </div>
     <div class="menu-divider"></div>
-    <label class="menu-item"><input type="checkbox" class="switch">Feature 3</label>
-    <label class="menu-item"><input type="checkbox" class="switch">Feature 4</label>
+    <div class="menu-group">
+      <label class="menu-item"><input type="checkbox" class="switch">Feature 3</label>
+      <label class="menu-item"><input type="checkbox" class="switch">Feature 4</label>
+    </div>
   </div>
 </div>
 `;

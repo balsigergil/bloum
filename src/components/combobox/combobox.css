@@ -17,7 +17,7 @@
     font-size: var(--bl-fs-base);
     background-color: var(--bl-input-bg);
     transition-property: border-color, box-shadow;
-    transition-duration: var(--bl-transition-sm);
+    transition-duration: var(--bl-transition);
   }
 
   .bl-combobox:focus-within {
@@ -86,7 +86,7 @@
   }
 
   .bl-combobox-menu {
-    --bl-combobox-transition: var(--bl-transition-md);
+    --bl-combobox-transition: var(--bl-transition);
 
     position: absolute;
     width: max-content;

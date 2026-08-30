@@ -1,11 +1,10 @@
 @layer components {
   .drawer {
-    --bl-drawer-animation-opacity: var(--bl-transition-md);
-    --bl-drawer-animation-transform: var(--bl-transition-lg);
+    --bl-drawer-animation-duration: var(--bl-transition-lg);
     --bl-drawer-panel-bg: var(--bl-clr-surface);
     --bl-drawer-footer-bg: var(--bl-clr-surface-muted);
     --bl-drawer-title-color: var(--bl-clr-text);
-    --bl-drawer-padding: 1.5rem;
+    --bl-drawer-padding: 1rem;
     --bl-drawer-backdrop-bg: var(--bl-clr-overlay);
     --bl-drawer-border-radius: var(--bl-border-radius-lg);
     --bl-drawer-shadow: var(--bl-shadow-xl);
@@ -19,7 +18,8 @@
     inset: 0;
     z-index: var(--bl-z-drawer);
     display: none;
-    animation: drawerBackdropFadeIn 150ms both ease-in-out;
+    animation: drawerBackdropFadeIn var(--bl-drawer-animation-duration) both
+      ease-in-out;
   }
 
   .drawer.open {
@@ -31,7 +31,7 @@
   }
 
   .drawer.closing {
-    animation: drawerBackdropFadeOut var(--bl-drawer-animation-opacity) both
+    animation: drawerBackdropFadeOut var(--bl-drawer-animation-duration) both
       ease-in-out;
   }
 
@@ -52,23 +52,25 @@
     left: auto;
     right: 0;
     top: 0;
-    animation: drawerSlideInRight 300ms both ease-in-out;
+    animation: drawerSlideInRight var(--bl-drawer-animation-duration) both
+      ease-in-out;
   }
 
   /* Left drawer */
   .drawer-left .drawer-content {
     left: 0;
     right: auto;
-    animation: drawerSlideInLeft 300ms both ease-in-out;
+    animation: drawerSlideInLeft var(--bl-drawer-animation-duration) both
+      ease-in-out;
   }
 
   .drawer.closing .drawer-content {
-    animation: drawerSlideOutRight var(--bl-drawer-animation-transform) both
+    animation: drawerSlideOutRight var(--bl-drawer-animation-duration) both
       ease-in-out;
   }
 
   .drawer-left.closing .drawer-content {
-    animation: drawerSlideOutLeft var(--bl-drawer-animation-transform) both
+    animation: drawerSlideOutLeft var(--bl-drawer-animation-duration) both
       ease-in-out;
   }
 
@@ -185,25 +187,6 @@
     }
     to {
       transform: translateX(100%);
-    }
-  }
-
-  /* Reduced motion support */
-  @media (prefers-reduced-motion: reduce) {
-    .drawer {
-      animation-duration: 0s;
-    }
-
-    .drawer.closing {
-      animation-duration: 0s;
-    }
-
-    .drawer-content {
-      animation-duration: 0s;
-    }
-
-    .drawer.closing .drawer-content {
-      animation-duration: 0s;
     }
   }
 

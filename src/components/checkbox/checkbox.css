@@ -13,8 +13,8 @@
     border: 1px solid var(--bl-input-border-color);
     border-radius: var(--bl-border-radius);
     transition:
-      background-color var(--bl-transition-sm),
-      border-color var(--bl-transition-sm);
+      background-color var(--bl-transition),
+      border-color var(--bl-transition);
     cursor: pointer;
     flex-shrink: 0;
 

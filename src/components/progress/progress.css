@@ -19,7 +19,7 @@
     height: 100%;
     background-color: var(--bl-progress-background-color);
     border-radius: var(--bl-progress-border-radius);
-    transition: width var(--bl-transition-lg) ease-in-out;
+    transition: width var(--bl-transition) ease-in-out;
     position: relative;
     overflow: hidden;
     display: flex;

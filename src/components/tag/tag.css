@@ -54,7 +54,7 @@
     display: grid;
     place-items: center;
     font-size: calc(var(--bl-tag-fs) * 0.75);
-    transition: background-color var(--bl-transition-sm) ease-in-out;
+    transition: background-color var(--bl-transition) ease-in-out;
   }
 
   .tag-remove:hover {

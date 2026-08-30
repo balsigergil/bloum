@@ -1,7 +1,7 @@
 @layer components {
   .modal {
-    --bl-modal-animation-opacity: var(--bl-transition-md);
-    --bl-modal-animation-transform: var(--bl-transition-md);
+    --bl-modal-animation-opacity: var(--bl-transition);
+    --bl-modal-animation-transform: var(--bl-transition);
     --bl-modal-dialog-bg: var(--bl-clr-surface);
     --bl-modal-footer-bg: var(--bl-clr-surface-muted);
     --bl-modal-title-color: var(--bl-clr-text);

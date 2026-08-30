@@ -7,12 +7,12 @@
     user-select: none;
     cursor: pointer;
     transition-property: border-color;
-    transition-duration: var(--bl-transition-md);
+    transition-duration: var(--bl-transition);
     display: block;
 
     .card-image {
       --bl-card-image-max-height: 100px;
-      transition: filter var(--bl-transition-md);
+      transition: filter var(--bl-transition);
       filter: grayscale(1);
     }
   }

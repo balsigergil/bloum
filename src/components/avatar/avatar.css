@@ -20,7 +20,6 @@
     background-color: var(--bl-avatar-bg);
     color: var(--bl-avatar-color);
     border: var(--bl-avatar-border-width) solid var(--bl-avatar-border-color);
-    transition: all var(--bl-transition-md);
   }
 
   .avatar img {

@@ -15,7 +15,7 @@
     min-height: var(--bl-switch-height);
     border-radius: var(--bl-border-radius-full);
     cursor: pointer;
-    transition: background-color var(--bl-transition-md);
+    transition: background-color var(--bl-transition);
     display: inline-block;
 
     &:after {
@@ -27,7 +27,7 @@
       border-radius: var(--bl-border-radius-full);
       background-color: var(--bl-switch-thumb-bg);
       box-shadow: var(--bl-shadow-sm);
-      transition: translate var(--bl-transition-md);
+      transition: translate var(--bl-transition);
     }
 
     &:checked {

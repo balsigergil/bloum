@@ -74,11 +74,11 @@
 
   .sidebar.show {
     display: block;
-    animation: sidebarFadeIn var(--bl-transition-md) both;
+    animation: sidebarFadeIn var(--bl-transition) both;
   }
 
   .sidebar.hide {
-    animation: sidebarFadeOut var(--bl-transition-md) both;
+    animation: sidebarFadeOut var(--bl-transition) both;
   }
 
   .sidebar-content {
@@ -93,11 +93,11 @@
   }
 
   .sidebar.show .sidebar-content {
-    animation: sidebarSlideIn var(--bl-transition-md) both;
+    animation: sidebarSlideIn var(--bl-transition) both;
   }
 
   .sidebar.hide .sidebar-content {
-    animation: sidebarSlideOut var(--bl-transition-md) both;
+    animation: sidebarSlideOut var(--bl-transition) both;
   }
 
   @keyframes sidebarSlideIn {
@@ -173,7 +173,7 @@
     align-items: center;
     gap: 1rem;
     border-radius: var(--bl-border-radius);
-    transition-duration: var(--bl-transition-md);
+    transition-duration: var(--bl-transition);
     transition-property: background-color, color;
     text-wrap: nowrap;
     width: 100%;
@@ -202,7 +202,7 @@
     background-image: url("../../icons/chevron.svg");
     background-size: contain;
     background-repeat: no-repeat;
-    transition: transform var(--bl-transition-md);
+    transition: transform var(--bl-transition);
     transform: rotate(-90deg);
   }
 

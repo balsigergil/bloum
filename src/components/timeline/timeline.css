@@ -34,7 +34,6 @@
     color: var(--bl-timeline-indicator-color);
     /*border: var(--bl-timeline-border-width) solid var(--bl-timeline-color);*/
     flex-shrink: 0;
-    /*transition: all var(--bl-transition-md);*/
   }
 
   /* Connector line */

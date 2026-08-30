@@ -27,7 +27,7 @@
     border-radius: var(--bl-btn-border-radius);
     cursor: pointer;
     transition-property: color, background-color, border-color;
-    transition-duration: var(--bl-transition-md);
+    transition-duration: var(--bl-transition);
     transition-timing-function: ease-in-out;
     border: var(--bl-btn-border);
     position: relative;
@@ -333,12 +333,6 @@
         --bl-btn-border: 1px solid var(--bl-clr-info-500);
         --bl-btn-hover-bg: var(--bl-clr-info-950);
       }
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .btn {
-      transition-duration: 0s;
     }
   }
 }
