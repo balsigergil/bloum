@@ -17,6 +17,7 @@
 @import "./components/checkbox-card/checkbox-card.css";
 @import "./components/form-field/form-field.css";
 @import "./components/switch/switch.css";
+@import "./components/segmented-control/segmented-control.css";
 @import "./components/modal/modal.css";
 @import "./components/drawer/drawer.css";
 @import "./components/alert/alert.css";

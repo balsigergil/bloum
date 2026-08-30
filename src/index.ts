@@ -17,6 +17,10 @@ import { initMenus, Menu } from "./components/menu/menu";
 import { initModals, Modal } from "./components/modal/modal";
 import { initPinInput, PinInput } from "./components/pin-input/pin-input";
 import { initPopover, Popover } from "./components/popover/popover";
+import {
+  initSegmentedControl,
+  SegmentedControl,
+} from "./components/segmented-control/segmented-control";
 import { Tab } from "./components/tabs/tab";
 import { TabList } from "./components/tabs/tab-list";
 import { TabPanel } from "./components/tabs/tab-panel";
@@ -41,6 +45,7 @@ export {
   Modal,
   PinInput,
   Popover,
+  SegmentedControl,
   Tab,
   TabList,
   TabPanel,
@@ -62,4 +67,5 @@ export {
   initAvatar,
   initPasswordToggle,
   initPinInput,
+  initSegmentedControl,
 };

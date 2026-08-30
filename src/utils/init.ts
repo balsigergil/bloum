@@ -9,6 +9,7 @@ import { initMenus } from "../components/menu/menu";
 import { initModals } from "../components/modal/modal";
 import { initPopover } from "../components/popover/popover";
 import { initPinInput } from "../components/pin-input/pin-input";
+import { initSegmentedControl } from "../components/segmented-control/segmented-control";
 import { initSidebar } from "../components/sidebar/sidebar";
 import { Tab } from "../components/tabs/tab";
 import { TabList } from "../components/tabs/tab-list";
@@ -36,6 +37,7 @@ export function init(htmxSupport = true) {
   initPasswordToggle();
   initPinInput();
   initPopover();
+  initSegmentedControl();
   initSidebar();
   initToast();
   initTooltip();
@@ -51,6 +53,7 @@ export function init(htmxSupport = true) {
       initPasswordToggle();
       initPinInput();
       initPopover();
+      initSegmentedControl();
       initToast();
       initTooltip();
     });
