@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.20.0](https://github.com/balsigergil/bloum/compare/v0.19.0...v0.20.0) (2026-08-30)
+
+### Features
+
+* **context-menu:** add new context menu component (fix [#106](https://github.com/balsigergil/bloum/issues/106)) ([7bba33a](https://github.com/balsigergil/bloum/commit/7bba33a0cf015610ff7c0290701723f042c5f076))
+* **segmented-control:** add new segmented control component ([820edcc](https://github.com/balsigergil/bloum/commit/820edcc36701afa72178d12eda08e58f6ad9f994))
+* unify transitions across components to 100ms ([c88a344](https://github.com/balsigergil/bloum/commit/c88a344c65fb864cc6cf62bfba7e4bf410a3c1ca))
+
+### Bug Fixes
+
+* **checkbox:** indicator shrinks when font size reduce (fix [#108](https://github.com/balsigergil/bloum/issues/108)) ([7c307d0](https://github.com/balsigergil/bloum/commit/7c307d0a71c468f924344c6bd8d8180838b0105b))
+* **combobox:** use the wrong border radius variable (fix [#107](https://github.com/balsigergil/bloum/issues/107)) ([e872a77](https://github.com/balsigergil/bloum/commit/e872a7726c5e7bd020c9e0aafa7d7416f92b348e))
+
 ## [0.19.0](https://github.com/balsigergil/bloum/compare/v0.18.3...v0.19.0) (2026-07-19)
 
 ### ⚠ BREAKING CHANGES
