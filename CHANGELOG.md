@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.20.1](https://github.com/balsigergil/bloum/compare/v0.20.0...v0.20.1) (2026-08-30)
+
+### Features
+
+* add support for HTMX 4 ([d896631](https://github.com/balsigergil/bloum/commit/d8966310c72453545a160aaa060998bcb1a03fbd))
+
 ## [0.20.0](https://github.com/balsigergil/bloum/compare/v0.19.0...v0.20.0) (2026-08-30)
 
 ### Features
