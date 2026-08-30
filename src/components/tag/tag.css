@@ -6,7 +6,7 @@
     --bl-tag-height: 1.5rem;
     --bl-tag-padding-inline: 0.5rem;
     --bl-tag-gap: 0.25rem;
-    --bl-tag-fs: 0.75rem;
+    --bl-tag-fs: var(--bl-fs-sm);
     --bl-tag-fw: var(--bl-fw-bold);
     --bl-tag-border-radius: var(--bl-border-radius);
 

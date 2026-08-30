@@ -45,7 +45,7 @@ export function init(htmxSupport = true) {
   initTooltip();
 
   if (htmxSupport) {
-    document.addEventListener("htmx:load", () => {
+    const initHtmxSupport = () => {
       initAccordion();
       initAutogrowTextarea();
       initAvatar();
@@ -59,6 +59,12 @@ export function init(htmxSupport = true) {
       initSegmentedControl();
       initToast();
       initTooltip();
-    });
+    };
+
+    // HTMX 2
+    document.addEventListener("htmx:load", initHtmxSupport);
+
+    // HTMX 4
+    document.addEventListener("htmx:after:process", initHtmxSupport);
   }
 }
