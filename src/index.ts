@@ -10,6 +10,10 @@ import {
   initColorSchemeSwitcher,
 } from "./components/color-scheme-switcher/color-scheme-switcher";
 import { Combobox } from "./components/combobox/combobox";
+import {
+  ContextMenu,
+  initContextMenu,
+} from "./components/context-menu/context-menu";
 import { CopyButton } from "./components/copy/copy";
 import { DataTable } from "./components/datatable/datatable";
 import { Drawer, initDrawers } from "./components/drawer/drawer";
@@ -38,6 +42,7 @@ export {
   Collapse,
   ColorSchemeSwitcher,
   Combobox,
+  ContextMenu,
   CopyButton,
   DataTable,
   Drawer,
@@ -57,6 +62,7 @@ export {
   initModals,
   initDrawers,
   initMenus,
+  initContextMenu,
   initCollapse,
   initAccordion,
   initAutogrowTextarea,

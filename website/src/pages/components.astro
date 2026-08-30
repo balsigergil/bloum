@@ -1206,6 +1206,68 @@ import FontSelector from "../components/font-selector.astro";
           </div>
         </Demo>
 
+        <!-- Context Menu -->
+        <Demo title="Context Menu">
+          <div
+            class="rounded-lg border border-dashed border-slate-300 p-10 text-center text-slate-500 select-none"
+            data-context-menu="#demo-context-menu"
+          >
+            <i class="fas fa-arrow-pointer mr-2"></i>
+            Right click anywhere in this area
+          </div>
+          <div class="menu context-menu" id="demo-context-menu">
+            <div class="menu-group">
+              <button type="button" class="menu-item">
+                <i class="fas fa-up-right-from-square fa-fw"></i>
+                Open
+                <span class="menu-shortcut">⌘O</span>
+              </button>
+              <button type="button" class="menu-item">
+                <i class="fas fa-pen fa-fw"></i>
+                Rename
+                <span class="menu-shortcut">F2</span>
+              </button>
+              <div class="menu-item">
+                <i class="fas fa-share-nodes fa-fw"></i>
+                Share
+                <i class="fas fa-chevron-right ml-auto"></i>
+                <div class="submenu">
+                  <div class="menu-group">
+                    <button type="button" class="menu-item">
+                      <i class="fas fa-envelope fa-fw"></i>
+                      Email
+                    </button>
+                    <button type="button" class="menu-item">
+                      <i class="fas fa-link fa-fw"></i>
+                      Copy link
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="menu-divider"></div>
+            <div class="menu-group">
+              <button type="button" class="menu-item">
+                <i class="fas fa-copy fa-fw"></i>
+                Copy
+                <span class="menu-shortcut">⌘C</span>
+              </button>
+              <button type="button" class="menu-item">
+                <i class="fas fa-paste fa-fw"></i>
+                Paste
+                <span class="menu-shortcut">⌘V</span>
+              </button>
+            </div>
+            <div class="menu-divider"></div>
+            <div class="menu-group">
+              <button type="button" class="menu-item menu-item-danger">
+                <i class="fas fa-trash fa-fw"></i>
+                Delete
+              </button>
+            </div>
+          </div>
+        </Demo>
+
         <!-- Toast -->
         <Demo title="Toast">
           <div class="flex flex-wrap gap-3">

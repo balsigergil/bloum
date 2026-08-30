@@ -1,0 +1,20 @@
+@layer components {
+  /*
+   * A context menu is a `.menu` anchored to the pointer instead of a trigger
+   * element, so it grows out of the cursor rather than dropping from the
+   * element sitting above it.
+   */
+  .menu.context-menu {
+    transform: scale(0.95);
+    transform-origin: top left;
+  }
+
+  .menu.context-menu.show {
+    transform: scale(1);
+
+    @starting-style {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+  }
+}

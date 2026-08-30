@@ -4,6 +4,7 @@ import {
   offset,
   shift,
   flip,
+  type ReferenceElement,
 } from "@floating-ui/dom";
 
 export interface BlMenuElement extends HTMLElement {
@@ -23,17 +24,26 @@ function getOrCreatePortal(): HTMLElement {
 
 export class Menu {
   readonly #menu: HTMLElement;
-  readonly #trigger: HTMLElement;
+
+  // What the menu is positioned against. A regular menu is anchored to its
+  // trigger element, a context menu to a virtual element at the pointer.
+  readonly #anchor: ReferenceElement;
+
+  // The anchor when it is a real element: it toggles the menu on click and
+  // takes the focus back when the menu closes.
+  readonly #trigger: HTMLElement | null;
+
   #cleanup: VoidFunction | null = null;
   #cleanupEvents: VoidFunction | null = null;
   #focusedItem: HTMLElement | null = null;
 
-  constructor(element: BlMenuElement, trigger: HTMLElement) {
+  constructor(element: BlMenuElement, anchor: ReferenceElement) {
     if (element.blmenu !== undefined) {
       element.blmenu.destroy();
     }
     this.#menu = element;
-    this.#trigger = trigger;
+    this.#anchor = anchor;
+    this.#trigger = anchor instanceof HTMLElement ? anchor : null;
     this.#registerEvents();
     element.blmenu = this;
   }
@@ -44,8 +54,12 @@ export class Menu {
     this.#menu.setAttribute("tabindex", "-1");
     this.#menu.classList.add("show");
     this.#menu.focus({ preventScroll: true });
+
+    // Opening an already open menu at another position (context menu) must not
+    // leave the previous loop running
+    this.#cleanup?.();
     this.#cleanup = autoUpdate(
-      this.#trigger,
+      this.#anchor,
       this.#menu,
       this.#updatePosition.bind(this),
     );
@@ -60,7 +74,7 @@ export class Menu {
     }
     this.#clearAllFocus();
     if (focusTrigger) {
-      this.#trigger.focus();
+      this.#trigger?.focus();
     }
   }
 
@@ -213,15 +227,12 @@ export class Menu {
 
   #registerEvents() {
     const triggerHandler = this.#toggle.bind(this);
-    this.#trigger.addEventListener("click", triggerHandler);
+    this.#trigger?.addEventListener("click", triggerHandler);
 
     const documentClickHandler = (e: MouseEvent) => {
-      if (
-        !this.#menu.contains(e.target as Node) &&
-        !this.#trigger.contains(e.target as Node)
-      ) {
-        this.close();
-      }
+      if (this.#menu.contains(e.target as Node)) return;
+      if (this.#trigger?.contains(e.target as Node)) return;
+      this.close();
     };
     document.addEventListener("click", documentClickHandler);
 
@@ -322,7 +333,7 @@ export class Menu {
     document.addEventListener("keydown", documentKeydownHandler);
 
     this.#cleanupEvents = () => {
-      this.#trigger.removeEventListener("click", triggerHandler);
+      this.#trigger?.removeEventListener("click", triggerHandler);
       document.removeEventListener("click", documentClickHandler);
       document.removeEventListener("keydown", documentKeydownHandler);
       this.#menu.removeEventListener("mousemove", menuMousemoveHandler);
@@ -340,7 +351,7 @@ export class Menu {
   }
 
   #updatePosition() {
-    computePosition(this.#trigger, this.#menu, {
+    computePosition(this.#anchor, this.#menu, {
       placement: "bottom-start",
       middleware: [
         offset(6),

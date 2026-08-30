@@ -2,6 +2,7 @@ import { initAccordion } from "../components/accordion/accordion";
 import { initAvatar } from "../components/avatar/avatar";
 import { initCollapse } from "../components/collapse/collapse";
 import { initColorSchemeSwitcher } from "../components/color-scheme-switcher/color-scheme-switcher";
+import { initContextMenu } from "../components/context-menu/context-menu";
 import { CopyButton } from "../components/copy/copy";
 import { initDrawers } from "../components/drawer/drawer";
 import { initPasswordToggle } from "../components/input/password-input";
@@ -31,6 +32,7 @@ export function init(htmxSupport = true) {
   initAvatar();
   initCollapse();
   initColorSchemeSwitcher();
+  initContextMenu();
   initDrawers();
   initMenus();
   initModals();
@@ -48,6 +50,7 @@ export function init(htmxSupport = true) {
       initAutogrowTextarea();
       initAvatar();
       initCollapse();
+      initContextMenu();
       initDrawers();
       initMenus();
       initPasswordToggle();
