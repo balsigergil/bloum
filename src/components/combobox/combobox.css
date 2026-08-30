@@ -10,7 +10,7 @@
     position: relative;
     display: flex;
     border: 1px solid var(--bl-input-border-color);
-    border-radius: var(--bl-border-radius-md);
+    border-radius: var(--bl-input-border-radius);
     min-height: var(--bl-input-height);
     user-select: none;
     cursor: pointer;
@@ -95,7 +95,7 @@
     background: var(--bl-combobox-menu-bg);
     display: none;
     border: 1px solid var(--bl-input-border-color);
-    border-radius: var(--bl-input-border-radius);
+    border-radius: var(--bl-border-radius-lg);
     box-shadow: var(--bl-shadow);
     overflow: hidden;
     opacity: 0;
