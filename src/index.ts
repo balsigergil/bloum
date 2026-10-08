@@ -9,6 +9,12 @@ import {
   initColorScheme,
   initColorSchemeSwitcher,
 } from "./components/color-scheme-switcher/color-scheme-switcher";
+import {
+  Calendar,
+  type CalendarNavigateDetail,
+} from "./components/calendar/calendar";
+import type { CalendarEvent } from "./components/calendar/layout";
+import type { CalendarMessages } from "./components/calendar/locales";
 import { Combobox } from "./components/combobox/combobox";
 import {
   ContextMenu,
@@ -39,6 +45,7 @@ import { initPasswordToggle } from "./components/input/password-input";
 export {
   init,
   AutogrowTextarea,
+  Calendar,
   Collapse,
   ColorSchemeSwitcher,
   Combobox,
@@ -75,3 +82,5 @@ export {
   initPinInput,
   initSegmentedControl,
 };
+
+export type { CalendarEvent, CalendarMessages, CalendarNavigateDetail };

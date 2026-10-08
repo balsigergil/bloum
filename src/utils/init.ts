@@ -1,5 +1,6 @@
 import { initAccordion } from "../components/accordion/accordion";
 import { initAvatar } from "../components/avatar/avatar";
+import { Calendar } from "../components/calendar/calendar";
 import { initCollapse } from "../components/collapse/collapse";
 import { initColorSchemeSwitcher } from "../components/color-scheme-switcher/color-scheme-switcher";
 import { initContextMenu } from "../components/context-menu/context-menu";
@@ -26,6 +27,7 @@ export function init(htmxSupport = true) {
   Tab.register();
   TabPanel.register();
   CopyButton.register();
+  Calendar.register();
 
   initAccordion();
   initAutogrowTextarea();

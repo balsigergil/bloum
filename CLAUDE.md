@@ -26,9 +26,9 @@ always applies). JS added only where behavior demands it.
 - `<name>.css` — required. Styles inside `@layer components`.
 - `<name>.stories.ts` — required. HTML template strings. May be several
   (`button.stories.ts` + `icon-button.stories.ts`).
-- `<name>.ts` — only the 20 behavioral components. May split (`tabs/` →
+- `<name>.ts` — only the 21 behavioral components. May split (`tabs/` →
   `tabs|tab-list|tab|tab-panel`, `input/password-input`,
-  `textarea/autogrow-textarea`).
+  `textarea/autogrow-textarea`, `calendar/` → `calendar|layout|locales`).
 
 ### Two JS patterns — match the one the neighbouring component uses
 
@@ -47,9 +47,12 @@ always applies). JS added only where behavior demands it.
   ancestor) is removed → htmx swaps stay safe.
 - Listeners delegated at `document`.
 
-**2. Custom element + `static register()`** (tabs, copy). Defines `bl-tabs`,
-`bl-tab-list`, `bl-tab`, `bl-tab-panel`, `bl-copy-button`. `register()` guards
-double-define. Renders into light DOM.
+**2. Custom element + `static register()`** (tabs, copy, calendar). Defines
+`bl-tabs`, `bl-tab-list`, `bl-tab`, `bl-tab-panel`, `bl-copy-button`,
+`bl-calendar`. `register()` guards double-define. Renders into light DOM.
+`bl-calendar` is the only one using `observedAttributes`, and the only i18n
+(`Intl` + `Calendar.locales` messages, en/fr); generic date math lives in
+`src/utils/date.ts`.
 
 ### Wiring
 
