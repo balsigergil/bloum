@@ -10,19 +10,27 @@ export class TabList extends HTMLElement {
   }
 
   private keydownHandler = (e: KeyboardEvent) => {
+    if (e.altKey || e.ctrlKey || e.metaKey || e.shiftKey) {
+      return;
+    }
+    const tabs = this.closest<Tabs>("bl-tabs");
+    switch (e.key) {
+      case "ArrowRight":
+        tabs?.selectNextTab();
+        break;
+      case "ArrowLeft":
+        tabs?.selectPreviousTab();
+        break;
+      case "Home":
+        tabs?.selectFirstTab();
+        break;
+      case "End":
+        tabs?.selectLastTab();
+        break;
+      default:
+        return;
+    }
     e.preventDefault();
-    if (e.key === "ArrowRight") {
-      this.closest<Tabs>("bl-tabs")?.selectNextTab();
-    }
-    if (e.key === "ArrowLeft") {
-      this.closest<Tabs>("bl-tabs")?.selectPreviousTab();
-    }
-    if (e.key === "Home") {
-      this.closest<Tabs>("bl-tabs")?.selectFirstTab();
-    }
-    if (e.key === "End") {
-      this.closest<Tabs>("bl-tabs")?.selectLastTab();
-    }
   };
 
   constructor() {
