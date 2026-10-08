@@ -49,7 +49,6 @@ export class Combobox {
   #activeItems: number[] = [];
   #searchValue = "";
   #highlighted = -1;
-
   #cleanupEvents: VoidFunction | null = null;
   #cleanupFloating: VoidFunction | null = null;
 
@@ -102,12 +101,7 @@ export class Combobox {
       this.#updatePosition.bind(this),
     );
 
-    // Focus the search input field
-    if (this.#searchInput) {
-      this.#searchInput.focus();
-    } else {
-      this.#optionsContainer.focus();
-    }
+    this.#focusSearch();
 
     if (this.#selected.length > 0 && !this.#config.isMultiple) {
       this.#setHighlightIndex(this.#selected[0]);
@@ -190,7 +184,7 @@ export class Combobox {
       if (this.#config.isMultiple) {
         // Check if the option is not empty
         if (this.#field.options[i].value === "") {
-          this.#searchInput?.focus();
+          this.#focusSearch();
           return;
         }
         if (!this.#selected.includes(i)) {
@@ -217,7 +211,7 @@ export class Combobox {
     } else {
       this.#highlightNext();
       this.#updateOptionsList();
-      this.#searchInput?.focus();
+      this.#focusSearch();
     }
 
     this.#dispatchChangeIfChanged(prevSelected);
@@ -312,6 +306,20 @@ export class Combobox {
     this.#wrapper.append(this.#menu);
 
     this.#field.insertAdjacentElement("afterend", this.#wrapper);
+  }
+
+  /**
+   * Focus the search input, or the options list when there is no search input.
+   * Skipped on touch devices so the virtual keyboard doesn't pop up when just
+   * browsing the options; tapping the search input still focuses it.
+   * @private
+   */
+  #focusSearch() {
+    if (this.#searchInput && !matchMedia("(pointer: coarse)").matches) {
+      this.#searchInput.focus();
+    } else {
+      this.#optionsContainer.focus();
+    }
   }
 
   #initializeEvents() {
@@ -744,7 +752,7 @@ export class Combobox {
     this.#updateOptionsList();
     this.#updateUnderlyingSelect();
     this.#dispatchChangeIfChanged(prevSelected);
-    this.#searchInput?.focus();
+    this.#focusSearch();
   }
 
   /**
