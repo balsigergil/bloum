@@ -955,6 +955,12 @@ import FontSelector from "../components/font-selector.astro";
         </div>
       </Demo>
 
+      <!-- Calendar -->
+      <Demo title="Calendar">
+        <bl-calendar id="demo-calendar" locale="en" week-start="1"
+        ></bl-calendar>
+      </Demo>
+
       <!-- ==================== OVERLAYS ==================== -->
       <Section title="Overlays" id="overlays">
         <!-- Modal -->
@@ -1139,8 +1145,7 @@ import FontSelector from "../components/font-selector.astro";
         <!-- Menu -->
         <Demo title="Menu">
           <div class="dropdown">
-            <button class="btn btn-outline" data-menu-toggle>Options</button
-            >
+            <button class="btn btn-outline" data-menu-toggle>Options</button>
             <div class="menu" id="menu">
               <div class="menu-group">
                 <div class="menu-label">My Account</div>
@@ -1316,11 +1321,7 @@ import FontSelector from "../components/font-selector.astro";
                     <a class="nav-link" href="#">Docs</a>
                   </div>
                   <div class="nav-item dropdown">
-                    <a
-                      class="nav-link hstack gap-2"
-                      href="#"
-                      data-menu-toggle
-                    >
+                    <a class="nav-link hstack gap-2" href="#" data-menu-toggle>
                       More <i class="fas fa-chevron-down"></i>
                     </a>
                     <div class="menu">
@@ -1489,7 +1490,13 @@ import FontSelector from "../components/font-selector.astro";
         </Section>
 
         <script>
-          import { Combobox, DataTable, Toast } from "../../../src";
+          import {
+            Combobox,
+            DataTable,
+            Toast,
+            type CalendarEvent,
+          } from "../../../src";
+          import { toISODate } from "../../../src/utils/date";
 
           // Initialize Combobox
           const comboboxEl = document.querySelector("#demo-combobox") as any;
@@ -1501,6 +1508,69 @@ import FontSelector from "../components/font-selector.astro";
           const datatableEl = document.querySelector("#demo-datatable") as any;
           if (datatableEl) {
             new DataTable(datatableEl);
+          }
+
+          // Calendar events, spread over the current month
+          const calendarEl = document.querySelector("#demo-calendar") as any;
+          if (calendarEl) {
+            const today = new Date();
+            const day = (date: number, time?: string) => {
+              const iso = toISODate(
+                new Date(today.getFullYear(), today.getMonth(), date),
+              );
+              return time ? `${iso}T${time}` : iso;
+            };
+            const events: CalendarEvent[] = [
+              {
+                title: "Team offsite",
+                start: day(3),
+                end: day(4),
+                color: "#16a34a",
+              },
+              {
+                title: "Sprint planning",
+                start: day(6, "09:30"),
+                end: day(6, "11:00"),
+                color: "#2563eb",
+              },
+              { title: "Lunch", start: day(6, "12:30"), end: day(6, "13:30") },
+              { title: "Release 2.0", start: day(9), color: "#dc2626" },
+              {
+                title: "Design review",
+                start: day(14, "09:00"),
+                color: "#7c3aed",
+              },
+              { title: "1:1 with Sam", start: day(14, "11:00") },
+              {
+                title: "Customer call",
+                start: day(14, "14:00"),
+                color: "#0891b2",
+              },
+              { title: "Code freeze", start: day(14), color: "#ea580c" },
+              {
+                title: "Conference trip",
+                start: day(17),
+                end: day(21),
+                color: "#0891b2",
+              },
+              {
+                title: "Dentist",
+                start: day(23, "16:15"),
+                end: day(23, "17:00"),
+              },
+              {
+                title: "Hackathon",
+                start: day(27),
+                end: day(29),
+                color: "#7c3aed",
+              },
+              {
+                title: "Retrospective",
+                start: day(27, "15:00"),
+                color: "#2563eb",
+              },
+            ];
+            calendarEl.events = events;
           }
 
           // Toast demo buttons
