@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.21.0](https://github.com/balsigergil/bloum/compare/v0.20.1...v0.21.0) (2026-10-09)
+
+### Features
+
+* **calendar:** add month view calendar component ([4293436](https://github.com/balsigergil/bloum/commit/429343600f1e2475acb8814d48c902d867d3add8))
+* **website:** add calendar to components page ([fdd225d](https://github.com/balsigergil/bloum/commit/fdd225d56addea451e9eecef43822c829c3218da))
+* **website:** add Nunito font to components page ([d367d8a](https://github.com/balsigergil/bloum/commit/d367d8a2f5031da7d2cb75dd7473bd7c72484caf))
+* **website:** update logos and remove rotation ([c54709c](https://github.com/balsigergil/bloum/commit/c54709ce4aa66d9876021cf3dd7a856eae36e4ee))
+
+### Bug Fixes
+
+* **combobox:** don't autofocus search input on touch devices ([8574ce8](https://github.com/balsigergil/bloum/commit/8574ce8ca0ad5955fc55e81d006ba1e4d8a67dfa))
+* **tabs:** only prevent default for handled navigation keys (fix [#111](https://github.com/balsigergil/bloum/issues/111)) ([dddd261](https://github.com/balsigergil/bloum/commit/dddd261309a58a6b2e8309728b3310b937bfdfa9))
+
 ## [0.20.1](https://github.com/balsigergil/bloum/compare/v0.20.0...v0.20.1) (2026-08-30)
 
 ### Features
