@@ -138,6 +138,11 @@ Then, use the components in your HTML.
 The documentation is available at [https://www.bloum.dev](https://www.bloum.dev)
 for more information on how to use the components.
 
+For AI assistants, the documentation is also available in the
+[llms.txt](https://llmstxt.org) format: [llms.txt](https://www.bloum.dev/llms.txt)
+(index) and [llms-full.txt](https://www.bloum.dev/llms-full.txt) (everything in
+one file). Both also ship in the npm package under `dist/`.
+
 ## License
 
 Bloum is [MIT licensed](./LICENSE) &copy; [Gil Balsiger](https://github.com/balsigergil)
