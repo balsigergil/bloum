@@ -1,5 +1,36 @@
 # Changelog
 
+## [0.22.0](https://github.com/balsigergil/bloum/compare/v0.21.0...v0.22.0) (2026-10-25)
+
+### ⚠ BREAKING CHANGES
+
+* **menu,combobox:** --bl-menu-item-padding is replaced by
+  --bl-menu-item-padding-x and --bl-menu-item-padding-y.
+* **tag:** `.tag-text` and `.tag-remove` are removed, along with
+  the `--bl-tag-gap` token. Put the label directly inside `.tag`.
+* **tokens:** the root font-size is now 87.5% instead of the browser
+  default, so every rem (including Tailwind utilities) is computed from
+  14px. body no longer sets font-size from --bl-fs-base.
+* **tooltip:** Tooltip's createTooltipElement(), removeTooltipElement()
+  and updatePosition() are replaced by show(), hide() and destroy().
+
+### Features
+
+* generate llms.txt documentation ([97636a7](https://github.com/balsigergil/bloum/commit/97636a71196fabb7f4bd5a44f31f6abcce80c318))
+* **menu,combobox:** unify list item sizing ([a8f037a](https://github.com/balsigergil/bloum/commit/a8f037a1758686575a71a210b20657e99d0db6ec))
+* **tag:** drop tag-text and tag-remove ([ac071b3](https://github.com/balsigergil/bloum/commit/ac071b38e9b2ce8a1f7c5cb68a8b85fdc1791d76))
+* **tokens:** scale the whole interface from a 14px root font-size ([6d70f92](https://github.com/balsigergil/bloum/commit/6d70f92405acf134073b6433df2c9f94d2440939))
+* **tooltip:** add show delay ([dff3b79](https://github.com/balsigergil/bloum/commit/dff3b7972a44051c2ae463931746bec6c7994dc3))
+
+### Bug Fixes
+
+* **badge:** snap dimensions to whole pixels ([bfd0fb9](https://github.com/balsigergil/bloum/commit/bfd0fb99f1225ab0f9291fb14673c0f2d628d154))
+* **button:** scale icon sizes to icon button heights ([498ae91](https://github.com/balsigergil/bloum/commit/498ae917c0d641135895ccd0a042591f42eb7a54))
+* **deps:** restore missing piccolore in lockfile ([7320486](https://github.com/balsigergil/bloum/commit/7320486caa16e83b7e7fcb27ab380360af8c8b52))
+* **floating:** position dropdowns with a fixed strategy ([6c8bfca](https://github.com/balsigergil/bloum/commit/6c8bfca6e373246154c10680b78721ce508c197b))
+* **switch:** snap dimensions to whole pixels ([634145b](https://github.com/balsigergil/bloum/commit/634145b402d8d82ba85a644c1994fe9df16fb79f))
+* **tokens:** size component text from the font-size tokens ([cb0480a](https://github.com/balsigergil/bloum/commit/cb0480aaf22272903c45ae1537d4324f3e24aca5))
+
 ## [0.21.0](https://github.com/balsigergil/bloum/compare/v0.20.1...v0.21.0) (2026-10-09)
 
 ### Features
