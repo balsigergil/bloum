@@ -12,10 +12,8 @@
     font-family: var(--bl-font-mono) monospace;
   }
 
-  /* The only size knob: every rem in Bloum scales from it. 87.5% = 14px with
-     the browser's default setting. */
   html {
-    font-size: 87.5%;
+    font-size: 87.5%; /* 14px */
   }
 
   body {
