@@ -177,17 +177,15 @@ export function layoutWeek(
 
   const segments = events
     .filter((event) => event.firstDay <= weekEnd && event.lastDay >= weekStart)
-    .map(
-      (event): Segment => ({
-        event,
-        start: Math.max(event.firstDay, weekStart) - weekStart,
-        end: Math.min(event.lastDay, weekEnd) - weekStart,
-        clipStart: event.firstDay < weekStart,
-        clipEnd: event.lastDay > weekEnd,
-        lane: 0,
-        hidden: false,
-      }),
-    )
+    .map((event): Segment => ({
+      event,
+      start: Math.max(event.firstDay, weekStart) - weekStart,
+      end: Math.min(event.lastDay, weekEnd) - weekStart,
+      clipStart: event.firstDay < weekStart,
+      clipEnd: event.lastDay > weekEnd,
+      lane: 0,
+      hidden: false,
+    }))
     .sort(compareSegments);
 
   // Put every segment in the lowest lane that is free on all of its days.
