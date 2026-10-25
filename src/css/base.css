@@ -12,9 +12,14 @@
     font-family: var(--bl-font-mono) monospace;
   }
 
+  /* The only size knob: every rem in Bloum scales from it. 87.5% = 14px with
+     the browser's default setting. */
+  html {
+    font-size: 87.5%;
+  }
+
   body {
     font-family: var(--bl-font-body), sans-serif;
-    font-size: var(--bl-fs-base);
     color: var(--bl-clr-text);
     background-color: var(--bl-clr-background);
     interpolate-size: allow-keywords;

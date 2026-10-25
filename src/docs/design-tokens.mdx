@@ -75,21 +75,34 @@ Example: `--bl-clr-blue-500`
 
 ### Font Sizes
 
-| Token Name     | Value | Rem      |
-| :------------- | :---- | :------- |
-| `--bl-fs-xs`   | 10px  | 0.625rem |
-| `--bl-fs-sm`   | 12px  | 0.75rem  |
-| `--bl-fs-base` | 14px  | 0.875rem |
-| `--bl-fs-lg`   | 16px  | 1rem     |
-| `--bl-fs-xl`   | 18px  | 1.125rem |
-| `--bl-fs-2xl`  | 20px  | 1.25rem  |
-| `--bl-fs-3xl`  | 24px  | 1.5rem   |
-| `--bl-fs-4xl`  | 30px  | 1.875rem |
-| `--bl-fs-5xl`  | 36px  | 2.25rem  |
-| `--bl-fs-6xl`  | 48px  | 3rem     |
-| `--bl-fs-7xl`  | 60px  | 3.75rem  |
-| `--bl-fs-8xl`  | 72px  | 4.5rem   |
-| `--bl-fs-9xl`  | 96px  | 6rem     |
+Bloum sets `html { font-size: 87.5% }` (14px with the browser's default
+setting), and every `rem` in Bloum (text, spacing, control sizes) scales from
+it. Override it once to rescale the whole interface:
+
+```css
+html {
+  font-size: 100%; /* 16px base */
+}
+```
+
+The size steps are ratios of the 14px base, so they land on whole pixels at the
+default root size.
+
+| Token Name     | Value (default) | Definition             |
+| :------------- | :-------------- | :--------------------- |
+| `--bl-fs-xs`   | 10px            | `calc(10 / 14 * 1rem)` |
+| `--bl-fs-sm`   | 12px            | `calc(12 / 14 * 1rem)` |
+| `--bl-fs-base` | 14px            | `1rem`                 |
+| `--bl-fs-lg`   | 16px            | `calc(16 / 14 * 1rem)` |
+| `--bl-fs-xl`   | 18px            | `calc(18 / 14 * 1rem)` |
+| `--bl-fs-2xl`  | 20px            | `calc(20 / 14 * 1rem)` |
+| `--bl-fs-3xl`  | 24px            | `calc(24 / 14 * 1rem)` |
+| `--bl-fs-4xl`  | 30px            | `calc(30 / 14 * 1rem)` |
+| `--bl-fs-5xl`  | 36px            | `calc(36 / 14 * 1rem)` |
+| `--bl-fs-6xl`  | 48px            | `calc(48 / 14 * 1rem)` |
+| `--bl-fs-7xl`  | 60px            | `calc(60 / 14 * 1rem)` |
+| `--bl-fs-8xl`  | 72px            | `calc(72 / 14 * 1rem)` |
+| `--bl-fs-9xl`  | 96px            | `calc(96 / 14 * 1rem)` |
 
 ### Font Weights
 
@@ -169,10 +182,10 @@ to sit above (or below) something else in your app.
 
 ### Miscellaneous
 
-| Token Name               | Value | Description                       |
-| :----------------------- | :---- | :-------------------------------- |
-| `--bl-disabled-opacity`  | 0.7   | Opacity applied to disabled elements |
-| `--bl-spinner-speed`     | 0.5s  | Spinner rotation duration         |
+| Token Name              | Value | Description                          |
+| :---------------------- | :---- | :----------------------------------- |
+| `--bl-disabled-opacity` | 0.7   | Opacity applied to disabled elements |
+| `--bl-spinner-speed`    | 0.5s  | Spinner rotation duration            |
 
 ## Form Tokens
 
