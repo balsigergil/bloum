@@ -24,7 +24,7 @@
     line-height: var(--bl-list-item-line-height);
     /* Fixed so the menu escapes overflow-clipping ancestors */
     position: fixed;
-    transform: translateY(-0.5rem) scale(0.95);
+    transform: translateY(-0.25rem) scale(0.98);
     display: none;
   }
 
@@ -50,7 +50,7 @@
     position: absolute;
     left: 0;
     top: 0;
-    transform: translateX(-0.5rem) scale(0.95);
+    transform: translateX(-0.25rem) scale(0.98);
   }
 
   .menu.show,
@@ -64,14 +64,14 @@
   .menu.show {
     @starting-style {
       opacity: 0;
-      transform: translateY(-0.5rem) scale(0.95);
+      transform: translateY(-0.25rem) scale(0.98);
     }
   }
 
   .menu.show .menu-item.submenu-open > .submenu {
     @starting-style {
       opacity: 0;
-      transform: translateX(-0.5rem) scale(0.95);
+      transform: translateX(-0.25rem) scale(0.98);
     }
   }
 

@@ -20,7 +20,7 @@
     transition-timing-function: ease;
     transition-behavior: allow-discrete;
     opacity: 0;
-    transform: scale(0.95);
+    transform: scale(0.98);
   }
 
   .popover.show {
@@ -30,7 +30,7 @@
 
     @starting-style {
       opacity: 0;
-      transform: scale(0.95);
+      transform: scale(0.98);
     }
   }
 

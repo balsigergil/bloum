@@ -104,7 +104,7 @@
     overflow: hidden;
     opacity: 0;
     visibility: hidden;
-    transform: translateY(-0.5rem) scale(0.95);
+    transform: translateY(-0.25rem) scale(0.98);
 
     transition-behavior: allow-discrete;
     transition-property: opacity, transform, display, visibility;
@@ -130,7 +130,7 @@
 
     @starting-style {
       opacity: 0;
-      transform: translateY(-0.5rem) scale(0.95);
+      transform: translateY(-0.25rem) scale(0.98);
     }
   }
 
