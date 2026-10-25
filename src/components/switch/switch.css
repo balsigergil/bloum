@@ -1,13 +1,17 @@
 @layer components {
   input[type="checkbox"].switch {
-    --bl-switch-width: 2.5rem;
-    --bl-switch-height: calc(var(--bl-switch-width) / 2);
-    --bl-switch-circle-size: calc(var(--bl-switch-width) * 0.375);
+    /* Snapped to whole pixels so a non-16px root font-size can't produce
+       half-pixel track/thumb sizes that render misaligned. */
+    --bl-switch-width: round(2.5rem, 2px);
+    --bl-switch-height: round(calc(var(--bl-switch-width) / 2), 1px);
+    --bl-switch-padding: round(calc(var(--bl-switch-height) * 0.1), 1px);
     --bl-switch-bg: var(--bl-clr-track-bg);
     --bl-switch-bg-checked: var(--bl-clr-primary-600);
     --bl-switch-thumb-bg: var(--bl-clr-white);
 
     appearance: none;
+    box-sizing: border-box;
+    padding: var(--bl-switch-padding);
     background-color: var(--bl-switch-bg);
     width: var(--bl-switch-width);
     min-width: var(--bl-switch-width);
@@ -21,9 +25,8 @@
     &:after {
       content: "";
       display: block;
-      scale: 0.8;
-      width: var(--bl-switch-height);
-      height: var(--bl-switch-height);
+      width: calc(var(--bl-switch-height) - 2 * var(--bl-switch-padding));
+      height: calc(var(--bl-switch-height) - 2 * var(--bl-switch-padding));
       border-radius: var(--bl-border-radius-full);
       background-color: var(--bl-switch-thumb-bg);
       box-shadow: var(--bl-shadow-sm);
