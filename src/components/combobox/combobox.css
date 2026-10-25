@@ -6,6 +6,9 @@
     --bl-combobox-placeholder-color: var(--bl-clr-text-subtle);
     --bl-combobox-option-highlighted-bg: var(--bl-clr-hover-bg);
     --bl-combobox-option-selected-bg: var(--bl-clr-active-bg);
+    --bl-combobox-option-padding-x: var(--bl-list-item-padding-x);
+    --bl-combobox-option-padding-y: var(--bl-list-item-padding-y);
+    --bl-combobox-option-radius: var(--bl-list-item-radius);
 
     position: relative;
     display: flex;
@@ -94,7 +97,7 @@
     z-index: var(--bl-z-dropdown);
     background: var(--bl-combobox-menu-bg);
     display: none;
-    border: 1px solid var(--bl-input-border-color);
+    border: 1px solid var(--bl-border-color);
     border-radius: var(--bl-border-radius-lg);
     box-shadow: var(--bl-shadow);
     overflow: hidden;
@@ -142,8 +145,13 @@
   }
 
   .bl-combobox-option {
-    padding: 0.25rem 0.5rem;
-    border-radius: var(--bl-border-radius);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: var(--bl-combobox-option-padding-y)
+      var(--bl-combobox-option-padding-x);
+    line-height: var(--bl-list-item-line-height);
+    border-radius: var(--bl-combobox-option-radius);
     cursor: pointer;
     user-select: none;
   }

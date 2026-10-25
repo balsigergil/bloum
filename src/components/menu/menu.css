@@ -8,7 +8,11 @@
     --bl-menu-item-hover-bg: var(--bl-clr-hover-bg);
     --bl-menu-item-color: var(--bl-clr-text);
     --bl-menu-divider-color: var(--bl-border-color);
-    --bl-menu-item-padding: 0.5rem;
+    --bl-menu-item-padding-x: var(--bl-list-item-padding-x);
+    --bl-menu-item-padding-y: var(--bl-list-item-padding-y);
+    --bl-menu-item-radius: var(--bl-list-item-radius);
+    --bl-menu-item-danger-color: var(--bl-clr-text-danger);
+    --bl-menu-item-danger-hover-bg: var(--bl-clr-hover-bg-danger);
     --bl-menu-shortcut-color: var(--bl-clr-text-light);
     --bl-menu-transition: var(--bl-transition);
 
@@ -17,7 +21,7 @@
     }
 
     font-size: var(--bl-fs-base);
-    line-height: 1.25rem;
+    line-height: var(--bl-list-item-line-height);
     transform: translateY(-0.5rem) scale(0.95);
     display: none;
   }
@@ -25,7 +29,7 @@
   .menu,
   .submenu {
     border: var(--bl-border-color) 1px solid;
-    border-radius: var(--bl-border-radius);
+    border-radius: var(--bl-border-radius-lg);
     background-color: var(--bl-menu-bg);
     width: 12rem;
     position: absolute;
@@ -74,8 +78,8 @@
   }
 
   .menu-label {
-    padding-inline: var(--bl-menu-item-padding);
-    padding-block: calc(var(--bl-menu-item-padding) * 0.5);
+    padding-inline: var(--bl-menu-item-padding-x);
+    padding-block: calc(4 / 14 * 1rem); /* 4px */
     font-weight: var(--bl-fw-medium);
     color: var(--bl-clr-text-light);
     font-size: var(--bl-fs-sm);
@@ -83,9 +87,10 @@
 
   .menu-item {
     color: var(--bl-menu-item-color);
-    padding-inline: var(--bl-menu-item-padding);
-    padding-block: calc(var(--bl-menu-item-padding) * 0.5);
-    border-radius: var(--bl-border-radius);
+    padding-inline: var(--bl-menu-item-padding-x);
+    padding-block: var(--bl-menu-item-padding-y);
+    line-height: var(--bl-list-item-line-height);
+    border-radius: var(--bl-menu-item-radius);
     display: flex;
     width: 100%;
     align-items: center;
@@ -105,8 +110,8 @@
   }
 
   .menu-item-danger {
-    --bl-menu-item-color: var(--bl-clr-danger-600);
-    --bl-menu-item-hover-bg: var(--bl-clr-danger-50);
+    --bl-menu-item-color: var(--bl-menu-item-danger-color);
+    --bl-menu-item-hover-bg: var(--bl-menu-item-danger-hover-bg);
   }
 
   .menu-shortcut {
@@ -117,12 +122,5 @@
 
   .menu-divider {
     border-top: var(--bl-menu-divider-color) 1px solid;
-  }
-
-  .dark .menu {
-    .menu-item-danger {
-      --bl-menu-item-color: var(--bl-clr-danger-400);
-      --bl-menu-item-hover-bg: var(--bl-clr-danger-950);
-    }
   }
 }

@@ -18,6 +18,10 @@
     --bl-clr-active-bg: var(--bl-clr-gray-200);
     --bl-clr-track-bg: var(--bl-clr-gray-300);
 
+    /* Destructive items (menu-item-danger) */
+    --bl-clr-text-danger: var(--bl-clr-danger-600);
+    --bl-clr-hover-bg-danger: var(--bl-clr-danger-50);
+
     /* Scrims behind modals and drawers */
     --bl-clr-overlay: rgba(from var(--bl-clr-gray-900) r g b / 0.25);
 
@@ -105,6 +109,12 @@
     --bl-input-border-radius: var(--bl-border-radius-md);
     --bl-input-bg: var(--bl-clr-surface);
 
+    /* List items (menu, combobox options): 32px tall */
+    --bl-list-item-padding-x: calc(8 / 14 * 1rem); /* 8px */
+    --bl-list-item-padding-y: calc(6 / 14 * 1rem); /* 6px */
+    --bl-list-item-line-height: calc(20 / 14 * 1rem); /* 20px */
+    --bl-list-item-radius: var(--bl-border-radius);
+
     /* Z-index */
     --bl-z-topbar: 50;
     --bl-z-sidebar: 60;
@@ -114,6 +124,13 @@
     --bl-z-dropdown: 200;
     --bl-z-tooltip: 200;
     --bl-z-toast: 300;
+  }
+
+  /* Bigger targets for touch: list items grow to 40px */
+  @media (pointer: coarse) {
+    :root {
+      --bl-list-item-padding-y: calc(10 / 14 * 1rem); /* 10px */
+    }
   }
 
   .dark,
@@ -134,6 +151,9 @@
     --bl-clr-hover-bg: var(--bl-clr-gray-700);
     --bl-clr-active-bg: var(--bl-clr-gray-700);
     --bl-clr-track-bg: var(--bl-clr-gray-700);
+
+    --bl-clr-text-danger: var(--bl-clr-danger-400);
+    --bl-clr-hover-bg-danger: var(--bl-clr-danger-950);
 
     --bl-clr-background-inverted: var(--bl-clr-gray-100);
 

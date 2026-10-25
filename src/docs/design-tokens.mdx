@@ -44,6 +44,8 @@ These tokens are used for general layout elements like text and backgrounds. The
 | `--bl-clr-text-inverted`       | `gray-200`       | `gray-700`               | Text on dark backgrounds              |
 | `--bl-clr-text-light-inverted` | `gray-400`       | `gray-500`               | Muted text on dark backgrounds        |
 | `--bl-border-color`            | `gray-200`       | `gray-700` (50% opacity) | Default border color                  |
+| `--bl-clr-text-danger`         | `danger-600`     | `danger-400`             | Text of destructive items             |
+| `--bl-clr-hover-bg-danger`     | `danger-50`      | `danger-950`             | Hover background of destructive items |
 
 ### Color Palette
 
@@ -198,3 +200,15 @@ Specific tokens for form inputs:
 | `--bl-input-bg`            | `var(--bl-clr-surface)` | _Same_          |
 | `--bl-input-border-color`  | `gray-300`              | `gray-600`      |
 | `--bl-input-border-radius` | `md`                    | _Same_          |
+
+## List Item Tokens
+
+Shared by menu items and combobox options, so both lists have the same height
+(32px, 40px on touch screens via `@media (pointer: coarse)`):
+
+| Token Name                   | Value                | Description               |
+| :--------------------------- | :------------------- | :------------------------ |
+| `--bl-list-item-padding-x`   | 8px                  | Horizontal padding        |
+| `--bl-list-item-padding-y`   | 6px (10px on touch)  | Vertical padding          |
+| `--bl-list-item-line-height` | 20px                 | Line height of the item   |
+| `--bl-list-item-radius`      | `--bl-border-radius` | Corner radius of the item |
