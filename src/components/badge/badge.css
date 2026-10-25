@@ -3,8 +3,10 @@
     --bl-badge-bg: var(--bl-clr-background-inverted);
     --bl-badge-color: var(--bl-clr-text-inverted);
     --bl-badge-border-color: var(--bl-clr-background);
-    --bl-badge-height: 1.25rem;
-    --bl-badge-dot-size: 0.75rem;
+    /* Snapped to even pixels so a non-16px root font-size can't produce
+       half-pixel heights that push the label off-center. */
+    --bl-badge-height: round(1.25rem, 2px);
+    --bl-badge-dot-size: round(0.75rem, 2px);
     --bl-badge-fs: var(--bl-fs-sm);
     --bl-badge-fw: var(--bl-fw-bold);
 
@@ -16,6 +18,7 @@
     color: var(--bl-badge-color);
     font-size: var(--bl-badge-fs);
     font-weight: var(--bl-badge-fw);
+    line-height: 1;
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -23,12 +26,12 @@
   }
 
   .badge-sm {
-    --bl-badge-height: 1rem;
+    --bl-badge-height: round(1rem, 2px);
     --bl-badge-fs: var(--bl-fs-xs);
   }
 
   .badge-lg {
-    --bl-badge-height: 1.5rem;
+    --bl-badge-height: round(1.5rem, 2px);
     --bl-badge-fs: var(--bl-fs-base);
   }
 
