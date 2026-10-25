@@ -113,6 +113,15 @@ default root size.
 | `--bl-fw-medium` | 600   |
 | `--bl-fw-bold`   | 700   |
 
+### Line Height
+
+Line height of single-line text in controls (buttons, inputs, tabs, table
+cells, list items).
+
+| Token Name     | Value (default) | Definition             |
+| :------------- | :-------------- | :--------------------- |
+| `--bl-lh-base` | 20px            | `calc(20 / 14 * 1rem)` |
+
 ## Spacing & Layout
 
 ### Border Radius
@@ -210,5 +219,5 @@ Shared by menu items and combobox options, so both lists have the same height
 | :--------------------------- | :------------------- | :------------------------ |
 | `--bl-list-item-padding-x`   | 8px                  | Horizontal padding        |
 | `--bl-list-item-padding-y`   | 6px (10px on touch)  | Vertical padding          |
-| `--bl-list-item-line-height` | 20px                 | Line height of the item   |
+| `--bl-list-item-line-height` | `--bl-lh-base`       | Line height of the item   |
 | `--bl-list-item-radius`      | `--bl-border-radius` | Corner radius of the item |

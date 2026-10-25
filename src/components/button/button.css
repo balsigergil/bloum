@@ -32,7 +32,7 @@
     border: var(--bl-btn-border);
     position: relative;
     user-select: none;
-    line-height: 1.25rem;
+    line-height: var(--bl-lh-base);
     gap: 0.5rem;
     text-decoration: none;
 
@@ -46,36 +46,36 @@
   }
 
   .btn-icon {
-    --bl-btn-fs: 1.125rem;
+    --bl-btn-fs: var(--bl-fs-xl);
     min-width: var(--bl-btn-height);
     padding: 0;
   }
 
   .btn-xs {
     --bl-btn-height: 1.5rem;
-    --bl-btn-fs: 0.75rem;
+    --bl-btn-fs: var(--bl-fs-sm);
   }
 
   .btn-icon.btn-xs {
-    --bl-btn-fs: 0.875rem;
+    --bl-btn-fs: var(--bl-fs-base);
   }
 
   .btn-sm {
     --bl-btn-height: 1.875rem;
-    --bl-btn-fs: 0.875rem;
+    --bl-btn-fs: var(--bl-fs-base);
   }
 
   .btn-icon.btn-sm {
-    --bl-btn-fs: 1rem;
+    --bl-btn-fs: var(--bl-fs-lg);
   }
 
   .btn-lg {
     --bl-btn-height: 3rem;
-    --bl-btn-fs: 1rem;
+    --bl-btn-fs: var(--bl-fs-lg);
   }
 
   .btn-icon.btn-lg {
-    --bl-btn-fs: 1.25rem;
+    --bl-btn-fs: var(--bl-fs-2xl);
   }
 
   /* Colors */
@@ -249,7 +249,7 @@
   }
 
   .btn-menu-toggle {
-    --bl-btn-fs: 0.875rem;
+    --bl-btn-fs: var(--bl-fs-base);
   }
 
   /* Dark theme */

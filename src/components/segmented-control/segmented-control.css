@@ -67,7 +67,7 @@
     font-family: inherit;
     font-size: var(--bl-segmented-fs);
     font-weight: var(--bl-segmented-fw);
-    line-height: 1.25rem;
+    line-height: var(--bl-lh-base);
     white-space: nowrap;
     cursor: pointer;
     transition: color var(--bl-transition) ease-in-out;

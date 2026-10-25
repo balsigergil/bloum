@@ -38,7 +38,7 @@
     color: var(--bl-tab-color);
     font-weight: var(--bl-fw-bold);
     font-size: var(--bl-fs-base);
-    line-height: 1.25rem;
+    line-height: var(--bl-lh-base);
     display: flex;
     align-items: center;
     gap: 0.5rem;

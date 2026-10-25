@@ -95,7 +95,7 @@
   }
 
   .modal-header button[data-modal-close] {
-    font-size: 0.875rem;
+    font-size: var(--bl-fs-base);
     position: absolute;
     top: 0;
     right: 0;

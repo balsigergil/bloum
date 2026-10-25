@@ -146,7 +146,7 @@
   }
 
   .sidebar-group-title {
-    font-size: 0.75rem;
+    font-size: var(--bl-fs-sm);
     font-weight: var(--bl-fw-bold);
     text-transform: uppercase;
     letter-spacing: 0.05em;

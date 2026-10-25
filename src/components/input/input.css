@@ -10,7 +10,7 @@
     border-radius: var(--bl-input-border-radius);
     padding-inline: var(--bl-input-padding);
     height: var(--bl-input-height);
-    line-height: 1.25rem;
+    line-height: var(--bl-lh-base);
     position: relative;
     font-size: var(--bl-input-fs);
     display: block;

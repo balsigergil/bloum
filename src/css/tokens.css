@@ -49,6 +49,8 @@
     --bl-fs-8xl: calc(72 / 14 * 1rem); /* 72px */
     --bl-fs-9xl: calc(96 / 14 * 1rem); /* 96px */
 
+    --bl-lh-base: calc(20 / 14 * 1rem); /* 20px */
+
     --bl-border-radius: 0.25rem;
     --bl-border-radius-md: 0.375rem;
     --bl-border-radius-lg: 0.5rem;
@@ -112,7 +114,7 @@
     /* List items (menu, combobox options): 32px tall */
     --bl-list-item-padding-x: calc(8 / 14 * 1rem); /* 8px */
     --bl-list-item-padding-y: calc(6 / 14 * 1rem); /* 6px */
-    --bl-list-item-line-height: calc(20 / 14 * 1rem); /* 20px */
+    --bl-list-item-line-height: var(--bl-lh-base);
     --bl-list-item-radius: var(--bl-border-radius);
 
     /* Z-index */

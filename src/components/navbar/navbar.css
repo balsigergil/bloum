@@ -18,7 +18,7 @@
   }
 
   .navbar-brand {
-    font-size: 1.5rem;
+    font-size: var(--bl-fs-3xl);
     font-weight: var(--bl-fw-bold);
   }
 
