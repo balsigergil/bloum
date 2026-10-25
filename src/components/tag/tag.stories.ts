@@ -5,7 +5,6 @@ type TagArgs = {
   type: string;
   size: string;
   solid: boolean;
-  removable: boolean;
   rounded: boolean;
 };
 
@@ -26,9 +25,6 @@ const meta: Meta<TagArgs> = {
     solid: {
       control: "boolean",
     },
-    removable: {
-      control: "boolean",
-    },
     rounded: {
       control: "boolean",
     },
@@ -38,7 +34,6 @@ const meta: Meta<TagArgs> = {
     type: "default",
     size: "default",
     solid: false,
-    removable: false,
     rounded: false,
   },
   render: (args) => {
@@ -52,10 +47,7 @@ const meta: Meta<TagArgs> = {
       .join(" ");
 
     return `
-<div class="${classes}">
-  <span class="tag-text">${args.text}</span>
-  ${args.removable ? '<button class="tag-remove" type="button" aria-label="Remove tag"><i class="fas fa-xmark"></i></button>' : ""}
-</div>`;
+<div class="${classes}">${args.text}</div>`;
   },
 };
 
@@ -67,104 +59,52 @@ export const Tag: Story = {};
 export const TagSizes: Story = {
   render: () => `
 <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
-  <div class="tag tag-sm">
-    <span class="tag-text">Small</span>
-  </div>
-  <div class="tag">
-    <span class="tag-text">Default</span>
-  </div>
-  <div class="tag tag-lg">
-    <span class="tag-text">Large</span>
-  </div>
+  <div class="tag tag-sm">Small</div>
+  <div class="tag">Default</div>
+  <div class="tag tag-lg">Large</div>
 </div>`,
 };
 
 export const TagVariants: Story = {
   render: () => `
 <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
-  <div class="tag">
-    <span class="tag-text">Default</span>
-  </div>
-  <div class="tag tag-primary">
-    <span class="tag-text">Primary</span>
-  </div>
-  <div class="tag tag-success">
-    <span class="tag-text">Success</span>
-  </div>
-  <div class="tag tag-danger">
-    <span class="tag-text">Danger</span>
-  </div>
-  <div class="tag tag-warning">
-    <span class="tag-text">Warning</span>
-  </div>
-  <div class="tag tag-info">
-    <span class="tag-text">Info</span>
-  </div>
+  <div class="tag">Default</div>
+  <div class="tag tag-primary">Primary</div>
+  <div class="tag tag-success">Success</div>
+  <div class="tag tag-danger">Danger</div>
+  <div class="tag tag-warning">Warning</div>
+  <div class="tag tag-info">Info</div>
 </div>`,
 };
 
 export const TagSolid: Story = {
   render: () => `
 <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
-  <div class="tag tag-solid">
-    <span class="tag-text">Default</span>
-  </div>
-  <div class="tag tag-solid tag-primary">
-    <span class="tag-text">Primary</span>
-  </div>
-  <div class="tag tag-solid tag-success">
-    <span class="tag-text">Success</span>
-  </div>
-  <div class="tag tag-solid tag-danger">
-    <span class="tag-text">Danger</span>
-  </div>
-  <div class="tag tag-solid tag-warning">
-    <span class="tag-text">Warning</span>
-  </div>
-  <div class="tag tag-solid tag-info">
-    <span class="tag-text">Info</span>
-  </div>
+  <div class="tag tag-solid">Default</div>
+  <div class="tag tag-solid tag-primary">Primary</div>
+  <div class="tag tag-solid tag-success">Success</div>
+  <div class="tag tag-solid tag-danger">Danger</div>
+  <div class="tag tag-solid tag-warning">Warning</div>
+  <div class="tag tag-solid tag-info">Info</div>
 </div>`,
-};
-
-export const TagWithRemove: Story = {
-  args: {
-    removable: true,
-  },
 };
 
 export const TagList: Story = {
   render: () => `
 <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
-  <div class="tag tag-primary">
-    <span class="tag-text">React</span>
-  </div>
-  <div class="tag tag-success">
-    <span class="tag-text">TypeScript</span>
-  </div>
-  <div class="tag tag-info">
-    <span class="tag-text">CSS</span>
-  </div>
-  <div class="tag tag-warning">
-    <span class="tag-text">JavaScript</span>
-  </div>
-  <div class="tag">
-    <span class="tag-text">HTML</span>
-  </div>
-  <div class="tag tag-danger">
-    <span class="tag-text">Legacy Code</span>
-  </div>
+  <div class="tag tag-primary">React</div>
+  <div class="tag tag-success">TypeScript</div>
+  <div class="tag tag-info">CSS</div>
+  <div class="tag tag-warning">JavaScript</div>
+  <div class="tag">HTML</div>
+  <div class="tag tag-danger">Legacy Code</div>
 </div>`,
 };
 
 export const TagLongText: Story = {
   render: () => `
 <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; max-width: 300px;">
-  <div class="tag tag-primary">
-    <span class="tag-text">This is a very long tag that should truncate with ellipsis</span>
-  </div>
-  <div class="tag tag-success" style="max-width: 150px;">
-    <span class="tag-text">Constrained width tag example</span>
-  </div>
+  <div class="tag tag-primary">This is a very long tag that should truncate with ellipsis</div>
+  <div class="tag tag-success" style="max-width: 150px;">Constrained width tag example</div>
 </div>`,
 };

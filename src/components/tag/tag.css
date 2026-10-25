@@ -5,12 +5,17 @@
     --bl-tag-border-color: var(--bl-border-color-strong);
     --bl-tag-height: 1.5rem;
     --bl-tag-padding-inline: 0.5rem;
-    --bl-tag-gap: 0.25rem;
     --bl-tag-fs: var(--bl-fs-sm);
     --bl-tag-fw: var(--bl-fw-bold);
     --bl-tag-border-radius: var(--bl-border-radius);
 
-    height: var(--bl-tag-height);
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 100%;
+    /* Height comes from the line box so the text stays a direct child:
+       a flex container can't ellipsize its own text. */
+    line-height: calc(var(--bl-tag-height) - 2px);
     padding-inline: var(--bl-tag-padding-inline);
     border-radius: var(--bl-tag-border-radius);
     background-color: var(--bl-tag-bg);
@@ -18,51 +23,10 @@
     border: 1px solid var(--bl-tag-border-color);
     font-size: var(--bl-tag-fs);
     font-weight: var(--bl-tag-fw);
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    gap: var(--bl-tag-gap);
-    position: relative;
-    max-width: 100%;
-    cursor: default;
-  }
-
-  .tag-text {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    min-width: 0;
-  }
-
-  .tag-remove {
-    --bl-tag-remove-size: calc(var(--bl-tag-height) / 3 * 2);
-    --bl-tag-remove-color: var(--bl-tag-color);
-    --bl-tag-remove-bg: transparent;
-    /* Tints the tag's own text color, so this tracks every variant
-       (light, dark, solid) without a per-variant override. */
-    --bl-tag-remove-hover-bg: color-mix(in srgb, currentColor 12%, transparent);
-
-    width: var(--bl-tag-remove-size);
-    height: var(--bl-tag-remove-size);
-    flex-shrink: 0;
-    padding: 0;
-    border: none;
-    border-radius: var(--bl-tag-border-radius);
-    background-color: var(--bl-tag-remove-bg);
-    color: var(--bl-tag-remove-color);
-    cursor: pointer;
-    display: grid;
-    place-items: center;
-    font-size: calc(var(--bl-tag-fs) * 0.75);
-    transition: background-color var(--bl-transition) ease-in-out;
-  }
-
-  .tag-remove:hover {
-    background-color: var(--bl-tag-remove-hover-bg);
-  }
-
-  .tag-remove:focus-visible {
-    outline: 1px solid var(--bl-clr-primary-600);
+    cursor: default;
   }
 
   .tag-rounded {
