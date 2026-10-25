@@ -91,9 +91,10 @@
   .bl-combobox-menu {
     --bl-combobox-transition: var(--bl-transition);
 
-    position: absolute;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: max-content;
-    min-width: 100%;
     z-index: var(--bl-z-dropdown);
     background: var(--bl-combobox-menu-bg);
     display: none;

@@ -22,6 +22,8 @@
 
     font-size: var(--bl-fs-base);
     line-height: var(--bl-list-item-line-height);
+    /* Fixed so the menu escapes overflow-clipping ancestors */
+    position: fixed;
     transform: translateY(-0.5rem) scale(0.95);
     display: none;
   }
@@ -32,7 +34,6 @@
     border-radius: var(--bl-border-radius-lg);
     background-color: var(--bl-menu-bg);
     width: 12rem;
-    position: absolute;
     z-index: var(--bl-z-dropdown);
     box-shadow: var(--bl-shadow);
     opacity: 0;
@@ -46,6 +47,7 @@
   }
 
   .submenu {
+    position: absolute;
     left: 0;
     top: 0;
     transform: translateX(-0.5rem) scale(0.95);

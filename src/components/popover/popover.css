@@ -3,7 +3,7 @@
     --bl-popover-bg: var(--bl-clr-surface);
     --bl-popover-title-bg: var(--bl-clr-surface-muted);
 
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: var(--bl-z-popover);

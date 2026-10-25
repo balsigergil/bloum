@@ -352,6 +352,7 @@ export class Menu {
 
   #updatePosition() {
     computePosition(this.#anchor, this.#menu, {
+      strategy: "fixed",
       placement: "bottom-start",
       middleware: [
         offset(6),

@@ -4,6 +4,7 @@ import {
   flip,
   offset,
   shift,
+  size,
 } from "@floating-ui/dom";
 import { parseOptions } from "./utils";
 
@@ -403,16 +404,14 @@ export class Combobox {
         e.stopPropagation();
       }
 
-      if (
-        !(
-          e.key === "ArrowDown" ||
-          e.key === "ArrowUp" ||
-          e.key === "Enter" ||
-          e.key === "Tab" ||
-          e.key === "Escape" ||
-          e.key === "Esc"
-        )
-      ) {
+      if (!(
+        e.key === "ArrowDown" ||
+        e.key === "ArrowUp" ||
+        e.key === "Enter" ||
+        e.key === "Tab" ||
+        e.key === "Escape" ||
+        e.key === "Esc"
+      )) {
         e.stopPropagation();
       }
     });
@@ -781,8 +780,19 @@ export class Combobox {
    */
   #updatePosition() {
     computePosition(this.#inner, this.#menu, {
+      strategy: "fixed",
       placement: "bottom-start",
-      middleware: [offset(6), flip(), shift({ padding: 6 })],
+      middleware: [
+        offset(6),
+        flip(),
+        shift({ padding: 6 }),
+        // min-width: 100% would resolve against the viewport once fixed
+        size({
+          apply: ({ rects, elements }) => {
+            elements.floating.style.minWidth = `${rects.reference.width}px`;
+          },
+        }),
+      ],
     }).then(({ x, y }) => {
       Object.assign(this.#menu.style, {
         left: `${x}px`,

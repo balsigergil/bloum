@@ -102,6 +102,7 @@ export class Tooltip {
 
     // Compute the position of the tooltip
     computePosition(this.trigger, this.tooltip, {
+      strategy: "fixed",
       placement: "top",
       middleware: [
         offset(6),

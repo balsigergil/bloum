@@ -2,7 +2,7 @@
   --bl-tooltip-bg: var(--bl-clr-background-inverted);
   --bl-tooltip-color: var(--bl-clr-text-inverted);
 
-  position: absolute;
+  position: fixed;
   z-index: var(--bl-z-tooltip);
   top: 0;
   left: 0;

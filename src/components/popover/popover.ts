@@ -73,6 +73,7 @@ export class Popover {
 
     // Compute the position of the tooltip
     computePosition(trigger, this.#element, {
+      strategy: "fixed",
       placement: "top",
       middleware: [
         offset(8),
