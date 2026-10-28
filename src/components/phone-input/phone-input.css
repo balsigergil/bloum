@@ -1,0 +1,211 @@
+@layer components {
+  .phone-input {
+    --bl-phone-input-gap: 0.375rem;
+    --bl-phone-input-flag-size: var(--bl-fs-xl);
+    --bl-phone-input-dial-code-color: var(--bl-clr-text-light);
+    --bl-phone-input-country-hover-bg: var(--bl-clr-hover-bg);
+    --bl-phone-input-menu-bg: var(--bl-clr-surface);
+    --bl-phone-input-menu-width: 18rem;
+    --bl-phone-input-option-highlighted-bg: var(--bl-clr-hover-bg);
+    --bl-phone-input-option-selected-bg: var(--bl-clr-active-bg);
+    --bl-phone-input-option-dial-code-color: var(--bl-clr-text-light);
+    --bl-phone-input-option-padding-x: var(--bl-list-item-padding-x);
+    --bl-phone-input-option-padding-y: var(--bl-list-item-padding-y);
+    --bl-phone-input-option-radius: var(--bl-list-item-radius);
+
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: var(--bl-phone-input-gap);
+    width: 100%;
+    height: var(--bl-input-height);
+    padding-inline: 0.25rem var(--bl-input-padding);
+    border: 1px solid var(--bl-input-border-color);
+    border-radius: var(--bl-input-border-radius);
+    background-color: var(--bl-input-bg);
+    font-size: var(--bl-fs-base);
+    cursor: text;
+    transition-property: border-color, box-shadow;
+    transition-duration: var(--bl-focus-transition);
+  }
+
+  .phone-input:focus-within {
+    border-color: var(--bl-focus-color);
+    box-shadow: 0 0 0 var(--bl-focus-width)
+      color-mix(
+        in srgb,
+        var(--bl-focus-color) var(--bl-focus-fade),
+        transparent
+      );
+  }
+
+  .phone-input[data-disabled] {
+    opacity: var(--bl-disabled-opacity);
+    cursor: not-allowed;
+  }
+
+  /* Country selector, inside the field border */
+  .phone-input-country {
+    display: flex;
+    align-items: center;
+    gap: 0.125rem;
+    flex-shrink: 0;
+    height: calc(100% - 0.375rem);
+    padding-inline: 0.375rem 0.125rem;
+    border: none;
+    border-radius: var(--bl-border-radius);
+    background: none;
+    cursor: pointer;
+    outline: none;
+    transition: background-color var(--bl-focus-transition);
+  }
+
+  .phone-input-country:hover:not(:disabled),
+  .phone-input.open .phone-input-country {
+    background-color: var(--bl-phone-input-country-hover-bg);
+  }
+
+  .phone-input-country:focus-visible {
+    outline: 2px solid var(--bl-focus-color);
+    outline-offset: -2px;
+  }
+
+  .phone-input-country:disabled {
+    cursor: not-allowed;
+  }
+
+  .phone-input-flag {
+    font-size: var(--bl-phone-input-flag-size);
+    line-height: 1;
+  }
+
+  .phone-input-arrow {
+    width: 1rem;
+    height: 1rem;
+    background-image: url("../../icons/chevron.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .phone-input-dial-code {
+    flex-shrink: 0;
+    color: var(--bl-phone-input-dial-code-color);
+    user-select: none;
+  }
+
+  /* The number field loses its own border, the wrapper draws it */
+  .phone-input .phone-input-field,
+  .phone-input .phone-input-field:focus-visible {
+    flex: 1;
+    min-width: 0;
+    height: 100%;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    background: none;
+    box-shadow: none;
+    outline: none;
+  }
+
+  .phone-input .phone-input-field:disabled {
+    cursor: not-allowed;
+  }
+
+  /* Country menu */
+  .phone-input-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--bl-phone-input-menu-width);
+    z-index: var(--bl-z-dropdown);
+    background: var(--bl-phone-input-menu-bg);
+    display: none;
+    border: 1px solid var(--bl-border-color);
+    border-radius: var(--bl-border-radius-lg);
+    box-shadow: var(--bl-shadow);
+    overflow: hidden;
+    cursor: default;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-0.25rem) scale(0.98);
+
+    transition-behavior: allow-discrete;
+    transition-property: opacity, transform, display, visibility;
+    transition-duration: var(--bl-transition);
+    transition-timing-function: ease;
+  }
+
+  .phone-input.open .phone-input-menu {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+
+    @starting-style {
+      opacity: 0;
+      transform: translateY(-0.25rem) scale(0.98);
+    }
+  }
+
+  .phone-input-search {
+    display: block;
+    width: 100%;
+    height: var(--bl-input-height);
+    padding: 0 var(--bl-input-padding);
+    border: none;
+    border-bottom: 1px solid var(--bl-input-border-color);
+    background-color: var(--bl-phone-input-menu-bg);
+    font-size: var(--bl-fs-base);
+    outline: none;
+  }
+
+  .phone-input-options {
+    max-height: 16rem;
+    overflow-y: auto;
+    outline: none;
+    padding: 0.25rem;
+  }
+
+  .phone-input-option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: var(--bl-phone-input-option-padding-y)
+      var(--bl-phone-input-option-padding-x);
+    line-height: var(--bl-list-item-line-height);
+    border-radius: var(--bl-phone-input-option-radius);
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .phone-input-option[hidden] {
+    display: none;
+  }
+
+  .phone-input-option.phone-input-option-highlighted {
+    background-color: var(--bl-phone-input-option-highlighted-bg);
+  }
+
+  .phone-input-option.phone-input-option-selected {
+    background-color: var(--bl-phone-input-option-selected-bg);
+  }
+
+  .phone-input-option-name {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .phone-input-option-dial-code {
+    color: var(--bl-phone-input-option-dial-code-color);
+  }
+
+  .phone-input-no-results {
+    padding: var(--bl-phone-input-option-padding-y)
+      var(--bl-phone-input-option-padding-x);
+    color: var(--bl-phone-input-option-dial-code-color);
+  }
+}

@@ -25,6 +25,13 @@ import { DataTable } from "./components/datatable/datatable";
 import { Drawer, initDrawers } from "./components/drawer/drawer";
 import { initMenus, Menu } from "./components/menu/menu";
 import { initModals, Modal } from "./components/modal/modal";
+import {
+  initPhoneInput,
+  PhoneInput,
+  type PhoneInputConfig,
+  type PhoneInputCountryChangeDetail,
+} from "./components/phone-input/phone-input";
+import type { PhoneCountry } from "./components/phone-input/countries";
 import { initPinInput, PinInput } from "./components/pin-input/pin-input";
 import { initPopover, Popover } from "./components/popover/popover";
 import {
@@ -55,6 +62,7 @@ export {
   Drawer,
   Menu,
   Modal,
+  PhoneInput,
   PinInput,
   Popover,
   SegmentedControl,
@@ -79,8 +87,16 @@ export {
   initColorScheme,
   initAvatar,
   initPasswordToggle,
+  initPhoneInput,
   initPinInput,
   initSegmentedControl,
 };
 
-export type { CalendarEvent, CalendarMessages, CalendarNavigateDetail };
+export type {
+  CalendarEvent,
+  CalendarMessages,
+  CalendarNavigateDetail,
+  PhoneCountry,
+  PhoneInputConfig,
+  PhoneInputCountryChangeDetail,
+};

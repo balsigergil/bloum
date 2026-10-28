@@ -10,6 +10,7 @@ import { initPasswordToggle } from "../components/input/password-input";
 import { initMenus } from "../components/menu/menu";
 import { initModals } from "../components/modal/modal";
 import { initPopover } from "../components/popover/popover";
+import { initPhoneInput } from "../components/phone-input/phone-input";
 import { initPinInput } from "../components/pin-input/pin-input";
 import { initSegmentedControl } from "../components/segmented-control/segmented-control";
 import { initSidebar } from "../components/sidebar/sidebar";
@@ -39,6 +40,7 @@ export function init(htmxSupport = true) {
   initMenus();
   initModals();
   initPasswordToggle();
+  initPhoneInput();
   initPinInput();
   initPopover();
   initSegmentedControl();
@@ -56,6 +58,7 @@ export function init(htmxSupport = true) {
       initDrawers();
       initMenus();
       initPasswordToggle();
+      initPhoneInput();
       initPinInput();
       initPopover();
       initSegmentedControl();

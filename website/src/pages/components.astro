@@ -771,6 +771,39 @@ import FontSelector from "../components/font-selector.astro";
         </div>
       </Demo>
 
+      <!-- Phone Input -->
+      <Demo title="Phone Input">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl">
+          <div class="field">
+            <label for="demo-phone" class="label">Phone number</label>
+            <input
+              type="tel"
+              class="input"
+              id="demo-phone"
+              name="demo-phone"
+              data-phone-input
+              data-phone-input-country="CH"
+            />
+            <p class="field-text-help">
+              Formatted as you type. Paste a +33… number to switch country.
+            </p>
+          </div>
+          <div class="field">
+            <label for="demo-phone-value" class="label">With a value</label>
+            <input
+              type="tel"
+              class="input"
+              id="demo-phone-value"
+              name="demo-phone-value"
+              value="+14155552671"
+              data-phone-input
+              data-phone-input-countries="US,CA,GB,FR,DE,CH"
+            />
+            <p class="field-text-help">Limited to six countries.</p>
+          </div>
+        </div>
+      </Demo>
+
       <!-- Checkbox Card -->
       <Demo title="Checkbox Card">
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
